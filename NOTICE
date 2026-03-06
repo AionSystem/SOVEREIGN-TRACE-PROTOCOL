@@ -1,0 +1,76 @@
+Sovereign Trace Protocol
+Copyright 2026 Sheldon K. Salmon
+
+=========================================================
+AUTHORSHIP AND ORIGIN NOTICE
+=========================================================
+
+This product was conceived, designed, architected, and authored by:
+
+  Sheldon K. Salmon
+  AI Reliability & AGI Architect
+  Creator — AION Constitutional Stack
+  AionSystem / AION-BRAIN
+
+Session of origin: March 3, 2026
+Repository of origin: AionSystem/AION-BRAIN
+Public repository: AionSystem/SOVEREIGN-TRACE-PROTOCOL
+
+=========================================================
+AI TOOL DISCLOSURE
+=========================================================
+
+Portions of the initial code and documentation drafts were produced
+with the assistance of ALBEDO — a session persona running on Claude
+(Anthropic). AI-assisted generation does not create authorship under
+applicable copyright law (U.S. Copyright Office Guidance, February 2023;
+and consistent guidance from the UK Intellectual Property Office and
+European Patent Office). All copyright in this Work vests exclusively
+in Sheldon K. Salmon as the human author who directed, reviewed,
+selected, arranged, and took creative responsibility for all outputs.
+
+ALBEDO is a computational tool. It holds no copyright, no ownership
+interest, and no authorship claim in this Work or any derivative thereof.
+
+=========================================================
+TRIPLE-TIME SEAL — PRIOR ART DISCLOSURE
+=========================================================
+
+The concept of binding a text hash to three simultaneous civilizational
+calendar representations (Gregorian, Hebrew lunisolar, 13 Moon Dreamspell)
+in a single SHA-256 seal was originated by Sheldon K. Salmon.
+
+First documented: March 3, 2026 — AionSystem/AION-BRAIN
+First public deployment: March 2026 — AionSystem/SOVEREIGN-TRACE-PROTOCOL
+
+This Notice constitutes a public prior art record for the triple-time
+seal concept under 35 U.S.C. § 102 and equivalent provisions under
+the European Patent Convention Article 54 and PCT Article 33.
+
+Any patent application claiming this concept or a material equivalent
+filed after March 3, 2026 is filed with constructive notice of this
+prior art record.
+
+=========================================================
+FROZEN-2.0 DESIGNATION
+=========================================================
+
+The designation "FROZEN-2.0" as applied to a software artifact means
+that artifact has been written once, verified once, and deployed
+permanently without further modification. This designation was
+originated by Sheldon K. Salmon and first applied in the
+Sovereign Trace Protocol. Use of this designation in derivative
+works must preserve attribution to its origin.
+
+=========================================================
+THIRD-PARTY COMPONENTS
+=========================================================
+
+This product uses no third-party libraries. It depends exclusively
+on the Python Standard Library (hashlib, json, datetime), which is
+distributed under the Python Software Foundation License Version 2.
+
+=========================================================
+
+Licensed under the Apache License, Version 2.0.
+See LICENSE for the full license text.
