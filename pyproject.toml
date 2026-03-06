@@ -1,1 +1,56 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
+[project]
+name = "sovereign-trace"
+version = "2.0.0"
+description = "Permanent personal significance infrastructure. Triple-time cryptographic stamp — Gregorian, Hebrew lunisolar, 13 Moon Dreamspell."
+readme = "README.md"
+license = { text = "Apache-2.0" }
+authors = [
+  { name = "Sheldon K. Salmon", email = "sheldon@aionsystem.io" }
+]
+keywords = [
+  "sovereign trace",
+  "significance",
+  "cryptographic stamp",
+  "hebrew calendar",
+  "dreamspell",
+  "immutable",
+  "SHA-256",
+  "personal infrastructure",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: End Users/Desktop",
+  "Intended Audience :: Developers",
+  "Topic :: Utilities",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+sovereign-trace = "sovereign_trace_stamp:_cli"
+
+[project.urls]
+Homepage   = "https://github.com/AionSystem/sovereign-trace-protocol"
+Repository = "https://github.com/AionSystem/sovereign-trace-protocol"
+Issues     = "https://github.com/AionSystem/sovereign-trace-protocol/issues"
+
+[tool.hatch.build.targets.wheel]
+sources = ["stamp"]
+include = ["sovereign_trace_stamp.py"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "stamp/sovereign_trace_stamp.py",
+  "README.md",
+  "concept/",
+  "ledger/",
+]
