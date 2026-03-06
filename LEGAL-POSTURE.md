@@ -71,6 +71,16 @@ Any patent application filing on these concepts after March 3, 2026
 is filed with constructive notice of this prior art record across
 multiple independent platforms and jurisdictions.
 
+**Prior User Rights — 35 U.S.C. § 273 active:**
+Commercial use predating any third-party patent filing is documented
+in AionSystem/AION-BRAIN (March 3, 2026). This is a statutory defense
+that requires no separate filing. See `PATENTS.md` for full § 273 record.
+
+**AIA Grace Period — expires March 2027:**
+Public disclosure activates a 12-month window under AIA § 102(b)(1)
+during which a Provisional Patent Application may still be filed
+without this disclosure counting as prior art against the author.
+
 ---
 
 ## TRADEMARK COVERAGE
@@ -130,6 +140,49 @@ it cannot be retroactively altered.
 
 ---
 
+## CASE LAW BASIS
+
+The legal mechanisms in this repository are grounded in adjudicated
+precedent — not untested theory. Key cases:
+
+**Jacobsen v. Katzer, 535 F.3d 1373 (Fed. Cir. 2008)**
+The Federal Circuit affirmed that open source license conditions
+are enforceable as copyright conditions — not merely contractual
+covenants. Violation is copyright infringement, not just breach
+of contract. This means GPL v3 violations in this repository
+are actionable for statutory damages up to $150,000 per willful
+infringement plus attorney's fees. The court held that consideration
+in the form of open source compliance is legally equivalent
+to dollar-denominated fees.
+
+*Direct application to STP:* The GPL v3 copyleft layer is court-tested.
+Any corporate fork that distributes modified code without open-sourcing
+it faces copyright infringement claims, not just breach of contract.
+
+**Artifex Software v. Hancom, N.D. Cal. 2017**
+The district court upheld a dual-license enforcement claim —
+the same Apache 2.0 + GPL + Commercial structure used in this
+repository. The court found that a party using GPL-licensed software
+commercially without a commercial license is simultaneously liable
+for copyright infringement and breach of contract.
+
+*Direct application to STP:* The triple-license structure is
+the exact model validated in Artifex. An enterprise that uses
+this protocol without a commercial license has two simultaneous
+legal exposures, not one.
+
+**America Invents Act § 102(b)(1) and § 273 (2011)**
+Prior user rights and the grace period for inventor disclosures
+are statutory — not judicial. The AIA established that an inventor's
+own public disclosure does not count as prior art against them
+within the 12-month grace period, and that prior commercial use
+is a complete defense against later patent infringement claims.
+
+*Direct application to STP:* Both defenses are active and documented
+in `PATENTS.md` with the March 3, 2026 commercial use record.
+
+---
+
 ## LITIGATION POSTURE
 
 Any entity initiating legal proceedings against Sheldon K. Salmon
@@ -141,7 +194,7 @@ arising from this repository automatically:
 3. Forfeits any commercial license in effect
 4. Forfeits any Sovereign Certified badge license in effect
 
-All three terminations are simultaneous and automatic.
+All four terminations are simultaneous and automatic.
 They do not require a separate legal action to take effect.
 
 ---
@@ -155,6 +208,8 @@ It does not shrink.
 | Version | Date | Addition |
 |---------|------|----------|
 | 1.0 | March 2026 | Initial posture — triple license, Berne, prior art, trademark, IPFS |
+| 1.1 | March 2026 | Case Law Basis section — Jacobsen, Artifex, AIA § 102/273 |
+| 1.2 | March 2026 | Prior User Rights § 273 active notice + AIA grace period deadline |
 
 ---
 
