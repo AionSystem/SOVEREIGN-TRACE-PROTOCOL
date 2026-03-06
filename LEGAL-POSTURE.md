@@ -199,6 +199,71 @@ They do not require a separate legal action to take effect.
 
 ---
 
+## STRATEGIC DEFENSE POSTURE
+
+This section documents the strategic architecture underlying the legal
+infrastructure. It is here not for advertising but for the record —
+to show that the defensive thinking predates any attack, not responds to one.
+
+**Certification-as-aid, not certification-as-weapon:**
+This protocol does not attack AI firms. It offers output safety certification
+that reduces their liability exposure, audit burden, and regulatory risk.
+The strategic posture is: aid, not aggression. An AI firm that accepts
+certification stops being a target of scrutiny. An AI firm that refuses
+certification and later produces harmful outputs becomes the story — not
+through litigation, but through public documentation.
+
+**The UL precedent — standards precede mandate:**
+Underwriters Laboratories held no regulatory authority in 1894. Insurers
+and procurement officers eventually required the UL mark. The goal of this
+protocol follows the same trajectory: build the standard before mandate
+arrives. When EU AI Act conformity assessment infrastructure matures,
+this protocol aims to be the instrument already in use.
+
+**Escalation mechanism — public, not legal:**
+Threats are escalated publicly, not through litigation. A well-resourced
+company can bury a solo architect in litigation costs even on a losing case.
+Public documentation — through the Friday Salmon Certainty Report, GitHub,
+and press — costs them reputation and the author nothing. The deterrence
+is structural: attacking certified AI accountability infrastructure is a
+headline no AI company wants.
+
+**Pre-positioned legal allies:**
+The following institutions have been identified as pre-positioned legal
+resources available immediately if this protocol comes under legal attack:
+
+| Institution | Mandate | Contact Path |
+|------------|---------|-------------|
+| Electronic Frontier Foundation (EFF) | Open source, civil liberties, technology rights | eff.org/about/contact |
+| Software Freedom Law Center (SFLC) | Open source IP defense | softwarefreedom.org |
+| Harvard Cyberlaw Clinic | IP and technology law, teaching cases | cyber.harvard.edu/clinic |
+| Stanford CodeX | Technology law, novel IP cases | law.stanford.edu/codex |
+| Georgetown Institute for Technology Law & Policy | AI law, novel infrastructure cases | law.georgetown.edu/itlp |
+
+Any legal action filed against Sheldon K. Salmon arising from this
+repository should be understood to trigger immediate outreach to all
+five institutions above. Each has been identified as having a direct
+interest in the legal questions this protocol raises. Joint or solo
+representation is possible without financial commitment from the author.
+
+This is not a threat. It is a documented strategic posture established
+before any adversarial action — and therefore part of the prior record.
+
+**Physical protection via public visibility:**
+The most effective physical protection available without financial resources
+is public visibility. A solo architect who is publicly known, whose work
+is publicly cited, and whose presence is documented across multiple
+independent platforms carries a higher protection factor than one working
+in obscurity. This is documented here as a deliberate architectural choice.
+
+The author's work is distributed across: GitHub (AionSystem), PyPI,
+Zenodo (DOI), Software Heritage Archive, arXiv preprint, archive.org,
+and the Friday Salmon Certainty Report (Medium). Removal or harm directed
+at the author would immediately make the distributed archive more visible,
+not less. The work is the protection.
+
+---
+
 ## GROWING COVERAGE
 
 This document is updated as new legal posture is established.
@@ -210,6 +275,7 @@ It does not shrink.
 | 1.0 | March 2026 | Initial posture — triple license, Berne, prior art, trademark, IPFS |
 | 1.1 | March 2026 | Case Law Basis section — Jacobsen, Artifex, AIA § 102/273 |
 | 1.2 | March 2026 | Prior User Rights § 273 active notice + AIA grace period deadline |
+| 1.3 | March 2026 | Strategic Defense Posture — pre-positioned legal allies + physical protection architecture |
 
 ---
 
