@@ -1,0 +1,72 @@
+cff-version: 1.2.0
+message: >
+  If you use this software in your research, please cite it using
+  the metadata in this file. Attribution to Sheldon K. Salmon as
+  the originating architect is required under the Apache 2.0 NOTICE
+  file and the terms of this project.
+title: "Sovereign Trace Protocol"
+abstract: >
+  A permanent personal significance infrastructure. Triple-time
+  cryptographic stamp binding textual entries simultaneously to
+  Gregorian, Hebrew lunisolar (full four dehiyot, civil-day convention),
+  and 13 Moon Dreamspell calendar representations via SHA-256 hash.
+  FROZEN-2.0 — written once, verified once, deployed permanently.
+  Zero external dependencies. Stdlib only.
+authors:
+  - family-names: Salmon
+    given-names: Sheldon K.
+    alias: "Sheldon K. Salmon"
+    affiliation: "AionSystem — AION Constitutional Stack"
+    orcid: ""
+    email: ""
+    website: "https://github.com/AionSystem"
+version: "2.0.0"
+date-released: "2026-03-03"
+license: Apache-2.0
+repository-code: "https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL"
+url: "https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL"
+keywords:
+  - "sovereign trace"
+  - "personal significance"
+  - "cryptographic stamp"
+  - "hebrew calendar"
+  - "13 moon dreamspell"
+  - "SHA-256"
+  - "immutable record"
+  - "temporal sovereignty"
+  - "epistemic infrastructure"
+  - "AI reliability"
+  - "AION Constitutional Stack"
+identifiers:
+  - description: >
+      First public disclosure and deployment — AionSystem/SOVEREIGN-TRACE-PROTOCOL.
+      Constitutes prior art record for triple-time seal concept.
+      See PATENTS.md and NOTICE for full prior art disclosure.
+    type: url
+    value: "https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL"
+references:
+  - type: software
+    title: "AION Constitutional Stack — AION-BRAIN"
+    authors:
+      - family-names: Salmon
+        given-names: Sheldon K.
+    repository-code: "https://github.com/AionSystem/AION-BRAIN"
+    notes: >
+      The Sovereign Trace Protocol was conceived and first documented
+      in the AION-BRAIN repository on March 3, 2026, as part of the
+      AION Constitutional Stack. AION-BRAIN constitutes the origin
+      archive and prior art record for all concepts in this project.
+preferred-citation:
+  type: software
+  title: "Sovereign Trace Protocol"
+  authors:
+    - family-names: Salmon
+      given-names: Sheldon K.
+  version: "2.0.0"
+  date-released: "2026-03-03"
+  license: Apache-2.0
+  repository-code: "https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL"
+  notes: >
+    Co-developed with AI assistance (ALBEDO session persona, Claude by Anthropic).
+    All copyright vests in Sheldon K. Salmon as the human author.
+    See NOTICE file for AI tool disclosure and full authorship statement.
