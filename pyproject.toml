@@ -5,9 +5,9 @@ build-backend = "hatchling.build"
 [project]
 name = "sovereign-trace"
 version = "2.0.0"
-description = "Permanent personal significance infrastructure. Triple-time cryptographic stamp — Gregorian, Hebrew lunisolar, 13 Moon Dreamspell."
+description = "Permanent personal significance infrastructure. Triple-time cryptographic stamp — Gregorian, Hebrew lunisolar, 13 Moon Dreamspell. FROZEN-2.0."
 readme = "README.md"
-license = { text = "Apache-2.0" }
+license = { text = "Apache-2.0 OR GPL-3.0-or-later" }
 authors = [
   { name = "Sheldon K. Salmon", email = "sheldon@aionsystem.io" }
 ]
@@ -20,6 +20,8 @@ keywords = [
   "immutable",
   "SHA-256",
   "personal infrastructure",
+  "temporal sovereignty",
+  "epistemic infrastructure",
 ]
 classifiers = [
   "Development Status :: 4 - Beta",
@@ -27,6 +29,7 @@ classifiers = [
   "Intended Audience :: Developers",
   "Topic :: Utilities",
   "License :: OSI Approved :: Apache Software License",
+  "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
@@ -39,9 +42,9 @@ dependencies = []
 sovereign-trace = "sovereign_trace_stamp:_cli"
 
 [project.urls]
-Homepage   = "https://github.com/AionSystem/sovereign-trace-protocol"
-Repository = "https://github.com/AionSystem/sovereign-trace-protocol"
-Issues     = "https://github.com/AionSystem/sovereign-trace-protocol/issues"
+Homepage   = "https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL"
+Repository = "https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL"
+Issues     = "https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/issues"
 
 [tool.hatch.build.targets.wheel]
 sources = ["stamp"]
@@ -53,4 +56,18 @@ include = [
   "README.md",
   "concept/",
   "ledger/",
+  "LICENSE",
+  "LICENSE-COMMERCIAL.md",
+  "NOTICE",
+  "PATENTS.md",
+  "TRADEMARK.md",
+  "LEGAL-POSTURE.md",
+  "PRINCIPLES.md",
+  "METHODOLOGY.md",
+  "CERTIFICATION.md",
+  "TERMS-OF-SERVICE.md",
+  "CONTRIBUTOR-TERMS.md",
+  "EXPORT-CONTROL.md",
+  "SECURITY.md",
+  "CITATION.cff",
 ]
