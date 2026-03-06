@@ -8,6 +8,14 @@
 
 ---
 
+## ORIGIN OF THE MECHANISM
+
+This protocol was built for individual sovereignty first. The stamp function was designed to give one person a permanent record of their own significant moments — no audience, no platform, no institution required.
+
+The enterprise certification layer exists because the same mechanism that gives an individual temporal sovereignty over their personal record gives an organization cryptographic proof of their AI epistemic integrity. One stamp function. Two deployment scales. See `concept/USE-CASES.md`.
+
+---
+
 ## WHAT CERTIFICATION IS
 
 Installation is not certification. Running the ledger is not certification.
@@ -132,6 +140,14 @@ are permanent. The certification assessment reviews both.
 
 A Tier 1 Verification moves an entry from `REMEDIATION_FILED` to
 `REMEDIATION_VERIFIED`. Self-certification does not exist in this protocol.
+
+---
+
+## ORIGIN OF THE MECHANISM
+
+This protocol was built for individual sovereignty first. The stamp function was designed to give one person a permanent record of their own significant moments — no audience, no platform, no institution required.
+
+The enterprise certification layer exists because the same mechanism that gives an individual temporal sovereignty over their personal record gives an organization cryptographic proof of their AI epistemic integrity. One stamp function. Two deployment scales. See `concept/USE-CASES.md`.
 
 ---
 
