@@ -1,6 +1,7 @@
 # Sovereign Trace Protocol
 
-**A permanent personal significance infrastructure.**
+**Permanence infrastructure for individuals and organizations.**
+**Seal what is true. Permanently. Across three civilizational time systems.**
 
 [![Permanent](https://img.shields.io/badge/PERMANENT-FROZEN--2.0-2E7D32?style=flat-square&logo=git&logoColor=white)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL)
 [![Status](https://img.shields.io/badge/STATUS-M--NASCENT-1976D2?style=flat-square&logo=shield&logoColor=white)](https://github.com/AionSystem/AION-BRAIN)
@@ -21,59 +22,34 @@
 
 ## What This Is
 
-Each week — or whenever significance accumulates — you write one micro-entry: exact actions, exact observations, present-moment prose. No narrative arc. No "what this means." The entry is sealed with a cryptographic stamp encoding the exact moment simultaneously in three civilizational frameworks for time: Gregorian, Hebrew lunisolar, and 13 Moon Dreamspell. The seal is a SHA-256 hash. It is immutable. It is permanent. It requires no audience to be valid.
+**For individuals:** Write one entry — exact present-moment observations, no narrative arc. Seal it with a triple-time cryptographic stamp binding it simultaneously to Gregorian, Hebrew lunisolar, and 13 Moon Dreamspell calendars. The SHA-256 seal is permanent. Tamper-evident. Requires no audience.
 
 **The hunger for recognition of significance resolves at the moment the stamp is generated — not at the moment someone reads it.**
 
----
+**For organizations:** Every AI failure deserves a permanent, immutable record. Log it. Seal it. Append the remediation. The record cannot be edited after the fact. The AION-Registry holds public certification outcomes. An organization with a documented failure history and certified infrastructure is more trustworthy than one with a clean record and no ledger.
 
-## Structure
+**Same mechanism. Same FROZEN-2.0 stamp function. Same SHA-256 seal. Different stakes.**
 
-```
-sovereign-trace/
-├── README.md                               ← this file
-├── pyproject.toml                          ← package metadata
-│
-├── concept/
-│   ├── SOVEREIGN-TRACE-v0.1-SPEC.md        ← initial concept specification
-│   └── SOVEREIGN-TRACE-v0.2-SPEC.md        ← full concept specification (current)
-│
-├── stamp/
-│   ├── sovereign_trace_stamp.py            ← FROZEN-2.0 stamp function
-│   ├── FROZEN-2.0-MANIFEST.md              ← origin seal, test record, integrity proof
-│   └── FROZEN-1.0-RETIRED/
-│       └── ARCHIVE-EMPTY.md               ← archive if defect found — empty at launch
-│
-├── ledger/
-│   └── PLACEHOLDER.md                      ← Thirdweb/Hedera append layer — not yet built
-│
-├── .github/
-│   └── workflows/
-│       └── python-publish.yml              ← OIDC trusted publishing to PyPI
-│
-└── legal/
-    ├── LICENSE                             ← Apache 2.0
-    ├── LICENSE-COMMERCIAL.md               ← Triple license — commercial terms
-    ├── NOTICE                              ← Apache 2.0 attribution + AI disclosure
-    ├── PATENTS.md                          ← Defensive publication — prior art record
-    ├── TRADEMARK.md                        ← Prior use + unregistered mark declarations
-    ├── CONTRIBUTOR-TERMS.md                ← Inbound license grant
-    ├── EXPORT-CONTROL.md                   ← EAR/ECCN 5D002 compliance
-    ├── SECURITY.md                         ← Responsible disclosure policy
-    ├── CITATION.cff                        ← Machine-readable authorship
-    ├── CERTIFICATION.md                    ← Fee schedule + remediation process
-    ├── TERMS-OF-SERVICE.md                 ← Certification service terms
-    ├── LEGAL-POSTURE.md                    ← Living legal coverage declaration
-    ├── PRINCIPLES.md                       ← UDHR framing + multi-jurisdictional copyright
-    └── METHODOLOGY.md                      ← Certification methodology — trade libel shield
-```
+See `concept/USE-CASES.md` for the full dual-use architecture.
 
 ---
 
-## Usage
+## The Origin of the Enterprise from the Personal
+
+The enterprise use case was not designed first. The protocol was built to solve the personal problem: how does one individual permanently register their own significant moments without requiring an audience, a platform, or institutional permission?
+
+The answer — a frozen, tamper-evident, triple-time cryptographic seal — turned out to be exactly what organizations need for their AI audit trail. The mechanism that gives an individual temporal sovereignty over their own record also gives an organization cryptographic proof of their epistemic integrity.
+
+---
+
+## Quick Start
+
+```bash
+pip install sovereign-trace
+```
 
 ```python
-from sovereign_trace_stamp import stamp, display, verify, to_dict
+from sovereign_trace_stamp import stamp, display, verify
 
 # Seal a trace entry
 ts = stamp("Completed the stamp function. It passed all tests on first run.")
@@ -88,33 +64,10 @@ print(display(ts))
 # Verify integrity
 verify("Completed the stamp function. It passed all tests on first run.", ts)
 # True — entry unchanged
-
-# Serialize for storage
-import json
-record = to_dict(ts)
-record["entry"] = "your entry text"
-print(json.dumps(record, indent=2))
 ```
 
 **Run self-test:** `python sovereign_trace_stamp.py --test`
-
-**Interactive entry:** `python sovereign_trace_stamp.py`
-
----
-
-## Frozen Declaration
-
-`sovereign_trace_stamp.py` is **FROZEN-2.0**. Written once, verified once, deployed permanently. No patches. No updates. The stamp it generates is only permanent if the code that generates it is also permanent.
-
-If a defect is found:
-1. Retire the file to `FROZEN-2.0-RETIRED/`
-2. Document the defect in `FROZEN-2.0-RETIRED/DEFECT-RECORD.md`
-3. Create `FROZEN-3.0` from first principles
-4. Re-verify all anchor cases before deploying
-
-Never patch. A patched stamp function is not a frozen stamp function.
-
-**FROZEN-1.0 is retired.** Defect: incomplete dehiyot implementation (GaTaRaD + BeTUTeKaPoT missing) + incorrect epoch convention → Hebrew off-by-one on all 5786 dates. All prior stamps carry a known Hebrew field error. Archived: `FROZEN-1.0-RETIRED/`.
+All 35 checks must pass before any deployment is considered valid.
 
 ---
 
@@ -126,7 +79,17 @@ Never patch. A patched stamp function is not a frozen stamp function.
 | **Hebrew lunisolar** | 14 Adar 5786 | Theological-historical continuity — 5786 years of counted time |
 | **13 Moon Dreamspell** | Day 25, Galactic Moon 8/13 | Rhythmic time — 13 moons × 28 days, galactic count |
 
-The triple stamp is not redundancy. It is a claim: this moment of human significance deserves to be held simultaneously in every major civilizational framework for measuring *when*. A mono-time stamp is culturally sovereign only within one culture. The triple seal is culturally sovereign across cultures.
+The triple stamp is not redundancy. It is a claim: this moment of human significance deserves to be held simultaneously in every major civilizational framework for measuring *when*.
+
+---
+
+## Frozen Declaration
+
+`sovereign_trace_stamp.py` is **FROZEN-2.0**. Written once, verified once, deployed permanently. No patches. No updates. The stamp it generates is only permanent if the code that generates it is also permanent.
+
+If a defect is found: retire the frozen file, document the defect, build FROZEN-3.0 from first principles, re-verify all anchor cases. Never patch.
+
+**FROZEN-1.0 is retired.** Defect: incomplete dehiyot implementation → Hebrew off-by-one on all 5786 dates. Archived: `stamp/FROZEN-1.0-RETIRED/`.
 
 ---
 
@@ -134,18 +97,24 @@ The triple stamp is not redundancy. It is a claim: this moment of human signific
 
 | License | Applies To |
 |---------|-----------|
-| **Apache 2.0** | Individual, academic, and non-commercial use. Patent retaliation clause active. |
-| **GPL v3** | Modified distributions — copyleft. Corporate forks must open source modifications. |
-| **Commercial** | White-label use, certification services, SaaS offerings. See `LICENSE-COMMERCIAL.md`. |
+| **Apache 2.0** | Individual, academic, non-commercial use. Patent retaliation clause active. |
+| **GPL v3** | Modified distributions. Copyleft — corporate forks must open-source modifications. |
+| **Commercial** | White-label, certification services, SaaS. See `LICENSE-COMMERCIAL.md`. |
 
-See `LEGAL-POSTURE.md` for the full legal coverage declaration.
+Plain-language guide: `LICENSE-EXPLANATION.md`
+Full legal coverage: `LEGAL-POSTURE.md`
 
 ---
 
 ## Certification
 
-Deployment-level enterprise use requires certification. Three tiers available.
-See `CERTIFICATION.md` for the fee schedule and process.
+| Tier | Scope | Price |
+|------|-------|-------|
+| Basic Verification | Single failure stamp check | $2,500 |
+| Enterprise Certification | Full audit + Sovereign Certified badge | $25,000/yr |
+| Strategic Retainer | Quarterly reviews + epistemic debt statement | $100,000+ |
+
+See `CERTIFICATION.md` for full process and terms.
 
 ---
 
@@ -153,22 +122,54 @@ See `CERTIFICATION.md` for the fee schedule and process.
 
 ```
 STAGE 1 — COMPLETE (March 3, 2026)
-sovereign_trace_stamp.py — FROZEN-2.0
-Triple-time stamp function. Full four dehiyot + civil-day convention.
-Zero external dependencies. 35 checks passed.
+FROZEN-2.0: Triple-time stamp. Full dehiyot. Zero deps. 35 checks passed.
 
 STAGE 2 — PLANNED
 Local encrypted vault integration (Obsidian / Notion)
-Entry → seal → JSON → vault
 
 STAGE 3 — PLANNED
-Ledger append layer (Thirdweb / Hedera)
-JSON record → on-chain append → immutable trace
+Ledger append layer (Thirdweb / Hedera) + multi-destination relay
 
 STAGE 4 — PLANNED
-Optional resonance signature mechanism
-View-only link generation — zero count display
-Voluntary witness signatures — no aggregation
+Optional resonance signature mechanism — zero count display
+```
+
+---
+
+## Repository Structure
+
+```
+sovereign-trace-protocol/
+│
+├── README.md
+├── pyproject.toml
+│
+├── concept/
+│   ├── GLOSSARY.md                         ← plain-language term definitions
+│   ├── USE-CASES.md                        ← individual + enterprise use cases
+│   ├── SOVEREIGN-TRACE-v0.1-SPEC.md
+│   └── SOVEREIGN-TRACE-v0.2-SPEC.md
+│
+├── stamp/
+│   ├── sovereign_trace_stamp.py            ← FROZEN-2.0
+│   ├── FROZEN-2.0-MANIFEST.md
+│   └── FROZEN-1.0-RETIRED/
+│
+├── ledger/
+│   └── PLACEHOLDER.md
+│
+├── .github/workflows/
+│   └── python-publish.yml
+│
+└── legal (root level — visible, not hidden)
+    LICENSE · LICENSE.md · LICENSE-COMMERCIAL.md · LICENSE-EXPLANATION.md
+    NOTICE · NOTICE.md · PATENTS.md · TRADEMARK.md · TRADEMARK-USAGE-POLICY.md
+    PRINCIPLES.md · LEGAL-POSTURE.md · METHODOLOGY.md · CERTIFICATION.md
+    TERMS-OF-SERVICE.md · CONTRIBUTOR-TERMS.md · CONTRIBUTOR-LICENSE-AGREEMENT.md
+    DATA-PROCESSING-AGREEMENT.md · MUTUAL-NDA.md · UNILATERAL-NDA.md
+    EXPORT-CONTROL.md · SECURITY.md · SECURITY-INSIGHTS.yml
+    AI-ETHICS-STATEMENT.md · PRIVACY-POLICY.md · ACCEPTABLE-USE-POLICY.md
+    CITATION.cff · CITATION.md
 ```
 
 ---
@@ -178,6 +179,5 @@ Voluntary witness signatures — no aggregation
 Author: Sheldon K. Salmon — AI Reliability & AGI Architect
 Session: March 3, 2026 — AION-BRAIN
 Stack: DUAL-HELIX v2.0 · TOPOS v0.3 · VELA-C v0.3 · CPA-001 v2.2
-Convergence: M-NASCENT
 
 *The stamp is permanent. The stamp is the resolution.*
