@@ -9,7 +9,7 @@ description = "Permanent personal and organizational significance infrastructure
 readme = "README.md"
 license = { text = "Apache-2.0 OR GPL-3.0-or-later" }
 authors = [
-  { name = "Sheldon K. Salmon", email = "sheldon@aionsystem.io" }
+  { name = "Sheldon K. Salmon", email = "aionsystem2026@gmail.com" }
 ]
 keywords = [
   "sovereign trace",
@@ -50,7 +50,7 @@ Issues     = "https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/issues"
 
 [tool.hatch.build.targets.wheel]
 sources = ["stamp"]
-include = ["sovereign_trace_stamp.py"]
+exclude = ["stamp/FROZEN-1.0-RETIRED"]
 
 [tool.hatch.build.targets.sdist]
 include = [
