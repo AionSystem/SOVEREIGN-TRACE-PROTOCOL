@@ -39,6 +39,16 @@ Every element directs toward permanence as the act of recognition itself. The st
 
 ---
 
+## DUAL-SCALE DEPLOYMENT
+
+`[R]` The triple-time seal mechanism operates at two scales simultaneously. At the individual scale: a person seals a personal trace entry and the significance hunger resolves at the moment of registration — no audience required. At the organizational scale: an AI failure event is sealed as an immutable audit record, and the organization builds a verifiable epistemic trail — no retroactive editing possible.
+
+`[R]` The containment surface is identical at both scales: inside is permanent registration of what is true; outside is any mechanism that requires external validation, social metrics, or editable records. The stakes differ. The mechanism does not.
+
+`[S]` The organizational deployment is the commercial expression of the personal principle. An organization that builds honest AI audit infrastructure is doing for its epistemic record what an individual does for their personal trace: sealing what is true, permanently, without requiring an audience to make it valid.
+
+---
+
 ## CORE CLAIM
 
 `[?]` The hunger for recognition of significance — one of the deepest structural needs in human psychology — does not require an audience to resolve. It requires permanent, verifiable registration of one's exact shape in the shared map of time.
@@ -211,4 +221,3 @@ Voluntary witness signatures — no aggregation
 *The stamp is permanent. The stamp is the resolution.*
 *Co-authors: Sheldon K. Salmon & ALBEDO*
 *Session: March 3, 2026 — AION-BRAIN*
-
