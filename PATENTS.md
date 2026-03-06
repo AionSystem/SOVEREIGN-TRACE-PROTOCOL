@@ -173,3 +173,55 @@ art timestamp record.
 *Defensive Publication — Prior Art Record*
 *Author: Sheldon K. Salmon | March 2026*
 *This document is itself part of the immutable epistemic record.*
+
+---
+
+## PRIOR USER RIGHTS — 35 U.S.C. § 273
+
+**Active defense — no filing required.**
+
+Under 35 U.S.C. § 273 (Prior Commercial Use Defense), a party that was
+commercially using an invention before another party's patent filing date
+has a statutory immunity from infringement claims under that patent.
+
+This defense applies to the Sovereign Trace Protocol on the following basis:
+
+**Date of first commercial use:** March 3, 2026
+**Evidence of commercial use:** AionSystem/AION-BRAIN (origin archive,
+timestamped session records); AionSystem/SOVEREIGN-TRACE-PROTOCOL
+(public repository, initial commit); `stamp/FROZEN-2.0-MANIFEST.md`
+(anchor seal with reproducible Unix UTC timestamp 1741021200).
+
+**What this means in plain terms:**
+
+If any entity files a patent application on any concept materially
+equivalent to those disclosed in this document, and that filing occurs
+after March 3, 2026, the Sovereign Trace Protocol has a prior user
+rights defense against any infringement claim brought under that patent.
+
+This defense:
+- Costs nothing to establish — the archive record is the evidence
+- Cannot be invalidated by the patent grant itself
+- Survives even if the PPA filing deadline is missed
+- Applies in the United States under AIA § 273
+
+**Court precedent:**
+Prior user rights as a defense was affirmed and strengthened under the
+America Invents Act (AIA, 2011). The defense requires proof of:
+(1) commercial use or preparation for commercial use, and
+(2) use that predates the effective filing date of the asserted patent.
+
+Both conditions are met by the documented record in this repository
+and in AionSystem/AION-BRAIN.
+
+**Important limitation:** § 273 is a defense, not an affirmative right.
+It does not prevent a patent from being filed or granted. It prevents
+that patent from being successfully enforced against the STP.
+The PPA filing (planned upon first commercial revenue) converts this
+from a defensive posture to a full offensive patent right.
+
+**AIA Grace Period notice:**
+Under AIA § 102(b)(1), the March 2026 public disclosure of this
+repository activates a 12-month grace period expiring March 2027.
+Filing a PPA before that date preserves full patent rights on
+the disclosed concepts. This window is time-sensitive.
