@@ -265,3 +265,74 @@ It is the technical basis for the permanence claim.
 *Author: Sheldon K. Salmon | March 2026*
 *This document is updated as new terms are introduced.*
 *Plain language first. Precision throughout.*
+
+---
+
+## ENTERPRISE AND CERTIFICATION TERMS
+
+**Enterprise Deployment**
+Use of the Sovereign Trace Protocol by an organization to log, seal,
+and maintain an immutable audit trail of AI system failures, investigations,
+and remediations. Enterprise deployment requires a commercial license
+and is eligible for certification under the three-tier system.
+
+**Epistemic Debt (Organizational)**
+The accumulated gap between what an organization's AI systems have claimed
+and what can be verified, corrected, or accounted for. Epistemic debt
+grows silently when AI outputs are not logged. It pays out when a
+regulator, client, or court asks "when did you know, and what did you do?"
+The Sovereign Trace Protocol creates the infrastructure to track and
+retire epistemic debt systematically.
+
+**AI Audit Trail**
+The organizational equivalent of a personal trace ledger. A permanent,
+immutable record of AI failure events, the investigations that followed,
+and the remediations applied. Sealed with FROZEN-2.0 stamps at each entry.
+Cannot be edited after sealing — only appended.
+
+**Remediation Record**
+An entry appended to an existing failure record documenting what was done
+to address the failure. The original failure entry is not deleted or
+modified. Both entries — failure and remediation — are permanent.
+The combination constitutes a complete epistemic record.
+
+**Epistemic Debt Statement**
+A written assessment issued under Tier 3 certification. Documents the
+organization's full AI audit record: failures logged, remediations
+completed, outstanding debt, and trend direction. A summary version
+is published to the AION-Registry.
+
+**AION-Registry**
+The public certification registry operated under this protocol.
+Lists organizations by certification tier, certification date, and
+outcome (verified / deficient). Entries are permanent — subject to
+the No-Deletion Policy. The registry is the source of truth for
+Sovereign Certified status.
+
+**Sovereign Certified**
+The mark issued to organizations that have passed a formal certification
+audit under the Tier 2 or Tier 3 process. Use of this mark requires a
+current, executed commercial license agreement. See `CERTIFICATION.md`
+and `TRADEMARK-USAGE-POLICY.md`.
+
+**No-Deletion Policy**
+The architectural and legal commitment that public registry entries,
+certification outcomes, and filed incident records are permanent.
+This policy is documented in `POLICIES.md` (planned) and referenced
+in `DATA-PROCESSING-AGREEMENT.md`. It is the organizational expression
+of the same principle that makes FROZEN-2.0 immutable — permanence
+is not a feature, it is the architecture.
+
+**FCL-ST-001**
+The first staged Falsification/Confirmation Log candidate for the
+Sovereign Trace Protocol: the first user who reports resolution of
+significance hunger from the stamp alone, without any resonance
+from another person. This is the most important early data point —
+it either confirms or challenges the protocol's core hypothesis.
+
+**Triple License**
+The three-tier license structure of this repository: Apache 2.0 for
+open use, GPL v3 copyleft for modified distributions, and a
+commercial license for enterprise and certification use.
+See `LICENSE-EXPLANATION.md` for plain-language guidance on which
+applies to your situation.
