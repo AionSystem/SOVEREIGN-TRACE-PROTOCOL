@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "sovereign-trace"
 version = "2.0.0"
-description = "Permanent personal significance infrastructure. Triple-time cryptographic stamp — Gregorian, Hebrew lunisolar, 13 Moon Dreamspell. FROZEN-2.0."
+description = "Permanent personal and organizational significance infrastructure. Triple-time cryptographic stamp — Gregorian, Hebrew lunisolar, 13 Moon Dreamspell. FROZEN-2.0."
 readme = "README.md"
 license = { text = "Apache-2.0 OR GPL-3.0-or-later" }
 authors = [
@@ -22,6 +22,8 @@ keywords = [
   "personal infrastructure",
   "temporal sovereignty",
   "epistemic infrastructure",
+  "AI audit",
+  "AI reliability",
 ]
 classifiers = [
   "Development Status :: 4 - Beta",
@@ -58,16 +60,26 @@ include = [
   "ledger/",
   "LICENSE",
   "LICENSE-COMMERCIAL.md",
+  "LICENSE-EXPLANATION.md",
   "NOTICE",
   "PATENTS.md",
   "TRADEMARK.md",
+  "TRADEMARK-USAGE-POLICY.md",
   "LEGAL-POSTURE.md",
   "PRINCIPLES.md",
   "METHODOLOGY.md",
   "CERTIFICATION.md",
   "TERMS-OF-SERVICE.md",
   "CONTRIBUTOR-TERMS.md",
+  "CONTRIBUTOR-LICENSE-AGREEMENT.md",
+  "DATA-PROCESSING-AGREEMENT.md",
+  "MUTUAL-NDA.md",
+  "UNILATERAL-NDA.md",
   "EXPORT-CONTROL.md",
   "SECURITY.md",
+  "SECURITY-INSIGHTS.yml",
+  "AI-ETHICS-STATEMENT.md",
+  "PRIVACY-POLICY.md",
+  "ACCEPTABLE-USE-POLICY.md",
   "CITATION.cff",
 ]
