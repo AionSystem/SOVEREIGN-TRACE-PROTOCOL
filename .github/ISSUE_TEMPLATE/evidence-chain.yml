@@ -1,6 +1,3 @@
-# ISSUE TEMPLATE — evidence-chain.yml
-# Copy this content exactly into your .yml file
-
 ```yaml
 name: "Evidence Chain Seal — Sovereign Trace Protocol"
 description: "Seal a document, source communication, or evidence chain at the moment of receipt or creation. For journalists, whistleblowers, and investigators establishing tamper-evident chain of custody."
