@@ -1,5 +1,5 @@
 name: "Research Priority Seal — Sovereign Trace Protocol"
-description: "Seal a hypothesis, finding, or framework specification before results are known or work is published. Establishes cryptographic priority without requiring institutional permission."
+description: "Seal a hypothesis, finding, or framework specification before results are known or work is published."
 title: "[STP-RESEARCH] — [FIELD] — [DATE]"
 labels: ["research-priority", "pending-seal"]
 assignees: []
@@ -16,9 +16,7 @@ body:
         The SHA-256 seal proves you held this position before results were known — not after.
         This is not peer review. This is not publication. This is a tamper-evident timestamp.
 
-        **Identity is optional for this submission type.**
-        You may submit anonymously. If you include your name, it becomes part of the permanent record.
-        A sealed anonymous record still proves priority — you can identify yourself later and the seal will verify your claim.
+        **Identity is optional.** An anonymous sealed record still proves priority — you can identify yourself later and the seal will verify your claim.
 
   - type: input
     id: submitter_name
@@ -51,7 +49,7 @@ body:
     id: hypothesis_or_claim
     attributes:
       label: "Hypothesis, Finding, or Specification"
-      description: "State it exactly as it stands now. Do not soften. Do not hedge beyond what is genuinely uncertain. This is what the seal will bind to."
+      description: "State it exactly as it stands now. Do not soften beyond what is genuinely uncertain."
       placeholder: "State your hypothesis, finding, or specification precisely."
     validations:
       required: true
@@ -74,21 +72,29 @@ body:
     validations:
       required: false
 
-  - type: textarea
+  - type: input
     id: current_status
     attributes:
       label: "Current Status"
-      description: "Where is this work right now? Pre-experiment. Pre-submission. Pre-publication. Draft stage."
-      placeholder: "Describe the current state of the work."
+      description: "Where is this work right now?"
+      placeholder: "Pre-experiment / Pre-submission / Pre-publication / Draft"
     validations:
       required: true
 
-  - type: textarea
-    id: evidence_or_supporting_material
+  - type: upload
+    id: supporting_files
     attributes:
-      label: "Supporting Material (Optional)"
-      description: "Links to drafts, data, prior work, or any material that supports this submission. Not required — the seal applies to what you wrote above regardless."
-      placeholder: "Links or descriptions of supporting material."
+      label: "Supporting Files (Optional)"
+      description: "Upload any drafts, data previews, or supporting material."
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting_links
+    attributes:
+      label: "Supporting Links (Optional)"
+      description: "Links to prior work, datasets, or related material."
+      placeholder: "Links to supporting material."
     validations:
       required: false
 
@@ -97,11 +103,11 @@ body:
     attributes:
       label: "Declaration"
       options:
-        - label: "I affirm that this submission represents my genuine position at the time of sealing — not a result known in advance."
+        - label: "I affirm this submission represents my genuine position at the time of sealing — not a result known in advance."
           required: true
         - label: "I understand this submission is immutable — it cannot be altered after sealing."
           required: true
-        - label: "I understand that the Sovereign Trace Protocol does not validate the scientific merit of this submission — it seals its existence at this moment."
+        - label: "I understand the protocol seals existence at this moment — it does not validate scientific merit."
           required: true
 
   - type: markdown
@@ -110,13 +116,11 @@ body:
         ---
         ## What Happens Next
 
-        1. Completeness check — The Sovereign Trace Protocol office reviews for completeness.
-        2. Sealing — Your submission is sealed with a FROZEN-2.0 triple-time cryptographic stamp.
-        3. Ledger entry — Your submission enters the Sovereign Trace ledger with the seal timestamp and SHA-256 hash.
+        1. Completeness check — Reviewed for completeness.
+        2. Sealing — Sealed with a FROZEN-2.0 triple-time cryptographic stamp. Permanent.
+        3. Ledger entry — Enters the Sovereign Trace ledger with timestamp and SHA-256 hash.
         4. Notification — You receive your ledger entry ID and SHA-256 hash.
 
         The protocol does not evaluate the merit of your research. It seals its existence.
-        The seal is permanent. The seal is the proof.
 
         Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
-
