@@ -4,7 +4,7 @@
 **Author:** Sheldon K. Salmon — AI Reliability & AGI Architect
 **Version:** 2.0 | March 2026
 **Effective Date:** March 7, 2026
-**Governing Law:** State of [TO BE SPECIFIED] / Province of [TO BE SPECIFIED]
+**Governing Law:** State of New York, United States
 
 ---
 
@@ -196,7 +196,7 @@ By initiating an engagement, Client represents and warrants to the Architect tha
 
 ## ARTICLE 11 — GENERAL PROVISIONS
 
-**11.1 Governing Law.** These Terms shall be governed by and construed in accordance with the laws of [JURISDICTION TO BE SPECIFIED], without regard to its conflict of law provisions.
+**11.1 Governing Law.** These Terms shall be governed by and construed in accordance with the laws of the State of New York, United States, without regard to its conflict of law provisions. The parties consent to the exclusive jurisdiction of the state and federal courts located in New York County, New York for any matter not subject to arbitration under Article 10.
 
 **11.2 Entire Agreement.** These Terms, together with the applicable tier description in `CERTIFICATION.md` and any written engagement confirmation, constitute the entire agreement between the parties with respect to the subject matter hereof and supersede all prior negotiations, representations, and agreements.
 
