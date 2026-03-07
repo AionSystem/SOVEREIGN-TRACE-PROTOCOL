@@ -1,1 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="72" viewBox="0 0 260 72">
+  <defs>
+    <linearGradient id="bg-d" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#060d1f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#020810;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cyan" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00F5FF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00BFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0080FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="border-d" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00F5FF;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#0080FF;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#00F5FF;stop-opacity:0.9" />
+    </linearGradient>
+    <linearGradient id="divider-d" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00F5FF;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#00F5FF;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#00F5FF;stop-opacity:0" />
+    </linearGradient>
+    <filter id="cyanglow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softglow-d">
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="rounded-d">
+      <rect width="260" height="72" rx="6" ry="6"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="260" height="72" rx="6" ry="6" fill="url(#bg-d)"/>
+
+  <!-- Grid overlay -->
+  <g opacity="0.06" stroke="#00F5FF" stroke-width="0.5" clip-path="url(#rounded-d)">
+    <line x1="0" y1="12" x2="260" y2="12"/>
+    <line x1="0" y1="24" x2="260" y2="24"/>
+    <line x1="0" y1="36" x2="260" y2="36"/>
+    <line x1="0" y1="48" x2="260" y2="48"/>
+    <line x1="0" y1="60" x2="260" y2="60"/>
+    <line x1="26" y1="0" x2="26" y2="72"/>
+    <line x1="52" y1="0" x2="52" y2="72"/>
+    <line x1="104" y1="0" x2="104" y2="72"/>
+    <line x1="156" y1="0" x2="156" y2="72"/>
+    <line x1="208" y1="0" x2="208" y2="72"/>
+  </g>
+
+  <!-- Cyan outer border -->
+  <rect width="260" height="72" rx="6" ry="6" fill="none" stroke="url(#border-d)" stroke-width="1.5"/>
+  <rect x="3" y="3" width="254" height="66" rx="4" ry="4" fill="none" stroke="#00F5FF" stroke-width="0.3" opacity="0.2"/>
+
+  <!-- Left panel glow wash -->
+  <rect x="0" y="0" width="62" height="72" fill="#00F5FF" fill-opacity="0.04" clip-path="url(#rounded-d)"/>
+
+  <!-- Shield -->
+  <g transform="translate(31, 36)" filter="url(#cyanglow)">
+    <path d="M0,-20 L14,-14 L14,2 Q14,16 0,22 Q-14,16 -14,2 L-14,-14 Z"
+          fill="none" stroke="url(#cyan)" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M0,-13 L9,-8.5 L9,2 Q9,11 0,16 Q-9,11 -9,2 L-9,-8.5 Z"
+          fill="#00F5FF" fill-opacity="0.08"/>
+    <path d="M-4,1 L-1,5 L5,-4" fill="none" stroke="url(#cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Divider -->
+  <rect x="62" y="8" width="1" height="56" fill="url(#divider-d)"/>
+
+  <!-- Text -->
+  <text x="166" y="22"
+        font-family="'Courier New', 'Lucida Console', monospace"
+        font-size="7"
+        font-weight="400"
+        letter-spacing="3"
+        text-anchor="middle"
+        fill="#00BFFF"
+        opacity="0.8">SOVEREIGN TRACE PROTOCOL</text>
+
+  <text x="166" y="46"
+        font-family="'Courier New', 'Lucida Console', monospace"
+        font-size="18"
+        font-weight="700"
+        letter-spacing="4"
+        text-anchor="middle"
+        fill="url(#cyan)"
+        filter="url(#softglow-d)">CERTIFIED</text>
+
+  <text x="166" y="61"
+        font-family="'Courier New', 'Lucida Console', monospace"
+        font-size="6.5"
+        font-weight="400"
+        letter-spacing="2"
+        text-anchor="middle"
+        fill="#005580"
+        opacity="0.9">AION SYSTEM · FROZEN-2.0</text>
+
+  <!-- Corner accents — angular/digital style -->
+  <g stroke="#00F5FF" stroke-width="1" opacity="0.6">
+    <path d="M6,6 L6,16 M6,6 L16,6"/>
+    <path d="M254,6 L254,16 M254,6 L244,6"/>
+    <path d="M6,66 L6,56 M6,66 L16,66"/>
+    <path d="M254,66 L254,56 M254,66 L244,66"/>
+  </g>
+
+  <!-- Scan line accent -->
+  <rect x="66" y="35.5" width="186" height="1" fill="#00F5FF" fill-opacity="0.05"/>
+
+  <line x1="80" y1="26" x2="252" y2="26" stroke="#00F5FF" stroke-width="0.4" opacity="0.2"/>
+  <line x1="80" y1="52" x2="252" y2="52" stroke="#00F5FF" stroke-width="0.4" opacity="0.2"/>
+
+</svg>
 
