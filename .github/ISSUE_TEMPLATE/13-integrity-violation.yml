@@ -1,1 +1,100 @@
+name: "INTEGRITY VIOLATION: Report Bribery, Coercion, or Badge Misuse"
+description: "File a permanent sealed record of an integrity violation against an STP Auditor or audit process."
+title: "[INTEGRITY-VIOLATION] — [Auditor Badge or Name] — [Violation Type]"
+labels: ["integrity-violation", "pending-review"]
+body:
 
+  - type: markdown
+    attributes:
+      value: |
+        ## Sovereign Trace Protocol — Integrity Violation Filing
+
+        This form permanently seals a record of an integrity violation.
+        All fields are public. The record is immutable after submission.
+
+        **You do not need to be a certified auditor to file this.**
+        Anyone who witnesses or experiences a violation may file.
+
+        Violations include: bribery, badge offered outside official process,
+        coercion, falsified audit findings, or any conduct that compromises
+        the integrity of the STP ledger.
+
+        **This record cannot be deleted.** File with accuracy.
+        False filings are also permanently sealed and attributed to the filer.
+
+  - type: input
+    id: accused_badge
+    attributes:
+      label: "Accused Auditor Badge Number (if known)"
+      placeholder: "STP-AUDITOR-XXXX"
+    validations:
+      required: false
+
+  - type: input
+    id: accused_name
+    attributes:
+      label: "Accused Name or Organization"
+      placeholder: "Full name or organization involved"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: violation_type
+    attributes:
+      label: "Violation Type"
+      options:
+        - "Bribery — payment offered to influence audit findings"
+        - "Badge Misuse — badge used outside authorized scope"
+        - "Coercion — pressure applied to alter findings"
+        - "Falsified Findings — audit report does not reflect actual review"
+        - "Unauthorized Badge Transfer — badge sold or given to another party"
+        - "Annual Cap Exceeded — more than 50 audits filed in calendar year"
+        - "Other — describe in evidence section"
+    validations:
+      required: true
+
+  - type: input
+    id: date_of_incident
+    attributes:
+      label: "Date of Incident"
+      placeholder: "March 7, 2026"
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "Evidence and Description"
+      description: "Describe exactly what occurred. Be specific. This is the permanent record."
+      placeholder: "On March 7, 2026, STP-AUDITOR-XXXX offered to certify our outputs without review in exchange for $5,000 paid outside the official system."
+    validations:
+      required: true
+
+  - type: textarea
+    id: file_upload
+    attributes:
+      label: "Evidence Upload"
+      description: "Upload screenshots, communications, or documents supporting the violation claim."
+    validations:
+      required: false
+
+  - type: input
+    id: filer_linkedin
+    attributes:
+      label: "Your LinkedIn Profile URL"
+      description: "Your identity is attached to this filing permanently."
+      placeholder: "https://linkedin.com/in/yourprofile"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: "Declaration"
+      options:
+        - label: "I declare that the information in this filing is accurate to the best of my knowledge."
+          required: true
+        - label: "I understand that false filings are permanently sealed and attributed to me."
+          required: true
+        - label: "I understand this record is public, immutable, and cannot be removed after submission."
+          required: true
