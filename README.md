@@ -36,19 +36,29 @@ See `concept/USE-CASES.md` for the full dual-use architecture.
 
 ## Who Seals What
 
-The stamp function does not care what it seals. A sealed moment is a sealed moment. The SHA-256 proof is the same whether the content is an AI failure report, a research hypothesis, or a journalist's source record.
+The stamp function does not care what it seals. A sealed moment is a sealed moment. The SHA-256 proof is the same whether the content is an AI failure report, a research hypothesis, a hospital incident record, or a contractor's agreed scope.
 
 | Who | What They Seal | Why It Matters |
 |-----|---------------|----------------|
 | **AI auditor** | AI system output failure — exact text + screenshots | Public permanent record. Organizational accountability. Tamper-evident before remediation. |
+| **AI developer / company** | Prompt deployed in a product before launch | If the prompt causes harm later, the sealed record proves what was authorized and when. No dispute about what the system was told to do. |
+| **AI framework builder** | Framework specification before publishing or citing | Priority record for AI methodology. Proves the design existed before any implementation or competing claim. |
+| **AI evaluator** | Benchmark before running it against a model | Prevents benchmarks being quietly modified after results are known. The sealed version is the one that was tested. |
+| **AI trainer** | Dataset declaration before training begins | When model behavior is disputed, the sealed declaration proves what data was authorized. |
 | **Researcher / scientist** | Hypothesis before running the experiment | Proves prediction preceded results. Kills HARKing (Hypothesizing After Results are Known). Every field. No institution required. |
-| **Journalist** | Article draft before publication · Source document received · Evidence chain before going to print | Proves what you had and when you had it. If a source is pressured to recant — the sealed record shows what they said before the pressure. |
-| **Whistleblower** | Evidence before going public | Chain of custody proof. SHA-256 seal proves the document has not been altered since the moment before disclosure. |
+| **Journalist** | Article draft · Source document received · Evidence chain before going to print | Proves what you had and when you had it. If a source is pressured to recant — the sealed record shows what they said before the pressure. |
+| **Whistleblower** | Evidence before going public | Chain of custody proof. Proves the document was not altered between receipt and disclosure. |
 | **Musician / artist / writer** | Creative work before release or submission | Timestamped proof of authorship. Not a patent — but cryptographic priority proof that costs nothing and requires no lawyer. |
-| **Independent researcher** | Findings before peer review | Priority claim before submission. Prevents being scooped or having findings disputed after publication. |
+| **Independent researcher** | Findings before peer review | Priority claim before submission. Prevents being scooped or findings disputed after publication. |
 | **Negotiator** | Your position before a difficult conversation | Seal what you were willing to accept before the other party claims you moved the goalposts. Salary. Settlement. Term sheet. |
-| **Organization** | AI failure log entry before remediation | Immutable pre-remediation record. Proves the organization documented honestly before fixing — not after. |
-| **Developer / builder** | Architecture decision, specification, or design before implementation | Proves what was designed before what was built. Useful when a later implementation diverges and accountability is disputed. |
+| **Contractor / freelancer** | Project scope before work begins | Immutable record of what was agreed. Scope creep disputes resolved by the sealed ledger entry. |
+| **Hospital / clinical team** | Clinical trial data before analysis · Incident report before review | Proves data integrity before results are known. FDA 21 CFR Part 11 compatible architecture. The record cannot be quietly altered after an adverse outcome. |
+| **FOIA researcher / archivist** | Declassified document at point of receipt | Proves the released version has not been altered after declassification. The seal is the chain of custody from institution to researcher. |
+| **NASA / space agency** | Mission parameter file before launch · Research findings before peer review | If a mission fails and a specification dispute arises — the sealed pre-launch document is the ground truth. |
+| **Teacher / educator** | Student work at time of submission | Proves the student submitted exactly this, on this date, unchanged. No dispute about post-deadline alterations. |
+| **Therapist / clinician** | Session notes at time of writing | If notes are subpoenaed, the seal proves they were not altered retroactively. Integrity of the clinical record at the moment of documentation. |
+| **Estate / legal** | Intentions before a will is formalized | Not a legal substitute — but a tamper-evident record of what was wanted, sealed at the moment of decision, before institutional processes began. |
+| **Organization (any)** | AI failure log entry before remediation | Immutable pre-remediation record. Proves the organization documented honestly before fixing — not after. An organization with a documented failure history is more trustworthy than one with a clean record and no ledger. |
 
 The mechanism is always the same. The stake determines how you use the sealed record afterward.
 
