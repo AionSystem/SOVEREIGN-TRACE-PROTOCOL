@@ -1,6 +1,3 @@
-# ISSUE TEMPLATE — creative-priority.yml
-# Copy this content exactly into your .yml file
-
 ```yaml
 name: "Creative Priority Seal — Sovereign Trace Protocol"
 description: "Seal a creative work — music, writing, art, design, code — at the moment of creation. Establishes tamper-evident proof of authorship and priority without a lawyer or institution."
