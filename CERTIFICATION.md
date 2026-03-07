@@ -140,6 +140,57 @@ with initial terms in writing. That exchange is the negotiation.
 
 ---
 
+## TIER 4 — DEFENSE & GOVERNMENT GRADE
+
+**Price: Negotiated · Engagement: Written contract required · Clearance: As applicable**
+
+**Badge:** Defense — `badges/sovereign-certified-badge-defense.svg`
+![Sovereign Certified — Defense Grade](./badges/sovereign-certified-badge-defense.svg)
+
+**What it covers:**
+Full standards-alignment certification for federal agencies, DoD components,
+defense contractors, intelligence community elements, and critical infrastructure
+operators subject to federal AI governance requirements.
+
+Components:
+- All Tier 3 components included
+- Standards Alignment Report — maps deployment against all 18 frameworks in
+  `STANDARDS-ALIGNMENT.md`, delivered as a signed, sealed PDF
+- NIST AI RMF function mapping: GOVERN · MAP · MEASURE · MANAGE
+- CMMC 2.0 control alignment report for DoD contractors
+- EU AI Act Article 12 compliance documentation for dual-jurisdiction deployments
+- FAR/DFARS addendum — federal acquisition regulation compliance layer
+- Monthly ledger reviews (twelve per year) in place of quarterly
+- SCIF-compatible written delivery — all reports delivered in writing,
+  no digital transmission required if specified in engagement terms
+- Named entry in AION-Registry at Defense & Government tier (public)
+- Classified deployment support — engagement terms specify handling of
+  sensitive information consistent with applicable clearance requirements
+
+**Epistemic Debt Statement — Defense Edition:**
+Quarterly epistemic debt statements in place of annual. Includes
+standards compliance delta: which frameworks were satisfied in the prior
+quarter and which require remediation before the next review cycle.
+
+**Who this is for:**
+- Federal agencies implementing OMB M-24-10 AI governance programs
+- DoD components deploying AI under EO 14110 and DoD AI Ethical Principles
+- Defense contractors requiring CMMC 2.0 audit trail documentation
+- Intelligence community elements under ICD 503
+- Critical infrastructure operators under CISA AI Cybersecurity guidance
+- Organizations subject to EU AI Act Article 12 (high-risk AI systems)
+- Any organization where AI failure documentation has national security,
+  regulatory, or treaty-level implications
+
+**How to engage:**
+File a `Certification_Filing.md` issue marked Tier 4 with organization
+name, applicable regulatory frameworks, and AI deployment scope
+(one paragraph). The Architect responds with initial terms in writing.
+Engagements at this tier require a signed written agreement before
+any work commences. No exceptions.
+
+---
+
 ## BADGE REFERENCE
 
 | Tier | Badge Variant | File |
@@ -147,6 +198,7 @@ with initial terms in writing. That exchange is the negotiation.
 | Tier 1 — Basic Verification | Standard | `badges/sovereign-certified-badge.svg` |
 | Tier 2 — Enterprise Certification | Digital | `badges/sovereign-certified-badge-digital.svg` |
 | Tier 3 — Strategic Retainer | Elite | `badges/sovereign-certified-badge-elite.svg` |
+| Tier 4 — Defense & Government Grade | Defense | `badges/sovereign-certified-badge-defense.svg` |
 
 Badge files are hosted in the Sovereign Trace Protocol repository.
 Licensed use only — see `TRADEMARK.md`. Badge license is included in
