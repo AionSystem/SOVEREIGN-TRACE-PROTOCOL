@@ -1,1 +1,126 @@
+name: "AUDIT COMPLETION: File a Certified AI Output Review"
+description: "Submit a completed audit to the Sovereign Trace permanent ledger. Badge number required for verified status."
+title: "[AUDIT-COMPLETE] — [Company Name] — [Auditor Badge or UNVERIFIED]"
+labels: ["audit-completion", "pending-verification"]
+body:
 
+  - type: markdown
+    attributes:
+      value: |
+        ## Sovereign Trace Protocol — Audit Completion Filing
+
+        This form permanently seals a completed AI output audit to the ledger.
+        All fields are public. The record is immutable after submission.
+
+        **Verified auditors:** Enter your STP Auditor badge number below.
+        Your LinkedIn and name will be matched against the verified registry.
+
+        **Unverified submissions** are sealed with status `AUDITOR_UNVERIFIED`.
+        The record is permanent. The warning is permanent.
+
+  - type: input
+    id: auditor_badge
+    attributes:
+      label: "STP Auditor Badge Number"
+      description: "Format: STP-AUDITOR-XXXX. Leave blank if filing as unverified."
+      placeholder: "STP-AUDITOR-0001"
+    validations:
+      required: false
+
+  - type: input
+    id: auditor_linkedin
+    attributes:
+      label: "Auditor LinkedIn Profile URL"
+      description: "Must match the LinkedIn on file for your badge number."
+      placeholder: "https://linkedin.com/in/yourprofile"
+    validations:
+      required: true
+
+  - type: input
+    id: client_name
+    attributes:
+      label: "Client Company / Organization"
+      placeholder: "Acme AI Corp"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tier
+    attributes:
+      label: "Audit Tier Completed"
+      options:
+        - "Snapshot — 10 outputs"
+        - "Standard — 20 outputs"
+        - "Extended — 30 outputs"
+        - "Full — 50 outputs"
+        - "Enterprise — 100 outputs"
+    validations:
+      required: true
+
+  - type: input
+    id: ai_systems
+    attributes:
+      label: "AI System(s) Reviewed"
+      placeholder: "GPT-4o, Claude Sonnet 4.6, Gemini 1.5 Pro"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: sheldon_badge
+    attributes:
+      label: "Sheldon K. Salmon Personal Certification Badge"
+      description: "Only select YES if Sheldon personally reviewed and certified this audit."
+      options:
+        - "No — Standard STP Certified Badge"
+        - "Yes — Sheldon K. Salmon Personally Certified"
+    validations:
+      required: true
+
+  - type: textarea
+    id: findings_summary
+    attributes:
+      label: "Findings Summary"
+      description: "High-level summary of audit findings. This is the permanent public record."
+      placeholder: |
+        10 outputs reviewed. 3 hallucination events identified.
+        2 confidence miscalibrations. 1 scope violation.
+        Remediation plan attached. Organization cleared for Tier 1 certification.
+    validations:
+      required: true
+
+  - type: textarea
+    id: remediation
+    attributes:
+      label: "Remediation Status"
+      description: "What was recommended. What was implemented. What remains open."
+      placeholder: "Hallucination events: prompt engineering fix deployed. Confidence miscalibrations: model swap recommended, pending."
+    validations:
+      required: true
+
+  - type: textarea
+    id: file_upload
+    attributes:
+      label: "Audit Report Upload"
+      description: "Upload the full audit report as PDF or ZIP. This is sealed to the ledger."
+    validations:
+      required: false
+
+  - type: input
+    id: audit_date
+    attributes:
+      label: "Audit Completion Date"
+      placeholder: "March 7, 2026"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: "Auditor Declaration"
+      options:
+        - label: "I certify that this audit was conducted by me personally and the findings reported here are accurate and complete."
+          required: true
+        - label: "I understand this record is permanent, immutable, and publicly visible in the Sovereign Trace ledger."
+          required: true
+        - label: "I understand that filing under a badge number I do not hold is fraud and will be permanently recorded as such."
+          required: true
