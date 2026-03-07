@@ -1,5 +1,5 @@
 name: "Clinical Record Seal — Sovereign Trace Protocol"
-description: "Seal a clinical incident report, trial data declaration, or institutional record at the moment of documentation. Establishes tamper-evident proof that the record existed in this form before any review, remediation, or external pressure."
+description: "Seal a clinical incident report, trial data declaration, or institutional record at the moment of documentation. Establishes tamper-evident proof that the record existed in this form before any review, remediation, or ext pressure."
 title: "[STP-CLINICAL] — [INSTITUTION] — [DATE]"
 labels: ["clinical-record", "pending-seal"]
 assignees: []
