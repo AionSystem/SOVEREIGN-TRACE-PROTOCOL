@@ -1,1 +1,139 @@
+```yaml
+name: "Clinical Record Seal — Sovereign Trace Protocol"
+description: "Seal a clinical incident report, trial data declaration, or institutional record at the moment of documentation. Establishes tamper-evident proof that the record existed in this form before any review, remediation, or external pressure."
+title: "[STP-CLINICAL] — [INSTITUTION] — [DATE]"
+labels: ["clinical-record", "pending-seal"]
+assignees: []
+
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Clinical Record Seal
+
+        ⚠ **HIPAA / PRIVACY NOTICE**
+
+        Do not include patient names, dates of birth, Social Security numbers, addresses,
+        or any other protected health information (PHI) in this submission.
+
+        This form seals an institutional record — an incident report, a trial data declaration,
+        a clinical protocol — not patient data. Describe the event or record in terms of
+        type, context, and significance only.
+
+        **What this seal gives you:**
+        A tamper-evident timestamp proving that this record existed in this exact form
+        before any review process, remediation, or institutional response began.
+        An organization that documents honestly before fixing is more credible than
+        one that documents after.
+
+        **Regulatory note:** This architecture is compatible with FDA 21 CFR Part 11
+        electronic record integrity requirements. See `concept/` documentation for details.
+
+  - type: input
+    id: submitter_name
+    attributes:
+      label: "Submitter Name or Role"
+      description: "Your name or role. If submitting on behalf of an institution, include the institution name."
+      placeholder: "Dr. First Last — [Institution Name] or Clinical Data Officer — [Institution]"
+    validations:
+      required: true
+
+  - type: input
+    id: institution
+    attributes:
+      label: "Institution or Organization"
+      description: "The institution this record belongs to."
+      placeholder: "Full institutional name"
+    validations:
+      required: true
+
+  - type: input
+    id: record_type
+    attributes:
+      label: "Record Type"
+      description: "What kind of clinical or institutional record is being sealed?"
+      placeholder: "Incident Report / Clinical Trial Data Declaration / Protocol Version / Adverse Event / Consent Record / Audit Finding / Other"
+    validations:
+      required: true
+
+  - type: input
+    id: record_date
+    attributes:
+      label: "Date of Record Creation"
+      description: "The date this record was created or the event occurred. Format: YYYY-MM-DD"
+      placeholder: "2026-03-07"
+    validations:
+      required: true
+
+  - type: textarea
+    id: record_description
+    attributes:
+      label: "Record Description"
+      description: "Describe the record precisely — what it covers, what it establishes, what the findings or data are. No PHI. Use de-identified descriptions: event type, department, general context, significance."
+      placeholder: "Describe the record without including any protected health information."
+    validations:
+      required: true
+
+  - type: textarea
+    id: pre_review_status
+    attributes:
+      label: "Status at Time of Sealing"
+      description: "What is the status of this record right now? Before review. Before remediation. Before external audit. This establishes the temporal position of the seal."
+      placeholder: "e.g. Pre-review. Incident occurred [date]. This record documents the event before internal review committee convenes [date]."
+    validations:
+      required: true
+
+  - type: textarea
+    id: regulatory_context
+    attributes:
+      label: "Regulatory Framework (Optional)"
+      description: "What regulatory framework applies to this record? FDA, CMS, HIPAA, IRB, other? This field helps establish the institutional context of the seal."
+      placeholder: "e.g. FDA 21 CFR Part 11 · IRB Protocol #XXXX · CMS Conditions of Participation"
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting_links
+    attributes:
+      label: "Supporting Material Links (Optional)"
+      description: "GitHub CDN URLs for any de-identified supporting files attached to this issue."
+      placeholder: "Paste GitHub CDN URLs only. Do not attach files containing PHI."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: "Declaration — Required"
+      options:
+        - label: "I affirm that this submission contains no protected health information (PHI) as defined by HIPAA."
+          required: true
+        - label: "I affirm that this record accurately represents the institutional state at the time of sealing."
+          required: true
+        - label: "I am authorized to submit this record on behalf of my institution."
+          required: true
+        - label: "I understand this submission is immutable — it cannot be altered after sealing."
+          required: true
+        - label: "I understand that the Sovereign Trace Protocol does not provide legal or regulatory advice — it provides a tamper-evident timestamp."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## What Happens Next
+
+        1. PHI check — The Sovereign Trace Protocol office reviews for any inadvertent PHI before sealing.
+        2. Completeness check — Reviewed for completeness.
+        3. Sealing — Your submission is sealed with a FROZEN-2.0 triple-time cryptographic stamp.
+        4. Ledger entry — Your submission enters the Sovereign Trace ledger with your institution name, seal timestamp, and SHA-256 hash.
+        5. Notification — You receive your ledger entry ID and SHA-256 hash for institutional records.
+
+        The protocol does not evaluate clinical merit or regulatory compliance.
+        It seals the record's existence at this moment — before any process that might alter it.
+        The seal is permanent. The seal is the pre-review record.
+
+        Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
+```
 
