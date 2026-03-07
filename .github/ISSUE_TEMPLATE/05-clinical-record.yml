@@ -1,4 +1,3 @@
-```yaml
 name: "Clinical Record Seal — Sovereign Trace Protocol"
 description: "Seal a clinical incident report, trial data declaration, or institutional record at the moment of documentation. Establishes tamper-evident proof that the record existed in this form before any review, remediation, or external pressure."
 title: "[STP-CLINICAL] — [INSTITUTION] — [DATE]"
