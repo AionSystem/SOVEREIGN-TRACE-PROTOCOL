@@ -1,1 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="260" height="72" viewBox="0 0 260 72">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1c1c2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d0d1a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#F5C542;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C8960C;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#C8960C;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:0.9" />
+    </linearGradient>
+    <linearGradient id="divider" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#FFD700;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:0" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="goldglow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="rounded">
+      <rect width="260" height="72" rx="6" ry="6"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="260" height="72" rx="6" ry="6" fill="url(#bg)"/>
+
+  <!-- Subtle star field -->
+  <g opacity="0.4">
+    <circle cx="15" cy="12" r="0.8" fill="#ffffff"/>
+    <circle cx="42" cy="8" r="0.5" fill="#ffffff"/>
+    <circle cx="78" cy="15" r="0.6" fill="#FFD700"/>
+    <circle cx="230" cy="10" r="0.7" fill="#ffffff"/>
+    <circle cx="248" cy="20" r="0.5" fill="#ffffff"/>
+    <circle cx="220" cy="60" r="0.6" fill="#FFD700"/>
+    <circle cx="18" cy="58" r="0.5" fill="#ffffff"/>
+    <circle cx="55" cy="65" r="0.4" fill="#ffffff"/>
+  </g>
+
+  <!-- Gold outer border -->
+  <rect width="260" height="72" rx="6" ry="6" fill="none" stroke="url(#border)" stroke-width="1.5"/>
+
+  <!-- Inner border accent -->
+  <rect x="3" y="3" width="254" height="66" rx="4" ry="4" fill="none" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+
+  <!-- Shield icon zone (left panel) -->
+  <rect x="0" y="0" width="62" height="72" rx="0" ry="0" fill="#FFD700" fill-opacity="0.06" clip-path="url(#rounded)"/>
+
+  <!-- Shield SVG path (centered in left panel) -->
+  <g transform="translate(31, 36)" filter="url(#goldglow)">
+    <path d="M0,-20 L14,-14 L14,2 Q14,16 0,22 Q-14,16 -14,2 L-14,-14 Z"
+          fill="none" stroke="url(#gold)" stroke-width="1.8" stroke-linejoin="round"/>
+    <!-- Inner shield detail -->
+    <path d="M0,-13 L9,-8.5 L9,2 Q9,11 0,16 Q-9,11 -9,2 L-9,-8.5 Z"
+          fill="url(#gold)" fill-opacity="0.12"/>
+    <!-- Checkmark -->
+    <path d="M-4,1 L-1,5 L5,-4" fill="none" stroke="url(#gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Vertical divider -->
+  <rect x="62" y="8" width="1" height="56" fill="url(#divider)"/>
+
+  <!-- Right panel text -->
+  <!-- Top label: SOVEREIGN TRACE PROTOCOL -->
+  <text x="166" y="22"
+        font-family="'Georgia', 'Times New Roman', serif"
+        font-size="7.5"
+        font-weight="400"
+        letter-spacing="3"
+        text-anchor="middle"
+        fill="#C8960C"
+        opacity="0.85">SOVEREIGN TRACE PROTOCOL</text>
+
+  <!-- Main text: CERTIFIED -->
+  <text x="166" y="46"
+        font-family="'Georgia', 'Times New Roman', serif"
+        font-size="19"
+        font-weight="700"
+        letter-spacing="4"
+        text-anchor="middle"
+        fill="url(#gold)"
+        filter="url(#glow)">CERTIFIED</text>
+
+  <!-- Bottom label: AION SYSTEM · FROZEN-2.0 -->
+  <text x="166" y="61"
+        font-family="'Georgia', 'Times New Roman', serif"
+        font-size="7"
+        font-weight="400"
+        letter-spacing="2.5"
+        text-anchor="middle"
+        fill="#8a7a3a"
+        opacity="0.9">AION SYSTEM · FROZEN-2.0</text>
+
+  <!-- Corner accent marks -->
+  <g stroke="#FFD700" stroke-width="1" opacity="0.5">
+    <path d="M6,6 L6,14 M6,6 L14,6"/>
+    <path d="M254,6 L254,14 M254,6 L246,6"/>
+    <path d="M6,66 L6,58 M6,66 L14,66"/>
+    <path d="M254,66 L254,58 M254,66 L246,66"/>
+  </g>
+
+  <!-- Subtle horizontal rule under main label -->
+  <line x1="80" y1="26" x2="252" y2="26" stroke="#FFD700" stroke-width="0.4" opacity="0.25"/>
+  <line x1="80" y1="52" x2="252" y2="52" stroke="#FFD700" stroke-width="0.4" opacity="0.25"/>
+
+</svg>
+
+
+
+
 
