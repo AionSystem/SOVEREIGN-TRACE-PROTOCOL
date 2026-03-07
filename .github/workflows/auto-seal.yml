@@ -52,9 +52,52 @@ jobs:
             echo "template_type=scope-anchor" >> $GITHUB_OUTPUT
           elif echo "$ISSUE_TITLE" | grep -q "\[STP-FORESIGHT\]"; then
             echo "template_type=foresight-seal" >> $GITHUB_OUTPUT
+          elif echo "$ISSUE_TITLE" | grep -q "\[WEBEATER\]"; then
+            echo "template_type=webeater-link" >> $GITHUB_OUTPUT
           else
             echo "template_type=general-trace" >> $GITHUB_OUTPUT
           fi
+
+          # REF_SEAL validation — WEBEATER only
+          if echo "$ISSUE_TITLE" | grep -q "\[WEBEATER\]"; then
+            REF_SEAL=$(echo "$ISSUE_BODY" | grep -oE '[a-f0-9]{64}' | head -1)
+            if [ -z "$REF_SEAL" ]; then
+              echo "ref_seal_valid=false" >> $GITHUB_OUTPUT
+            else
+              echo "ref_seal_valid=true" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "ref_seal_valid=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Reject invalid REF_SEAL
+        if: steps.issue.outputs.ref_seal_valid == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              issue_number: context.issue.number,
+              body: [
+                '## ❌ WEBEATER LINK REJECTED — Invalid Reference Seal',
+                '',
+                'The **Reference Seal** field must contain a valid 64-character SHA-256 hex string.',
+                '',
+                'This submission was not stamped. No ledger entry was created.',
+                '',
+                'Please close this issue and resubmit with a valid seal from a previously sealed trace.',
+                '',
+                '---',
+                '*Sovereign Trace Protocol · FROZEN-2.0 · Sheldon K. Salmon*'
+              ].join('\n')
+            });
+        
+      - name: Halt on invalid REF_SEAL
+        if: steps.issue.outputs.ref_seal_valid == 'false'
+        run: |
+          echo "REF_SEAL validation failed. Halting pipeline."
+          exit 1
 
       - name: Run FROZEN-2.0 stamp
         id: stamp
