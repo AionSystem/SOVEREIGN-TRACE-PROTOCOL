@@ -1,5 +1,5 @@
 name: "Evidence Chain Seal — Sovereign Trace Protocol"
-description: "Seal a document, source communication, or evidence chain at the moment of receipt or creation. For journalists, whistleblowers, and investigators establishing tamper-evident chain of custody."
+description: "Seal a document, source communication, or evidence chain at the moment of receipt. Establishes tamper-evident chain of custody."
 title: "[STP-EVIDENCE] — [TYPE] — [DATE]"
 labels: ["evidence-chain", "pending-seal"]
 assignees: []
@@ -11,20 +11,19 @@ body:
       value: |
         ## Evidence Chain Seal
 
-        This form seals a document, communication, or piece of evidence at the exact moment you received it or created it.
+        This form seals a document, communication, or piece of evidence at the exact moment you received or created it.
 
         **The seal proves:** You had this material, in this exact form, on this exact date. It has not been altered since.
 
-        **Source protection:** You are not required to name your source. The seal applies to the content and the timestamp — not to source identity. What you disclose in this form is what enters the permanent record. Seal only what you intend to make permanent.
+        **Source protection:** You are not required to name your source. Seal only what you intend to make permanent.
 
-        **This is chain of custody infrastructure — not a complaint form.**
-        If a source is later pressured to recant, if a document is disputed, if the timeline of events is challenged — the seal is your ground truth.
+        This is chain of custody infrastructure — not a complaint form.
 
   - type: input
     id: submitter_name
     attributes:
       label: "Your Name or Publication (Optional)"
-      description: "If provided, becomes part of the permanent record. May be left blank. An anonymous sealed record still establishes chain of custody."
+      description: "If provided, becomes part of the permanent record. Leave blank for anonymous chain of custody."
       placeholder: "Name, publication, or organization — or leave blank"
     validations:
       required: false
@@ -34,7 +33,7 @@ body:
     attributes:
       label: "Evidence Type"
       description: "What kind of material is being sealed?"
-      placeholder: "Document / Source Communication / Recording Transcript / Photograph / Data / Other"
+      placeholder: "Document / Source Communication / Transcript / Photograph / Data / Other"
     validations:
       required: true
 
@@ -42,7 +41,7 @@ body:
     id: receipt_date
     attributes:
       label: "Date Material Was Received or Created"
-      description: "The date you received this material or it was created. Format: YYYY-MM-DD"
+      description: "The date you received or created this material. Format: YYYY-MM-DD"
       placeholder: "2026-03-07"
     validations:
       required: true
@@ -51,7 +50,7 @@ body:
     id: material_description
     attributes:
       label: "Description of Material"
-      description: "Describe the material precisely. Do not include content that would endanger a source. Describe what it is, what it pertains to, and what it shows — at the level of detail appropriate for a public permanent record."
+      description: "Describe what it is, what it pertains to, and what it shows. No source-identifying information unless intended for the permanent record."
       placeholder: "Describe the material and what it establishes."
     validations:
       required: true
@@ -60,26 +59,25 @@ body:
     id: source_context
     attributes:
       label: "Context (Optional)"
-      description: "Any context about how this material was obtained, its relevance to a story or investigation, or its significance. Do not include source-identifying information unless you intend it to be part of the permanent record."
+      description: "How was this material obtained? Do not include source-identifying information unless intended for the permanent record."
       placeholder: "Context for the material — optional."
     validations:
       required: false
 
-  - type: textarea
+  - type: input
     id: disclosure_timeline
     attributes:
-      label: "Intended Disclosure or Publication Timeline (Optional)"
-      description: "When do you plan to publish or disclose? This field helps establish that the seal predates the public record."
-      placeholder: "e.g. Pre-publication. Expected publication date: April 2026. Or: Ongoing investigation — no publication date set."
+      label: "Intended Disclosure Timeline (Optional)"
+      description: "When do you plan to publish or disclose? Establishes that the seal predates the public record."
+      placeholder: "Pre-publication / Expected: April 2026 / Ongoing investigation"
     validations:
       required: false
 
-  - type: textarea
-    id: supporting_links
+  - type: upload
+    id: evidence_files
     attributes:
-      label: "Supporting Material Links (Optional)"
-      description: "If you have uploaded files, screenshots, or documents to this issue — include the GitHub CDN URLs here so they are bound into the sealed record."
-      placeholder: "Paste GitHub CDN URLs for any attached files."
+      label: "Evidence Files (Optional)"
+      description: "Upload documents, screenshots, or files. These become part of the sealed record."
     validations:
       required: false
 
@@ -88,11 +86,11 @@ body:
     attributes:
       label: "Declaration"
       options:
-        - label: "I affirm that the description in this submission accurately represents the material I received or created on the stated date."
+        - label: "I affirm this description accurately represents the material I received or created on the stated date."
           required: true
         - label: "I understand this submission is immutable — it cannot be altered after sealing."
           required: true
-        - label: "I understand that the Sovereign Trace Protocol does not verify the authenticity of the underlying material — it seals my account of receiving it."
+        - label: "I understand the protocol seals my account of receiving the material — not the authenticity of the material itself."
           required: true
         - label: "I have not included information in this submission that would endanger any individual."
           required: true
@@ -103,13 +101,11 @@ body:
         ---
         ## What Happens Next
 
-        1. Completeness check — The Sovereign Trace Protocol office reviews for completeness.
-        2. Sealing — Your submission is sealed with a FROZEN-2.0 triple-time cryptographic stamp.
-        3. Ledger entry — Your submission enters the Sovereign Trace ledger with the seal timestamp and SHA-256 hash.
-        4. Notification — You receive your ledger entry ID and SHA-256 hash for your own records.
+        1. Completeness check — Reviewed for completeness.
+        2. Sealing — Sealed with a FROZEN-2.0 triple-time cryptographic stamp. Permanent.
+        3. Ledger entry — Enters the Sovereign Trace ledger with timestamp and SHA-256 hash.
+        4. Notification — You receive your ledger entry ID and SHA-256 hash.
 
-        The protocol does not evaluate the truth of the underlying material. It seals your account of it at this moment.
         The seal is permanent. The seal is the chain of custody.
 
         Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
-
