@@ -1,1 +1,61 @@
+name: "WEBEATER: Weave a Connection"
+description: "Seal a cryptographic link between two entities in the Sovereign Trace ledger."
+title: "[WEBEATER] Link: [Source] → [Target]"
+labels: ["webeater-link", "pending-seal"]
+body:
+  - type: input
+    id: source_id
+    attributes:
+      label: "Source Identity"
+      description: "Your name, organization, or GitHub handle."
+      placeholder: "Sheldon K. Salmon"
+    validations:
+      required: true
 
+  - type: input
+    id: target_id
+    attributes:
+      label: "Target Identity"
+      description: "The name or organization you are linking to."
+      placeholder: "OpenAI"
+    validations:
+      required: true
+
+  - type: input
+    id: ref_seal
+    attributes:
+      label: "Reference Seal"
+      description: "The 64-character SHA-256 seal of the trace you are linking to. Must be exact."
+      placeholder: "19276f3fbdd02960..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: relation_type
+    attributes:
+      label: "Nature of Connection"
+      description: "Select the type of relationship this link represents."
+      options:
+        - "Audit & Certification"
+        - "Mentorship / Reference"
+        - "Contribution / Collaboration"
+        - "Sovereign Acknowledgment"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "Contextual Evidence"
+      description: "Briefly describe the significance of this link. What does it record?"
+      placeholder: "Sealed AI failure report for [system] on [date]. Link establishes audit chain."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: "Declaration"
+      options:
+        - label: "I confirm the Reference Seal above belongs to a real, previously sealed trace. I understand a false reference invalidates this link."
+          required: true
