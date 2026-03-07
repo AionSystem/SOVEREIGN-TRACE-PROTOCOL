@@ -1,6 +1,6 @@
 # CERTIFICATION.md — Sovereign Trace Protocol Certification
 
-![Sovereign Certified](./badges/sovereign-certified-badge-v2.svg)
+[![Sovereign Certified](./badges/sovereign-certified-badge-v2.svg)
 
 **Sovereign Trace Protocol · Version 2.0.0**
 **Author: Sheldon K. Salmon — AI Reliability & AGI Architect**
