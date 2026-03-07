@@ -91,6 +91,11 @@ No prior timestamping protocol includes a structured, legal-declaration-bearing 
 **6 — Issue-template submission layer with upload-native evidence binding.**
 The use of GitHub Issue templates with native file upload fields as the submission interface for a cryptographic ledger — binding uploaded evidence files to a sealed text record — is a novel combination of existing GitHub infrastructure and cryptographic permanence architecture.
 
+**7. Cryptographic link layer (WEBEATER) — REF_SEAL field binding a new stamp
+   to a previous SHA-256, creating a verifiable chain of significance between
+   two entities without requiring a centralized authority. Specified March 7, 2026.
+
+
 ---
 
 ## Date of Introduction
