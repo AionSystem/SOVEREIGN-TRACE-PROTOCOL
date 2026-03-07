@@ -1,5 +1,5 @@
 name: "General Trace — Sovereign Trace Protocol"
-description: "Seal any observation, decision, position, or record that does not fit another template. If you know what you need to seal but it does not belong in a specific category — this is your form."
+description: "Seal any observation, decision, or record that does not fit another template. The stamp does not care what it seals."
 title: "[STP-TRACE] — [CATEGORY] — [DATE]"
 labels: ["general-trace", "pending-seal"]
 assignees: []
@@ -11,18 +11,13 @@ body:
       value: |
         ## General Trace Seal
 
-        This form is for anything that needs to be sealed permanently and does not fit
-        a more specific template.
+        This form is for anything that needs to be sealed permanently and does not fit a more specific template.
 
-        The stamp function does not care what it seals.
-        A sealed moment is a sealed moment.
+        The stamp function does not care what it seals. A sealed moment is a sealed moment.
 
         **Write exactly what is true right now.**
         No narrative arc. No hedging beyond what is genuinely uncertain.
-        Present-moment. Exact. Specific.
-
-        The seal will bind to whatever you write here.
-        Make it worth sealing.
+        Present-moment. Exact. Specific. Make it worth sealing.
 
   - type: input
     id: submitter_name
@@ -37,8 +32,8 @@ body:
     id: category
     attributes:
       label: "Category"
-      description: "What kind of trace is this? Choose the closest description."
-      placeholder: "Personal observation / Decision record / NASA / Government record / Architectural decision / Other"
+      description: "What kind of trace is this?"
+      placeholder: "Personal observation / Decision record / Government record / Architectural decision / Other"
     validations:
       required: true
 
@@ -55,7 +50,7 @@ body:
     id: trace_entry
     attributes:
       label: "Your Trace Entry"
-      description: "Write exactly what is true right now. Present-moment. Exact. No narrative arc. This is what the seal will bind to — make it specific enough to be unambiguous later."
+      description: "Write exactly what is true right now. Present-moment. Exact. This is what the seal binds to."
       placeholder: "Write your trace entry here. Exact. Specific. Present-moment."
     validations:
       required: true
@@ -64,17 +59,16 @@ body:
     id: why_this_matters
     attributes:
       label: "Why This Moment Deserves Sealing (Optional)"
-      description: "Optional context. Why does this need to be permanently recorded? This field is for your own clarity — not required for the seal to be valid."
+      description: "Optional context. Why does this need to be permanently recorded?"
       placeholder: "Why does this moment matter enough to seal?"
     validations:
       required: false
 
-  - type: textarea
-    id: supporting_links
+  - type: upload
+    id: supporting_files
     attributes:
-      label: "Supporting Files or Links (Optional)"
-      description: "GitHub CDN URLs for any files attached to this issue. These URLs become part of the sealed record."
-      placeholder: "Paste GitHub CDN URLs for any attached files."
+      label: "Supporting Files (Optional)"
+      description: "Upload any files relevant to this trace. These become part of the sealed record."
     validations:
       required: false
 
@@ -83,7 +77,7 @@ body:
     attributes:
       label: "Declaration"
       options:
-        - label: "I affirm that this entry accurately represents my observation, position, or record at the time of sealing."
+        - label: "I affirm this entry accurately represents my observation, position, or record at the time of sealing."
           required: true
         - label: "I understand this submission is immutable — it cannot be altered after sealing."
           required: true
@@ -94,12 +88,11 @@ body:
         ---
         ## What Happens Next
 
-        1. Completeness check — The Sovereign Trace Protocol office reviews for completeness.
-        2. Sealing — Your submission is sealed with a FROZEN-2.0 triple-time cryptographic stamp.
-        3. Ledger entry — Your submission enters the Sovereign Trace ledger with the seal timestamp and SHA-256 hash.
+        1. Completeness check — Reviewed for completeness.
+        2. Sealing — Sealed with a FROZEN-2.0 triple-time cryptographic stamp. Permanent.
+        3. Ledger entry — Enters the Sovereign Trace ledger with timestamp and SHA-256 hash.
         4. Notification — You receive your ledger entry ID and SHA-256 hash.
 
         The seal is permanent. The seal is the resolution.
 
         Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
-
