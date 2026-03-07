@@ -14,9 +14,11 @@
 [![Legal Posture](https://img.shields.io/badge/LEGAL-Posture%20Active-8B0000?style=flat-square)](./LEGAL-POSTURE.md)
 
 **Author:** Sheldon K. Salmon — AI Reliability & AGI Architect
-**Session:** March 3, 2026 — AION-BRAIN
+**Session:** March 2026 — AION-BRAIN
 **Stack:** DUAL-HELIX v2.0 · TOPOS v0.3 · VELA-C v0.3 · CPA-001 v2.2
 **Convergence:** M-NASCENT
+
+> **→ [QUICKSTART.md](./QUICKSTART.md) — pip install + first seal in under 5 minutes**
 
 ---
 
@@ -31,6 +33,27 @@
 **Same mechanism. Same FROZEN-2.0 stamp function. Same SHA-256 seal. Different stakes.**
 
 See `concept/USE-CASES.md` for the full dual-use architecture.
+
+---
+
+## Quick Install
+
+```bash
+pip install sovereign-trace
+```
+
+```python
+from sovereign_trace_stamp import stamp, display, verify
+
+ts = stamp("Hypothesis sealed before experiment begins.")
+print(display(ts))
+# 📅 Gregorian:  March 7, 2026
+# 🌑 Hebrew:     17 Adar 5786
+# 🌀 Dreamspell: Day 1, Solar Moon 9/13
+# 🔒 Seal:       a3f9c12e7d...
+```
+
+**→ Full install guide, usage examples, and what not to do: [QUICKSTART.md](./QUICKSTART.md)**
 
 ---
 
@@ -73,42 +96,13 @@ The answer — a frozen, tamper-evident, triple-time cryptographic seal — turn
 
 ---
 
-## Quick Start
-
-```bash
-pip install sovereign-trace
-```
-
-```python
-from sovereign_trace_stamp import stamp, display, verify
-
-# Seal a trace entry
-ts = stamp("Completed the stamp function. It passed all tests on first run.")
-
-# Display in all three calendar systems
-print(display(ts))
-# 📅 Gregorian:  March 3, 2026
-# 🌑 Hebrew:     14 Adar 5786
-# 🌀 Dreamspell: Day 25, Galactic Moon 8/13
-# 🔒 Seal:       19276f3fbdd02960...
-
-# Verify integrity
-verify("Completed the stamp function. It passed all tests on first run.", ts)
-# True — entry unchanged
-```
-
-**Run self-test:** `python sovereign_trace_stamp.py --test`
-All 35 checks must pass before any deployment is considered valid.
-
----
-
 ## The Triple-Time Seal
 
 | System | Example | What It Claims |
 |--------|---------|----------------|
-| **Gregorian** | March 3, 2026 | Civic time — the calendar of current civic infrastructure |
-| **Hebrew lunisolar** | 14 Adar 5786 | Theological-historical continuity — 5786 years of counted time |
-| **13 Moon Dreamspell** | Day 25, Galactic Moon 8/13 | Rhythmic time — 13 moons × 28 days, galactic count |
+| **Gregorian** | March 7, 2026 | Civic time — the calendar of current civic infrastructure |
+| **Hebrew lunisolar** | 17 Adar 5786 | Theological-historical continuity — 5786 years of counted time |
+| **13 Moon Dreamspell** | Day 1, Solar Moon 9/13 | Rhythmic time — 13 moons × 28 days, galactic count |
 
 The triple stamp is not redundancy. It is a claim: this moment of human significance deserves to be held simultaneously in every major civilizational framework for measuring *when*.
 
@@ -129,9 +123,34 @@ Structured submissions are made through GitHub Issues using the official templat
 | `07-general-trace.yml` | Any observation, decision, or record that doesn't fit another template |
 | `08-foresight-seal.yml` | Dated professional prediction before it resolves — foresight track record |
 | `09-webeater-link.yml` | Cryptographic link between two entities — binds a new seal to an existing SHA-256 |
+| `10-audit-request.yml` | Request a certified audit — Stripe payment required, Mon–Tue intake only |
+| `11-audit-completion.yml` | STP Certified Auditor files a completed audit to the ledger |
+| `12-auditor-application.yml` | Apply to become an STP Certified Auditor — skills-based, no credentials required |
+| `13-integrity-violation.yml` | Report badge misuse, bribery, or coercion — permanent ledger record |
 
 All templates include: native file upload, SHA-256 binding, declaration checkbox, and legal compliance language.
 See `concept/USE-CASES.md` for guidance on which template fits your submission.
+
+---
+
+## Certification
+
+| Tier | Scope | Badge | Price |
+|------|-------|-------|-------|
+| **Tier 1 — Basic Verification** | Single failure stamp check | Standard | $2,500 |
+| **Tier 2 — Enterprise Certification** | Full audit + badge license | Digital | $25,000/yr |
+| **Tier 3 — Strategic Retainer** | Quarterly reviews + epistemic debt statement | Elite | $100,000+/yr |
+| **Tier 4 — Defense & Government Grade** | Full standards alignment + monthly reviews | Defense | Negotiated |
+
+**Intake: Monday and Tuesday only.** Submissions on any other day are voided and non-refundable.
+**Delivery: Weekends.** Payment via Stripe — transaction code required at filing.
+
+See `CERTIFICATION.md` and `TERMS-OF-SERVICE.md` for full process and terms.
+Governing law: State of New York, United States. Arbitration: JAMS Commercial Rules.
+
+**STP Certified Auditors** — independent professionals authorized to conduct and file audits
+directly to the ledger under their own badge. Apply via `12-auditor-application.yml`.
+All auditor badges verified live against `.github/verified-auditors.json` on every submission.
 
 ---
 
@@ -155,19 +174,6 @@ If a defect is found: retire the frozen file, document the defect, build FROZEN-
 
 Plain-language guide: `LICENSE-EXPLANATION.md`
 Full legal coverage: `LEGAL-POSTURE.md`
-
----
-
-## Certification
-
-| Tier | Scope | Price |
-|------|-------|-------|
-| Basic Verification | Single failure stamp check | $2,500 |
-| Enterprise Certification | Full audit + Sovereign Certified badge | $25,000/yr |
-| Strategic Retainer | Quarterly reviews + epistemic debt statement | $100,000+ |
-
-See `CERTIFICATION.md` and `TERMS-OF-SERVICE.md` for full process and terms.
-Governing law: State of New York, United States. Arbitration: JAMS Commercial Rules.
 
 ---
 
@@ -195,9 +201,11 @@ Optional resonance signature mechanism — zero count display
 sovereign-trace-protocol/
 │
 ├── README.md
+├── QUICKSTART.md                               ← pip install + first seal
 ├── pyproject.toml
 │
 ├── .github/
+│   ├── verified-auditors.json                  ← STP Certified Auditor registry
 │   ├── ISSUE_TEMPLATE/
 │   │   ├── config.yml                          ← blank issues disabled, contact links
 │   │   ├── 01-ai-failure.yml                   ← AI output failure, identity verified
@@ -207,10 +215,23 @@ sovereign-trace-protocol/
 │   │   ├── 05-clinical-record.yml              ← clinical record, PHI gate active
 │   │   ├── 06-scope-anchor.yml                 ← agreed scope before work begins
 │   │   ├── 07-general-trace.yml                ← any moment that deserves sealing
-│   │   └── 08-foresight-seal.yml               ← dated prediction before it resolves
-│   │   └── 09-webeater-link.yml                ← cryptographic link between two sealed entities
+│   │   ├── 08-foresight-seal.yml               ← dated prediction before it resolves
+│   │   ├── 09-webeater-link.yml                ← cryptographic link between two sealed entities
+│   │   ├── 10-audit-request.yml                ← certified audit request, Mon–Tue intake
+│   │   ├── 11-audit-completion.yml             ← auditor files completed audit to ledger
+│   │   ├── 12-auditor-application.yml          ← apply to become STP Certified Auditor
+│   │   └── 13-integrity-violation.yml          ← report badge misuse or bribery
 │   └── workflows/
-│       └── python-publish.yml
+│       ├── python-publish.yml
+│       ├── auto-seal.yml                       ← auto-seals all pending-seal issues
+│       └── audit-verify.yml                    ← verifies auditor badge on completion
+│
+├── badges/
+│   ├── sovereign-certified-badge-v2.svg        ← Tier 1 Standard
+│   ├── sovereign-certified-badge-digital-v2.svg ← Tier 2 Digital
+│   ├── sovereign-certified-badge-elite-v2.svg  ← Tier 3 Elite
+│   ├── sovereign-certified-badge-defense-v2.svg ← Tier 4 Defense & Government
+│   └── stp-auditor-badge-v2.svg               ← STP Certified Auditor
 │
 ├── concept/
 │   ├── GLOSSARY.md                             ← plain-language term definitions
@@ -218,6 +239,7 @@ sovereign-trace-protocol/
 │   ├── DUAL-AUDIENCE-ARCHITECTURE.md           ← inward permanence vs outward accountability
 │   ├── TRUST-WITHOUT-IDENTITY.md               ← engineering lineage + Stage 3/4 foundations
 │   ├── PRIOR-ART.md                            ← defensive IP documentation, March 7, 2026
+│   ├── WEBEATER-SPEC.md                        ← cryptographic link layer specification
 │   ├── SOVEREIGN-TRACE-v0.1-SPEC.md
 │   └── SOVEREIGN-TRACE-v0.2-SPEC.md
 │
@@ -245,7 +267,7 @@ sovereign-trace-protocol/
 ## Origin
 
 Author: Sheldon K. Salmon — AI Reliability & AGI Architect
-Session: March 3, 2026 — AION-BRAIN
+Session: March 2026 — AION-BRAIN
 Stack: DUAL-HELIX v2.0 · TOPOS v0.3 · VELA-C v0.3 · CPA-001 v2.2
 
 *The stamp is permanent. The stamp is the resolution.*
