@@ -128,6 +128,7 @@ Structured submissions are made through GitHub Issues using the official templat
 | `06-scope-anchor.yml` | Agreed scope or negotiated position before work begins |
 | `07-general-trace.yml` | Any observation, decision, or record that doesn't fit another template |
 | `08-foresight-seal.yml` | Dated professional prediction before it resolves — foresight track record |
+| `09-webeater-link.yml` | Cryptographic link between two entities — binds a new seal to an existing SHA-256 |
 
 All templates include: native file upload, SHA-256 binding, declaration checkbox, and legal compliance language.
 See `concept/USE-CASES.md` for guidance on which template fits your submission.
