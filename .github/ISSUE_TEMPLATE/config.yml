@@ -1,1 +1,46 @@
+# .github/ISSUE_TEMPLATE/config.yml
+# Copy this content exactly into your config.yml file
+
+```yaml
+blank_issues_enabled: false
+contact_links:
+  - name: Sovereign Trace Protocol — Documentation
+    url: https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL
+    about: Read the full protocol documentation before submitting.
+  - name: Not sure which template to use?
+    url: https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/blob/main/concept/USE-CASES.md
+    about: See the full use case list to find the right submission type.
+  - name: Contact the Architect
+    url: mailto:aionsystem2026@gmail.com
+    about: For questions about the protocol, certification inquiries, or enterprise submissions.
+```
+
+---
+
+## Notes
+
+**`blank_issues_enabled: false`**
+People cannot open a blank issue. Every submission must use a template.
+This is correct for STP — unstructured submissions cannot be properly sealed.
+
+**Contact links appear at the bottom of the template chooser.**
+They are not issue templates — they are external links shown alongside the templates.
+Use them to guide people who are confused about which template fits their submission.
+
+**File location:**
+```
+.github/
+└── ISSUE_TEMPLATE/
+    ├── config.yml                  ← this file
+    ├── 01-ai-failure.yml
+    ├── 02-research-priority.yml
+    ├── 03-evidence-chain.yml
+    ├── 04-creative-priority.yml
+    ├── 05-clinical-record.yml
+    ├── 06-scope-anchor.yml
+    └── 07-general-trace.yml
+```
+
+**Update your template filenames** to use the numbered prefix format above
+so they appear in the correct order in the chooser.
 
