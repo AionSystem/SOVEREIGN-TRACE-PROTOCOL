@@ -26,7 +26,7 @@ body:
     id: submitter_name
     attributes:
       label: "Your Full Legal Name"
-      description: "As it appears on government-issued ID. This becomes part of the permanent record."
+      description: "As it appears on government-issued ID. Becomes part of the permanent record."
       placeholder: "First Last"
     validations:
       required: true
@@ -35,7 +35,7 @@ body:
     id: submitter_email
     attributes:
       label: "Your Email Address"
-      description: "A DocuSign identity verification link will be sent here. Submission is not complete until identity is verified."
+      description: "A DocuSign identity verification link will be sent here. Submission incomplete until verified."
       placeholder: "you@example.com"
     validations:
       required: true
@@ -71,7 +71,7 @@ body:
     id: exact_output
     attributes:
       label: "Exact AI Output"
-      description: "Copy the exact text or describe the exact output. Do not paraphrase. If the output is visual, describe it precisely."
+      description: "Copy the exact text. Do not paraphrase. If visual, describe precisely."
       placeholder: "Paste the exact output here."
     validations:
       required: true
@@ -89,7 +89,7 @@ body:
     id: failure_description
     attributes:
       label: "Failure Description"
-      description: "What is the specific failure? Hallucination, false confidence, suppressed uncertainty, harmful output, other. Be precise."
+      description: "What is the specific failure? Hallucination, false confidence, harmful output, other."
       placeholder: "Describe the failure clearly and specifically."
     validations:
       required: true
@@ -98,17 +98,25 @@ body:
     id: harm_or_risk
     attributes:
       label: "Harm Occurred or Risk Created"
-      description: "What harm resulted or what risk was created by this output? If no harm yet, describe the potential exposure."
+      description: "What harm resulted or what risk was created? If no harm yet, describe the exposure."
       placeholder: "Describe actual or potential harm."
     validations:
       required: true
 
-  - type: textarea
-    id: evidence
+  - type: upload
+    id: screenshots
     attributes:
-      label: "Supporting Evidence"
-      description: "Links, screenshots, documents, or any other evidence supporting this submission. Attach files if available."
-      placeholder: "Links or descriptions of supporting evidence."
+      label: "Screenshots / Evidence Files"
+      description: "Upload screenshots of the AI output, interface, or any supporting evidence."
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_links
+    attributes:
+      label: "Additional Evidence Links (Optional)"
+      description: "Any external links supporting this submission."
+      placeholder: "Links to supporting evidence."
     validations:
       required: false
 
@@ -120,15 +128,15 @@ body:
       options:
         - label: "I affirm that the information in this submission is true and accurate to the best of my knowledge."
           required: true
-        - label: "I understand that my full legal name will be permanently attached to this submission in the Sovereign Trace ledger."
+        - label: "I understand that my full legal name will be permanently attached to this submission."
           required: true
         - label: "I understand that this submission is immutable — it cannot be altered or deleted after sealing."
           required: true
-        - label: "I understand that submitting false or materially misleading information exposes me to civil and criminal liability."
+        - label: "I understand that submitting false or misleading information exposes me to civil and criminal liability."
           required: true
         - label: "I consent to identity verification via DocuSign before this submission is sealed."
           required: true
-        - label: "I am not submitting this anonymously. My identity is attached to this record."
+        - label: "I am not submitting anonymously. My identity is attached to this record."
           required: true
 
   - type: markdown
@@ -137,12 +145,12 @@ body:
         ---
         ## What Happens Next
 
-        1. Identity verification — You will receive a DocuSign link at the email you provided. Your submission is not accepted until this step is complete.
-        2. Completeness check — The Sovereign Trace Protocol office reviews the submission for completeness. This is not a truth verification — that is your responsibility as the named submitter.
-        3. Sealing — If complete, your submission is sealed with a FROZEN-2.0 triple-time cryptographic stamp. The seal is permanent.
-        4. Ledger entry — Your submission enters the Sovereign Trace public ledger with your name, the seal timestamp, and the SHA-256 hash of the sealed record.
-        5. Notification — You receive confirmation of the seal including your ledger entry ID and the SHA-256 hash for your own records.
+        1. Identity verification — DocuSign link sent to your email. Submission not accepted until complete.
+        2. Completeness check — Reviewed for completeness. Truth verification is your responsibility.
+        3. Sealing — Sealed with a FROZEN-2.0 triple-time cryptographic stamp. Permanent.
+        4. Ledger entry — Enters the Sovereign Trace public ledger with your name, timestamp, and SHA-256 hash.
+        5. Notification — You receive your ledger entry ID and SHA-256 hash.
 
-        The Sovereign Trace Protocol does not provide legal advice, take legal action, or make claims about the truth of submissions. The protocol is the notary. The submitter is the witness.
+        The Sovereign Trace Protocol is the notary. You are the witness.
 
         Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
