@@ -1,133 +1,193 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="260" height="72" viewBox="0 0 260 72">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 90" width="320" height="90">
   <defs>
-    <linearGradient id="bg-gov" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#080c08;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#030503;stop-opacity:1" />
+
+    <linearGradient id="bg-gov" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#080c08"/>
+      <stop offset="50%"  stop-color="#050805"/>
+      <stop offset="100%" stop-color="#030503"/>
     </linearGradient>
+
     <linearGradient id="olive" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#C8D4A0;stop-opacity:1" />
-      <stop offset="40%" style="stop-color:#8FA858;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#4A5C20;stop-opacity:1" />
+      <stop offset="0%"   stop-color="#C8D4A0"/>
+      <stop offset="40%"  stop-color="#8FA858"/>
+      <stop offset="100%" stop-color="#4A5C20"/>
     </linearGradient>
+
     <linearGradient id="border-gov" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#8FA858;stop-opacity:0.9" />
-      <stop offset="50%" style="stop-color:#CC2200;stop-opacity:0.7" />
-      <stop offset="100%" style="stop-color:#8FA858;stop-opacity:0.9" />
+      <stop offset="0%"   stop-color="#8FA858" stop-opacity="0.9"/>
+      <stop offset="50%"  stop-color="#CC2200" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#8FA858" stop-opacity="0.9"/>
     </linearGradient>
+
     <linearGradient id="divider-gov" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#8FA858;stop-opacity:0" />
-      <stop offset="50%" style="stop-color:#8FA858;stop-opacity:0.7" />
-      <stop offset="100%" style="stop-color:#8FA858;stop-opacity:0" />
+      <stop offset="0%"   stop-color="#8FA858" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#8FA858" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#8FA858" stop-opacity="0"/>
     </linearGradient>
-    <filter id="govglow">
-      <feGaussianBlur stdDeviation="1.8" result="blur"/>
+
+    <!-- NON-TRANSFERABLE strip -->
+    <linearGradient id="aiCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#001F2E"/>
+      <stop offset="30%"  stop-color="#00B4D8"/>
+      <stop offset="50%"  stop-color="#48CAE4"/>
+      <stop offset="70%"  stop-color="#00B4D8"/>
+      <stop offset="100%" stop-color="#001F2E"/>
+    </linearGradient>
+
+    <linearGradient id="crimson" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#6B0000"/>
+      <stop offset="50%"  stop-color="#8B0000"/>
+      <stop offset="100%" stop-color="#6B0000"/>
+    </linearGradient>
+
+    <filter id="shadowDeep">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000000" flood-opacity="0.9"/>
+    </filter>
+
+    <filter id="govGlow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <filter id="redglow">
-      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+
+    <filter id="redGlow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+
+    <filter id="cyanGlow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
     <clipPath id="rounded-gov">
-      <rect width="260" height="72" rx="6" ry="6"/>
+      <rect width="320" height="90" rx="5" ry="5"/>
     </clipPath>
+
   </defs>
 
-  <!-- Background -->
-  <rect width="260" height="72" rx="6" ry="6" fill="url(#bg-gov)"/>
+  <!-- ═══ OUTER OLIVE/RED BORDER ═══ -->
+  <rect width="320" height="90" rx="5" ry="5"
+        fill="url(#border-gov)" filter="url(#shadowDeep)"/>
 
-  <!-- Subtle camo texture suggestion -->
+  <!-- ═══ MAIN BODY ═══ -->
+  <rect x="2" y="2" width="316" height="86" rx="4" ry="4"
+        fill="url(#bg-gov)"/>
+
+  <!-- Camo texture -->
   <g opacity="0.04" clip-path="url(#rounded-gov)">
-    <rect x="0" y="0" width="40" height="20" fill="#4A5C20"/>
-    <rect x="50" y="15" width="30" height="25" fill="#4A5C20"/>
-    <rect x="90" y="0" width="20" height="15" fill="#4A5C20"/>
-    <rect x="130" y="8" width="35" height="20" fill="#4A5C20"/>
-    <rect x="180" y="0" width="25" height="18" fill="#4A5C20"/>
-    <rect x="220" y="12" width="40" height="22" fill="#4A5C20"/>
-    <rect x="10" y="40" width="45" height="32" fill="#4A5C20"/>
-    <rect x="70" y="50" width="30" height="22" fill="#4A5C20"/>
-    <rect x="115" y="45" width="40" height="27" fill="#4A5C20"/>
-    <rect x="170" y="38" width="30" height="34" fill="#4A5C20"/>
+    <rect x="0"   y="0"  width="50"  height="22" fill="#4A5C20"/>
+    <rect x="60"  y="15" width="36"  height="28" fill="#4A5C20"/>
+    <rect x="110" y="0"  width="24"  height="18" fill="#4A5C20"/>
+    <rect x="158" y="8"  width="42"  height="24" fill="#4A5C20"/>
+    <rect x="220" y="0"  width="30"  height="20" fill="#4A5C20"/>
+    <rect x="268" y="12" width="52"  height="26" fill="#4A5C20"/>
+    <rect x="12"  y="46" width="55"  height="38" fill="#4A5C20"/>
+    <rect x="86"  y="56" width="36"  height="30" fill="#4A5C20"/>
+    <rect x="140" y="50" width="48"  height="32" fill="#4A5C20"/>
+    <rect x="208" y="44" width="36"  height="40" fill="#4A5C20"/>
+    <rect x="270" y="52" width="50"  height="38" fill="#4A5C20"/>
   </g>
 
-  <!-- Outer border: olive-to-red-to-olive -->
-  <rect width="260" height="72" rx="6" ry="6" fill="none" stroke="url(#border-gov)" stroke-width="1.8"/>
-  <rect x="3" y="3" width="254" height="66" rx="4" ry="4" fill="none" stroke="#8FA858" stroke-width="0.3" opacity="0.25"/>
+  <!-- Inner accent border -->
+  <rect x="4" y="4" width="312" height="82" rx="3" ry="3"
+        fill="none" stroke="#8FA858" stroke-width="0.3" opacity="0.25"/>
 
-  <!-- Left panel -->
-  <rect x="0" y="0" width="62" height="72" fill="#4A5C20" fill-opacity="0.08" clip-path="url(#rounded-gov)"/>
+  <!-- ═══ NON-TRANSFERABLE — top strip ═══ -->
+  <rect x="2" y="2" width="316" height="13" rx="4" ry="4" fill="#030503"/>
+  <rect x="2" y="14" width="316" height="1" fill="url(#aiCyan)" opacity="0.7"/>
+  <text x="160" y="12"
+        font-family="'Courier New', monospace"
+        font-size="6.5" font-weight="bold" letter-spacing="3"
+        fill="#48CAE4" text-anchor="middle"
+        filter="url(#cyanGlow)">NON-TRANSFERABLE</text>
 
-  <!-- Shield — military style, angular -->
-  <g transform="translate(31, 36)" filter="url(#govglow)">
-    <!-- Outer shield -->
-    <path d="M0,-21 L15,-15 L15,1 Q15,17 0,23 Q-15,17 -15,1 L-15,-15 Z"
-          fill="none" stroke="url(#olive)" stroke-width="1.8" stroke-linejoin="miter"/>
-    <!-- Inner fill -->
-    <path d="M0,-14 L10,-9 L10,1 Q10,12 0,17 Q-10,12 -10,1 L-10,-9 Z"
-          fill="#4A5C20" fill-opacity="0.15"/>
-    <!-- Star in center of shield -->
-    <polygon points="0,-8 1.8,-3 7,-3 2.8,0.5 4.5,5.5 0,2.5 -4.5,5.5 -2.8,0.5 -7,-3 -1.8,-3"
-             fill="url(#olive)" fill-opacity="0.9"/>
-    <!-- Red accent line at base of shield -->
-    <line x1="-8" y1="14" x2="8" y2="14" stroke="#CC2200" stroke-width="1.5" opacity="0.8" filter="url(#redglow)"/>
-  </g>
+  <!-- ═══ LEFT PANEL ═══ -->
+  <rect x="2" y="15" width="74" height="73" fill="#4A5C20" fill-opacity="0.06"/>
+  <rect x="75" y="15" width="1" height="73" fill="url(#divider-gov)"/>
 
-  <!-- Divider -->
-  <rect x="62" y="8" width="1" height="56" fill="url(#divider-gov)"/>
+  <!-- Mini shield — military angular -->
+  <path d="M38,23 L61,30 L61,52 Q61,67 38,75 Q15,67 15,52 L15,30 Z"
+        fill="#060A06"
+        stroke="url(#olive)"
+        stroke-width="1.8"
+        stroke-linejoin="miter"
+        filter="url(#govGlow)"/>
+  <path d="M38,27 L57,33 L57,52 Q57,63 38,71 Q19,63 19,52 L19,33 Z"
+        fill="#4A5C20" fill-opacity="0.12"/>
 
-  <!-- Text — condensed military stencil feel -->
-  <text x="166" y="21"
+  <!-- Star in shield -->
+  <polygon points="38,30 40.2,37 47,37 41.6,41 43.8,48 38,44 32.2,48 34.4,41 29,37 35.8,37"
+           fill="url(#olive)" opacity="0.9" filter="url(#govGlow)"/>
+
+  <!-- Red accent line base of shield -->
+  <line x1="24" y1="66" x2="52" y2="66"
+        stroke="#CC2200" stroke-width="1.5" opacity="0.8" filter="url(#redGlow)"/>
+
+  <!-- ═══ RIGHT PANEL ═══ -->
+
+  <!-- SOVEREIGN TRACE PROTOCOL -->
+  <text x="198" y="27"
         font-family="'Arial Narrow', 'Arial', sans-serif"
-        font-size="7"
-        font-weight="700"
-        letter-spacing="3.5"
-        text-anchor="middle"
-        fill="#8FA858"
-        opacity="0.9">SOVEREIGN TRACE PROTOCOL</text>
+        font-size="7" font-weight="700" letter-spacing="3.5"
+        fill="#8FA858" text-anchor="middle" opacity="0.9">SOVEREIGN TRACE PROTOCOL</text>
 
-  <!-- Red classified-style bar behind CERTIFIED -->
-  <rect x="70" y="28" width="182" height="22" rx="1" fill="#CC2200" fill-opacity="0.08"/>
+  <!-- Olive rule -->
+  <line x1="86" y1="31" x2="310" y2="31"
+        stroke="#8FA858" stroke-width="0.4" opacity="0.25"/>
 
-  <text x="166" y="44"
+  <!-- Red bar behind CERTIFIED -->
+  <rect x="86" y="34" width="224" height="24" rx="1" fill="#CC2200" fill-opacity="0.07"/>
+
+  <!-- CERTIFIED — olive -->
+  <text x="198" y="53"
         font-family="'Arial Narrow', 'Arial', sans-serif"
-        font-size="18"
-        font-weight="900"
-        letter-spacing="5"
-        text-anchor="middle"
-        fill="url(#olive)"
-        filter="url(#govglow)">CERTIFIED</text>
+        font-size="21" font-weight="900" letter-spacing="5"
+        fill="url(#olive)" text-anchor="middle"
+        filter="url(#govGlow)">CERTIFIED</text>
 
-  <!-- Bottom: DEFENSE GRADE -->
-  <text x="166" y="58"
+  <!-- Red rule -->
+  <line x1="86" y1="60" x2="310" y2="60"
+        stroke="#CC2200" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Crimson accent -->
+  <rect x="86" y="61" width="224" height="1.5" fill="url(#crimson)" opacity="0.6"/>
+
+  <!-- DEFENSE & GOVERNMENT GRADE -->
+  <text x="198" y="75"
         font-family="'Arial Narrow', 'Arial', sans-serif"
-        font-size="7.5"
-        font-weight="700"
-        letter-spacing="3"
-        text-anchor="middle"
-        fill="#CC2200"
-        opacity="0.85"
-        filter="url(#redglow)">DEFENSE &amp; GOVERNMENT GRADE</text>
+        font-size="7.5" font-weight="700" letter-spacing="2.5"
+        fill="#CC2200" text-anchor="middle" opacity="0.9"
+        filter="url(#redGlow)">DEFENSE &amp; GOVERNMENT GRADE</text>
 
-  <!-- Corner accents — military squared -->
+  <!-- AI node dots -->
+  <circle cx="102" cy="71" r="1"   fill="#48CAE4" opacity="0.2"/>
+  <circle cx="114" cy="69" r="0.8" fill="#48CAE4" opacity="0.15"/>
+  <circle cx="286" cy="71" r="1"   fill="#48CAE4" opacity="0.2"/>
+  <circle cx="298" cy="69" r="0.8" fill="#48CAE4" opacity="0.15"/>
+  <line x1="102" y1="71" x2="114" y2="69" stroke="#48CAE4" stroke-width="0.4" opacity="0.1"/>
+  <line x1="286" y1="71" x2="298" y2="69" stroke="#48CAE4" stroke-width="0.4" opacity="0.1"/>
+
+  <!-- ═══ CORNER MARKS — military squared ═══ -->
   <g stroke="#8FA858" stroke-width="1.2" opacity="0.6">
-    <path d="M5,5 L5,16 M5,5 L16,5"/>
-    <path d="M255,5 L255,16 M255,5 L244,5"/>
-    <path d="M5,67 L5,56 M5,67 L16,67"/>
-    <path d="M255,67 L255,56 M255,67 L244,67"/>
+    <path d="M8,8 L8,18 M8,8 L18,8"/>
+    <path d="M312,8 L312,18 M312,8 L302,8"/>
+    <path d="M8,82 L8,72 M8,82 L18,82"/>
+    <path d="M312,82 L312,72 M312,82 L302,82"/>
   </g>
-  <!-- Red corner dots -->
-  <circle cx="5" cy="5" r="1.5" fill="#CC2200" opacity="0.8"/>
-  <circle cx="255" cy="5" r="1.5" fill="#CC2200" opacity="0.8"/>
-  <circle cx="5" cy="67" r="1.5" fill="#CC2200" opacity="0.8"/>
-  <circle cx="255" cy="67" r="1.5" fill="#CC2200" opacity="0.8"/>
 
-  <line x1="80" y1="25" x2="252" y2="25" stroke="#8FA858" stroke-width="0.4" opacity="0.25"/>
-  <line x1="80" y1="51" x2="252" y2="51" stroke="#CC2200" stroke-width="0.5" opacity="0.3"/>
+  <!-- Red corner dots -->
+  <circle cx="8"   cy="8"  r="1.5" fill="#CC2200" opacity="0.8"/>
+  <circle cx="312" cy="8"  r="1.5" fill="#CC2200" opacity="0.8"/>
+  <circle cx="8"   cy="82" r="1.5" fill="#CC2200" opacity="0.8"/>
+  <circle cx="312" cy="82" r="1.5" fill="#CC2200" opacity="0.8"/>
 
 </svg>
-
