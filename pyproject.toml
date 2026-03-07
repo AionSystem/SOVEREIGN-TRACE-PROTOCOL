@@ -56,7 +56,9 @@ exclude = ["stamp/FROZEN-1.0-RETIRED"]
 include = [
   "stamp/sovereign_trace_stamp.py",
   "README.md",
+  "QUICKSTART.md",
   "concept/",
+  "badges/",
   "ledger/",
   "LICENSE",
   "LICENSE-COMMERCIAL.md",
