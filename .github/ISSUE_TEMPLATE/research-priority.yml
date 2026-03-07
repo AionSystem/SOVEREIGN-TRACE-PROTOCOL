@@ -1,1 +1,127 @@
+# ISSUE TEMPLATE — research-priority.yml
+# Copy this content exactly into your .yml file
+
+```yaml
+name: "Research Priority Seal — Sovereign Trace Protocol"
+description: "Seal a hypothesis, finding, or framework specification before results are known or work is published. Establishes cryptographic priority without requiring institutional permission."
+title: "[STP-RESEARCH] — [FIELD] — [DATE]"
+labels: ["research-priority", "pending-seal"]
+assignees: []
+
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Research Priority Seal
+
+        This form seals your research hypothesis, methodology, or finding at the exact moment of submission.
+
+        The SHA-256 seal proves you held this position before results were known — not after.
+        This is not peer review. This is not publication. This is a tamper-evident timestamp.
+
+        **Identity is optional for this submission type.**
+        You may submit anonymously. If you include your name, it becomes part of the permanent record.
+        A sealed anonymous record still proves priority — you can identify yourself later and the seal will verify your claim.
+
+  - type: input
+    id: submitter_name
+    attributes:
+      label: "Your Name (Optional)"
+      description: "If provided, becomes part of the permanent record. Leave blank for anonymous priority seal."
+      placeholder: "First Last or leave blank"
+    validations:
+      required: false
+
+  - type: input
+    id: field
+    attributes:
+      label: "Field / Discipline"
+      description: "The academic or professional field this work belongs to."
+      placeholder: "e.g. Machine Learning, Clinical Medicine, Economics, AI Safety"
+    validations:
+      required: true
+
+  - type: input
+    id: submission_type
+    attributes:
+      label: "Submission Type"
+      description: "What are you sealing?"
+      placeholder: "Hypothesis / Finding / Framework Specification / Methodology / Prediction"
+    validations:
+      required: true
+
+  - type: textarea
+    id: hypothesis_or_claim
+    attributes:
+      label: "Hypothesis, Finding, or Specification"
+      description: "State it exactly as it stands now. Do not soften. Do not hedge beyond what is genuinely uncertain. This is what the seal will bind to."
+      placeholder: "State your hypothesis, finding, or specification precisely."
+    validations:
+      required: true
+
+  - type: textarea
+    id: methodology
+    attributes:
+      label: "Methodology or Derivation"
+      description: "How did you arrive at this? What method, data, or reasoning produced it?"
+      placeholder: "Describe your methodology or how this was derived."
+    validations:
+      required: true
+
+  - type: textarea
+    id: falsification_condition
+    attributes:
+      label: "Falsification Condition (Optional but Recommended)"
+      description: "What result would prove this hypothesis wrong? A falsifiable claim is a stronger claim."
+      placeholder: "Describe what would falsify this hypothesis or specification."
+    validations:
+      required: false
+
+  - type: textarea
+    id: current_status
+    attributes:
+      label: "Current Status"
+      description: "Where is this work right now? Pre-experiment. Pre-submission. Pre-publication. Draft stage."
+      placeholder: "Describe the current state of the work."
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence_or_supporting_material
+    attributes:
+      label: "Supporting Material (Optional)"
+      description: "Links to drafts, data, prior work, or any material that supports this submission. Not required — the seal applies to what you wrote above regardless."
+      placeholder: "Links or descriptions of supporting material."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: "Declaration"
+      options:
+        - label: "I affirm that this submission represents my genuine position at the time of sealing — not a result known in advance."
+          required: true
+        - label: "I understand this submission is immutable — it cannot be altered after sealing."
+          required: true
+        - label: "I understand that the Sovereign Trace Protocol does not validate the scientific merit of this submission — it seals its existence at this moment."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## What Happens Next
+
+        1. Completeness check — The Sovereign Trace Protocol office reviews for completeness.
+        2. Sealing — Your submission is sealed with a FROZEN-2.0 triple-time cryptographic stamp.
+        3. Ledger entry — Your submission enters the Sovereign Trace ledger with the seal timestamp and SHA-256 hash.
+        4. Notification — You receive your ledger entry ID and SHA-256 hash.
+
+        The protocol does not evaluate the merit of your research. It seals its existence.
+        The seal is permanent. The seal is the proof.
+
+        Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
+```
 
