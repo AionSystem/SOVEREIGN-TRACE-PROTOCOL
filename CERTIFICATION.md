@@ -30,19 +30,25 @@ Four tiers. No negotiation on scope. No bundling.
 
 ---
 
-## AUDIT INTAKE SCHEDULE
+## INTAKE MODES
 
-**Intake: Monday and Tuesday only.**
-Submissions filed on any other day are voided and non-refundable.
+Two intake modes. Tier determines which applies.
 
-**Delivery: Weekends.** Reports delivered Saturday or Sunday via scheduled
-reply on the issue thread. Standard turnaround is same or following weekend
-depending on tier and submission date.
+**Automated Intake — Tier 1 and Tier 2**
+24/7. File a `10-audit-request.yml` issue at any time. Payment via
+Stripe is confirmed automatically by the audit-verify workflow before
+any work begins. Badge delivered digitally upon certification. No call
+required. No scheduling required. The filing and payment are the scope.
 
-**Expedited delivery:** daily multiplier applies. Work required in under
+**Architect-Led Intake — Tier 3 and Tier 4**
+Monday and Tuesday only. Submissions filed on any other day are not
+processed that week. Delivery on the following weekend — reports
+delivered Saturday or Sunday via scheduled reply on the issue thread.
+
+Expedited delivery: daily multiplier applies. Work required in under
 4 hours is not accepted. No exceptions.
 
-**Payment:** Stripe transaction code required in the issue at filing.
+Payment: Stripe transaction code required in the issue at filing.
 Screenshot of the transaction sent to the contact email on file.
 Both must match before work begins. No exceptions.
 
@@ -74,9 +80,11 @@ System-wide deployment review. Ongoing monitoring. Badge licensing.
 Access to the AION-Registry.
 
 **How to engage:**
-File a `10-audit-request.yml` issue. Select Snapshot tier. Include the
-entry identifier and organization name. No call precedes this engagement.
-The filing is the scope. See intake schedule above.
+File a `10-audit-request.yml` issue. Select Tier 1. Include the entry
+identifier, organization name, and Stripe transaction code. The
+audit-verify workflow confirms payment automatically. Assessment begins
+within one business day of confirmation. No call. No scheduling.
+Automated intake — available 24/7.
 
 ---
 
@@ -112,9 +120,12 @@ assesses what was built. Questions about findings are answered in
 writing via the issue tracker. Zero-Consultation Rule applies.
 
 **How to engage:**
-File a `10-audit-request.yml` issue marked Tier 2. The Architect
-will confirm the 30-day assessment window and invoice.
-Engagements are taken sequentially. See intake schedule above.
+File a `10-audit-request.yml` issue marked Tier 2. Include organization
+name, AI deployment scope (one paragraph), and Stripe transaction code.
+The audit-verify workflow confirms payment automatically. The Architect
+opens the 30-day assessment window within two business days of
+confirmation. Engagements are taken sequentially.
+Automated intake — available 24/7.
 
 ---
 
@@ -156,8 +167,9 @@ volume, and industry classification.
 
 **How to engage:**
 File a `10-audit-request.yml` issue marked Tier 3 with organization
-name and AI deployment scope (one paragraph). The Architect responds
-with initial terms in writing. That exchange is the negotiation.
+name and AI deployment scope (one paragraph). Architect-led intake —
+Monday and Tuesday only. The Architect responds with initial terms
+in writing. That exchange is the negotiation.
 
 ---
 
@@ -207,9 +219,10 @@ quarter and which require remediation before the next review cycle.
 **How to engage:**
 File a `10-audit-request.yml` issue marked Tier 4 with organization
 name, applicable regulatory frameworks, and AI deployment scope
-(one paragraph). The Architect responds with initial terms in writing.
-Engagements at this tier require a signed written agreement before
-any work commences. No exceptions.
+(one paragraph). Architect-led intake — Monday and Tuesday only.
+The Architect responds with initial terms in writing. Engagements
+at this tier require a signed written agreement before any work
+commences. No exceptions.
 
 ---
 
@@ -253,8 +266,8 @@ issued at certification.
 **How to apply:**
 File a `12-auditor-application.yml` issue. Skills-based review only —
 no credentials required. Demonstrated ability to assess AI outputs honestly
-is the criterion. Reviewed Monday–Tuesday. Not every application is accepted.
-There is no appeal process.
+is the criterion. Applications reviewed Monday and Tuesday.
+Not every application is accepted. There is no appeal process.
 
 ---
 
