@@ -1,118 +1,200 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="260" height="72" viewBox="0 0 260 72">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 90" width="320" height="90">
   <defs>
-    <linearGradient id="bg-e" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#0a0a0f;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#050508;stop-opacity:1" />
+
+    <linearGradient id="bg-e" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#0a0a0f"/>
+      <stop offset="50%"  stop-color="#070709"/>
+      <stop offset="100%" stop-color="#050508"/>
     </linearGradient>
+
     <linearGradient id="platinum" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
-      <stop offset="30%" style="stop-color:#E8E8F0;stop-opacity:1" />
-      <stop offset="70%" style="stop-color:#B0B0C8;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#8080A0;stop-opacity:1" />
+      <stop offset="0%"   stop-color="#FFFFFF"/>
+      <stop offset="30%"  stop-color="#E8E8F0"/>
+      <stop offset="70%"  stop-color="#B0B0C8"/>
+      <stop offset="100%" stop-color="#8080A0"/>
     </linearGradient>
+
     <linearGradient id="border-e" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#9B59B6;stop-opacity:0.8" />
-      <stop offset="40%" style="stop-color:#E8E8F0;stop-opacity:0.7" />
-      <stop offset="100%" style="stop-color:#9B59B6;stop-opacity:0.8" />
+      <stop offset="0%"   stop-color="#9B59B6" stop-opacity="0.9"/>
+      <stop offset="40%"  stop-color="#E8E8F0" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#9B59B6" stop-opacity="0.9"/>
     </linearGradient>
+
     <linearGradient id="divider-e" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#9B59B6;stop-opacity:0" />
-      <stop offset="50%" style="stop-color:#9B59B6;stop-opacity:0.8" />
-      <stop offset="100%" style="stop-color:#9B59B6;stop-opacity:0" />
+      <stop offset="0%"   stop-color="#9B59B6" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#9B59B6" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#9B59B6" stop-opacity="0"/>
     </linearGradient>
+
     <linearGradient id="shield-stroke-e" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#9B59B6;stop-opacity:1" />
+      <stop offset="0%"   stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#9B59B6"/>
     </linearGradient>
-    <filter id="platglow">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
+
+    <linearGradient id="shieldFill-e" cx="50%" cy="35%" r="65%">
+      <stop offset="0%"   stop-color="#1A0F2E"/>
+      <stop offset="100%" stop-color="#080510"/>
+    </linearGradient>
+
+    <!-- Cyan strip — same as auditor/certified -->
+    <linearGradient id="aiCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#001F2E"/>
+      <stop offset="30%"  stop-color="#00B4D8"/>
+      <stop offset="50%"  stop-color="#48CAE4"/>
+      <stop offset="70%"  stop-color="#00B4D8"/>
+      <stop offset="100%" stop-color="#001F2E"/>
+    </linearGradient>
+
+    <linearGradient id="crimson" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#6B0000"/>
+      <stop offset="50%"  stop-color="#8B0000"/>
+      <stop offset="100%" stop-color="#6B0000"/>
+    </linearGradient>
+
+    <filter id="shadowDeep">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000000" flood-opacity="0.9"/>
+    </filter>
+
+    <filter id="platGlow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <filter id="softglow-e">
-      <feGaussianBlur stdDeviation="1" result="blur"/>
+
+    <filter id="cyanGlow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <clipPath id="rounded-e">
-      <rect width="260" height="72" rx="6" ry="6"/>
-    </clipPath>
+
+    <filter id="softGlow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
   </defs>
 
-  <!-- Background -->
-  <rect width="260" height="72" rx="6" ry="6" fill="url(#bg-e)"/>
+  <!-- ═══ OUTER VIOLET-PLATINUM BORDER ═══ -->
+  <rect width="320" height="90" rx="5" ry="5"
+        fill="url(#border-e)" filter="url(#shadowDeep)"/>
 
-  <!-- Subtle violet ambient wash top -->
-  <rect x="0" y="0" width="260" height="20" rx="0" ry="0" fill="#9B59B6" fill-opacity="0.04" clip-path="url(#rounded-e)"/>
+  <!-- ═══ MAIN BODY ═══ -->
+  <rect x="2" y="2" width="316" height="86" rx="4" ry="4"
+        fill="url(#bg-e)"/>
 
-  <!-- Border: violet-to-platinum-to-violet -->
-  <rect width="260" height="72" rx="6" ry="6" fill="none" stroke="url(#border-e)" stroke-width="1.5"/>
-  <rect x="3" y="3" width="254" height="66" rx="4" ry="4" fill="none" stroke="#E8E8F0" stroke-width="0.3" opacity="0.15"/>
+  <!-- Subtle violet ambient wash -->
+  <rect x="2" y="2" width="316" height="24" rx="4" ry="4"
+        fill="#9B59B6" fill-opacity="0.05"/>
 
-  <!-- Left panel -->
-  <rect x="0" y="0" width="62" height="72" fill="#9B59B6" fill-opacity="0.05" clip-path="url(#rounded-e)"/>
+  <!-- ═══ INNER ACCENT BORDER ═══ -->
+  <rect x="4" y="4" width="312" height="82" rx="3" ry="3"
+        fill="none" stroke="#E8E8F0" stroke-width="0.4" opacity="0.12"/>
 
-  <!-- Shield — platinum with violet base -->
-  <g transform="translate(31, 36)" filter="url(#platglow)">
-    <path d="M0,-20 L14,-14 L14,2 Q14,16 0,22 Q-14,16 -14,2 L-14,-14 Z"
-          fill="none" stroke="url(#shield-stroke-e)" stroke-width="1.8" stroke-linejoin="round"/>
-    <path d="M0,-13 L9,-8.5 L9,2 Q9,11 0,16 Q-9,11 -9,2 L-9,-8.5 Z"
-          fill="#9B59B6" fill-opacity="0.10"/>
-    <!-- Double-line check for premium feel -->
-    <path d="M-4,1 L-1,5 L5,-4" fill="none" stroke="url(#platinum)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M-4,1 L-1,5 L5,-4" fill="none" stroke="#9B59B6" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
-  </g>
+  <!-- ═══ NON-TRANSFERABLE — top strip ═══ -->
+  <rect x="2" y="2" width="316" height="13" rx="4" ry="4" fill="#03080F"/>
+  <rect x="2" y="14" width="316" height="1" fill="url(#aiCyan)" opacity="0.7"/>
+  <text x="160" y="12"
+        font-family="'Courier New', monospace"
+        font-size="6.5" font-weight="bold" letter-spacing="3"
+        fill="#48CAE4" text-anchor="middle"
+        filter="url(#cyanGlow)">NON-TRANSFERABLE</text>
 
-  <!-- Divider -->
-  <rect x="62" y="8" width="1" height="56" fill="url(#divider-e)"/>
+  <!-- ═══ LEFT PANEL ═══ -->
+  <rect x="2" y="15" width="74" height="73" rx="0" fill="#9B59B6" fill-opacity="0.04"/>
+  <rect x="75" y="15" width="1" height="73" fill="url(#divider-e)"/>
 
-  <!-- Text -->
-  <text x="166" y="22"
+  <!-- Mini shield — platinum/violet -->
+  <path d="M38,24 L60,30 L60,52 Q60,66 38,74 Q16,66 16,52 L16,30 Z"
+        fill="#0A0510"
+        stroke="url(#shield-stroke-e)"
+        stroke-width="1.8"
+        filter="url(#platGlow)"/>
+  <path d="M38,27 L57,33 L57,52 Q57,63 38,71 Q19,63 19,52 L19,33 Z"
+        fill="none" stroke="#9B59B6" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- STP in mini shield — platinum -->
+  <text x="38" y="54"
+        font-family="'Palatino Linotype', 'Palatino', serif"
+        font-size="14" font-weight="bold"
+        fill="url(#platinum)" text-anchor="middle"
+        filter="url(#platGlow)">STP</text>
+
+  <!-- ═══ RIGHT PANEL ═══ -->
+
+  <!-- SOVEREIGN TRACE PROTOCOL -->
+  <text x="198" y="28"
         font-family="'Palatino Linotype', 'Palatino', 'Book Antiqua', serif"
-        font-size="7.5"
-        font-weight="400"
-        letter-spacing="3"
-        text-anchor="middle"
-        fill="#9B59B6"
-        opacity="0.9">SOVEREIGN TRACE PROTOCOL</text>
+        font-size="7.5" font-weight="400" letter-spacing="3"
+        fill="#9B59B6" text-anchor="middle" opacity="0.9">SOVEREIGN TRACE PROTOCOL</text>
 
-  <text x="166" y="46"
+  <!-- Thin rule -->
+  <line x1="86" y1="32" x2="310" y2="32"
+        stroke="#9B59B6" stroke-width="0.4" opacity="0.3"/>
+
+  <!-- ELITE — sub label -->
+  <text x="198" y="45"
+        font-family="'Palatino Linotype', 'Palatino', serif"
+        font-size="7" font-weight="400" letter-spacing="5"
+        fill="#9B59B6" text-anchor="middle" opacity="0.7">ELITE</text>
+
+  <!-- CERTIFIED — platinum -->
+  <text x="198" y="62"
         font-family="'Palatino Linotype', 'Palatino', 'Book Antiqua', serif"
-        font-size="19"
-        font-weight="700"
-        letter-spacing="4"
-        text-anchor="middle"
-        fill="url(#platinum)"
-        filter="url(#softglow-e)">CERTIFIED</text>
+        font-size="22" font-weight="700" letter-spacing="4"
+        fill="url(#platinum)" text-anchor="middle"
+        filter="url(#softGlow)">CERTIFIED</text>
 
-  <text x="166" y="61"
-        font-family="'Palatino Linotype', 'Palatino', 'Book Antiqua', serif"
-        font-size="7"
-        font-weight="400"
-        letter-spacing="2.5"
-        text-anchor="middle"
-        fill="#5a4a6a"
-        opacity="0.9">AION SYSTEM · FROZEN-2.0</text>
+  <!-- Thin rule -->
+  <line x1="86" y1="65" x2="310" y2="65"
+        stroke="#9B59B6" stroke-width="0.4" opacity="0.3"/>
 
-  <!-- Corner accents — fine lines, elite precision -->
+  <!-- Crimson accent -->
+  <rect x="86" y="66" width="224" height="1.5" fill="url(#crimson)" opacity="0.5"/>
+
+  <!-- AION SYSTEM · FROZEN-2.0 — cyan bottom -->
+  <text x="198" y="79"
+        font-family="'Courier New', monospace"
+        font-size="7" letter-spacing="2.5"
+        fill="#48CAE4" text-anchor="middle"
+        filter="url(#cyanGlow)">AION SYSTEM · FROZEN-2.0</text>
+
+  <!-- AI node dots flanking bottom text -->
+  <circle cx="102" cy="72" r="1"   fill="#48CAE4" opacity="0.25"/>
+  <circle cx="114" cy="70" r="0.8" fill="#48CAE4" opacity="0.2"/>
+  <circle cx="286" cy="72" r="1"   fill="#48CAE4" opacity="0.25"/>
+  <circle cx="298" cy="70" r="0.8" fill="#48CAE4" opacity="0.2"/>
+  <line x1="102" y1="72" x2="114" y2="70" stroke="#48CAE4" stroke-width="0.4" opacity="0.12"/>
+  <line x1="286" y1="72" x2="298" y2="70" stroke="#48CAE4" stroke-width="0.4" opacity="0.12"/>
+
+  <!-- ═══ CORNER MARKS — platinum/violet ═══ -->
   <g stroke="#E8E8F0" stroke-width="0.8" opacity="0.4">
-    <path d="M6,6 L6,14 M6,6 L14,6"/>
-    <path d="M254,6 L254,14 M254,6 L246,6"/>
-    <path d="M6,66 L6,58 M6,66 L14,66"/>
-    <path d="M254,66 L254,58 M254,66 L246,66"/>
+    <path d="M8,8 L8,14 M8,8 L14,8"/>
+    <path d="M312,8 L312,14 M312,8 L306,8"/>
+    <path d="M8,82 L8,76 M8,82 L14,82"/>
+    <path d="M312,82 L312,76 M312,82 L306,82"/>
   </g>
-  <!-- Violet corner dots -->
-  <circle cx="6" cy="6" r="1.2" fill="#9B59B6" opacity="0.7"/>
-  <circle cx="254" cy="6" r="1.2" fill="#9B59B6" opacity="0.7"/>
-  <circle cx="6" cy="66" r="1.2" fill="#9B59B6" opacity="0.7"/>
-  <circle cx="254" cy="66" r="1.2" fill="#9B59B6" opacity="0.7"/>
 
-  <line x1="80" y1="26" x2="252" y2="26" stroke="#9B59B6" stroke-width="0.4" opacity="0.3"/>
-  <line x1="80" y1="52" x2="252" y2="52" stroke="#9B59B6" stroke-width="0.4" opacity="0.3"/>
+  <!-- Violet corner dots -->
+  <circle cx="8"   cy="8"  r="1.2" fill="#9B59B6" opacity="0.7"/>
+  <circle cx="312" cy="8"  r="1.2" fill="#9B59B6" opacity="0.7"/>
+  <circle cx="8"   cy="82" r="1.2" fill="#9B59B6" opacity="0.7"/>
+  <circle cx="312" cy="82" r="1.2" fill="#9B59B6" opacity="0.7"/>
+
+  <!-- Star field -->
+  <g opacity="0.3">
+    <circle cx="92"  cy="20" r="0.6" fill="#E8E8F0"/>
+    <circle cx="140" cy="18" r="0.4" fill="#9B59B6"/>
+    <circle cx="258" cy="20" r="0.5" fill="#E8E8F0"/>
+    <circle cx="295" cy="23" r="0.4" fill="#9B59B6"/>
+    <circle cx="112" cy="80" r="0.4" fill="#E8E8F0"/>
+    <circle cx="278" cy="79" r="0.5" fill="#9B59B6"/>
+  </g>
 
 </svg>
-
