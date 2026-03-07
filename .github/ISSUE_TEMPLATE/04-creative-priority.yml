@@ -1,5 +1,5 @@
 name: "Creative Priority Seal — Sovereign Trace Protocol"
-description: "Seal a creative work — music, writing, art, design, code — at the moment of creation. Establishes tamper-evident proof of authorship and priority without a lawyer or institution."
+description: "Seal a creative work — music, writing, art, design, code — at the moment of creation. Cryptographic proof of authorship and priority."
 title: "[STP-CREATIVE] — [MEDIUM] — [DATE]"
 labels: ["creative-priority", "pending-seal"]
 assignees: []
@@ -17,10 +17,8 @@ body:
         This seal gives you something copyright alone does not: cryptographic proof that this exact work
         existed, in this exact form, on this exact date — verifiable by anyone, requiring no institution.
 
-        If your work is ever disputed, copied, or claimed by another — the sealed record is your ground truth.
-
-        **You do not need to attach the full work.** Seal a precise description, a title, a hash of the file,
-        or a representative excerpt. What matters is that the seal binds to something specific and unique to this work.
+        You do not need to attach the full work. Seal a precise description, a title, a representative excerpt,
+        or a SHA-256 hash of the file. What matters is that the seal binds to something specific and unique.
 
   - type: input
     id: submitter_name
@@ -45,7 +43,7 @@ body:
     attributes:
       label: "Medium / Format"
       description: "What kind of creative work is this?"
-      placeholder: "Music track / Album / Novel / Short story / Screenplay / Visual art / Design / Software / Poem / Other"
+      placeholder: "Music / Novel / Screenplay / Visual art / Design / Software / Poem / Other"
     validations:
       required: true
 
@@ -62,7 +60,7 @@ body:
     id: work_description
     attributes:
       label: "Work Description"
-      description: "Describe the work precisely. Include distinctive elements — themes, structure, characters, sonic qualities, visual elements — that uniquely identify this work. The more specific, the stronger the priority claim."
+      description: "Describe the work precisely. Include distinctive elements that uniquely identify it."
       placeholder: "Describe the work with enough specificity to distinguish it from any other work."
     validations:
       required: true
@@ -70,18 +68,9 @@ body:
   - type: textarea
     id: representative_content
     attributes:
-      label: "Representative Content or Excerpt (Optional)"
-      description: "Paste a short excerpt, lyric, passage, or description of a specific element. Or paste a SHA-256 hash of the file if you have generated one. This binds the seal to specific content, not just a description."
+      label: "Excerpt or File Hash (Optional)"
+      description: "Paste a short excerpt, key passage, or SHA-256 hash of the file. Binds the seal to specific content."
       placeholder: "Excerpt, key passage, or SHA-256 hash of the file."
-    validations:
-      required: false
-
-  - type: textarea
-    id: supporting_links
-    attributes:
-      label: "Supporting Files or Links (Optional)"
-      description: "GitHub CDN URLs for any files attached to this issue. These URLs become part of the sealed record."
-      placeholder: "Paste GitHub CDN URLs for any attached screenshots or files."
     validations:
       required: false
 
@@ -94,6 +83,14 @@ body:
     validations:
       required: true
 
+  - type: upload
+    id: supporting_files
+    attributes:
+      label: "Supporting Files (Optional)"
+      description: "Upload a preview, excerpt, or representative file. Do not upload the full work if unpublished."
+    validations:
+      required: false
+
   - type: checkboxes
     id: declaration
     attributes:
@@ -105,7 +102,7 @@ body:
           required: true
         - label: "I understand this submission is immutable — it cannot be altered after sealing."
           required: true
-        - label: "I understand that the Sovereign Trace Protocol does not provide legal copyright registration — it provides a tamper-evident timestamp of priority."
+        - label: "I understand the protocol provides a tamper-evident timestamp of priority — not legal copyright registration."
           required: true
 
   - type: markdown
@@ -114,14 +111,11 @@ body:
         ---
         ## What Happens Next
 
-        1. Completeness check — The Sovereign Trace Protocol office reviews for completeness.
-        2. Sealing — Your submission is sealed with a FROZEN-2.0 triple-time cryptographic stamp.
-        3. Ledger entry — Your submission enters the Sovereign Trace ledger with your name, the seal timestamp, and the SHA-256 hash.
-        4. Notification — You receive your ledger entry ID and SHA-256 hash for your records.
+        1. Completeness check — Reviewed for completeness.
+        2. Sealing — Sealed with a FROZEN-2.0 triple-time cryptographic stamp. Permanent.
+        3. Ledger entry — Enters the Sovereign Trace ledger with your name, timestamp, and SHA-256 hash.
+        4. Notification — You receive your ledger entry ID and SHA-256 hash. Keep it. It is your proof.
 
-        Keep the SHA-256 hash. It is your proof. Anyone can verify it independently.
         The seal is permanent. The seal is the priority record.
 
         Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
-
-
