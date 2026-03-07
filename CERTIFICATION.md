@@ -1,6 +1,6 @@
 # CERTIFICATION.md — Sovereign Trace Protocol Certification
 
-[![Sovereign Certified](https://img.shields.io/badge/SOVEREIGN-CERTIFIED-2E7D32?style=flat-square&logo=shield&logoColor=white)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL)
+![Sovereign Certified](./badges/sovereign-certified-badge.svg)
 
 **Sovereign Trace Protocol · Version 2.0.0**
 **Author: Sheldon K. Salmon — AI Reliability & AGI Architect**
@@ -35,6 +35,9 @@ Three tiers. No negotiation on scope. No bundling.
 
 **$2,500 · Single engagement · 5–7 business days**
 
+**Badge:** Standard — `badges/sovereign-certified-badge.svg`
+![Sovereign Certified](./badges/sovereign-certified-badge.svg)
+
 **What it covers:**
 A single stamp check on a remediated failure. One AI failure event has
 been logged in an immutable ledger. A remediation record has been appended.
@@ -62,6 +65,9 @@ organization name. No call precedes this engagement. The filing is the scope.
 
 **$25,000 per year · Annual renewal · 30-day assessment window**
 
+**Badge:** Digital — `badges/sovereign-certified-badge-digital.svg`
+![Sovereign Certified — Digital](./badges/sovereign-certified-badge-digital.svg)
+
 **What it covers:**
 Full implementation audit across the organization's AI deployment
 footprint — ledger configuration, scoring methodology, schema compliance,
@@ -70,7 +76,7 @@ licensed use of the **Sovereign Certified** badge for one year.
 
 **Deliverable:**
 - Full Enterprise Certification Report (written, signed, PDF)
-- Sovereign Certified badge license (digital, version-locked)
+- Sovereign Certified Digital badge license (digital, version-locked)
 - Listing in the public AION-Registry at Enterprise tier
 - Annual recertification reminder at 330 days
 
@@ -95,6 +101,9 @@ Engagements are taken sequentially.
 ## TIER 3 — STRATEGIC RETAINER
 
 **$100,000+ per year · Terms negotiated in writing · C-Suite**
+
+**Badge:** Elite — `badges/sovereign-certified-badge-elite.svg`
+![Sovereign Certified — Elite](./badges/sovereign-certified-badge-elite.svg)
 
 **What it covers:**
 Standing certification and monitoring posture for organizations
@@ -128,6 +137,22 @@ volume, and industry classification.
 File a `Certification_Filing.md` issue marked Tier 3 with organization
 name and AI deployment scope (one paragraph). The Architect responds
 with initial terms in writing. That exchange is the negotiation.
+
+---
+
+## BADGE REFERENCE
+
+| Tier | Badge Variant | File |
+|------|--------------|------|
+| Tier 1 — Basic Verification | Standard | `badges/sovereign-certified-badge.svg` |
+| Tier 2 — Enterprise Certification | Digital | `badges/sovereign-certified-badge-digital.svg` |
+| Tier 3 — Strategic Retainer | Elite | `badges/sovereign-certified-badge-elite.svg` |
+
+Badge files are hosted in the Sovereign Trace Protocol repository.
+Licensed use only — see `TRADEMARK.md`. Badge license is included in
+the Certification Report delivered at each tier.
+Unlicensed display of any Sovereign Certified badge constitutes
+misrepresentation of audit status.
 
 ---
 
