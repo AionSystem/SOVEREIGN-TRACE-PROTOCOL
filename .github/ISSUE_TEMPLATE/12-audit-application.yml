@@ -1,1 +1,107 @@
+name: "AUDITOR APPLICATION: Apply for STP Certified Auditor Badge"
+description: "Apply to become a certified Sovereign Trace Protocol Auditor. Skills-based. No degrees required."
+title: "[AUDITOR-APPLICATION] — [Your Full Name] — [Specialization]"
+labels: ["auditor-application", "pending-review"]
+body:
 
+  - type: markdown
+    attributes:
+      value: |
+        ## Sovereign Trace Protocol — Auditor Certification Application
+
+        This application is reviewed Monday and Tuesday only.
+        Review is skills-based. Credentials and degrees are not evaluated.
+        What is evaluated: your demonstrated ability to read AI outputs honestly.
+
+        **Term:** 1 year from badge issuance. Renewable by reapplication.
+        **Annual cap:** 50 sealed audits per calendar year per badge.
+        **Badge is non-transferable.** It is bound to your name and LinkedIn permanently.
+
+        Intake is reviewed by Sheldon K. Salmon personally.
+        Not every application is accepted. There is no appeal process.
+
+  - type: input
+    id: full_name
+    attributes:
+      label: "Full Legal Name"
+      description: "This is what will appear on your badge if approved."
+      placeholder: "Jane Smith"
+    validations:
+      required: true
+
+  - type: input
+    id: linkedin
+    attributes:
+      label: "LinkedIn Profile URL"
+      description: "Must be a real, active LinkedIn profile. This is your identity anchor."
+      placeholder: "https://linkedin.com/in/yourprofile"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: specialization
+    attributes:
+      label: "Primary Specialization"
+      description: "Select the domain where your AI output review skills are strongest."
+      options:
+        - "AI Outputs — General"
+        - "AI Outputs — Healthcare / Clinical"
+        - "AI Outputs — Legal / Compliance"
+        - "AI Outputs — Research / Scientific"
+        - "AI Outputs — Financial"
+        - "AI Outputs — Government / Defense"
+        - "AI Outputs — Creative / Media"
+    validations:
+      required: true
+
+  - type: textarea
+    id: background
+    attributes:
+      label: "Professional Background"
+      description: "Describe your relevant experience. No degrees required. Describe what you have actually done."
+      placeholder: "3 years reviewing LLM outputs for a fintech company. Built internal red-teaming process. Identified 47 documented hallucination events."
+    validations:
+      required: true
+
+  - type: textarea
+    id: skills_sample
+    attributes:
+      label: "Skills Sample — Upload or Describe"
+      description: "Upload a sample AI output review you have conducted, OR describe a specific AI failure you identified and how you documented it. This is your skills demonstration."
+    validations:
+      required: true
+
+  - type: textarea
+    id: file_upload
+    attributes:
+      label: "Supporting Files"
+      description: "Upload any supporting work samples. PDF preferred."
+    validations:
+      required: false
+
+  - type: input
+    id: referral
+    attributes:
+      label: "Referral (Optional)"
+      description: "If an existing STP Certified Auditor referred you, enter their badge number."
+      placeholder: "STP-AUDITOR-0001"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: "Auditor Terms Agreement"
+      options:
+        - label: "I understand the badge is non-transferable and bound to my name and LinkedIn permanently."
+          required: true
+        - label: "I understand my badge term is 1 year and must be renewed by reapplication."
+          required: true
+        - label: "I understand I am capped at 50 sealed audits per calendar year."
+          required: true
+        - label: "I understand that bribery, coercion, or misuse of the badge will result in permanent revocation and a public ledger record."
+          required: true
+        - label: "I understand that disputes and revocation proceedings may be referred to a legal review process outside of STP."
+          required: true
+        - label: "I have read and agree to the Sovereign Trace Protocol Terms of Service."
+          required: true
