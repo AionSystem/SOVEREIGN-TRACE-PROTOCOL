@@ -10,7 +10,7 @@
 pip install sovereign-trace
 ```
 
-Requires Python 3.8+. No external dependencies. stdlib only.
+Requires Python 3.11+. No external dependencies. stdlib only.
 
 ---
 
