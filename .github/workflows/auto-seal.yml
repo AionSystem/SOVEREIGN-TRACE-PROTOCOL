@@ -1,1 +1,188 @@
+name: Sovereign Trace Auto-Seal
 
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  seal-and-ledger:
+    if: github.event.label.name == 'pending-seal'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: write
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Extract issue data
+        id: issue
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+          ISSUE_CREATED: ${{ github.event.issue.created_at }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+        run: |
+          echo "issue_number=$ISSUE_NUMBER" >> $GITHUB_OUTPUT
+          echo "issue_user=$ISSUE_USER" >> $GITHUB_OUTPUT
+          echo "issue_created=$ISSUE_CREATED" >> $GITHUB_OUTPUT
+
+          if echo "$ISSUE_TITLE" | grep -q "\[STP-SUBMISSION\]"; then
+            echo "template_type=ai-failure" >> $GITHUB_OUTPUT
+          elif echo "$ISSUE_TITLE" | grep -q "\[STP-RESEARCH\]"; then
+            echo "template_type=research-priority" >> $GITHUB_OUTPUT
+          elif echo "$ISSUE_TITLE" | grep -q "\[STP-EVIDENCE\]"; then
+            echo "template_type=evidence-chain" >> $GITHUB_OUTPUT
+          elif echo "$ISSUE_TITLE" | grep -q "\[STP-CREATIVE\]"; then
+            echo "template_type=creative-priority" >> $GITHUB_OUTPUT
+          elif echo "$ISSUE_TITLE" | grep -q "\[STP-CLINICAL\]"; then
+            echo "template_type=clinical-record" >> $GITHUB_OUTPUT
+          elif echo "$ISSUE_TITLE" | grep -q "\[STP-SCOPE\]"; then
+            echo "template_type=scope-anchor" >> $GITHUB_OUTPUT
+          elif echo "$ISSUE_TITLE" | grep -q "\[STP-FORESIGHT\]"; then
+            echo "template_type=foresight-seal" >> $GITHUB_OUTPUT
+          else
+            echo "template_type=general-trace" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run FROZEN-2.0 stamp
+        id: stamp
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          TEMPLATE_TYPE: ${{ steps.issue.outputs.template_type }}
+        run: |
+          python - <<'PYEOF'
+          import os, json, datetime, sys
+
+          sys.path.insert(0, 'stamp')
+          from sovereign_trace_stamp import stamp, display, to_dict
+
+          title   = os.environ['ISSUE_TITLE']
+          body    = os.environ['ISSUE_BODY']
+          number  = os.environ['ISSUE_NUMBER']
+          user    = os.environ['ISSUE_USER']
+          url     = os.environ['ISSUE_URL']
+          ttype   = os.environ['TEMPLATE_TYPE']
+
+          seal_content = f"STP-{ttype.upper()} | Issue #{number} | {user} | {title}\n\n{body}"
+
+          ts = stamp(seal_content)
+          ts_dict = to_dict(ts)
+
+          date_str = datetime.datetime.utcnow().strftime('%Y-%m-%d')
+          ledger_id = f"STP-{ttype.upper()}-{date_str}-{number.zfill(6)}"
+
+          entry = {
+              "ledger_id":      ledger_id,
+              "template_type":  ttype,
+              "issue_number":   int(number),
+              "issue_url":      url,
+              "submitter":      user,
+              "title":          title,
+              "seal": {
+                  "sha256":         ts_dict["seal"],
+                  "gregorian":      ts_dict["gregorian"],
+                  "hebrew":         ts_dict["hebrew"],
+                  "dreamspell":     ts_dict["dreamspell"],
+                  "unix_utc":       ts_dict["unix_utc"],
+                  "frozen_version": "FROZEN-2.0"
+              },
+              "status": "SEALED"
+          }
+
+          os.makedirs('ledger', exist_ok=True)
+          ledger_path = f"ledger/{ledger_id}.json"
+          with open(ledger_path, 'w') as f:
+              json.dump(entry, f, indent=2)
+
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as gh_out:
+              gh_out.write(f"ledger_id={ledger_id}\n")
+              gh_out.write(f"sha256={ts_dict['seal']}\n")
+              gh_out.write(f"gregorian={ts_dict['gregorian']}\n")
+              gh_out.write(f"hebrew={ts_dict['hebrew']}\n")
+              gh_out.write(f"dreamspell={ts_dict['dreamspell']}\n")
+              gh_out.write(f"ledger_path={ledger_path}\n")
+
+          print(f"Sealed: {ledger_id}")
+          print(f"SHA-256: {ts_dict['seal']}")
+          PYEOF
+
+      - name: Commit ledger entry
+        run: |
+          git config user.name  "Sovereign Trace Protocol"
+          git config user.email "aionsystem2026@gmail.com"
+          git add ledger/
+          git commit -m "SEAL: ${{ steps.stamp.outputs.ledger_id }}"
+          git push
+
+      - name: Post seal receipt to issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const ledger_id   = '${{ steps.stamp.outputs.ledger_id }}';
+            const sha256      = '${{ steps.stamp.outputs.sha256 }}';
+            const gregorian   = '${{ steps.stamp.outputs.gregorian }}';
+            const hebrew      = '${{ steps.stamp.outputs.hebrew }}';
+            const dreamspell  = '${{ steps.stamp.outputs.dreamspell }}';
+
+            const body = [
+              '## ✅ SOVEREIGN TRACE SEAL — COMPLETE',
+              '',
+              '```',
+              `Ledger ID:    ${ledger_id}`,
+              `SHA-256:      ${sha256}`,
+              '```',
+              '',
+              '**Triple-Time Stamp:**',
+              `📅 Gregorian:  ${gregorian}`,
+              `🌑 Hebrew:     ${hebrew}`,
+              `🌀 Dreamspell: ${dreamspell}`,
+              '',
+              '**Status:** `SEALED` — This record is permanent and immutable.',
+              'It cannot be altered or deleted after this point.',
+              '',
+              'Your Ledger ID is your receipt. Keep it.',
+              '',
+              '---',
+              '*Sovereign Trace Protocol · FROZEN-2.0 · Sheldon K. Salmon*'
+            ].join('\n');
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              issue_number: context.issue.number,
+              body
+            });
+
+      - name: Update label — pending-seal to sealed
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.removeLabel({
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              issue_number: context.issue.number,
+              name: 'pending-seal'
+            }).catch(() => {});
+
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              issue_number: context.issue.number,
+              labels: ['sealed']
+            });
