@@ -1,1 +1,283 @@
+name: Sovereign Trace Audit Verify
 
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  verify-auditor:
+    if: github.event.label.name == 'pending-verification'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: write
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Extract issue data and verify badge
+        id: verify
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+        run: |
+          python - <<'PYEOF'
+          import os, json, re
+
+          body   = os.environ['ISSUE_BODY']
+          number = os.environ['ISSUE_NUMBER']
+          user   = os.environ['ISSUE_USER']
+
+          badge_match = re.search(r'STP-AUDITOR-\d{4}', body)
+          badge = badge_match.group(0) if badge_match else ""
+
+          try:
+              with open('.github/verified-auditors.json') as f:
+                  registry = json.load(f)
+          except FileNotFoundError:
+              registry = {}
+
+          if badge and badge in registry:
+              auditor = registry[badge]
+              verified = True
+              auditor_name     = auditor.get('name', 'Unknown')
+              auditor_linkedin = auditor.get('linkedin', '')
+              auditor_spec     = auditor.get('specialization', '')
+          else:
+              verified = False
+              auditor_name     = "UNVERIFIED"
+              auditor_linkedin = ""
+              auditor_spec     = ""
+              badge = badge if badge else "NONE_PROVIDED"
+
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as gh_out:
+              gh_out.write(f"verified={'true' if verified else 'false'}\n")
+              gh_out.write(f"badge={badge}\n")
+              gh_out.write(f"auditor_name={auditor_name}\n")
+              gh_out.write(f"auditor_linkedin={auditor_linkedin}\n")
+              gh_out.write(f"issue_number={number}\n")
+              gh_out.write(f"issue_user={user}\n")
+
+          print(f"Badge: {badge} | Verified: {verified}")
+          PYEOF
+
+      - name: Run FROZEN-2.0 stamp
+        id: stamp
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          VERIFIED: ${{ steps.verify.outputs.verified }}
+          BADGE: ${{ steps.verify.outputs.badge }}
+          AUDITOR_NAME: ${{ steps.verify.outputs.auditor_name }}
+        run: |
+          python - <<'PYEOF'
+          import os, json, datetime, sys
+
+          sys.path.insert(0, 'stamp')
+          from sovereign_trace_stamp import stamp, to_dict
+
+          title        = os.environ['ISSUE_TITLE']
+          body         = os.environ['ISSUE_BODY']
+          number       = os.environ['ISSUE_NUMBER']
+          user         = os.environ['ISSUE_USER']
+          url          = os.environ['ISSUE_URL']
+          verified     = os.environ['VERIFIED'] == 'true'
+          badge        = os.environ['BADGE']
+          auditor_name = os.environ['AUDITOR_NAME']
+
+          status_tag = "CERTIFIED" if verified else "AUDITOR_UNVERIFIED"
+
+          seal_content = (
+              f"STP-AUDIT-COMPLETION | Issue #{number} | {user} | "
+              f"Badge: {badge} | Status: {status_tag} | {title}\n\n{body}"
+          )
+
+          ts = stamp(seal_content)
+          ts_dict = to_dict(ts)
+
+          date_str  = datetime.datetime.utcnow().strftime('%Y-%m-%d')
+          ledger_id = f"STP-AUDIT-COMPLETION-{date_str}-{number.zfill(6)}"
+
+          entry = {
+              "ledger_id":     ledger_id,
+              "template_type": "audit-completion",
+              "issue_number":  int(number),
+              "issue_url":     url,
+              "submitter":     user,
+              "title":         title,
+              "auditor": {
+                  "badge":    badge,
+                  "name":     auditor_name,
+                  "verified": verified,
+                  "status":   status_tag
+              },
+              "seal": {
+                  "sha256":         ts_dict["seal"],
+                  "gregorian":      ts_dict["gregorian"],
+                  "hebrew":         ts_dict["hebrew"],
+                  "dreamspell":     ts_dict["dreamspell"],
+                  "unix_utc":       ts_dict["unix_utc"],
+                  "frozen_version": "FROZEN-2.0"
+              },
+              "status": status_tag
+          }
+
+          os.makedirs('ledger', exist_ok=True)
+          ledger_path = f"ledger/{ledger_id}.json"
+          with open(ledger_path, 'w') as f:
+              json.dump(entry, f, indent=2)
+
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as gh_out:
+              gh_out.write(f"ledger_id={ledger_id}\n")
+              gh_out.write(f"sha256={ts_dict['seal']}\n")
+              gh_out.write(f"gregorian={ts_dict['gregorian']}\n")
+              gh_out.write(f"hebrew={ts_dict['hebrew']}\n")
+              gh_out.write(f"dreamspell={ts_dict['dreamspell']}\n")
+
+          print(f"Sealed: {ledger_id} | {status_tag}")
+          PYEOF
+
+      - name: Commit ledger entry
+        run: |
+          git config user.name  "Sovereign Trace Protocol"
+          git config user.email "aionsystem2026@gmail.com"
+          git add ledger/
+          git commit -m "AUDIT-SEAL: ${{ steps.stamp.outputs.ledger_id }}"
+          git push
+
+      - name: Post verified receipt
+        if: steps.verify.outputs.verified == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const ledger_id       = '${{ steps.stamp.outputs.ledger_id }}';
+            const sha256          = '${{ steps.stamp.outputs.sha256 }}';
+            const gregorian       = '${{ steps.stamp.outputs.gregorian }}';
+            const hebrew          = '${{ steps.stamp.outputs.hebrew }}';
+            const dreamspell      = '${{ steps.stamp.outputs.dreamspell }}';
+            const badge           = '${{ steps.verify.outputs.badge }}';
+            const auditor_name    = '${{ steps.verify.outputs.auditor_name }}';
+            const auditor_linkedin = '${{ steps.verify.outputs.auditor_linkedin }}';
+
+            const body = [
+              '## ✅ SOVEREIGN TRACE AUDIT SEAL — CERTIFIED',
+              '',
+              '```',
+              `Ledger ID:    ${ledger_id}`,
+              `SHA-256:      ${sha256}`,
+              `Status:       CERTIFIED`,
+              '```',
+              '',
+              '**Auditor:**',
+              `🏅 Badge:     ${badge}`,
+              `👤 Name:      ${auditor_name}`,
+              `🔗 LinkedIn:  ${auditor_linkedin}`,
+              '',
+              '**Triple-Time Stamp:**',
+              `📅 Gregorian:  ${gregorian}`,
+              `🌑 Hebrew:     ${hebrew}`,
+              `🌀 Dreamspell: ${dreamspell}`,
+              '',
+              '**Status:** `CERTIFIED` — This audit record is permanently sealed.',
+              'The auditor identity has been verified against the STP registry.',
+              '',
+              '---',
+              '*Sovereign Trace Protocol · FROZEN-2.0 · Sheldon K. Salmon*'
+            ].join('\n');
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              issue_number: context.issue.number,
+              body
+            });
+
+      - name: Label verified
+        if: steps.verify.outputs.verified == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.removeLabel({
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              issue_number: context.issue.number,
+              name: 'pending-verification'
+            }).catch(() => {});
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              issue_number: context.issue.number,
+              labels: ['audit-complete']
+            });
+
+      - name: Post unverified warning
+        if: steps.verify.outputs.verified == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const ledger_id = '${{ steps.stamp.outputs.ledger_id }}';
+            const sha256    = '${{ steps.stamp.outputs.sha256 }}';
+            const badge     = '${{ steps.verify.outputs.badge }}';
+
+            const body = [
+              '## ⚠ UNVERIFIED AUDITOR SUBMISSION',
+              '',
+              '```',
+              `Ledger ID:    ${ledger_id}`,
+              `SHA-256:      ${sha256}`,
+              `Status:       AUDITOR_UNVERIFIED`,
+              `Badge Filed:  ${badge}`,
+              '```',
+              '',
+              'This audit completion was submitted without a valid STP Auditor badge number.',
+              'The badge provided was not found in the verified auditor registry.',
+              '',
+              'This record has been **permanently sealed** in the ledger with status `AUDITOR_UNVERIFIED`.',
+              'It cannot be removed, altered, or hidden.',
+              '',
+              'If you are a certified STP Auditor and believe this is an error,',
+              'contact aionsystem2026@gmail.com with your badge number and LinkedIn.',
+              '',
+              'If you are not a certified STP Auditor — this record stands as filed.',
+              '',
+              '---',
+              '*Sovereign Trace Protocol · FROZEN-2.0 · Sheldon K. Salmon*'
+            ].join('\n');
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              issue_number: context.issue.number,
+              body
+            });
+
+      - name: Label unverified
+        if: steps.verify.outputs.verified == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.removeLabel({
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              issue_number: context.issue.number,
+              name: 'pending-verification'
+            }).catch(() => {});
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              issue_number: context.issue.number,
+              labels: ['unverified-auditor-attempt']
+            });
