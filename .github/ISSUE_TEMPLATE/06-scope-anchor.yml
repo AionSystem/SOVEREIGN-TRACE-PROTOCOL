@@ -1,5 +1,5 @@
 name: "Scope Anchor Seal — Sovereign Trace Protocol"
-description: "Seal an agreed scope, negotiated position, or decision before work begins or a conversation concludes. Establishes a tamper-evident anchor against scope creep, disputed terms, or moved goalposts."
+description: "Seal an agreed scope, negotiated position, or decision before work begins. Tamper-evident anchor against disputed terms."
 title: "[STP-SCOPE] — [PARTIES] — [DATE]"
 labels: ["scope-anchor", "pending-seal"]
 assignees: []
@@ -13,18 +13,11 @@ body:
 
         This form seals an agreed position, scope, or decision at the exact moment of submission.
 
-        **Use this when:**
-        - A project scope has been agreed and work is about to begin
-        - A negotiation has reached a position you need to anchor before the conversation continues
-        - A decision has been made and you need a tamper-evident record before it is documented elsewhere
-        - Terms have been discussed verbally and you need a written sealed record before a formal contract is signed
-
-        **What the seal gives you:**
-        If the other party later claims the scope was different, the terms changed, or you agreed to something else —
-        the sealed record is your ground truth. It existed before the dispute. It has not been altered since.
+        Use this when a project scope has been agreed, a negotiation has reached a position you need to anchor,
+        or terms have been discussed verbally and you need a written sealed record before a formal contract is signed.
 
         **This is not a legal contract.** It is a tamper-evident record of your position at a specific moment.
-        For contract-level protection, consult a lawyer. This seal complements legal documentation — it does not replace it.
+        This seal complements legal documentation — it does not replace it.
 
   - type: input
     id: submitter_name
@@ -39,8 +32,8 @@ body:
     id: other_party
     attributes:
       label: "Other Party or Parties"
-      description: "Who is the other party in this agreement or negotiation? Company name, individual, or role."
-      placeholder: "e.g. Acme Corp / Client: First Last / Employer: Company Name"
+      description: "Who is the other party? Company name, individual, or role."
+      placeholder: "Acme Corp / Client: First Last / Employer: Company Name"
     validations:
       required: true
 
@@ -49,7 +42,7 @@ body:
     attributes:
       label: "Agreement Type"
       description: "What kind of scope or agreement is being sealed?"
-      placeholder: "Project Scope / Freelance Contract Terms / Salary Negotiation / Settlement Position / Business Terms / Verbal Agreement / Other"
+      placeholder: "Project Scope / Contract Terms / Salary Negotiation / Settlement / Business Terms"
     validations:
       required: true
 
@@ -57,7 +50,7 @@ body:
     id: agreement_date
     attributes:
       label: "Date of Agreement or Position"
-      description: "The date this scope was agreed or this position was reached. Format: YYYY-MM-DD"
+      description: "The date this scope was agreed or position was reached. Format: YYYY-MM-DD"
       placeholder: "2026-03-07"
     validations:
       required: true
@@ -66,7 +59,7 @@ body:
     id: scope_or_terms
     attributes:
       label: "Agreed Scope or Position — Exact"
-      description: "State exactly what was agreed. Be specific. Include deliverables, timelines, compensation, exclusions, or whatever defines the boundary of this agreement. The more specific, the stronger the anchor."
+      description: "State exactly what was agreed. Include deliverables, timelines, compensation, exclusions."
       placeholder: "State the agreed scope, terms, or position precisely. Include all material details."
     validations:
       required: true
@@ -75,7 +68,7 @@ body:
     id: what_is_excluded
     attributes:
       label: "What Is Explicitly Excluded (Optional but Recommended)"
-      description: "What is NOT included in this scope? Explicit exclusions are as important as inclusions. They prevent the most common form of scope creep: adding work that was never refused — just never explicitly excluded."
+      description: "What is NOT included? Explicit exclusions prevent the most common form of scope creep."
       placeholder: "List what is explicitly outside this scope."
     validations:
       required: false
@@ -84,17 +77,16 @@ body:
     id: context
     attributes:
       label: "Context"
-      description: "How was this agreement reached? Verbal conversation, email exchange, meeting? Describe enough context for the record to be self-explanatory to someone reading it later."
+      description: "How was this agreement reached? Verbal conversation, email exchange, meeting?"
       placeholder: "Describe the context in which this agreement was reached."
     validations:
       required: true
 
-  - type: textarea
-    id: supporting_links
+  - type: upload
+    id: supporting_files
     attributes:
-      label: "Supporting Material Links (Optional)"
-      description: "GitHub CDN URLs for any supporting files — screenshots of email chains, message threads, or documents relevant to this agreement."
-      placeholder: "Paste GitHub CDN URLs for any supporting files."
+      label: "Supporting Files (Optional)"
+      description: "Upload screenshots of email chains, message threads, or documents supporting this agreement."
     validations:
       required: false
 
@@ -103,11 +95,11 @@ body:
     attributes:
       label: "Declaration"
       options:
-        - label: "I affirm that this record accurately represents my understanding of the agreed scope or position at the time of sealing."
+        - label: "I affirm this record accurately represents my understanding of the agreed scope or position at the time of sealing."
           required: true
         - label: "I understand this submission is immutable — it cannot be altered after sealing."
           required: true
-        - label: "I understand that the Sovereign Trace Protocol is not a legal contract and does not constitute legal advice."
+        - label: "I understand the Sovereign Trace Protocol is not a legal contract and does not constitute legal advice."
           required: true
 
   - type: markdown
@@ -116,13 +108,12 @@ body:
         ---
         ## What Happens Next
 
-        1. Completeness check — The Sovereign Trace Protocol office reviews for completeness.
-        2. Sealing — Your submission is sealed with a FROZEN-2.0 triple-time cryptographic stamp.
-        3. Ledger entry — Your submission enters the Sovereign Trace ledger with your name, the seal timestamp, and SHA-256 hash.
+        1. Completeness check — Reviewed for completeness.
+        2. Sealing — Sealed with a FROZEN-2.0 triple-time cryptographic stamp. Permanent.
+        3. Ledger entry — Enters the Sovereign Trace ledger with your name, timestamp, and SHA-256 hash.
         4. Notification — You receive your ledger entry ID and SHA-256 hash.
 
         Share the ledger entry ID with the other party if appropriate.
         The seal is permanent. The seal is the anchor.
 
         Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
-
