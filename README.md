@@ -36,7 +36,7 @@ See `concept/USE-CASES.md` for the full dual-use architecture.
 
 ## Who Seals What
 
-The stamp function does not care what it seals. A sealed moment is a sealed moment. The SHA-256 proof is the same whether the content is an AI failure report, a research hypothesis, a hospital incident record, or a contractor's agreed scope.
+The stamp function does not care what it seals. A sealed moment is a sealed moment. The SHA-256 proof is the same whether the content is an AI failure report, a research hypothesis, a hospital incident record, a contractor's agreed scope, or a professional foresight declaration.
 
 | Who | What They Seal | Why It Matters |
 |-----|---------------|----------------|
@@ -59,6 +59,7 @@ The stamp function does not care what it seals. A sealed moment is a sealed mome
 | **Therapist / clinician** | Session notes at time of writing | If notes are subpoenaed, the seal proves they were not altered retroactively. Integrity of the clinical record at the moment of documentation. |
 | **Estate / legal** | Intentions before a will is formalized | Not a legal substitute — but a tamper-evident record of what was wanted, sealed at the moment of decision, before institutional processes began. |
 | **Organization (any)** | AI failure log entry before remediation | Immutable pre-remediation record. Proves the organization documented honestly before fixing — not after. An organization with a documented failure history is more trustworthy than one with a clean record and no ledger. |
+| **Foresight analyst / strategist** | Dated professional prediction about a company, industry, or technology before it resolves | Cryptographic proof you saw it first. When the prediction resolves, the ledger entry is the receipt. A track record of correct sealed predictions — verifiable by anyone — cannot be fabricated after the fact. |
 
 The mechanism is always the same. The stake determines how you use the sealed record afterward.
 
@@ -113,6 +114,26 @@ The triple stamp is not redundancy. It is a claim: this moment of human signific
 
 ---
 
+## Submission Layer
+
+Structured submissions are made through GitHub Issues using the official template set. Each template produces a structured, legally-declared record before sealing. Blank issues are disabled — every submission uses a template.
+
+| Template | Use Case |
+|----------|----------|
+| `01-ai-failure.yml` | AI system output failure — identity verified, legal declaration required |
+| `02-research-priority.yml` | Hypothesis or finding before results are known |
+| `03-evidence-chain.yml` | Document or source communication at point of receipt |
+| `04-creative-priority.yml` | Creative work — music, writing, art, design, code |
+| `05-clinical-record.yml` | Clinical incident, trial data, or institutional record — PHI gate active |
+| `06-scope-anchor.yml` | Agreed scope or negotiated position before work begins |
+| `07-general-trace.yml` | Any observation, decision, or record that doesn't fit another template |
+| `08-foresight-seal.yml` | Dated professional prediction before it resolves — foresight track record |
+
+All templates include: native file upload, SHA-256 binding, declaration checkbox, and legal compliance language.
+See `concept/USE-CASES.md` for guidance on which template fits your submission.
+
+---
+
 ## Frozen Declaration
 
 `sovereign_trace_stamp.py` is **FROZEN-2.0**. Written once, verified once, deployed permanently. No patches. No updates. The stamp it generates is only permanent if the code that generates it is also permanent.
@@ -144,7 +165,8 @@ Full legal coverage: `LEGAL-POSTURE.md`
 | Enterprise Certification | Full audit + Sovereign Certified badge | $25,000/yr |
 | Strategic Retainer | Quarterly reviews + epistemic debt statement | $100,000+ |
 
-See `CERTIFICATION.md` for full process and terms.
+See `CERTIFICATION.md` and `TERMS-OF-SERVICE.md` for full process and terms.
+Governing law: State of New York, United States. Arbitration: JAMS Commercial Rules.
 
 ---
 
@@ -174,11 +196,26 @@ sovereign-trace-protocol/
 ├── README.md
 ├── pyproject.toml
 │
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── config.yml                          ← blank issues disabled, contact links
+│   │   ├── 01-ai-failure.yml                   ← AI output failure, identity verified
+│   │   ├── 02-research-priority.yml            ← hypothesis before results known
+│   │   ├── 03-evidence-chain.yml               ← document/source at point of receipt
+│   │   ├── 04-creative-priority.yml            ← creative work authorship priority
+│   │   ├── 05-clinical-record.yml              ← clinical record, PHI gate active
+│   │   ├── 06-scope-anchor.yml                 ← agreed scope before work begins
+│   │   ├── 07-general-trace.yml                ← any moment that deserves sealing
+│   │   └── 08-foresight-seal.yml               ← dated prediction before it resolves
+│   └── workflows/
+│       └── python-publish.yml
+│
 ├── concept/
 │   ├── GLOSSARY.md                             ← plain-language term definitions
 │   ├── USE-CASES.md                            ← individual + enterprise use cases
 │   ├── DUAL-AUDIENCE-ARCHITECTURE.md           ← inward permanence vs outward accountability
 │   ├── TRUST-WITHOUT-IDENTITY.md               ← engineering lineage + Stage 3/4 foundations
+│   ├── PRIOR-ART.md                            ← defensive IP documentation, March 7, 2026
 │   ├── SOVEREIGN-TRACE-v0.1-SPEC.md
 │   └── SOVEREIGN-TRACE-v0.2-SPEC.md
 │
@@ -189,9 +226,6 @@ sovereign-trace-protocol/
 │
 ├── ledger/
 │   └── PLACEHOLDER.md
-│
-├── .github/workflows/
-│   └── python-publish.yml
 │
 └── legal (root level — visible, not hidden)
     LICENSE · LICENSE.md · LICENSE-COMMERCIAL.md · LICENSE-EXPLANATION.md
