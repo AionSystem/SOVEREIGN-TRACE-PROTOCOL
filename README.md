@@ -34,6 +34,26 @@ See `concept/USE-CASES.md` for the full dual-use architecture.
 
 ---
 
+## Who Seals What
+
+The stamp function does not care what it seals. A sealed moment is a sealed moment. The SHA-256 proof is the same whether the content is an AI failure report, a research hypothesis, or a journalist's source record.
+
+| Who | What They Seal | Why It Matters |
+|-----|---------------|----------------|
+| **AI auditor** | AI system output failure — exact text + screenshots | Public permanent record. Organizational accountability. Tamper-evident before remediation. |
+| **Researcher / scientist** | Hypothesis before running the experiment | Proves prediction preceded results. Kills HARKing (Hypothesizing After Results are Known). Every field. No institution required. |
+| **Journalist** | Article draft before publication · Source document received · Evidence chain before going to print | Proves what you had and when you had it. If a source is pressured to recant — the sealed record shows what they said before the pressure. |
+| **Whistleblower** | Evidence before going public | Chain of custody proof. SHA-256 seal proves the document has not been altered since the moment before disclosure. |
+| **Musician / artist / writer** | Creative work before release or submission | Timestamped proof of authorship. Not a patent — but cryptographic priority proof that costs nothing and requires no lawyer. |
+| **Independent researcher** | Findings before peer review | Priority claim before submission. Prevents being scooped or having findings disputed after publication. |
+| **Negotiator** | Your position before a difficult conversation | Seal what you were willing to accept before the other party claims you moved the goalposts. Salary. Settlement. Term sheet. |
+| **Organization** | AI failure log entry before remediation | Immutable pre-remediation record. Proves the organization documented honestly before fixing — not after. |
+| **Developer / builder** | Architecture decision, specification, or design before implementation | Proves what was designed before what was built. Useful when a later implementation diverges and accountability is disputed. |
+
+The mechanism is always the same. The stake determines how you use the sealed record afterward.
+
+---
+
 ## The Origin of the Enterprise from the Personal
 
 The enterprise use case was not designed first. The protocol was built to solve the personal problem: how does one individual permanently register their own significant moments without requiring an audience, a platform, or institutional permission?
@@ -145,13 +165,15 @@ sovereign-trace-protocol/
 ├── pyproject.toml
 │
 ├── concept/
-│   ├── GLOSSARY.md                         ← plain-language term definitions
-│   ├── USE-CASES.md                        ← individual + enterprise use cases
+│   ├── GLOSSARY.md                             ← plain-language term definitions
+│   ├── USE-CASES.md                            ← individual + enterprise use cases
+│   ├── DUAL-AUDIENCE-ARCHITECTURE.md           ← inward permanence vs outward accountability
+│   ├── TRUST-WITHOUT-IDENTITY.md               ← engineering lineage + Stage 3/4 foundations
 │   ├── SOVEREIGN-TRACE-v0.1-SPEC.md
 │   └── SOVEREIGN-TRACE-v0.2-SPEC.md
 │
 ├── stamp/
-│   ├── sovereign_trace_stamp.py            ← FROZEN-2.0
+│   ├── sovereign_trace_stamp.py                ← FROZEN-2.0
 │   ├── FROZEN-2.0-MANIFEST.md
 │   └── FROZEN-1.0-RETIRED/
 │
