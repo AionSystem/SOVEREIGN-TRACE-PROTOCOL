@@ -208,6 +208,7 @@ sovereign-trace-protocol/
 │   │   ├── 06-scope-anchor.yml                 ← agreed scope before work begins
 │   │   ├── 07-general-trace.yml                ← any moment that deserves sealing
 │   │   └── 08-foresight-seal.yml               ← dated prediction before it resolves
+│   │   └── 09-webeater-link.yml                ← cryptographic link between two sealed entities
 │   └── workflows/
 │       └── python-publish.yml
 │
