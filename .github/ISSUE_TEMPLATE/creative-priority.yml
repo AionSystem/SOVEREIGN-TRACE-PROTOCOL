@@ -1,1 +1,131 @@
+# ISSUE TEMPLATE — creative-priority.yml
+# Copy this content exactly into your .yml file
+
+```yaml
+name: "Creative Priority Seal — Sovereign Trace Protocol"
+description: "Seal a creative work — music, writing, art, design, code — at the moment of creation. Establishes tamper-evident proof of authorship and priority without a lawyer or institution."
+title: "[STP-CREATIVE] — [MEDIUM] — [DATE]"
+labels: ["creative-priority", "pending-seal"]
+assignees: []
+
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Creative Priority Seal
+
+        This form seals your creative work at the moment you submit it.
+
+        **This is not a copyright registration.** Copyright exists the moment you create something.
+        This seal gives you something copyright alone does not: cryptographic proof that this exact work
+        existed, in this exact form, on this exact date — verifiable by anyone, requiring no institution.
+
+        If your work is ever disputed, copied, or claimed by another — the sealed record is your ground truth.
+
+        **You do not need to attach the full work.** Seal a precise description, a title, a hash of the file,
+        or a representative excerpt. What matters is that the seal binds to something specific and unique to this work.
+
+  - type: input
+    id: submitter_name
+    attributes:
+      label: "Your Name or Artist Name"
+      description: "The name you want attached to this priority record."
+      placeholder: "Legal name or professional name"
+    validations:
+      required: true
+
+  - type: input
+    id: work_title
+    attributes:
+      label: "Work Title"
+      description: "The title of the work being sealed."
+      placeholder: "Title of the work"
+    validations:
+      required: true
+
+  - type: input
+    id: medium
+    attributes:
+      label: "Medium / Format"
+      description: "What kind of creative work is this?"
+      placeholder: "Music track / Album / Novel / Short story / Screenplay / Visual art / Design / Software / Poem / Other"
+    validations:
+      required: true
+
+  - type: input
+    id: creation_date
+    attributes:
+      label: "Date of Creation or Completion"
+      description: "When was this work created or completed? Format: YYYY-MM-DD"
+      placeholder: "2026-03-07"
+    validations:
+      required: true
+
+  - type: textarea
+    id: work_description
+    attributes:
+      label: "Work Description"
+      description: "Describe the work precisely. Include distinctive elements — themes, structure, characters, sonic qualities, visual elements — that uniquely identify this work. The more specific, the stronger the priority claim."
+      placeholder: "Describe the work with enough specificity to distinguish it from any other work."
+    validations:
+      required: true
+
+  - type: textarea
+    id: representative_content
+    attributes:
+      label: "Representative Content or Excerpt (Optional)"
+      description: "Paste a short excerpt, lyric, passage, or description of a specific element. Or paste a SHA-256 hash of the file if you have generated one. This binds the seal to specific content, not just a description."
+      placeholder: "Excerpt, key passage, or SHA-256 hash of the file."
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting_links
+    attributes:
+      label: "Supporting Files or Links (Optional)"
+      description: "GitHub CDN URLs for any files attached to this issue. These URLs become part of the sealed record."
+      placeholder: "Paste GitHub CDN URLs for any attached screenshots or files."
+    validations:
+      required: false
+
+  - type: input
+    id: publication_status
+    attributes:
+      label: "Publication Status"
+      description: "Is this work published, unpublished, or in progress?"
+      placeholder: "Unpublished / Published [date] / In progress / Submitted for review"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: "Declaration"
+      options:
+        - label: "I affirm that I am the creator of this work or an authorized representative of the creator."
+          required: true
+        - label: "I affirm that the description accurately represents the work as it exists at the time of sealing."
+          required: true
+        - label: "I understand this submission is immutable — it cannot be altered after sealing."
+          required: true
+        - label: "I understand that the Sovereign Trace Protocol does not provide legal copyright registration — it provides a tamper-evident timestamp of priority."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## What Happens Next
+
+        1. Completeness check — The Sovereign Trace Protocol office reviews for completeness.
+        2. Sealing — Your submission is sealed with a FROZEN-2.0 triple-time cryptographic stamp.
+        3. Ledger entry — Your submission enters the Sovereign Trace ledger with your name, the seal timestamp, and the SHA-256 hash.
+        4. Notification — You receive your ledger entry ID and SHA-256 hash for your records.
+
+        Keep the SHA-256 hash. It is your proof. Anyone can verify it independently.
+        The seal is permanent. The seal is the priority record.
+
+        Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
+```
 
