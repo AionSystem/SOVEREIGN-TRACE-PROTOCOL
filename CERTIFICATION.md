@@ -1,6 +1,6 @@
 # CERTIFICATION.md — Sovereign Trace Protocol Certification
 
-![Sovereign Certified](./badges/sovereign-certified-badge.svg)
+![Sovereign Certified](./badges/sovereign-certified-badge-v2.svg)
 
 **Sovereign Trace Protocol · Version 2.0.0**
 **Author: Sheldon K. Salmon — AI Reliability & AGI Architect**
@@ -23,11 +23,28 @@ Installation is not certification. Running the ledger is not certification.
 
 Certification is the formal verification that a deployment meets the
 FROZEN-2.0 standard — a structured technical audit with a defined
-deliverable: a signed assessment from the Architect that the deployment
-is operating within specification and producing trustworthy immutable
-records.
+deliverable: a signed assessment that the deployment is operating within
+specification and producing trustworthy immutable records.
 
-Three tiers. No negotiation on scope. No bundling.
+Four tiers. No negotiation on scope. No bundling.
+
+---
+
+## AUDIT INTAKE SCHEDULE
+
+**Intake: Monday and Tuesday only.**
+Submissions filed on any other day are voided and non-refundable.
+
+**Delivery: Weekends.** Reports delivered Saturday or Sunday via scheduled
+reply on the issue thread. Standard turnaround is same or following weekend
+depending on tier and submission date.
+
+**Expedited delivery:** daily multiplier applies. Work required in under
+4 hours is not accepted. No exceptions.
+
+**Payment:** Stripe transaction code required in the issue at filing.
+Screenshot of the transaction sent to the contact email on file.
+Both must match before work begins. No exceptions.
 
 ---
 
@@ -35,8 +52,9 @@ Three tiers. No negotiation on scope. No bundling.
 
 **$2,500 · Single engagement · 5–7 business days**
 
-**Badge:** Standard — `badges/sovereign-certified-badge.svg`
-![Sovereign Certified](./badges/sovereign-certified-badge.svg)
+**Badge:** Standard — `badges/sovereign-certified-badge-v2.svg`
+
+![Sovereign Certified](./badges/sovereign-certified-badge-v2.svg)
 
 **What it covers:**
 A single stamp check on a remediated failure. One AI failure event has
@@ -56,8 +74,9 @@ System-wide deployment review. Ongoing monitoring. Badge licensing.
 Access to the AION-Registry.
 
 **How to engage:**
-File a `Certification_Filing.md` issue. Include the entry identifier and
-organization name. No call precedes this engagement. The filing is the scope.
+File a `10-audit-request.yml` issue. Select Snapshot tier. Include the
+entry identifier and organization name. No call precedes this engagement.
+The filing is the scope. See intake schedule above.
 
 ---
 
@@ -65,14 +84,15 @@ organization name. No call precedes this engagement. The filing is the scope.
 
 **$25,000 per year · Annual renewal · 30-day assessment window**
 
-**Badge:** Digital — `badges/sovereign-certified-badge-digital.svg`
-![Sovereign Certified — Digital](./badges/sovereign-certified-badge-digital.svg)
+**Badge:** Digital — `badges/sovereign-certified-badge-digital-v2.svg`
+
+![Sovereign Certified — Digital](./badges/sovereign-certified-badge-digital-v2.svg)
 
 **What it covers:**
 Full implementation audit across the organization's AI deployment
 footprint — ledger configuration, scoring methodology, schema compliance,
 and remediation posture. Upon completion, the organization receives
-licensed use of the **Sovereign Certified** badge for one year.
+licensed use of the **Sovereign Certified Digital** badge for one year.
 
 **Deliverable:**
 - Full Enterprise Certification Report (written, signed, PDF)
@@ -92,9 +112,9 @@ assesses what was built. Questions about findings are answered in
 writing via the issue tracker. Zero-Consultation Rule applies.
 
 **How to engage:**
-File a `Certification_Filing.md` issue marked Tier 2. The Architect
+File a `10-audit-request.yml` issue marked Tier 2. The Architect
 will confirm the 30-day assessment window and invoice.
-Engagements are taken sequentially.
+Engagements are taken sequentially. See intake schedule above.
 
 ---
 
@@ -102,8 +122,9 @@ Engagements are taken sequentially.
 
 **$100,000+ per year · Terms negotiated in writing · C-Suite**
 
-**Badge:** Elite — `badges/sovereign-certified-badge-elite.svg`
-![Sovereign Certified — Elite](./badges/sovereign-certified-badge-elite.svg)
+**Badge:** Elite — `badges/sovereign-certified-badge-elite-v2.svg`
+
+![Sovereign Certified — Elite](./badges/sovereign-certified-badge-elite-v2.svg)
 
 **What it covers:**
 Standing certification and monitoring posture for organizations
@@ -134,7 +155,7 @@ $100,000 base. Final terms depend on deployment footprint, ledger
 volume, and industry classification.
 
 **How to engage:**
-File a `Certification_Filing.md` issue marked Tier 3 with organization
+File a `10-audit-request.yml` issue marked Tier 3 with organization
 name and AI deployment scope (one paragraph). The Architect responds
 with initial terms in writing. That exchange is the negotiation.
 
@@ -144,8 +165,9 @@ with initial terms in writing. That exchange is the negotiation.
 
 **Price: Negotiated · Engagement: Written contract required · Clearance: As applicable**
 
-**Badge:** Defense — `badges/sovereign-certified-badge-defense.svg`
-![Sovereign Certified — Defense Grade](./badges/sovereign-certified-badge-defense.svg)
+**Badge:** Defense — `badges/sovereign-certified-badge-defense-v2.svg`
+
+![Sovereign Certified — Defense Grade](./badges/sovereign-certified-badge-defense-v2.svg)
 
 **What it covers:**
 Full standards-alignment certification for federal agencies, DoD components,
@@ -183,7 +205,7 @@ quarter and which require remediation before the next review cycle.
   regulatory, or treaty-level implications
 
 **How to engage:**
-File a `Certification_Filing.md` issue marked Tier 4 with organization
+File a `10-audit-request.yml` issue marked Tier 4 with organization
 name, applicable regulatory frameworks, and AI deployment scope
 (one paragraph). The Architect responds with initial terms in writing.
 Engagements at this tier require a signed written agreement before
@@ -191,20 +213,68 @@ any work commences. No exceptions.
 
 ---
 
+## STP CERTIFIED AUDITOR NETWORK
+
+Beyond direct certification by the Architect, the Sovereign Trace Protocol
+maintains a certified auditor network. STP Certified Auditors are independent
+professionals authorized to conduct and file audit completions directly to the
+ledger under their own badge number.
+
+**The auditor badge:**
+
+![STP Certified Auditor](./badges/stp-auditor-badge-v2.svg)
+
+**Badge properties:**
+- Non-transferable — bound to the auditor's name and LinkedIn permanently
+- SHA-256 sealed at issuance — badge number is cryptographically anchored
+- Term: 1 year from issuance — renewable by reapplication only
+- Annual cap: 50 sealed audits per calendar year per badge
+- Badge number format: `STP-AUDITOR-XXXX`
+
+**Verification:**
+Every audit completion is verified live against `.github/verified-auditors.json`
+on submission. A badge not in the registry is not valid. Any audit completion
+filed with an unverified badge number is permanently sealed in the ledger
+with status `AUDITOR_UNVERIFIED` — public, immutable, and labeled as such.
+The warning cannot be removed.
+
+**Anti-bribery and integrity:**
+Badge misuse, bribery, coercion, or falsified findings may be reported
+by anyone using template `13-integrity-violation.yml`. Violations are sealed
+permanently in the ledger. Revocation proceedings may be referred to legal
+review outside of STP. No single party holds unilateral revocation authority —
+structural limits are intentional.
+
+**Revenue model:**
+Auditors set their own pricing. A platform percentage applies to all
+auditor-conducted engagements. Terms specified in the auditor agreement
+issued at certification.
+
+**How to apply:**
+File a `12-auditor-application.yml` issue. Skills-based review only —
+no credentials required. Demonstrated ability to assess AI outputs honestly
+is the criterion. Reviewed Monday–Tuesday. Not every application is accepted.
+There is no appeal process.
+
+---
+
 ## BADGE REFERENCE
 
 | Tier | Badge Variant | File |
 |------|--------------|------|
-| Tier 1 — Basic Verification | Standard | `badges/sovereign-certified-badge.svg` |
-| Tier 2 — Enterprise Certification | Digital | `badges/sovereign-certified-badge-digital.svg` |
-| Tier 3 — Strategic Retainer | Elite | `badges/sovereign-certified-badge-elite.svg` |
-| Tier 4 — Defense & Government Grade | Defense | `badges/sovereign-certified-badge-defense.svg` |
+| Tier 1 — Basic Verification | Standard | `badges/sovereign-certified-badge-v2.svg` |
+| Tier 2 — Enterprise Certification | Digital | `badges/sovereign-certified-badge-digital-v2.svg` |
+| Tier 3 — Strategic Retainer | Elite | `badges/sovereign-certified-badge-elite-v2.svg` |
+| Tier 4 — Defense & Government Grade | Defense | `badges/sovereign-certified-badge-defense-v2.svg` |
+| STP Certified Auditor | Auditor Shield | `badges/stp-auditor-badge-v2.svg` |
 
 Badge files are hosted in the Sovereign Trace Protocol repository.
 Licensed use only — see `TRADEMARK.md`. Badge license is included in
 the Certification Report delivered at each tier.
 Unlicensed display of any Sovereign Certified badge constitutes
 misrepresentation of audit status.
+
+All badges carry: `NON-TRANSFERABLE` · SHA-256 · FROZEN-2.0 · TRIPLE-TIME SEALED.
 
 ---
 
@@ -251,5 +321,5 @@ Dispute resolution: JAMS Commercial Arbitration Rules.
 ---
 
 *Sheldon K. Salmon · AI Reliability & AGI Architect · March 2026*
-*Certification inquiries: file a Certification_Filing.md issue.*
+*Certification inquiries: file a `10-audit-request.yml` issue.*
 *No other intake channel exists.*
