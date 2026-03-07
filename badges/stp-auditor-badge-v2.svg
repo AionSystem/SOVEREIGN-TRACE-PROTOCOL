@@ -1,0 +1,260 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 540" width="400" height="540">
+  <defs>
+
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#12141F"/>
+      <stop offset="50%"  stop-color="#0D0F1A"/>
+      <stop offset="100%" stop-color="#080A12"/>
+    </linearGradient>
+
+    <linearGradient id="goldOuter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#D4AF37"/>
+      <stop offset="30%"  stop-color="#F5E08A"/>
+      <stop offset="60%"  stop-color="#C5A028"/>
+      <stop offset="100%" stop-color="#8B6914"/>
+    </linearGradient>
+
+    <linearGradient id="goldInner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#8B6914"/>
+      <stop offset="50%"  stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#C5A028"/>
+    </linearGradient>
+
+    <radialGradient id="emblemGrad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%"   stop-color="#1E2235"/>
+      <stop offset="100%" stop-color="#0A0C14"/>
+    </radialGradient>
+
+    <!-- AI cyan pulse gradient -->
+    <linearGradient id="aiCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#001F2E"/>
+      <stop offset="30%"  stop-color="#00B4D8"/>
+      <stop offset="50%"  stop-color="#48CAE4"/>
+      <stop offset="70%"  stop-color="#00B4D8"/>
+      <stop offset="100%" stop-color="#001F2E"/>
+    </linearGradient>
+
+    <!-- AI bottom panel gradient -->
+    <linearGradient id="aiPanel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#050A14"/>
+      <stop offset="100%" stop-color="#0A1020"/>
+    </linearGradient>
+
+    <linearGradient id="crimson" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#6B0000"/>
+      <stop offset="50%"  stop-color="#8B0000"/>
+      <stop offset="100%" stop-color="#6B0000"/>
+    </linearGradient>
+
+    <radialGradient id="innerGlow" cx="50%" cy="30%" r="70%">
+      <stop offset="0%"   stop-color="#D4AF37" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Cyan node glow -->
+    <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#48CAE4" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#48CAE4" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="shadowDeep" x="-15%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+
+    <filter id="emboss">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1" result="blur"/>
+      <feOffset dx="0" dy="1" in="blur" result="offset"/>
+      <feComposite in="SourceGraphic" in2="offset" operator="over"/>
+    </filter>
+
+    <!-- Cyan text glow -->
+    <filter id="cyanGlow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+  </defs>
+
+  <!-- ═══ OUTER SHIELD GOLD BEVEL ═══ -->
+  <path d="M200,10 L370,60 L370,270 Q370,430 200,515 Q30,430 30,270 L30,60 Z"
+        fill="url(#goldOuter)"
+        filter="url(#shadowDeep)"/>
+
+  <!-- ═══ MAIN SHIELD BODY ═══ -->
+  <path d="M200,20 L358,66 L358,268 Q358,420 200,502 Q42,420 42,268 L42,66 Z"
+        fill="url(#shieldGrad)"/>
+
+  <!-- ═══ INNER GLOW ═══ -->
+  <path d="M200,20 L358,66 L358,268 Q358,420 200,502 Q42,420 42,268 L42,66 Z"
+        fill="url(#innerGlow)"/>
+
+  <!-- ═══ INNER GOLD BORDERS ═══ -->
+  <path d="M200,28 L350,70 L350,266 Q350,412 200,492 Q50,412 50,266 L50,70 Z"
+        fill="none" stroke="url(#goldInner)" stroke-width="1.5" opacity="0.7"/>
+  <path d="M200,34 L344,74 L344,264 Q344,406 200,484 Q56,406 56,264 L56,74 Z"
+        fill="none" stroke="#D4AF37" stroke-width="0.4" opacity="0.25"/>
+
+  <!-- ═══ NON-TRANSFERABLE — TOP OF BADGE ═══ -->
+  <text x="200" y="68"
+        font-family="'Courier New', monospace"
+        font-size="8.5" font-weight="bold" letter-spacing="3.5"
+        fill="#48CAE4" text-anchor="middle"
+        filter="url(#cyanGlow)">NON-TRANSFERABLE</text>
+  <line x1="90" y1="72" x2="310" y2="72"
+        stroke="#48CAE4" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- ═══ TOP BANNER ═══ -->
+  <rect x="56" y="78" width="288" height="28" fill="#080A12"/>
+  <rect x="56" y="78" width="288" height="1.5" fill="url(#goldOuter)" opacity="0.9"/>
+  <rect x="56" y="105" width="288" height="1.5" fill="url(#goldOuter)" opacity="0.9"/>
+
+  <text x="200" y="97"
+        font-family="'Georgia', 'Times New Roman', serif"
+        font-size="10.5" font-weight="bold" letter-spacing="3.5"
+        fill="#D4AF37" text-anchor="middle" filter="url(#emboss)">SOVEREIGN TRACE PROTOCOL</text>
+
+  <!-- ═══ CYAN SHA BANNER — directly under STP title ═══ -->
+  <rect x="56" y="105" width="288" height="22" fill="#03080F"/>
+  <rect x="56" y="105" width="288" height="1.5" fill="url(#aiCyan)" opacity="0.9"/>
+  <rect x="56" y="126" width="288" height="1.5" fill="url(#aiCyan)" opacity="0.5"/>
+
+  <!-- AI nodes inline -->
+  <circle cx="74"  cy="116" r="1.5" fill="#48CAE4" opacity="0.5"/>
+  <circle cx="90"  cy="116" r="1"   fill="#48CAE4" opacity="0.3"/>
+  <line x1="74" y1="116" x2="90" y2="116" stroke="#48CAE4" stroke-width="0.4" opacity="0.2"/>
+  <circle cx="310" cy="116" r="1.5" fill="#48CAE4" opacity="0.5"/>
+  <circle cx="326" cy="116" r="1"   fill="#48CAE4" opacity="0.3"/>
+  <line x1="310" y1="116" x2="326" y2="116" stroke="#48CAE4" stroke-width="0.4" opacity="0.2"/>
+
+  <text x="200" y="120"
+        font-family="'Courier New', monospace"
+        font-size="8" letter-spacing="1.5"
+        fill="#48CAE4" text-anchor="middle"
+        filter="url(#cyanGlow)">SHA-256 · FROZEN-2.0 · TRIPLE-TIME SEALED</text>
+
+  <!-- ═══ CENTER EMBLEM ═══ -->
+  <circle cx="200" cy="215" r="88" fill="url(#emblemGrad)"
+          stroke="#D4AF37" stroke-width="2"/>
+  <circle cx="200" cy="215" r="82" fill="none"
+          stroke="#8B6914" stroke-width="0.5" opacity="0.6"/>
+  <circle cx="200" cy="215" r="85" fill="none" stroke="#D4AF37"
+          stroke-width="0.5" stroke-dasharray="2 8" opacity="0.4"/>
+
+  <text x="200" y="203"
+        font-family="'Georgia', 'Times New Roman', serif"
+        font-size="52" font-weight="bold"
+        fill="#D4AF37" text-anchor="middle" opacity="0.95" letter-spacing="-1">STP</text>
+
+  <line x1="148" y1="212" x2="252" y2="212"
+        stroke="#D4AF37" stroke-width="1" opacity="0.5"/>
+
+  <text x="200" y="231"
+        font-family="'Georgia', 'Times New Roman', serif"
+        font-size="9" font-weight="normal" letter-spacing="2.5"
+        fill="#D4AF37" text-anchor="middle" opacity="0.75">CERTIFIED  AUDITOR</text>
+
+  <text x="200" y="249"
+        font-family="'Georgia', serif" font-size="7" letter-spacing="1"
+        fill="#8B6914" text-anchor="middle" opacity="0.6">☽  ✦  ◎</text>
+
+  <!-- ═══ AION LOGO — small, under symbols ═══ -->
+  <!-- Infinity left loop -->
+  <ellipse cx="186" cy="266" rx="12" ry="8"
+           fill="none" stroke="#D4AF37" stroke-width="3"
+           opacity="0.85"/>
+  <!-- Infinity right loop -->
+  <ellipse cx="214" cy="266" rx="12" ry="8"
+           fill="none" stroke="#D4AF37" stroke-width="3"
+           opacity="0.85"/>
+  <!-- Cover join lines to create clean infinity -->
+  <rect x="196" y="260" width="8" height="12" fill="#0D0F1A"/>
+  <!-- Redraw center cross-stroke clean -->
+  <line x1="196" y1="262" x2="204" y2="270"
+        stroke="#D4AF37" stroke-width="2.5" opacity="0.85"/>
+  <line x1="196" y1="270" x2="204" y2="262"
+        stroke="#D4AF37" stroke-width="2.5" opacity="0.85"/>
+
+  <!-- AI text in left loop -->
+  <text x="185" y="270"
+        font-family="'Georgia', serif" font-size="7" font-weight="bold"
+        fill="#D4AF37" text-anchor="middle" opacity="0.9">AI</text>
+
+  <!-- ON text in right loop -->
+  <text x="215" y="270"
+        font-family="'Georgia', serif" font-size="7" font-weight="bold"
+        fill="#D4AF37" text-anchor="middle" opacity="0.9">ON</text>
+
+  <!-- ═══ CRIMSON ACCENT STRIPE ═══ -->
+  <rect x="56" y="315" width="288" height="3" fill="url(#crimson)" opacity="0.6"/>
+
+  <!-- ═══ AI NODE PANEL — between crimson and badge number ═══ -->
+  <rect x="56" y="318" width="288" height="20" fill="#03080F"/>
+  <rect x="56" y="337" width="288" height="1" fill="url(#aiCyan)" opacity="0.4"/>
+
+  <!-- Nodes -->
+  <circle cx="80"  cy="328" r="1.8" fill="#48CAE4" opacity="0.55"/>
+  <circle cx="112" cy="323" r="1.2" fill="#48CAE4" opacity="0.35"/>
+  <circle cx="148" cy="330" r="1.5" fill="#48CAE4" opacity="0.45"/>
+  <circle cx="200" cy="325" r="2.2" fill="#48CAE4" opacity="0.7" filter="url(#cyanGlow)"/>
+  <circle cx="252" cy="330" r="1.5" fill="#48CAE4" opacity="0.45"/>
+  <circle cx="288" cy="323" r="1.2" fill="#48CAE4" opacity="0.35"/>
+  <circle cx="320" cy="328" r="1.8" fill="#48CAE4" opacity="0.55"/>
+
+  <!-- Connecting lines -->
+  <line x1="80"  y1="328" x2="112" y2="323" stroke="#48CAE4" stroke-width="0.5" opacity="0.2"/>
+  <line x1="112" y1="323" x2="148" y2="330" stroke="#48CAE4" stroke-width="0.5" opacity="0.2"/>
+  <line x1="148" y1="330" x2="200" y2="325" stroke="#48CAE4" stroke-width="0.5" opacity="0.3"/>
+  <line x1="200" y1="325" x2="252" y2="330" stroke="#48CAE4" stroke-width="0.5" opacity="0.3"/>
+  <line x1="252" y1="330" x2="288" y2="323" stroke="#48CAE4" stroke-width="0.5" opacity="0.2"/>
+  <line x1="288" y1="323" x2="320" y2="328" stroke="#48CAE4" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- ═══ BADGE NUMBER ═══ -->
+  <text x="200" y="355"
+        font-family="'Courier New', monospace"
+        font-size="13" font-weight="bold" letter-spacing="2"
+        fill="#F5E08A" text-anchor="middle">STP-AUDITOR-0001</text>
+
+  <!-- ═══ AUDITOR NAME ═══ -->
+  <text x="200" y="381"
+        font-family="'Georgia', 'Times New Roman', serif"
+        font-size="15" font-weight="bold" letter-spacing="1"
+        fill="#E8D5A3" text-anchor="middle">SHELDON K. SALMON</text>
+
+  <!-- ═══ SPECIALIZATION ═══ -->
+  <text x="200" y="399"
+        font-family="'Georgia', serif" font-size="9" letter-spacing="2"
+        fill="#8B6914" text-anchor="middle">AI OUTPUTS — ARCHITECT</text>
+
+  <!-- ═══ DATES ROW — centered on shield ═══ -->
+  <line x1="100" y1="411" x2="300" y2="411"
+        stroke="#D4AF37" stroke-width="0.5" opacity="0.35"/>
+
+  <text x="168" y="425"
+        font-family="'Courier New', monospace" font-size="8" letter-spacing="1"
+        fill="#8B6914" text-anchor="middle">ISSUED</text>
+  <text x="168" y="437"
+        font-family="'Courier New', monospace" font-size="9" font-weight="bold"
+        fill="#D4AF37" text-anchor="middle">2026-03-07</text>
+
+  <line x1="200" y1="415" x2="200" y2="441"
+        stroke="#8B6914" stroke-width="0.5" opacity="0.4"/>
+
+  <text x="232" y="425"
+        font-family="'Courier New', monospace" font-size="8" letter-spacing="1"
+        fill="#8B6914" text-anchor="middle">EXPIRES</text>
+  <text x="232" y="437"
+        font-family="'Courier New', monospace" font-size="9" font-weight="bold"
+        fill="#D4AF37" text-anchor="middle">2027-03-07</text>
+
+  <!-- ═══ SHA SEAL LINE — moved to top ═══ -->
+
+  <!-- ═══ CORNER MARKS ═══ -->
+  <polygon points="62,74 70,74 70,82 62,82" fill="#D4AF37" opacity="0.4"/>
+  <polygon points="330,74 338,74 338,82 330,82" fill="#D4AF37" opacity="0.4"/>
+  <text x="72" y="101" font-family="serif" font-size="7" fill="#D4AF37" opacity="0.5">✦</text>
+  <text x="328" y="101" font-family="serif" font-size="7" fill="#D4AF37" opacity="0.5" text-anchor="end">✦</text>
+
+</svg>
