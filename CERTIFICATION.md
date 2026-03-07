@@ -5,6 +5,7 @@
 **Sovereign Trace Protocol · Version 2.0.0**
 **Author: Sheldon K. Salmon — AI Reliability & AGI Architect**
 **Effective: March 2026**
+**Governing Law: State of New York, United States · Arbitration: JAMS Commercial Rules**
 
 ---
 
@@ -108,6 +109,10 @@ Components:
 - Annual Strategic Certification Report — full epistemic debt assessment
 - Direct written access to Architect for material findings
   (response within 5 business days, in writing, on record)
+- Foresight Seal access: quarterly sealed foresight briefings on AI risk
+  vectors and industry developments specific to the organization's deployment
+  footprint — delivered as sealed ledger entries with the organization as
+  named subject
 
 **Epistemic Debt Statement:**
 Organizations at this tier receive an annual Epistemic Debt Statement —
@@ -143,14 +148,6 @@ A Tier 1 Verification moves an entry from `REMEDIATION_FILED` to
 
 ---
 
-## ORIGIN OF THE MECHANISM
-
-This protocol was built for individual sovereignty first. The stamp function was designed to give one person a permanent record of their own significant moments — no audience, no platform, no institution required.
-
-The enterprise certification layer exists because the same mechanism that gives an individual temporal sovereignty over their personal record gives an organization cryptographic proof of their AI epistemic integrity. One stamp function. Two deployment scales. See `concept/USE-CASES.md`.
-
----
-
 ## WHAT CERTIFICATION IS NOT
 
 Certification is not a guarantee that AI systems will not fail.
@@ -171,6 +168,8 @@ The ledger with no failures may simply have no ledger.
 
 All certification engagements are subject to `TERMS-OF-SERVICE.md`.
 By filing a certification issue, you agree to those terms in full.
+Governing law: State of New York, United States.
+Dispute resolution: JAMS Commercial Arbitration Rules.
 
 ---
 
