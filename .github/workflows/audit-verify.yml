@@ -15,8 +15,11 @@ jobs:
 
   verify-payment:
     if: |
-      github.event.action == 'opened' &&
-      contains(github.event.issue.labels.*.name, 'audit-request')
+      (github.event.action == 'opened' || github.event.action == 'labeled') &&
+      (
+        contains(github.event.issue.labels.*.name, 'audit-request') ||
+        github.event.label.name == 'audit-request'
+      )
     runs-on: ubuntu-latest
     permissions:
       issues: write
