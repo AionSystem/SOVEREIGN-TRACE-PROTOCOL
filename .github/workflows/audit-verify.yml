@@ -2,24 +2,18 @@ name: Sovereign Trace Audit Verify
 
 on:
   issues:
-    types: [opened, labeled]
+    types: [labeled]
 
 jobs:
 
   # ═══════════════════════════════════════════════════════════════════
   # JOB 1 — STRIPE PAYMENT VERIFICATION
-  # Fires when a new audit request issue opens with label audit-request.
-  # Reads tier from dropdown selection in issue body.
-  # Confirms payment via Stripe API before any work begins.
+  # Fires when audit-request label is applied (set by issue template).
+  # Single trigger — no double-fire, no race condition.
   # ═══════════════════════════════════════════════════════════════════
 
   verify-payment:
-    if: |
-      (github.event.action == 'opened' || github.event.action == 'labeled') &&
-      (
-        contains(github.event.issue.labels.*.name, 'audit-request') ||
-        github.event.label.name == 'audit-request'
-      )
+    if: github.event.label.name == 'audit-request'
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -38,30 +32,41 @@ jobs:
           body = os.environ['ISSUE_BODY']
           stripe_key = os.environ['STRIPE_SECRET_KEY']
 
+          # BUG 3 FIX — strip footer before email extraction
+          # Remove everything after the last HR or footer marker
+          clean_body = re.split(r'---\s*\n.*Sovereign Trace Protocol', body, flags=re.DOTALL)[0]
+
           # Accept both pi_ and ch_ Stripe IDs
-          id_match = re.search(r'(pi_[A-Za-z0-9]{24,}|ch_[A-Za-z0-9]{24,})', body)
+          id_match = re.search(r'(pi_[A-Za-z0-9]{20,}|ch_[A-Za-z0-9]{20,})', body)
           payment_id = id_match.group(0) if id_match else ""
           id_type = "payment_intents" if payment_id.startswith("pi_") else "charges"
 
-          # Read tier directly from dropdown selection in issue body
+          # BUG 4 FIX — match em dash, en dash, and hyphen variants
+          def normalize(s):
+              return s.replace('\u2014', '-').replace('\u2013', '-')
+
           tier_prices = {
-              'Snapshot — 10 outputs — $2,500':      250000,
-              'Standard — 20 outputs — $5,000':      500000,
-              'Extended — 30 outputs — $7,500':      750000,
-              'Full — 50 outputs — $12,500':        1250000,
-              'Enterprise — 100 outputs — $25,000': 2500000,
+              'Snapshot': 250000,
+              'Standard': 500000,
+              'Extended': 750000,
+              'Full':    1250000,
+              'Enterprise': 2500000,
           }
 
           tier_name = "UNKNOWN"
           expected_amount = 0
-          for tier_label, amount in tier_prices.items():
-              if tier_label in body:
-                  tier_name = tier_label.split(' — ')[0]
+          norm_body = normalize(body)
+          for name, amount in tier_prices.items():
+              if name in norm_body:
+                  tier_name = name
                   expected_amount = amount
                   break
 
-          # Extract submitter email from issue body
-          email_match = re.search(r'[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}', body)
+          # BUG 3 FIX — extract email from clean body only
+          email_match = re.search(
+              r'[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}',
+              clean_body
+          )
           submitter_email = email_match.group(0) if email_match else ""
 
           if not payment_id:
@@ -85,10 +90,9 @@ jobs:
                       data = json.loads(resp.read())
 
                   if id_type == "payment_intents":
-                      pi_status = data.get("status", "")
+                      succeeded = data.get("status", "") == "succeeded"
                       actual_amount = data.get("amount", 0)
                       charge_email = data.get("receipt_email", "") or ""
-                      succeeded = pi_status == "succeeded"
                   else:
                       succeeded = data.get("paid", False)
                       actual_amount = data.get("amount", 0)
@@ -145,23 +149,23 @@ jobs:
 
             const email_note = email_match === 'true'
               ? '✅ Submitter email matches Stripe charge email.'
-              : `⚠ Email advisory: Stripe charge email (${charge_email}) does not match issue submitter email. Manual verification may be required.`;
+              : `⚠ Email advisory: Stripe charge email (${charge_email}) does not match issue submitter email. Manual check recommended.`;
 
             const body = [
               '## ✅ PAYMENT CONFIRMED — ' + tier_name + ' Audit Request',
               '',
               '```',
-              `Payment Intent: ${payment_id}`,
-              `Amount:         ${formatted}`,
-              `Tier:           ${tier_name}`,
-              `Status:         PAYMENT_CONFIRMED`,
+              `Payment ID: ${payment_id}`,
+              `Amount:     ${formatted}`,
+              `Tier:       ${tier_name}`,
+              `Status:     PAYMENT_CONFIRMED`,
               '```',
               '',
               email_note,
               '',
               '**What happens next:**',
-              'Your audit request is in the queue. The Architect will review your submission',
-              'and deliver your report on the following weekend per the standard schedule.',
+              'Your request is queued. The Architect will review your submission and',
+              'deliver your report on the following weekend per the standard schedule.',
               '',
               '---',
               '*Sovereign Trace Protocol · FROZEN-2.0 · Sheldon K. Salmon*'
@@ -204,29 +208,26 @@ jobs:
             const expected      = parseInt('${{ steps.stripe.outputs.expected_amount }}');
 
             const reasons = {
-              'NO_PAYMENT_ID':         'No Stripe payment ID was found in this issue. Include your `pi_` or `ch_` ID in the transaction code field.',
-              'TIER_NOT_DETECTED':     'The selected tier could not be read from your submission. Ensure the dropdown was selected before submitting.',
-              'PAYMENT_NOT_SUCCEEDED': 'Payment found but not yet completed. Ensure your payment succeeded in Stripe before filing.',
-              'AMOUNT_MISMATCH':       `Amount mismatch. Expected $${(expected/100).toFixed(2)} for ${tier_name} tier. Found $${(actual_amount/100).toFixed(2)}. Verify the correct tier was selected.`,
+              'NO_PAYMENT_ID':         'No Stripe payment ID found. Include your `pi_` or `ch_` ID in the transaction code field.',
+              'TIER_NOT_DETECTED':     'Tier could not be read from your submission. Ensure the dropdown was selected before submitting.',
+              'PAYMENT_NOT_SUCCEEDED': 'Payment found but not completed. Ensure payment succeeded in Stripe before filing.',
+              'AMOUNT_MISMATCH':       `Amount mismatch. Expected $${(expected/100).toFixed(2)} for ${tier_name}. Found $${(actual_amount/100).toFixed(2)}.`,
             };
 
-            const reason = reasons[result] || `Stripe verification error: ${result}. Contact aionsystem2026@gmail.com.`;
+            const reason = reasons[result] || `Stripe error: ${result}. Contact aionsystem2026@gmail.com.`;
 
             const body = [
               '## ⚠ PAYMENT VERIFICATION FAILED',
               '',
               '```',
-              `Payment ID:  ${payment_id || 'NOT PROVIDED'}`,
-              `Result:      ${result}`,
-              `Tier:        ${tier_name}`,
+              `Payment ID: ${payment_id || 'NOT PROVIDED'}`,
+              `Result:     ${result}`,
+              `Tier:       ${tier_name}`,
               '```',
               '',
               '**Reason:** ' + reason,
               '',
-              'This submission is closed. File a new `10-audit-request.yml` issue to retry.',
-              'No work will begin on this submission.',
-              '',
-              'Contact aionsystem2026@gmail.com if you believe this is an error.',
+              'This submission is closed. File a new `10-audit-request.yml` to retry.',
               '',
               '---',
               '*Sovereign Trace Protocol · FROZEN-2.0 · Sheldon K. Salmon*'
@@ -260,14 +261,11 @@ jobs:
 
   # ═══════════════════════════════════════════════════════════════════
   # JOB 2 — AUDITOR BADGE VERIFICATION
-  # Fires when an audit completion is labeled pending-verification.
-  # Unchanged from original — badge check + FROZEN-2.0 seal.
+  # Fires only on pending-verification label. Unchanged logic.
   # ═══════════════════════════════════════════════════════════════════
 
   verify-auditor:
-    if: |
-      github.event.action == 'labeled' &&
-      github.event.label.name == 'pending-verification'
+    if: github.event.label.name == 'pending-verification'
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -451,7 +449,6 @@ jobs:
               `🌀 Dreamspell: ${dreamspell}`,
               '',
               '**Status:** `CERTIFIED` — This audit record is permanently sealed.',
-              'The auditor identity has been verified against the STP registry.',
               '',
               '---',
               '*Sovereign Trace Protocol · FROZEN-2.0 · Sheldon K. Salmon*'
@@ -509,8 +506,6 @@ jobs:
               '',
               'If you are a certified STP Auditor and believe this is an error,',
               'contact aionsystem2026@gmail.com with your badge number and LinkedIn.',
-              '',
-              'If you are not a certified STP Auditor — this record stands as filed.',
               '',
               '---',
               '*Sovereign Trace Protocol · FROZEN-2.0 · Sheldon K. Salmon*'
