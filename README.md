@@ -123,7 +123,7 @@ Structured submissions are made through GitHub Issues using the official templat
 | `07-general-trace.yml` | Any observation, decision, or record that doesn't fit another template |
 | `08-foresight-seal.yml` | Dated professional prediction before it resolves — foresight track record |
 | `09-webeater-link.yml` | Cryptographic link between two entities — binds a new seal to an existing SHA-256 |
-| `10-audit-request.yml` | Request a certified audit — Stripe payment required, Mon–Tue intake only |
+| `10-audit-request.yml` | Request a certified audit — Stripe payment required |
 | `11-audit-completion.yml` | STP Certified Auditor files a completed audit to the ledger |
 | `12-auditor-application.yml` | Apply to become an STP Certified Auditor — skills-based, no credentials required |
 | `13-integrity-violation.yml` | Report badge misuse, bribery, or coercion — permanent ledger record |
@@ -135,21 +135,23 @@ See `concept/USE-CASES.md` for guidance on which template fits your submission.
 
 ## Certification
 
-| Tier | Scope | Badge | Price |
-|------|-------|-------|-------|
-| **Tier 1 — Basic Verification** | Single failure stamp check | Standard | $2,500 |
-| **Tier 2 — Enterprise Certification** | Full audit + badge license | Digital | $25,000/yr |
-| **Tier 3 — Strategic Retainer** | Quarterly reviews + epistemic debt statement | Elite | $100,000+/yr |
-| **Tier 4 — Defense & Government Grade** | Full standards alignment + monthly reviews | Defense | Negotiated |
+| Tier | Scope | Badge | Price | Intake |
+|------|-------|-------|-------|--------|
+| **Tier 1 — Snapshot Verification** | Up to 10 outputs | Standard | $2,500 | Automated 24/7 via Stripe |
+| **Tier 2 — Enterprise Certification** | Full audit + badge license | Digital | $25,000/yr | Automated 24/7 via Stripe |
+| **Tier 3 — Strategic Retainer** | Quarterly reviews + epistemic debt statement | Elite | $100,000+/yr | Architect-led · Mon–Tue only |
+| **Tier 4 — Defense & Government Grade** | Full standards alignment + monthly reviews | Defense | Negotiated | Architect-led · Mon–Tue only |
 
-**Intake: Monday and Tuesday only.** Submissions on any other day are voided and non-refundable.
-**Delivery: Weekends.** Payment via Stripe — transaction code required at filing.
+**Tier 1 and 2** — submit anytime. Payment via Stripe confirms your intake automatically.
+**Tier 3 and 4** — Architect-led. Intake Monday and Tuesday only. Submissions on other days are voided and non-refundable.
+**Delivery: Weekends** for all tiers.
 
-See `CERTIFICATION.md` and `TERMS-OF-SERVICE.md` for full process and terms.
+See `CERTIFICATION.md`, `AUDIT-METHODOLOGY.md`, and `TERMS-OF-SERVICE.md` for full process and terms.
 Governing law: State of New York, United States. Arbitration: JAMS Commercial Rules.
 
 **STP Certified Auditors** — independent professionals authorized to conduct and file audits
 directly to the ledger under their own badge. Apply via `12-auditor-application.yml`.
+See `AUDITOR-VETTING-PROCESS.md` for the full vetting process.
 All auditor badges verified live against `.github/verified-auditors.json` on every submission.
 
 ---
@@ -202,10 +204,17 @@ sovereign-trace-protocol/
 │
 ├── README.md
 ├── QUICKSTART.md                               ← pip install + first seal
+├── CERTIFICATION.md                            ← tier definitions, intake, delivery
+├── AUDIT-METHODOLOGY.md                        ← epistemic debt framework, 5-phase process
+├── AUDITOR-VETTING-PROCESS.md                  ← how to become an STP Certified Auditor
+├── DISASTER-RECOVERY.md                        ← offline verification + air-gap certification
+├── NON-RECOURSE-STATEMENT.md                   ← scope boundary: the ink vs the contract
 ├── pyproject.toml
 │
 ├── .github/
+│   ├── SECURITY.md                             ← vulnerability reporting policy
 │   ├── verified-auditors.json                  ← STP Certified Auditor registry
+│   ├── revoked-auditors.json                   ← revoked badge registry
 │   ├── ISSUE_TEMPLATE/
 │   │   ├── config.yml                          ← blank issues disabled, contact links
 │   │   ├── 01-ai-failure.yml                   ← AI output failure, identity verified
@@ -217,14 +226,14 @@ sovereign-trace-protocol/
 │   │   ├── 07-general-trace.yml                ← any moment that deserves sealing
 │   │   ├── 08-foresight-seal.yml               ← dated prediction before it resolves
 │   │   ├── 09-webeater-link.yml                ← cryptographic link between two sealed entities
-│   │   ├── 10-audit-request.yml                ← certified audit request, Mon–Tue intake
+│   │   ├── 10-audit-request.yml                ← certified audit request, Stripe payment
 │   │   ├── 11-audit-completion.yml             ← auditor files completed audit to ledger
 │   │   ├── 12-auditor-application.yml          ← apply to become STP Certified Auditor
 │   │   └── 13-integrity-violation.yml          ← report badge misuse or bribery
 │   └── workflows/
 │       ├── python-publish.yml
 │       ├── auto-seal.yml                       ← auto-seals all pending-seal issues
-│       └── audit-verify.yml                    ← verifies auditor badge on completion
+│       └── audit-verify.yml                    ← Stripe payment + auditor badge verification
 │
 ├── badges/
 │   ├── sovereign-certified-badge-v2.svg        ← Tier 1 Standard
@@ -240,6 +249,7 @@ sovereign-trace-protocol/
 │   ├── TRUST-WITHOUT-IDENTITY.md               ← engineering lineage + Stage 3/4 foundations
 │   ├── PRIOR-ART.md                            ← defensive IP documentation, March 7, 2026
 │   ├── WEBEATER-SPEC.md                        ← cryptographic link layer specification
+│   ├── SUBMISSION-TEMPLATE.md                  ← enterprise AI output submission template
 │   ├── SOVEREIGN-TRACE-v0.1-SPEC.md
 │   └── SOVEREIGN-TRACE-v0.2-SPEC.md
 │
@@ -259,6 +269,8 @@ sovereign-trace-protocol/
     DATA-PROCESSING-AGREEMENT.md · MUTUAL-NDA.md · UNILATERAL-NDA.md
     EXPORT-CONTROL.md · SECURITY.md · SECURITY-INSIGHTS.yml
     AI-ETHICS-STATEMENT.md · PRIVACY-POLICY.md · ACCEPTABLE-USE-POLICY.md
+    AUDIT-METHODOLOGY.md · AUDITOR-VETTING-PROCESS.md
+    DISASTER-RECOVERY.md · NON-RECOURSE-STATEMENT.md
     CITATION.cff · CITATION.md
 ```
 
