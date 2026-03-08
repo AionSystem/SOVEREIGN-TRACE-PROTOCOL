@@ -28,6 +28,9 @@ specification and producing trustworthy immutable records.
 
 Four tiers. No negotiation on scope. No bundling.
 
+The full five-phase audit process, Epistemic Debt framework, and
+tamper-evidence benchmarks are documented in `AUDIT-METHODOLOGY.md`.
+
 ---
 
 ## INTAKE MODES
@@ -160,6 +163,7 @@ Organizations at this tier receive an annual Epistemic Debt Statement —
 a plain-language assessment of accumulated AI audit record: failures
 logged, remediations completed, outstanding debt, and trend direction.
 A summary version is published to the AION-Registry.
+See `AUDIT-METHODOLOGY.md` for the full Epistemic Debt framework.
 
 **Minimum engagement:**
 $100,000 base. Final terms depend on deployment footprint, ledger
@@ -205,6 +209,7 @@ Components:
 Quarterly epistemic debt statements in place of annual. Includes
 standards compliance delta: which frameworks were satisfied in the prior
 quarter and which require remediation before the next review cycle.
+See `AUDIT-METHODOLOGY.md` for the full Epistemic Debt framework.
 
 **Who this is for:**
 - Federal agencies implementing OMB M-24-10 AI governance programs
@@ -232,6 +237,9 @@ Beyond direct certification by the Architect, the Sovereign Trace Protocol
 maintains a certified auditor network. STP Certified Auditors are independent
 professionals authorized to conduct and file audit completions directly to the
 ledger under their own badge number.
+
+Full vetting process, skills assessment criteria, badge obligations, and
+revocation procedure: `AUDITOR-VETTING-PROCESS.md`.
 
 **The auditor badge:**
 
@@ -268,6 +276,7 @@ File a `12-auditor-application.yml` issue. Skills-based review only —
 no credentials required. Demonstrated ability to assess AI outputs honestly
 is the criterion. Applications reviewed Monday and Tuesday.
 Not every application is accepted. There is no appeal process.
+See `AUDITOR-VETTING-PROCESS.md` for full process and criteria.
 
 ---
 
@@ -321,6 +330,10 @@ An organization with a certified deployment and a high failure rate
 is more trustworthy than an organization with no failures on record
 and no ledger. The ledger with failures is honest.
 The ledger with no failures may simply have no ledger.
+
+The full Epistemic Debt framework — including the Debt Ledger schema,
+five-phase audit process, and tamper-evidence benchmarks — is in
+`AUDIT-METHODOLOGY.md`.
 
 ---
 
