@@ -147,6 +147,9 @@ See `concept/USE-CASES.md` for guidance on which template fits your submission.
 **Tier 3 and 4** — Architect-led. Intake Monday and Tuesday only. Submissions on other days are voided and non-refundable.
 **Delivery: Weekends** for all tiers.
 
+Every certified organization receives an **Epistemic Debt Score (EDS)** — a 0–100 metric
+measuring AI epistemic integrity across five components. Formula is public: `EPISTEMIC-DEBT-SCORE.md`.
+
 See `CERTIFICATION.md`, `AUDIT-METHODOLOGY.md`, and `TERMS-OF-SERVICE.md` for full process and terms.
 Governing law: State of New York, United States. Arbitration: JAMS Commercial Rules.
 
@@ -207,6 +210,7 @@ sovereign-trace-protocol/
 ├── QUICKSTART.md                               ← pip install + first seal
 ├── CERTIFICATION.md                            ← tier definitions, intake, delivery
 ├── AUDIT-METHODOLOGY.md                        ← epistemic debt framework, 5-phase process
+├── EPISTEMIC-DEBT-SCORE.md                     ← EDS formula, 5 components, public spec
 ├── AUDITOR-VETTING-PROCESS.md                  ← how to become an STP Certified Auditor
 ├── DISASTER-RECOVERY.md                        ← offline verification + air-gap certification
 ├── NON-RECOURSE-STATEMENT.md                   ← scope boundary: the ink vs the contract
@@ -271,7 +275,7 @@ sovereign-trace-protocol/
     DATA-PROCESSING-AGREEMENT.md · MUTUAL-NDA.md · UNILATERAL-NDA.md
     EXPORT-CONTROL.md · SECURITY.md · SECURITY-INSIGHTS.yml
     AI-ETHICS-STATEMENT.md · PRIVACY-POLICY.md · ACCEPTABLE-USE-POLICY.md
-    AUDIT-METHODOLOGY.md · AUDITOR-VETTING-PROCESS.md
+    AUDIT-METHODOLOGY.md · EPISTEMIC-DEBT-SCORE.md · AUDITOR-VETTING-PROCESS.md
     DISASTER-RECOVERY.md · NON-RECOURSE-STATEMENT.md
     CITATION.cff · CITATION.md
 ```
