@@ -147,6 +147,7 @@ All 35 checks. Every deploy. No exceptions.
 | What you want | Where to go |
 |---------------|-------------|
 | Understand all use cases | `concept/USE-CASES.md` |
+| Near-miss reporting for regulated industries | `14-near-miss.yml` issue template |
 | Submit a sealed trace via GitHub Issues | `README.md` → Submission Layer |
 | Enterprise certification | `CERTIFICATION.md` |
 | Audit methodology and epistemic debt framework | `AUDIT-METHODOLOGY.md` |
