@@ -1,0 +1,8 @@
+{
+  "_schema": "STP-REVOKED-AUDITORS-v1.0",
+  "_description": "Registry of revoked STP Certified Auditor badges. Entries are permanent and immutable. Revocation seal is stored alongside each entry.",
+  "_governed_by": "AUDITOR-VETTING-PROCESS.md",
+  "_companion": "verified-auditors.json",
+  "_last_updated": "2026-03-07",
+  "revoked_auditors": []
+}
