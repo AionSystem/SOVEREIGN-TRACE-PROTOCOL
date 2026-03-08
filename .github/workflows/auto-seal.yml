@@ -92,7 +92,7 @@ jobs:
                 '*Sovereign Trace Protocol · FROZEN-2.0 · Sheldon K. Salmon*'
               ].join('\n')
             });
-        
+
       - name: Halt on invalid REF_SEAL
         if: steps.issue.outputs.ref_seal_valid == 'false'
         run: |
@@ -109,11 +109,17 @@ jobs:
           ISSUE_URL: ${{ github.event.issue.html_url }}
           TEMPLATE_TYPE: ${{ steps.issue.outputs.template_type }}
         run: |
-          python - <<'PYEOF'
+          python3 - <<'PYEOF'
           import os, json, datetime, sys
 
           sys.path.insert(0, 'stamp')
-          from sovereign_trace_stamp import stamp, display, to_dict
+
+          # BUG 5 FIX — guard import, post failure signal if stamp file missing
+          try:
+              from sovereign_trace_stamp import stamp, to_dict
+          except ImportError as e:
+              print(f"FATAL: Could not import sovereign_trace_stamp — {e}")
+              sys.exit(1)
 
           title   = os.environ['ISSUE_TITLE']
           body    = os.environ['ISSUE_BODY']
@@ -166,14 +172,18 @@ jobs:
           PYEOF
 
       - name: Commit ledger entry
+        # BUG 6 FIX — guard against empty commit
         run: |
           git config user.name  "Sovereign Trace Protocol"
           git config user.email "aionsystem2026@gmail.com"
           git add ledger/
+          git diff --cached --quiet && echo "Nothing to commit" && exit 0
           git commit -m "SEAL: ${{ steps.stamp.outputs.ledger_id }}"
           git push
 
       - name: Post seal receipt to issue
+        # BUG 7 FIX — only fires if stamp succeeded
+        if: steps.stamp.outcome == 'success'
         uses: actions/github-script@v7
         with:
           script: |
@@ -213,6 +223,8 @@ jobs:
             });
 
       - name: Update label — pending-seal to sealed
+        # BUG 7 FIX — only fires if stamp succeeded
+        if: steps.stamp.outcome == 'success'
         uses: actions/github-script@v7
         with:
           script: |
