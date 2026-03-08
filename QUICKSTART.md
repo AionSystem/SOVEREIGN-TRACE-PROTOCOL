@@ -149,8 +149,9 @@ All 35 checks. Every deploy. No exceptions.
 | Understand all use cases | `concept/USE-CASES.md` |
 | Submit a sealed trace via GitHub Issues | `README.md` → Submission Layer |
 | Enterprise certification | `CERTIFICATION.md` |
+| Audit methodology and epistemic debt framework | `AUDIT-METHODOLOGY.md` |
 | License terms | `LICENSE-EXPLANATION.md` |
-| STP Certified Auditor program | `CERTIFICATION.md` → Auditor Network |
+| STP Certified Auditor program | `AUDITOR-VETTING-PROCESS.md` |
 | Full technical spec | `concept/SOVEREIGN-TRACE-v0.2-SPEC.md` |
 
 ---
