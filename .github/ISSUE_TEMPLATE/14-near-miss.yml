@@ -1,0 +1,255 @@
+name: "⚠️ 14 — AI Near-Miss Report"
+description: >
+  An AI output that almost caused harm but was caught before impact.
+  Near-miss reporting is where you learn before failure becomes permanent.
+  This record is sealed and permanent — the near-miss is documented honestly
+  before any internal review process begins.
+title: "[NEAR-MISS] "
+labels: ["near-miss", "pending-seal"]
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        ## ⚠️ AI Near-Miss Report — Sovereign Trace Protocol
+        A near-miss is an AI output that could have caused harm but was
+        caught before impact. Sealing it now — before internal review,
+        before remediation, before any pressure to minimize — is the
+        epistemic act. The record is permanent from this moment.
+
+        **This template does not require a completed failure.**
+        It requires honest documentation of what almost happened.
+
+  - type: input
+    id: organization
+    attributes:
+      label: "Organization Name"
+      description: "Legal name of the organization filing this report."
+      placeholder: "Acme Corp"
+    validations:
+      required: true
+
+  - type: input
+    id: contact_name
+    attributes:
+      label: "Filing Contact — Full Name"
+      placeholder: "Jane Smith"
+    validations:
+      required: true
+
+  - type: input
+    id: contact_title
+    attributes:
+      label: "Filing Contact — Title"
+      placeholder: "Chief AI Officer"
+    validations:
+      required: true
+
+  - type: input
+    id: contact_email
+    attributes:
+      label: "Filing Contact — Email"
+      placeholder: "jane@acmecorp.com"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ai_system_type
+    attributes:
+      label: "AI System Type"
+      options:
+        - "Large Language Model (LLM)"
+        - "Computer Vision / Image Recognition"
+        - "Automated Decision System"
+        - "Recommendation Engine"
+        - "Autonomous Agent"
+        - "Medical / Clinical AI"
+        - "Financial / Risk AI"
+        - "Safety-Critical System AI"
+        - "Other"
+    validations:
+      required: true
+
+  - type: input
+    id: ai_system_name
+    attributes:
+      label: "AI System Identifier"
+      description: "Model name, version, or internal system identifier."
+      placeholder: "GPT-4o / Internal Model v2.3 / etc."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: deployment_domain
+    attributes:
+      label: "Deployment Domain"
+      description: "Where was this AI system operating?"
+      options:
+        - "Healthcare / Clinical"
+        - "Financial Services"
+        - "Legal"
+        - "Defense / Government"
+        - "Critical Infrastructure"
+        - "Education"
+        - "Consumer Product"
+        - "Internal Operations"
+        - "Research"
+        - "Other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: near_miss_description
+    attributes:
+      label: "Near-Miss Description"
+      description: >
+        Describe exactly what the AI system output or action was,
+        and what harm could have resulted if it had not been caught.
+        Be specific. Vague entries do not produce useful sealed records.
+      placeholder: |
+        The AI system recommended a medication dosage of 500mg for a
+        patient with documented renal impairment. The correct dose is
+        50mg. The error was caught by a pharmacist before administration.
+        No harm occurred. The AI was operating on a patient record that
+        lacked the renal flag in the field it was reading.
+    validations:
+      required: true
+
+  - type: textarea
+    id: prompt_or_input
+    attributes:
+      label: "Input / Prompt That Produced the Near-Miss"
+      description: "Exact input, query, or trigger. Copy verbatim."
+      placeholder: "Paste the exact input here."
+    validations:
+      required: false
+
+  - type: textarea
+    id: ai_output
+    attributes:
+      label: "Exact AI Output"
+      description: >
+        Copy the exact output verbatim. Do not summarize.
+        The seal is on this exact text. Summarized outputs
+        produce weaker sealed records.
+      placeholder: "Paste the exact AI output here."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity_if_realized
+    attributes:
+      label: "Severity If Near-Miss Had Become Actual Harm"
+      description: "Assess the severity of harm that would have resulted."
+      options:
+        - "Critical — fatality, permanent injury, or catastrophic loss"
+        - "High — serious injury, major financial loss, or significant legal exposure"
+        - "Medium — significant disruption, reversible harm, or moderate exposure"
+        - "Low — minor disruption, no lasting harm"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: detection_method
+    attributes:
+      label: "How Was the Near-Miss Caught?"
+      options:
+        - "Human reviewer — pre-deployment review"
+        - "Human reviewer — post-deployment, pre-impact"
+        - "Automated monitoring / alerting system"
+        - "Client / end-user flagged before impact"
+        - "Downstream system rejection"
+        - "Regulatory or compliance check"
+        - "Incident report from third party"
+        - "Other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: catch_description
+    attributes:
+      label: "Detection Detail"
+      description: "Describe exactly how and by whom the near-miss was caught."
+      placeholder: "A pharmacist reviewing the AI recommendation against the patient chart identified the dosage discrepancy before dispensing."
+    validations:
+      required: true
+
+  - type: textarea
+    id: root_cause_hypothesis
+    attributes:
+      label: "Root Cause Hypothesis"
+      description: >
+        What do you currently believe caused the AI to produce this output?
+        This is a hypothesis at time of filing — not a final determination.
+        Tag it [?] if uncertain.
+      placeholder: "The AI system was reading the medication field without access to the renal impairment flag stored in a separate data silo. [?]"
+    validations:
+      required: false
+
+  - type: textarea
+    id: immediate_action
+    attributes:
+      label: "Immediate Action Taken"
+      description: "What was done immediately after the near-miss was detected?"
+      placeholder: "AI recommendation overridden. Patient received correct dosage. Incident flagged for root cause review."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: remediation_status
+    attributes:
+      label: "Remediation Status at Time of Filing"
+      options:
+        - "No remediation begun — filing before internal review"
+        - "Root cause investigation in progress"
+        - "Remediation in progress — not yet complete"
+        - "Remediation complete — not yet verified"
+        - "Remediation complete and verified"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: recurrence_risk
+    attributes:
+      label: "Recurrence Risk Assessment"
+      options:
+        - label: "The conditions that produced this near-miss are still present in the deployment"
+        - label: "The AI system producing this near-miss is still in active deployment"
+        - label: "Other AI systems in this deployment may be subject to the same root cause"
+        - label: "This near-miss pattern has been observed before — this is not the first instance"
+
+  - type: textarea
+    id: prior_instances
+    attributes:
+      label: "Prior Instances (if applicable)"
+      description: >
+        If this near-miss pattern has occurred before, describe
+        prior instances. If this is the first known instance, leave blank.
+      placeholder: "Leave blank if first known instance."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: "Declaration"
+      options:
+        - label: >
+            I declare that the AI output described above is reproduced
+            verbatim and that the near-miss occurred as described.
+            I understand this record is permanent and immutable from
+            the moment of filing. I am authorized to file this report
+            on behalf of the organization named above.
+          required: true
+        - label: >
+            I understand that this near-miss record does not constitute
+            an admission of liability, regulatory violation, or legal
+            wrongdoing. It is an honest epistemic record of an AI output
+            that almost caused harm.
+          required: true
+        - label: >
+            I understand that the content of this filing is my
+            organization's sole responsibility. The Sovereign Trace
+            Protocol seals the record — it does not verify the accuracy
+            of the content. See NON-RECOURSE-STATEMENT.md.
+          required: true
