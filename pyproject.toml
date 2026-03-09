@@ -50,7 +50,7 @@ Issues     = "https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/issues"
 
 [tool.hatch.build.targets.wheel]
 sources = ["stamp"]
-exclude = ["stamp/FROZEN-1.0-RETIRED"]
+only-include = ["stamp/sovereign_trace_stamp.py"]
 
 [tool.hatch.build.targets.sdist]
 include = [
