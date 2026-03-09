@@ -4,9 +4,10 @@
 **Seal what is true. Permanently. Across three civilizational time systems.**
 
 
+
 [![Permanent](https://img.shields.io/badge/PERMANENT-FROZEN--2.0-2E7D32?style=flat-square&logo=git&logoColor=white)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL)
 [![PyPI](https://img.shields.io/pypi/v/sovereign-trace?style=flat-square&color=2E7D32&label=PyPI)](https://pypi.org/project/sovereign-trace/)
-[![Downloads](https://img.shields.io/pypi/dm/sovereign-trace?style=flat-square&label=Downloads)](https://pypi.org/project/sovereign-trace/)
+[![PyPI Published](https://img.shields.io/badge/PyPI-published-2E7D32?style=flat-square)](https://pypi.org/project/sovereign-trace/)
 [![Status](https://img.shields.io/badge/STATUS-M--NASCENT-1976D2?style=flat-square&logo=shield&logoColor=white)](https://github.com/AionSystem/AION-BRAIN)
 [![Hebrew](https://img.shields.io/badge/HEBREW-Full%20Dehiyot%20%2B%20Civil--Day-0288D1?style=flat-square)](https://www.hebcal.com)
 [![Seal](https://img.shields.io/badge/SEAL-SHA--256%20Binding-4527A0?style=flat-square&logo=hashnode&logoColor=white)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL)
