@@ -224,6 +224,7 @@ sovereign-trace-protocol/
 ├── AUDITOR-VETTING-PROCESS.md                  ← how to become an STP Certified Auditor
 ├── DISASTER-RECOVERY.md                        ← offline verification + air-gap certification
 ├── NON-RECOURSE-STATEMENT.md                   ← scope boundary: the ink vs the contract
+├── HOW-TO-SUBMIT.md                            ← plain English guide — no GitHub experience required
 ├── pyproject.toml
 │
 ├── .github/
