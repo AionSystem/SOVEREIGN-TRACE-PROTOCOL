@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#12141F"/>
+      <stop offset="100%" stop-color="#080A12"/>
+    </linearGradient>
+
+    <linearGradient id="goldOuter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#D4AF37"/>
+      <stop offset="30%"  stop-color="#F5E08A"/>
+      <stop offset="60%"  stop-color="#C5A028"/>
+      <stop offset="100%" stop-color="#8B6914"/>
+    </linearGradient>
+
+    <linearGradient id="aiCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#001F2E"/>
+      <stop offset="30%"  stop-color="#00B4D8"/>
+      <stop offset="50%"  stop-color="#48CAE4"/>
+      <stop offset="70%"  stop-color="#00B4D8"/>
+      <stop offset="100%" stop-color="#001F2E"/>
+    </linearGradient>
+
+    <radialGradient id="innerGlow" cx="50%" cy="35%" r="60%">
+      <stop offset="0%"   stop-color="#D4AF37" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="shadowDeep" x="-15%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000000" flood-opacity="0.85"/>
+    </filter>
+
+    <filter id="cyanGlow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="goldGlow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+  </defs>
+
+  <!-- ═══ BACKGROUND ═══ -->
+  <rect width="400" height="400" fill="url(#bgGrad)"/>
+
+  <!-- ═══ SHIELD — gold bevel ═══ -->
+  <path d="M200,28 L348,72 L348,248 Q348,360 200,390 Q52,360 52,248 L52,72 Z"
+        fill="url(#goldOuter)"
+        filter="url(#shadowDeep)"/>
+
+  <!-- ═══ SHIELD — main body ═══ -->
+  <path d="M200,38 L338,78 L338,246 Q338,350 200,378 Q62,350 62,246 L62,78 Z"
+        fill="url(#bgGrad)"/>
+
+  <!-- ═══ SHIELD — inner glow ═══ -->
+  <path d="M200,38 L338,78 L338,246 Q338,350 200,378 Q62,350 62,246 L62,78 Z"
+        fill="url(#innerGlow)"/>
+
+  <!-- ═══ SHIELD — inner gold border ═══ -->
+  <path d="M200,46 L330,82 L330,244 Q330,342 200,368 Q70,342 70,244 L70,82 Z"
+        fill="none" stroke="url(#goldOuter)" stroke-width="1" opacity="0.5"/>
+
+  <!-- ═══ STP — main lettering ═══ -->
+  <text x="200" y="228"
+        font-family="'Georgia', 'Times New Roman', serif"
+        font-size="118" font-weight="bold"
+        fill="url(#goldOuter)"
+        text-anchor="middle"
+        letter-spacing="-4"
+        filter="url(#goldGlow)">STP</text>
+
+  <!-- ═══ CYAN LINE — under STP ═══ -->
+  <rect x="88" y="248" width="224" height="3"
+        fill="url(#aiCyan)"
+        filter="url(#cyanGlow)"
+        opacity="0.9"/>
+
+  <!-- ═══ SOVEREIGN TRACE PROTOCOL — under cyan line ═══ -->
+  <text x="200" y="278"
+        font-family="'Georgia', 'Times New Roman', serif"
+        font-size="11.5" font-weight="bold" letter-spacing="3"
+        fill="#D4AF37" text-anchor="middle" opacity="0.85">SOVEREIGN TRACE PROTOCOL</text>
+
+  <!-- ═══ FROZEN-2.0 — bottom label ═══ -->
+  <text x="200" y="308"
+        font-family="'Courier New', monospace"
+        font-size="9" letter-spacing="2"
+        fill="#48CAE4" text-anchor="middle"
+        filter="url(#cyanGlow)"
+        opacity="0.75">SHA-256 · FROZEN-2.0</text>
+
+  <!-- ═══ CORNER MARKS ═══ -->
+  <text x="78"  y="100" font-family="serif" font-size="8" fill="#D4AF37" opacity="0.45">✦</text>
+  <text x="322" y="100" font-family="serif" font-size="8" fill="#D4AF37" opacity="0.45" text-anchor="end">✦</text>
+
+</svg>
