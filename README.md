@@ -277,7 +277,8 @@ sovereign-trace-protocol/
 │   └── FROZEN-1.0-RETIRED/
 │
 ├── ledger/
-│   └── STP-GENERAL-TRACE-2026-03-09-000005.json ← LEDGER-001: founding seal
+│   ├── STP-GENERAL-TRACE-2026-03-09-000005.json ← LEDGER-001: founding seal
+│   └── STP-GENERAL-TRACE-2026-03-10-000006.json ← LEDGER-002: archive layer activation
 │
 └── legal (root level — visible, not hidden)
     LICENSE · LICENSE.md · LICENSE-COMMERCIAL.md · LICENSE-EXPLANATION.md
