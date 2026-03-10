@@ -277,11 +277,13 @@ sovereign-trace-protocol/
 │   └── FROZEN-1.0-RETIRED/
 │
 ├── ledger/
-│   ├── STP-GENERAL-TRACE-2026-03-09-000005.json  ← LEDGER-001: founding seal
-│   ├── STP-GENERAL-TRACE-2026-03-10-000006.json  ← LEDGER-002: archive layer activation
-│   ├── STP-GENERAL-TRACE-2026-03-10-000007.json  ← LEDGER-003: Zenodo DOI registration
+│   ├── STP-GENERAL-TRACE-2026-03-09-000005.json     ← LEDGER-001: founding seal
+│   ├── STP-GENERAL-TRACE-2026-03-10-000006.json     ← LEDGER-002: archive layer activation
+│   ├── STP-GENERAL-TRACE-2026-03-10-000007.json     ← LEDGER-003: Zenodo DOI registration
 │   ├── STP-CREATIVE-PRIORITY-2026-03-10-000008.json ← LEDGER-004: PROJECT ORION v2.1 spec
-│   └── STP-GENERAL-TRACE-2026-03-10-000009.json  ← LEDGER-005: UNDP evaluation notification
+│   ├── STP-GENERAL-TRACE-2026-03-10-000009.json     ← LEDGER-005: UNDP evaluation notification
+│   ├── STP-GENERAL-TRACE-2026-03-10-000010.json     ← LEDGER-006: IPFS archive layer activation
+│   └── STP-GENERAL-TRACE-2026-03-10-000011.json     ← LEDGER-007: Software Heritage submission
 │
 └── legal (root level — visible, not hidden)
     LICENSE · LICENSE.md · LICENSE-COMMERCIAL.md · LICENSE-EXPLANATION.md
