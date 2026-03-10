@@ -218,13 +218,13 @@ sovereign-trace-protocol/
 ├── README.md
 ├── STP-logo.svg                                ← repository logo
 ├── QUICKSTART.md                               ← pip install + first seal
+├── HOW-TO-SUBMIT.md                            ← plain English guide — no GitHub experience required
 ├── CERTIFICATION.md                            ← tier definitions, intake, delivery
 ├── AUDIT-METHODOLOGY.md                        ← epistemic debt framework, 5-phase process
 ├── EPISTEMIC-DEBT-SCORE.md                     ← EDS formula, 5 components, public spec
 ├── AUDITOR-VETTING-PROCESS.md                  ← how to become an STP Certified Auditor
 ├── DISASTER-RECOVERY.md                        ← offline verification + air-gap certification
 ├── NON-RECOURSE-STATEMENT.md                   ← scope boundary: the ink vs the contract
-├── HOW-TO-SUBMIT.md                            ← plain English guide — no GitHub experience required
 ├── pyproject.toml
 │
 ├── .github/
