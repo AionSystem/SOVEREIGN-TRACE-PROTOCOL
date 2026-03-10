@@ -1,0 +1,20 @@
+{
+  "ledger_id": "STP-GENERAL-TRACE-2026-03-10-000010",
+  "template": "07-general-trace",
+  "category": "IPFS Archive Layer Activation",
+  "title": "IPFS-ARCHIVE — Filebase — Three Files Pinned",
+  "gregorian": "March 10, 2026",
+  "hebrew": "21 Adar 5786",
+  "dreamspell": "Day 4, Solar Moon 9/13",
+  "unix_utc": 1773170653,
+  "seal": "7e2f10ab63f7dadea6971216681199d8dfa29eef7819d439e47cfed96059a606",
+  "entry": "IPFS archive layer activated via Filebase. Three files pinned to IPFS content-addressed storage. March 10, 2026. Author: Sheldon K. Salmon.",
+  "ipfs_pins": {
+    "PATENTS.md": "QmfJnQXWDasfkevtA7zGQNLrUq6wAa5zHeYSkJeJgwCnq7",
+    "NOTICE": "QmdimseVvdYu2aT3SFwtSNJfkShxhQ5jKWSwNTJzR7UvrZ",
+    "sovereign_trace_stamp.py": "QmTYPx2ir3pBHG4b4LW2yeXmbWBWNv8RUrNMv4P7RpanbC"
+  },
+  "provider": "Filebase — IPFS",
+  "author": "Sheldon K. Salmon",
+  "status": "SEALED"
+}
