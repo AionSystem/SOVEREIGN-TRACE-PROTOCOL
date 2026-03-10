@@ -122,22 +122,25 @@ SHA-256 cryptographic use is covered under EAR License Exception ENC,
 
 ---
 
-## PUBLICATION RECORD COVERAGE
-
-This repository's prior art and authorship record exists on:
-
 | Platform | Type | Controlled By |
 |----------|------|---------------|
 | GitHub (AionSystem) | Primary | Author |
-| IPFS | Content-addressed | Distributed — no single party |
+| IPFS via Filebase | Content-addressed | Distributed — no single party |
 | archive.org Wayback Machine | Independent timestamp | Internet Archive |
-| Academic preprint server | Independent timestamp | Third party |
+| Zenodo (DOI: 10.5281/zenodo.18941392) | Academic archive — CERN | Zenodo / Author |
 | PyPI (sovereign-trace) | Package registry | PyPI / Author |
 
-A takedown of any single platform does not erase the record.
-The IPFS CID is cryptographically bound to the content —
-it cannot be retroactively altered.
+**IPFS Content Identifiers — permanently bound to content:**
 
+| File | CID |
+|------|-----|
+| PATENTS.md | QmfJnQXWDasfkevtA7zGQNLrUq6wAa5zHeYSkJeJgwCnq7 |
+| NOTICE | QmdimseVvdYu2aT3SFwtSNJfkShxhQ5jKWSwNTJzR7UvrZ |
+| sovereign_trace_stamp.py | QmTYPx2ir3pBHG4b4LW2yeXmbWBWNv8RUrNMv4P7RpanbC |
+
+These CIDs are cryptographically bound to their content.
+The content cannot be altered without producing a different CID.
+Pinned via Filebase. Sealed in ledger LEDGER-004 (Issue #10).
 ---
 
 ## CASE LAW BASIS
@@ -276,6 +279,7 @@ It does not shrink.
 | 1.1 | March 2026 | Case Law Basis section — Jacobsen, Artifex, AIA § 102/273 |
 | 1.2 | March 2026 | Prior User Rights § 273 active notice + AIA grace period deadline |
 | 1.3 | March 2026 | Strategic Defense Posture — pre-positioned legal allies + physical protection architecture |
+| 1.4 | March 2026 | IPFS CIDs added — Filebase pinning. Three files content-addressed. Zenodo DOI added to Publication Record. |
 
 ---
 
