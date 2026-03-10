@@ -1,0 +1,16 @@
+{
+  "ledger_id": "STP-GENERAL-TRACE-2026-03-10-000007",
+  "template": "07-general-trace",
+  "category": "Zenodo DOI Registration",
+  "title": "ZENODO-DOI — SOVEREIGN-TRACE-PROTOCOL",
+  "gregorian": "March 10, 2026",
+  "hebrew": "21 Adar 5786",
+  "dreamspell": "Day 4, Solar Moon 9/13",
+  "unix_utc": 1773161635,
+  "seal": "e99fc30be800c192f526a973c7237a61366e0d81c09bc256d196190477729ac5",
+  "entry": "Zenodo DOI issued for SOVEREIGN-TRACE-PROTOCOL repository. DOI: 10.5281/zenodo.18941392. Archived by CERN - permanent academic citation handle. Appears in academic databases. Added to CITATION.cff. March 10, 2026. Author: Sheldon K. Salmon.",
+  "doi": "10.5281/zenodo.18941392",
+  "archive": "Zenodo — CERN",
+  "author": "Sheldon K. Salmon",
+  "status": "SEALED"
+}
