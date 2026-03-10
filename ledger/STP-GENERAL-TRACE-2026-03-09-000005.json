@@ -1,0 +1,19 @@
+{
+  "ledger_id": "LEDGER-001-FOUNDING-SEAL",
+  "template_type": "general-trace",
+  "issue_number": 5,
+  "issue_url": "https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/issues/5",
+  "submitter": "Sheldon K. Salmon",
+  "title": "[STP-TRACE] — [PROTOCOL-SELF-SEAL] — [2026-03-09]",
+  "entry": "Sovereign Trace Protocol FROZEN-2.0 published to PyPI. Package: sovereign-trace 2.0.0. Author: Sheldon K. Salmon. Date of first public deployment. This is the founding seal — the protocol sealing itself.",
+  "seal": {
+    "sha256": "a63c4f28cf7c3f2c63c220d61980fb85211270924a7c3b3e5f230019cecb6713",
+    "gregorian": "March 10, 2026",
+    "hebrew": "21 Adar 5786",
+    "dreamspell": "Day 4, Solar Moon 9/13",
+    "unix_utc": 1773102975,
+    "frozen_version": "FROZEN-2.0"
+  },
+  "note": "Stamped at 8:33 PM EST (March 9) = 00:33 AM UTC (March 10). UTC is the standard. Local deployment date: March 9, 2026.",
+  "status": "SEALED"
+}
