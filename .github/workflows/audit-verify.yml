@@ -32,16 +32,12 @@ jobs:
           body = os.environ['ISSUE_BODY']
           stripe_key = os.environ['STRIPE_SECRET_KEY']
 
-          # BUG 3 FIX — strip footer before email extraction
-          # Remove everything after the last HR or footer marker
           clean_body = re.split(r'---\s*\n.*Sovereign Trace Protocol', body, flags=re.DOTALL)[0]
 
-          # Accept both pi_ and ch_ Stripe IDs
           id_match = re.search(r'(pi_[A-Za-z0-9]{20,}|ch_[A-Za-z0-9]{20,})', body)
           payment_id = id_match.group(0) if id_match else ""
           id_type = "payment_intents" if payment_id.startswith("pi_") else "charges"
 
-          # BUG 4 FIX — match em dash, en dash, and hyphen variants
           def normalize(s):
               return s.replace('\u2014', '-').replace('\u2013', '-')
 
@@ -62,7 +58,6 @@ jobs:
                   expected_amount = amount
                   break
 
-          # BUG 3 FIX — extract email from clean body only
           email_match = re.search(
               r'[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}',
               clean_body
@@ -412,6 +407,7 @@ jobs:
           git config user.name  "Sovereign Trace Protocol"
           git config user.email "aionsystem2026@gmail.com"
           git add ledger/
+          git diff --cached --quiet && echo "Nothing to commit" && exit 0
           git commit -m "AUDIT-SEAL: ${{ steps.stamp.outputs.ledger_id }}"
           git push
 
