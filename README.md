@@ -1,13 +1,14 @@
+<div align="center">
+  <img src="./STP-logo.svg" alt="Sovereign Trace Protocol" width="180"/>
+</div>
+
 # Sovereign Trace Protocol
 
 **Permanence infrastructure for individuals and organizations.**
 **Seal what is true. Permanently. Across three civilizational time systems.**
 
-
-
 [![Permanent](https://img.shields.io/badge/PERMANENT-FROZEN--2.0-2E7D32?style=flat-square&logo=git&logoColor=white)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL)
 [![PyPI](https://img.shields.io/pypi/v/sovereign-trace?style=flat-square&color=2E7D32&label=PyPI)](https://pypi.org/project/sovereign-trace/)
-[![PyPI Published](https://img.shields.io/badge/PyPI-published-2E7D32?style=flat-square)](https://pypi.org/project/sovereign-trace/)
 [![Status](https://img.shields.io/badge/STATUS-M--NASCENT-1976D2?style=flat-square&logo=shield&logoColor=white)](https://github.com/AionSystem/AION-BRAIN)
 [![Hebrew](https://img.shields.io/badge/HEBREW-Full%20Dehiyot%20%2B%20Civil--Day-0288D1?style=flat-square)](https://www.hebcal.com)
 [![Seal](https://img.shields.io/badge/SEAL-SHA--256%20Binding-4527A0?style=flat-square&logo=hashnode&logoColor=white)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL)
@@ -16,9 +17,6 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-darkgreen.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![License: Commercial](https://img.shields.io/badge/License-Commercial-orange.svg)](./LICENSE-COMMERCIAL.md)
 [![Legal Posture](https://img.shields.io/badge/LEGAL-Posture%20Active-8B0000?style=flat-square)](./LEGAL-POSTURE.md)
-
-
-
 
 **Author:** Sheldon K. Salmon — AI Reliability & AGI Architect
 **Session:** March 2026 — AION-BRAIN
@@ -193,8 +191,9 @@ Full legal coverage: `LEGAL-POSTURE.md`
 ## Build Sequence
 
 ```
-STAGE 1 — COMPLETE (March 3, 2026)
+STAGE 1 — COMPLETE (March 9, 2026)
 FROZEN-2.0: Triple-time stamp. Full dehiyot. Zero deps. 35 checks passed.
+PyPI: sovereign-trace 2.0.0 live. Founding seal in ledger.
 
 STAGE 2 — PLANNED
 Local encrypted vault integration (Obsidian / Notion)
@@ -214,6 +213,7 @@ Optional resonance signature mechanism — zero count display
 sovereign-trace-protocol/
 │
 ├── README.md
+├── STP-logo.svg                                ← repository logo
 ├── QUICKSTART.md                               ← pip install + first seal
 ├── CERTIFICATION.md                            ← tier definitions, intake, delivery
 ├── AUDIT-METHODOLOGY.md                        ← epistemic debt framework, 5-phase process
@@ -272,7 +272,7 @@ sovereign-trace-protocol/
 │   └── FROZEN-1.0-RETIRED/
 │
 ├── ledger/
-│   └── PLACEHOLDER.md
+│   └── STP-GENERAL-TRACE-2026-03-09-000005.json ← LEDGER-001: founding seal
 │
 └── legal (root level — visible, not hidden)
     LICENSE · LICENSE.md · LICENSE-COMMERCIAL.md · LICENSE-EXPLANATION.md
