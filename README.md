@@ -278,7 +278,8 @@ sovereign-trace-protocol/
 │
 ├── ledger/
 │   ├── STP-GENERAL-TRACE-2026-03-09-000005.json ← LEDGER-001: founding seal
-│   └── STP-GENERAL-TRACE-2026-03-10-000006.json ← LEDGER-002: archive layer activation
+│   ├── STP-GENERAL-TRACE-2026-03-10-000006.json ← LEDGER-002: archive layer activation
+│   └── STP-GENERAL-TRACE-2026-03-10-000007.json ← LEDGER-003: Zenodo DOI registration
 │
 └── legal (root level — visible, not hidden)
     LICENSE · LICENSE.md · LICENSE-COMMERCIAL.md · LICENSE-EXPLANATION.md
