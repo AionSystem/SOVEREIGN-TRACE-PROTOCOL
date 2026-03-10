@@ -40,12 +40,6 @@ ts = stamp(entry)
 print(display(ts))
 
 
-**Note on timestamps:** The stamp function records time in UTC. 
-If you are in a timezone behind UTC, the Gregorian date in your 
-seal may read as the following day. This is correct behavior — 
-UTC is the standard. Record your local time separately in your 
-ledger entry if the distinction matters for your use case.
-
 ```
 
 **Output:**
@@ -56,6 +50,13 @@ ledger entry if the distinction matters for your use case.
 🌀 Dreamspell: Day 1, Solar Moon 9/13
 🔒 Seal:       a3f9c12e7d...  (SHA-256, first 12 chars shown)
 ```
+
+---
+**Note on timestamps:** The stamp function records time in UTC. 
+If you are in a timezone behind UTC, the Gregorian date in your 
+seal may read as the following day. This is correct behavior — 
+UTC is the standard. Record your local time separately in your 
+ledger entry if the distinction matters for your use case.
 
 ---
 
