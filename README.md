@@ -283,7 +283,8 @@ sovereign-trace-protocol/
 │   ├── STP-CREATIVE-PRIORITY-2026-03-10-000008.json ← LEDGER-004: PROJECT ORION v2.1 spec
 │   ├── STP-GENERAL-TRACE-2026-03-10-000009.json     ← LEDGER-005: UNDP evaluation notification
 │   ├── STP-GENERAL-TRACE-2026-03-10-000010.json     ← LEDGER-006: IPFS archive layer activation
-│   └── STP-GENERAL-TRACE-2026-03-10-000011.json     ← LEDGER-007: Software Heritage submission
+│   ├── STP-GENERAL-TRACE-2026-03-10-000011.json     ← LEDGER-007: Software Heritage submission
+│   └── STP-FORESIGHT-SEAL-2026-03-10-000012.json   ← LEDGER-008: AI Resonance Dating App concept
 │
 └── legal (root level — visible, not hidden)
     LICENSE · LICENSE.md · LICENSE-COMMERCIAL.md · LICENSE-EXPLANATION.md
