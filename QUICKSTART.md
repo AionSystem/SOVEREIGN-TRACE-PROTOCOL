@@ -38,6 +38,14 @@ ts = stamp(entry)
 
 # Display in all three calendar systems
 print(display(ts))
+
+
+**Note on timestamps:** The stamp function records time in UTC. 
+If you are in a timezone behind UTC, the Gregorian date in your 
+seal may read as the following day. This is correct behavior — 
+UTC is the standard. Record your local time separately in your 
+ledger entry if the distinction matters for your use case.
+
 ```
 
 **Output:**
