@@ -138,6 +138,9 @@ All templates include: native file upload, SHA-256 binding, declaration checkbox
 See `concept/USE-CASES.md` for guidance on which template fits your submission.
 
 ---
+**New to GitHub?** → [HOW-TO-SUBMIT.md](./HOW-TO-SUBMIT.md) — plain English guide, no experience required.
+
+---
 
 ## Certification
 
