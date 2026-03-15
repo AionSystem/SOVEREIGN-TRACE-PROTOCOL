@@ -1,0 +1,20 @@
+{
+  "ledger_id": "STP-RESEARCH-PRIORITY-2026-03-14-U3N9CK",
+  "template": "02-research-priority",
+  "template_name": "Research Priority",
+  "content": "\"SHA-256 encodes a staircase architecture of 6 segments and 5 falls with monotonically increasing lengths 4·5·9·12·17·17. First musical scoring: D minor, 128 BPM, Bach BWV 851 structural parallel confirmed. Fall rounds produce Z=4.46 higher variance than climbing rounds. Message schedule carries input to falls. W[15] r=+1.000. Scored March 14, 2026.\"",
+  "author": "Sheldon K. Salmon",
+  "content_hash": "sha256:e3459b78abf72911a4aa58dd961d4d180029a0ece7a73851cff320feb832b889",
+  "seal": {
+    "gregorian": "March 14, 2026",
+    "hebrew": "25 Adar 5786",
+    "hebrew_display": "25 Adar 5786",
+    "dreamspell": "Day 8, Solar Moon 9/13",
+    "timestamp_iso": "2026-03-15T01:35:35.712Z",
+    "unix_utc": 1773538535,
+    "seal_method": "SHA-256-SubtleCrypto-FROZEN-2.0"
+  },
+  "frozen": "FROZEN-2.0",
+  "declaration": "I declare this entry accurate to the best of my knowledge at the time of sealing.",
+  "aion_version": "browser-v1.0"
+}
