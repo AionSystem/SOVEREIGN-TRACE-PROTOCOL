@@ -287,8 +287,9 @@ ledger/
 │   ├── STP-FORESIGHT-SEAL-2026-03-10-000012.json     ← LEDGER-008: AI Resonance Dating App concept
 │   ├── STP-CREATIVE-PRIORITY-2026-03-10-000013.json  ← LEDGER-009: Hyperloop Improved Concept v1–v3
 │   ├── STP-CREATIVE-PRIORITY-2026-03-10-000014.json  ← LEDGER-010: Spatial Loci World & AGI v0.4
-│   └── STP-FORESIGHT-SEAL-2026-03-11-000015.json  ← LEDGER-011: FAILURE ATLAS concept origin 
- 
+│   ├── STP-FORESIGHT-SEAL-2026-03-11-000015.json  ← LEDGER-011: FAILURE ATLAS concept origin 
+│   └── STP-RESEARCH-PRIORITY-2026-03-14-U3N9CK.json 
+
 └── legal (root level — visible, not hidden)
     LICENSE · LICENSE.md · LICENSE-COMMERCIAL.md · LICENSE-EXPLANATION.md
     NOTICE · NOTICE.md · PATENTS.md · TRADEMARK.md · TRADEMARK-USAGE-POLICY.md
