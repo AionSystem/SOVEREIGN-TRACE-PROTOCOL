@@ -7,6 +7,7 @@
 **Permanence infrastructure for individuals and organizations.**
 **Seal what is true. Permanently. Across three civilizational time systems.**
 
+[![ORCID — Sheldon K. Salmon](https://img.shields.io/badge/ORCID-0009--0005--8057--5115-a6ce39?style=flat&logo=orcid&logoColor=white)](https://orcid.org/0009-0005-8057-5115)
 [![DOI](https://zenodo.org/badge/1174130098.svg)](https://doi.org/10.5281/zenodo.18941392)
 [![Permanent](https://img.shields.io/badge/PERMANENT-FROZEN--2.0-2E7D32?style=flat-square&logo=git&logoColor=white)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL)
 [![PyPI](https://img.shields.io/pypi/v/sovereign-trace?style=flat-square&color=2E7D32&label=PyPI)](https://pypi.org/project/sovereign-trace/)
