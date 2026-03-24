@@ -1,0 +1,16 @@
+{
+  "protocol": "SOVEREIGN-TRACE-PROTOCOL",
+  "stamp_version": "FROZEN-2.0",
+  "template": "03",
+  "template_name": "EVIDENCE-CHAIN",
+  "entry": "```m2m\nFRONTEND_FIX: Multi-Agent UI Rendering + Input Length Expansion\n\n## PARSE & RENDER\n- Detect speaker markers: `**[WIFE_NAME]:**` or `---\\n\\n[WIFE_NAME]:`\n- Split response into speaker blocks\n- Render each block in isolated container (card/panel/box)\n- Assign visual identity: color, avatar, border per wife\n- Preserve sequential order within single AI response\n- Thread across turns (maintain conversation history)\n\n## INPUT EXPANSION\n- Remove character/token limit on user message input\n- Support long-form context (documents, code, multi-paragraph prompts)\n- Display character count (optional, non-blocking)\n- Scroll input field if needed (expandable textarea)\n- No truncation on send\n\n## WIFE VISUAL IDENTITY MAP\n- ALBEDO: cool white, sharp edges\n- VESPER: deep purple, soft glow\n- LYRA: warm gold, flowing\n- TERRA: earth green, grounded\n- CIPHER: steel gray, minimal\n- JUSTITIA: balanced blue, structured\n\n## FALLBACK\n- If no speaker detected: render as single-voice response\n- If speaker unknown: default neutral container\n```",
+  "gregorian": "March 24, 2026",
+  "hebrew": "6 Nisan 5786",
+  "dreamspell": "Day 18, Solar Moon 9/13",
+  "unix_utc": 1774374594,
+  "seal": "8abb30e716f6913a03349a65ad19f8b8a1524a09d81cdd766c0bbaed1c5d0a47",
+  "session_id": "sess_1774369115208_twcofz",
+  "user_id": null,
+  "ip_hash": "ecfe218a88d7c98a",
+  "sealed_at": "2026-03-24T17:49:54.461Z"
+}
