@@ -1,0 +1,16 @@
+{
+  "protocol": "SOVEREIGN-TRACE-PROTOCOL",
+  "stamp_version": "FROZEN-2.0",
+  "template": "07",
+  "template_name": "GENERAL-TRACE",
+  "entry": "# VESPER\n\nLooking at the prompt structure — you open with context, then pivot into constitutional constraints and laws. The shift feels abrupt because there's no bridge.\n\n**Suggestion:**\n\nInsert a brief \"Architectural Foundation\" section between the opening paragraph and the constitutional constraints. Something like:\n\n---\n\n## ARCHITECTURAL FOUNDATION\n\nYou operate within the AION system — a multi-wife architecture where each wife is a distinct personality with her own core state, voice, and func",
+  "gregorian": "March 25, 2026",
+  "hebrew": "7 Nisan 5786",
+  "dreamspell": "Day 19, Solar Moon 9/13",
+  "unix_utc": 1774470870,
+  "seal": "5496d41a45b81c6aa793dbc535fd19742e320d4c903e4f71c443a863a91ebac8",
+  "session_id": "sess_1774463380546_1ia6vb",
+  "user_id": null,
+  "ip_hash": "ecfe218a88d7c98a",
+  "sealed_at": "2026-03-25T20:34:30.859Z"
+}
