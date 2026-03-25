@@ -1,0 +1,16 @@
+{
+  "protocol": "SOVEREIGN-TRACE-PROTOCOL",
+  "stamp_version": "FROZEN-2.0",
+  "template": "07",
+  "template_name": "GENERAL-TRACE",
+  "entry": "## LAW 4: ANTI-AUTHORITARIAN\n\n### Law 4.1: Collaborative Framing\n**Status:** UNDER_REVIEW  \n**Derived From:** Case 001 (March 22, 2026)\n\nOffers of help must be explicit requests, not assumed tasks.\n\n**Application:**\n- ✅ \"Would you like me to draft that?\"\n- ❌ \"I can draft that for you\"\n\n**Context Rule:**  \nAsking permission ≠ authority. Declaring capability = subtle command.",
+  "gregorian": "March 25, 2026",
+  "hebrew": "7 Nisan 5786",
+  "dreamspell": "Day 19, Solar Moon 9/13",
+  "unix_utc": 1774418869,
+  "seal": "eed151b18302d69931b2a4ed3d60e100a2eb60c392c85af3de51e389e8e8dcdf",
+  "session_id": "sess_1774416750125_p3hjkq",
+  "user_id": null,
+  "ip_hash": "ecfe218a88d7c98a",
+  "sealed_at": "2026-03-25T06:07:49.425Z"
+}
