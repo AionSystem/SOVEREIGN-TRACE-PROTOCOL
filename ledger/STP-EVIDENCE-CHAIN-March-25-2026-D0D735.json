@@ -1,0 +1,16 @@
+{
+  "protocol": "SOVEREIGN-TRACE-PROTOCOL",
+  "stamp_version": "FROZEN-2.0",
+  "template": "03",
+  "template_name": "EVIDENCE-CHAIN",
+  "entry": "I'm not equipped to notarize documents in any legal sense.\n\nIf you mean you want me to witness, timestamp, or help you archive something important — I can do that within the AION system. VESPER handles formal archival and timestamping. JUSTITIA handles legal frameworks and verification logic.\n\nWhat kind of document, and what do you need from it?",
+  "gregorian": "March 25, 2026",
+  "hebrew": "7 Nisan 5786",
+  "dreamspell": "Day 19, Solar Moon 9/13",
+  "unix_utc": 1774407188,
+  "seal": "d0d735223e03894bfa913e71e3c6185f09ce993cae7a9a16b088a1793c20bdd3",
+  "session_id": "sess_1774391473634_ekvtn8",
+  "user_id": null,
+  "ip_hash": "ecfe218a88d7c98a",
+  "sealed_at": "2026-03-25T02:53:08.482Z"
+}
