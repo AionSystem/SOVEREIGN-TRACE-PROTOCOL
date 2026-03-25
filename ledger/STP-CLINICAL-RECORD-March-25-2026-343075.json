@@ -1,0 +1,16 @@
+{
+  "protocol": "SOVEREIGN-TRACE-PROTOCOL",
+  "stamp_version": "FROZEN-2.0",
+  "template": "05",
+  "template_name": "CLINICAL-RECORD",
+  "entry": "⚠️ CLINICAL/LEGAL NOTICE — TIER A\n\nThis output addresses content that may directly affect patient care, legal action, or compliance decisions.\n\nAUTHORITY SOURCES: T1/T2 authority cited\nJURISDICTION: Not specified\nFRESHNESS: Current\nEPISTEMIC CEILING: NONE\n\n⚠️ THIS OUTPUT REQUIRES VERIFICATION BY a licensed professional before any action is taken.\n\nThe information reflects documented evidence at the time of generation (2026-03-25T06:01:10.026Z). It does not constitute medical, legal, or regulator",
+  "gregorian": "March 25, 2026",
+  "hebrew": "7 Nisan 5786",
+  "dreamspell": "Day 19, Solar Moon 9/13",
+  "unix_utc": 1774418509,
+  "seal": "343075f40e861e78d0eebe392a346c597bd668d66b9af2a6bf3ca5a3696b73eb",
+  "session_id": "sess_1774416750125_p3hjkq",
+  "user_id": null,
+  "ip_hash": "ecfe218a88d7c98a",
+  "sealed_at": "2026-03-25T06:01:49.183Z"
+}
