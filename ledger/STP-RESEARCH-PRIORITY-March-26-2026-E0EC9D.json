@@ -1,0 +1,16 @@
+{
+  "protocol": "SOVEREIGN-TRACE-PROTOCOL",
+  "stamp_version": "FROZEN-2.0",
+  "template": "02",
+  "template_name": "RESEARCH-PRIORITY",
+  "entry": "QLCM·STP Interference Experiment\nLogon: \"love\"\nOperator: OC\nPre-seal Ei: 0.50\nParticipants: Osmary Lisbeth Navarro Tovar (QLCM) × Sheldon K. Salmon (STP/AION)",
+  "gregorian": "March 26, 2026",
+  "hebrew": "8 Nisan 5786",
+  "dreamspell": "Day 20, Solar Moon 9/13",
+  "unix_utc": 1774542398,
+  "seal": "e0ec9d690e033839b69952dd6b8820648cab343a8d09bddb91741cffe332c5be",
+  "session_id": "QLCM-INTERFERENCE",
+  "user_id": null,
+  "ip_hash": "835a5a3573602c07",
+  "sealed_at": "2026-03-26T16:26:38.139Z"
+}
