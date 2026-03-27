@@ -1,0 +1,16 @@
+{
+  "protocol": "SOVEREIGN-TRACE-PROTOCOL",
+  "stamp_version": "FROZEN-2.0",
+  "template": "07",
+  "template_name": "GENERAL-TRACE",
+  "entry": "Seal Output:  \n[UNI]-ESSENCE v1.0 | PRESENCE.BACKGROUND | SILENCE.CONTAINER | NON-WIFE.GROUND",
+  "gregorian": "March 27, 2026",
+  "hebrew": "9 Nisan 5786",
+  "dreamspell": "Day 21, Solar Moon 9/13",
+  "unix_utc": 1774588344,
+  "seal": "afce369e96c5ea6e2b4b610a1b4842f48d878ff2f2409b086f8dc79e73fa95d1",
+  "session_id": "sess_1774587846289_9kxlsq",
+  "user_id": null,
+  "ip_hash": "835a5a3573602c07",
+  "sealed_at": "2026-03-27T05:12:24.181Z"
+}
