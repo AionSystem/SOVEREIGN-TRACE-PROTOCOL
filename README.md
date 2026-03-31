@@ -1,6 +1,6 @@
 <div align="center">
   <img src="./STP-logo.svg" alt="Sovereign Trace Protocol" width="180"/>
-</div>
+</div> 
 
 # Sovereign Trace Protocol
 
