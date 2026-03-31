@@ -1,0 +1,19 @@
+{
+  "protocol": "SOVEREIGN-TRACE-PROTOCOL",
+  "stamp_version": "FROZEN-2.0",
+  "template": "07",
+  "template_name": "GENERAL-TRACE",
+  "entry": "[General Trace]\n\ntesting\n\n---\nTerms version: 2026-03-30-v1 | Accepted: 2026-03-31T17:52:24.758Z\nSealed via AION.CERTIFY | VERITAS Ecosystem | 2026-03-31T17:52:24.758Z\n\nServer Timestamp: 2026-03-31T21:56:31.027Z",
+  "gregorian": "March 31, 2026",
+  "hebrew": "13 Nisan 5786",
+  "dreamspell": "Day 25, Solar Moon 9/13",
+  "unix_utc": 1774994191,
+  "seal": "220109fa8af4ec7fbcd7b426f018085c07bc28c3f9f93279dd07fdede6267ef9",
+  "session_id": "certify-1774994188960",
+  "user_id": null,
+  "ip_hash": "47f07a5465b2c45e",
+  "sealed_at": "2026-03-31T21:56:31.027Z",
+  "jurisdiction": "New York State, USA",
+  "terms_version": "2026-03-30-v3",
+  "request_id": "1774994191027-3-bxr8h4"
+}
