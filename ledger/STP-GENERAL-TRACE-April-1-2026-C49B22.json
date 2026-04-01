@@ -1,0 +1,19 @@
+{
+  "protocol": "SOVEREIGN-TRACE-PROTOCOL",
+  "stamp_version": "FROZEN-2.0",
+  "template": "07",
+  "template_name": "GENERAL-TRACE",
+  "entry": "VERITAS Export\nTimestamp: 2026-04-01T03:45:58.729Z\nReports: 3\nDataset SHA-256: 6aff33ad9dab6510aa0fd88af44e19ebe5e38637a2c6b0c0e31c490b3786f3a1\nPowered by CERTUS Engine v2.5\nSTP integrity seal requested via AionSystem/VERITAS\n\nServer Timestamp: 2026-04-01T03:46:02.469Z",
+  "gregorian": "April 1, 2026",
+  "hebrew": "14 Nisan 5786",
+  "dreamspell": "Day 26, Solar Moon 9/13",
+  "unix_utc": 1775015162,
+  "seal": "c49b22f26e8d181d37457a879517bf7cfbf631d3ef7e675bef448efbef80ea32",
+  "session_id": "veritas-export-2026-04-01T03:45:58.729Z",
+  "user_id": null,
+  "ip_hash": "47f07a5465b2c45e",
+  "sealed_at": "2026-04-01T03:46:02.469Z",
+  "jurisdiction": "New York State, USA",
+  "terms_version": "2026-03-30-v3",
+  "request_id": "1775015162468-2-4stw7j"
+}
