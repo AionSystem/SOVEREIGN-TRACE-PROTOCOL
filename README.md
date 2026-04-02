@@ -20,12 +20,31 @@
 [![License: Commercial](https://img.shields.io/badge/License-Commercial-orange.svg)](./LICENSE-COMMERCIAL.md)
 [![Legal Posture](https://img.shields.io/badge/LEGAL-Posture%20Active-8B0000?style=flat-square)](./LEGAL-POSTURE.md)
 
-**Author:** Sheldon K. Salmon — AI Reliability & AGI Architect
-**Session:** March 2026 — AION-BRAIN
-**Stack:** DUAL-HELIX v2.0 · TOPOS v0.3 · VELA-C v0.3 · CPA-001 v2.2
-**Convergence:** M-NASCENT
+| Field | Value |
+|-------|-------|
+| **Author** | Sheldon K. Salmon — AI Reliability & AGI Architect |
+| **Session** | March 2026 — AION-BRAIN |
+| **Stack** | DUAL-HELIX v2.0 · TOPOS v0.3 · VELA-C v0.3 · CPA-001 v2.2 |
+| **Convergence** | M-NASCENT |
 
 > **→ [QUICKSTART.md](./QUICKSTART.md) — pip install + first seal in under 5 minutes**
+
+---
+
+## Table of Contents
+
+- [What This Is](#what-this-is)
+- [Quick Install](#quick-install)
+- [Who Seals What](#who-seals-what)
+- [The Origin of the Enterprise from the Personal](#the-origin-of-the-enterprise-from-the-personal)
+- [The Triple-Time Seal](#the-triple-time-seal)
+- [Submission Layer](#submission-layer)
+- [Certification](#certification)
+- [Frozen Declaration](#frozen-declaration)
+- [Triple License](#triple-license)
+- [Build Sequence](#build-sequence)
+- [Repository Structure](#repository-structure)
+- [Origin](#origin)
 
 ---
 
@@ -39,7 +58,9 @@
 
 **Same mechanism. Same FROZEN-2.0 stamp function. Same SHA-256 seal. Different stakes.**
 
-See `concept/USE-CASES.md` for the full dual-use architecture.
+See [`concept/USE-CASES.md`](./concept/USE-CASES.md) for the full dual-use architecture.
+
+[![↑ Back to Table of Contents](https://img.shields.io/badge/↑_Back_to-Table_of_Contents-374151?style=flat-square)](#table-of-contents)
 
 ---
 
@@ -60,7 +81,9 @@ print(display(ts))
 # 🔒 Seal:       a3f9c12e7d...
 ```
 
-**→ Full install guide, usage examples, and what not to do: [QUICKSTART.md](./QUICKSTART.md)**
+> **→ Full install guide, usage examples, and what not to do: [QUICKSTART.md](./QUICKSTART.md)**
+
+[![↑ Back to Table of Contents](https://img.shields.io/badge/↑_Back_to-Table_of_Contents-374151?style=flat-square)](#table-of-contents)
 
 ---
 
@@ -69,7 +92,7 @@ print(display(ts))
 The stamp function does not care what it seals. A sealed moment is a sealed moment. The SHA-256 proof is the same whether the content is an AI failure report, a research hypothesis, a hospital incident record, a contractor's agreed scope, or a professional foresight declaration.
 
 | Who | What They Seal | Why It Matters |
-|-----|---------------|----------------|
+|-----|----------------|----------------|
 | **AI auditor** | AI system output failure — exact text + screenshots | Public permanent record. Organizational accountability. Tamper-evident before remediation. |
 | **AI developer / company** | Prompt deployed in a product before launch | If the prompt causes harm later, the sealed record proves what was authorized and when. No dispute about what the system was told to do. |
 | **AI framework builder** | Framework specification before publishing or citing | Priority record for AI methodology. Proves the design existed before any implementation or competing claim. |
@@ -93,6 +116,8 @@ The stamp function does not care what it seals. A sealed moment is a sealed mome
 
 The mechanism is always the same. The stake determines how you use the sealed record afterward.
 
+[![↑ Back to Table of Contents](https://img.shields.io/badge/↑_Back_to-Table_of_Contents-374151?style=flat-square)](#table-of-contents)
+
 ---
 
 ## The Origin of the Enterprise from the Personal
@@ -100,6 +125,8 @@ The mechanism is always the same. The stake determines how you use the sealed re
 The enterprise use case was not designed first. The protocol was built to solve the personal problem: how does one individual permanently register their own significant moments without requiring an audience, a platform, or institutional permission?
 
 The answer — a frozen, tamper-evident, triple-time cryptographic seal — turned out to be exactly what organizations need for their AI audit trail. The mechanism that gives an individual temporal sovereignty over their own record also gives an organization cryptographic proof of their epistemic integrity.
+
+[![↑ Back to Table of Contents](https://img.shields.io/badge/↑_Back_to-Table_of_Contents-374151?style=flat-square)](#table-of-contents)
 
 ---
 
@@ -112,6 +139,8 @@ The answer — a frozen, tamper-evident, triple-time cryptographic seal — turn
 | **13 Moon Dreamspell** | Day 1, Solar Moon 9/13 | Rhythmic time — 13 moons × 28 days, galactic count |
 
 The triple stamp is not redundancy. It is a claim: this moment of human significance deserves to be held simultaneously in every major civilizational framework for measuring *when*.
+
+[![↑ Back to Table of Contents](https://img.shields.io/badge/↑_Back_to-Table_of_Contents-374151?style=flat-square)](#table-of-contents)
 
 ---
 
@@ -137,10 +166,11 @@ Structured submissions are made through GitHub Issues using the official templat
 | `14-near-miss.yml` | AI output that almost caused harm — caught before impact. Near-miss reporting before internal review begins. |
 
 All templates include: native file upload, SHA-256 binding, declaration checkbox, and legal compliance language.
-See `concept/USE-CASES.md` for guidance on which template fits your submission.
+See [`concept/USE-CASES.md`](./concept/USE-CASES.md) for guidance on which template fits your submission.
 
----
-**New to GitHub?** → [HOW-TO-SUBMIT.md](./HOW-TO-SUBMIT.md) — plain English guide, no experience required.
+> **New to GitHub?** → [HOW-TO-SUBMIT.md](./HOW-TO-SUBMIT.md) — plain English guide, no experience required.
+
+[![↑ Back to Table of Contents](https://img.shields.io/badge/↑_Back_to-Table_of_Contents-374151?style=flat-square)](#table-of-contents)
 
 ---
 
@@ -153,20 +183,18 @@ See `concept/USE-CASES.md` for guidance on which template fits your submission.
 | **Tier 3 — Strategic Retainer** | Quarterly reviews + epistemic debt statement | Elite | $100,000+/yr | Architect-led · Mon–Tue only |
 | **Tier 4 — Defense & Government Grade** | Full standards alignment + monthly reviews | Defense | Negotiated | Architect-led · Mon–Tue only |
 
-**Tier 1 and 2** — submit anytime. Payment via Stripe confirms your intake automatically.
-**Tier 3 and 4** — Architect-led. Intake Monday and Tuesday only. Submissions on other days are voided and non-refundable.
-**Delivery: Weekends** for all tiers.
+- **Tier 1 and 2** — submit anytime. Payment via Stripe confirms your intake automatically.
+- **Tier 3 and 4** — Architect-led. Intake Monday and Tuesday only. Submissions on other days are voided and non-refundable.
+- **Delivery: Weekends** for all tiers.
 
-Every certified organization receives an **Epistemic Debt Score (EDS)** — a 0–100 metric
-measuring AI epistemic integrity across five components. Formula is public: `EPISTEMIC-DEBT-SCORE.md`.
+Every certified organization receives an **Epistemic Debt Score (EDS)** — a 0–100 metric measuring AI epistemic integrity across five components. Formula is public: [`EPISTEMIC-DEBT-SCORE.md`](./EPISTEMIC-DEBT-SCORE.md).
 
-See `CERTIFICATION.md`, `AUDIT-METHODOLOGY.md`, and `TERMS-OF-SERVICE.md` for full process and terms.
+See [`CERTIFICATION.md`](./CERTIFICATION.md), [`AUDIT-METHODOLOGY.md`](./AUDIT-METHODOLOGY.md), and [`TERMS-OF-SERVICE.md`](./TERMS-OF-SERVICE.md) for full process and terms.
 Governing law: State of New York, United States. Arbitration: JAMS Commercial Rules.
 
-**STP Certified Auditors** — independent professionals authorized to conduct and file audits
-directly to the ledger under their own badge. Apply via `12-auditor-application.yml`.
-See `AUDITOR-VETTING-PROCESS.md` for the full vetting process.
-All auditor badges verified live against `.github/verified-auditors.json` on every submission.
+**STP Certified Auditors** — independent professionals authorized to conduct and file audits directly to the ledger under their own badge. Apply via `12-auditor-application.yml`. See [`AUDITOR-VETTING-PROCESS.md`](./AUDITOR-VETTING-PROCESS.md) for the full vetting process. All auditor badges verified live against `.github/verified-auditors.json` on every submission.
+
+[![↑ Back to Table of Contents](https://img.shields.io/badge/↑_Back_to-Table_of_Contents-374151?style=flat-square)](#table-of-contents)
 
 ---
 
@@ -176,20 +204,24 @@ All auditor badges verified live against `.github/verified-auditors.json` on eve
 
 If a defect is found: retire the frozen file, document the defect, build FROZEN-3.0 from first principles, re-verify all anchor cases. Never patch.
 
-**FROZEN-1.0 is retired.** Defect: incomplete dehiyot implementation → Hebrew off-by-one on all 5786 dates. Archived: `stamp/FROZEN-1.0-RETIRED/`.
+> **FROZEN-1.0 is retired.** Defect: incomplete dehiyot implementation → Hebrew off-by-one on all 5786 dates. Archived: `stamp/FROZEN-1.0-RETIRED/`.
+
+[![↑ Back to Table of Contents](https://img.shields.io/badge/↑_Back_to-Table_of_Contents-374151?style=flat-square)](#table-of-contents)
 
 ---
 
 ## Triple License
 
 | License | Applies To |
-|---------|-----------|
+|---------|------------|
 | **Apache 2.0** | Individual, academic, non-commercial use. Patent retaliation clause active. |
 | **GPL v3** | Modified distributions. Copyleft — corporate forks must open-source modifications. |
-| **Commercial** | White-label, certification services, SaaS. See `LICENSE-COMMERCIAL.md`. |
+| **Commercial** | White-label, certification services, SaaS. See [`LICENSE-COMMERCIAL.md`](./LICENSE-COMMERCIAL.md). |
 
-Plain-language guide: `LICENSE-EXPLANATION.md`
-Full legal coverage: `LEGAL-POSTURE.md`
+- Plain-language guide: [`LICENSE-EXPLANATION.md`](./LICENSE-EXPLANATION.md)
+- Full legal coverage: [`LEGAL-POSTURE.md`](./LEGAL-POSTURE.md)
+
+[![↑ Back to Table of Contents](https://img.shields.io/badge/↑_Back_to-Table_of_Contents-374151?style=flat-square)](#table-of-contents)
 
 ---
 
@@ -209,6 +241,8 @@ Ledger append layer (Thirdweb / Hedera) + multi-destination relay
 STAGE 4 — PLANNED
 Optional resonance signature mechanism — zero count display
 ```
+
+[![↑ Back to Table of Contents](https://img.shields.io/badge/↑_Back_to-Table_of_Contents-374151?style=flat-square)](#table-of-contents)
 
 ---
 
@@ -277,7 +311,7 @@ sovereign-trace-protocol/
 │   ├── FROZEN-2.0-MANIFEST.md
 │   └── FROZEN-1.0-RETIRED/
 │
-ledger/
+├── ledger/
 │   ├── STP-GENERAL-TRACE-2026-03-09-000005.json      ← LEDGER-001: founding seal
 │   ├── STP-GENERAL-TRACE-2026-03-10-000006.json      ← LEDGER-002: archive layer activation
 │   ├── STP-GENERAL-TRACE-2026-03-10-000007.json      ← LEDGER-003: Zenodo DOI registration
@@ -288,28 +322,37 @@ ledger/
 │   ├── STP-FORESIGHT-SEAL-2026-03-10-000012.json     ← LEDGER-008: AI Resonance Dating App concept
 │   ├── STP-CREATIVE-PRIORITY-2026-03-10-000013.json  ← LEDGER-009: Hyperloop Improved Concept v1–v3
 │   ├── STP-CREATIVE-PRIORITY-2026-03-10-000014.json  ← LEDGER-010: Spatial Loci World & AGI v0.4
-│   ├── STP-FORESIGHT-SEAL-2026-03-11-000015.json  ← LEDGER-011: FAILURE ATLAS concept origin 
-│   └── STP-RESEARCH-PRIORITY-2026-03-14-U3N9CK.json 
-
-└── legal (root level — visible, not hidden)
-    LICENSE · LICENSE.md · LICENSE-COMMERCIAL.md · LICENSE-EXPLANATION.md
-    NOTICE · NOTICE.md · PATENTS.md · TRADEMARK.md · TRADEMARK-USAGE-POLICY.md
-    PRINCIPLES.md · LEGAL-POSTURE.md · METHODOLOGY.md · CERTIFICATION.md
-    TERMS-OF-SERVICE.md · CONTRIBUTOR-TERMS.md · CONTRIBUTOR-LICENSE-AGREEMENT.md
-    DATA-PROCESSING-AGREEMENT.md · MUTUAL-NDA.md · UNILATERAL-NDA.md
-    EXPORT-CONTROL.md · SECURITY.md · SECURITY-INSIGHTS.yml
-    AI-ETHICS-STATEMENT.md · PRIVACY-POLICY.md · ACCEPTABLE-USE-POLICY.md
-    AUDIT-METHODOLOGY.md · EPISTEMIC-DEBT-SCORE.md · AUDITOR-VETTING-PROCESS.md
-    DISASTER-RECOVERY.md · NON-RECOURSE-STATEMENT.md
-    CITATION.cff · CITATION.md
+│   ├── STP-FORESIGHT-SEAL-2026-03-11-000015.json     ← LEDGER-011: FAILURE ATLAS concept origin
+│   └── STP-RESEARCH-PRIORITY-2026-03-14-U3N9CK.json
+│
+└── legal/                                      ← root level — visible, not hidden
+    ├── LICENSE · LICENSE.md
+    ├── LICENSE-COMMERCIAL.md · LICENSE-EXPLANATION.md
+    ├── NOTICE · NOTICE.md
+    ├── PATENTS.md · TRADEMARK.md · TRADEMARK-USAGE-POLICY.md
+    ├── PRINCIPLES.md · LEGAL-POSTURE.md · METHODOLOGY.md
+    ├── CERTIFICATION.md · TERMS-OF-SERVICE.md
+    ├── CONTRIBUTOR-TERMS.md · CONTRIBUTOR-LICENSE-AGREEMENT.md
+    ├── DATA-PROCESSING-AGREEMENT.md · MUTUAL-NDA.md · UNILATERAL-NDA.md
+    ├── EXPORT-CONTROL.md · SECURITY.md · SECURITY-INSIGHTS.yml
+    ├── AI-ETHICS-STATEMENT.md · PRIVACY-POLICY.md · ACCEPTABLE-USE-POLICY.md
+    ├── AUDIT-METHODOLOGY.md · EPISTEMIC-DEBT-SCORE.md · AUDITOR-VETTING-PROCESS.md
+    ├── DISASTER-RECOVERY.md · NON-RECOURSE-STATEMENT.md
+    └── CITATION.cff · CITATION.md
 ```
+
+[![↑ Back to Table of Contents](https://img.shields.io/badge/↑_Back_to-Table_of_Contents-374151?style=flat-square)](#table-of-contents)
 
 ---
 
 ## Origin
 
-Author: Sheldon K. Salmon — AI Reliability & AGI Architect
-Session: March 2026 — AION-BRAIN
-Stack: DUAL-HELIX v2.0 · TOPOS v0.3 · VELA-C v0.3 · CPA-001 v2.2
+| Field | Value |
+|-------|-------|
+| **Author** | Sheldon K. Salmon — AI Reliability & AGI Architect |
+| **Session** | March 2026 — AION-BRAIN |
+| **Stack** | DUAL-HELIX v2.0 · TOPOS v0.3 · VELA-C v0.3 · CPA-001 v2.2 |
 
 *The stamp is permanent. The stamp is the resolution.*
+
+[![↑ Back to Table of Contents](https://img.shields.io/badge/↑_Back_to-Table_of_Contents-374151?style=flat-square)](#table-of-contents)
