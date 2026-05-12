@@ -337,7 +337,7 @@ See `AUDITOR-VETTING-PROCESS.md` for full process and criteria.
 
 **Badge:** `badges/aion-verified-simulator-badge-v1.svg`
 
-![AION Verified Simulator](./badges/aion-verified-simulator-badge-v1.svg)
+![AION Verified Simulator](./badges/aion-verified-simulator-badge-v1.svg?v=20260512)
 
 This badge certifies a specific simulation tool — not an organization, not an
 individual. Issued under AION methodology by Sheldon K. Salmon, AI Reliability
