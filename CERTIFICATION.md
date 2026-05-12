@@ -26,7 +26,7 @@ FROZEN-2.0 standard — a structured technical audit with a defined
 deliverable: a signed assessment that the deployment is operating within
 specification and producing trustworthy immutable records.
 
-Four tiers. No negotiation on scope. No bundling.
+Five tiers. No negotiation on scope. No bundling.
 
 The full five-phase audit process, Epistemic Debt framework, and
 tamper-evidence benchmarks are documented in `AUDIT-METHODOLOGY.md`.
@@ -43,7 +43,7 @@ Stripe is confirmed automatically by the audit-verify workflow before
 any work begins. Badge delivered digitally upon certification. No call
 required. No scheduling required. The filing and payment are the scope.
 
-**Architect-Led Intake — Tier 3 and Tier 4**
+**Architect-Led Intake — Tier 3, Tier 4, and Tier 5**
 Monday and Tuesday only. Submissions filed on any other day are not
 processed that week. Delivery on the following weekend — reports
 delivered Saturday or Sunday via scheduled reply on the issue thread.
@@ -231,6 +231,59 @@ commences. No exceptions.
 
 ---
 
+## TIER 5 — SOVEREIGN AI AUDIT
+
+**$15,000 per engagement · Full adversarial stack audit · 14-day assessment window**
+
+**Badge:** Sovereign — `badges/sovereign-certified-badge-sovereign-v1.svg`
+
+![Sovereign Certified — Sovereign AI Audit](./badges/sovereign-certified-badge-sovereign-v1.svg)
+
+**What it covers:**
+A complete adversarial audit of the client's AI system across seven independent
+instruments. This is not a management-system paperwork review. It is a full-scale
+diagnostic, adversarial, and code-level audit of the AI deployment itself.
+
+Every instrument runs against the system. Every finding is logged, cited, and sealed.
+The client receives a comprehensive Findings Register with severity ratings,
+falsification conditions, and remediation pathways.
+
+**The seven instruments:**
+
+| Order | Instrument | What It Tests |
+|-------|-----------|---------------|
+| 1 | **PDE v0.3** | 12-domain diagnostic scan — gaps, vulnerabilities, risks, loopholes, weaknesses, oversights, failures, blind spots, shortcomings, breaches, flaws, exposures. 60 pellucid focal variants. |
+| 2 | **EAE v0.3** | Elimination mapping by systematic negation. Claims the system makes are tested and ruled out with cause. Produces a survivor silhouette. |
+| 3 | **CAL v0.3** | 59 FTT checks across four layers: conceptual design, algorithmic performance, implementation correctness, error-control integrity. |
+| 4 | **SAR v0.1** | Sovereign Adversarial Reasoning — 12 FTT checks including Disaggregation Diagnosis, Honest-Error-Fabrication distinction, Mental Epidemic Screen. |
+| 5 | **ANTI-FORGE v1.3** | 15-role rejection council. Each role carries a pre-loaded rejection rulebase. Produces a Rejection Map. |
+| 6 | **FORGE v2.1** | Polymath Council review with Extended Panels. FSVE-aligned, Cq-adjusted convergence gating. |
+| 7 | **FSVE v4.0** | Certainty scoring across 11 EV axes with GRADE+E_enhance evidence grading. Produces a ScoreTensor. |
+
+**Deliverable:**
+- Sovereign Audit Findings Register — a single, sealed, signed PDF containing every
+  finding from all seven instruments, organized by severity, with falsification
+  conditions and remediation guidance for each finding
+- Epistemic Debt Score (EDS) — calculated from the aggregate findings, per the public
+  formula in `EPISTEMIC-DEBT-SCORE.md`
+- FSVE ScoreTensor — the system's certainty score across all 11 epistemic axes
+- Sovereign Audit Badge — licensed use of the Sovereign tier badge for 12 months
+- Listing in AION-Registry at Sovereign tier (public)
+
+**What it does not cover:**
+Consulting, implementation support, or developer access. The audit assesses what was
+built. Findings are delivered in writing. The client decides how to remediate.
+A re-audit after remediation is a separate engagement.
+
+**How to engage:**
+File a `10-audit-request.yml` issue marked Tier 5. Include organization name, AI system
+deployment scope, and Stripe transaction code. Architect-led intake — Monday and Tuesday
+only. Submissions filed on other days are not processed that week. The Architect confirms
+scope and opens the assessment window within three business days. Fourteen-day assessment
+window once confirmed.
+
+---
+
 ## STP CERTIFIED AUDITOR NETWORK
 
 Beyond direct certification by the Architect, the Sovereign Trace Protocol
@@ -373,11 +426,11 @@ Certification verification page: `https://aiongithubpages/certifications/`
 | Dimension | STP Certified | AION Verified Simulator |
 |-----------|--------------|------------------------|
 | Issued to | Organizations | Simulation tools |
-| Palette | Amber (#F0A500) | Gold (#D4AF37) |
+| Palette | Amber (#F0A500) / Sovereign (#00CED1) | Gold (#D4AF37) |
 | Shape | Hexagonal shield | Octagonal precision seal |
 | Subject | AI deployment infrastructure | Physics / engineering / scientific tools |
 | Audit type | Failure capture + remediation posture | Citation · red team · peer review |
-| Tiers | 4 tiers ($2.5K → DoD) | Single certification |
+| Tiers | 5 tiers ($2.5K → DoD → Sovereign) | Single certification |
 | Renewal | Annual | None — bound to tool version |
 
 ---
@@ -400,6 +453,7 @@ View at: `/simulators/roller-coaster/`
 | Tier 2 — Enterprise Certification | Digital | `badges/sovereign-certified-badge-digital-v2.svg` |
 | Tier 3 — Strategic Retainer | Elite | `badges/sovereign-certified-badge-elite-v2.svg` |
 | Tier 4 — Defense & Government Grade | Defense | `badges/sovereign-certified-badge-defense-v2.svg` |
+| Tier 5 — Sovereign AI Audit | Sovereign (cyan/indigo) | `badges/sovereign-certified-badge-sovereign-v1.svg` |
 | STP Certified Auditor | Auditor Shield | `badges/stp-auditor-badge-v2.svg` |
 | AION Verified Simulator | Octagonal Precision Seal | `badges/aion-verified-simulator-badge-v1.svg` |
 
@@ -411,6 +465,7 @@ misrepresentation of audit status.
 
 All STP badges carry: `NON-TRANSFERABLE` · SHA-256 · FROZEN-2.0 · TRIPLE-TIME SEALED.
 AION Verified Simulator badge carries: `NON-TRANSFERABLE` · SHA-256 · STP SEALED · v1.0.
+Tier 5 Sovereign badge carries: `NON-TRANSFERABLE` · SHA-256 · TRIPLE-TIME SEALED · STP CERTIFIED · v1.0.
 
 ---
 
