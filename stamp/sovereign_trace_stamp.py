@@ -152,7 +152,7 @@ Generates a cryptographic stamp encoding a moment simultaneously in:
     Maya Tzolkin/Haab — disambiguation declared)
 
 SHA-256 binds the entry text, all three representations, and the
-version identifier FROZEN-3.0 together. The seal is the proof.
+version identifier FROZEN-4.0 together. The seal is the proof.
 The text is the content. Together: the trace.
 
 Entry text normalization:
@@ -237,7 +237,7 @@ from typing import NamedTuple
 
 
 # ═══════════════════════════════════════════════════════════════════
-# FILE INTEGRITY SEAL — FROZEN-3.0
+# FILE INTEGRITY SEAL — FROZEN-4.0
 # Set this constant to the SHA-256 of the released .py file.
 # Verification is the operator's deployment responsibility.
 # Internal self-hash is impossible (bootstrap problem).
@@ -261,7 +261,7 @@ class SovereignStamp:
     dreamspell  : str   — "Day 25, Galactic Moon 8/13"
     unix_utc    : int   — seconds since Unix epoch (UTC), whole seconds only
     seal        : str   — SHA-256 hex digest binding entry, time, and version
-    version     : str   — "FROZEN-3.0" — sealed into the payload
+    version     : str   — "FROZEN-4.0" — sealed into the payload
 
     Invariant
     ---------
@@ -845,7 +845,7 @@ def stamp(entry_text: str, dt: datetime = None) -> SovereignStamp:
     SovereignStamp
         Immutable object holding all three calendar representations,
         the SHA-256 seal binding content to this exact moment,
-        and the FROZEN-3.0 version identifier.
+        and the FROZEN-4.0 version identifier.
 
     Raises
     ------
@@ -1444,9 +1444,17 @@ def _run_self_test(verbose: bool = True) -> None:
 # CLI — INTERACTIVE TRACE ENTRY
 # ═══════════════════════════════════════════════════════════════════
 
-def _cli() -> None:
+def _cli(json_mode: bool = False) -> None:
     """
     Interactive sovereign trace entry with live stamp.
+
+    Parameters
+    ----------
+    json_mode : bool
+        If True, suppress human-readable display and emit only the
+        machine-readable JSON record to stdout. Suitable for piping
+        into automation scripts, ledger appenders, or log aggregators.
+        Activate via: python sovereign_trace_stamp.py --json
 
     Privacy notice: entry text is submitted via stdin and printed to
     stdout. On shared systems, stdout may be logged (cloud function logs,
@@ -1464,33 +1472,39 @@ def _cli() -> None:
     Calendar note: calendar dates reflect UTC time. For users in
     UTC+10 or later, the UTC date may differ from local civil date.
     """
-    import json as _json  # already imported at module level; alias for clarity
-    print("═══════════════════════════════════════════════════")
-    print(f"  SOVEREIGN TRACE PROTOCOL — {_FROZEN_VERSION}")
-    print("  Your trace will be sealed permanently.")
-    print("  There is no undo.")
-    print("  Note: calendar dates reflect UTC.")
-    print("  Note: entry will appear in stdout (may be logged).")
-    print("═══════════════════════════════════════════════════\n")
+    if not json_mode:
+        print("═══════════════════════════════════════════════════")
+        print(f"  SOVEREIGN TRACE PROTOCOL — {_FROZEN_VERSION}")
+        print("  Your trace will be sealed permanently.")
+        print("  There is no undo.")
+        print("  Note: calendar dates reflect UTC.")
+        print("  Note: entry will appear in stdout (may be logged).")
+        print("═══════════════════════════════════════════════════\n")
 
     entry = input("Your trace (present-moment, exact, no narrative arc):\n> ")
     # Normalization mirrors stamp() — show the user the normalized entry
     entry_normalized = unicodedata.normalize("NFC", entry).strip()
     if not entry_normalized:
-        print("Empty trace. Nothing sealed.")
+        if not json_mode:
+            print("Empty trace. Nothing sealed.")
         return
 
     ts = stamp(entry_normalized)
-
-    print()
-    print("─── SEALED ───────────────────────────────────────")
-    print(display(ts))
-    print("─── JSON (store this) ────────────────────────────")
     rec = SovereignRecord(entry_normalized, ts)
-    print(json.dumps(rec.to_dict(), indent=2, ensure_ascii=False))
-    print("──────────────────────────────────────────────────")
-    print("This stamp is permanent. The seal verifies integrity.")
-    print("Keep the JSON. The ledger append comes next.")
+
+    if json_mode:
+        # Machine-readable output only — suitable for piping and automation.
+        # No decorative borders, no human-readable display lines.
+        print(json.dumps(rec.to_dict(), indent=2, ensure_ascii=False))
+    else:
+        print()
+        print("─── SEALED ───────────────────────────────────────")
+        print(display(ts))
+        print("─── JSON (store this) ────────────────────────────")
+        print(json.dumps(rec.to_dict(), indent=2, ensure_ascii=False))
+        print("──────────────────────────────────────────────────")
+        print("This stamp is permanent. The seal verifies integrity.")
+        print("Keep the JSON. The ledger append comes next.")
 
 
 if __name__ == "__main__":
@@ -1499,4 +1513,4 @@ if __name__ == "__main__":
         _run_self_test(verbose=True)
     else:
         _run_self_test(verbose=False)
-        _cli()
+        _cli(json_mode="--json" in sys.argv)
