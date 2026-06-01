@@ -4,23 +4,21 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
-.Python
-env/
-venv/
-.venv/
-pip-log.txt
-pip-delete-this-directory.txt
-.tox/
-.coverage
-.coveragerc
-htmlcov/
-.coverage.*
-.nox/
-.pytest_cache/
-.hypothesis/
 
-# Testing
-pytest.ini
-tests/__pycache__/
-stamp/__pycache__/
+# Coverage
+.coverage
+htmlcov/
+.coveragerc
+
+# Dependencies
+.venv/
+venv/
+.env
+.env.local
+
+# Tests
+.pytest_cache/
+
+# Logs
+*.log
 ```

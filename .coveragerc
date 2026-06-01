@@ -1,0 +1,25 @@
+[run]
+source = sovereign_trace
+branch = True
+omit =
+    tests/*
+    */__pycache__/*
+
+[report]
+show_missing = True
+skip_covered = False
+fail_under = 90
+exclude_lines =
+    pragma: no cover
+    pragma: no cover — defensive only
+    def __repr__
+    def __str__
+    if __name__ == .__main__.:
+    raise AssertionError
+    raise NotImplementedError
+
+[html]
+directory = htmlcov
+
+[xml]
+output = coverage.xml
