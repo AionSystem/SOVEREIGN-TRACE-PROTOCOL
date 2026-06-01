@@ -5,7 +5,7 @@ VerifyResult named tuple — boolean evaluation, field access, unpacking.
 import pytest
 from collections import namedtuple
 
-from sovereign_trace_stamp import VerifyResult
+from sovereign_trace import VerifyResult
 
 
 class TestVerifyResultBooleanEvaluation:
