@@ -11,7 +11,7 @@
 
 [![ORCID — Sheldon K. Salmon](https://img.shields.io/badge/ORCID-0009--0005--8057--5115-a6ce39?style=flat&logo=orcid&logoColor=white)](https://orcid.org/0009-0005-8057-5115)
 [![DOI](https://zenodo.org/badge/1174130098.svg)](https://doi.org/10.5281/zenodo.18941392)
-[![Permanent](https://img.shields.io/badge/PERMANENT-FROZEN--2.0-2E7D32?style=flat-square&logo=git&logoColor=white)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL)
+[![Permanent](https://img.shields.io/badge/PERMANENT-FROZEN--4.0-2E7D32?style=flat-square&logo=git&logoColor=white)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL)
 [![PyPI](https://img.shields.io/pypi/v/sovereign-trace?style=flat-square&color=2E7D32&label=PyPI)](https://pypi.org/project/sovereign-trace/)
 [![Status](https://img.shields.io/badge/STATUS-M--NASCENT-1976D2?style=flat-square&logo=shield&logoColor=white)](https://github.com/AionSystem/AION-BRAIN)
 [![Hebrew](https://img.shields.io/badge/HEBREW-Full%20Dehiyot%20%2B%20Civil--Day-0288D1?style=flat-square)](https://www.hebcal.com)
@@ -60,7 +60,7 @@
 
 **For organizations:** Every AI failure deserves a permanent, immutable record. Log it. Seal it. Append the remediation. The record cannot be edited after the fact. The AION-Registry holds public certification outcomes. An organization with a documented failure history and certified infrastructure is more trustworthy than one with a clean record and no ledger.
 
-Same mechanism. Same FROZEN-2.0 stamp function. Same SHA-256 seal. Different stakes.
+Same mechanism. Same FROZEN-4.0 stamp function. Same SHA-256 seal. Different stakes.
 
 See [`concept/USE-CASES.md`](./concept/USE-CASES.md) for the full dual-use architecture.
 
@@ -83,6 +83,7 @@ print(display(ts))
 # 🌑 Hebrew:     17 Adar 5786
 # 🌀 Dreamspell: Day 1, Solar Moon 9/13
 # 🔒 Seal:       a3f9c12e7d...
+# 📌 Version:    FROZEN-4.0
 ```
 
 → Full install guide, usage examples, and what not to do: [QUICKSTART.md](./QUICKSTART.md)
@@ -163,7 +164,7 @@ Structured submissions are made through GitHub Issues using the official templat
 | `07-general-trace.yml` | Any observation, decision, or record that doesn't fit another template |
 | `08-foresight-seal.yml` | Dated professional prediction before it resolves — foresight track record |
 | `09-webeater-link.yml` | Cryptographic link between two entities — binds a new seal to an existing SHA-256 |
-| `10-audit-request.yml` | Request a certified audit — Stripe payment required |
+| `10-audit-request.yml` | Request a certified audit |
 | `11-audit-completion.yml` | STP Certified Auditor files a completed audit to the ledger |
 | `12-auditor-application.yml` | Apply to become an STP Certified Auditor — skills-based, no credentials required |
 | `13-integrity-violation.yml` | Report badge misuse, bribery, or coercion — permanent ledger record |
@@ -180,16 +181,16 @@ New to GitHub? → [HOW-TO-SUBMIT.md](./HOW-TO-SUBMIT.md) — plain English guid
 
 ## Certification
 
-| Tier | Scope | Badge | Price | Intake |
-|---|---|---|---|---|
-| Tier 1 — Snapshot Verification | Up to 10 outputs | Standard | $2,500 | Automated 24/7 via Stripe |
-| Tier 2 — Enterprise Certification | Full audit + badge license | Digital | $25,000/yr | Automated 24/7 via Stripe |
-| Tier 3 — Strategic Retainer | Quarterly reviews + epistemic debt statement | Elite | $100,000+/yr | Architect-led · Mon–Tue only |
-| Tier 4 — Defense & Government Grade | Full standards alignment + monthly reviews | Defense | Negotiated | Architect-led · Mon–Tue only |
-| Tier 5 — Sovereign AI Audit | Full adversarial stack audit — 7 instruments, 14-day window | Sovereign (cyan/indigo) | $15,000 | Architect-led · Mon–Tue only |
+| Tier | Scope | Badge | Intake |
+|---|---|---|---|
+| Tier 1 — Snapshot Verification | Up to 10 outputs | Standard | Contact architect |
+| Tier 2 — Enterprise Certification | Full audit + badge license | Digital | Contact architect |
+| Tier 3 — Strategic Retainer | Quarterly reviews + epistemic debt statement | Elite | Architect-led · Mon–Tue only |
+| Tier 4 — Defense & Government Grade | Full standards alignment + monthly reviews | Defense | Architect-led · Mon–Tue only |
+| Tier 5 — Sovereign AI Audit | Full adversarial stack audit — 7 instruments, 14-day window | Sovereign (cyan/indigo) | Architect-led · Mon–Tue only |
 
 **Intake rules:**
-- Tier 1 and 2 — submit anytime. Payment via Stripe confirms your intake automatically.
+- Tier 1 and 2 — submit anytime via `10-audit-request.yml`.
 - Tier 3, 4, and 5 — Architect-led. Intake Monday and Tuesday only. Submissions on other days are voided and non-refundable.
 - Delivery: Weekends for all tiers.
 
@@ -208,11 +209,20 @@ Governing law: State of New York, United States. Arbitration: JAMS Commercial Ru
 
 ## Frozen Declaration
 
-`sovereign_trace_stamp.py` is **FROZEN-2.0**. Written once, verified once, deployed permanently. No patches. No updates. The stamp it generates is only permanent if the code that generates it is also permanent.
+`sovereign_trace_stamp.py` is **FROZEN-4.0**. Written once, verified once, deployed permanently. No patches. No updates. The stamp it generates is only permanent if the code that generates it is also permanent.
 
-If a defect is found: retire the frozen file, document the defect, build FROZEN-3.0 from first principles, re-verify all anchor cases. Never patch.
+If a defect is found: retire the frozen file, archive it as `SOVEREIGN-TRACE-STAMP-FROZEN-4.0-RETIRED.py`, document the defect, build FROZEN-5.0 from first principles, re-verify all anchor cases. Never patch.
 
-> **FROZEN-1.0 is retired.** Defect: incomplete dehiyot implementation → Hebrew off-by-one on all 5786 dates. Archived: `stamp/FROZEN-1.0-RETIRED/`.
+**Frozen lineage:**
+
+| Version | Status | Primary Defect |
+|---|---|---|
+| FROZEN-1.0 | Retired | Incomplete dehiyot implementation — Hebrew off-by-one on all 5786 dates |
+| FROZEN-2.0 | Retired | Eight defects including: no NFC normalization, no version field in seal, pre-reform boundary slip, unbounded Hebrew year loop |
+| FROZEN-3.0 | Retired | Self-test anchor dates for RH 5787 and Erev RH 5787 were wrong. Algorithm correct; test data was not. Effect: self-test raised `AssertionError` on otherwise correct code. |
+| **FROZEN-4.0** | **Current** | All known defects resolved. 82 self-test checks passing. |
+
+All FROZEN-3.0 stamps remain cryptographically valid — the defect was in test data only. No stamp produced by any retired version carries a cryptographic error (FROZEN-1.0 carries an incorrect Hebrew field; its seal is cryptographically valid but binds the wrong calendar string).
 
 [↑ Back to top](#table-of-contents)
 
@@ -239,6 +249,12 @@ Full legal coverage: [LEGAL-POSTURE.md](./LEGAL-POSTURE.md)
 STAGE 1 — COMPLETE (March 9, 2026)
   FROZEN-2.0: Triple-time stamp. Full dehiyot. Zero deps. 35 checks passed.
   PyPI: sovereign-trace 2.0.0 live. Founding seal in ledger.
+
+STAGE 1 — RED TEAM + FROZEN-4.0 (June 1, 2026)
+  Full red team scan: FSVE v4.3 × FA v4.0 dual-framework audit.
+  1 CRITICAL finding (self-test anchor data), 3 MEDIUM, 4 LOW — all resolved.
+  FROZEN-3.0 retired. FROZEN-4.0: 82 self-test checks passing.
+  PyPI: sovereign-trace 4.0.0 — pending push.
 
 STAGE 2 — PLANNED
   Local encrypted vault integration (Obsidian / Notion)
@@ -286,7 +302,7 @@ sovereign-trace-protocol/
 │   │   ├── 07-general-trace.yml
 │   │   ├── 08-foresight-seal.yml
 │   │   ├── 09-webeater-link.yml
-│   │   ├── 10-audit-request.yml                ← Stripe payment
+│   │   ├── 10-audit-request.yml
 │   │   ├── 11-audit-completion.yml
 │   │   ├── 12-auditor-application.yml
 │   │   ├── 13-integrity-violation.yml
@@ -294,7 +310,7 @@ sovereign-trace-protocol/
 │   └── workflows/
 │       ├── python-publish.yml
 │       ├── auto-seal.yml                       ← auto-seals all pending-seal issues
-│       └── audit-verify.yml                    ← Stripe payment + auditor badge verification
+│       └── audit-verify.yml                    ← auditor badge verification
 │
 ├── badges/
 │   ├── sovereign-certified-badge-v2.svg        ← Tier 1 Standard
@@ -317,8 +333,10 @@ sovereign-trace-protocol/
 │   └── SOVEREIGN-TRACE-v0.2-SPEC.md
 │
 ├── stamp/
-│   ├── sovereign_trace_stamp.py                ← FROZEN-2.0
-│   ├── FROZEN-2.0-MANIFEST.md
+│   ├── sovereign_trace_stamp.py                ← FROZEN-4.0 (current)
+│   ├── FROZEN-4.0-MANIFEST.md
+│   ├── FROZEN-3.0-RETIRED/
+│   ├── FROZEN-2.0-RETIRED/
 │   └── FROZEN-1.0-RETIRED/
 │
 ├── ledger/
