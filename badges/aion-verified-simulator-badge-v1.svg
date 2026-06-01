@@ -1,5 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 400" width="400" height="400">
   <defs>
+    <!-- Rainbow border gradient (cyan → violet → amber) -->
+    <linearGradient id="rainbowBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="40%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#f0a500"/>
+    </linearGradient>
+
     <linearGradient id="goldLinear" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#F5E070"/>
       <stop offset="35%" stop-color="#D4AF37"/>
@@ -42,21 +49,28 @@
     <filter id="badgeShadow" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#D4AF37" flood-opacity="0.25"/>
     </filter>
+
+    <!-- Arcs for text placement -->
     <path id="topArc" d="M 78,200 A 122,122 0 0,1 322,200"/>
-    <path id="bottomArc" d="M 92,200 A 108,108 0 0,0 308,200"/>
     <path id="topSubArc" d="M 98,200 A 102,102 0 0,1 302,200"/>
-    <path id="bottomSubArc" d="M 105,200 A 95,95 0 0,0 295,200"/>
+    <!-- New arc for AI RELIABILITY ARCHITECT (radius 82, above the center logo) -->
+    <path id="architectArc" d="M 118,200 A 82,82 0 0,1 282,200"/>
+
+    <!-- Circular clip for the logo -->
+    <clipPath id="logoClip">
+      <circle cx="200" cy="200" r="56"/>
+    </clipPath>
   </defs>
 
-  <!-- Octagonal seal base -->
+  <!-- Octagonal seal base (rainbow border) -->
   <polygon points="368.1,269.6 269.6,368.1 130.4,368.1 31.9,269.6 31.9,130.4 130.4,31.9 269.6,31.9 368.1,130.4"
-           fill="url(#bgFill)" stroke="url(#goldLinear)" stroke-width="3" filter="url(#badgeShadow)"/>
+           fill="url(#bgFill)" stroke="url(#rainbowBorder)" stroke-width="3" filter="url(#badgeShadow)"/>
 
-  <!-- Inner octagon line -->
+  <!-- Inner octagon line (keep gold) -->
   <polygon points="358.5,264.9 264.9,358.5 135.1,358.5 41.5,264.9 41.5,135.1 135.1,41.5 264.9,41.5 358.5,135.1"
            fill="none" stroke="url(#goldSheen)" stroke-width="1" stroke-opacity="0.5"/>
 
-  <!-- 24 chronometer ticks around the octagon perimeter -->
+  <!-- 24 chronometer ticks (gold) -->
   <g>
     <line x1="355" y1="200" x2="368" y2="200" stroke="url(#goldLinear)" stroke-width="1.5"/>
     <line x1="349.7" y1="240.1" x2="356.5" y2="241.9" stroke="url(#goldLinear)" stroke-width="0.8"/>
@@ -84,7 +98,7 @@
     <line x1="349.7" y1="159.9" x2="356.5" y2="158.1" stroke="url(#goldLinear)" stroke-width="0.8"/>
   </g>
 
-  <!-- Outer ring -->
+  <!-- Outer ring (gold) -->
   <circle cx="200" cy="200" r="150" fill="none" stroke="url(#goldLinear)" stroke-width="2.5"/>
   <circle cx="200" cy="200" r="142" fill="none" stroke="url(#goldSheen)" stroke-width="0.8" stroke-dasharray="3 5" stroke-opacity="0.6"/>
 
@@ -92,41 +106,36 @@
   <circle cx="200" cy="200" r="134" fill="url(#innerBg)"/>
   <circle cx="200" cy="200" r="134" fill="none" stroke="url(#goldLinear)" stroke-width="1.5"/>
 
-  <!-- Left and right diamond markers -->
+  <!-- Left and right diamond markers (gold) -->
   <polygon points="62,195 57,200 62,205 67,200" fill="url(#goldLinear)" opacity="0.9"/>
   <polygon points="338,195 333,200 338,205 343,200" fill="url(#goldLinear)" opacity="0.9"/>
 
-  <!-- Top and bottom alignment dots -->
+  <!-- Top and bottom alignment dots (gold) -->
   <circle cx="200" cy="66" r="2.5" fill="url(#goldLinear)" opacity="0.8"/>
   <circle cx="200" cy="334" r="2.5" fill="url(#goldLinear)" opacity="0.8"/>
 
-  <!-- Top arc text: AION · VERIFIED -->
+  <!-- Top arc text: AION · VERIFIED (unchanged) -->
   <text font-family="'Times New Roman', Georgia, serif" font-size="15" font-weight="bold" letter-spacing="5" fill="url(#goldSheen)" text-anchor="middle">
     <textPath href="#topArc" startOffset="50%">AION · VERIFIED</textPath>
   </text>
 
-  <!-- Top sub-arc: · SIMULATOR · -->
+  <!-- Sub-arc: · SIMULATOR · (unchanged) -->
   <text font-family="'Times New Roman', Georgia, serif" font-size="11.5" font-weight="normal" letter-spacing="7" fill="#C9A028" text-anchor="middle" opacity="0.85">
     <textPath href="#topSubArc" startOffset="50%">· SIMULATOR ·</textPath>
   </text>
 
-  <!-- Bottom arc text: SHELDON K. SALMON -->
-  <text font-family="'Times New Roman', Georgia, serif" font-size="11" font-weight="bold" letter-spacing="3" fill="url(#goldSheen)" text-anchor="middle">
-    <textPath href="#bottomArc" startOffset="50%">SHELDON K. SALMON</textPath>
+  <!-- NEW: AI RELIABILITY ARCHITECT (curved above the logo center) -->
+  <text font-family="'Times New Roman', Georgia, serif" font-size="9.5" font-weight="bold" letter-spacing="2" fill="url(#goldSheen)" text-anchor="middle">
+    <textPath href="#architectArc" startOffset="50%">AI RELIABILITY ARCHITECT</textPath>
   </text>
 
-  <!-- Bottom sub-arc: AI RELIABILITY ARCHITECT -->
-  <text font-family="'Times New Roman', Georgia, serif" font-size="9" font-weight="normal" letter-spacing="2" fill="#9A7820" text-anchor="middle" opacity="0.75">
-    <textPath href="#bottomSubArc" startOffset="50%">AI RELIABILITY ARCHITECT</textPath>
-  </text>
-
-  <!-- Left and right separator lines with diamond ends -->
+  <!-- Separator lines (left/right, gold) -->
   <line x1="78" y1="200" x2="142" y2="200" stroke="url(#dimGold)" stroke-width="1"/>
   <line x1="258" y1="200" x2="322" y2="200" stroke="url(#dimGold)" stroke-width="1"/>
   <polygon points="142,197 137,200 142,203 147,200" fill="#C9A028" opacity="0.6"/>
   <polygon points="258,197 253,200 258,203 263,200" fill="#C9A028" opacity="0.6"/>
 
-  <!-- Sine wave — the 3-cycle physics motif -->
+  <!-- Sine wave — the 3-cycle physics motif (unchanged) -->
   <path d="M 95,200 C 107,168 119,168 131,200 S 155,232 167,200 C 179,168 191,168 203,200 S 227,232 239,200 C 251,168 263,168 275,200 S 299,232 305,200"
         fill="none" stroke="#D4AF37" stroke-width="8" stroke-linecap="round" opacity="0.12"/>
   <path d="M 95,200 C 107,168 119,168 131,200 S 155,232 167,200 C 179,168 191,168 203,200 S 227,232 239,200 C 251,168 263,168 275,200 S 299,232 305,200"
@@ -136,8 +145,15 @@
   <circle cx="95" cy="200" r="3" fill="#D4AF37" opacity="0.5"/>
   <circle cx="305" cy="200" r="3" fill="#D4AF37" opacity="0.5"/>
 
-  <!-- Center text -->
-  <text x="200" y="167" font-family="'Courier New', Courier, monospace" font-size="9" letter-spacing="3" fill="#D4AF37" text-anchor="middle" opacity="0.9">VERIFIED SIMULATION</text>
-  <text x="200" y="242" font-family="'Courier New', Courier, monospace" font-size="8" letter-spacing="2.5" fill="#8B7520" text-anchor="middle" opacity="0.8">v1.0 · 2026 · AION STACK</text>
-  <text x="200" y="258" font-family="'Courier New', Courier, monospace" font-size="7" letter-spacing="1" fill="#5a4e20" text-anchor="middle" opacity="0.6">NON-TRANSFERABLE · SHA-256 · STP SEALED</text>
+  <!-- Center logo with gold ring -->
+  <circle cx="200" cy="200" r="59" fill="none" stroke="url(#goldSheen)" stroke-width="2"/>
+  <circle cx="200" cy="200" r="61" fill="none" stroke="#D4AF37" stroke-opacity="0.3" stroke-width="1"/>
+  <image x="144" y="144" width="112" height="112"
+         xlink:href="../aion-logo.jpg"
+         clip-path="url(#logoClip)"
+         preserveAspectRatio="xMidYMid slice"/>
+
+  <!-- Bottom text (attribution) -->
+  <text x="200" y="275" font-family="'Courier New', Courier, monospace" font-size="7.5" letter-spacing="2" fill="#9A7820" text-anchor="middle" opacity="0.8">AION VERIFIED SIMULATOR</text>
+  <text x="200" y="290" font-family="'Courier New', Courier, monospace" font-size="7" letter-spacing="1.5" fill="#6B5510" text-anchor="middle" opacity="0.7">v1.0 · 2026 · STP SEALED</text>
 </svg>
