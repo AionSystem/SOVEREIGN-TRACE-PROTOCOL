@@ -6,7 +6,7 @@ import pytest
 import unicodedata
 from datetime import datetime, timezone
 
-from sovereign_trace_stamp import (
+from sovereign_trace import (
     stamp,
     verify,
     VerifyResult,
