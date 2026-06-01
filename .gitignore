@@ -1,0 +1,26 @@
+```
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coveragerc
+htmlcov/
+.coverage.*
+.nox/
+.pytest_cache/
+.hypothesis/
+
+# Testing
+pytest.ini
+tests/__pycache__/
+stamp/__pycache__/
+```
