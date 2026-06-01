@@ -58,14 +58,14 @@ def anchor_entry():
 @pytest.fixture
 def anchor_stamp(anchor_entry, anchor_dt):
     """Stamp generated from anchor_entry at anchor_dt."""
-    from sovereign_trace_stamp import stamp
+    from sovereign_trace import stamp
     return stamp(anchor_entry, anchor_dt)
 
 
 @pytest.fixture
 def anchor_record(anchor_entry, anchor_dt):
     """SovereignRecord generated from anchor_entry at anchor_dt."""
-    from sovereign_trace_stamp import stamp_and_record
+    from sovereign_trace import stamp_and_record
     return stamp_and_record(anchor_entry, anchor_dt)
 
 
@@ -174,7 +174,7 @@ def new_year_dt():
 @pytest.fixture
 def valid_stamp_dict(anchor_stamp):
     """Pre-built dict from anchor_stamp for from_dict tests."""
-    from sovereign_trace_stamp import to_dict
+    from sovereign_trace import to_dict
     return to_dict(anchor_stamp)
 
 
