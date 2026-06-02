@@ -1,0 +1,112 @@
+name: "Decision Record — Sovereign Trace Protocol"
+description: "Seal an architectural, governance, or board decision at the moment it is made. Prevents revisionist history in organizations."
+title: "[STP-DECISION] — [DECISION TOPIC] — [DATE]"
+labels: ["decision-record", "pending-seal"]
+assignees: []
+
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Decision Record
+
+        This form is for sealing a significant organizational, architectural, or governance decision at the moment it is made.
+
+        When the decision is later questioned — why was this direction chosen, who approved it, what alternatives were considered — the sealed record is the immutable answer.
+
+  - type: input
+    id: submitter_name
+    attributes:
+      label: "Your Name (Optional)"
+      description: "If provided, becomes part of the permanent record. Leave blank for an anonymous seal."
+      placeholder: "First Last or leave blank"
+    validations:
+      required: false
+
+  - type: input
+    id: organization
+    attributes:
+      label: "Organization or Team"
+      description: "The organization or team making this decision."
+      placeholder: "e.g., AionSystem, Engineering, Board of Directors"
+    validations:
+      required: true
+
+  - type: input
+    id: decision_topic
+    attributes:
+      label: "Decision Topic"
+      description: "A short title for this decision (e.g., 'Adopt Postgres over MongoDB', 'End support for v1 API')."
+      placeholder: "e.g., Migration to microservices architecture"
+    validations:
+      required: true
+
+  - type: input
+    id: decision_date
+    attributes:
+      label: "Date of Decision"
+      description: "The date the decision was finalized. Format: YYYY-MM-DD"
+      placeholder: "2026-06-02"
+    validations:
+      required: true
+
+  - type: textarea
+    id: decision_text
+    attributes:
+      label: "The Decision"
+      description: "State the decision clearly. What was decided? What will happen as a result?"
+      placeholder: "We have decided to... The implementation will begin on..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: "Rationale"
+      description: "Why was this decision made? What alternatives were considered and rejected?"
+      placeholder: "We chose this path because... Alternatives considered: X (rejected because...), Y (rejected because...)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: dissent
+    attributes:
+      label: "Dissenting Views (Optional)"
+      description: "If anyone disagreed with the decision, record their view here. An honest record includes dissent."
+      placeholder: "Name (optional): reason for disagreement..."
+    validations:
+      required: false
+
+  - type: upload
+    id: supporting_files
+    attributes:
+      label: "Supporting Files (Optional)"
+      description: "Upload any related files — meeting notes, architectural diagrams, vote records."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: "Declaration"
+      options:
+        - label: "I affirm this is an accurate record of the decision as made on the date stated."
+          required: true
+        - label: "I understand this submission is immutable — it cannot be altered after sealing."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## What Happens Next
+
+        1. Completeness check — Reviewed for completeness.
+        2. Sealing — Sealed with a FROZEN‑4.0 triple‑time cryptographic stamp. Permanent.
+        3. Ledger entry — Enters the Sovereign Trace ledger with timestamp and SHA‑256 hash.
+        4. Notification — You receive your ledger entry ID and SHA‑256 hash.
+
+        The seal is permanent. The seal is the resolution.
+
+        Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
