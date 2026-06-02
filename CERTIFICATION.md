@@ -63,7 +63,7 @@ Both must match before work begins. No exceptions.
 
 **Badge:** Snapshot — `assets/badges/sovereign-certified/sovereign-certified-badge-snapshot-v1.svg`
 
-![Sovereign Certified — Snapshot](./assets/badges/sovereign-certified/sovereign-certified-badge-snapshot-v1.svg)
+<img src="assets/badges/sovereign-certified/sovereign-certified-badge-snapshot-v1.svg" alt="Snapshot Badge" width="320" />
 
 **What it covers:**
 A lightweight pre‑audit for organizations that want to demonstrate a
@@ -118,7 +118,7 @@ The audit depth is listed on the sleeve and in the AION‑Registry entry.
 
 **Badge:** Standard — `assets/badges/sovereign-certified/sovereign-certified-badge-v2.svg`
 
-![Sovereign Certified](./assets/badges/sovereign-certified/sovereign-certified-badge-v2.svg)
+<img src="assets/badges/sovereign-certified/sovereign-certified-badge-v2.svg" alt="Standard Badge" width="320" />
 
 **Deliverable:**
 - Full Certification Report (written, signed, PDF)
@@ -151,7 +151,7 @@ two business days.
 
 **Badge:** Digital — `assets/badges/sovereign-certified/sovereign-certified-badge-digital-v2.svg`
 
-![Sovereign Certified — Digital](./assets/badges/sovereign-certified/sovereign-certified-badge-digital-v2.svg)
+<img src="assets/badges/sovereign-certified/sovereign-certified-badge-digital-v2.svg" alt="Digital Badge" width="320" />
 
 **What it covers:**
 Standing certification and monitoring posture for organizations that
@@ -196,7 +196,7 @@ within two business days.
 
 **Badge:** Elite — `assets/badges/sovereign-certified/sovereign-certified-badge-elite-v2.svg`
 
-![Sovereign Certified — Elite](./assets/badges/sovereign-certified/sovereign-certified-badge-elite-v2.svg)
+<img src="assets/badges/sovereign-certified/sovereign-certified-badge-elite-v2.svg" alt="Elite Badge" width="320" />
 
 **What it covers:**
 Standing certification and monitoring posture for organizations
@@ -240,7 +240,7 @@ in writing. That exchange is the negotiation.
 
 **Badge:** Defense — `assets/badges/sovereign-certified/sovereign-certified-badge-defense-v2.svg`
 
-![Sovereign Certified — Defense Grade](./assets/badges/sovereign-certified/sovereign-certified-badge-defense-v2.svg)
+<img src="assets/badges/sovereign-certified/sovereign-certified-badge-defense-v2.svg" alt="Defense Badge" width="320" />
 
 **What it covers:**
 Full standards‑alignment certification for federal agencies, DoD components,
@@ -294,7 +294,7 @@ commences. No exceptions.
 
 **Badge:** Sovereign — `assets/badges/sovereign-certified/sovereign-certified-badge-sovereign-v1.svg`
 
-![Sovereign Certified — Sovereign AI Audit](./assets/badges/sovereign-certified/sovereign-certified-badge-sovereign-v1.svg)
+<img src="assets/badges/sovereign-certified/sovereign-certified-badge-sovereign-v1.svg" alt="Sovereign Badge" width="320" />
 
 **What it covers:**
 A complete adversarial audit of the client's AI system across seven independent
@@ -353,7 +353,7 @@ revocation procedure: `AUDITOR-VETTING-PROCESS.md`.
 
 **The auditor badge:**
 
-![STP Certified Auditor](./assets/badges/stp_auditor/stp_auditor_template_v1.svg)
+![STP Certified Auditor](assets/badges/stp_auditor/stp_auditor_template_v1.svg)
 
 **Badge properties:**
 - Non‑transferable — bound to the auditor's name and LinkedIn permanently
@@ -394,7 +394,7 @@ See `AUDITOR-VETTING-PROCESS.md` for full process and criteria.
 
 **Badge:** `assets/badges/verified-simulator/aion-verified-simulator-badge-v1.svg`
 
-![AION Verified Simulator](./assets/badges/verified-simulator/aion-verified-simulator-badge-v1.svg?v=20260512)
+![AION Verified Simulator](assets/badges/verified-simulator/aion-verified-simulator-badge-v1.svg?v=20260512)
 
 This badge certifies a specific simulation tool — not an organization, not an
 individual. Issued under AION methodology by Sheldon K. Salmon, AI Reliability
@@ -515,6 +515,8 @@ These badges do **not** replace a full STP certification; they are an additional
 #### 1. General Constitutional Compliance
 **Badge file:** `assets/badges/compliance/compliance-constitutional-badge.svg`
 
+<img src="assets/badges/compliance/compliance-constitutional-badge.svg" alt="Constitutional Compliance Badge" width="320" />
+
 Certifies that the organization's AI deployment meets the baseline requirements of THE CONSTITUTION v2.1 — the Nine Laws, falsification protocols, and governance structure — regardless of industry. This is the foundational compliance badge, applicable to all organizations.
 
 - Palette: crimson & gold
@@ -523,6 +525,8 @@ Certifies that the organization's AI deployment meets the baseline requirements 
 
 #### 2. Legal & Justice AI Compliance
 **Badge file:** `assets/badges/compliance/compliance-legal-badge.svg`
+
+<img src="assets/badges/compliance/compliance-legal-badge.svg" alt="Legal & Justice AI Compliance Badge" width="320" />
 
 Certifies that AI systems used in legal, judicial, or regulatory contexts comply with THE CONSTITUTION v2.1 and additional legal‑domain integrity standards. Covers: legal document analysis, case prediction, sentencing support, regulatory compliance tools.
 
@@ -533,6 +537,8 @@ Certifies that AI systems used in legal, judicial, or regulatory contexts comply
 #### 3. Healthcare AI Compliance
 **Badge file:** `assets/badges/compliance/compliance-healthcare-badge.svg`
 
+<img src="assets/badges/compliance/compliance-healthcare-badge.svg" alt="Healthcare AI Compliance Badge" width="320" />
+
 Certifies that AI systems used in clinical, diagnostic, or healthcare‑adjacent settings comply with THE CONSTITUTION v2.1 and additional clinical safety protocols. Covers: medical imaging, diagnostic support, patient triage, drug interaction prediction.
 
 - Palette: deep teal & white‑silver
@@ -541,6 +547,8 @@ Certifies that AI systems used in clinical, diagnostic, or healthcare‑adjacent
 
 #### 4. Financial AI Compliance
 **Badge file:** `assets/badges/compliance/compliance-finance-badge.svg`
+
+<img src="assets/badges/compliance/compliance-finance-badge.svg" alt="Financial AI Compliance Badge" width="320" />
 
 Certifies that AI systems used in financial services, trading, credit assessment, or fraud detection comply with THE CONSTITUTION v2.1 and additional financial‑domain integrity standards.
 
@@ -639,6 +647,17 @@ Placeholder fields in the templates (e.g., `{{ENTRY_ID}}`,
 `{{AUDITOR_NAME}}`) are filled by the certification automation script
 at issuance. No static names or dates are hard‑coded into the
 templates.
+
+---
+
+### What a Complete Certification Looks Like
+
+Below is the v1 (Certified Audit) sleeve — the default wrapper for a full
+Tier 1–5 engagement. Click the image to view at full resolution.
+
+<a href="assets/sleeve/small-sleeve/aionsystem_certified_audit_sleeve_smv1.svg">
+  <img src="assets/sleeve/small-sleeve/aionsystem_certified_audit_sleeve_smv1.svg" alt="Certified Audit Sleeve (small)" width="320" />
+</a>
 
 ---
 
