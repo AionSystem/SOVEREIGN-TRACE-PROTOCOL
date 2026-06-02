@@ -1,11 +1,11 @@
 # USE CASES — Sovereign Trace Protocol
 
-**Author:** Sheldon K. Salmon — AI Reliability & AGI Architect
+**Author:** Sheldon K. Salmon — AI Reliability & ADI Architect
 **Date:** March 2026
 **Repository:** AionSystem/SOVEREIGN-TRACE-PROTOCOL
 
 The Sovereign Trace Protocol operates at two scales simultaneously.
-Same mechanism. Same FROZEN-2.0 stamp function. Same SHA-256 seal.
+Same mechanism. Same FROZEN-4.0 stamp function. Same SHA-256 seal.
 Different stakes.
 
 ---
@@ -144,7 +144,7 @@ The individual seals a personal trace.
 The organization seals an AI failure record.
 
 Same SHA-256. Same triple-time calendar binding.
-Same tamper-evidence guarantee. Same FROZEN-2.0 integrity.
+Same tamper-evidence guarantee. Same FROZEN-4.0 integrity.
 
 The stakes differ. The mechanism does not.
 
