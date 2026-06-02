@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 90" width="320" height="90" role="img">
+  <title>Sovereign Trace Protocol — Snapshot Verification Badge (Pearl)</title>
+  <defs>
+    <!-- Pearl / Earth Background -->
+    <linearGradient id="pearlBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdfbf7"/>
+      <stop offset="50%" stop-color="#f7f2e9"/>
+      <stop offset="100%" stop-color="#e8dccf"/>
+    </linearGradient>
+
+    <!-- Warm bronze / copper rim -->
+    <linearGradient id="pearlRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5a2b"/>
+      <stop offset="30%" stop-color="#cd9575"/>
+      <stop offset="55%" stop-color="#f3d4b0"/>
+      <stop offset="75%" stop-color="#cd9575"/>
+      <stop offset="100%" stop-color="#7a4b24"/>
+    </linearGradient>
+
+    <!-- Inner rim (darker) -->
+    <linearGradient id="pearlRimInner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6b4423"/>
+      <stop offset="50%" stop-color="#b8794b"/>
+      <stop offset="100%" stop-color="#6b4423"/>
+    </linearGradient>
+
+    <!-- Divider line -->
+    <linearGradient id="pearlDiv" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#cd9575" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#cd9575" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#cd9575" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Bar for NON-TRANSFERABLE -->
+    <linearGradient id="pearlBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3e2723"/>
+      <stop offset="30%" stop-color="#cd9575"/>
+      <stop offset="50%" stop-color="#f3d4b0"/>
+      <stop offset="70%" stop-color="#cd9575"/>
+      <stop offset="100%" stop-color="#3e2723"/>
+    </linearGradient>
+
+    <!-- Shield fill -->
+    <radialGradient id="pearlShield" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#f7f2e9"/>
+      <stop offset="100%" stop-color="#d7c4b2"/>
+    </radialGradient>
+
+    <!-- Subtle pearl sheen overlay -->
+    <radialGradient id="pearlSheen" cx="30%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="shadowDeep">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#3e2723" flood-opacity="0.5"/>
+    </filter>
+    <filter id="bronzeGlow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- outer rim -->
+  <rect x="0" y="0" width="320" height="90" rx="5" fill="url(#pearlRim)" filter="url(#shadowDeep)"/>
+
+  <!-- body -->
+  <rect x="2" y="2" width="316" height="86" rx="4" fill="url(#pearlBg)"/>
+
+  <!-- pearl sheen overlay -->
+  <rect x="2" y="2" width="316" height="86" rx="4" fill="url(#pearlSheen)"/>
+
+  <!-- inner accent -->
+  <rect x="4" y="4" width="312" height="82" rx="3" fill="none" stroke="url(#pearlRimInner)" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- NON‑TRANSFERABLE strip -->
+  <rect x="2" y="2" width="316" height="13" rx="4" fill="#3e2723"/>
+  <rect x="2" y="14" width="316" height="1" fill="url(#pearlBar)" opacity="0.8"/>
+  <text x="160" y="12" font-family="'Courier New', monospace" font-size="6.5" font-weight="bold" letter-spacing="3" fill="#f3d4b0" text-anchor="middle">NON‑TRANSFERABLE</text>
+
+  <!-- left panel -->
+  <rect x="2" y="15" width="74" height="73" fill="#cd9575" fill-opacity="0.06"/>
+  <rect x="75" y="15" width="1" height="73" fill="url(#pearlDiv)"/>
+
+  <!-- Magnifying glass icon inside shield -->
+  <path d="M38,23 L58,29 L58,50 Q58,64 38,72 Q18,64 18,50 L18,29 Z" fill="url(#pearlShield)" stroke="url(#pearlRim)" stroke-width="1.5" filter="drop-shadow(0 0 3px rgba(139,90,43,0.4))"/>
+  <path d="M38,26 L55,31 L55,50 Q55,62 38,69 Q21,62 21,50 L21,31 Z" fill="none" stroke="#6b4423" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Lens circle -->
+  <circle cx="34" cy="44" r="9" fill="none" stroke="#8b5a2b" stroke-width="1.8" opacity="0.9"/>
+  <circle cx="34" cy="44" r="6" fill="none" stroke="#f3d4b0" stroke-width="0.5" opacity="0.5"/>
+  <!-- Handle -->
+  <line x1="41" y1="51" x2="50" y2="60" stroke="#8b5a2b" stroke-width="1.8" stroke-linecap="round" opacity="0.9"/>
+  <!-- Highlight on lens -->
+  <circle cx="31" cy="41" r="2" fill="#f3d4b0" opacity="0.6"/>
+
+  <!-- right panel -->
+  <text x="198" y="29" font-family="'Georgia','Times New Roman',serif" font-size="7" font-weight="bold" letter-spacing="2" fill="#6b4423" text-anchor="middle">SOVEREIGN TRACE PROTOCOL</text>
+
+  <line x1="86" y1="33" x2="310" y2="33" stroke="#8b5a2b" stroke-width="0.4" opacity="0.3"/>
+
+  <text x="198" y="58" font-family="'Georgia','Times New Roman',serif" font-size="20" font-weight="bold" letter-spacing="3" fill="#8b5a2b" text-anchor="middle" filter="drop-shadow(0 0 3px rgba(139,90,43,0.2))">SNAPSHOT</text>
+
+  <line x1="86" y1="63" x2="310" y2="63" stroke="#8b5a2b" stroke-width="0.4" opacity="0.3"/>
+  <rect x="86" y="64" width="224" height="1.5" fill="url(#pearlRimInner)" opacity="0.5"/>
+
+  <text x="198" y="79" font-family="'Courier New',monospace" font-size="6.5" letter-spacing="1.5" fill="#5a3e28" text-anchor="middle">AIONSYSTEM · PRE‑AUDIT · SHA‑256 SEALED</text>
+
+  <!-- node dots (warm) -->
+  <circle cx="102" cy="72" r="1.2" fill="#cd9575" opacity="0.4"/>
+  <circle cx="114" cy="70" r="0.8" fill="#cd9575" opacity="0.3"/>
+  <circle cx="286" cy="72" r="1.2" fill="#cd9575" opacity="0.4"/>
+  <circle cx="298" cy="70" r="0.8" fill="#cd9575" opacity="0.3"/>
+  <line x1="102" y1="72" x2="114" y2="70" stroke="#cd9575" stroke-width="0.4" opacity="0.25"/>
+  <line x1="286" y1="72" x2="298" y2="70" stroke="#cd9575" stroke-width="0.4" opacity="0.25"/>
+
+  <!-- corner marks -->
+  <g stroke="#8b5a2b" stroke-width="1" opacity="0.4" fill="none">
+    <path d="M8,8 L8,14 M8,8 L14,8"/>
+    <path d="M312,8 L312,14 M312,8 L306,8"/>
+    <path d="M8,82 L8,76 M8,82 L14,82"/>
+    <path d="M312,82 L312,76 M312,82 L306,82"/>
+  </g>
+
+  <!-- stars (warm) -->
+  <circle cx="92" cy="21" r="0.6" fill="#cd9575" opacity="0.3"/>
+  <circle cx="135" cy="18" r="0.4" fill="#8b5a2b" opacity="0.4"/>
+  <circle cx="260" cy="20" r="0.5" fill="#cd9575" opacity="0.25"/>
+  <circle cx="295" cy="23" r="0.4" fill="#8b5a2b" opacity="0.4"/>
+  <circle cx="110" cy="80" r="0.4" fill="#cd9575" opacity="0.25"/>
+  <circle cx="280" cy="79" r="0.5" fill="#8b5a2b" opacity="0.3"/>
+</svg>

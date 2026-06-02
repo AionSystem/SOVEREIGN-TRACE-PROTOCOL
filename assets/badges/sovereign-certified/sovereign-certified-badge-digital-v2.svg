@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 90" width="320" height="90">
+  <defs>
+
+    <linearGradient id="bg-d" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#060d1f"/>
+      <stop offset="50%"  stop-color="#040a18"/>
+      <stop offset="100%" stop-color="#020810"/>
+    </linearGradient>
+
+    <linearGradient id="cyan" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#00F5FF"/>
+      <stop offset="50%"  stop-color="#00BFFF"/>
+      <stop offset="100%" stop-color="#0080FF"/>
+    </linearGradient>
+
+    <linearGradient id="border-d" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#00F5FF" stop-opacity="0.9"/>
+      <stop offset="50%"  stop-color="#0080FF" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#00F5FF" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <linearGradient id="divider-d" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#00F5FF" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#00F5FF" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#00F5FF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- NON-TRANSFERABLE strip uses same aiCyan as other badges -->
+    <linearGradient id="aiCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#001F2E"/>
+      <stop offset="30%"  stop-color="#00B4D8"/>
+      <stop offset="50%"  stop-color="#48CAE4"/>
+      <stop offset="70%"  stop-color="#00B4D8"/>
+      <stop offset="100%" stop-color="#001F2E"/>
+    </linearGradient>
+
+    <linearGradient id="crimson" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#6B0000"/>
+      <stop offset="50%"  stop-color="#8B0000"/>
+      <stop offset="100%" stop-color="#6B0000"/>
+    </linearGradient>
+
+    <filter id="shadowDeep">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000000" flood-opacity="0.9"/>
+    </filter>
+
+    <filter id="cyanGlow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow-d">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <clipPath id="rounded-d">
+      <rect width="320" height="90" rx="5" ry="5"/>
+    </clipPath>
+
+  </defs>
+
+  <!-- ═══ OUTER CYAN BORDER ═══ -->
+  <rect width="320" height="90" rx="5" ry="5"
+        fill="url(#border-d)" filter="url(#shadowDeep)"/>
+
+  <!-- ═══ MAIN BODY ═══ -->
+  <rect x="2" y="2" width="316" height="86" rx="4" ry="4"
+        fill="url(#bg-d)"/>
+
+  <!-- Grid overlay -->
+  <g opacity="0.05" stroke="#00F5FF" stroke-width="0.5" clip-path="url(#rounded-d)">
+    <line x1="0" y1="15" x2="320" y2="15"/>
+    <line x1="0" y1="30" x2="320" y2="30"/>
+    <line x1="0" y1="45" x2="320" y2="45"/>
+    <line x1="0" y1="60" x2="320" y2="60"/>
+    <line x1="0" y1="75" x2="320" y2="75"/>
+    <line x1="32"  y1="0" x2="32"  y2="90"/>
+    <line x1="64"  y1="0" x2="64"  y2="90"/>
+    <line x1="128" y1="0" x2="128" y2="90"/>
+    <line x1="192" y1="0" x2="192" y2="90"/>
+    <line x1="256" y1="0" x2="256" y2="90"/>
+  </g>
+
+  <!-- Inner border -->
+  <rect x="4" y="4" width="312" height="82" rx="3" ry="3"
+        fill="none" stroke="#00F5FF" stroke-width="0.3" opacity="0.2"/>
+
+  <!-- ═══ NON-TRANSFERABLE — top strip ═══ -->
+  <rect x="2" y="2" width="316" height="13" rx="4" ry="4" fill="#020810"/>
+  <rect x="2" y="14" width="316" height="1" fill="url(#aiCyan)" opacity="0.8"/>
+  <text x="160" y="12"
+        font-family="'Courier New', monospace"
+        font-size="6.5" font-weight="bold" letter-spacing="3"
+        fill="#48CAE4" text-anchor="middle"
+        filter="url(#cyanGlow)">NON-TRANSFERABLE</text>
+
+  <!-- ═══ LEFT PANEL ═══ -->
+  <rect x="2" y="15" width="74" height="73" fill="#00F5FF" fill-opacity="0.03"/>
+  <rect x="75" y="15" width="1" height="73" fill="url(#divider-d)"/>
+
+  <!-- Mini shield — digital cyan -->
+  <path d="M38,24 L60,30 L60,52 Q60,66 38,74 Q16,66 16,52 L16,30 Z"
+        fill="#020F1A"
+        stroke="url(#cyan)"
+        stroke-width="1.8"
+        filter="url(#cyanGlow)"/>
+  <path d="M38,27 L57,33 L57,52 Q57,63 38,71 Q19,63 19,52 L19,33 Z"
+        fill="none" stroke="#00F5FF" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- STP in mini shield — cyan -->
+  <text x="38" y="54"
+        font-family="'Courier New', 'Lucida Console', monospace"
+        font-size="13" font-weight="bold"
+        fill="url(#cyan)" text-anchor="middle"
+        filter="url(#cyanGlow)">STP</text>
+
+  <!-- ═══ RIGHT PANEL ═══ -->
+
+  <!-- SOVEREIGN TRACE PROTOCOL -->
+  <text x="198" y="28"
+        font-family="'Courier New', 'Lucida Console', monospace"
+        font-size="7" font-weight="400" letter-spacing="3"
+        fill="#00BFFF" text-anchor="middle" opacity="0.8">SOVEREIGN TRACE PROTOCOL</text>
+
+  <!-- Thin rule -->
+  <line x1="86" y1="32" x2="310" y2="32"
+        stroke="#00F5FF" stroke-width="0.4" opacity="0.2"/>
+
+  <!-- DIGITAL sub-label -->
+  <text x="198" y="44"
+        font-family="'Courier New', monospace"
+        font-size="7" font-weight="400" letter-spacing="5"
+        fill="#0080FF" text-anchor="middle" opacity="0.6">DIGITAL</text>
+
+  <!-- CERTIFIED — cyan -->
+  <text x="198" y="62"
+        font-family="'Courier New', 'Lucida Console', monospace"
+        font-size="21" font-weight="700" letter-spacing="4"
+        fill="url(#cyan)" text-anchor="middle"
+        filter="url(#softGlow-d)">CERTIFIED</text>
+
+  <!-- Thin rule -->
+  <line x1="86" y1="65" x2="310" y2="65"
+        stroke="#00F5FF" stroke-width="0.4" opacity="0.2"/>
+
+  <!-- Crimson accent -->
+  <rect x="86" y="66" width="224" height="1.5" fill="url(#crimson)" opacity="0.5"/>
+
+  <!-- AION SYSTEM · FROZEN-2.0 -->
+  <text x="198" y="79"
+        font-family="'Courier New', monospace"
+        font-size="7" letter-spacing="2.5"
+        fill="#48CAE4" text-anchor="middle"
+        filter="url(#cyanGlow)">AION SYSTEM · FROZEN-2.0</text>
+
+  <!-- AI node dots -->
+  <circle cx="102" cy="72" r="1"   fill="#00F5FF" opacity="0.25"/>
+  <circle cx="114" cy="70" r="0.8" fill="#00F5FF" opacity="0.2"/>
+  <circle cx="286" cy="72" r="1"   fill="#00F5FF" opacity="0.25"/>
+  <circle cx="298" cy="70" r="0.8" fill="#00F5FF" opacity="0.2"/>
+  <line x1="102" y1="72" x2="114" y2="70" stroke="#00F5FF" stroke-width="0.4" opacity="0.12"/>
+  <line x1="286" y1="72" x2="298" y2="70" stroke="#00F5FF" stroke-width="0.4" opacity="0.12"/>
+
+  <!-- Scan line accent -->
+  <rect x="86" y="47" width="224" height="0.8" fill="#00F5FF" fill-opacity="0.04"/>
+
+  <!-- ═══ CORNER MARKS — digital angular ═══ -->
+  <g stroke="#00F5FF" stroke-width="1" opacity="0.6">
+    <path d="M8,8 L8,16 M8,8 L16,8"/>
+    <path d="M312,8 L312,16 M312,8 L304,8"/>
+    <path d="M8,82 L8,74 M8,82 L16,82"/>
+    <path d="M312,82 L312,74 M312,82 L304,82"/>
+  </g>
+
+</svg>
