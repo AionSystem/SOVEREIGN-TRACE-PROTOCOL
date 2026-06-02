@@ -3,7 +3,7 @@
 ![Sovereign Certified](assets/badges/sovereign-certified/sovereign-certified-badge-v2.svg)
 
 **Sovereign Trace Protocol · Version 4.0.0**
-**Author: Sheldon K. Salmon — AI Reliability & AGI Architect**
+**Author: Sheldon K. Salmon — AI Reliability & ADI Architect**
 **Effective: June 2026**
 **Governing Law: State of New York, United States · Arbitration: JAMS Commercial Rules**
 
@@ -722,6 +722,6 @@ Dispute resolution: JAMS Commercial Arbitration Rules.
 
 ---
 
-*Sheldon K. Salmon · AI Reliability & AGI Architect · June 2026*
+*Sheldon K. Salmon · AI Reliability & ADI Architect · June 2026*
 *Certification inquiries: file a `10-audit-request.yml` issue.*
 *No other intake channel exists.*
