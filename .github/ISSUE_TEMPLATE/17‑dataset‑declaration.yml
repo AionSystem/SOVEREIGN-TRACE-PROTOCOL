@@ -1,0 +1,103 @@
+name: "Dataset Declaration — Sovereign Trace Protocol"
+description: "Seal the checksum and description of a dataset before training begins. Prevents after‑the‑fact claims about data provenance."
+title: "[STP-DATASET] — [DATASET NAME] — [DATE]"
+labels: ["dataset-declaration", "pending-seal"]
+assignees: []
+
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Dataset Declaration
+
+        This form is for sealing the identity and checksum of a dataset before it is used for AI training or evaluation.
+
+        When model behavior is later disputed, the sealed record proves exactly what data was authorized — independent of any training platform or data registry.
+
+  - type: input
+    id: submitter_name
+    attributes:
+      label: "Your Name (Optional)"
+      description: "If provided, becomes part of the permanent record. Leave blank for an anonymous seal."
+      placeholder: "First Last or leave blank"
+    validations:
+      required: false
+
+  - type: input
+    id: dataset_name
+    attributes:
+      label: "Dataset Name or Identifier"
+      description: "The name or identifier for this dataset (e.g., Customer‑Support‑v2, PubMed‑Abstracts‑2025Q4)."
+      placeholder: "e.g., Legal‑Contracts‑Corpus‑v1"
+    validations:
+      required: true
+
+  - type: input
+    id: checksum_algorithm
+    attributes:
+      label: "Checksum Algorithm"
+      description: "The algorithm used to generate the checksum (e.g., SHA‑256, MD5)."
+      placeholder: "SHA‑256"
+    validations:
+      required: true
+
+  - type: textarea
+    id: dataset_checksum
+    attributes:
+      label: "Dataset Checksum"
+      description: "The full checksum hash of the dataset file(s). Paste the exact hash string."
+      placeholder: "e.g., b9f2c11e6a3d..."
+    validations:
+      required: true
+
+  - type: input
+    id: dataset_date
+    attributes:
+      label: "Date of Dataset Finalization"
+      description: "The date this version of the dataset was finalized. Format: YYYY-MM-DD"
+      placeholder: "2026-06-02"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Dataset Description"
+      description: "Brief description — source, scope, size, intended use, known limitations."
+      placeholder: "Describe the dataset: source, size, scope, intended training/evaluation use, and any known limitations or exclusions."
+    validations:
+      required: true
+
+  - type: upload
+    id: supporting_files
+    attributes:
+      label: "Supporting Files (Optional)"
+      description: "Upload any related files — data card, collection methodology, consent documentation."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: "Declaration"
+      options:
+        - label: "I affirm the checksum above is the exact cryptographic checksum of the dataset as described."
+          required: true
+        - label: "I understand this submission is immutable — it cannot be altered after sealing."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## What Happens Next
+
+        1. Completeness check — Reviewed for completeness.
+        2. Sealing — Sealed with a FROZEN‑4.0 triple‑time cryptographic stamp. Permanent.
+        3. Ledger entry — Enters the Sovereign Trace ledger with timestamp and SHA‑256 hash.
+        4. Notification — You receive your ledger entry ID and SHA‑256 hash.
+
+        The seal is permanent. The seal is the resolution.
+
+        Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
