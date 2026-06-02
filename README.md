@@ -13,6 +13,8 @@
   [![ORCID — Sheldon K. Salmon](https://img.shields.io/badge/ORCID-0009--0005--8057--5115-a6ce39?style=flat&logo=orcid&logoColor=white)](https://orcid.org/0009-0005-8057-5115)
   [![DOI](https://zenodo.org/badge/1174130098.svg)](https://doi.org/10.5281/zenodo.18941392)
   [![Permanent](https://img.shields.io/badge/PERMANENT-FROZEN--4.0-2E7D32?style=flat-square&logo=git&logoColor=white)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL)
+  [![CI](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/actions/workflows/python-publish.yml/badge.svg)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/actions)
+  [![Tests](https://img.shields.io/badge/tests-82%20passing-2E7D32?style=flat-square&logo=pytest&logoColor=white)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/actions)
   [![PyPI](https://img.shields.io/pypi/v/sovereign-trace?style=flat-square&color=2E7D32&label=PyPI)](https://pypi.org/project/sovereign-trace/)
   [![Status](https://img.shields.io/badge/STATUS-M--NASCENT-1976D2?style=flat-square&logo=shield&logoColor=white)](https://github.com/AionSystem/AION-BRAIN)
   [![Hebrew](https://img.shields.io/badge/HEBREW-Full%20Dehiyot%20%2B%20Civil--Day-0288D1?style=flat-square)](https://www.hebcal.com)
@@ -49,8 +51,10 @@
 - [Who Seals What](#who-seals-what)
 - [The Origin of the Enterprise from the Personal](#the-origin-of-the-enterprise-from-the-personal)
 - [The Triple-Time Seal](#the-triple-time-seal)
+- [Epistemic Debt Score](#epistemic-debt-score)
 - [Submission Layer](#submission-layer)
 - [Certification](#certification)
+- [Sample Audit Report](#sample-audit-report)
 - [Frozen Declaration](#frozen-declaration)
 - [Triple License](#triple-license)
 - [Build Sequence](#build-sequence)
@@ -160,6 +164,75 @@ The triple stamp is not redundancy. It is a claim: this moment of human signific
 
 ---
 
+## Epistemic Debt Score
+
+Every certified organization receives an **Epistemic Debt Score (EDS)** — a 0–100 metric measuring AI epistemic integrity across five independently scored components. The full formula is public: [EPISTEMIC-DEBT-SCORE.md](./EPISTEMIC-DEBT-SCORE.md).
+
+> **The EDS does not measure whether AI systems fail. It measures whether an organization has built the infrastructure to document failures honestly, resolve them completely, and improve over time. Silence is not a clean record. It is an unscored one.**
+
+### What the EDS Measures
+
+| Component | Weight | What It Scores |
+|---|---|---|
+| **C1 — Completeness** | 20 pts | Does ledger volume match actual deployment scale? |
+| **C2 — Remediation Rate** | 20 pts | What fraction of sealed failures are verified-resolved? |
+| **C3 — Severity Discipline** | 20 pts | Are critical and high issues closed within resolution windows? |
+| **C4 — Trend Direction** | 20 pts | Is the organization improving period-over-period? |
+| **C5 — Proactive Reporting** | 20 pts | Near-misses filed before mandatory reporting triggers? |
+
+### Worked Example — EDS: 67/100
+
+> *A mid-size consumer AI company. 14 months of operation. Medium domain risk. First formal audit.*
+
+```
+EPISTEMIC DEBT SCORE — [Redacted: Consumer AI Platform]
+Assessment date: March 7, 2026
+Period: January 1, 2025 – March 7, 2026
+
+C1  Completeness            12 / 20   Ledger volume thin relative to deployment scale.
+                                       Completeness ratio: 0.51 — significantly below proportionate.
+                                       Architect note: monitoring coverage partial; 3 of 7 subsystems
+                                       had no logging configured at audit open.
+
+C2  Remediation Rate        14 / 20   21 of 28 sealed failures carry REMEDIATION VERIFIED status.
+                                       75% rate. 4 open items are HIGH severity, 3 are MEDIUM.
+                                       Trivial failure penalty not triggered (trivial ratio: 0.11).
+
+C3  Severity Discipline     16 / 20   2 HIGH items overdue past 60-day window (−2 each = −4).
+                                       0 CRITICAL items open. MEDIUM items all within window.
+
+C4  Trend Direction         20 / 20   Prior period remediation rate: 61%. Current: 75%. Delta: +14%.
+                                       Improving. No burst-filing pattern detected.
+
+C5  Proactive Reporting      5 / 20   1 near-miss filed (score: 4). 1 pre-deadline voluntary
+                                       disclosure (adjustment: +2). Near-miss verification: valid.
+    ─────────────────────────────────
+    TOTAL                   67 / 100
+
+Status:  EPISTEMIC DEBT OUTSTANDING
+Seal:    SHA-256 · [sealed at certification close]
+```
+
+**What 67 means in plain language:**
+
+The organization documents. It resolves most of what it documents. It is improving. It is not yet disciplined about severity triage — two high-severity items sat unresolved past the 60-day window, which in a regulated environment would be a breach of internal SLA. The ledger is thin relative to deployment scale, which is the single largest drag on the score. The path to `EPISTEMIC DEBT MANAGEABLE` (75+) runs through two actions: expand monitoring coverage so the ledger reflects actual failure volume, and close the two overdue HIGH items.
+
+**Status labels at a glance:**
+
+| Score | Label | What It Signals |
+|---|---|---|
+| 90–100 | `CERTIFIED CLEAN` | Exemplary epistemic discipline |
+| 75–89 | `EPISTEMIC DEBT MANAGEABLE` | Documented, resolving, improving |
+| 50–74 | `EPISTEMIC DEBT OUTSTANDING` | Documenting but gaps remain |
+| < 50 | `UNCERTIFIABLE` | Insufficient discipline for certification |
+| — | `UNSCORED` | No ledger data — cannot evaluate |
+
+> Three of the five components (C2, C3, C5 base) are computed directly from the public ledger JSON and are independently verifiable by any party with Python 3.11+. The formula is public. The tool is proprietary.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
 ## Submission Layer
 
 Structured submissions are made through GitHub Issues using the official template set. Each template produces a structured, legally-declared record before sealing. Blank issues are disabled — every submission uses a template.
@@ -201,14 +274,14 @@ All templates include: native file upload, SHA-256 binding, declaration checkbox
 
 ## Certification
 
-| Tier | Scope | Price | Badge | Intake |
-|---|---|---|---|---|
-| **Tier 0 — Snapshot Verification** | 10 outputs, pre-audit trust signal | Free | Snapshot (pearl/earth) | Automated 24/7 |
-| **Tier 1 — Full Audit** | 25–1,000+ outputs, output-banded pricing, 3-month validity | $1,500–$50K | Standard | Architect-led · Mon–Tue only |
-| **Tier 2 — Enterprise Retainer** | Quarterly audits, continuous compliance | $25K/yr | Digital | Automated 24/7 |
-| **Tier 3 — Strategic Retainer** | All Tier 2 + priority access + Foresight Seal | $100K+/yr | Elite | Architect-led · Mon–Tue only |
-| **Tier 4 — Defense & Government Grade** | Full standards alignment, monthly reviews, SCIF-compatible | On request | Defense | Architect-led · Mon–Tue only |
-| **Tier 5 — Sovereign AI Audit** | 7-instrument adversarial stack, 14-day window | $15K | Sovereign (cyan/indigo) | Architect-led · Mon–Tue only |
+| Tier | Scope | Price | Badge | Deliverables | Intake |
+|---|---|---|---|---|---|
+| **Tier 0 — Snapshot Verification** | 10 outputs, pre-audit trust signal | Free | Snapshot (pearl/earth) | Snapshot report · Ledger entry · Badge embed code | Automated 24/7 |
+| **Tier 1 — Full Audit** | 25–1,000+ outputs, output-banded pricing, 3-month validity | $1,500–$50K | Standard | Sealed audit report (PDF) · EDS scorecard · Ledger entry · Standard badge embed code | Architect-led · Mon–Tue only |
+| **Tier 2 — Enterprise Retainer** | Quarterly audits, continuous compliance | $25K/yr | Digital | Quarterly sealed reports · EDS trend dashboard · Ledger entries · Digital badge embed code | Automated 24/7 |
+| **Tier 3 — Strategic Retainer** | All Tier 2 + priority access + Foresight Seal | $100K+/yr | Elite | All Tier 2 deliverables · Priority SLA · Foresight Seal registration · Elite badge embed code | Architect-led · Mon–Tue only |
+| **Tier 4 — Defense & Government Grade** | Full standards alignment, monthly reviews, SCIF-compatible | On request | Defense | Monthly sealed reports · Standards alignment matrix · Ledger entries · Defense badge embed code | Architect-led · Mon–Tue only |
+| **Tier 5 — Sovereign AI Audit** | 7-instrument adversarial stack, 14-day window | $15K | Sovereign (cyan/indigo) | Full adversarial audit report · 7-instrument findings · EDS scorecard · Sovereign badge embed code | Architect-led · Mon–Tue only |
 
 **Intake rules:**
 
@@ -216,7 +289,7 @@ All templates include: native file upload, SHA-256 binding, declaration checkbox
 - **Tier 1, 3, 4, and 5** — Architect-led. Intake Monday and Tuesday only. Submissions on other days are voided and non-refundable.
 - **Delivery:** Weekends for all tiers.
 
-Every certified organization receives an **Epistemic Debt Score (EDS)** — a 0–100 metric measuring AI epistemic integrity across five components. Formula is public: [EPISTEMIC-DEBT-SCORE.md](./EPISTEMIC-DEBT-SCORE.md).
+Every certified organization receives an **Epistemic Debt Score (EDS)** — a 0–100 metric measuring AI epistemic integrity across five components. Formula is public: [EPISTEMIC-DEBT-SCORE.md](./EPISTEMIC-DEBT-SCORE.md). Worked example: [Epistemic Debt Score](#epistemic-debt-score) above.
 
 **Tier 5 (Sovereign AI Audit)** runs the complete AION adversarial stack — seven instruments in sequence — against the client's AI system. It is a full-scale diagnostic, adversarial, and code-level audit, not a management-system paperwork review. See [CERTIFICATION.md](./CERTIFICATION.md) for the complete instrument list and deliverable schedule.
 
@@ -224,6 +297,24 @@ Every certified organization receives an **Epistemic Debt Score (EDS)** — a 0�
 
 > See [CERTIFICATION.md](./CERTIFICATION.md), [AUDIT-METHODOLOGY.md](./AUDIT-METHODOLOGY.md), and [TERMS OF SERVICE.md](./TERMS%20OF%20SERVICE.md) for full process and terms.
 > Governing law: State of New York, United States. Arbitration: JAMS Commercial Rules.
+
+[↑ Back to top](#table-of-contents)
+
+---
+
+## Sample Audit Report
+
+> **Before committing $1,500–$50K, hold the product.**
+
+A fully worked, anonymized Tier 1 audit output is available at [SAMPLE-AUDIT-REPORT.md](./SAMPLE-AUDIT-REPORT.md). It shows:
+
+- The EDS scorecard with component-level breakdown
+- Instrument readings across the AION stack
+- A findings table with severity classifications and remediation status
+- The sealed ledger entry format
+- The badge embed code delivered at audit close
+
+The sample report is not a brochure. It is a redacted real output — the exact format, the exact findings structure, the exact deliverable a Tier 1 client receives. Read it before you decide.
 
 [↑ Back to top](#table-of-contents)
 
@@ -298,10 +389,12 @@ STAGE 4 — PLANNED
 sovereign-trace-protocol/
 │
 ├── README.md
+├── CHANGELOG.md
 ├── REPO-STRUCTURE.md
 ├── STP-logo.svg
 ├── QUICKSTART.md
 ├── HOW-TO-SUBMIT.md
+├── SAMPLE-AUDIT-REPORT.md
 ├── CERTIFICATION.md
 ├── AUDIT-METHODOLOGY.md
 ├── AUDITOR-VETTING-PROCESS.md
@@ -435,73 +528,7 @@ sovereign-trace-protocol/
 │       └── ARCHIVE-EMPTY.md
 │
 ├── ledger/
-│   ├── STP-GENERAL-TRACE-2026-03-09-000005.json
-│   ├── STP-GENERAL-TRACE-2026-03-10-000006.json
-│   ├── STP-GENERAL-TRACE-2026-03-10-000007.json
-│   ├── STP-CREATIVE-PRIORITY-2026-03-09-000008.json
-│   ├── STP-GENERAL-TRACE-2026-03-10-000009.json
-│   ├── STP-GENERAL-TRACE-2026-03-10-000010.json
-│   ├── STP-GENERAL-TRACE-2026-03-10-000011.json
-│   ├── STP-FORESIGHT-SEAL-2026-03-10-000012.json
-│   ├── STP-CREATIVE-PRIORITY-2026-03-10-000013.json
-│   ├── STP-CREATIVE-PRIORITY-2026-03-10-000014.json
-│   ├── STP-FORESIGHT-SEAL-2026-03-11-000015.json
-│   ├── STP-RESEARCH-PRIORITY-2026-03-14-U3N9CK.json
-│   ├── STP-RESEARCH-PRIORITY-March-23-2026-179F5D.json
-│   ├── STP-GENERAL-TRACE-March-24-2026-03C2A9.json
-│   ├── STP-GENERAL-TRACE-March-24-2026-CE0CDF.json
-│   ├── STP-CREATIVE-PRIORITY-March-24-2026-2A3BAF.json
-│   ├── STP-CREATIVE-PRIORITY-March-24-2026-4A5EF0.json
-│   ├── STP-CREATIVE-PRIORITY-March-24-2026-8B1D2E.json
-│   ├── STP-CREATIVE-PRIORITY-March-24-2026-E9C306.json
-│   ├── STP-EVIDENCE-CHAIN-March-24-2026-0794A2.json
-│   ├── STP-EVIDENCE-CHAIN-March-24-2026-3B7DE3.json
-│   ├── STP-EVIDENCE-CHAIN-March-24-2026-8ABB30.json
-│   ├── STP-SCOPE-ANCHOR-March-24-2026-386FB6.json
-│   ├── STP-SCOPE-ANCHOR-March-24-2026-60B407.json
-│   ├── STP-GENERAL-TRACE-March-25-2026-3A0CDF.json
-│   ├── STP-GENERAL-TRACE-March-25-2026-5496D4.json
-│   ├── STP-GENERAL-TRACE-March-25-2026-997E9E.json
-│   ├── STP-GENERAL-TRACE-March-25-2026-D04983.json
-│   ├── STP-GENERAL-TRACE-March-25-2026-EED151.json
-│   ├── STP-CLINICAL-RECORD-March-25-2026-343075.json
-│   ├── STP-CLINICAL-RECORD-March-25-2026-91F0E9.json
-│   ├── STP-EVIDENCE-CHAIN-March-25-2026-D0D735.json
-│   ├── STP-SCOPE-ANCHOR-March-25-2026-557510.json
-│   ├── STP-SCOPE-ANCHOR-March-25-2026-A10666.json
-│   ├── STP-WEBEATER-LINK-March-25-2026-5989D1.json
-│   ├── STP-WEBEATER-LINK-March-25-2026-E43621.json
-│   ├── STP-GENERAL-TRACE-March-26-2026-8A049A.json
-│   ├── STP-RESEARCH-PRIORITY-March-26-2026-E0EC9D.json
-│   ├── STP-GENERAL-TRACE-March-27-2026-AFCE36.json
-│   ├── STP-INTEGRITY-VIOLATION-March-27-2026-3B5F2D.json
-│   ├── STP-INTEGRITY-VIOLATION-March-27-2026-ACD8A4.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-028FF7.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-1A3C1A.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-1DE84E.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-220109.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-3B5639.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-4B6F0F.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-4DE8F8.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-550742.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-56BD1E.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-58E302.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-63C102.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-68B4A6.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-69DD5F.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-70EDAF.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-7D5DAE.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-964A6F.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-A51FEA.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-AFE44D.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-B08FFC.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-BDCE58.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-BFAF9E.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-C8B202.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-EE2D54.json
-│   ├── STP-GENERAL-TRACE-March-31-2026-F5DBAD.json
-│   ├── STP-GENERAL-TRACE-April-1-2026-0D8223.json
-│   └── STP-GENERAL-TRACE-April-1-2026-C49B22.json
+│   └── [sealed ledger entries — append-only]
 │
 └── tests/
     ├── conftest.py
