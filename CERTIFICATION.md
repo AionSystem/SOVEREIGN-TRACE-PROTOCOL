@@ -2,7 +2,7 @@
 
 ![Sovereign Certified](badges/sovereign-certified-badge-v2.svg)
 
-**Sovereign Trace Protocol · Version 2.0.0**
+**Sovereign Trace Protocol · Version 4.0.0**
 **Author: Sheldon K. Salmon — AI Reliability & AGI Architect**
 **Effective: March 2026**
 **Governing Law: State of New York, United States · Arbitration: JAMS Commercial Rules**
@@ -445,6 +445,83 @@ View at: `/simulators/roller-coaster/`
 
 ---
 
+## AI COMPLIANCE BADGES
+
+Compliance badges certify that an organization's AI system operates in conformity with **THE CONSTITUTION v2.1** within a specific high‑stakes domain. They are issued after a domain‑focused audit, separate from the STP tier structure. Each badge is non‑transferable, SHA‑256 sealed, and bound to the organization's name and domain.
+
+These badges do **not** replace a full STP certification; they are an additional mark of domain‑specific constitutional compliance that an organization can display alongside its STP tier badge, or independently if the organization's AI usage is limited to that domain.
+
+---
+
+### Domain Badges
+
+#### 1. General Constitutional Compliance
+**Badge file:** `badges/compliance-constitutional-badge.svg`
+
+Certifies that the organization's AI deployment meets the baseline requirements of THE CONSTITUTION v2.1 — the Nine Laws, falsification protocols, and governance structure — regardless of industry. This is the foundational compliance badge, applicable to all organizations.
+
+- Palette: crimson & gold
+- Motif: nonagon (9 sides = 9 laws) with "CONST"
+- Verifies: governance framework, falsification readiness, Law 1–9 compliance
+
+#### 2. Legal & Justice AI Compliance
+**Badge file:** `badges/compliance-legal-badge.svg`
+
+Certifies that AI systems used in legal, judicial, or regulatory contexts comply with THE CONSTITUTION v2.1 and additional legal‑domain integrity standards. Covers: legal document analysis, case prediction, sentencing support, regulatory compliance tools.
+
+- Palette: deep navy & silver
+- Motif: scales of justice inside a shield
+- Verifies: bias detection, precedent‑anchoring, explainability, adversarial testing
+
+#### 3. Healthcare AI Compliance
+**Badge file:** `badges/compliance-healthcare-badge.svg`
+
+Certifies that AI systems used in clinical, diagnostic, or healthcare‑adjacent settings comply with THE CONSTITUTION v2.1 and additional clinical safety protocols. Covers: medical imaging, diagnostic support, patient triage, drug interaction prediction.
+
+- Palette: deep teal & white‑silver
+- Motif: medical cross inside a shield
+- Verifies: clinical validation, false‑positive/false‑negative rates, evidence grading
+
+#### 4. Financial AI Compliance
+**Badge file:** `badges/compliance-finance-badge.svg`
+
+Certifies that AI systems used in financial services, trading, credit assessment, or fraud detection comply with THE CONSTITUTION v2.1 and additional financial‑domain integrity standards.
+
+- Palette: deep green & gold
+- Motif: rising chart line with currency symbol
+- Verifies: model transparency, fairness in lending, audit trail completeness, market impact
+
+---
+
+### How Compliance Badges Are Issued
+
+Each domain badge requires a separate audit. The audit is performed by Sheldon K. Salmon or an STP Certified Auditor with demonstrated domain expertise. The process:
+
+1. Organization files an audit request specifying the domain.
+2. Auditor reviews the AI system's outputs, training data (if applicable), and constitutional adherence.
+3. If the system meets the domain‑specific standards, the badge is issued digitally.
+4. Badge is recorded in the STP ledger with a unique entry ID, SHA‑256 hash, and verification URL.
+
+**Pricing:**  
+- General Constitutional Compliance: $7,500  
+- Domain‑specific (Legal, Healthcare, Finance): $12,000 each  
+- Combined audits (multiple domains) available at negotiated rates.
+
+**Renewal:** Badges expire after 12 months. Re‑audit required for renewal, to account for system changes and constitutional version updates.
+
+---
+
+### Verification
+
+Every compliance badge embeds a verification bar with the STP ledger entry ID, SHA‑256 hash, and a verification URL. Anyone can verify a badge by:
+1. Scanning the QR code on the badge (if present) or visiting the verification URL.
+2. Checking the STP ledger for the entry.
+3. Confirming the badge is linked to the organization's current certification status.
+
+Badges not found in the ledger are invalid. Display of an expired or unverified badge constitutes misrepresentation.
+
+---
+
 ## BADGE REFERENCE
 
 | Tier / Type | Badge Variant | File |
@@ -456,16 +533,20 @@ View at: `/simulators/roller-coaster/`
 | Tier 5 — Sovereign AI Audit | Sovereign (cyan/indigo) | `badges/sovereign-certified-badge-sovereign-v1.svg` |
 | STP Certified Auditor | Auditor Shield | `badges/stp-auditor-badge-v2.svg` |
 | AION Verified Simulator | Octagonal Precision Seal | `badges/aion-verified-simulator-badge-v1.svg` |
+| **Compliance Badges** | | |
+| General Constitutional Compliance | Crimson & Gold | `badges/compliance-constitutional-badge.svg` |
+| Legal & Justice AI Compliance | Navy & Silver | `badges/compliance-legal-badge.svg` |
+| Healthcare AI Compliance | Teal & White-Silver | `badges/compliance-healthcare-badge.svg` |
+| Financial AI Compliance | Green & Gold | `badges/compliance-finance-badge.svg` |
 
 Badge files are hosted in the Sovereign Trace Protocol repository.
 Licensed use only — see `TRADEMARK.md`. Badge license is included in
 the Certification Report delivered at each tier.
-Unlicensed display of any Sovereign Certified badge constitutes
-misrepresentation of audit status.
+Unlicensed display of any badge constitutes misrepresentation of audit status.
 
 All STP badges carry: `NON-TRANSFERABLE` · SHA-256 · FROZEN-2.0 · TRIPLE-TIME SEALED.
 AION Verified Simulator badge carries: `NON-TRANSFERABLE` · SHA-256 · STP SEALED · v1.0.
-Tier 5 Sovereign badge carries: `NON-TRANSFERABLE` · SHA-256 · TRIPLE-TIME SEALED · STP CERTIFIED · v1.0.
+Compliance badges carry: `NON-TRANSFERABLE` · SHA-256 · STP SEALED · domain‑specific mark.
 
 ---
 
