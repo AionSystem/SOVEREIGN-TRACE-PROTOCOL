@@ -1,0 +1,110 @@
+name: "Release Seal — Sovereign Trace Protocol"
+description: "Seal a software release — commit hash, build artifact checksum, and release notes. Converts a GitHub release into a cryptographically permanent event."
+title: "[STP-RELEASE] — [PRODUCT/VERSION] — [DATE]"
+labels: ["release-seal", "pending-seal"]
+assignees: []
+
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Release Seal
+
+        This form is for sealing a software release at the moment it is shipped. It creates a permanent, independent record of the exact artifacts, commit, and release notes — outside of any platform's edit history.
+
+  - type: input
+    id: submitter_name
+    attributes:
+      label: "Your Name (Optional)"
+      description: "If provided, becomes part of the permanent record. Leave blank for an anonymous seal."
+      placeholder: "First Last or leave blank"
+    validations:
+      required: false
+
+  - type: input
+    id: product_name
+    attributes:
+      label: "Product or Project Name"
+      description: "The name of the software or project being released."
+      placeholder: "e.g., sovereign-trace, MyApp"
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: "Version Number"
+      description: "The version string for this release."
+      placeholder: "e.g., 4.0.0, v2.1.1"
+    validations:
+      required: true
+
+  - type: input
+    id: release_date
+    attributes:
+      label: "Release Date"
+      description: "The date this version was released. Format: YYYY-MM-DD"
+      placeholder: "2026-06-02"
+    validations:
+      required: true
+
+  - type: input
+    id: commit_hash
+    attributes:
+      label: "Commit Hash"
+      description: "The full Git commit hash that this release was built from."
+      placeholder: "e.g., a1b2c3d4e5f6..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: artifact_checksums
+    attributes:
+      label: "Build Artifact Checksums"
+      description: "Paste the SHA‑256 (or other algorithm) checksums of the released build artifacts. One per line."
+      placeholder: "package.tar.gz: sha256:abc123...\ninstaller.exe: sha256:def456..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: release_notes
+    attributes:
+      label: "Release Notes"
+      description: "Paste the full release notes as published. This is the text that ships with the release."
+      placeholder: "## What's New in vX.Y.Z\n- Feature A\n- Bug fix B\n- Breaking change C"
+    validations:
+      required: true
+
+  - type: upload
+    id: supporting_files
+    attributes:
+      label: "Supporting Files (Optional)"
+      description: "Upload any related files — build logs, signed binaries, SBOM, release announcement."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: "Declaration"
+      options:
+        - label: "I affirm the commit hash, artifact checksums, and release notes above are accurate for this release."
+          required: true
+        - label: "I understand this submission is immutable — it cannot be altered after sealing."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## What Happens Next
+
+        1. Completeness check — Reviewed for completeness.
+        2. Sealing — Sealed with a FROZEN‑4.0 triple‑time cryptographic stamp. Permanent.
+        3. Ledger entry — Enters the Sovereign Trace ledger with timestamp and SHA‑256 hash.
+        4. Notification — You receive your ledger entry ID and SHA‑256 hash.
+
+        The seal is permanent. The seal is the resolution.
+
+        Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
