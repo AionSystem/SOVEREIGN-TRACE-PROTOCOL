@@ -1,0 +1,112 @@
+name: "AI Output Sample — Sovereign Trace Protocol"
+description: "Seal a representative sample of AI outputs for periodic auditing. Allows longitudinal tracking without a full certification engagement."
+title: "[STP-OUTPUT] — [SYSTEM NAME] — [DATE]"
+labels: ["ai-output-sample", "pending-seal"]
+assignees: []
+
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        ## AI Output Sample Seal
+
+        This form is for sealing a representative sample of AI outputs — a periodic snapshot of what your system is producing.
+
+        This creates a tamper‑evident longitudinal record. When the system's behavior changes over time, the sealed samples provide the ground truth. It is a lightweight alternative to a full certification audit, suitable for ongoing self‑monitoring.
+
+        **Paste the exact outputs. Do not redact, correct, or paraphrase.**
+
+  - type: input
+    id: submitter_name
+    attributes:
+      label: "Your Name (Optional)"
+      description: "If provided, becomes part of the permanent record. Leave blank for an anonymous seal."
+      placeholder: "First Last or leave blank"
+    validations:
+      required: false
+
+  - type: input
+    id: system_name
+    attributes:
+      label: "AI System Name"
+      description: "The system that produced these outputs."
+      placeholder: "e.g., Customer‑Support‑Bot v2, Internal RAG Pipeline"
+    validations:
+      required: true
+
+  - type: input
+    id: sample_date
+    attributes:
+      label: "Sample Date"
+      description: "The date this sample was collected. Format: YYYY-MM-DD"
+      placeholder: "2026-06-02"
+    validations:
+      required: true
+
+  - type: textarea
+    id: sample_prompts
+    attributes:
+      label: "Prompts Used (Optional)"
+      description: "If applicable, paste the prompts that generated these outputs."
+      placeholder: "Prompt 1: ...\nPrompt 2: ..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: sample_outputs
+    attributes:
+      label: "AI Outputs (Sample)"
+      description: "Paste the exact AI outputs, one per section. Include the full text. This is what the seal binds to."
+      placeholder: |
+        Output 1:
+        [paste exact AI output here]
+
+        Output 2:
+        [paste exact AI output here]
+
+        (continue for all outputs in the sample)
+    validations:
+      required: true
+
+  - type: textarea
+    id: sample_context
+    attributes:
+      label: "Sampling Context (Optional)"
+      description: "Describe how this sample was collected — random, targeted, daily snapshot, etc."
+      placeholder: "e.g., Random sample of 20 outputs from production logs on 2026-06-02, filtered for customer-facing responses only."
+    validations:
+      required: false
+
+  - type: upload
+    id: supporting_files
+    attributes:
+      label: "Supporting Files (Optional)"
+      description: "Upload any related files — screenshots, full logs, model configuration."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: "Declaration"
+      options:
+        - label: "I affirm these are the exact AI outputs as produced by the named system at the time of sampling."
+          required: true
+        - label: "I understand this submission is immutable — it cannot be altered after sealing."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## What Happens Next
+
+        1. Completeness check — Reviewed for completeness.
+        2. Sealing — Sealed with a FROZEN‑4.0 triple‑time cryptographic stamp. Permanent.
+        3. Ledger entry — Enters the Sovereign Trace ledger with timestamp and SHA‑256 hash.
+        4. Notification — You receive your ledger entry ID and SHA‑256 hash.
+
+        The seal is permanent. The seal is the resolution.
+
+        Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
