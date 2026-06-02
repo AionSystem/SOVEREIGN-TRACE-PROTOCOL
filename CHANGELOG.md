@@ -1,7 +1,7 @@
 # CHANGELOG
 
 **Sovereign Trace Protocol**
-Architect: Sheldon K. Salmon — AI Reliability & AGI Architect
+Architect: Sheldon K. Salmon — AI Reliability & ADI Architect
 Governing Standard: FROZEN-4.0
 Repository: [github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL)
 
