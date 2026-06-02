@@ -5,7 +5,7 @@
 ╔══════════════════════════════════════════════════════════════════╗
 ║   ⬡  SOVEREIGN TRACE PROTOCOL  ⬡                                ║
 ║   Certified Submission Template · FROZEN-2.0                    ║
-║   Architect: Sheldon K. Salmon · AI Reliability & AGI Architect ║
+║   Architect: Sheldon K. Salmon · AI Reliability & ADI Architect ║
 ╚══════════════════════════════════════════════════════════════════╝
 ```
 
