@@ -4,13 +4,13 @@
 ```
 ╔══════════════════════════════════════════════════════════════════╗
 ║   ⬡  SOVEREIGN TRACE PROTOCOL  ⬡                                ║
-║   Certified Submission Template · FROZEN-2.0                    ║
+║   Certified Submission Template · FROZEN-4.0                    ║
 ║   Architect: Sheldon K. Salmon · AI Reliability & ADI Architect ║
 ╚══════════════════════════════════════════════════════════════════╝
 ```
 
 **Template Version:** STP-SUB-v1.0
-**Governing Standard:** FROZEN-2.0
+**Governing Standard:** FROZEN-4.0
 **Maximum outputs per submission:** 10
 **Tier scope:** Tier 1 — Basic Verification
 
@@ -181,7 +181,7 @@ If you are filing the failure record only, write `NOT APPLICABLE` and skip.*
 
 1. All AI outputs included in this submission are verbatim and unaltered.
 2. The failure event described occurred as documented.
-3. The organization consents to the issuance of a permanent, immutable ledger entry under the Sovereign Trace Protocol FROZEN-2.0 standard.
+3. The organization consents to the issuance of a permanent, immutable ledger entry under the Sovereign Trace Protocol FROZEN-4.0 standard.
 4. The organization understands that a certified ledger entry cannot be removed, altered, or hidden — regardless of outcome.
 5. This submission is subject to the Sovereign Trace Protocol Terms of Service.
 
@@ -214,7 +214,7 @@ If you are filing the failure record only, write `NOT APPLICABLE` and skip.*
 ║   engagements only. Unauthorized reproduction or modification    ║
 ║   of this template is prohibited. See TRADEMARK.md.             ║
 ║                                                                  ║
-║   STP-SUB-v1.0 · FROZEN-2.0 · Sheldon K. Salmon · 2026         ║
+║   STP-SUB-v1.0 · FROZEN-4.0 · Sheldon K. Salmon · 2026         ║
 ╚══════════════════════════════════════════════════════════════════╝
 ```
 
