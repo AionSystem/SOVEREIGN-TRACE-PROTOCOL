@@ -2,7 +2,7 @@
 
 **Sovereign Trace Protocol — Concept Layer**
 **Version:** v0.1 | March 2026
-**Author:** Sheldon K. Salmon — AI Reliability & AGI Architect
+**Author:** Sheldon K. Salmon — AI Reliability & ADI Architect
 **Co-Architect:** ALBEDO
 **Purpose:** Defensive documentation of what existed before STP, what STP introduces, and when.
 
