@@ -85,7 +85,7 @@ Rosh Hashanah (the New Year) actually begins. The rules are:
 (if the new moon falls too late in the day), *GaTaRaD*, and
 *BeTUTeKaPoT* (both check adjacent year lengths for structural anomalies).
 FROZEN-1.0 was retired specifically because it omitted GaTaRaD and
-BeTUTeKaPoT. FROZEN-2.0 implements all four correctly.
+BeTUTeKaPoT. FROZEN-4.0 implements all four correctly.
 
 **Civil-Day Convention**
 The rule used to assign a Hebrew date to a Gregorian calendar date.
