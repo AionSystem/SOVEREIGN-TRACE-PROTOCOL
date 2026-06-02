@@ -95,6 +95,8 @@ print(display(ts))
 # 📌 Version:    FROZEN-4.0
 ```
 
+No configuration. No API keys. The stamp function works offline, requires zero dependencies beyond Python's standard library, and produces the same SHA-256 seal on any machine.
+
 > Full install guide, usage examples, and what not to do: [QUICKSTART.md](./QUICKSTART.md)
 
 [↑ Back to top](#table-of-contents)
@@ -199,14 +201,14 @@ All templates include: native file upload, SHA-256 binding, declaration checkbox
 
 ## Certification
 
-| Tier | Scope | Badge | Intake |
-|---|---|---|---|
-| **Tier 0 — Snapshot Verification** | 10 outputs, pre-audit trust signal | Snapshot (pearl/earth) | Automated 24/7 |
-| **Tier 1 — Full Audit** | 25–1,000+ outputs, output-banded pricing, 3-month validity | Standard | Architect-led · Mon–Tue only |
-| **Tier 2 — Enterprise Retainer** | Quarterly audits, continuous compliance, $25k/yr | Digital | Automated 24/7 |
-| **Tier 3 — Strategic Retainer** | All Tier 2 + priority access + Foresight Seal, $100k+/yr | Elite | Architect-led · Mon–Tue only |
-| **Tier 4 — Defense & Government Grade** | Full standards alignment, monthly reviews, SCIF-compatible | Defense | Architect-led · Mon–Tue only |
-| **Tier 5 — Sovereign AI Audit** | 7-instrument adversarial stack, 14-day window, $15k | Sovereign (cyan/indigo) | Architect-led · Mon–Tue only |
+| Tier | Scope | Price | Badge | Intake |
+|---|---|---|---|---|
+| **Tier 0 — Snapshot Verification** | 10 outputs, pre-audit trust signal | Free | Snapshot (pearl/earth) | Automated 24/7 |
+| **Tier 1 — Full Audit** | 25–1,000+ outputs, output-banded pricing, 3-month validity | $1,500–$50K | Standard | Architect-led · Mon–Tue only |
+| **Tier 2 — Enterprise Retainer** | Quarterly audits, continuous compliance | $25K/yr | Digital | Automated 24/7 |
+| **Tier 3 — Strategic Retainer** | All Tier 2 + priority access + Foresight Seal | $100K+/yr | Elite | Architect-led · Mon–Tue only |
+| **Tier 4 — Defense & Government Grade** | Full standards alignment, monthly reviews, SCIF-compatible | On request | Defense | Architect-led · Mon–Tue only |
+| **Tier 5 — Sovereign AI Audit** | 7-instrument adversarial stack, 14-day window | $15K | Sovereign (cyan/indigo) | Architect-led · Mon–Tue only |
 
 **Intake rules:**
 
@@ -296,6 +298,7 @@ STAGE 4 — PLANNED
 sovereign-trace-protocol/
 │
 ├── README.md
+├── REPO-STRUCTURE.md
 ├── STP-logo.svg
 ├── QUICKSTART.md
 ├── HOW-TO-SUBMIT.md
