@@ -1,0 +1,375 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 690 1010" width="680" height="1010" role="img">
+<title>AionSystem Certified Auditor Sleeve — Sovereign Trace Protocol</title>
+<desc>Auditor credential sleeve issued by AionSystem. Carries STP auditor badge, identity block, sovereign tier, validity window, and verification ledger entry.</desc>
+
+<defs>
+
+<!-- BADGE-MATCHED BACKGROUND — deep navy, same family as STP shield -->
+<linearGradient id="bgDeep" x1="0%" y1="0%" x2="100%" y2="100%">
+  <stop offset="0%"   stop-color="#12141F"/>
+  <stop offset="35%"  stop-color="#0D0F1A"/>
+  <stop offset="65%"  stop-color="#111320"/>
+  <stop offset="100%" stop-color="#080A12"/>
+</linearGradient>
+
+<radialGradient id="ptLightRad" cx="20%" cy="12%" r="55%">
+  <stop offset="0%"  stop-color="#48CAE4" stop-opacity="0.07"/>
+  <stop offset="60%" stop-color="#a855f7" stop-opacity="0.03"/>
+  <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+</radialGradient>
+
+<radialGradient id="depthField" cx="50%" cy="50%" r="65%">
+  <stop offset="0%"   stop-color="#000000" stop-opacity="0"/>
+  <stop offset="68%"  stop-color="#000000" stop-opacity="0"/>
+  <stop offset="100%" stop-color="#000000" stop-opacity="0.52"/>
+</radialGradient>
+
+<radialGradient id="cornerDark" cx="50%" cy="50%" r="75%">
+  <stop offset="0%"   stop-color="#000000" stop-opacity="0"/>
+  <stop offset="100%" stop-color="#000000" stop-opacity="0.65"/>
+</radialGradient>
+
+<!-- RAINBOW BORDER — same spec as v5 -->
+<linearGradient id="borderRainbow" x1="0%" y1="0%" x2="100%" y2="100%">
+  <stop offset="0%"   stop-color="#48CAE4"/>
+  <stop offset="20%"  stop-color="#7c3aed"/>
+  <stop offset="40%"  stop-color="#f0a500"/>
+  <stop offset="60%"  stop-color="#48CAE4"/>
+  <stop offset="80%"  stop-color="#8B0000"/>
+  <stop offset="100%" stop-color="#7c3aed"/>
+</linearGradient>
+
+<linearGradient id="innerBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+  <stop offset="0%"   stop-color="#D4AF37" stop-opacity="0.5"/>
+  <stop offset="50%"  stop-color="#F5E08A" stop-opacity="0.25"/>
+  <stop offset="100%" stop-color="#D4AF37" stop-opacity="0.5"/>
+</linearGradient>
+
+<linearGradient id="ribbonGold" x1="0%" y1="0%" x2="100%" y2="0%">
+  <stop offset="0%"   stop-color="#5a3e00"/>
+  <stop offset="15%"  stop-color="#9a7000"/>
+  <stop offset="35%"  stop-color="#D4AF37"/>
+  <stop offset="50%"  stop-color="#F5E08A"/>
+  <stop offset="65%"  stop-color="#D4AF37"/>
+  <stop offset="85%"  stop-color="#9a7000"/>
+  <stop offset="100%" stop-color="#5a3e00"/>
+</linearGradient>
+
+<linearGradient id="ribbonSilver" x1="0%" y1="0%" x2="100%" y2="0%">
+  <stop offset="0%"   stop-color="#2a3040"/>
+  <stop offset="20%"  stop-color="#6b7a99"/>
+  <stop offset="50%"  stop-color="#c8d4e8"/>
+  <stop offset="80%"  stop-color="#6b7a99"/>
+  <stop offset="100%" stop-color="#2a3040"/>
+</linearGradient>
+
+<!-- CYAN PULSE — from the badge -->
+<linearGradient id="aiCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+  <stop offset="0%"   stop-color="#001F2E"/>
+  <stop offset="30%"  stop-color="#00B4D8"/>
+  <stop offset="50%"  stop-color="#48CAE4"/>
+  <stop offset="70%"  stop-color="#00B4D8"/>
+  <stop offset="100%" stop-color="#001F2E"/>
+</linearGradient>
+
+<!-- CRIMSON — badge signature stripe -->
+<linearGradient id="crimson" x1="0%" y1="0%" x2="100%" y2="0%">
+  <stop offset="0%"   stop-color="#6B0000"/>
+  <stop offset="50%"  stop-color="#8B0000"/>
+  <stop offset="100%" stop-color="#6B0000"/>
+</linearGradient>
+
+<linearGradient id="holoFoil" x1="0%" y1="0%" x2="100%" y2="100%">
+  <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
+  <stop offset="15%"  stop-color="#48CAE4" stop-opacity="0.06"/>
+  <stop offset="30%"  stop-color="#ffffff" stop-opacity="0"/>
+  <stop offset="45%"  stop-color="#a855f7" stop-opacity="0.05"/>
+  <stop offset="60%"  stop-color="#ffffff" stop-opacity="0"/>
+  <stop offset="75%"  stop-color="#f0a500" stop-opacity="0.04"/>
+  <stop offset="90%"  stop-color="#ffffff" stop-opacity="0"/>
+  <stop offset="100%" stop-color="#8B0000" stop-opacity="0.03"/>
+</linearGradient>
+
+<linearGradient id="gloss" x1="0%" y1="0%" x2="30%" y2="100%">
+  <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.07"/>
+  <stop offset="40%"  stop-color="#ffffff" stop-opacity="0.02"/>
+  <stop offset="100%" stop-color="#ffffff" stop-opacity="0.04"/>
+</linearGradient>
+
+<linearGradient id="holoRing" x1="0%" y1="0%" x2="100%" y2="100%">
+  <stop offset="0%"   stop-color="#48CAE4"/>
+  <stop offset="25%"  stop-color="#a855f7"/>
+  <stop offset="50%"  stop-color="#f0a500"/>
+  <stop offset="75%"  stop-color="#8B0000"/>
+  <stop offset="100%" stop-color="#48CAE4"/>
+</linearGradient>
+
+<linearGradient id="verifyBarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+  <stop offset="0%"   stop-color="#0a0a14"/>
+  <stop offset="100%" stop-color="#080810"/>
+</linearGradient>
+
+<radialGradient id="gemCenter" cx="50%" cy="35%" r="50%">
+  <stop offset="0%"   stop-color="#ffffff"  stop-opacity="0.18"/>
+  <stop offset="40%"  stop-color="#48CAE4"  stop-opacity="0.06"/>
+  <stop offset="100%" stop-color="#000000"  stop-opacity="0"/>
+</radialGradient>
+
+<pattern id="engrave" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(28)">
+  <line x1="0" y1="0" x2="0" y2="4" stroke="#D4AF37" stroke-width="0.3" stroke-opacity="0.12"/>
+</pattern>
+
+<pattern id="hexMesh" width="38" height="33" patternUnits="userSpaceOnUse">
+  <polygon points="19,1 37,9 37,23 19,31 1,23 1,9" fill="none" stroke="#48CAE4" stroke-width="0.4" stroke-opacity="0.05"/>
+</pattern>
+
+<pattern id="matrix" width="32" height="32" patternUnits="userSpaceOnUse">
+  <text x="2"  y="16" font-family="'Courier New',monospace" font-size="10" fill="#20ff50" opacity="0.035">0</text>
+  <text x="12" y="26" font-family="'Courier New',monospace" font-size="8"  fill="#20ff50" opacity="0.025">1</text>
+  <text x="22" y="10" font-family="'Courier New',monospace" font-size="11" fill="#20ff50" opacity="0.03">;</text>
+  <text x="6"  y="6"  font-family="'Courier New',monospace" font-size="9"  fill="#20ff50" opacity="0.02">%</text>
+  <text x="16" y="20" font-family="'Courier New',monospace" font-size="10" fill="#20ff50" opacity="0.025">/</text>
+</pattern>
+
+<pattern id="aionMark" width="272" height="272" patternUnits="userSpaceOnUse" patternTransform="rotate(-28)">
+  <text x="0"   y="40"  font-family="'Courier New',monospace" font-size="35" font-weight="bold" fill="#D4AF37" opacity="0.05"  letter-spacing="4">AI/ON</text>
+  <text x="136" y="176" font-family="'Courier New',monospace" font-size="35" font-weight="bold" fill="#D4AF37" opacity="0.05"  letter-spacing="4">AI/ON</text>
+  <text x="68"  y="272" font-family="'Courier New',monospace" font-size="35" font-weight="bold" fill="#D4AF37" opacity="0.035" letter-spacing="4">AI/ON</text>
+</pattern>
+
+<linearGradient id="scanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+  <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
+  <stop offset="45%"  stop-color="#48CAE4" stop-opacity="0.04"/>
+  <stop offset="50%"  stop-color="#ffffff" stop-opacity="0.06"/>
+  <stop offset="55%"  stop-color="#48CAE4" stop-opacity="0.04"/>
+  <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+</linearGradient>
+
+<!-- CYAN NODE GLOW filter — from badge -->
+<filter id="cyanGlow">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+
+<clipPath id="cardClip">
+  <rect x="0" y="0" width="680" height="1000" rx="32"/>
+</clipPath>
+
+</defs>
+
+<!-- DROP SHADOW BASE -->
+<rect x="4" y="8" width="672" height="990" rx="32" fill="#000000" fill-opacity="0.55"/>
+
+<!-- BACKGROUND LAYERS -->
+<rect width="680" height="1000" rx="32" fill="url(#bgDeep)"/>
+<rect width="680" height="1000" rx="32" fill="url(#aionMark)"  clip-path="url(#cardClip)"/>
+<rect width="680" height="1000" rx="32" fill="url(#hexMesh)"   clip-path="url(#cardClip)"/>
+<rect width="680" height="1000" rx="32" fill="url(#matrix)"    clip-path="url(#cardClip)"/>
+<rect width="680" height="1000" rx="32" fill="url(#holoFoil)"  clip-path="url(#cardClip)" opacity="0.32"/>
+<rect width="680" height="1000" rx="32" fill="url(#ptLightRad)" clip-path="url(#cardClip)"/>
+
+<!-- CRYSTALLINE FACETS — TOP -->
+<polygon points="0,0 245,0 190,82 0,109"     fill="#48CAE4" fill-opacity="0.016" stroke="#48CAE4" stroke-width="0.5" stroke-opacity="0.08" clip-path="url(#cardClip)"/>
+<polygon points="0,0 109,0 82,54 0,41"       fill="#ffffff" fill-opacity="0.02"  stroke="#ffffff" stroke-width="0.4" stroke-opacity="0.07" clip-path="url(#cardClip)"/>
+<polygon points="245,0 435,0 408,75 190,82"  fill="#a855f7" fill-opacity="0.01"  stroke="#a855f7" stroke-width="0.5" stroke-opacity="0.05" clip-path="url(#cardClip)"/>
+<polygon points="435,0 680,0 680,109 462,82" fill="#48CAE4" fill-opacity="0.012" stroke="#48CAE4" stroke-width="0.5" stroke-opacity="0.06" clip-path="url(#cardClip)"/>
+<polygon points="571,0 680,0 680,41 598,54"  fill="#ffffff" fill-opacity="0.018" stroke="#ffffff" stroke-width="0.35" stroke-opacity="0.06" clip-path="url(#cardClip)"/>
+
+<!-- CRYSTALLINE FACETS — BOTTOM -->
+<polygon points="0,891 0,1000 190,1000 136,918"  fill="#a855f7" fill-opacity="0.013" stroke="#a855f7" stroke-width="0.5" stroke-opacity="0.05" clip-path="url(#cardClip)"/>
+<polygon points="490,1000 680,1000 680,891 544,918" fill="#f0a500" fill-opacity="0.013" stroke="#f0a500" stroke-width="0.5" stroke-opacity="0.05" clip-path="url(#cardClip)"/>
+<polygon points="0,408 680,380 680,401 0,429" fill="#ffffff" fill-opacity="0.007" stroke="#48CAE4" stroke-width="0.3" stroke-opacity="0.04" clip-path="url(#cardClip)"/>
+
+<!-- TRIPLE BORDER RING -->
+<rect x="2.5" y="2.5" width="675" height="995" rx="31" fill="none" stroke="url(#borderRainbow)" stroke-width="3"/>
+<rect x="9"   y="9"   width="662" height="982" rx="27" fill="none" stroke="url(#innerBorder)"   stroke-width="1"/>
+<rect x="15"  y="15"  width="650" height="970" rx="23" fill="none" stroke="#48CAE4"             stroke-width="0.3" stroke-opacity="0.12"/>
+
+<!-- SCAN SWEEP -->
+<g clip-path="url(#cardClip)">
+  <rect x="0" y="0" width="680" height="163" fill="url(#scanGrad)"/>
+</g>
+
+<!-- RIBBONS -->
+<rect x="0" y="50" width="680" height="30" fill="url(#ribbonGold)" opacity="0.97"/>
+<text x="340" y="70.5" font-family="'Georgia','Times New Roman',serif" font-size="14.5" font-weight="bold" letter-spacing="5" fill="#0a0a14" text-anchor="middle" opacity="0.92">AI SOVEREIGN CERTIFIED</text>
+<rect x="0" y="80" width="680" height="22" fill="url(#ribbonSilver)" opacity="0.92"/>
+<text x="340" y="95.5" font-family="'Georgia','Times New Roman',serif" font-size="12" font-weight="bold" letter-spacing="4" fill="#0a0a14" text-anchor="middle" opacity="0.88">SOVEREIGN TRACE PROTOCOL — CERTIFIED AUDITOR</text>
+
+<!-- CORNER REGISTRATION MARKS -->
+<path d="M30,30 L30,68 M30,30 L68,30"   fill="none" stroke="#D4AF37" stroke-width="1.6" stroke-opacity="0.5" stroke-linecap="square"/>
+<path d="M34,34 L34,62 M34,34 L62,34"   fill="none" stroke="#48CAE4" stroke-width="0.5" stroke-opacity="0.25" stroke-linecap="square"/>
+<path d="M650,30 L650,68 M650,30 L612,30" fill="none" stroke="#D4AF37" stroke-width="1.6" stroke-opacity="0.5" stroke-linecap="square"/>
+<path d="M646,34 L646,62 M646,34 L618,34" fill="none" stroke="#48CAE4" stroke-width="0.5" stroke-opacity="0.25" stroke-linecap="square"/>
+<path d="M30,970 L30,932 M30,970 L68,970" fill="none" stroke="#D4AF37" stroke-width="1.6" stroke-opacity="0.5" stroke-linecap="square"/>
+<path d="M34,966 L34,936 M34,966 L62,966" fill="none" stroke="#48CAE4" stroke-width="0.5" stroke-opacity="0.25" stroke-linecap="square"/>
+<path d="M650,970 L650,932 M650,970 L612,970" fill="none" stroke="#D4AF37" stroke-width="1.6" stroke-opacity="0.5" stroke-linecap="square"/>
+<path d="M646,966 L646,936 M646,966 L618,966" fill="none" stroke="#48CAE4" stroke-width="0.5" stroke-opacity="0.25" stroke-linecap="square"/>
+
+<!-- GEM CENTER -->
+<rect width="680" height="1000" rx="32" fill="url(#gemCenter)" clip-path="url(#cardClip)" opacity="0.35"/>
+
+<!-- ═══ AUDITOR IDENTITY ZONE ═══ -->
+<!-- Holo frame around badge zone -->
+<rect x="20" y="108" width="640" height="284" rx="16" fill="none" stroke="url(#holoRing)" stroke-width="1.8" stroke-opacity="0.3" stroke-dasharray="8,5"/>
+<rect x="28" y="116" width="624" height="268" rx="12" fill="none" stroke="#D4AF37"  stroke-width="0.6" stroke-opacity="0.2"/>
+<rect x="36" y="124" width="608" height="252" rx="9"  fill="none" stroke="#48CAE4" stroke-width="0.3" stroke-opacity="0.13"/>
+
+<!-- CROSS REGISTRATION TICKS -->
+<g stroke="#D4AF37" stroke-opacity="0.42" stroke-width="1.1">
+  <line x1="340" y1="109" x2="340" y2="122"/>
+  <line x1="340" y1="391" x2="340" y2="404"/>
+  <line x1="21"  y1="250" x2="34"  y2="250"/>
+  <line x1="646" y1="250" x2="659" y2="250"/>
+  <line x1="57"  y1="124" x2="57"  y2="137"/>
+  <line x1="623" y1="124" x2="623" y2="137"/>
+  <line x1="57"  y1="375" x2="57"  y2="388"/>
+  <line x1="623" y1="375" x2="623" y2="388"/>
+</g>
+
+<!-- BADGE — left half of zone, optically centered vertically -->
+<rect x="44" y="120" width="270" height="264" rx="8" fill="#000000" fill-opacity="0.2"/>
+<image x="50" y="124" width="258" height="256" href="{{AUDITOR_BADGE_URL}}"/>
+
+<!-- IDENTITY BLOCK — right half -->
+<!-- NON-TRANSFERABLE label -->
+<text x="370" y="142" font-family="'Courier New',monospace" font-size="7.5" fill="#48CAE4" fill-opacity="0.7" letter-spacing="3" filter="url(#cyanGlow)">NON-TRANSFERABLE</text>
+<line x1="370" y1="146" x2="630" y2="146" stroke="#48CAE4" stroke-width="0.4" opacity="0.25"/>
+
+<!-- RANK BADGE ID -->
+<text x="370" y="168" font-family="'Courier New',monospace" font-size="13" font-weight="bold" fill="#F5E08A" letter-spacing="1.5">{{AUDITOR_BADGE_ID}}</text>
+
+<!-- RANK -->
+<text x="370" y="186" font-family="'Courier New',monospace" font-size="9" fill="{{AUDITOR_RANK_COLOR}}" letter-spacing="2">{{AUDITOR_RANK}}</text>
+
+<!-- THIN CYAN RULE -->
+<line x1="370" y1="195" x2="630" y2="195" stroke="url(#aiCyan)" stroke-width="0.8" opacity="0.5"/>
+
+<!-- NAME — signature treatment -->
+<text x="370" y="228" font-family="'Georgia','Times New Roman',serif" font-size="22" font-weight="bold" font-style="italic" fill="#E8D5A3" letter-spacing="0.5" opacity="0.95">{{AUDITOR_NAME}}</text>
+
+<!-- SPECIALIZATION -->
+<text x="370" y="248" font-family="'Courier New',monospace" font-size="8.5" fill="#8B6914" letter-spacing="2.5">{{AUDITOR_SPECIALIZATION}}</text>
+
+<!-- ORCID -->
+<text x="370" y="266" font-family="'Courier New',monospace" font-size="8" fill="#555" letter-spacing="1">ORCID {{AUDITOR_ORCID}}</text>
+
+<!-- CRIMSON ACCENT STRIPE — badge signature, carried into sleeve -->
+<rect x="370" y="275" width="258" height="2.5" fill="url(#crimson)" opacity="0.55"/>
+
+<!-- AI NODE NETWORK — micro version of badge panel -->
+<rect x="370" y="277" width="258" height="16" fill="#03080F" fill-opacity="0.6"/>
+<circle cx="390" cy="285" r="1.5" fill="#48CAE4" opacity="0.5"/>
+<circle cx="415" cy="281" r="1"   fill="#48CAE4" opacity="0.3"/>
+<circle cx="445" cy="287" r="1.3" fill="#48CAE4" opacity="0.4"/>
+<circle cx="500" cy="283" r="2"   fill="#48CAE4" opacity="0.65" filter="url(#cyanGlow)"/>
+<circle cx="555" cy="287" r="1.3" fill="#48CAE4" opacity="0.4"/>
+<circle cx="585" cy="281" r="1"   fill="#48CAE4" opacity="0.3"/>
+<circle cx="610" cy="285" r="1.5" fill="#48CAE4" opacity="0.5"/>
+<line x1="390" y1="285" x2="415" y2="281" stroke="#48CAE4" stroke-width="0.4" opacity="0.2"/>
+<line x1="415" y1="281" x2="445" y2="287" stroke="#48CAE4" stroke-width="0.4" opacity="0.2"/>
+<line x1="445" y1="287" x2="500" y2="283" stroke="#48CAE4" stroke-width="0.4" opacity="0.25"/>
+<line x1="500" y1="283" x2="555" y2="287" stroke="#48CAE4" stroke-width="0.4" opacity="0.25"/>
+<line x1="555" y1="287" x2="585" y2="281" stroke="#48CAE4" stroke-width="0.4" opacity="0.2"/>
+<line x1="585" y1="281" x2="610" y2="285" stroke="#48CAE4" stroke-width="0.4" opacity="0.2"/>
+<rect x="370" y="293" width="258" height="0.8" fill="url(#aiCyan)" opacity="0.35"/>
+
+<!-- AION ROLE LINE -->
+<text x="370" y="314" font-family="'Courier New',monospace" font-size="8" fill="#D4AF37" fill-opacity="0.6" letter-spacing="2">AIONSYSTEM · SOVEREIGN TRACE PROTOCOL</text>
+
+<!-- DATES — issued / expires, right-block style -->
+<line x1="370" y1="322" x2="628" y2="322" stroke="#D4AF37" stroke-width="0.4" opacity="0.3"/>
+<text x="370" y="336" font-family="'Courier New',monospace" font-size="7.5" fill="#8B6914" letter-spacing="1">ISSUED</text>
+<text x="370" y="349" font-family="'Courier New',monospace" font-size="10" font-weight="bold" fill="#D4AF37">{{AUDITOR_ISSUE_DATE}}</text>
+<text x="500" y="336" font-family="'Courier New',monospace" font-size="7.5" fill="#8B6914" letter-spacing="1">EXPIRES</text>
+<text x="500" y="349" font-family="'Courier New',monospace" font-size="10" font-weight="bold" fill="#D4AF37">{{AUDITOR_EXPIRY_DATE}}</text>
+
+<!-- SHA-256 SEALED line — carries badge's cyan SHA banner energy -->
+<rect x="370" y="357" width="258" height="18" fill="#03080F" fill-opacity="0.7"/>
+<rect x="370" y="357" width="258" height="1"  fill="url(#aiCyan)" opacity="0.7"/>
+<text x="500" y="370" font-family="'Courier New',monospace" font-size="7.5" fill="#48CAE4" text-anchor="middle" letter-spacing="1.5">SHA-256 · FROZEN-4.0 · TRIPLE-TIME SEALED</text>
+<rect x="370" y="374" width="258" height="0.8" fill="url(#aiCyan)" opacity="0.4"/>
+
+<!-- ═══ VERIFICATION PANEL ═══ -->
+<rect x="50" y="428" width="580" height="380" rx="19" fill="url(#verifyBarBg)" stroke="#D4AF37" stroke-width="1.6" stroke-opacity="0.55"/>
+<rect x="50" y="428" width="580" height="380" rx="19" fill="url(#engrave)"/>
+
+<rect x="50" y="428" width="580" height="40" rx="19" fill="#D4AF37" fill-opacity="0.13"/>
+<rect x="50" y="452" width="580" height="18"          fill="#D4AF37" fill-opacity="0.06"/>
+<line x1="76" y1="470" x2="604" y2="470" stroke="#D4AF37" stroke-width="0.8" stroke-opacity="0.4"/>
+<line x1="76" y1="471" x2="604" y2="471" stroke="#48CAE4" stroke-width="0.3" stroke-opacity="0.2"/>
+
+<text x="340" y="454" font-family="'Courier New',monospace" font-size="13" fill="#D4AF37" font-weight="bold" text-anchor="middle" letter-spacing="3">VERIFIED CERTIFICATION</text>
+
+<text x="340" y="493" font-family="'Courier New',monospace" font-size="11.5" text-anchor="middle">
+  <tspan fill="#DAA520">◈ </tspan>
+  <tspan fill="#D4AF37">Certified by {{AUDITOR_BADGE_ID}} ({{AUDITOR_RANK}})</tspan>
+</text>
+
+<!-- SOVEREIGN TIER BADGE SLOT -->
+<rect x="180" y="502" width="320" height="76" rx="10" fill="#0d0d1a" fill-opacity="0.6" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="6,4"/>
+<rect x="184" y="506" width="312" height="68" rx="7"  fill="none"   stroke="#48CAE4" stroke-width="0.4" stroke-opacity="0.18" stroke-dasharray="4,6"/>
+<text x="340" y="535" font-family="'Courier New',monospace" font-size="7.5" fill="#D4AF37" fill-opacity="0.38" text-anchor="middle" letter-spacing="2.5">SOVEREIGN TIER</text>
+<g transform="translate(225,508) scale(1.15)">{{SOVEREIGN_TIER_BADGE_SVG}}</g>
+<text x="340" y="569" font-family="'Courier New',monospace" font-size="7" fill="#444" text-anchor="middle" letter-spacing="1.5">{{SOVEREIGN_TIER_LABEL}}</text>
+
+<!-- DETAIL ROWS -->
+<circle cx="77" cy="591" r="3.5" fill="#48CAE4" opacity="0.7"/>
+<text x="90"  y="595" font-family="'Courier New',monospace" font-size="11.5" fill="#888">Entry</text>
+<text x="175" y="595" font-family="'Courier New',monospace" font-size="11.5" fill="#F5E08A" font-weight="bold">{{ENTRY_ID}}</text>
+
+<circle cx="77" cy="617" r="3.5" fill="#a855f7" opacity="0.7"/>
+<text x="90"  y="621" font-family="'Courier New',monospace" font-size="11.5" fill="#888">SHA-256</text>
+<text x="175" y="621" font-family="'Courier New',monospace" font-size="11"   fill="#48CAE4">{{SHA256_FIRST16}}…</text>
+
+<circle cx="77" cy="643" r="3.5" fill="#f0a500" opacity="0.7"/>
+<text x="90"  y="647" font-family="'Courier New',monospace" font-size="11.5" fill="#888">Verify</text>
+<text x="175" y="647" font-family="'Courier New',monospace" font-size="11.5" fill="#48CAE4">{{VERIFY_URL}}</text>
+
+<line x1="76" y1="661" x2="604" y2="661" stroke="#D4AF37" stroke-width="0.5" stroke-opacity="0.3"/>
+
+<!-- SIGNATURE BLOCK -->
+<line x1="160" y1="672" x2="340" y2="672" stroke="#D4AF37" stroke-width="0.4" stroke-opacity="0.35"/>
+<line x1="340" y1="672" x2="520" y2="672" stroke="#D4AF37" stroke-width="0.4" stroke-opacity="0.35"/>
+<text x="340" y="669" font-family="'Courier New',monospace" font-size="7.5" fill="#D4AF37" fill-opacity="0.45" text-anchor="middle" letter-spacing="2.5">CERTIFIED BY</text>
+<text x="340" y="696" font-family="'Georgia','Times New Roman',serif" font-size="20" font-weight="bold" font-style="italic" fill="#F5E08A" text-anchor="middle" letter-spacing="1.2" opacity="0.93">{{AUDITOR_NAME}}</text>
+<text x="340" y="711" font-family="'Courier New',monospace" font-size="8.5" fill="#D4AF37" fill-opacity="0.5" text-anchor="middle" letter-spacing="3">AI RELIABILITY ARCHITECT · AIONSYSTEM</text>
+
+<!-- TRIPLE-TIME DATE -->
+<line x1="76" y1="723" x2="604" y2="723" stroke="#D4AF37" stroke-width="0.4" stroke-opacity="0.22"/>
+<text x="340" y="737" font-family="'Courier New',monospace" font-size="9"  fill="#888"    text-anchor="middle" letter-spacing="1.5">ISSUED</text>
+<text x="340" y="751" font-family="'Courier New',monospace" font-size="10" fill="#DAA520" text-anchor="middle" letter-spacing="1">{{ISSUE_DATE_GREGORIAN}}</text>
+<text x="340" y="763" font-family="'Courier New',monospace" font-size="9"  fill="#888"    text-anchor="middle">{{ISSUE_DATE_HEBREW}} · {{ISSUE_DATE_DREAMSPELL}}</text>
+
+<!-- ORNAMENTAL DIVIDERS -->
+<text x="164" y="778" font-family="'Courier New',monospace" font-size="9.5" fill="#D4AF37" opacity="0.5">◆──────────────────</text>
+<text x="516" y="778" font-family="'Courier New',monospace" font-size="9.5" fill="#D4AF37" opacity="0.5" text-anchor="end">──────────────────◆</text>
+<text x="340" y="793" font-family="'Courier New',monospace" font-size="8.5" fill="#444" text-anchor="middle">Digital signature appended to STP ledger entry</text>
+
+<!-- VALIDITY + SCOPE BAR -->
+<rect x="50"  y="802" width="580" height="72" rx="10" fill="#060610" fill-opacity="0.7" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.4"/>
+<rect x="54"  y="806" width="572" height="64" rx="7"  fill="none"   stroke="#48CAE4" stroke-width="0.3" stroke-opacity="0.15"/>
+<text x="76"  y="826" font-family="'Courier New',monospace" font-size="7.5" fill="#D4AF37" fill-opacity="0.5" letter-spacing="2">VALID THROUGH</text>
+<text x="76"  y="843" font-family="'Courier New',monospace" font-size="11"  fill="#F5E08A" font-weight="bold" letter-spacing="1">{{VALID_THROUGH}}</text>
+<text x="76"  y="856" font-family="'Courier New',monospace" font-size="7.5" fill="#555" letter-spacing="1">90-DAY CERTIFICATION CYCLE</text>
+<line x1="340" y1="820" x2="340" y2="876" stroke="#D4AF37" stroke-width="0.5" stroke-opacity="0.3"/>
+<text x="356" y="826" font-family="'Courier New',monospace" font-size="7.5" fill="#D4AF37" fill-opacity="0.5" letter-spacing="2">AUDIT SCOPE</text>
+<text x="356" y="843" font-family="'Courier New',monospace" font-size="11"  fill="#F5E08A" font-weight="bold" letter-spacing="1">{{AUDIT_SCOPE_CODE}}</text>
+<text x="356" y="856" font-family="'Courier New',monospace" font-size="7.5" fill="#555" letter-spacing="1">{{AUDIT_SCOPE_LABEL}}</text>
+
+<!-- QR BLOCK -->
+<rect x="556" y="884" width="74" height="74" rx="9" fill="#060610" stroke="url(#borderRainbow)" stroke-width="1.8"/>
+<image x="562" y="890" width="62" height="62" href="{{QR_CODE_URL}}"/>
+<text x="593" y="970" font-family="'Courier New',monospace" font-size="7.5" fill="#555" text-anchor="middle" letter-spacing="1.5">SCAN</text>
+
+<!-- MICRO-TEXT BAND -->
+<text x="-120.8" y="985" font-family="'Courier New',monospace" font-size="5.5" fill="#D4AF37" opacity="0.18" letter-spacing="1.8">AIONSYSTEM · SOVEREIGN TRACE PROTOCOL · CERTIFIED AUDITOR CREDENTIAL · AIONSYSTEM · SOVEREIGN TRACE PROTOCOL · CERTIFIED AUDITOR CREDENTIAL</text>
+<text x="-120.8" y="995" font-family="'Courier New',monospace" font-size="5.5" fill="#48CAE4" opacity="0.11" letter-spacing="1.8">AIONSYSTEM · SOVEREIGN TRACE PROTOCOL · CERTIFIED AUDITOR CREDENTIAL · AIONSYSTEM · SOVEREIGN TRACE PROTOCOL · CERTIFIED AUDITOR CREDENTIAL</text>
+
+<!-- DEPTH + GLOSS OVERLAYS -->
+<rect width="680" height="1000" rx="32" fill="url(#depthField)"  clip-path="url(#cardClip)" pointer-events="none"/>
+<rect width="680" height="1000" rx="32" fill="url(#cornerDark)"  clip-path="url(#cardClip)" pointer-events="none" opacity="0.4"/>
+<rect width="680" height="1000" rx="32" fill="url(#gloss)"       clip-path="url(#cardClip)" pointer-events="none"/>
+<ellipse cx="340" cy="0" rx="272" ry="82" fill="#ffffff" fill-opacity="0.04" clip-path="url(#cardClip)"/>
+
+</svg>
