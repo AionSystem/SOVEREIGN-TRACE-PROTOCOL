@@ -1,28 +1,33 @@
 <div align="center">
-  <img src="./STP-logo.svg" alt="Sovereign Trace Protocol" width="180"/>
-</div> 
+  <img src="./STP-logo.svg" alt="Sovereign Trace Protocol" width="200"/>
 
-# Sovereign Trace Protocol
+  <br/><br/>
 
-**Permanence infrastructure for individuals and organizations.**  
-**Seal what is true. Permanently. Across three civilizational time systems.**
+  # SOVEREIGN TRACE PROTOCOL
+
+  **Permanence infrastructure for individuals and organizations.**
+  **Seal what is true. Permanently. Across three civilizational time systems.**
+
+  <br/>
+
+  [![ORCID — Sheldon K. Salmon](https://img.shields.io/badge/ORCID-0009--0005--8057--5115-a6ce39?style=flat&logo=orcid&logoColor=white)](https://orcid.org/0009-0005-8057-5115)
+  [![DOI](https://zenodo.org/badge/1174130098.svg)](https://doi.org/10.5281/zenodo.18941392)
+  [![Permanent](https://img.shields.io/badge/PERMANENT-FROZEN--4.0-2E7D32?style=flat-square&logo=git&logoColor=white)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL)
+  [![PyPI](https://img.shields.io/pypi/v/sovereign-trace?style=flat-square&color=2E7D32&label=PyPI)](https://pypi.org/project/sovereign-trace/)
+  [![Status](https://img.shields.io/badge/STATUS-M--NASCENT-1976D2?style=flat-square&logo=shield&logoColor=white)](https://github.com/AionSystem/AION-BRAIN)
+  [![Hebrew](https://img.shields.io/badge/HEBREW-Full%20Dehiyot%20%2B%20Civil--Day-0288D1?style=flat-square)](https://www.hebcal.com)
+  [![Seal](https://img.shields.io/badge/SEAL-SHA--256%20Binding-4527A0?style=flat-square&logo=hashnode&logoColor=white)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL)
+  [![Dependencies](https://img.shields.io/badge/DEPS-stdlib%20only-616161?style=flat-square)](https://docs.python.org/3/library/index.html)
+  [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE)
+  [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-darkgreen.svg)](https://www.gnu.org/licenses/gpl-3.0)
+  [![License: Commercial](https://img.shields.io/badge/License-Commercial-orange.svg)](./LICENSE-COMMERCIAL.md)
+  [![Legal Posture](https://img.shields.io/badge/LEGAL-Posture%20Active-8B0000?style=flat-square)](./LEGAL-POSTURE.md)
+
+</div>
 
 ---
 
-[![ORCID — Sheldon K. Salmon](https://img.shields.io/badge/ORCID-0009--0005--8057--5115-a6ce39?style=flat&logo=orcid&logoColor=white)](https://orcid.org/0009-0005-8057-5115)
-[![DOI](https://zenodo.org/badge/1174130098.svg)](https://doi.org/10.5281/zenodo.18941392)
-[![Permanent](https://img.shields.io/badge/PERMANENT-FROZEN--4.0-2E7D32?style=flat-square&logo=git&logoColor=white)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL)
-[![PyPI](https://img.shields.io/pypi/v/sovereign-trace?style=flat-square&color=2E7D32&label=PyPI)](https://pypi.org/project/sovereign-trace/)
-[![Status](https://img.shields.io/badge/STATUS-M--NASCENT-1976D2?style=flat-square&logo=shield&logoColor=white)](https://github.com/AionSystem/AION-BRAIN)
-[![Hebrew](https://img.shields.io/badge/HEBREW-Full%20Dehiyot%20%2B%20Civil--Day-0288D1?style=flat-square)](https://www.hebcal.com)
-[![Seal](https://img.shields.io/badge/SEAL-SHA--256%20Binding-4527A0?style=flat-square&logo=hashnode&logoColor=white)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL)
-[![Dependencies](https://img.shields.io/badge/DEPS-stdlib%20only-616161?style=flat-square)](https://docs.python.org/3/library/index.html)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE)
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-darkgreen.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![License: Commercial](https://img.shields.io/badge/License-Commercial-orange.svg)](./LICENSE-COMMERCIAL.md)
-[![Legal Posture](https://img.shields.io/badge/LEGAL-Posture%20Active-8B0000?style=flat-square)](./LEGAL-POSTURE.md)
-
----
+<div align="center">
 
 | Field | Value |
 |---|---|
@@ -31,7 +36,9 @@
 | **Stack** | DUAL-HELIX v2.0 · TOPOS v0.3 · VELA-C v0.3 · CPA-001 v2.2 |
 | **Convergence** | M-NASCENT |
 
-> **→ [QUICKSTART.md](./QUICKSTART.md) — pip install + first seal in under 5 minutes**
+**→ [QUICKSTART.md](./QUICKSTART.md) — pip install + first seal in under 5 minutes**
+
+</div>
 
 ---
 
@@ -62,7 +69,7 @@
 
 Same mechanism. Same FROZEN-4.0 stamp function. Same SHA-256 seal. Different stakes.
 
-See [`concept/USE-CASES.md`](./concept/USE-CASES.md) for the full dual-use architecture.
+> See [`concept/USE-CASES.md`](./concept/USE-CASES.md) for the full dual-use architecture.
 
 [↑ Back to top](#table-of-contents)
 
@@ -72,6 +79,7 @@ See [`concept/USE-CASES.md`](./concept/USE-CASES.md) for the full dual-use archi
 
 ```bash
 pip install sovereign-trace
+python
 ```
 
 ```python
@@ -79,6 +87,7 @@ from sovereign_trace_stamp import stamp, display, verify
 
 ts = stamp("Hypothesis sealed before experiment begins.")
 print(display(ts))
+
 # 📅 Gregorian:  March 7, 2026
 # 🌑 Hebrew:     17 Adar 5786
 # 🌀 Dreamspell: Day 1, Solar Moon 9/13
@@ -86,7 +95,7 @@ print(display(ts))
 # 📌 Version:    FROZEN-4.0
 ```
 
-→ Full install guide, usage examples, and what not to do: [QUICKSTART.md](./QUICKSTART.md)
+> Full install guide, usage examples, and what not to do: [QUICKSTART.md](./QUICKSTART.md)
 
 [↑ Back to top](#table-of-contents)
 
@@ -98,26 +107,26 @@ The stamp function does not care what it seals. A sealed moment is a sealed mome
 
 | Who | What They Seal | Why It Matters |
 |---|---|---|
-| AI auditor | AI system output failure — exact text + screenshots | Public permanent record. Organizational accountability. Tamper-evident before remediation. |
-| AI developer / company | Prompt deployed in a product before launch | If the prompt causes harm later, the sealed record proves what was authorized and when. No dispute about what the system was told to do. |
-| AI framework builder | Framework specification before publishing or citing | Priority record for AI methodology. Proves the design existed before any implementation or competing claim. |
-| AI evaluator | Benchmark before running it against a model | Prevents benchmarks being quietly modified after results are known. The sealed version is the one that was tested. |
-| AI trainer | Dataset declaration before training begins | When model behavior is disputed, the sealed declaration proves what data was authorized. |
-| Researcher / scientist | Hypothesis before running the experiment | Proves prediction preceded results. Kills HARKing (Hypothesizing After Results are Known). Every field. No institution required. |
-| Journalist | Article draft · Source document received · Evidence chain before going to print | Proves what you had and when you had it. If a source is pressured to recant — the sealed record shows what they said before the pressure. |
-| Whistleblower | Evidence before going public | Chain of custody proof. Proves the document was not altered between receipt and disclosure. |
-| Musician / artist / writer | Creative work before release or submission | Timestamped proof of authorship. Not a patent — but cryptographic priority proof that costs nothing and requires no lawyer. |
-| Independent researcher | Findings before peer review | Priority claim before submission. Prevents being scooped or findings disputed after publication. |
-| Negotiator | Your position before a difficult conversation | Seal what you were willing to accept before the other party claims you moved the goalposts. Salary. Settlement. Term sheet. |
-| Contractor / freelancer | Project scope before work begins | Immutable record of what was agreed. Scope creep disputes resolved by the sealed ledger entry. |
-| Hospital / clinical team | Clinical trial data before analysis · Incident report before review | Proves data integrity before results are known. FDA 21 CFR Part 11 compatible architecture. The record cannot be quietly altered after an adverse outcome. |
-| FOIA researcher / archivist | Declassified document at point of receipt | Proves the released version has not been altered after declassification. The seal is the chain of custody from institution to researcher. |
-| NASA / space agency | Mission parameter file before launch · Research findings before peer review | If a mission fails and a specification dispute arises — the sealed pre-launch document is the ground truth. |
-| Teacher / educator | Student work at time of submission | Proves the student submitted exactly this, on this date, unchanged. No dispute about post-deadline alterations. |
-| Therapist / clinician | Session notes at time of writing | If notes are subpoenaed, the seal proves they were not altered retroactively. Integrity of the clinical record at the moment of documentation. |
-| Estate / legal | Intentions before a will is formalized | Not a legal substitute — but a tamper-evident record of what was wanted, sealed at the moment of decision, before institutional processes began. |
-| Organization (any) | AI failure log entry before remediation | Immutable pre-remediation record. Proves the organization documented honestly before fixing — not after. An organization with a documented failure history is more trustworthy than one with a clean record and no ledger. |
-| Foresight analyst / strategist | Dated professional prediction about a company, industry, or technology before it resolves | Cryptographic proof you saw it first. When the prediction resolves, the ledger entry is the receipt. A track record of correct sealed predictions — verifiable by anyone — cannot be fabricated after the fact. |
+| **AI auditor** | AI system output failure — exact text + screenshots | Public permanent record. Organizational accountability. Tamper-evident before remediation. |
+| **AI developer / company** | Prompt deployed in a product before launch | If the prompt causes harm later, the sealed record proves what was authorized and when. No dispute about what the system was told to do. |
+| **AI framework builder** | Framework specification before publishing or citing | Priority record for AI methodology. Proves the design existed before any implementation or competing claim. |
+| **AI evaluator** | Benchmark before running it against a model | Prevents benchmarks being quietly modified after results are known. The sealed version is the one that was tested. |
+| **AI trainer** | Dataset declaration before training begins | When model behavior is disputed, the sealed declaration proves what data was authorized. |
+| **Researcher / scientist** | Hypothesis before running the experiment | Proves prediction preceded results. Kills HARKing (Hypothesizing After Results are Known). Every field. No institution required. |
+| **Journalist** | Article draft · Source document received · Evidence chain before going to print | Proves what you had and when you had it. If a source is pressured to recant — the sealed record shows what they said before the pressure. |
+| **Whistleblower** | Evidence before going public | Chain of custody proof. Proves the document was not altered between receipt and disclosure. |
+| **Musician / artist / writer** | Creative work before release or submission | Timestamped proof of authorship. Not a patent — but cryptographic priority proof that costs nothing and requires no lawyer. |
+| **Independent researcher** | Findings before peer review | Priority claim before submission. Prevents being scooped or findings disputed after publication. |
+| **Negotiator** | Your position before a difficult conversation | Seal what you were willing to accept before the other party claims you moved the goalposts. Salary. Settlement. Term sheet. |
+| **Contractor / freelancer** | Project scope before work begins | Immutable record of what was agreed. Scope creep disputes resolved by the sealed ledger entry. |
+| **Hospital / clinical team** | Clinical trial data before analysis · Incident report before review | Proves data integrity before results are known. FDA 21 CFR Part 11 compatible architecture. The record cannot be quietly altered after an adverse outcome. |
+| **FOIA researcher / archivist** | Declassified document at point of receipt | Proves the released version has not been altered after declassification. The seal is the chain of custody from institution to researcher. |
+| **NASA / space agency** | Mission parameter file before launch · Research findings before peer review | If a mission fails and a specification dispute arises — the sealed pre-launch document is the ground truth. |
+| **Teacher / educator** | Student work at time of submission | Proves the student submitted exactly this, on this date, unchanged. No dispute about post-deadline alterations. |
+| **Therapist / clinician** | Session notes at time of writing | If notes are subpoenaed, the seal proves they were not altered retroactively. Integrity of the clinical record at the moment of documentation. |
+| **Estate / legal** | Intentions before a will is formalized | Not a legal substitute — but a tamper-evident record of what was wanted, sealed at the moment of decision, before institutional processes began. |
+| **Organization (any)** | AI failure log entry before remediation | Immutable pre-remediation record. Proves the organization documented honestly before fixing — not after. An organization with a documented failure history is more trustworthy than one with a clean record and no ledger. |
+| **Foresight analyst / strategist** | Dated professional prediction about a company, industry, or technology before it resolves | Cryptographic proof you saw it first. When the prediction resolves, the ledger entry is the receipt. A track record of correct sealed predictions — verifiable by anyone — cannot be fabricated after the fact. |
 
 The mechanism is always the same. The stake determines how you use the sealed record afterward.
 
@@ -139,9 +148,9 @@ The answer — a frozen, tamper-evident, triple-time cryptographic seal — turn
 
 | System | Example | What It Claims |
 |---|---|---|
-| Gregorian | March 7, 2026 | Civic time — the calendar of current civic infrastructure |
-| Hebrew lunisolar | 17 Adar 5786 | Theological-historical continuity — 5786 years of counted time |
-| 13 Moon Dreamspell | Day 1, Solar Moon 9/13 | Rhythmic time — 13 moons × 28 days, galactic count |
+| **Gregorian** | March 7, 2026 | Civic time — the calendar of current civic infrastructure |
+| **Hebrew lunisolar** | 17 Adar 5786 | Theological-historical continuity — 5786 years of counted time |
+| **13 Moon Dreamspell** | Day 1, Solar Moon 9/13 | Rhythmic time — 13 moons × 28 days, galactic count |
 
 The triple stamp is not redundancy. It is a claim: this moment of human significance deserves to be held simultaneously in every major civilizational framework for measuring *when*.
 
@@ -169,11 +178,20 @@ Structured submissions are made through GitHub Issues using the official templat
 | `12-auditor-application.yml` | Apply to become an STP Certified Auditor — skills-based, no credentials required |
 | `13-integrity-violation.yml` | Report badge misuse, bribery, or coercion — permanent ledger record |
 | `14-near-miss.yml` | AI output that almost caused harm — caught before impact. Near-miss reporting before internal review begins. |
+| `15-prompt-seal.yml` | Seal a prompt before deploying it to production. Proves exactly what was authorized and when. |
+| `16-model-weights-seal.yml` | Seal the SHA-256 hash of AI model weights before release or training. Independent proof of the exact model artifact. |
+| `17-dataset-declaration.yml` | Seal a dataset checksum and description before training begins. Prevents after-the-fact data provenance disputes. |
+| `18-agreement-seal.yml` | Seal a term sheet, contract, or handshake agreement before formalization. Immutable record of agreed terms. |
+| `19-release-seal.yml` | Seal a software release — commit hash, artifact checksums, and release notes. Converts a GitHub release into a permanent event. |
+| `20-decision-record.yml` | Seal an architectural, governance, or board decision at the moment it is made. Prevents revisionist history. |
+| `21-vulnerability-timeline.yml` | Seal the exact timeline of a discovered vulnerability — discovery, disclosure, patch. Proves responsible disclosure. |
+| `22-ai-output-sample.yml` | Seal a representative sample of AI outputs for periodic self-monitoring. Lightweight alternative to a full audit. |
 
-All templates include: native file upload, SHA-256 binding, declaration checkbox, and legal compliance language.  
-See [`concept/USE-CASES.md`](./concept/USE-CASES.md) for guidance on which template fits your submission.
+All templates include: native file upload, SHA-256 binding, declaration checkbox, and legal compliance language.
 
-New to GitHub? → [HOW-TO-SUBMIT.md](./HOW-TO-SUBMIT.md) — plain English guide, no experience required.
+> See [`concept/USE-CASES.md`](./concept/USE-CASES.md) for guidance on which template fits your submission.
+>
+> New to GitHub? → [HOW-TO-SUBMIT.md](./HOW-TO-SUBMIT.md) — plain English guide, no experience required.
 
 [↑ Back to top](#table-of-contents)
 
@@ -183,16 +201,18 @@ New to GitHub? → [HOW-TO-SUBMIT.md](./HOW-TO-SUBMIT.md) — plain English guid
 
 | Tier | Scope | Badge | Intake |
 |---|---|---|---|
-| Tier 1 — Snapshot Verification | Up to 10 outputs | Standard | Contact architect |
-| Tier 2 — Enterprise Certification | Full audit + badge license | Digital | Contact architect |
-| Tier 3 — Strategic Retainer | Quarterly reviews + epistemic debt statement | Elite | Architect-led · Mon–Tue only |
-| Tier 4 — Defense & Government Grade | Full standards alignment + monthly reviews | Defense | Architect-led · Mon–Tue only |
-| Tier 5 — Sovereign AI Audit | Full adversarial stack audit — 7 instruments, 14-day window | Sovereign (cyan/indigo) | Architect-led · Mon–Tue only |
+| **Tier 0 — Snapshot Verification** | 10 outputs, pre-audit trust signal | Snapshot (pearl/earth) | Automated 24/7 |
+| **Tier 1 — Full Audit** | 25–1,000+ outputs, output-banded pricing, 3-month validity | Standard | Architect-led · Mon–Tue only |
+| **Tier 2 — Enterprise Retainer** | Quarterly audits, continuous compliance, $25k/yr | Digital | Automated 24/7 |
+| **Tier 3 — Strategic Retainer** | All Tier 2 + priority access + Foresight Seal, $100k+/yr | Elite | Architect-led · Mon–Tue only |
+| **Tier 4 — Defense & Government Grade** | Full standards alignment, monthly reviews, SCIF-compatible | Defense | Architect-led · Mon–Tue only |
+| **Tier 5 — Sovereign AI Audit** | 7-instrument adversarial stack, 14-day window, $15k | Sovereign (cyan/indigo) | Architect-led · Mon–Tue only |
 
 **Intake rules:**
-- Tier 1 and 2 — submit anytime via `10-audit-request.yml`.
-- Tier 3, 4, and 5 — Architect-led. Intake Monday and Tuesday only. Submissions on other days are voided and non-refundable.
-- Delivery: Weekends for all tiers.
+
+- **Tier 0 and Tier 2** — submit anytime via `10-audit-request.yml`
+- **Tier 1, 3, 4, and 5** — Architect-led. Intake Monday and Tuesday only. Submissions on other days are voided and non-refundable.
+- **Delivery:** Weekends for all tiers.
 
 Every certified organization receives an **Epistemic Debt Score (EDS)** — a 0–100 metric measuring AI epistemic integrity across five components. Formula is public: [EPISTEMIC-DEBT-SCORE.md](./EPISTEMIC-DEBT-SCORE.md).
 
@@ -200,8 +220,8 @@ Every certified organization receives an **Epistemic Debt Score (EDS)** — a 0�
 
 **STP Certified Auditors** — independent professionals authorized to conduct and file audits directly to the ledger under their own badge. Apply via `12-auditor-application.yml`. See [AUDITOR-VETTING-PROCESS.md](./AUDITOR-VETTING-PROCESS.md) for the full vetting process. All auditor badges verified live against `.github/verified-auditors.json` on every submission.
 
-See [CERTIFICATION.md](./CERTIFICATION.md), [AUDIT-METHODOLOGY.md](./AUDIT-METHODOLOGY.md), and [TERMS-OF-SERVICE.md](./TERMS-OF-SERVICE.md) for full process and terms.  
-Governing law: State of New York, United States. Arbitration: JAMS Commercial Rules.
+> See [CERTIFICATION.md](./CERTIFICATION.md), [AUDIT-METHODOLOGY.md](./AUDIT-METHODOLOGY.md), and [TERMS OF SERVICE.md](./TERMS%20OF%20SERVICE.md) for full process and terms.
+> Governing law: State of New York, United States. Arbitration: JAMS Commercial Rules.
 
 [↑ Back to top](#table-of-contents)
 
@@ -211,7 +231,7 @@ Governing law: State of New York, United States. Arbitration: JAMS Commercial Ru
 
 `sovereign_trace_stamp.py` is **FROZEN-4.0**. Written once, verified once, deployed permanently. No patches. No updates. The stamp it generates is only permanent if the code that generates it is also permanent.
 
-If a defect is found: retire the frozen file, archive it as `SOVEREIGN-TRACE-STAMP-FROZEN-4.0-RETIRED.py`, document the defect, build FROZEN-5.0 from first principles, re-verify all anchor cases. Never patch.
+**If a defect is found:** retire the frozen file, archive it as `SOVEREIGN-TRACE-STAMP-FROZEN-4.0-RETIRED.py`, document the defect, build FROZEN-5.0 from first principles, re-verify all anchor cases. Never patch.
 
 **Frozen lineage:**
 
@@ -220,9 +240,9 @@ If a defect is found: retire the frozen file, archive it as `SOVEREIGN-TRACE-STA
 | FROZEN-1.0 | Retired | Incomplete dehiyot implementation — Hebrew off-by-one on all 5786 dates |
 | FROZEN-2.0 | Retired | Eight defects including: no NFC normalization, no version field in seal, pre-reform boundary slip, unbounded Hebrew year loop |
 | FROZEN-3.0 | Retired | Self-test anchor dates for RH 5787 and Erev RH 5787 were wrong. Algorithm correct; test data was not. Effect: self-test raised `AssertionError` on otherwise correct code. |
-| **FROZEN-4.0** | **Current** | All known defects resolved. 82 self-test checks passing. |
+| **FROZEN-4.0** | **Current** | **All known defects resolved. 82 self-test checks passing.** |
 
-All FROZEN-3.0 stamps remain cryptographically valid — the defect was in test data only. No stamp produced by any retired version carries a cryptographic error (FROZEN-1.0 carries an incorrect Hebrew field; its seal is cryptographically valid but binds the wrong calendar string).
+> All FROZEN-3.0 stamps remain cryptographically valid — the defect was in test data only. No stamp produced by any retired version carries a cryptographic error (FROZEN-1.0 carries an incorrect Hebrew field; its seal is cryptographically valid but binds the wrong calendar string).
 
 [↑ Back to top](#table-of-contents)
 
@@ -232,12 +252,12 @@ All FROZEN-3.0 stamps remain cryptographically valid — the defect was in test 
 
 | License | Applies To |
 |---|---|
-| Apache 2.0 | Individual, academic, non-commercial use. Patent retaliation clause active. |
-| GPL v3 | Modified distributions. Copyleft — corporate forks must open-source modifications. |
-| Commercial | White-label, certification services, SaaS. See [LICENSE-COMMERCIAL.md](./LICENSE-COMMERCIAL.md). |
+| **Apache 2.0** | Individual, academic, non-commercial use. Patent retaliation clause active. |
+| **GPL v3** | Modified distributions. Copyleft — corporate forks must open-source modifications. |
+| **Commercial** | White-label, certification services, SaaS. See [LICENSE-COMMERICAL.md](./LICENSE-COMMERICAL.md). |
 
-Plain-language guide: [LICENSE-EXPLANATION.md](./LICENSE-EXPLANATION.md)  
-Full legal coverage: [LEGAL-POSTURE.md](./LEGAL-POSTURE.md)
+> Plain-language guide: [LICENSE-EXPLANATION.md](./LICENSE-EXPLANATION.md)
+> Full legal coverage: [LEGAL-POSTURE.md](./LEGAL-POSTURE.md)
 
 [↑ Back to top](#table-of-contents)
 
@@ -281,92 +301,238 @@ sovereign-trace-protocol/
 ├── HOW-TO-SUBMIT.md
 ├── CERTIFICATION.md
 ├── AUDIT-METHODOLOGY.md
-├── EPISTEMIC-DEBT-SCORE.md
 ├── AUDITOR-VETTING-PROCESS.md
+├── EPISTEMIC-DEBT-SCORE.md
+├── STANDARDS-ALIGNMENT.md
 ├── DISASTER-RECOVERY.md
 ├── NON-RECOURSE-STATEMENT.md
+├── METHODOLOGY.md
+├── PRINCIPLES.md
+├── LEGAL-POSTURE.md
+├── ACCEPTABLE-USE-POLICY.md
+├── AI-ETHICS-STATEMENT.md
+├── PRIVACY-POLICY.md
+├── EXPORT-CONTROL.md
+├── SECURITY.md
+├── SECURITY-INSIGHTS.yml
+├── CONTRIBUTOR-TERMS.md
+├── CONTRIBUTOR-LICENSE-AGREEMENT.md
+├── DATA-PROCESSING-AGREEMENT.md
+├── MUTUAL-NDA.md
+├── UNILATERAL-NDA.md
+├── PATENTS.md
+├── TRADEMARK.md
+├── TRADEMARK-USAGE-POLICY.md
+├── LICENSE
+├── LICENSE-COMMERICAL.md
+├── LICENSE-EXPLANATION.md
+├── LICENSE-GPLv3.md
+├── NOTICE
+├── TERMS OF SERVICE.md
+├── CITATION.cff
 ├── pyproject.toml
+├── pytest.ini
+├── .gitignore
 │
 ├── .github/
+│   ├── FUNDING.yml
 │   ├── SECURITY.md
 │   ├── verified-auditors.json
 │   ├── revoked-auditors.json
 │   ├── ISSUE_TEMPLATE/
-│   │   ├── config.yml                          ← blank issues disabled
+│   │   ├── config.yml
 │   │   ├── 01-ai-failure.yml
 │   │   ├── 02-research-priority.yml
 │   │   ├── 03-evidence-chain.yml
 │   │   ├── 04-creative-priority.yml
-│   │   ├── 05-clinical-record.yml              ← PHI gate active
+│   │   ├── 05-clinical-record.yml
 │   │   ├── 06-scope-anchor.yml
 │   │   ├── 07-general-trace.yml
 │   │   ├── 08-foresight-seal.yml
 │   │   ├── 09-webeater-link.yml
 │   │   ├── 10-audit-request.yml
 │   │   ├── 11-audit-completion.yml
-│   │   ├── 12-auditor-application.yml
+│   │   ├── 12-audit-application.yml
 │   │   ├── 13-integrity-violation.yml
-│   │   └── 14-near-miss.yml
+│   │   ├── 14-near-miss.yml
+│   │   ├── 15‑prompt‑seal.yml
+│   │   ├── 16‑model‑weights‑seal.yml
+│   │   ├── 17‑dataset‑declaration.yml
+│   │   ├── 18‑agreement‑seal.yml
+│   │   ├── 19‑release‑seal.yml
+│   │   ├── 20‑decision‑record.yml
+│   │   ├── 21‑vulnerability‑timeline.yml
+│   │   └── 22‑ai‑output‑sample.yml
 │   └── workflows/
 │       ├── python-publish.yml
-│       ├── auto-seal.yml                       ← auto-seals all pending-seal issues
-│       └── audit-verify.yml                    ← auditor badge verification
+│       ├── auto-seal.yml
+│       └── audit-verify.yml
 │
-├── badges/
-│   ├── sovereign-certified-badge-v2.svg        ← Tier 1 Standard
-│   ├── sovereign-certified-badge-digital-v2.svg
-│   ├── sovereign-certified-badge-elite-v2.svg
-│   ├── sovereign-certified-badge-defense-v2.svg
-│   ├── sovereign-certified-badge-sovereign-v1.svg ← Tier 5 Sovereign (cyan/indigo)
-│   ├── stp-auditor-badge-v2.svg
-│   └── aion-verified-simulator-badge-v1.svg    ← AION Verified Simulator (octagonal gold)
+├── assets/
+│   ├── img/
+│   │   ├── aion-logo.jpg
+│   │   └── favicon.svg
+│   ├── badges/
+│   │   ├── sovereign-certified/
+│   │   │   ├── sovereign-certified-badge-v2.svg
+│   │   │   ├── sovereign-certified-badge-digital-v2.svg
+│   │   │   ├── sovereign-certified-badge-elite-v2.svg
+│   │   │   ├── sovereign-certified-badge-defense-v2.svg
+│   │   │   ├── sovereign-certified-badge-snapshot-v1.svg
+│   │   │   └── sovereign-certified-badge-sovereign-v1.svg
+│   │   ├── stp_auditor/
+│   │   │   ├── stp_auditor_badge_sheldon_v1.svg
+│   │   │   ├── stp_auditor_template_v1.svg
+│   │   │   └── stp_senior_auditor_template_v1.svg
+│   │   ├── compliance/
+│   │   │   ├── compliance-constitutional-badge.svg
+│   │   │   ├── compliance-finance-badge.svg
+│   │   │   ├── compliance-healthcare-badge.svg
+│   │   │   └── compliance-legal-badge.svg
+│   │   └── verified-simulator/
+│   │       ├── aion-verified-simulator-badge-v1.svg
+│   │       └── aion-verified-simulator-badge-v2.svg
+│   └── sleeve/
+│       ├── big-sleeve/
+│       │   ├── aionsystem_auditor_sleeve_bgv1.svg
+│       │   ├── aionsystem_certified_audit_sleeve_bgv1.svg
+│       │   ├── aionsystem_founders_sleeve_bgv1.svg
+│       │   └── aionsystem_sim_verified_sleeve_bgv1.svg
+│       └── small-sleeve/
+│           ├── aionsystem_auditor_sleeve_smv1.svg
+│           ├── aionsystem_certified_audit_sleeve_smv1.svg
+│           ├── aionsystem_founders_sleeve_smv1.svg
+│           └── aionsystem_sim_verified_sleeve_smv1.svg
 │
 ├── concept/
 │   ├── GLOSSARY.md
 │   ├── USE-CASES.md
-│   ├── DUAL-AUDIENCE-ARCHITECTURE.md
+│   ├── DUAL-AUDIENCE-ARCHITECT.md
 │   ├── TRUST-WITHOUT-IDENTITY.md
-│   ├── PRIOR-ART.md                            ← defensive IP documentation, March 7, 2026
+│   ├── PRIOR-ART.md
 │   ├── WEBEATER-SPEC.md
 │   ├── SUBMISSION-TEMPLATE.md
 │   ├── SOVEREIGN-TRACE-v0.1-SPEC.md
-│   └── SOVEREIGN-TRACE-v0.2-SPEC.md
+│   ├── SOVEREIGN-TRACE-v0.2-SPEC.md
+│   ├── SOVEREIGN-TRACE-v0.3-SPEC.md
+│   └── SOVEREIGN-TRACE-v0.4-SPEC.md
 │
-├── stamp/
-│   ├── sovereign_trace_stamp.py                ← FROZEN-4.0 (current)
+├── sovereign_trace/
+│   ├── __init__.py
+│   ├── sovereign_trace_stamp.py
 │   ├── FROZEN-4.0-MANIFEST.md
 │   ├── FROZEN-3.0-RETIRED/
+│   │   ├── FROZEN-3.0-MANIFEST.md
+│   │   └── sovereign-trace-stamp-frozen-3.0-retired.py
 │   ├── FROZEN-2.0-RETIRED/
+│   │   ├── FROZEN-2.0-MANIFEST.md
+│   │   └── sovereign_trace_stamp-frozen-v2.0-retired.py
 │   └── FROZEN-1.0-RETIRED/
+│       ├── FROZEN-1.0-RETIRED.md
+│       └── ARCHIVE-EMPTY.md
 │
 ├── ledger/
-│   ├── STP-GENERAL-TRACE-2026-03-09-000005.json      ← LEDGER-001: founding seal
-│   ├── STP-GENERAL-TRACE-2026-03-10-000006.json      ← LEDGER-002: archive layer activation
-│   ├── STP-GENERAL-TRACE-2026-03-10-000007.json      ← LEDGER-003: Zenodo DOI registration
-│   ├── STP-CREATIVE-PRIORITY-2026-03-10-000008.json  ← LEDGER-004: PROJECT ORION v2.1 spec
-│   ├── STP-GENERAL-TRACE-2026-03-10-000009.json      ← LEDGER-005: UNDP evaluation notification
-│   ├── STP-GENERAL-TRACE-2026-03-10-000010.json      ← LEDGER-006: IPFS archive layer activation
-│   ├── STP-GENERAL-TRACE-2026-03-10-000011.json      ← LEDGER-007: Software Heritage submission
-│   ├── STP-FORESIGHT-SEAL-2026-03-10-000012.json     ← LEDGER-008: AI Resonance Dating App concept
-│   ├── STP-CREATIVE-PRIORITY-2026-03-10-000013.json  ← LEDGER-009: Hyperloop Improved Concept v1–v3
-│   ├── STP-CREATIVE-PRIORITY-2026-03-10-000014.json  ← LEDGER-010: Spatial Loci World & AGI v0.4
-│   ├── STP-FORESIGHT-SEAL-2026-03-11-000015.json     ← LEDGER-011: FAILURE ATLAS concept origin
-│   └── STP-RESEARCH-PRIORITY-2026-03-14-U3N9CK.json
+│   ├── STP-GENERAL-TRACE-2026-03-09-000005.json
+│   ├── STP-GENERAL-TRACE-2026-03-10-000006.json
+│   ├── STP-GENERAL-TRACE-2026-03-10-000007.json
+│   ├── STP-CREATIVE-PRIORITY-2026-03-09-000008.json
+│   ├── STP-GENERAL-TRACE-2026-03-10-000009.json
+│   ├── STP-GENERAL-TRACE-2026-03-10-000010.json
+│   ├── STP-GENERAL-TRACE-2026-03-10-000011.json
+│   ├── STP-FORESIGHT-SEAL-2026-03-10-000012.json
+│   ├── STP-CREATIVE-PRIORITY-2026-03-10-000013.json
+│   ├── STP-CREATIVE-PRIORITY-2026-03-10-000014.json
+│   ├── STP-FORESIGHT-SEAL-2026-03-11-000015.json
+│   ├── STP-RESEARCH-PRIORITY-2026-03-14-U3N9CK.json
+│   ├── STP-RESEARCH-PRIORITY-March-23-2026-179F5D.json
+│   ├── STP-GENERAL-TRACE-March-24-2026-03C2A9.json
+│   ├── STP-GENERAL-TRACE-March-24-2026-CE0CDF.json
+│   ├── STP-CREATIVE-PRIORITY-March-24-2026-2A3BAF.json
+│   ├── STP-CREATIVE-PRIORITY-March-24-2026-4A5EF0.json
+│   ├── STP-CREATIVE-PRIORITY-March-24-2026-8B1D2E.json
+│   ├── STP-CREATIVE-PRIORITY-March-24-2026-E9C306.json
+│   ├── STP-EVIDENCE-CHAIN-March-24-2026-0794A2.json
+│   ├── STP-EVIDENCE-CHAIN-March-24-2026-3B7DE3.json
+│   ├── STP-EVIDENCE-CHAIN-March-24-2026-8ABB30.json
+│   ├── STP-SCOPE-ANCHOR-March-24-2026-386FB6.json
+│   ├── STP-SCOPE-ANCHOR-March-24-2026-60B407.json
+│   ├── STP-GENERAL-TRACE-March-25-2026-3A0CDF.json
+│   ├── STP-GENERAL-TRACE-March-25-2026-5496D4.json
+│   ├── STP-GENERAL-TRACE-March-25-2026-997E9E.json
+│   ├── STP-GENERAL-TRACE-March-25-2026-D04983.json
+│   ├── STP-GENERAL-TRACE-March-25-2026-EED151.json
+│   ├── STP-CLINICAL-RECORD-March-25-2026-343075.json
+│   ├── STP-CLINICAL-RECORD-March-25-2026-91F0E9.json
+│   ├── STP-EVIDENCE-CHAIN-March-25-2026-D0D735.json
+│   ├── STP-SCOPE-ANCHOR-March-25-2026-557510.json
+│   ├── STP-SCOPE-ANCHOR-March-25-2026-A10666.json
+│   ├── STP-WEBEATER-LINK-March-25-2026-5989D1.json
+│   ├── STP-WEBEATER-LINK-March-25-2026-E43621.json
+│   ├── STP-GENERAL-TRACE-March-26-2026-8A049A.json
+│   ├── STP-RESEARCH-PRIORITY-March-26-2026-E0EC9D.json
+│   ├── STP-GENERAL-TRACE-March-27-2026-AFCE36.json
+│   ├── STP-INTEGRITY-VIOLATION-March-27-2026-3B5F2D.json
+│   ├── STP-INTEGRITY-VIOLATION-March-27-2026-ACD8A4.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-028FF7.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-1A3C1A.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-1DE84E.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-220109.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-3B5639.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-4B6F0F.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-4DE8F8.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-550742.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-56BD1E.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-58E302.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-63C102.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-68B4A6.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-69DD5F.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-70EDAF.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-7D5DAE.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-964A6F.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-A51FEA.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-AFE44D.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-B08FFC.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-BDCE58.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-BFAF9E.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-C8B202.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-EE2D54.json
+│   ├── STP-GENERAL-TRACE-March-31-2026-F5DBAD.json
+│   ├── STP-GENERAL-TRACE-April-1-2026-0D8223.json
+│   └── STP-GENERAL-TRACE-April-1-2026-C49B22.json
 │
-└── legal/
-    ├── LICENSE · LICENSE.md
-    ├── LICENSE-COMMERCIAL.md · LICENSE-EXPLANATION.md
-    ├── NOTICE · NOTICE.md
-    ├── PATENTS.md · TRADEMARK.md · TRADEMARK-USAGE-POLICY.md
-    ├── PRINCIPLES.md · LEGAL-POSTURE.md · METHODOLOGY.md
-    ├── CERTIFICATION.md · TERMS-OF-SERVICE.md
-    ├── CONTRIBUTOR-TERMS.md · CONTRIBUTOR-LICENSE-AGREEMENT.md
-    ├── DATA-PROCESSING-AGREEMENT.md · MUTUAL-NDA.md · UNILATERAL-NDA.md
-    ├── EXPORT-CONTROL.md · SECURITY.md · SECURITY-INSIGHTS.yml
-    ├── AI-ETHICS-STATEMENT.md · PRIVACY-POLICY.md · ACCEPTABLE-USE-POLICY.md
-    ├── AUDIT-METHODOLOGY.md · EPISTEMIC-DEBT-SCORE.md · AUDITOR-VETTING-PROCESS.md
-    ├── DISASTER-RECOVERY.md · NON-RECOURSE-STATEMENT.md
-    └── CITATION.cff · CITATION.md
+└── tests/
+    ├── conftest.py
+    ├── test_async_stamp.py
+    ├── test_backward_compat.py
+    ├── test_cli.py
+    ├── test_concurrency.py
+    ├── test_display.py
+    ├── test_dreamspell_calendar.py
+    ├── test_file_integrity.py
+    ├── test_frozen_version.py
+    ├── test_gregorian.py
+    ├── test_hebrew_anchors.py
+    ├── test_hebrew_calendar.py
+    ├── test_hebrew_edge_cases.py
+    ├── test_jd_bridge.py
+    ├── test_package_imports.py
+    ├── test_performance.py
+    ├── test_properties.py
+    ├── test_regression.py
+    ├── test_self_test_runner.py
+    ├── test_serialization.py
+    ├── test_sovereign_record_class.py
+    ├── test_sovereign_stamp_class.py
+    ├── test_stamp_and_record.py
+    ├── test_stamp_batch.py
+    ├── test_stamp_core.py
+    ├── test_stamp_datetime_handling.py
+    ├── test_stamp_error_handling.py
+    ├── test_stamp_normalization.py
+    ├── test_verify.py
+    ├── test_verify_result.py
+    └── REPORTS/
+        └── [per-suite report directories]
 ```
 
 [↑ Back to top](#table-of-contents)
@@ -375,12 +541,16 @@ sovereign-trace-protocol/
 
 ## Origin
 
+<div align="center">
+
 | Field | Value |
 |---|---|
 | **Author** | Sheldon K. Salmon — AI Reliability & AGI Architect |
 | **Session** | March 2026 — AION-BRAIN |
 | **Stack** | DUAL-HELIX v2.0 · TOPOS v0.3 · VELA-C v0.3 · CPA-001 v2.2 |
 
-> The stamp is permanent. The stamp is the resolution.
+*The stamp is permanent. The stamp is the resolution.*
+
+</div>
 
 [↑ Back to top](#table-of-contents)
