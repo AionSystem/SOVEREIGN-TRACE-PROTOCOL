@@ -77,7 +77,7 @@ The following combination has not previously existed as a single open-source, ze
 No prior timestamping protocol binds content simultaneously to Gregorian, Hebrew lunisolar, and 13 Moon Dreamspell calendars as a deliberate claim about civilizational significance. This is not redundancy — it is a philosophical and architectural assertion that a moment of significance deserves to be held across every major framework for measuring *when*.
 
 **2 — Zero-dependency self-contained verification.**
-FROZEN-2.0 uses only Python stdlib. No network call. No external service. No account. The verification is in the mathematics of the file itself. Anyone with Python can verify any seal independently without trusting STP as an institution. Prior art either requires a TSA (RFC 3161), a blockchain node (Open Timestamps), or a platform account (OSF, AsPredicted).
+FROZEN-4.0 uses only Python stdlib. No network call. No external service. No account. The verification is in the mathematics of the file itself. Anyone with Python can verify any seal independently without trusting STP as an institution. Prior art either requires a TSA (RFC 3161), a blockchain node (Open Timestamps), or a platform account (OSF, AsPredicted).
 
 **3 — Frozen deployment architecture as an integrity guarantee.**
 The FROZEN declaration — written once, verified once, deployed permanently, never patched — is a novel architectural commitment. The stamp is only permanent if the code that generates it is also permanent. FROZEN-1.0 was retired and archived when a defect was found rather than patched. This retirement-not-patching protocol did not previously exist in timestamping infrastructure.
