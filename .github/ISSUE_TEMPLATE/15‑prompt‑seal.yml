@@ -1,0 +1,96 @@
+name: "Prompt Seal — Sovereign Trace Protocol"
+description: "Seal a prompt before deploying it to production. Proves what was authorized and when."
+title: "[STP-PROMPT] — [SYSTEM NAME] — [DATE]"
+labels: ["prompt-seal", "pending-seal"]
+assignees: []
+
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Prompt Seal
+
+        This form is for sealing a prompt before it is deployed to a production AI system.
+
+        When a prompt is later blamed for harmful output, the sealed record proves exactly what was authorized and when. This is a chain‑of‑custody instrument for prompt engineering.
+
+        **Write the exact prompt text. Do not paraphrase. Do not redact.**
+
+  - type: input
+    id: submitter_name
+    attributes:
+      label: "Your Name (Optional)"
+      description: "If provided, becomes part of the permanent record. Leave blank for an anonymous seal."
+      placeholder: "First Last or leave blank"
+    validations:
+      required: false
+
+  - type: input
+    id: system_name
+    attributes:
+      label: "AI System Name"
+      description: "The system this prompt is deployed to (e.g., GPT‑4, Claude, internal model name)."
+      placeholder: "e.g., Internal Chatbot v2.1, GPT-4-Turbo"
+    validations:
+      required: true
+
+  - type: input
+    id: deployment_date
+    attributes:
+      label: "Date of Deployment"
+      description: "The date this prompt goes into production. Format: YYYY-MM-DD"
+      placeholder: "2026-06-02"
+    validations:
+      required: true
+
+  - type: textarea
+    id: prompt_text
+    attributes:
+      label: "Exact Prompt Text"
+      description: "Paste the full prompt exactly as it will be deployed. This is what the seal binds to."
+      placeholder: "Write the complete prompt text here. Exact. Verbatim. No paraphrasing."
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "Deployment Context (Optional)"
+      description: "Where is this prompt used? Customer‑facing chatbot, internal tool, API endpoint, etc."
+      placeholder: "Describe the deployment context and intended use."
+    validations:
+      required: false
+
+  - type: upload
+    id: supporting_files
+    attributes:
+      label: "Supporting Files (Optional)"
+      description: "Upload any related files — system prompt configuration, model card, safety documentation."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: "Declaration"
+      options:
+        - label: "I affirm this is the exact prompt text deployed or to be deployed to the named AI system."
+          required: true
+        - label: "I understand this submission is immutable — it cannot be altered after sealing."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## What Happens Next
+
+        1. Completeness check — Reviewed for completeness.
+        2. Sealing — Sealed with a FROZEN‑4.0 triple‑time cryptographic stamp. Permanent.
+        3. Ledger entry — Enters the Sovereign Trace ledger with timestamp and SHA‑256 hash.
+        4. Notification — You receive your ledger entry ID and SHA‑256 hash.
+
+        The seal is permanent. The seal is the resolution.
+
+        Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
