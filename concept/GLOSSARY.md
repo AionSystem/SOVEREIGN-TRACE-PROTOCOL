@@ -1,7 +1,7 @@
 # GLOSSARY — Sovereign Trace Protocol
 
 **Plain-language definitions for all terms used in this repository.**
-**Author:** Sheldon K. Salmon — AI Reliability & AGI Architect
+**Author:** Sheldon K. Salmon — AI Reliability & ADI Architect
 **Updated:** March 2026
 
 This glossary translates the technical and architectural vocabulary of the
