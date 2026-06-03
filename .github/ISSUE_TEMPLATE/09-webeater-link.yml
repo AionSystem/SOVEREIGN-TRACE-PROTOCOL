@@ -21,6 +21,8 @@ body:
         - Your GitHub username is **publicly linked** to this link. For anonymity, use a separate GitHub account.
         - The reference seal must belong to an **existing, valid** STP trace. A false reference invalidates the link and will be noted in the ledger.
         - The link is permanent. You cannot edit or delete it after submission.
+        - **Do not edit this issue after the workflow seals it** – the hash will change and the seal will be invalid.
+        - **This record is retained permanently** in the STP ledger and GitHub issue history.
 
         **Fields marked with `*` are required.**
 
@@ -102,12 +104,21 @@ body:
     validations:
       required: false
 
-  - type: input
-    id: external_evidence_url
+  - type: textarea
+    id: external_evidence_urls
     attributes:
-      label: "External evidence URL (optional)"
-      description: "Link to public evidence supporting this link (e.g., contract, email, announcement). Use permanent URLs (IPFS, archive.is). The stamp seals only the URL."
-      placeholder: "https://ipfs.io/ipfs/Qm..."
+      label: "External evidence URLs (optional)"
+      description: "One permanent URL per line (IPFS, archive.is, GitHub gist). The stamp seals only the URLs, not the content. For cryptographic binding, also provide SHA‑256 hashes below."
+      placeholder: "https://ipfs.io/ipfs/Qm...\nhttps://archive.is/abc123"
+    validations:
+      required: false
+
+  - type: textarea
+    id: external_evidence_hashes
+    attributes:
+      label: "External evidence SHA‑256 hashes (optional, recommended)"
+      description: "One SHA‑256 hash per file, in the same order as the URLs. This cryptographically binds the seal to the exact file content."
+      placeholder: "a3f9c12e7d... (64 hex chars)\nb4c8d3e2f1a..."
     validations:
       required: false
 
@@ -121,6 +132,8 @@ body:
           required: true
         - label: "I confirm that I have obtained consent from the target entity (if an individual or organisation) to create this link, or I am acting on behalf of both parties."
           required: false
+        - label: "I affirm that I am the source entity or am authorised to act on their behalf."
+          required: true
         - label: "I understand that this link is permanent and cannot be edited or deleted."
           required: true
         - label: "I understand that the SHA‑256 hash of this link is public and that my GitHub username is publicly linked to it unless I use an anonymous account."
@@ -133,6 +146,8 @@ body:
       value: |
         ---
         **After submission**: The STP auto‑seal workflow will verify the reference seal, generate a triple‑time stamp, and create a permanent ledger entry linking source and target. You will receive a comment with the seal and ledger entry ID.
+
+        **Data retention:** This record is retained permanently. You cannot delete it.
 
         **Contact:** `aionsystem@outlook.com` (for technical issues only). All seals are final.
 
