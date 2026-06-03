@@ -2,16 +2,23 @@ name: "AUDITOR APPLICATION: Apply for STP Certified Auditor Badge"
 description: "Apply to become a certified Sovereign Trace Protocol Auditor. Skills-based. No degrees required."
 title: "[AUDITOR-APPLICATION] — [Your Full Name] — [Specialization]"
 labels: ["auditor-application", "pending-review"]
+assignees: []
 body:
-
   - type: markdown
     attributes:
       value: |
-        ## Sovereign Trace Protocol — Auditor Certification Application
+        ## AUDITOR APPLICATION – Sovereign Trace Protocol (FROZEN‑4.0)
 
         This application is reviewed Monday and Tuesday only.
         Review is skills-based. Credentials and degrees are not evaluated.
         What is evaluated: your demonstrated ability to read AI outputs honestly.
+
+        **⚠️ CRITICAL WARNINGS – READ BEFORE PROCEEDING ⚠️**
+        - Your **full name, LinkedIn URL, specialization, and professional background** will be **publicly visible** in this GitHub issue.
+        - Your GitHub username is **publicly linked** to this application.
+        - If approved, your name and badge number become part of the **permanent, public Trust Registry**.
+        - Rejection is final – there is no appeal process.
+        - Do not include sensitive personal information (home address, private email, financial data) in any field.
 
         **Term:** 1 year from badge issuance. Renewable by reapplication.
         **Annual cap:** 50 sealed audits per calendar year per badge.
@@ -20,10 +27,12 @@ body:
         Intake is reviewed by Sheldon K. Salmon personally.
         Not every application is accepted. There is no appeal process.
 
+        **Fields marked with `*` are required.**
+
   - type: input
     id: full_name
     attributes:
-      label: "Full Legal Name"
+      label: "Full Legal Name *"
       description: "This is what will appear on your badge if approved."
       placeholder: "Jane Smith"
     validations:
@@ -32,7 +41,7 @@ body:
   - type: input
     id: linkedin
     attributes:
-      label: "LinkedIn Profile URL"
+      label: "LinkedIn Profile URL *"
       description: "Must be a real, active LinkedIn profile. This is your identity anchor."
       placeholder: "https://linkedin.com/in/yourprofile"
     validations:
@@ -41,7 +50,7 @@ body:
   - type: dropdown
     id: specialization
     attributes:
-      label: "Primary Specialization"
+      label: "Primary Specialization *"
       description: "Select the domain where your AI output review skills are strongest."
       options:
         - "AI Outputs — General"
@@ -51,31 +60,43 @@ body:
         - "AI Outputs — Financial"
         - "AI Outputs — Government / Defense"
         - "AI Outputs — Creative / Media"
+      default: 0
     validations:
       required: true
 
   - type: textarea
     id: background
     attributes:
-      label: "Professional Background"
-      description: "Describe your relevant experience. No degrees required. Describe what you have actually done."
+      label: "Professional Background *"
+      description: "Describe your relevant experience. No degrees required. Describe what you have actually done. Keep under 10,000 characters."
       placeholder: "3 years reviewing LLM outputs for a fintech company. Built internal red-teaming process. Identified 47 documented hallucination events."
     validations:
       required: true
 
   - type: textarea
-    id: skills_sample
+    id: skills_description
     attributes:
-      label: "Skills Sample — Upload or Describe"
-      description: "Upload a sample AI output review you have conducted, OR describe a specific AI failure you identified and how you documented it. This is your skills demonstration."
+      label: "Skills Sample — Description *"
+      description: "Describe a specific AI output review you have conducted, or an AI failure you identified and how you documented it. This is your skills demonstration. Keep under 10,000 characters."
+      placeholder: "I reviewed 20 GPT-4 outputs from a medical triage chatbot. I identified 3 hallucinations (incorrect drug dosages) and documented each with screenshots and a proposed fix. The vendor implemented my recommendations."
     validations:
       required: true
 
-  - type: textarea
-    id: file_upload
+  - type: input
+    id: skills_url
     attributes:
-      label: "Supporting Files"
-      description: "Upload any supporting work samples. PDF preferred."
+      label: "Skills Sample — URL (optional)"
+      description: "If you have a permanent URL to a sample review (e.g., a redacted audit report, a GitHub gist), provide it here. The stamp will seal this URL."
+      placeholder: "https://gist.github.com/yourname/audit-sample"
+    validations:
+      required: false
+
+  - type: input
+    id: correction_of
+    attributes:
+      label: "Correction / Resubmission of (optional)"
+      description: "If this application corrects a previous submission, provide the previous issue number."
+      placeholder: "#42"
     validations:
       required: false
 
@@ -89,9 +110,20 @@ body:
       required: false
 
   - type: checkboxes
+    id: declaration_background
+    attributes:
+      label: "Background Declaration (Optional but Recommended)"
+      description: "The following helps assess eligibility but is not mandatory. False statements may result in rejection or future revocation."
+      options:
+        - label: "I have never been convicted of fraud, embezzlement, or a crime involving dishonesty."
+          required: false
+        - label: "I am not currently under investigation for professional misconduct related to AI auditing."
+          required: false
+
+  - type: checkboxes
     id: terms
     attributes:
-      label: "Auditor Terms Agreement"
+      label: "Auditor Terms Agreement *"
       options:
         - label: "I understand the badge is non-transferable and bound to my name and LinkedIn permanently."
           required: true
@@ -105,3 +137,15 @@ body:
           required: true
         - label: "I have read and agree to the Sovereign Trace Protocol Terms of Service."
           required: true
+        - label: "I understand that my full name, LinkedIn URL, and specialization will be publicly visible in this application and, if approved, in the Trust Registry."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **After submission**: The application will be reviewed on the next Monday or Tuesday. You will receive a response on this issue. If approved, you will be issued an STP Auditor badge number and added to the verified auditors registry.
+
+        **Contact:** `aionsystem@outlook.com` (for questions only – do not send applications here).
+
+        **Verification**: Approved auditors are listed in `.github/verified-auditors.json` and can be verified by anyone using the STP ledger.
