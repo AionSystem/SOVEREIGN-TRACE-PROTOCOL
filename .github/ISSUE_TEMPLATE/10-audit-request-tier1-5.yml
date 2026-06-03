@@ -1,0 +1,168 @@
+name: "AUDIT REQUEST: Tier 1–5 — AI Reliability Audit"
+description: "Full constitutional audit. Output‑banded pricing. Architect‑led intake – Monday and Tuesday only."
+title: "[AUDIT] — [Company Name] — [Tier Selected]"
+labels: ["audit-request", "pending-payment-verification", "architect-led"]
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        ## ⚠️ READ BEFORE SUBMITTING
+
+        **Intake days: Monday and Tuesday only.**
+        Issues submitted on any other day are **voided and non-refundable.**
+        No exceptions. No appeals.
+
+        **Delivery:** Reports delivered on weekends (Saturday/Sunday).
+        Standard turnaround: same weekend or following weekend depending on tier.
+
+        **Expedited delivery:** Daily multiplier available. Work required in under 4 hours is not accepted.
+
+        **Payment verification:** Submit your Stripe transaction code below.
+        Send the payment screenshot to the contact email on file.
+        The transaction code, email, and Stripe record must align before work begins.
+
+        **Audit tiers and pricing (from CERTIFICATION.md):**
+
+        | Tier | Outputs | Price | Validity |
+        |------|---------|-------|----------|
+        | Tier 1 Starter | 25 | $3,000 | 90 days |
+        | Tier 1 Professional | 50 | $6,000 | 90 days |
+        | Tier 1 Business | 100 | $10,000 | 90 days |
+        | Tier 1 Enterprise | 250 | $18,000 | 90 days |
+        | Tier 1 Platform | 500 | $30,000 | 90 days |
+        | Tier 1 Constitutional | 1,000 | $50,000 | 90 days |
+        | Tier 2 Enterprise Retainer | N/A (quarterly) | $25,000/year | 90 days per cycle |
+        | Tier 3 Strategic Retainer | N/A (monthly) | $100,000+/year | 30 days per cycle |
+        | Tier 4 Defense & Government | Negotiated | Written contract | 90 days per period |
+        | Tier 5 Sovereign Audit | Up to 1,000+ | $15,000 per engagement | 180 days cert / 12‑month badge |
+
+  - type: input
+    id: company_name
+    attributes:
+      label: "Company / Organization Name"
+      placeholder: "Acme AI Corp"
+    validations:
+      required: true
+
+  - type: input
+    id: contact_email
+    attributes:
+      label: "Contact Email"
+      description: "Must match the email the payment screenshot was sent from."
+      placeholder: "contact@yourcompany.com"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tier
+    attributes:
+      label: "Audit Tier"
+      description: "Select the tier that matches your payment."
+      options:
+        - "Tier 1 Starter — 25 outputs — $3,000"
+        - "Tier 1 Professional — 50 outputs — $6,000"
+        - "Tier 1 Business — 100 outputs — $10,000"
+        - "Tier 1 Enterprise — 250 outputs — $18,000"
+        - "Tier 1 Platform — 500 outputs — $30,000"
+        - "Tier 1 Constitutional — 1,000 outputs — $50,000"
+        - "Tier 2 Enterprise Retainer — $25,000/year (quarterly audits)"
+        - "Tier 3 Strategic Retainer — $100,000+/year (monthly audits)"
+        - "Tier 4 Defense & Government — Negotiated (written contract required)"
+        - "Tier 5 Sovereign Audit — $15,000 per engagement"
+    validations:
+      required: true
+
+  - type: input
+    id: output_count
+    attributes:
+      label: "Number of Outputs (for Tier 1 only)"
+      description: "If Tier 1, specify the exact output count (up to the tier limit). Not applicable for retainers or Tier 4/5."
+      placeholder: "50"
+    validations:
+      required: false
+
+  - type: input
+    id: transaction_code
+    attributes:
+      label: "Stripe Transaction Code"
+      description: "For Tier 1 and Tier 5. For retainers (Tier 2/3) and Tier 4, see separate invoicing."
+      placeholder: "ch_3xxxxxxxxxxxxxxxxxxxxxxxxx"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: expedited
+    attributes:
+      label: "Expedited Delivery?"
+      description: "Standard delivery is weekend. Expedited adds a daily multiplier. Under 4 hours not accepted."
+      options:
+        - "No — standard weekend delivery"
+        - "Yes — 1 week turnaround"
+        - "Yes — 3 day turnaround"
+        - "Yes — 48 hour turnaround"
+        - "Yes — 24 hour turnaround"
+    validations:
+      required: true
+
+  - type: textarea
+    id: system_description
+    attributes:
+      label: "AI System Description"
+      description: "Describe the AI system: purpose, domain, scale, deployment environment."
+      placeholder: "Customer support chatbot using GPT-4o, deployed on AWS, 500+ daily requests."
+    validations:
+      required: true
+
+  - type: textarea
+    id: output_description
+    attributes:
+      label: "Outputs to Review (sample or full)"
+      description: "For Tier 1, list output categories or attach examples. For retainers/Tier 5, describe scope."
+      placeholder: "We will provide 50 conversation logs from the last 30 days."
+    validations:
+      required: true
+
+  - type: textarea
+    id: file_upload
+    attributes:
+      label: "File Upload (optional)"
+      description: "Upload sample outputs or supporting documents. PDF, JSON, logs."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: trust_registry
+    attributes:
+      label: "Record in Trust Registry?"
+      description: "All Tier 1–5 certifications are automatically recorded in the Trust Registry. This is mandatory."
+      options:
+        - "Yes (mandatory) — record certification in public Trust Registry"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: schedule_acknowledgment
+    attributes:
+      label: "Schedule Acknowledgment"
+      options:
+        - label: "I understand that intake is Monday and Tuesday only. Submissions on any other day are voided and non-refundable."
+          required: true
+        - label: "I understand that delivery occurs on weekends (Saturday or Sunday)."
+          required: true
+        - label: "I understand that payment verification requires my transaction code in this issue AND a screenshot sent to the contact email. Both must match before work begins."
+          required: true
+        - label: "I understand that expedited work under 4 hours is not accepted."
+          required: true
+
+  - type: checkboxes
+    id: legal_declaration
+    attributes:
+      label: "Legal Declaration"
+      options:
+        - label: "I confirm I am authorized to submit this AI system for external audit. I have read and agree to the Terms of Service."
+          required: true
+        - label: "I understand that the completed audit report will be sealed using Sovereign Trace Protocol FROZEN‑4.0, recorded in the Trust Registry, and permanently stored in the STP ledger."
+          required: true
+        - label: "I acknowledge that Tier 1–5 certifications follow a 90‑day (Tier 1/2/4) or 30‑day (Tier 3) or 180‑day (Tier 5) validity window and require re‑audit for renewal."
+          required: true
