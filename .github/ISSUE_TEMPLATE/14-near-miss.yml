@@ -1,5 +1,5 @@
 name: "⚠️ 14 — AI Near-Miss Report"
-description: "An AI output that almost caused harm but was caught before impact. Near-miss reporting is where you learn before failure becomes permanent. This record is sealed and permanent — the near-miss is documented honestly before any internal review process begins."
+description: "Report an AI output that almost caused harm but was caught before impact. Honest near‑miss documentation, sealed permanently."
 title: "[NEAR-MISS] "
 labels: ["near-miss", "pending-seal"]
 assignees: []
