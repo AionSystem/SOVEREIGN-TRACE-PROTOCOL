@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 690 1010" width="690" height="1010" role="img">
+  <title>AionSystem Constitutional AI Practitioner — Deluxe Sleeve</title>
+  <desc>Professional practitioner credential sleeve issued by AionSystem. Carries CAPC badge, identity block, annual validity, and trust registry verification.</desc>
+
+  <defs>
+    <!-- Dark navy/cyan/silver gradients -->
+    <linearGradient id="bgDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0F1A"/>
+      <stop offset="35%" stop-color="#050810"/>
+      <stop offset="65%" stop-color="#0A1020"/>
+      <stop offset="100%" stop-color="#020408"/>
+    </linearGradient>
+    <linearGradient id="borderSilverBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#48CAE4"/>
+      <stop offset="20%" stop-color="#C0C0C0"/>
+      <stop offset="40%" stop-color="#A8A8A8"/>
+      <stop offset="60%" stop-color="#48CAE4"/>
+      <stop offset="80%" stop-color="#00B4D8"/>
+      <stop offset="100%" stop-color="#C0C0C0"/>
+    </linearGradient>
+    <linearGradient id="innerBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C0C0C0" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#48CAE4" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#C0C0C0" stop-opacity="0.5"/>
+    </linearGradient>
+    <linearGradient id="ribbonSilver" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2a3040"/>
+      <stop offset="20%" stop-color="#6b7a99"/>
+      <stop offset="50%" stop-color="#c8d4e8"/>
+      <stop offset="80%" stop-color="#6b7a99"/>
+      <stop offset="100%" stop-color="#2a3040"/>
+    </linearGradient>
+    <linearGradient id="verifyBarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a14"/>
+      <stop offset="100%" stop-color="#05050A"/>
+    </linearGradient>
+    <linearGradient id="aiCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#001F2E"/>
+      <stop offset="30%" stop-color="#00B4D8"/>
+      <stop offset="50%" stop-color="#48CAE4"/>
+      <stop offset="70%" stop-color="#00B4D8"/>
+      <stop offset="100%" stop-color="#001F2E"/>
+    </linearGradient>
+    <linearGradient id="gloss" x1="0%" y1="0%" x2="30%" y2="100%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.06"/>
+      <stop offset="40%" stop-color="#fff" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0.04"/>
+    </linearGradient>
+    <filter id="cyanGlow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="aionMarkCyan" width="272" height="272" patternUnits="userSpaceOnUse" patternTransform="rotate(-28)">
+      <text x="0" y="40" font-family="'Courier New',monospace" font-size="35" font-weight="bold" fill="#48CAE4" opacity="0.05" letter-spacing="4">AI/ON</text>
+    </pattern>
+    <pattern id="hexMesh" width="38" height="33" patternUnits="userSpaceOnUse">
+      <polygon points="19,1 37,9 37,23 19,31 1,23 1,9" fill="none" stroke="#48CAE4" stroke-width="0.4" stroke-opacity="0.05"/>
+    </pattern>
+    <clipPath id="cardClip"><rect x="0" y="0" width="690" height="1010" rx="32"/></clipPath>
+  </defs>
+
+  <rect x="4" y="8" width="682" height="994" rx="32" fill="#000" fill-opacity="0.55"/>
+  <rect width="690" height="1010" rx="32" fill="url(#bgDark)"/>
+  <rect width="690" height="1010" rx="32" fill="url(#aionMarkCyan)" clip-path="url(#cardClip)"/>
+  <rect width="690" height="1010" rx="32" fill="url(#hexMesh)" clip-path="url(#cardClip)"/>
+
+  <rect x="2.5" y="2.5" width="685" height="1005" rx="31" fill="none" stroke="url(#borderSilverBlue)" stroke-width="3"/>
+  <rect x="9" y="9" width="672" height="992" rx="27" fill="none" stroke="url(#innerBorder)" stroke-width="1"/>
+  <rect x="15" y="15" width="660" height="980" rx="23" fill="none" stroke="#48CAE4" stroke-width="0.3" stroke-opacity="0.12"/>
+
+  <!-- Ribbons -->
+  <rect x="0" y="50" width="690" height="30" fill="url(#ribbonSilver)" opacity="0.97"/>
+  <text x="345" y="71" font-family="'Georgia',serif" font-size="14" font-weight="bold" letter-spacing="5" fill="#0a0a14" text-anchor="middle">PROFESSIONAL AI PRACTITIONER</text>
+  <rect x="0" y="80" width="690" height="22" fill="#05080F" opacity="0.92"/>
+  <text x="345" y="96" font-family="'Georgia',serif" font-size="11" font-weight="bold" letter-spacing="4" fill="#48CAE4" text-anchor="middle">CONSTITUTIONAL AI PRACTITIONER — CAPC</text>
+
+  <!-- Corner marks -->
+  <path d="M30,30 L30,68 M30,30 L68,30" fill="none" stroke="#48CAE4" stroke-width="1.6" stroke-opacity="0.5"/>
+  <path d="M660,30 L660,68 M660,30 L622,30" fill="none" stroke="#48CAE4" stroke-width="1.6" stroke-opacity="0.5"/>
+  <path d="M30,980 L30,942 M30,980 L68,980" fill="none" stroke="#48CAE4" stroke-width="1.6" stroke-opacity="0.5"/>
+  <path d="M660,980 L660,942 M660,980 L622,980" fill="none" stroke="#48CAE4" stroke-width="1.6" stroke-opacity="0.5"/>
+
+  <!-- Badge zone -->
+  <rect x="20" y="108" width="650" height="284" rx="16" fill="none" stroke="url(#borderSilverBlue)" stroke-width="1.8" stroke-opacity="0.3"/>
+  <rect x="28" y="116" width="634" height="268" rx="12" fill="none" stroke="#48CAE4" stroke-width="0.6" stroke-opacity="0.2"/>
+
+  <rect x="44" y="120" width="270" height="264" rx="8" fill="#05080F" fill-opacity="0.2"/>
+  <image x="50" y="124" width="258" height="256" href="{{CAPC_BADGE_URL}}"/>
+
+  <text x="370" y="142" font-family="'Courier New',monospace" font-size="7.5" fill="#48CAE4" opacity="0.7" letter-spacing="3">CAPC — PROFESSIONAL</text>
+  <line x1="370" y1="146" x2="640" y2="146" stroke="#48CAE4" stroke-width="0.4" opacity="0.25"/>
+
+  <text x="370" y="168" font-family="'Courier New',monospace" font-size="13" font-weight="bold" fill="#48CAE4" letter-spacing="1.5">{{CAPC_ID}}</text>
+  <text x="370" y="186" font-family="'Courier New',monospace" font-size="9" fill="#C0C0C0" letter-spacing="2">PROFESSIONAL CREDENTIAL</text>
+
+  <line x1="370" y1="195" x2="640" y2="195" stroke="url(#aiCyan)" stroke-width="0.8" opacity="0.5"/>
+
+  <text x="370" y="228" font-family="'Georgia',serif" font-size="22" font-weight="bold" font-style="italic" fill="#E8D5A3" letter-spacing="0.5">{{PRACTITIONER_NAME}}</text>
+  <text x="370" y="248" font-family="'Courier New',monospace" font-size="8.5" fill="#6b7a99" letter-spacing="2.5">{{SPECIALIZATION}}</text>
+
+  <rect x="370" y="275" width="258" height="2.5" fill="url(#aiCyan)" opacity="0.55"/>
+
+  <rect x="370" y="277" width="258" height="16" fill="#03080F" fill-opacity="0.6"/>
+  <circle cx="390" cy="285" r="1.5" fill="#48CAE4" opacity="0.5"/>
+  <circle cx="415" cy="281" r="1" fill="#48CAE4" opacity="0.3"/>
+  <circle cx="445" cy="287" r="1.3" fill="#48CAE4" opacity="0.4"/>
+  <circle cx="500" cy="283" r="2" fill="#48CAE4" opacity="0.65" filter="url(#cyanGlow)"/>
+  <circle cx="555" cy="287" r="1.3" fill="#48CAE4" opacity="0.4"/>
+  <circle cx="585" cy="281" r="1" fill="#48CAE4" opacity="0.3"/>
+  <circle cx="610" cy="285" r="1.5" fill="#48CAE4" opacity="0.5"/>
+  <line x1="390" y1="285" x2="415" y2="281" stroke="#48CAE4" stroke-width="0.4" opacity="0.2"/>
+  <line x1="415" y1="281" x2="445" y2="287" stroke="#48CAE4" stroke-width="0.4" opacity="0.2"/>
+  <line x1="445" y1="287" x2="500" y2="283" stroke="#48CAE4" stroke-width="0.4" opacity="0.25"/>
+  <line x1="500" y1="283" x2="555" y2="287" stroke="#48CAE4" stroke-width="0.4" opacity="0.25"/>
+  <line x1="555" y1="287" x2="585" y2="281" stroke="#48CAE4" stroke-width="0.4" opacity="0.2"/>
+  <line x1="585" y1="281" x2="610" y2="285" stroke="#48CAE4" stroke-width="0.4" opacity="0.2"/>
+  <rect x="370" y="293" width="258" height="0.8" fill="url(#aiCyan)" opacity="0.35"/>
+
+  <text x="370" y="314" font-family="'Courier New',monospace" font-size="8" fill="#48CAE4" opacity="0.6" letter-spacing="2">AIONSYSTEM · SOVEREIGN TRACE PROTOCOL</text>
+
+  <line x1="370" y1="322" x2="638" y2="322" stroke="#48CAE4" stroke-width="0.4" opacity="0.3"/>
+  <text x="370" y="336" font-family="'Courier New',monospace" font-size="7.5" fill="#6b7a99" letter-spacing="1">ISSUED</text>
+  <text x="370" y="349" font-family="'Courier New',monospace" font-size="10" font-weight="bold" fill="#48CAE4">{{ISSUE_DATE}}</text>
+  <text x="500" y="336" font-family="'Courier New',monospace" font-size="7.5" fill="#6b7a99" letter-spacing="1">EXPIRES</text>
+  <text x="500" y="349" font-family="'Courier New',monospace" font-size="10" font-weight="bold" fill="#48CAE4">{{EXPIRY_DATE}}</text>
+
+  <rect x="370" y="357" width="258" height="18" fill="#03080F" fill-opacity="0.7"/>
+  <rect x="370" y="357" width="258" height="1" fill="url(#aiCyan)" opacity="0.7"/>
+  <text x="500" y="370" font-family="'Courier New',monospace" font-size="7.5" fill="#48CAE4" text-anchor="middle" letter-spacing="1.5">SHA-256 · STP SEALED · CONSTITUTION v2.1</text>
+  <rect x="370" y="374" width="258" height="0.8" fill="url(#aiCyan)" opacity="0.4"/>
+
+  <!-- Verification panel -->
+  <rect x="50" y="428" width="590" height="380" rx="19" fill="url(#verifyBarBg)" stroke="#48CAE4" stroke-width="1.6" stroke-opacity="0.5"/>
+  <rect x="50" y="428" width="590" height="40" rx="19" fill="#48CAE4" fill-opacity="0.08"/>
+  <text x="345" y="454" font-family="'Courier New',monospace" font-size="13" fill="#48CAE4" font-weight="bold" text-anchor="middle" letter-spacing="3">CAPC — CERTIFIED PRACTITIONER</text>
+
+  <text x="345" y="493" font-family="'Courier New',monospace" font-size="11.5" text-anchor="middle">
+    <tspan fill="#48CAE4">◈ </tspan>
+    <tspan fill="#C0C0C0">Practitioner: {{PRACTITIONER_NAME}}</tspan>
+  </text>
+
+  <circle cx="77" cy="591" r="3.5" fill="#48CAE4" opacity="0.7"/>
+  <text x="90" y="595" font-family="'Courier New',monospace" font-size="11.5" fill="#888">CAPC ID</text>
+  <text x="175" y="595" font-family="'Courier New',monospace" font-size="11.5" fill="#48CAE4" font-weight="bold">{{CAPC_ID}}</text>
+
+  <circle cx="77" cy="617" r="3.5" fill="#C0C0C0" opacity="0.7"/>
+  <text x="90" y="621" font-family="'Courier New',monospace" font-size="11.5" fill="#888">SHA-256</text>
+  <text x="175" y="621" font-family="'Courier New',monospace" font-size="11" fill="#48CAE4">{{SHA256_FIRST16}}…</text>
+
+  <circle cx="77" cy="643" r="3.5" fill="#f0a500" opacity="0.7"/>
+  <text x="90" y="647" font-family="'Courier New',monospace" font-size="11.5" fill="#888">Verify</text>
+  <text x="175" y="647" font-family="'Courier New',monospace" font-size="11.5" fill="#48CAE4">{{VERIFY_URL}}</text>
+
+  <line x1="76" y1="661" x2="614" y2="661" stroke="#48CAE4" stroke-width="0.5" stroke-opacity="0.3"/>
+
+  <text x="345" y="696" font-family="'Georgia',serif" font-size="20" font-weight="bold" font-style="italic" fill="#48CAE4" text-anchor="middle" letter-spacing="1.2">{{PRACTITIONER_NAME}}</text>
+  <text x="345" y="711" font-family="'Courier New',monospace" font-size="8.5" fill="#48CAE4" opacity="0.5" text-anchor="middle" letter-spacing="3">AI RELIABILITY ARCHITECT · AIONSYSTEM</text>
+
+  <line x1="76" y1="723" x2="614" y2="723" stroke="#48CAE4" stroke-width="0.4" stroke-opacity="0.22"/>
+  <text x="345" y="737" font-family="'Courier New',monospace" font-size="9" fill="#888" text-anchor="middle" letter-spacing="1.5">ISSUED</text>
+  <text x="345" y="751" font-family="'Courier New',monospace" font-size="10" fill="#48CAE4" text-anchor="middle">{{ISSUE_DATE}}</text>
+
+  <!-- Validity bar -->
+  <rect x="50" y="802" width="590" height="72" rx="10" fill="#020408" fill-opacity="0.8" stroke="#48CAE4" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="76" y="826" font-family="'Courier New',monospace" font-size="7.5" fill="#48CAE4" opacity="0.6" letter-spacing="2">CONSTITUTION v2.1</text>
+  <text x="76" y="843" font-family="'Courier New',monospace" font-size="11" fill="#48CAE4" font-weight="bold" letter-spacing="1">CONSTITUTIONAL AI PRACTITIONER</text>
+  <text x="76" y="856" font-family="'Courier New',monospace" font-size="7.5" fill="#555" letter-spacing="1">ANNUAL CERTIFICATION CYCLE</text>
+  <line x1="340" y1="820" x2="340" y2="876" stroke="#48CAE4" stroke-width="0.5" stroke-opacity="0.3"/>
+  <text x="356" y="826" font-family="'Courier New',monospace" font-size="7.5" fill="#48CAE4" opacity="0.6" letter-spacing="2">TRUST REGISTRY</text>
+  <text x="356" y="843" font-family="'Courier New',monospace" font-size="11" fill="#48CAE4" font-weight="bold">{{CAPC_ID}}</text>
+  <text x="356" y="856" font-family="'Courier New',monospace" font-size="7.5" fill="#555" letter-spacing="1">STP SEALED · VERIFIABLE</text>
+
+  <!-- QR block -->
+  <rect x="556" y="884" width="74" height="74" rx="9" fill="#020408" stroke="url(#borderSilverBlue)" stroke-width="1.8"/>
+  <image x="562" y="890" width="62" height="62" href="{{QR_CODE_URL}}"/>
+  <text x="593" y="970" font-family="'Courier New',monospace" font-size="7.5" fill="#555" text-anchor="middle" letter-spacing="1.5">SCAN</text>
+
+  <!-- Micro‑text -->
+  <text x="-120" y="985" font-family="'Courier New',monospace" font-size="5.5" fill="#48CAE4" opacity="0.18" letter-spacing="1.8">AIONSYSTEM · CAPC · CONSTITUTIONAL AI PRACTITIONER · NON-TRANSFERABLE · SHA-256 · STP SEALED</text>
+  <text x="-120" y="995" font-family="'Courier New',monospace" font-size="5.5" fill="#48CAE4" opacity="0.11" letter-spacing="1.8">AIONSYSTEM · CAPC · CONSTITUTIONAL AI PRACTITIONER · NON-TRANSFERABLE · SHA-256 · STP SEALED</text>
+
+  <rect width="690" height="1010" rx="32" fill="url(#depthField)" clip-path="url(#cardClip)" pointer-events="none"/>
+  <rect width="690" height="1010" rx="32" fill="url(#gloss)" clip-path="url(#cardClip)" pointer-events="none"/>
+</svg>
