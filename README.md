@@ -33,7 +33,7 @@
 
 | Field | Value |
 |---|---|
-| **Author** | Sheldon K. Salmon — AI Reliability & AGI Architect |
+| **Author** | Sheldon K. Salmon — AI Reliability & ADI Architect |
 | **Session** | March 2026 — AION-BRAIN |
 | **Stack** | DUAL-HELIX v2.0 · TOPOS v0.3 · VELA-C v0.3 · CPA-001 v2.2 |
 | **Convergence** | M-NASCENT |
@@ -575,7 +575,7 @@ sovereign-trace-protocol/
 
 | Field | Value |
 |---|---|
-| **Author** | Sheldon K. Salmon — AI Reliability & AGI Architect |
+| **Author** | Sheldon K. Salmon — AI Reliability & ADI Architect |
 | **Session** | March 2026 — AION-BRAIN |
 | **Stack** | DUAL-HELIX v2.0 · TOPOS v0.3 · VELA-C v0.3 · CPA-001 v2.2 |
 
