@@ -7,9 +7,7 @@ on:
 jobs:
 
   # ═══════════════════════════════════════════════════════════════════
-  # JOB 1 — STRIPE PAYMENT VERIFICATION
-  # Fires when audit-request label is applied (set by issue template).
-  # Single trigger — no double-fire, no race condition.
+  # JOB 1 — STRIPE PAYMENT VERIFICATION (UPDATED for two templates)
   # ═══════════════════════════════════════════════════════════════════
 
   verify-payment:
@@ -24,95 +22,118 @@ jobs:
         id: stripe
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
           STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
         run: |
           python3 - <<'PYEOF'
           import os, re, json, urllib.request, urllib.error, base64
 
           body = os.environ['ISSUE_BODY']
+          title = os.environ['ISSUE_TITLE']
           stripe_key = os.environ['STRIPE_SECRET_KEY']
 
-          clean_body = re.split(r'---\s*\n.*Sovereign Trace Protocol', body, flags=re.DOTALL)[0]
+          # Detect which template was used
+          is_snapshot = '[SNAPSHOT]' in title or 'Tier 0 — AI Reliability Snapshot' in body
+          is_tier1_5 = '[AUDIT]' in title or 'Tier 1 Starter' in body or 'Tier 5 Sovereign Audit' in body
 
-          id_match = re.search(r'(pi_[A-Za-z0-9]{20,}|ch_[A-Za-z0-9]{20,})', body)
-          payment_id = id_match.group(0) if id_match else ""
-          id_type = "payment_intents" if payment_id.startswith("pi_") else "charges"
+          # Pricing in cents (USD) per CERTIFICATION.md
+          prices = {
+              # Tier 0
+              'Snapshot': 150000,                    # $1,500
 
-          def normalize(s):
-              return s.replace('\u2014', '-').replace('\u2013', '-')
+              # Tier 1 (output‑banded)
+              'Tier 1 Starter': 300000,              # $3,000 – 25 outputs
+              'Tier 1 Professional': 600000,         # $6,000 – 50 outputs
+              'Tier 1 Business': 1000000,            # $10,000 – 100 outputs
+              'Tier 1 Enterprise': 1800000,          # $18,000 – 250 outputs
+              'Tier 1 Platform': 3000000,            # $30,000 – 500 outputs
+              'Tier 1 Constitutional': 5000000,      # $50,000 – 1,000 outputs
 
-          tier_prices = {
-              'Snapshot': 250000,
-              'Standard': 500000,
-              'Extended': 750000,
-              'Full':    1250000,
-              'Enterprise': 2500000,
+              # Tier 5 (per engagement)
+              'Tier 5 Sovereign Audit': 1500000,     # $15,000
+
+              # Retainers (invoiced separately – no Stripe auto‑check)
+              'Tier 2 Enterprise Retainer': None,
+              'Tier 3 Strategic Retainer': None,
+              'Tier 4 Defense & Government': None,
           }
 
+          # Determine tier name from issue body (simple keyword matching)
           tier_name = "UNKNOWN"
-          expected_amount = 0
-          norm_body = normalize(body)
-          for name, amount in tier_prices.items():
-              if name in norm_body:
+          for name in prices.keys():
+              if name in body or (is_snapshot and name == 'Snapshot'):
                   tier_name = name
-                  expected_amount = amount
                   break
 
-          email_match = re.search(
-              r'[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}',
-              clean_body
-          )
-          submitter_email = email_match.group(0) if email_match else ""
+          expected_amount = prices.get(tier_name, 0)
 
-          if not payment_id:
-              result = "NO_PAYMENT_ID"
-              status = "failed"
+          # If retainer (no online payment), skip Stripe check
+          if expected_amount is None:
+              result = "MANUAL_INVOICE"
+              status = "manual_invoice"
+              payment_id = ""
               actual_amount = 0
               charge_email = ""
-          elif tier_name == "UNKNOWN":
-              result = "TIER_NOT_DETECTED"
-              status = "failed"
-              actual_amount = 0
-              charge_email = ""
+              submitter_email = ""
           else:
-              try:
-                  credentials = base64.b64encode(f"{stripe_key}:".encode()).decode()
-                  req = urllib.request.Request(
-                      f"https://api.stripe.com/v1/{id_type}/{payment_id}",
-                      headers={"Authorization": f"Basic {credentials}"}
-                  )
-                  with urllib.request.urlopen(req) as resp:
-                      data = json.loads(resp.read())
+              # Extract payment ID and submitter email
+              clean_body = re.split(r'---\s*\n.*Sovereign Trace Protocol', body, flags=re.DOTALL)[0]
+              id_match = re.search(r'(pi_[A-Za-z0-9]{20,}|ch_[A-Za-z0-9]{20,})', body)
+              payment_id = id_match.group(0) if id_match else ""
+              id_type = "payment_intents" if payment_id.startswith("pi_") else "charges"
 
-                  if id_type == "payment_intents":
-                      succeeded = data.get("status", "") == "succeeded"
-                      actual_amount = data.get("amount", 0)
-                      charge_email = data.get("receipt_email", "") or ""
-                  else:
-                      succeeded = data.get("paid", False)
-                      actual_amount = data.get("amount", 0)
-                      charge_email = data.get("receipt_email", "") or ""
+              email_match = re.search(r'[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}', clean_body)
+              submitter_email = email_match.group(0) if email_match else ""
 
-                  if not succeeded:
-                      result = "PAYMENT_NOT_SUCCEEDED"
-                      status = "failed"
-                  elif expected_amount and actual_amount != expected_amount:
-                      result = "AMOUNT_MISMATCH"
-                      status = "failed"
-                  else:
-                      result = "PAYMENT_CONFIRMED"
-                      status = "confirmed"
-
-              except urllib.error.HTTPError as e:
-                  result = f"STRIPE_API_ERROR_{e.code}"
+              if not payment_id:
+                  result = "NO_PAYMENT_ID"
                   status = "failed"
                   actual_amount = 0
                   charge_email = ""
+              elif tier_name == "UNKNOWN":
+                  result = "TIER_NOT_DETECTED"
+                  status = "failed"
+                  actual_amount = 0
+                  charge_email = ""
+              else:
+                  try:
+                      credentials = base64.b64encode(f"{stripe_key}:".encode()).decode()
+                      req = urllib.request.Request(
+                          f"https://api.stripe.com/v1/{id_type}/{payment_id}",
+                          headers={"Authorization": f"Basic {credentials}"}
+                      )
+                      with urllib.request.urlopen(req) as resp:
+                          data = json.loads(resp.read())
+
+                      if id_type == "payment_intents":
+                          succeeded = data.get("status", "") == "succeeded"
+                          actual_amount = data.get("amount", 0)
+                          charge_email = data.get("receipt_email", "") or ""
+                      else:
+                          succeeded = data.get("paid", False)
+                          actual_amount = data.get("amount", 0)
+                          charge_email = data.get("receipt_email", "") or ""
+
+                      if not succeeded:
+                          result = "PAYMENT_NOT_SUCCEEDED"
+                          status = "failed"
+                      elif expected_amount and actual_amount != expected_amount:
+                          result = "AMOUNT_MISMATCH"
+                          status = "failed"
+                      else:
+                          result = "PAYMENT_CONFIRMED"
+                          status = "confirmed"
+
+                  except urllib.error.HTTPError as e:
+                      result = f"STRIPE_API_ERROR_{e.code}"
+                      status = "failed"
+                      actual_amount = 0
+                      charge_email = ""
 
           email_match_flag = (
               submitter_email.lower() == charge_email.lower()
               if submitter_email and charge_email else False
-          )
+          ) if payment_id else False
 
           with open(os.environ['GITHUB_OUTPUT'], 'a') as gh_out:
               gh_out.write(f"result={result}\n")
@@ -120,7 +141,7 @@ jobs:
               gh_out.write(f"payment_id={payment_id}\n")
               gh_out.write(f"tier_name={tier_name}\n")
               gh_out.write(f"actual_amount={actual_amount}\n")
-              gh_out.write(f"expected_amount={expected_amount}\n")
+              gh_out.write(f"expected_amount={expected_amount if expected_amount else 0}\n")
               gh_out.write(f"charge_email={charge_email}\n")
               gh_out.write(f"email_match={'true' if email_match_flag else 'false'}\n")
 
@@ -163,7 +184,7 @@ jobs:
               'deliver your report on the following weekend per the standard schedule.',
               '',
               '---',
-              '*Sovereign Trace Protocol · FROZEN-2.0 · Sheldon K. Salmon*'
+              '*Sovereign Trace Protocol · FROZEN-4.0 · Sheldon K. Salmon*'
             ].join('\n');
 
             await github.rest.issues.createComment({
@@ -209,7 +230,7 @@ jobs:
               'AMOUNT_MISMATCH':       `Amount mismatch. Expected $${(expected/100).toFixed(2)} for ${tier_name}. Found $${(actual_amount/100).toFixed(2)}.`,
             };
 
-            const reason = reasons[result] || `Stripe error: ${result}. Contact aionsystem2026@gmail.com.`;
+            const reason = reasons[result] || `Stripe error: ${result}. Contact aionsystem@outlook.com.`;
 
             const body = [
               '## ⚠ PAYMENT VERIFICATION FAILED',
@@ -222,10 +243,10 @@ jobs:
               '',
               '**Reason:** ' + reason,
               '',
-              'This submission is closed. File a new `10-audit-request.yml` to retry.',
+              'This submission is closed. File a new audit request to retry.',
               '',
               '---',
-              '*Sovereign Trace Protocol · FROZEN-2.0 · Sheldon K. Salmon*'
+              '*Sovereign Trace Protocol · FROZEN-4.0 · Sheldon K. Salmon*'
             ].join('\n');
 
             await github.rest.issues.createComment({
@@ -253,10 +274,40 @@ jobs:
               state: 'closed'
             });
 
+      - name: Manual invoice note for retainers
+        if: steps.stripe.outputs.status == 'manual_invoice'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const tier_name = '${{ steps.stripe.outputs.tier_name }}';
+            const body = [
+              '## 📄 MANUAL INVOICE REQUIRED — ' + tier_name,
+              '',
+              'This tier requires a **written agreement and manual invoicing**.',
+              'No automatic Stripe payment is expected.',
+              '',
+              'The Architect will contact you separately to finalise the engagement.',
+              '',
+              '---',
+              '*Sovereign Trace Protocol · FROZEN-4.0 · Sheldon K. Salmon*'
+            ].join('\n');
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              issue_number: context.issue.number,
+              body
+            });
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              issue_number: context.issue.number,
+              labels: ['manual-invoice-required']
+            });
+
 
   # ═══════════════════════════════════════════════════════════════════
-  # JOB 2 — AUDITOR BADGE VERIFICATION
-  # Fires only on pending-verification label. Unchanged logic.
+  # JOB 2 — AUDITOR BADGE VERIFICATION (unchanged, but uses FROZEN‑4.0)
   # ═══════════════════════════════════════════════════════════════════
 
   verify-auditor:
@@ -323,7 +374,7 @@ jobs:
           print(f"Badge: {badge} | Verified: {verified}")
           PYEOF
 
-      - name: Run FROZEN-2.0 stamp
+      - name: Run FROZEN-4.0 stamp
         id: stamp
         env:
           ISSUE_TITLE: ${{ github.event.issue.title }}
@@ -382,7 +433,7 @@ jobs:
                   "hebrew":         ts_dict["hebrew"],
                   "dreamspell":     ts_dict["dreamspell"],
                   "unix_utc":       ts_dict["unix_utc"],
-                  "frozen_version": "FROZEN-2.0"
+                  "frozen_version": "FROZEN-4.0"
               },
               "status": status_tag
           }
@@ -405,7 +456,7 @@ jobs:
       - name: Commit ledger entry
         run: |
           git config user.name  "Sovereign Trace Protocol"
-          git config user.email "aionsystem2026@gmail.com"
+          git config user.email "aionsystem@outlook.com"
           git add ledger/
           git diff --cached --quiet && echo "Nothing to commit" && exit 0
           git commit -m "AUDIT-SEAL: ${{ steps.stamp.outputs.ledger_id }}"
@@ -439,7 +490,7 @@ jobs:
               `👤 Name:      ${auditor_name}`,
               `🔗 LinkedIn:  ${auditor_linkedin}`,
               '',
-              '**Triple-Time Stamp:**',
+              '**Triple-Time Stamp (FROZEN-4.0):**',
               `📅 Gregorian:  ${gregorian}`,
               `🌑 Hebrew:     ${hebrew}`,
               `🌀 Dreamspell: ${dreamspell}`,
@@ -447,7 +498,7 @@ jobs:
               '**Status:** `CERTIFIED` — This audit record is permanently sealed.',
               '',
               '---',
-              '*Sovereign Trace Protocol · FROZEN-2.0 · Sheldon K. Salmon*'
+              '*Sovereign Trace Protocol · FROZEN-4.0 · Sheldon K. Salmon*'
             ].join('\n');
 
             await github.rest.issues.createComment({
@@ -501,10 +552,10 @@ jobs:
               'It cannot be removed, altered, or hidden.',
               '',
               'If you are a certified STP Auditor and believe this is an error,',
-              'contact aionsystem2026@gmail.com with your badge number and LinkedIn.',
+              'contact aionsystem@outlook.com with your badge number and LinkedIn.',
               '',
               '---',
-              '*Sovereign Trace Protocol · FROZEN-2.0 · Sheldon K. Salmon*'
+              '*Sovereign Trace Protocol · FROZEN-4.0 · Sheldon K. Salmon*'
             ].join('\n');
 
             await github.rest.issues.createComment({
