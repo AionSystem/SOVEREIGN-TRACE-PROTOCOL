@@ -2,30 +2,43 @@ name: "INTEGRITY VIOLATION: Report Bribery, Coercion, or Badge Misuse"
 description: "File a permanent sealed record of an integrity violation against an STP Auditor or audit process."
 title: "[INTEGRITY-VIOLATION] — [Auditor Badge or Name] — [Violation Type]"
 labels: ["integrity-violation", "pending-review"]
+assignees: []
 body:
-
   - type: markdown
     attributes:
       value: |
-        ## Sovereign Trace Protocol — Integrity Violation Filing
+        ## INTEGRITY VIOLATION – Sovereign Trace Protocol (FROZEN‑4.0)
 
-        This form permanently seals a record of an integrity violation.
-        All fields are public. The record is immutable after submission.
+        **⚠️ CRITICAL WARNINGS – READ BEFORE PROCEEDING ⚠️**
+        - This report is **public immediately**. The accused will be able to see it.
+        - **Knowingly filing a false report may constitute defamation, perjury, or fraud.** The Architect reserves the right to refer false filings to legal authorities.
+        - Your **LinkedIn profile is required** for the report to be actionable. Anonymous reports will be filed but marked `UNVERIFIED` and may not be investigated.
+        - The SHA‑256 hash of this filing is public. Evidence URLs are sealed, but file contents are not.
+        - This record is **permanent and cannot be deleted**. A retraction (correction entry) does not remove the original.
 
-        **You do not need to be a certified auditor to file this.**
-        Anyone who witnesses or experiences a violation may file.
+        **You do not need to be a certified auditor to file.** Anyone who witnesses or experiences a violation may file.
 
-        Violations include: bribery, badge offered outside official process,
-        coercion, falsified audit findings, or any conduct that compromises
-        the integrity of the STP ledger.
+        Violations include: bribery, badge misuse, coercion, falsified findings, unauthorized badge transfer, annual cap exceedance, or other conduct compromising STP integrity.
 
-        **This record cannot be deleted.** File with accuracy.
-        False filings are also permanently sealed and attributed to the filer.
+        **Fields marked with `*` are required.**
+
+  - type: dropdown
+    id: accused_is_auditor
+    attributes:
+      label: "Is the accused an STP Certified Auditor? *"
+      options:
+        - "Yes – they hold a valid STP Auditor badge"
+        - "No – this is a complaint against a non‑auditor"
+        - "Unknown – I am unsure"
+      default: 0
+    validations:
+      required: true
 
   - type: input
     id: accused_badge
     attributes:
-      label: "Accused Auditor Badge Number (if known)"
+      label: "Accused Auditor Badge Number (if applicable)"
+      description: "Required if 'Yes' above."
       placeholder: "STP-AUDITOR-XXXX"
     validations:
       required: false
@@ -33,7 +46,7 @@ body:
   - type: input
     id: accused_name
     attributes:
-      label: "Accused Name or Organization"
+      label: "Accused Name or Organization *"
       placeholder: "Full name or organization involved"
     validations:
       required: true
@@ -41,48 +54,73 @@ body:
   - type: dropdown
     id: violation_type
     attributes:
-      label: "Violation Type"
+      label: "Violation Type *"
       options:
-        - "Bribery — payment offered to influence audit findings"
+        - "Bribery — payment offered or received to influence audit findings"
+        - "Attempted Bribery — offer made but not accepted"
         - "Badge Misuse — badge used outside authorized scope"
         - "Coercion — pressure applied to alter findings"
         - "Falsified Findings — audit report does not reflect actual review"
         - "Unauthorized Badge Transfer — badge sold or given to another party"
         - "Annual Cap Exceeded — more than 50 audits filed in calendar year"
         - "Other — describe in evidence section"
+      default: 0
     validations:
       required: true
 
   - type: input
     id: date_of_incident
     attributes:
-      label: "Date of Incident"
-      placeholder: "March 7, 2026"
+      label: "Date of Incident *"
+      placeholder: "2026-03-07"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: evidence_basis
+    attributes:
+      label: "Basis of Evidence *"
+      options:
+        - "First-hand observation – I witnessed or directly experienced the violation"
+        - "Documentary evidence – I have screenshots, emails, or records (provide URLs below)"
+        - "Heard from third party – I was told by someone else (name optional in description)"
+        - "Other – specify in description"
+      default: 0
     validations:
       required: true
 
   - type: textarea
     id: evidence
     attributes:
-      label: "Evidence and Description"
-      description: "Describe exactly what occurred. Be specific. This is the permanent record."
-      placeholder: "On March 7, 2026, STP-AUDITOR-XXXX offered to certify our outputs without review in exchange for $5,000 paid outside the official system."
+      label: "Evidence and Description *"
+      description: "Describe exactly what occurred. Be specific. This is the permanent record. Keep under 10,000 characters. If you have external evidence (screenshots, documents), provide their URLs below and include SHA‑256 hashes here for cryptographic integrity."
+      placeholder: "On March 7, 2026, STP-AUDITOR-XXXX offered to certify our outputs without review in exchange for $5,000 paid outside the official system. Screenshot SHA‑256: a3f9c12e7d..."
     validations:
       required: true
 
-  - type: textarea
-    id: file_upload
+  - type: input
+    id: evidence_urls
     attributes:
-      label: "Evidence Upload"
-      description: "Upload screenshots, communications, or documents supporting the violation claim."
+      label: "Evidence URLs (optional)"
+      description: "Permanent URLs to screenshots, documents, or communications (IPFS, archive.is, GitHub gist). The stamp seals only the URLs, not the content. Include SHA‑256 hashes in the description field."
+      placeholder: "https://ipfs.io/ipfs/Qm..., https://gist.github.com/..."
+    validations:
+      required: false
+
+  - type: input
+    id: correction_of
+    attributes:
+      label: "Correction / Retraction of (optional)"
+      description: "If this filing corrects or retracts a previous integrity violation report, provide the previous issue number or ledger entry ID. Note: The original record remains; this creates a linked rebuttal."
+      placeholder: "#42 or a3f9c12e7d..."
     validations:
       required: false
 
   - type: input
     id: filer_linkedin
     attributes:
-      label: "Your LinkedIn Profile URL"
-      description: "Your identity is attached to this filing permanently."
+      label: "Your LinkedIn Profile URL *"
+      description: "**Required for actionable reports.** Your identity is attached to this filing permanently. Anonymous reports will be filed but marked `UNVERIFIED` and may not be investigated."
       placeholder: "https://linkedin.com/in/yourprofile"
     validations:
       required: true
@@ -90,11 +128,27 @@ body:
   - type: checkboxes
     id: declaration
     attributes:
-      label: "Declaration"
+      label: "Legal Declaration *"
       options:
-        - label: "I declare that the information in this filing is accurate to the best of my knowledge."
+        - label: "I declare that the information in this filing is accurate to the best of my knowledge. I understand that knowingly making a false report may subject me to legal liability for defamation, perjury, or fraud."
           required: true
-        - label: "I understand that false filings are permanently sealed and attributed to me."
+        - label: "I confirm that this matter is not currently before a court or tribunal, or if it is, I am filing this as a public record alongside the proceeding."
           required: true
-        - label: "I understand this record is public, immutable, and cannot be removed after submission."
+        - label: "I understand that false filings are permanently sealed and attributed to me, and that the Architect may refer false filings to legal authorities."
           required: true
+        - label: "I understand this record is public, immutable, and cannot be removed after submission. A retraction creates a new entry but does not delete the original."
+          required: true
+        - label: "I understand that my GitHub username and LinkedIn profile are publicly linked to this report, and that the accused party may see it."
+          required: true
+        - label: "I understand that the stamp uses FROZEN‑4.0 and that the seal is generated by `sovereign_trace_stamp.py`."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **After submission**: The Architect will review the report. The accused will be notified and may file a rebuttal (as a separate integrity violation or general issue). If confirmed, the accused's badge may be revoked, and a permanent revocation entry will be added to the ledger.
+
+        **Contact:** `aionsystem@outlook.com` (for questions only – do not submit reports here).
+
+        **Verification**: Every integrity violation report can be independently verified using the STP pip package: `sovereign-trace verify --entry-id <ID> --hash <SHA-256>`.
