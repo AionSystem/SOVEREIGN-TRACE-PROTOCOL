@@ -3,44 +3,59 @@ description: "Seal a document, source communication, or evidence chain at the mo
 title: "[STP-EVIDENCE] — [TYPE] — [DATE]"
 labels: ["evidence-chain", "pending-seal"]
 assignees: []
-
 body:
-
   - type: markdown
     attributes:
       value: |
-        ## Evidence Chain Seal
+        ## Evidence Chain Seal – Sovereign Trace Protocol (FROZEN‑4.0)
 
         This form seals a document, communication, or piece of evidence at the exact moment you received or created it.
 
-        **The seal proves:** You had this material, in this exact form, on this exact date. It has not been altered since.
+        **The seal proves:** You had this material, in this exact form (if you provide a SHA‑256 hash), on this exact date. It has not been altered since.
 
         **Source protection:** You are not required to name your source. Seal only what you intend to make permanent.
 
+        **⚠️ CRITICAL WARNINGS – READ BEFORE PROCEEDING ⚠️**
+        - **Your GitHub username is publicly linked to this seal** even if you leave "Your Name" blank.
+        - If you provide a file URL without its SHA‑256 hash, the seal **does not** cryptographically bind the file content – only the URL string is sealed.
+        - Use **permanent URLs** (IPFS, Zenodo, GitHub release, archive.is). Expiring links will cause the evidence to become unavailable.
+        - This record is **immutable**. A correction creates a new entry; the original remains.
+        - **You must have lawful possession** of the material you seal. Sealing evidence you do not lawfully hold may expose you to legal liability.
+
         This is chain of custody infrastructure — not a complaint form.
+
+        **Fields marked with `*` are required.**
 
   - type: input
     id: submitter-name
     attributes:
       label: "Your Name or Publication (Optional)"
-      description: "If provided, becomes part of the permanent record. Leave blank for anonymous chain of custody."
+      description: "If provided, becomes part of the permanent record. Leave blank for anonymous chain of custody (but GitHub username remains public)."
       placeholder: "Name, publication, or organization — or leave blank"
     validations:
       required: false
 
-  - type: input
+  - type: dropdown
     id: evidence-type
     attributes:
-      label: "Evidence Type"
-      description: "What kind of material is being sealed?"
-      placeholder: "Document / Source Communication / Transcript / Photograph / Data / Other"
+      label: "Evidence Type *"
+      options:
+        - "Document"
+        - "Source Communication"
+        - "Transcript"
+        - "Photograph"
+        - "Data"
+        - "Audio"
+        - "Video"
+        - "Other"
+      default: 0
     validations:
       required: true
 
   - type: input
     id: receipt-date
     attributes:
-      label: "Date Material Was Received or Created"
+      label: "Date Material Was Received or Created *"
       description: "YYYY-MM-DD"
       placeholder: "2026-03-07"
     validations:
@@ -49,8 +64,8 @@ body:
   - type: textarea
     id: material-description
     attributes:
-      label: "Description of Material"
-      description: "Describe what it is, what it pertains to, and what it shows. No source-identifying information. **Keep under 10,000 characters.**"
+      label: "Description of Material *"
+      description: "Describe what it is, what it pertains to, and what it shows. No source-identifying information. Keep under 10,000 characters."
       placeholder: "Describe the material and what it establishes."
     validations:
       required: true
@@ -59,50 +74,84 @@ body:
     id: source-context
     attributes:
       label: "Context (Optional)"
-      description: "How was this material obtained? Do not include source-identifying info. **Keep under 5,000 characters.**"
+      description: "How was this material obtained? Do not include source-identifying info. Keep under 5,000 characters."
       placeholder: "Context for the material — optional."
     validations:
       required: false
 
-  - type: input
-    id: file-url
+  - type: textarea
+    id: file-urls
     attributes:
-      label: "File URL (Optional)"
-      description: "Link to the file hosted externally (e.g., Google Drive, Dropbox, GitHub release). Do not upload directly."
-      placeholder: "https://example.com/file.pdf"
+      label: "File URLs (Optional)"
+      description: "Permanent URLs to the hosted files (IPFS, Zenodo, GitHub release, archive.is). One URL per line. If you provide a URL, you must also provide its SHA‑256 hash below."
+      placeholder: "https://ipfs.io/ipfs/Qm...\nhttps://zenodo.org/record/..."
     validations:
       required: false
 
-  - type: input
-    id: file-hash
+  - type: textarea
+    id: file-hashes
     attributes:
-      label: "File SHA-256 Hash (Optional, Recommended)"
-      description: "If you host the file elsewhere, provide its SHA‑256 hash to cryptographically bind the seal to the file."
-      placeholder: "64-character hex string"
+      label: "File SHA‑256 Hashes (Required if URLs provided)"
+      description: "One SHA‑256 hash per file, in the same order as the URLs. This cryptographically binds the seal to the file content."
+      placeholder: "a3f9c12e7d... (64 hex chars)\nb4c8d3e2f1a..."
     validations:
       required: false
 
-  - type: input
+  - type: dropdown
+    id: verification-status
+    attributes:
+      label: "Verification Status (Optional)"
+      description: "Has this material been independently verified?"
+      options:
+        - "Unverified"
+        - "Self-verified"
+        - "Third-party verified (provide details in Context)"
+      default: 0
+    validations:
+      required: false
+
+  - type: dropdown
     id: disclosure-timeline
     attributes:
       label: "Intended Disclosure Timeline (Optional)"
       description: "When do you plan to publish or disclose? Establishes that the seal predates the public record."
-      placeholder: "Pre-publication / Expected: April 2026 / Ongoing investigation"
+      options:
+        - "Pre‑publication (date unknown)"
+        - "Expected: within 3 months"
+        - "Expected: within 1 year"
+        - "Under legal hold – indefinite"
+        - "Ongoing investigation"
+        - "Will not disclose"
+        - "Other (specify in Context)"
+      default: 0
+    validations:
+      required: false
+
+  - type: input
+    id: correction_of
+    attributes:
+      label: "Correction / Retraction of (Optional)"
+      description: "If this seal corrects a previous evidence chain entry, provide the previous ledger entry ID or SHA‑256 hash."
+      placeholder: "a3f9c12e7d... or STP‑EVIDENCE‑xxxx"
     validations:
       required: false
 
   - type: checkboxes
     id: declaration
     attributes:
-      label: "Declaration"
+      label: "Declaration *"
       options:
         - label: "I affirm this description accurately represents the material I received or created on the stated date."
           required: true
         - label: "I have not included source‑identifying information that would endanger any individual."
           required: true
-        - label: "I understand this submission is immutable — it cannot be altered after sealing."
+        - label: "I affirm that I have lawful possession of the material described, and its sealing does not violate any court order, confidentiality agreement, or applicable law."
+          required: true
+        - label: "I understand this submission is immutable — it cannot be altered after sealing. A correction creates a new entry but does not delete the original."
           required: true
         - label: "I understand the protocol seals my account of receiving the material — not the authenticity of the material itself."
+          required: true
+        - label: "I understand that if I provided file URLs without SHA‑256 hashes, the seal does not cryptographically bind the file content."
           required: true
 
   - type: markdown
