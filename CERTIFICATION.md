@@ -82,7 +82,7 @@ These certifications are for **individuals** — hobbyists, builders, researcher
 
 **Badge:** Silver & Blue – distinct from the crimson/gold of SACS and the enterprise badges.
 
-<img src="assets/badges/stp_auditor/stp_senior_auditor_template_v1.svg" alt="CAPC Badge (concept)" width="320" />
+<img src="assets/badges/personal-cert/capc-badge-matrix-v1.svg" alt="CAPC Badge (concept)" width="320" />
 
 *Actual badge design pending; uses silver/blue palette with a shield and "CAPC" mark.*
 
