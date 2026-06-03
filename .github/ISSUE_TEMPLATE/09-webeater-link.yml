@@ -1,4 +1,4 @@
-name: WEBEATER: Weave a Connection
+name: "WEBEATER: Weave a Connection"
 description: "Seal a cryptographic link between two entities in the Sovereign Trace ledger."
 title: "[WEBEATER] Link: [Source] → [Target]"
 labels: ["webeater-link", "pending-seal"]
