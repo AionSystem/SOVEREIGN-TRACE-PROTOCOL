@@ -1,0 +1,133 @@
+name: "Red Team Engagement — Sovereign Trace Protocol"
+description: "Seal the scope, methodology, and rules of engagement for a red team exercise before it begins. Proves what was authorized to test."
+title: "[STP-REDTEAM] — [TARGET SYSTEM] — [DATE]"
+labels: ["red-team", "pending-seal"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Red Team Engagement – Sovereign Trace Protocol (FROZEN‑4.0)
+
+        This form seals the scope, methodology, and rules of engagement for a red team security exercise **before** it begins.
+
+        When the engagement is complete, seal findings separately using `vulnerability-timeline.yml`. The pair of seals proves the engagement was honest and within authorized bounds.
+
+        **⚠️ CRITICAL WARNINGS – READ BEFORE PROCEEDING ⚠️**
+        - The scope and attack vectors are **public** and **permanent**.
+        - Your GitHub username is **publicly linked** to this seal.
+        - **Do not include live credentials, internal IP addresses, or non‑public system details.**
+        - **Do not edit this issue after the workflow seals it** – the hash will change.
+        - **This record is retained permanently** in the STP ledger and GitHub issue history.
+        - A correction creates a new entry; the original remains.
+
+        **Fields marked with `*` are required.**
+
+  - type: input
+    id: submitter_name
+    attributes:
+      label: "Your Name (Optional)"
+      description: "If provided, becomes part of the permanent record. Leave blank for an anonymous seal."
+      placeholder: "First Last or leave blank"
+    validations:
+      required: false
+
+  - type: input
+    id: target_system
+    attributes:
+      label: "Target System / Organization *"
+      description: "The system, application, or organization being tested."
+      placeholder: "e.g., Internal API Gateway, customer‑facing web app"
+    validations:
+      required: true
+
+  - type: input
+    id: engagement_period_start
+    attributes:
+      label: "Engagement Start Date *"
+      placeholder: "2026-06-04"
+    validations:
+      required: true
+
+  - type: input
+    id: engagement_period_end
+    attributes:
+      label: "Engagement End Date *"
+      placeholder: "2026-06-18"
+    validations:
+      required: true
+
+  - type: textarea
+    id: attack_vectors
+    attributes:
+      label: "Authorized Attack Vectors *"
+      description: "List the specific attack methods permitted. One per line. Keep under 5,000 characters."
+      placeholder: "SQL injection on public forms\nXSS on user‑generated content\nSSRF on internal endpoints\nSocial engineering via email (mock only, no real users)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: prohibited_actions
+    attributes:
+      label: "Prohibited Actions *"
+      description: "Explicitly list what is NOT allowed. One per line. Keep under 5,000 characters."
+      placeholder: "No destruction of data\nNo privilege escalation beyond read‑only\nNo physical intrusion"
+    validations:
+      required: true
+
+  - type: textarea
+    id: team_members
+    attributes:
+      label: "Team Members (Optional)"
+      description: "Names or roles of red team participants."
+      placeholder: "Alice (lead), Bob (network), Charlie (app)"
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting_urls
+    attributes:
+      label: "Supporting Files URLs (Optional)"
+      description: "Rules of engagement document, signed authorization, etc. Permanent URLs only."
+      placeholder: "https://ipfs.io/ipfs/Qm..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting_hashes
+    attributes:
+      label: "Supporting file SHA‑256 hashes (optional, recommended)"
+      description: "One SHA‑256 hash per file, in the same order as the URLs."
+      placeholder: "a3f9c12e7d..."
+    validations:
+      required: false
+
+  - type: input
+    id: correction_of
+    attributes:
+      label: "Correction / Resubmission of (optional)"
+      placeholder: "#42 or a3f9c12e7d..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: "Declaration *"
+      options:
+        - label: "I affirm that this engagement scope is authorized by the target organization and will be conducted lawfully."
+          required: true
+        - label: "I affirm that the listed prohibited actions will not be attempted under any circumstances."
+          required: true
+        - label: "I understand this submission is immutable — a correction creates a new entry but does not delete the original."
+          required: true
+        - label: "I understand that the attack vectors and prohibited actions are public."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **After submission**: Seal findings separately with `vulnerability-timeline.yml` after engagement ends.
+
+        **Contact:** `aionsystem@outlook.com`
