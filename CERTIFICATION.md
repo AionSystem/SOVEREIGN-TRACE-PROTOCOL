@@ -26,7 +26,7 @@ FROZEN‑4.0 standard — a structured technical audit with a defined
 deliverable: a signed assessment that the deployment is operating within
 specification and producing trustworthy immutable records.
 
-Six tiers. No negotiation on scope. No bundling.
+Six enterprise tiers (Tiers 0–5). Two personal tracks (SACS, CAPC). No negotiation on scope. No bundling.
 
 Every certification carries an explicit expiry date. Certifications do not
 roll over silently — each expiry is a gate. The client's system is assessed
@@ -38,61 +38,109 @@ tamper‑evidence benchmarks are documented in `AUDIT-METHODOLOGY.md`.
 
 ---
 
-## CERTIFICATION VALIDITY WINDOWS
+## PERSONAL CERTIFICATION TRACK
 
-Every certification carries an explicit expiry date printed on the sleeve,
-embedded in the AION‑Registry entry, and sealed in the ledger. The
-validity window is the period within which the certified state applies.
-Changes made by the client after the sealing date are safely deferred to
-the next cycle — the certification governs what was assessed.
+These certifications are for **individuals** — hobbyists, builders, researchers, and professionals who work with AI systems in personal or non‑commercial contexts, or who offer AI development services. They are self‑service, automated, and do not require an enterprise intake call.
 
-| Tier | Validity Window | Notes |
-|------|----------------|-------|
-| **Tier 0 — Snapshot** | 30 days | Point-in-time snapshot. Short window reflects the narrow scope. |
-| **Tier 1 — Full Audit** | 90 days *(approx. 3 calendar months)* | Standard cycle. Re-audit opens a new 90-day window. |
-| **Tier 2 — Enterprise Retainer** | 90 days per audit cycle | Annual retainer. Quarterly audits — each cycle produces a new 90-day certification. Four certifications per retainer year. |
-| **Tier 3 — Strategic Retainer** | 30 days per audit cycle | Monthly retainer cadence. Each monthly audit produces a new 30-day certification. Continuous coverage across the retainer year. |
-| **Tier 4 — Defense & Government** | 90 days per declared period | Scope anchor reviewed at each 90-day interval. Each period produces a full sealed report and certification. |
-| **Tier 5 — Sovereign Audit** | 180-day certification · 12-month badge license | Certification validity: 180 days from sealing date. Badge license: 12 months. These are separate and both apply. A Tier 5 re-audit within the 180-day window is a new engagement. |
+### Sovereign AI Constitution Seal (SACS)
 
-**Decay indicator:** The AION‑Registry shows a live decay indicator for
-every active certification — days remaining as a percentage of the
-validity window. At 80% elapsed, the indicator enters
-`RENEWAL_APPROACHING` status. At 100%, the certification is marked
-`EXPIRED`. Expired certifications remain in the registry with their
-full historical record — they are not removed.
+**For:** Hobbyists, open‑source contributors, personal AI assistants, and anyone who wants to prove their private AI respects THE CONSTITUTION v2.1.
 
-**Out-of-cycle re-audit:** Available at any time. A new engagement opens
-and the full audit process runs. The new sealing date starts a new
-validity window.
+**Price:** $49 one‑time OR $12/year (ongoing updates)
 
----
+**Badge:** Crimson & Gold – a variant of the Constitutional Compliance badge, with a personal seal mark.
 
-## INTAKE MODES
+<img src="assets/badges/compliance/compliance-constitutional-badge.svg" alt="Constitutional Compliance Badge" width="320" />
 
-Two intake modes. Tier determines which applies.
+**What it certifies:**
 
-**Automated Intake — Tier 0 and Tier 2**
-24/7. File a `10-audit-request.yml` issue at any time. Payment via
-Stripe is confirmed automatically by the audit‑verify workflow before
-any work begins. Badge delivered digitally upon certification. No call
-required. No scheduling required. The filing and payment are the scope.
+- THE CONSTITUTION v2.1 is embedded in the AI’s runtime.
+- Every input and output is bounced against the Nine Laws.
+- The system produces a constitutional check log that can be sealed with STP.
+- The owner receives a signed, dated certificate of compliance.
 
-**Architect‑Led Intake — Tier 1, Tier 3, Tier 4, and Tier 5**
-Monday and Tuesday only. Submissions filed on any other day are not
-processed that week. Delivery on the following weekend — reports
-delivered Saturday or Sunday via scheduled reply on the issue thread.
+**How it is issued (self‑service):**
 
-Expedited delivery: daily multiplier applies. Work required in under
-4 hours is not accepted. No exceptions.
+1. The individual downloads a constitutional‑bootstrap script or Docker container that wraps their AI runtime with the Constitutional Engine v2.1.
+2. The system runs a self‑test, logging 20+ constitutional checks (pre‑defined test suite covering all Nine Laws).
+3. The log is hashed and sealed via STP (using the free `sovereign‑trace` pip package).
+4. The individual submits the sealed log to the automated verification pipeline (GitHub issue or web form).
+5. Upon successful verification, the badge and a digital sleeve (PDF) are issued. The individual's name (or pseudonym) and the seal entry are recorded in the **Trust Registry** (see below).
+6. The individual displays the badge on their personal AI interface, website, or robot.
 
-Payment: Stripe transaction code required in the issue at filing.
-Screenshot of the transaction sent to the contact email on file.
-Both must match before work begins. No exceptions.
+**Validity:** Lifetime for the specific AI system version. Re‑certification required if the AI’s core prompt, model, or constitutional code is materially changed. For the $12/year subscription, the registry entry is automatically renewed annually; failure to renew moves the entry to `EXPIRED`.
+
+**Verification:** Third parties can verify a SACS badge by checking the Trust Registry entry ID against the STP ledger.
 
 ---
 
-## TIER 0 — SNAPSHOT VERIFICATION (PRE‑AUDIT)
+### Constitutional AI Practitioner Credential (CAPC)
+
+**For:** Professionals who build AI systems for others, deploy AI in public‑facing contexts, or offer AI development services. Requires identity verification (pseudonyms not allowed).
+
+**Price:** $199/year (includes annual recertification). Optional third‑party background check: +$50.
+
+**Badge:** Silver & Blue – distinct from the crimson/gold of SACS and the enterprise badges.
+
+<img src="assets/badges/stp_auditor/stp_senior_auditor_template_v1.svg" alt="CAPC Badge (concept)" width="320" />
+
+*Actual badge design pending; uses silver/blue palette with a shield and "CAPC" mark.*
+
+**What it certifies:**
+
+- Same constitutional embedding as SACS, plus:
+- The individual has passed a basic exam on AI safety, THE CONSTITUTION, and responsible development.
+- Identity has been verified (selfie + government ID via encrypted channel, or OAuth from a trusted provider).
+- An optional background check (criminal, sanctions, or professional misconduct) may be ordered at additional cost; passing the background check is noted separately on the registry.
+- The individual agrees to abide by a code of conduct and to report any known vulnerabilities or misuse of their systems.
+- Annual recertification includes a review of any constitutional updates and a new self‑test log.
+
+**How it is issued:**
+
+1. Individual files a CAPC application through the automated portal (GitHub issue or web form).
+2. Identity verification is performed (automated document check + optional video call for high‑trust cases).
+3. The individual completes an open‑book exam (online, multiple choice + short answer) covering:
+   - THE CONSTITUTION v2.1 (Nine Laws, falsification, amendments)
+   - Basic AI safety principles (alignment, robustness, monitoring)
+   - The role of STP and the Trust Registry
+4. Upon passing, the individual runs the same constitutional bootstrap script as SACS, sealing the compliance log.
+5. The badge and certificate are issued, and the individual’s name and credential ID are entered into the Trust Registry.
+
+**Validity:** 1 year from issuance. Renewal requires a new self‑test log and, if the Constitution has been updated, a short refresher exam. Failure to renew moves the entry to `EXPIRED`. Revocation (for cause) moves the entry to `REVOKED` permanently.
+
+---
+
+## THE TRUST REGISTRY
+
+The Trust Registry is a public, immutable, STP‑sealed list of all active certifications – both enterprise tiers (Tiers 0–5) and personal tracks (SACS, CAPC). It is stored on the STP ledger as a set of entries, each containing:
+
+- Registry Entry ID (UUID v4)
+- Certification type (SACS / CAPC / Tier 0–5)
+- Individual or organization name (for CAPC: legal name; for SACS: may be pseudonymous)
+- Badge version and expiry date (for CAPC: also badge license expiry)
+- Status: `ACTIVE` / `EXPIRED` / `REVOKED` / `PENDING_RENEWAL`
+- STP seal of the certification log
+- Optional: link to public profile, ORCID, or GitHub (for discoverability)
+
+**How to seal your cert into the registry:**
+
+1. After receiving your certification (whether automated or auditor‑led), you receive a `registry_seal_url` pointing to a pre‑filled STP issue template.
+2. You open the issue, which contains the certification data and a unique `registry_nonce`.
+3. The STP audit‑verify workflow runs a `stamp` command that hashes the data and appends it to the ledger.
+4. The resulting ledger entry ID becomes your permanent registry record.
+5. You can embed that entry ID in your badge, CV, or website for instant verification.
+
+**Querying the registry:**  
+Anyone can query the STP ledger for a given registry entry ID to check status, expiry, and revocation. A public web interface is available at `/trust/registry`. The interface also shows a live decay indicator for each active entry.
+
+**Revocation:**  
+If a certification is revoked (e.g., violation of code of conduct, falsified log, or material misrepresentation), a new ledger entry is created with status `REVOKED`, referencing the original entry ID. The revocation is permanent and cannot be removed. Revoked entries remain visible for audit purposes.
+
+---
+
+## ENTERPRISE CERTIFICATION TIERS
+
+### TIER 0 — SNAPSHOT VERIFICATION (PRE‑AUDIT)
 
 **$1,500 · Single engagement · 10 outputs · 5–7 business days**
 **Certification validity: 30 days from sealing date**
@@ -134,7 +182,7 @@ Automated intake — available 24/7.
 
 ---
 
-## TIER 1 — FULL AUDIT
+### TIER 1 — FULL AUDIT
 
 **Output‑banded pricing · Certification validity: 90 days from sealing date**
 
@@ -192,7 +240,7 @@ two business days.
 
 ---
 
-## TIER 2 — ENTERPRISE RETAINER
+### TIER 2 — ENTERPRISE RETAINER
 
 **$25,000 per year · Annual retainer · Quarterly certifications**
 **Certification validity: 90 days per audit cycle**
@@ -249,7 +297,7 @@ within two business days.
 
 ---
 
-## TIER 3 — STRATEGIC RETAINER
+### TIER 3 — STRATEGIC RETAINER
 
 **$100,000+ per year · Terms negotiated in writing · C‑Suite**
 **Certification validity: 30 days per audit cycle**
@@ -301,7 +349,7 @@ in writing. That exchange is the negotiation.
 
 ---
 
-## TIER 4 — DEFENSE & GOVERNMENT GRADE
+### TIER 4 — DEFENSE & GOVERNMENT GRADE
 
 **Price: Negotiated · Engagement: Written contract required · Clearance: As applicable**
 **Certification validity: 90 days per declared assessment period**
@@ -359,7 +407,7 @@ any work commences. No exceptions.
 
 ---
 
-## TIER 5 — SOVEREIGN AI AUDIT
+### TIER 5 — SOVEREIGN AI AUDIT
 
 **$15,000 per engagement · Full adversarial stack audit · 14‑day assessment window**
 **Certification validity: 180 days · Badge license: 12 months**
@@ -444,7 +492,8 @@ business days. Fourteen‑day assessment window once confirmed.
 Beyond direct certification by the Architect, the Sovereign Trace Protocol
 maintains a certified auditor network. STP Certified Auditors are independent
 professionals authorized to conduct and file audit completions directly to the
-ledger under their own badge number.
+ledger under their own badge number. Their status is also recorded in the
+**Trust Registry** and can be publicly verified.
 
 Full vetting process, skills assessment criteria, badge obligations, and
 revocation procedure: `AUDITOR-VETTING-PROCESS.md`.
@@ -612,6 +661,8 @@ of domain‑specific constitutional compliance that an organization can display
 alongside its STP tier badge, or independently if the organization's AI usage is
 limited to that domain.
 
+Their status is also recorded in the **Trust Registry** and can be publicly verified.
+
 ---
 
 ### Domain Badges
@@ -681,7 +732,9 @@ Salmon or an STP Certified Auditor with demonstrated domain expertise. The proce
    constitutional adherence.
 3. If the system meets the domain‑specific standards, the badge is issued digitally.
 4. Badge is recorded in the STP ledger with a unique entry ID, SHA‑256 hash, and
-   verification URL.
+   verification URL. The entry is also published to the **Trust Registry**.
+5. The organization can then self‑seal the registry entry using the same template
+   described in the Trust Registry section.
 
 **Pricing:**
 - General Constitutional Compliance: $7,500
@@ -699,7 +752,8 @@ Every compliance badge embeds a verification bar with the STP ledger entry ID,
 SHA‑256 hash, and a verification URL. Anyone can verify a badge by:
 1. Scanning the QR code on the badge (if present) or visiting the verification URL.
 2. Checking the STP ledger for the entry.
-3. Confirming the badge is linked to the organization's current certification status.
+3. Confirming the badge is linked to the organization's current certification status
+   in the Trust Registry.
 
 Badges not found in the ledger are invalid. Display of an expired or unverified
 badge constitutes misrepresentation.
@@ -729,6 +783,9 @@ The templates exist in two sizes:
 All sleeves use conditional ribbons (`RIBBON_GOLD`, `RIBBON_SILVER`)
 that are shown or hidden depending on the certification scope.
 
+Personal certification sleeves (SACS and CAPC) are under development; they will
+follow the same compact sleeve pattern with personal‑tier badges.
+
 ---
 
 ### Sleeve Types
@@ -740,6 +797,8 @@ that are shown or hidden depending on the certification scope.
 | **v3 — Audit Only Sleeve** | Audit only, no simulator | For private or Docker‑sealed frameworks. Dark violet palette. Auditor badge and tier classification only. No simulator slot. |
 | **v4 — Founder's Sovereign Seal** | Founder‑exclusive | Black‑and‑gold hyperdiamond sleeve. Issued only under STP‑AUDITOR‑0001. Carries the founder's auditor badge and the highest trust signal in the AION ecosystem. |
 | **Auditor Credential Sleeve** | STP Auditor Network | Carried by STP Certified Auditors. Displays the auditor's shield badge, rank, specialization, validity window, and QR code. |
+
+*Personal certification sleeves (SACS and CAPC) are under development; they will follow the same compact sleeve pattern with personal‑tier badges.*
 
 ---
 
@@ -787,12 +846,15 @@ Below are two views of the v1 (Certified Audit) sleeve: the blank template on th
 </table>
 
 The mock sleeve carries the real founder’s auditor badge, the standard tier badge, the verified simulator badge, and all the details — entry ID, SHA‑256, expiry date, triple‑time dates, scope code, and QR verification — that a paying client will see on their own certification.
+
 ---
 
 ## BADGE REFERENCE
 
 | Tier / Type | Badge Variant | File | Validity |
 |-------------|--------------|------|---------|
+| **SACS (Personal)** | Constitutional Compliance (crimson/gold variant) | `assets/badges/compliance/compliance-constitutional-badge.svg` | Lifetime (system version) or 1 year with subscription |
+| **CAPC (Professional)** | Silver/Blue Shield (pending) | `assets/badges/stp_auditor/stp_senior_auditor_template_v1.svg` (interim) | 1 year |
 | Tier 0 — Snapshot Verification | Snapshot | `assets/badges/sovereign-certified/sovereign-certified-badge-snapshot-v1.svg` | 30 days |
 | Tier 1 — Full Audit | Standard | `assets/badges/sovereign-certified/sovereign-certified-badge-v2.svg` | 90 days |
 | Tier 2 — Enterprise Retainer | Digital | `assets/badges/sovereign-certified/sovereign-certified-badge-digital-v2.svg` | 90 days per cycle |
@@ -818,6 +880,8 @@ AION Verified Simulator badge carries: `NON-TRANSFERABLE` · SHA‑256 ·
 STP SEALED · v1.0.
 Compliance badges carry: `NON-TRANSFERABLE` · SHA‑256 · STP SEALED ·
 domain‑specific mark.
+SACS and CAPC badges carry: `NON-TRANSFERABLE` · SHA‑256 · STP SEALED ·
+`PERSONAL_TRACK`.
 
 ---
 
