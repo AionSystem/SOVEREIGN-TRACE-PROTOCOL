@@ -17,7 +17,9 @@ body:
         - The SHA‑256 hash of your record is **public**. If your record contains low‑entropy secrets (e.g., passwords, API keys, predictable text), an attacker could brute‑force the hash and recover the content.
         - **Do not include personal identifying information (PII), financial account numbers, or any confidential data** unless you fully accept the risk that the hash may be reversed.
         - Your GitHub username is **publicly linked** to this issue and therefore to the sealed record. If you require anonymity, create a separate GitHub account with no identifying information and submit from that account.
-        - The stamp seals **exactly the text you write** – not the content of any external links. Use permanent URLs (IPFS, archive.is, GitHub gist) if you need to reference external evidence, and consider also providing a SHA‑256 hash of that external file.
+        - The stamp seals **exactly the text you write** – not the content of any external links. Use permanent URLs (IPFS, archive.is, GitHub gist) if you need to reference external evidence, and **provide SHA‑256 hashes** of external files to cryptographically bind their content.
+        - **This record is retained permanently** in the STP ledger and GitHub issue history. You cannot delete it.
+        - **Do not edit this issue after the workflow seals it** – the hash will change and the seal will be invalid.
 
         **Fields marked with `*` are required.**
 
@@ -57,12 +59,21 @@ body:
     validations:
       required: false
 
-  - type: input
+  - type: textarea
     id: evidence_urls
     attributes:
       label: "Supporting evidence URLs (optional)"
-      description: "Comma‑separated list of permanent URLs (IPFS, archive.is, GitHub gist, or stable cloud links). The stamp seals the URLs themselves, not the content behind them. For extra integrity, provide SHA‑256 hashes of the external files in the `Record Content` field."
-      placeholder: "https://ipfs.io/ipfs/Qm..., https://archive.is/abc123"
+      description: "One permanent URL per line (IPFS, archive.is, GitHub gist). The stamp seals the URLs themselves, not the content. For cryptographic binding, also provide SHA‑256 hashes below."
+      placeholder: "https://ipfs.io/ipfs/Qm...\nhttps://archive.is/abc123"
+    validations:
+      required: false
+
+  - type: textarea
+    id: evidence_hashes
+    attributes:
+      label: "Evidence file SHA‑256 hashes (optional, recommended)"
+      description: "One SHA‑256 hash per file, in the same order as the URLs. This cryptographically binds the seal to the exact file content."
+      placeholder: "a3f9c12e7d... (64 hex chars)\nb4c8d3e2f1a..."
     validations:
       required: false
 
@@ -94,6 +105,8 @@ body:
         - "Decision – a choice you made, with or without immediate consequence"
         - "Record – a factual entry, log, or documented event"
         - "Correction – a retraction or correction of a previous entry"
+        - "Warning – a caution or alert for future reference"
+        - "Commitment – a promise or obligation you are recording"
       default: 0
     validations:
       required: true
@@ -128,6 +141,10 @@ body:
       options:
         - label: "I confirm that the information provided is true and accurate to the best of my knowledge."
           required: true
+        - label: "I affirm that I have the right to seal this content and that it does not violate any third‑party rights."
+          required: true
+        - label: "If my record contains low‑entropy secrets (passwords, keys), I accept the risk of brute‑force reversal; otherwise I have removed such secrets."
+          required: true
         - label: "I understand that this sealed record is permanent and cannot be edited or deleted."
           required: true
         - label: "I understand that the SHA‑256 hash of my record is public and may be vulnerable to brute‑force if the record contains low‑entropy secrets."
@@ -141,7 +158,9 @@ body:
     attributes:
       value: |
         ---
-        **After submission**: The STP auto‑seal workflow will generate a triple‑time stamp and SHA‑256 hash. You will receive a comment on this issue with the seal and a link to the ledger entry.
+        **Data retention:** This record is retained permanently. Under GDPR/CCPA, you may request deletion of personal data, but the sealed record itself may be subject to legal hold.
+
+        **After submission**: The STP auto‑seal workflow will generate a triple‑time stamp and SHA‑256 hash. You will receive a comment on this issue with the seal and a link to the ledger entry. Do not edit the issue after sealing.
 
         Contact: `aionsystem@outlook.com` (for technical issues only). All seals are final.
 
