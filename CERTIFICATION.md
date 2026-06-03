@@ -50,7 +50,7 @@ These certifications are for **individuals** — hobbyists, builders, researcher
 
 **Badge:** Crimson & Gold – a variant of the Constitutional Compliance badge, with a personal seal mark.
 
-<img src="assets/badges/compliance/compliance-constitutional-badge.svg" alt="Constitutional Compliance Badge" width="320" />
+<img src="assets/badges/personal-cert/sacs-badge-personal-v1.svg" alt="Constitutional Compliance Badge" width="320" />
 
 **What it certifies:**
 
