@@ -3,54 +3,77 @@ description: "Seal a creative work — music, writing, art, design, code — at 
 title: "[STP-CREATIVE] — [MEDIUM] — [DATE]"
 labels: ["creative-priority", "pending-seal"]
 assignees: []
-
 body:
-
   - type: markdown
     attributes:
       value: |
-        ## Creative Priority Seal
+        ## Creative Priority Seal – Sovereign Trace Protocol (FROZEN‑4.0)
 
         This form seals your creative work at the moment you submit it.
 
-        **This is not a copyright registration.** Copyright exists the moment you create something.
-        This seal gives you something copyright alone does not: cryptographic proof that this exact work
-        existed, in this exact form, on this exact date — verifiable by anyone, requiring no institution.
+        **⚠️ CRITICAL WARNINGS – READ BEFORE PROCEEDING ⚠️**
+        - **This is not a copyright registration.** Copyright exists the moment you create something.
+          This seal provides cryptographic proof that this exact work existed, in this exact form (if you provide a SHA‑256 hash), on this exact date – verifiable by anyone, requiring no institution.
+        - **Without the SHA‑256 hash of your file, the seal does NOT bind to the file content** – only the description and excerpt are sealed.
+        - **Your GitHub username is publicly linked to this seal.** If you require anonymity, create a separate GitHub account.
+        - **Do not seal someone else's work without authorisation.** Knowingly filing a false priority claim may result in legal liability and a permanent integrity violation record.
+        - **The description must be specific enough to distinguish your work from any other.** Vague descriptions may weaken your priority claim.
+        - This record is **immutable**. A correction creates a new entry; the original remains.
 
         You do not need to attach the full work. Seal a precise description, a title, a representative excerpt,
-        or a SHA-256 hash of the file. What matters is that the seal binds to something specific and unique.
+        and (recommended) a SHA‑256 hash of the file. What matters is that the seal binds to something specific and unique.
+
+        **Fields marked with `*` are required.**
 
   - type: input
     id: submitter-name
     attributes:
-      label: "Your Name or Artist Name"
-      description: "The name you want attached to this priority record."
+      label: "Your Name or Artist Name *"
+      description: "The name you want attached to this priority record. You may use a professional pseudonym, but be aware that proving you are the same person later may require additional evidence."
       placeholder: "Legal name or professional name"
     validations:
       required: true
 
   - type: input
+    id: co-creators
+    attributes:
+      label: "Co‑creators / Contributors (Optional)"
+      description: "Comma‑separated names of other people who contributed to this work."
+      placeholder: "Jane Doe, John Smith"
+    validations:
+      required: false
+
+  - type: input
     id: work-title
     attributes:
-      label: "Work Title"
+      label: "Work Title *"
       description: "The title of the work being sealed."
       placeholder: "Title of the work"
     validations:
       required: true
 
-  - type: input
+  - type: dropdown
     id: medium
     attributes:
-      label: "Medium / Format"
-      description: "What kind of creative work is this?"
-      placeholder: "Music / Novel / Screenplay / Visual art / Design / Software / Poem / Other"
+      label: "Medium / Format *"
+      options:
+        - "Music"
+        - "Novel"
+        - "Screenplay"
+        - "Visual Art"
+        - "Design"
+        - "Software / Code"
+        - "Poem"
+        - "Photography"
+        - "Other"
+      default: 0
     validations:
       required: true
 
   - type: input
     id: creation-date
     attributes:
-      label: "Date of Creation or Completion"
+      label: "Date of Creation or Completion *"
       description: "YYYY-MM-DD"
       placeholder: "2026-03-07"
     validations:
@@ -59,8 +82,8 @@ body:
   - type: textarea
     id: work-description
     attributes:
-      label: "Work Description"
-      description: "Describe the work precisely. Include distinctive elements that uniquely identify it. **Keep under 10,000 characters.**"
+      label: "Work Description *"
+      description: "Describe the work precisely. Include distinctive elements (key themes, structural features, unique phrases, visual motifs) to distinguish it from any other work. Keep under 10,000 characters. Vague descriptions may weaken your priority claim."
       placeholder: "Describe the work with enough specificity to distinguish it from any other work."
     validations:
       required: true
@@ -68,51 +91,69 @@ body:
   - type: textarea
     id: representative-content
     attributes:
-      label: "Excerpt, File Hash, or Key Passage (Optional)"
-      description: "Paste a short excerpt, key passage, or SHA-256 hash of the file. Binds the seal to specific content. **Keep under 5,000 characters.**"
-      placeholder: "Excerpt, key passage, or SHA-256 hash of the file."
+      label: "Excerpt, Key Passage, or Code Snippet (Optional but Recommended)"
+      description: "Paste a short excerpt, key passage, or code snippet. Binds the seal to specific content. Keep under 5,000 characters."
+      placeholder: "Excerpt, key passage, or code snippet."
     validations:
       required: false
 
   - type: input
     id: file-hash
     attributes:
-      label: "Full File SHA-256 Hash (Optional, Recommended)"
-      description: "If you host the full file externally, provide its SHA‑256 hash to cryptographically bind the seal to the exact file."
+      label: "Full File SHA‑256 Hash (Recommended)"
+      description: "If you want the seal to cryptographically bind to the actual file, provide its SHA‑256 hash. This is strongly recommended for priority claims."
       placeholder: "64-character hex string"
     validations:
       required: false
 
-  - type: input
+  - type: dropdown
     id: publication-status
     attributes:
-      label: "Publication Status"
-      description: "Is this work published, unpublished, or in progress?"
-      placeholder: "Unpublished / Published [date] / In progress / Submitted for review"
+      label: "Publication Status *"
+      options:
+        - "Unpublished"
+        - "Published (date known – add in description)"
+        - "In progress"
+        - "Submitted for review"
+        - "Archived"
+      default: 0
     validations:
       required: true
 
-  - type: input
+  - type: textarea
     id: supporting-urls
     attributes:
       label: "Supporting File URLs (Optional)"
-      description: "Upload a preview, excerpt, or representative file to a service (e.g., Google Drive, GitHub release) and paste the links here. Do not upload directly."
-      placeholder: "https://example.com/preview.pdf"
+      description: "Permanent URLs to previews, excerpts, or representative files (IPFS, Zenodo, GitHub release). The stamp seals only the URL strings."
+      placeholder: "https://ipfs.io/ipfs/Qm...\nhttps://gist.github.com/..."
+    validations:
+      required: false
+
+  - type: input
+    id: correction_of
+    attributes:
+      label: "Correction / Retraction of (Optional)"
+      description: "If this seal corrects a previous creative priority entry, provide the previous ledger entry ID or SHA‑256 hash."
+      placeholder: "a3f9c12e7d... or STP‑CREATIVE‑xxxx"
     validations:
       required: false
 
   - type: checkboxes
     id: declaration
     attributes:
-      label: "Declaration"
+      label: "Declaration *"
       options:
-        - label: "I affirm that I am the creator of this work or an authorized representative of the creator."
+        - label: "I affirm that I am the creator of this work, or if I am sealing on behalf of the creator, I have their explicit written authorisation. Knowingly sealing another person's work without permission may result in legal liability and a permanent integrity violation record."
           required: true
-        - label: "I affirm that the description accurately represents the work as it exists at the time of sealing."
+        - label: "I affirm that the description accurately represents the work as it exists at the time of sealing, and is sufficiently specific to distinguish it from other works."
           required: true
-        - label: "I understand this submission is immutable — it cannot be altered after sealing."
+        - label: "If I provided a file hash, I affirm that it corresponds to the full work file in my possession."
+          required: false
+        - label: "I understand this submission is immutable — it cannot be altered after sealing. A correction creates a new entry but does not delete the original."
           required: true
         - label: "I understand the protocol provides a tamper-evident timestamp of priority — not legal copyright registration."
+          required: true
+        - label: "I understand that my GitHub username is publicly linked to this seal, and that I am responsible for maintaining proof of my identity if I use a pseudonym."
           required: true
 
   - type: markdown
@@ -125,6 +166,8 @@ body:
         2. Sealing — Sealed with a **FROZEN-4.0** triple‑time cryptographic stamp. Permanent.
         3. Ledger entry — Enters the Sovereign Trace ledger with your name, timestamp, and SHA‑256 hash.
         4. Notification — You receive your ledger entry ID and SHA‑256 hash. Keep it. It is your proof.
+
+        **If someone else seals a description of your work without authorisation**, file an `integrity-violation.yml` report. The original seal remains, but a dispute note will be attached to the ledger.
 
         The seal is permanent. The seal is the priority record.
 
