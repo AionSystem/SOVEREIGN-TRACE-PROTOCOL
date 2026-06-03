@@ -1,12 +1,33 @@
-name: "WEBEATER: Weave a Connection"
+name: WEBEATER: Weave a Connection
 description: "Seal a cryptographic link between two entities in the Sovereign Trace ledger."
 title: "[WEBEATER] Link: [Source] → [Target]"
 labels: ["webeater-link", "pending-seal"]
+assignees: []
 body:
+  - type: markdown
+    attributes:
+      value: |
+        ## WEBEATER – Sovereign Trace Protocol (FROZEN‑4.0)
+
+        This form creates a cryptographic link between two entities in the STP ledger.
+        The link is sealed permanently, binding the source identity to a target identity
+        through a reference seal of a previously sealed trace.
+
+        **Use cases:** Audit chains, mentorship acknowledgements, collaboration proofs,
+        sovereign declarations, or any relationship that deserves an immutable record.
+
+        **⚠️ CRITICAL WARNINGS – READ BEFORE PROCEEDING ⚠️**
+        - The SHA‑256 hash of this link (including the reference seal) is **public**.
+        - Your GitHub username is **publicly linked** to this link. For anonymity, use a separate GitHub account.
+        - The reference seal must belong to an **existing, valid** STP trace. A false reference invalidates the link and will be noted in the ledger.
+        - The link is permanent. You cannot edit or delete it after submission.
+
+        **Fields marked with `*` are required.**
+
   - type: input
     id: source_id
     attributes:
-      label: "Source Identity"
+      label: "Source Identity *"
       description: "Your name, organization, or GitHub handle."
       placeholder: "Sheldon K. Salmon"
     validations:
@@ -15,7 +36,7 @@ body:
   - type: input
     id: target_id
     attributes:
-      label: "Target Identity"
+      label: "Target Identity *"
       description: "The name or organization you are linking to."
       placeholder: "OpenAI"
     validations:
@@ -24,38 +45,95 @@ body:
   - type: input
     id: ref_seal
     attributes:
-      label: "Reference Seal"
-      description: "The 64-character SHA-256 seal of the trace you are linking to. Must be exact."
-      placeholder: "19276f3fbdd02960..."
+      label: "Reference Seal *"
+      description: "The 64‑character SHA‑256 seal of the trace you are linking to. Must be exact. The seal will be verified against the STP ledger."
+      placeholder: "19276f3fbdd02960a4c4b0c9d5e7f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f"
     validations:
       required: true
 
   - type: dropdown
     id: relation_type
     attributes:
-      label: "Nature of Connection"
+      label: "Nature of Connection *"
       description: "Select the type of relationship this link represents."
       options:
         - "Audit & Certification"
         - "Mentorship / Reference"
         - "Contribution / Collaboration"
         - "Sovereign Acknowledgment"
+        - "Correction / Retraction of a previous link"
+      default: 0
     validations:
       required: true
 
   - type: textarea
     id: context
     attributes:
-      label: "Contextual Evidence"
-      description: "Briefly describe the significance of this link. What does it record?"
+      label: "Contextual Evidence *"
+      description: "Briefly describe the significance of this link. What does it record? Keep under 10,000 characters."
       placeholder: "Sealed AI failure report for [system] on [date]. Link establishes audit chain."
     validations:
       required: true
 
+  - type: input
+    id: correction_of
+    attributes:
+      label: "Correction / Retraction of (optional)"
+      description: "If this link corrects or retracts a previous WEBEATER link, provide the previous ledger entry ID or SHA‑256 hash."
+      placeholder: "e.g., a3f9c12e7d..."
+    validations:
+      required: false
+
+  - type: input
+    id: source_alias
+    attributes:
+      label: "Ledger alias for source (optional)"
+      description: "If you want a different name to appear in the STP ledger than your GitHub username or source identity, enter it here."
+      placeholder: "e.g., Anonymous Auditor, AionSystem"
+    validations:
+      required: false
+
+  - type: input
+    id: target_alias
+    attributes:
+      label: "Ledger alias for target (optional)"
+      description: "If the target identity should appear under a different name in the ledger, specify here."
+      placeholder: "e.g., The Research Lab"
+    validations:
+      required: false
+
+  - type: input
+    id: external_evidence_url
+    attributes:
+      label: "External evidence URL (optional)"
+      description: "Link to public evidence supporting this link (e.g., contract, email, announcement). Use permanent URLs (IPFS, archive.is). The stamp seals only the URL."
+      placeholder: "https://ipfs.io/ipfs/Qm..."
+    validations:
+      required: false
+
   - type: checkboxes
     id: declaration
     attributes:
-      label: "Declaration"
+      label: "Declaration *"
+      description: "You must confirm the following to proceed."
       options:
-        - label: "I confirm the Reference Seal above belongs to a real, previously sealed trace. I understand a false reference invalidates this link."
+        - label: "I confirm the Reference Seal above belongs to a real, previously sealed trace. I understand a false reference invalidates this link and may result in permanent ledger annotation."
           required: true
+        - label: "I confirm that I have obtained consent from the target entity (if an individual or organisation) to create this link, or I am acting on behalf of both parties."
+          required: false
+        - label: "I understand that this link is permanent and cannot be edited or deleted."
+          required: true
+        - label: "I understand that the SHA‑256 hash of this link is public and that my GitHub username is publicly linked to it unless I use an anonymous account."
+          required: true
+        - label: "I understand that the stamp uses FROZEN‑4.0 and that the seal is generated by `sovereign_trace_stamp.py`. See STP repository for verification."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **After submission**: The STP auto‑seal workflow will verify the reference seal, generate a triple‑time stamp, and create a permanent ledger entry linking source and target. You will receive a comment with the seal and ledger entry ID.
+
+        **Contact:** `aionsystem@outlook.com` (for technical issues only). All seals are final.
+
+        **Verification**: Every WEBEATER link can be independently verified using the STP pip package: `sovereign-trace verify --entry-id <ID> --hash <SHA-256>`.
