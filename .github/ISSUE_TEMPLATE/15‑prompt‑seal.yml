@@ -3,19 +3,27 @@ description: "Seal a prompt before deploying it to production. Proves what was a
 title: "[STP-PROMPT] — [SYSTEM NAME] — [DATE]"
 labels: ["prompt-seal", "pending-seal"]
 assignees: []
-
 body:
-
   - type: markdown
     attributes:
       value: |
-        ## Prompt Seal
+        ## Prompt Seal – Sovereign Trace Protocol (FROZEN‑4.0)
 
         This form is for sealing a prompt before it is deployed to a production AI system.
 
         When a prompt is later blamed for harmful output, the sealed record proves exactly what was authorized and when. This is a chain‑of‑custody instrument for prompt engineering.
 
+        **⚠️ CRITICAL WARNINGS – READ BEFORE PROCEEDING ⚠️**
+        - The exact prompt text you write is **public** and **permanent**.
+        - Your GitHub username is **publicly linked** to this seal.
+        - **Do not edit this issue after the workflow seals it** – the hash will change.
+        - **This record is retained permanently** in the STP ledger and GitHub issue history.
+        - Supporting files are **not** cryptographically bound unless you provide their SHA‑256 hashes.
+        - A correction creates a new entry; the original remains.
+
         **Write the exact prompt text. Do not paraphrase. Do not redact.**
+
+        **Fields marked with `*` are required.**
 
   - type: input
     id: submitter_name
@@ -29,7 +37,7 @@ body:
   - type: input
     id: system_name
     attributes:
-      label: "AI System Name"
+      label: "AI System Name *"
       description: "The system this prompt is deployed to (e.g., GPT‑4, Claude, internal model name)."
       placeholder: "e.g., Internal Chatbot v2.1, GPT-4-Turbo"
     validations:
@@ -38,7 +46,7 @@ body:
   - type: input
     id: deployment_date
     attributes:
-      label: "Date of Deployment"
+      label: "Date of Deployment *"
       description: "The date this prompt goes into production. Format: YYYY-MM-DD"
       placeholder: "2026-06-02"
     validations:
@@ -47,8 +55,8 @@ body:
   - type: textarea
     id: prompt_text
     attributes:
-      label: "Exact Prompt Text"
-      description: "Paste the full prompt exactly as it will be deployed. This is what the seal binds to."
+      label: "Exact Prompt Text *"
+      description: "Paste the full prompt exactly as it will be deployed. This is what the seal binds to. Keep under 10,000 characters."
       placeholder: "Write the complete prompt text here. Exact. Verbatim. No paraphrasing."
     validations:
       required: true
@@ -57,40 +65,62 @@ body:
     id: context
     attributes:
       label: "Deployment Context (Optional)"
-      description: "Where is this prompt used? Customer‑facing chatbot, internal tool, API endpoint, etc."
+      description: "Where is this prompt used? Customer‑facing chatbot, internal tool, API endpoint, etc. Keep under 5,000 characters."
       placeholder: "Describe the deployment context and intended use."
     validations:
       required: false
 
-  - type: upload
-    id: supporting_files
+  - type: textarea
+    id: supporting_urls
     attributes:
-      label: "Supporting Files (Optional)"
-      description: "Upload any related files — system prompt configuration, model card, safety documentation."
+      label: "Supporting Files URLs (Optional)"
+      description: "One permanent URL per line (IPFS, GitHub gist, etc.). The stamp seals only the URLs, not the content. For cryptographic integrity, also provide SHA‑256 hashes below."
+      placeholder: "https://ipfs.io/ipfs/Qm...\nhttps://gist.github.com/..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting_hashes
+    attributes:
+      label: "Supporting file SHA‑256 hashes (optional, recommended)"
+      description: "One SHA‑256 hash per file, in the same order as the URLs. This cryptographically binds the seal to the exact file content."
+      placeholder: "a3f9c12e7d... (64 hex chars)\nb4c8d3e2f1a..."
+    validations:
+      required: false
+
+  - type: input
+    id: correction_of
+    attributes:
+      label: "Correction / Resubmission of (optional)"
+      description: "If this seal corrects a previous prompt seal, provide the previous ledger entry ID or SHA‑256 hash."
+      placeholder: "a3f9c12e7d... or #42"
     validations:
       required: false
 
   - type: checkboxes
     id: declaration
     attributes:
-      label: "Declaration"
+      label: "Declaration *"
       options:
         - label: "I affirm this is the exact prompt text deployed or to be deployed to the named AI system."
           required: true
-        - label: "I understand this submission is immutable — it cannot be altered after sealing."
+        - label: "I understand this submission is immutable — it cannot be altered after sealing. A correction creates a new entry but does not delete the original."
+          required: true
+        - label: "I understand that my GitHub username is publicly linked to this seal, and the prompt text is public."
+          required: true
+        - label: "If I provided supporting file URLs, I have also provided their SHA‑256 hashes to cryptographically bind the content."
+          required: false
+        - label: "I understand that this submission is permanent – a correction creates a new entry but does not delete the original."
           required: true
 
   - type: markdown
     attributes:
       value: |
         ---
-        ## What Happens Next
+        **Data retention:** This record is retained permanently. You cannot delete it.
 
-        1. Completeness check — Reviewed for completeness.
-        2. Sealing — Sealed with a FROZEN‑4.0 triple‑time cryptographic stamp. Permanent.
-        3. Ledger entry — Enters the Sovereign Trace ledger with timestamp and SHA‑256 hash.
-        4. Notification — You receive your ledger entry ID and SHA‑256 hash.
+        **After submission**: The STP auto‑seal workflow will generate a triple‑time stamp and SHA‑256 hash. You will receive a comment with the seal and ledger entry ID. Do not edit the issue after sealing.
 
-        The seal is permanent. The seal is the resolution.
+        **Contact:** `aionsystem@outlook.com` (for technical issues only). All seals are final.
 
-        Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
+        **Verification**: Every prompt seal can be independently verified using the STP pip package: `sovereign-trace verify --entry-id <ID> --hash <SHA-256>`.
