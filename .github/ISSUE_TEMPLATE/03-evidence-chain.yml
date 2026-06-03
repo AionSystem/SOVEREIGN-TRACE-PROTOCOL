@@ -20,7 +20,7 @@ body:
         This is chain of custody infrastructure — not a complaint form.
 
   - type: input
-    id: submitter_name
+    id: submitter-name
     attributes:
       label: "Your Name or Publication (Optional)"
       description: "If provided, becomes part of the permanent record. Leave blank for anonymous chain of custody."
@@ -29,7 +29,7 @@ body:
       required: false
 
   - type: input
-    id: evidence_type
+    id: evidence-type
     attributes:
       label: "Evidence Type"
       description: "What kind of material is being sealed?"
@@ -38,46 +38,56 @@ body:
       required: true
 
   - type: input
-    id: receipt_date
+    id: receipt-date
     attributes:
       label: "Date Material Was Received or Created"
-      description: "The date you received or created this material. Format: YYYY-MM-DD"
+      description: "YYYY-MM-DD"
       placeholder: "2026-03-07"
     validations:
       required: true
 
   - type: textarea
-    id: material_description
+    id: material-description
     attributes:
       label: "Description of Material"
-      description: "Describe what it is, what it pertains to, and what it shows. No source-identifying information unless intended for the permanent record."
+      description: "Describe what it is, what it pertains to, and what it shows. No source-identifying information. **Keep under 10,000 characters.**"
       placeholder: "Describe the material and what it establishes."
     validations:
       required: true
 
   - type: textarea
-    id: source_context
+    id: source-context
     attributes:
       label: "Context (Optional)"
-      description: "How was this material obtained? Do not include source-identifying information unless intended for the permanent record."
+      description: "How was this material obtained? Do not include source-identifying info. **Keep under 5,000 characters.**"
       placeholder: "Context for the material — optional."
     validations:
       required: false
 
   - type: input
-    id: disclosure_timeline
+    id: file-url
+    attributes:
+      label: "File URL (Optional)"
+      description: "Link to the file hosted externally (e.g., Google Drive, Dropbox, GitHub release). Do not upload directly."
+      placeholder: "https://example.com/file.pdf"
+    validations:
+      required: false
+
+  - type: input
+    id: file-hash
+    attributes:
+      label: "File SHA-256 Hash (Optional, Recommended)"
+      description: "If you host the file elsewhere, provide its SHA‑256 hash to cryptographically bind the seal to the file."
+      placeholder: "64-character hex string"
+    validations:
+      required: false
+
+  - type: input
+    id: disclosure-timeline
     attributes:
       label: "Intended Disclosure Timeline (Optional)"
       description: "When do you plan to publish or disclose? Establishes that the seal predates the public record."
       placeholder: "Pre-publication / Expected: April 2026 / Ongoing investigation"
-    validations:
-      required: false
-
-  - type: upload
-    id: evidence_files
-    attributes:
-      label: "Evidence Files (Optional)"
-      description: "Upload documents, screenshots, or files. These become part of the sealed record."
     validations:
       required: false
 
@@ -88,11 +98,11 @@ body:
       options:
         - label: "I affirm this description accurately represents the material I received or created on the stated date."
           required: true
+        - label: "I have not included source‑identifying information that would endanger any individual."
+          required: true
         - label: "I understand this submission is immutable — it cannot be altered after sealing."
           required: true
         - label: "I understand the protocol seals my account of receiving the material — not the authenticity of the material itself."
-          required: true
-        - label: "I have not included information in this submission that would endanger any individual."
           required: true
 
   - type: markdown
@@ -102,10 +112,10 @@ body:
         ## What Happens Next
 
         1. Completeness check — Reviewed for completeness.
-        2. Sealing — Sealed with a FROZEN-2.0 triple-time cryptographic stamp. Permanent.
-        3. Ledger entry — Enters the Sovereign Trace ledger with timestamp and SHA-256 hash.
-        4. Notification — You receive your ledger entry ID and SHA-256 hash.
+        2. Sealing — Sealed with a **FROZEN-4.0** triple‑time cryptographic stamp. Permanent.
+        3. Ledger entry — Enters the Sovereign Trace ledger with timestamp and SHA‑256 hash.
+        4. Notification — You receive your ledger entry ID and SHA‑256 hash.
 
         The seal is permanent. The seal is the chain of custody.
 
-        Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
+        *Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem@outlook.com*
