@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 680" width="500" height="680">
+  <defs>
+    <linearGradient id="bgDeep" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A140E"/>
+      <stop offset="35%" stop-color="#120C08"/>
+      <stop offset="65%" stop-color="#1A120C"/>
+      <stop offset="100%" stop-color="#0A0604"/>
+    </linearGradient>
+    <linearGradient id="borderCopper" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#CD7F32"/>
+      <stop offset="25%" stop-color="#D4AF37"/>
+      <stop offset="50%" stop-color="#CD7F32"/>
+      <stop offset="75%" stop-color="#B87333"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </linearGradient>
+    <linearGradient id="ribbonGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5a3e00"/>
+      <stop offset="15%" stop-color="#9a7000"/>
+      <stop offset="35%" stop-color="#D4AF37"/>
+      <stop offset="50%" stop-color="#F5E08A"/>
+      <stop offset="65%" stop-color="#D4AF37"/>
+      <stop offset="85%" stop-color="#9a7000"/>
+      <stop offset="100%" stop-color="#5a3e00"/>
+    </linearGradient>
+    <linearGradient id="verifyBarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e0c08"/>
+      <stop offset="100%" stop-color="#080604"/>
+    </linearGradient>
+    <radialGradient id="depthField" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.55"/>
+    </radialGradient>
+    <radialGradient id="gloss" cx="20%" cy="10%" r="60%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="aionMarkCopper" width="272" height="272" patternUnits="userSpaceOnUse" patternTransform="rotate(-28)">
+      <text x="0" y="40" font-family="'Courier New',monospace" font-size="35" font-weight="bold" fill="#CD7F32" opacity="0.05" letter-spacing="4">AI/ON</text>
+    </pattern>
+    <clipPath id="cardClip"><rect x="0" y="0" width="500" height="680" rx="28"/></clipPath>
+  </defs>
+
+  <rect width="500" height="680" rx="28" fill="url(#bgDeep)"/>
+  <rect width="500" height="680" rx="28" fill="url(#aionMarkCopper)" clip-path="url(#cardClip)"/>
+  <rect x="2.5" y="2.5" width="495" height="675" rx="27" fill="none" stroke="url(#borderCopper)" stroke-width="2"/>
+  <rect x="8" y="8" width="484" height="664" rx="23" fill="none" stroke="#D4AF37" stroke-width="0.8" stroke-opacity="0.5"/>
+
+  <!-- Ribbons -->
+  <rect x="0" y="36" width="500" height="22" fill="url(#ribbonGold)" opacity="0.97"/>
+  <text x="250" y="52" font-family="'Georgia',serif" font-size="11" font-weight="bold" letter-spacing="4" fill="#0a0a14" text-anchor="middle">PERSONAL CONSTITUTION SEAL</text>
+  <rect x="0" y="58" width="500" height="16" fill="#0A0604" opacity="0.9"/>
+  <text x="250" y="70" font-family="'Courier New',monospace" font-size="8" letter-spacing="2" fill="#CD7F32" text-anchor="middle">SOVEREIGN AI CONSTITUTION SEAL — PERSONAL TRACK</text>
+
+  <!-- SACS Badge (placeholder) -->
+  <rect x="90" y="82" width="280" height="280" rx="8" fill="#0A0604" fill-opacity="0.5"/>
+  <image x="95" y="87" width="270" height="270" href="{{SACS_BADGE_URL}}"/>
+
+  <!-- QR Code -->
+  <rect x="385" y="190" width="58" height="58" rx="7" fill="#0A0604" stroke="url(#borderCopper)" stroke-width="1.2"/>
+  <image x="390" y="195" width="48" height="48" href="{{QR_CODE_URL}}"/>
+  <text x="414" y="260" font-family="'Courier New',monospace" font-size="6" fill="#CD7F32" text-anchor="middle" letter-spacing="1">SCAN</text>
+
+  <!-- Verification Panel -->
+  <rect x="35" y="378" width="430" height="160" rx="14" fill="url(#verifyBarBg)" stroke="#CD7F32" stroke-width="1" stroke-opacity="0.5"/>
+  <rect x="35" y="378" width="430" height="28" rx="14" fill="#CD7F32" fill-opacity="0.12"/>
+  <text x="250" y="397" font-family="'Courier New',monospace" font-size="9" font-weight="bold" fill="#D4AF37" text-anchor="middle" letter-spacing="2">VERIFIED CONSTITUTION SEAL</text>
+  <line x1="55" y1="409" x2="445" y2="409" stroke="#CD7F32" stroke-width="0.4" stroke-opacity="0.4"/>
+
+  <!-- Holder Info -->
+  <text x="250" y="430" font-family="'Courier New',monospace" font-size="8.5" text-anchor="middle">
+    <tspan fill="#D4AF37">◈ </tspan>
+    <tspan fill="#CD7F32">Holder: {{PERSONAL_NAME}}</tspan>
+  </text>
+  <text x="250" y="447" font-family="'Courier New',monospace" font-size="8.5" fill="#888" text-anchor="middle">AI System: {{AI_SYSTEM_NAME}}</text>
+
+  <!-- Audit Details -->
+  <circle cx="57" cy="480" r="2.5" fill="#D4AF37" opacity="0.7"/>
+  <text x="67" y="483" font-family="'Courier New',monospace" font-size="8" fill="#888">Registry ID</text>
+  <text x="132" y="483" font-family="'Courier New',monospace" font-size="8" fill="#D4AF37" font-weight="bold">{{REGISTRY_ID}}</text>
+
+  <circle cx="57" cy="498" r="2.5" fill="#CD7F32" opacity="0.7"/>
+  <text x="67" y="501" font-family="'Courier New',monospace" font-size="8" fill="#888">SHA‑256</text>
+  <text x="132" y="501" font-family="'Courier New',monospace" font-size="7.5" fill="#48CAE4">{{SHA256_FIRST16}}…</text>
+
+  <circle cx="57" cy="516" r="2.5" fill="#B87333" opacity="0.7"/>
+  <text x="67" y="519" font-family="'Courier New',monospace" font-size="8" fill="#888">Verify</text>
+  <text x="132" y="519" font-family="'Courier New',monospace" font-size="8" fill="#48CAE4">{{VERIFY_URL}}</text>
+
+  <!-- Issued (Lifetime) -->
+  <text x="250" y="565" font-family="'Courier New',monospace" font-size="8" fill="#CD7F32" text-anchor="middle">ISSUED {{ISSUED_DATE}} · LIFETIME (SYSTEM VERSION)</text>
+
+  <!-- Footer Validity -->
+  <rect x="35" y="620" width="430" height="35" rx="8" fill="#060604" fill-opacity="0.8" stroke="#CD7F32" stroke-width="0.5" stroke-opacity="0.4"/>
+  <text x="52" y="637" font-family="'Courier New',monospace" font-size="6" fill="#CD7F32" opacity="0.6">CONSTITUTION v2.1</text>
+  <text x="52" y="648" font-family="'Courier New',monospace" font-size="7" fill="#D4AF37" font-weight="bold">SOVEREIGN AI CONSTITUTION SEAL</text>
+  <text x="440" y="645" font-family="'Courier New',monospace" font-size="6" fill="#CD7F32" text-anchor="end">TRUST REGISTRY SEALED</text>
+
+  <!-- Micro‑text -->
+  <text x="-100" y="690" font-family="'Courier New',monospace" font-size="4" fill="#CD7F32" opacity="0.2">AIONSYSTEM · SOVEREIGN AI CONSTITUTION SEAL · PERSONAL TRACK · NON-TRANSFERABLE · SHA-256 · STP SEALED</text>
+
+  <rect width="500" height="680" rx="28" fill="url(#depthField)" clip-path="url(#cardClip)" pointer-events="none"/>
+  <rect width="500" height="680" rx="28" fill="url(#gloss)" clip-path="url(#cardClip)" pointer-events="none"/>
+</svg>
