@@ -115,15 +115,12 @@
   <rect x="8" y="8" width="484" height="664" rx="23" fill="none" stroke="url(#innerBorder)" stroke-width="1"/>
   <rect x="13" y="13" width="474" height="654" rx="19" fill="none" stroke="#4af0ff" stroke-width="0.3" stroke-opacity="0.12"/>
 
-  <!-- CONDITIONAL RIBBONS -->
-  <!-- RIBBON_GOLD_START (Active) -->
+  <!-- CONDITIONAL RIBBONS — both active for this mock -->
   <rect x="0" y="36" width="500" height="22" fill="url(#ribbonGold)" opacity="0.97"/>
   <text x="250" y="51.5" font-family="'Georgia','Times New Roman',serif" font-size="11" font-weight="bold" letter-spacing="4" fill="#0a0a14" text-anchor="middle" opacity="0.92">AI SOVEREIGN CERTIFIED</text>
-  <!-- RIBBON_GOLD_END -->
-  <!-- RIBBON_SILVER_START (Active) -->
+
   <rect x="0" y="58" width="500" height="16" fill="url(#ribbonSilver)" opacity="0.92"/>
   <text x="250" y="69.5" font-family="'Georgia','Times New Roman',serif" font-size="9" font-weight="bold" letter-spacing="3" fill="#0a0a14" text-anchor="middle" opacity="0.88">AI CLOUD CERTIFIED</text>
-  <!-- RIBBON_SILVER_END -->
 
   <!-- Corner marks -->
   <g stroke="#D4AF37" stroke-width="1.4" stroke-opacity="0.5" stroke-linecap="square" fill="none">
@@ -137,12 +134,12 @@
     <path d="M474,654 L474,636 M474,654 L456,654" stroke="#4af0ff" stroke-width="0.5" stroke-opacity="0.25"/>
   </g>
 
-  <!-- Badge slots -->
+  <!-- Badge slots — filled with real badge SVGs via relative paths -->
   <rect x="30" y="85" width="210" height="200" rx="8" fill="#000000" fill-opacity="0.15"/>
-  <image x="30" y="85" width="210" height="200" href="assets/badges/verified-simulator/aion-verified-simulator-badge-v2.svg"/>
+  <image x="30" y="85" width="210" height="200" href="../../badges/verified-simulator/aion-verified-simulator-badge-v2.svg"/>
 
   <rect x="260" y="85" width="210" height="200" rx="8" fill="#000000" fill-opacity="0.15"/>
-  <image x="260" y="85" width="210" height="200" href="assets/badges/stp_auditor/stp_auditor_badge_sheldon_v1.svg"/>
+  <image x="260" y="85" width="210" height="200" href="../../badges/stp_auditor/stp_auditor_badge_sheldon_v1.svg"/>
 
   <!-- Badge enclosure ring -->
   <rect x="15" y="80" width="470" height="210" rx="14" fill="none" stroke="url(#holoRing)" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="6,4"/>
@@ -177,11 +174,11 @@
     <tspan fill="#D4AF37">Certified by STP‑AUDITOR‑0001 (Founding Badge)</tspan>
   </text>
 
-  <!-- Tier badge slot (filled with the standard badge) -->
+  <!-- Tier badge slot — filled with real standard badge via relative path -->
   <rect x="130" y="372" width="240" height="58" rx="8" fill="#0d0d1a" fill-opacity="0.6" stroke="#D4AF37" stroke-width="0.8" stroke-opacity="0.35" stroke-dasharray="5,3"/>
   <rect x="133" y="375" width="234" height="52" rx="6" fill="none" stroke="#4af0ff" stroke-width="0.3" stroke-opacity="0.18" stroke-dasharray="3,5"/>
   <text x="250" y="397" font-family="'Courier New',monospace" font-size="6" fill="#D4AF37" fill-opacity="0.38" text-anchor="middle" letter-spacing="2">SOVEREIGN TIER</text>
-  <image x="170" y="383" width="160" height="30" href="assets/badges/sovereign-certified/sovereign-certified-badge-v2.svg"/>
+  <image x="170" y="383" width="160" height="30" href="../../badges/sovereign-certified/sovereign-certified-badge-v2.svg"/>
   <text x="250" y="424" font-family="'Courier New',monospace" font-size="6" fill="#444" text-anchor="middle" letter-spacing="1">Standard Tier</text>
 
   <!-- Audit details -->
@@ -230,7 +227,7 @@
   <text x="260" y="638" font-family="'Courier New',monospace" font-size="8.5" fill="#F5E08A" font-weight="bold" letter-spacing="1">AI-OUTPUT-T1-PROFESSIONAL</text>
   <text x="260" y="649" font-family="'Courier New',monospace" font-size="6" fill="#555" letter-spacing="1">Professional Depth (50 outputs)</text>
 
-  <!-- QR code (mock) -->
+  <!-- QR code (mock placeholder) -->
   <rect x="410" y="603" width="58" height="58" rx="7" fill="#060610" stroke="url(#borderRainbow)" stroke-width="1.4"/>
   <rect x="420" y="613" width="38" height="38" rx="2" fill="#0a0a14" stroke="#D4AF37" stroke-width="1"/>
   <text x="439" y="638" font-family="'Courier New',monospace" font-size="12" fill="#D4AF37" text-anchor="middle">QR</text>
