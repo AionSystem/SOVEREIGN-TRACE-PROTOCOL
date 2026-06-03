@@ -26,6 +26,9 @@ body:
         - If you request recording in the Trust Registry, the company name and Snapshot result become **public, permanent, immutable**.
         - Email attachments (payment screenshots) are **not** cryptographically sealed. Only the final report is sealed.
         - For sensitive outputs, consider redacting before submission or using a separate confidential channel (contact the email above).
+        - **This description is permanently sealed. Proofread before submitting.**
+        - **Do not edit this issue after the workflow seals it** – the hash will change.
+        - **This record is retained permanently** in the STP ledger and GitHub issue history.
 
         **Fields marked with `*` are required.**
 
@@ -59,7 +62,7 @@ body:
     id: output_description
     attributes:
       label: "AI Outputs to Review *"
-      description: "Up to 10 outputs. Briefly describe each. Keep under 10,000 characters. For files, upload to a permanent URL (e.g., GitHub gist, IPFS) and provide the links here. Include SHA‑256 hashes if you want cryptographic binding."
+      description: "Up to 10 outputs. Briefly describe each. Keep under 10,000 characters. For files, upload to a permanent URL (e.g., GitHub gist, IPFS) and provide the links below. Include SHA‑256 hashes if you want cryptographic binding."
       placeholder: "10 GPT-4o outputs from customer support pipeline, March 2026. Files: https://ipfs.io/ipfs/Qm... (SHA‑256: ...)"
     validations:
       required: true
@@ -72,12 +75,21 @@ body:
     validations:
       required: true
 
-  - type: input
+  - type: textarea
     id: output_urls
     attributes:
       label: "URLs to output files (optional)"
-      description: "If you have uploaded outputs to a permanent location, provide the URLs here. The seal will cover these URLs (but not the file content). For cryptographic integrity, include SHA‑256 hashes in the `Outputs Description` field."
-      placeholder: "https://ipfs.io/ipfs/Qm..., https://gist.github.com/..."
+      description: "One permanent URL per line (IPFS, GitHub gist, etc.). The seal will cover these URLs (but not the file content). For cryptographic integrity, also provide SHA‑256 hashes below."
+      placeholder: "https://ipfs.io/ipfs/Qm...\nhttps://gist.github.com/..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: output_hashes
+    attributes:
+      label: "Output file SHA‑256 hashes (optional, recommended)"
+      description: "One SHA‑256 hash per file, in the same order as the URLs. This cryptographically binds the seal to the exact file content."
+      placeholder: "a3f9c12e7d... (64 hex chars)\nb4c8d3e2f1a..."
     validations:
       required: false
 
@@ -116,12 +128,16 @@ body:
           required: false
         - label: "I understand that my GitHub username is publicly linked to this request, and the issued Snapshot badge does not reveal my GitHub identity unless I disclose it."
           required: true
+        - label: "I understand that this submission is immutable – a correction creates a new entry but does not delete the original."
+          required: true
 
   - type: markdown
     attributes:
       value: |
         ---
         **After submission**: The payment will be verified via Stripe. Upon confirmation, the Snapshot will be processed within 5–7 business days. You will receive a signed Snapshot Verification Statement (PDF) and the Snapshot badge embed code. If Trust Registry selected, the entry will be sealed and published.
+
+        **Data retention:** This record is retained permanently. You cannot delete it.
 
         **Contact:** `aionsystem@outlook.com` (for payment issues or questions). All seals are final.
 
