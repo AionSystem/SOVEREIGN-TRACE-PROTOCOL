@@ -21,7 +21,7 @@ body:
         or a SHA-256 hash of the file. What matters is that the seal binds to something specific and unique.
 
   - type: input
-    id: submitter_name
+    id: submitter-name
     attributes:
       label: "Your Name or Artist Name"
       description: "The name you want attached to this priority record."
@@ -30,7 +30,7 @@ body:
       required: true
 
   - type: input
-    id: work_title
+    id: work-title
     attributes:
       label: "Work Title"
       description: "The title of the work being sealed."
@@ -48,34 +48,43 @@ body:
       required: true
 
   - type: input
-    id: creation_date
+    id: creation-date
     attributes:
       label: "Date of Creation or Completion"
-      description: "When was this work created or completed? Format: YYYY-MM-DD"
+      description: "YYYY-MM-DD"
       placeholder: "2026-03-07"
     validations:
       required: true
 
   - type: textarea
-    id: work_description
+    id: work-description
     attributes:
       label: "Work Description"
-      description: "Describe the work precisely. Include distinctive elements that uniquely identify it."
+      description: "Describe the work precisely. Include distinctive elements that uniquely identify it. **Keep under 10,000 characters.**"
       placeholder: "Describe the work with enough specificity to distinguish it from any other work."
     validations:
       required: true
 
   - type: textarea
-    id: representative_content
+    id: representative-content
     attributes:
-      label: "Excerpt or File Hash (Optional)"
-      description: "Paste a short excerpt, key passage, or SHA-256 hash of the file. Binds the seal to specific content."
+      label: "Excerpt, File Hash, or Key Passage (Optional)"
+      description: "Paste a short excerpt, key passage, or SHA-256 hash of the file. Binds the seal to specific content. **Keep under 5,000 characters.**"
       placeholder: "Excerpt, key passage, or SHA-256 hash of the file."
     validations:
       required: false
 
   - type: input
-    id: publication_status
+    id: file-hash
+    attributes:
+      label: "Full File SHA-256 Hash (Optional, Recommended)"
+      description: "If you host the full file externally, provide its SHA‑256 hash to cryptographically bind the seal to the exact file."
+      placeholder: "64-character hex string"
+    validations:
+      required: false
+
+  - type: input
+    id: publication-status
     attributes:
       label: "Publication Status"
       description: "Is this work published, unpublished, or in progress?"
@@ -83,11 +92,12 @@ body:
     validations:
       required: true
 
-  - type: upload
-    id: supporting_files
+  - type: input
+    id: supporting-urls
     attributes:
-      label: "Supporting Files (Optional)"
-      description: "Upload a preview, excerpt, or representative file. Do not upload the full work if unpublished."
+      label: "Supporting File URLs (Optional)"
+      description: "Upload a preview, excerpt, or representative file to a service (e.g., Google Drive, GitHub release) and paste the links here. Do not upload directly."
+      placeholder: "https://example.com/preview.pdf"
     validations:
       required: false
 
@@ -112,10 +122,10 @@ body:
         ## What Happens Next
 
         1. Completeness check — Reviewed for completeness.
-        2. Sealing — Sealed with a FROZEN-2.0 triple-time cryptographic stamp. Permanent.
-        3. Ledger entry — Enters the Sovereign Trace ledger with your name, timestamp, and SHA-256 hash.
-        4. Notification — You receive your ledger entry ID and SHA-256 hash. Keep it. It is your proof.
+        2. Sealing — Sealed with a **FROZEN-4.0** triple‑time cryptographic stamp. Permanent.
+        3. Ledger entry — Enters the Sovereign Trace ledger with your name, timestamp, and SHA‑256 hash.
+        4. Notification — You receive your ledger entry ID and SHA‑256 hash. Keep it. It is your proof.
 
         The seal is permanent. The seal is the priority record.
 
-        Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
+        *Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem@outlook.com*
