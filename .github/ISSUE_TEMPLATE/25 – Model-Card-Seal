@@ -1,0 +1,135 @@
+name: "Model Card Seal — Sovereign Trace Protocol"
+description: "Seal a model card or system card at the time of publication. Proves the documented capabilities and limitations existed before deployment."
+title: "[STP-MODELCARD] — [MODEL NAME] — [DATE]"
+labels: ["model-card", "pending-seal"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Model Card Seal – Sovereign Trace Protocol (FROZEN‑4.0)
+
+        This form seals a model card or system card at the moment of publication. It proves that the documented capabilities, limitations, and intended use existed before deployment – no retrospective editing.
+
+        **⚠️ CRITICAL WARNINGS – READ BEFORE PROCEEDING ⚠️**
+        - The model card content is **public** and **permanent**.
+        - Your GitHub username is **publicly linked** to this seal.
+        - **Do not include proprietary weights, API keys, or confidential training data.**
+        - **Do not edit this issue after the workflow seals it** – the hash will change.
+        - **This record is retained permanently** in the STP ledger and GitHub issue history.
+        - A correction creates a new entry; the original remains.
+
+        **Fields marked with `*` are required.**
+
+  - type: input
+    id: submitter_name
+    attributes:
+      label: "Your Name (Optional)"
+      placeholder: "First Last or leave blank"
+    validations:
+      required: false
+
+  - type: input
+    id: model_name
+    attributes:
+      label: "Model Name *"
+      placeholder: "e.g., Financial Sentiment Analyzer v1.0"
+    validations:
+      required: true
+
+  - type: input
+    id: model_version
+    attributes:
+      label: "Version *"
+      placeholder: "v1.0, 2026-06-01"
+    validations:
+      required: true
+
+  - type: input
+    id: publication_date
+    attributes:
+      label: "Publication Date *"
+      placeholder: "2026-06-04"
+    validations:
+      required: true
+
+  - type: textarea
+    id: intended_use
+    attributes:
+      label: "Intended Use *"
+      description: "What is this model for? Keep under 5,000 characters."
+      placeholder: "Sentiment analysis of financial news headlines (English only). Not for medical diagnosis."
+    validations:
+      required: true
+
+  - type: textarea
+    id: limitations
+    attributes:
+      label: "Known Limitations *"
+      description: "What cannot this model do? Where does it fail? Keep under 5,000 characters."
+      placeholder: "May misclassify sarcasm. Performance degrades on non‑English text. Not tested on legal documents."
+    validations:
+      required: true
+
+  - type: textarea
+    id: training_data_summary
+    attributes:
+      label: "Training Data Summary *"
+      description: "Source, size, preprocessing. Keep under 5,000 characters."
+      placeholder: "Financial news articles 2015‑2025, 2M sentences, deduplicated, cleaned of PII."
+    validations:
+      required: true
+
+  - type: textarea
+    id: evaluation_results
+    attributes:
+      label: "Evaluation Results (Optional)"
+      description: "Accuracy, F1, etc. Keep under 5,000 characters."
+      placeholder: "F1: 0.89 on test set. Bias demographic parity: 0.95."
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting_urls
+    attributes:
+      label: "Supporting Files URLs (Optional)"
+      description: "Full model card PDF, benchmark details, etc. Permanent URLs only."
+      placeholder: "https://ipfs.io/ipfs/Qm..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting_hashes
+    attributes:
+      label: "Supporting file SHA‑256 hashes (optional, recommended)"
+      placeholder: "a3f9c12e7d..."
+    validations:
+      required: false
+
+  - type: input
+    id: correction_of
+    attributes:
+      label: "Correction / Resubmission of (optional)"
+      placeholder: "#42 or a3f9c12e7d..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: "Declaration *"
+      options:
+        - label: "I affirm this model card accurately represents the model as of the publication date."
+          required: true
+        - label: "I have not included proprietary model weights, API keys, or confidential data."
+          required: true
+        - label: "I understand this submission is immutable — a correction creates a new entry but does not delete the original."
+          required: true
+        - label: "I understand that my GitHub username is publicly linked to this seal, and the model card is public."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Contact:** `aionsystem@outlook.com`
