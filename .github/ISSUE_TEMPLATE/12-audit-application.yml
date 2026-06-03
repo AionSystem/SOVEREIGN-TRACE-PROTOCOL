@@ -19,6 +19,8 @@ body:
         - If approved, your name and badge number become part of the **permanent, public Trust Registry**.
         - Rejection is final – there is no appeal process.
         - Do not include sensitive personal information (home address, private email, financial data) in any field.
+        - **Do not edit this issue after submission** – changes may affect review.
+        - **This record is retained permanently** in the STP ledger and GitHub issue history.
 
         **Term:** 1 year from badge issuance. Renewable by reapplication.
         **Annual cap:** 50 sealed audits per calendar year per badge.
@@ -86,8 +88,17 @@ body:
     id: skills_url
     attributes:
       label: "Skills Sample — URL (optional)"
-      description: "If you have a permanent URL to a sample review (e.g., a redacted audit report, a GitHub gist), provide it here. The stamp will seal this URL."
+      description: "If you have a permanent URL to a sample review (e.g., a redacted audit report, a GitHub gist), provide it here. The stamp will seal this URL. For cryptographic binding, also provide the file's SHA‑256 hash below."
       placeholder: "https://gist.github.com/yourname/audit-sample"
+    validations:
+      required: false
+
+  - type: input
+    id: skills_hash
+    attributes:
+      label: "Skills Sample SHA‑256 Hash (optional, recommended)"
+      description: "64‑character hex hash of the sample file. This cryptographically binds the seal to the exact file content."
+      placeholder: "a3f9c12e7d... (64 hex chars)"
     validations:
       required: false
 
@@ -139,12 +150,16 @@ body:
           required: true
         - label: "I understand that my full name, LinkedIn URL, and specialization will be publicly visible in this application and, if approved, in the Trust Registry."
           required: true
+        - label: "I understand that this application is immutable – a correction creates a new entry but does not delete the original."
+          required: true
 
   - type: markdown
     attributes:
       value: |
         ---
         **After submission**: The application will be reviewed on the next Monday or Tuesday. You will receive a response on this issue. If approved, you will be issued an STP Auditor badge number and added to the verified auditors registry.
+
+        **Data retention:** This record is retained permanently. You cannot delete it.
 
         **Contact:** `aionsystem@outlook.com` (for questions only – do not send applications here).
 
