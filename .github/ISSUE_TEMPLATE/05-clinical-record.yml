@@ -89,7 +89,6 @@ body:
     id: pre-review-status
     attributes:
       label: "Status at Time of Sealing *"
-      description: "What is the status right now? Before review, before remediation, before audit."
       options:
         - "Pre‑review"
         - "Pre‑remediation"
@@ -133,7 +132,7 @@ body:
       required: false
 
   - type: input
-    id: correction_of
+    id: correction-of
     attributes:
       label: "Correction / Retraction of (Optional)"
       description: "If this record corrects a previous clinical record seal, provide the previous ledger entry ID or SHA‑256 hash."
@@ -148,13 +147,19 @@ body:
       description: "Confirm that you have removed all of the following from this submission:"
       options:
         - label: "Patient names, initials, or any identifying descriptors"
+          required: true
         - label: "Dates of birth, admission/discharge dates, death dates (years allowed)"
+          required: true
         - label: "Addresses, phone numbers, email addresses, SSNs"
+          required: true
         - label: "Medical record numbers, health plan numbers, device identifiers"
+          required: true
         - label: "Biometric identifiers (fingerprints, retina scans)"
+          required: true
         - label: "Full‑face photographs or any unique physical characteristics"
+          required: true
         - label: "Any other information that could reasonably identify an individual"
-      required: true
+          required: true
 
   - type: checkboxes
     id: declaration
