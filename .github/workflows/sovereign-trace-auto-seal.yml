@@ -89,7 +89,7 @@ jobs:
                 'Please close this issue and resubmit with a valid seal from a previously sealed trace.',
                 '',
                 '---',
-                '*Sovereign Trace Protocol · FROZEN-2.0 · Sheldon K. Salmon*'
+                '*Sovereign Trace Protocol · FROZEN-4.0 · Sheldon K. Salmon*'
               ].join('\n')
             });
 
@@ -99,7 +99,7 @@ jobs:
           echo "REF_SEAL validation failed. Halting pipeline."
           exit 1
 
-      - name: Run FROZEN-2.0 stamp
+      - name: Run FROZEN-4.0 stamp
         id: stamp
         env:
           ISSUE_TITLE: ${{ github.event.issue.title }}
@@ -114,7 +114,6 @@ jobs:
 
           sys.path.insert(0, 'stamp')
 
-          # BUG 5 FIX — guard import, post failure signal if stamp file missing
           try:
               from sovereign_trace_stamp import stamp, to_dict
           except ImportError as e:
@@ -149,7 +148,7 @@ jobs:
                   "hebrew":         ts_dict["hebrew"],
                   "dreamspell":     ts_dict["dreamspell"],
                   "unix_utc":       ts_dict["unix_utc"],
-                  "frozen_version": "FROZEN-2.0"
+                  "frozen_version": "FROZEN-4.0"
               },
               "status": "SEALED"
           }
@@ -172,17 +171,15 @@ jobs:
           PYEOF
 
       - name: Commit ledger entry
-        # BUG 6 FIX — guard against empty commit
         run: |
           git config user.name  "Sovereign Trace Protocol"
-          git config user.email "aionsystem2026@gmail.com"
+          git config user.email "aionsystem@outlook.com"
           git add ledger/
           git diff --cached --quiet && echo "Nothing to commit" && exit 0
           git commit -m "SEAL: ${{ steps.stamp.outputs.ledger_id }}"
           git push
 
       - name: Post seal receipt to issue
-        # BUG 7 FIX — only fires if stamp succeeded
         if: steps.stamp.outcome == 'success'
         uses: actions/github-script@v7
         with:
@@ -201,7 +198,7 @@ jobs:
               `SHA-256:      ${sha256}`,
               '```',
               '',
-              '**Triple-Time Stamp:**',
+              '**Triple-Time Stamp (FROZEN-4.0):**',
               `📅 Gregorian:  ${gregorian}`,
               `🌑 Hebrew:     ${hebrew}`,
               `🌀 Dreamspell: ${dreamspell}`,
@@ -212,7 +209,7 @@ jobs:
               'Your Ledger ID is your receipt. Keep it.',
               '',
               '---',
-              '*Sovereign Trace Protocol · FROZEN-2.0 · Sheldon K. Salmon*'
+              '*Sovereign Trace Protocol · FROZEN-4.0 · Sheldon K. Salmon*'
             ].join('\n');
 
             await github.rest.issues.createComment({
@@ -223,7 +220,6 @@ jobs:
             });
 
       - name: Update label — pending-seal to sealed
-        # BUG 7 FIX — only fires if stamp succeeded
         if: steps.stamp.outcome == 'success'
         uses: actions/github-script@v7
         with:
