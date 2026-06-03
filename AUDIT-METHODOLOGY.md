@@ -1,77 +1,52 @@
-# AUDIT METHODOLOGY
-## Sovereign Trace Protocol — Epistemic Debt Assessment Framework
-
-```
+# AUDIT METHODOLOGY v2.0
+## Sovereign Trace Protocol — Epistemic Debt & Certainty Assessment Framework
 ╔══════════════════════════════════════════════════════════════════╗
-║   ⬡  SOVEREIGN TRACE PROTOCOL  ⬡                                ║
-║   Audit Methodology · Epistemic Debt Framework · FROZEN-2.0     ║
-║   Architect: Sheldon K. Salmon · AI Reliability & AGI Architect ║
+║ ⬡ SOVEREIGN TRACE PROTOCOL ⬡ ║
+║ Audit Methodology · Epistemic Debt Framework · FROZEN-4.0 ║
+║ Architect: Sheldon K. Salmon · AI Reliability & ADI Architect ║
 ╚══════════════════════════════════════════════════════════════════╝
-```
 
-**Document Version:** AM-v1.0
-**Governing Standard:** FROZEN-2.0
-**Effective:** March 2026
+text
 
----
+**Document Version:** AM-v2.0
+**Governing Standard:** FROZEN‑4.0
+**Effective:** June 2026
+**Supersedes:** AM‑v1.0 (March 2026)
 
-## THE EPISTEMIC DEBT PROBLEM
-
-Every organization deploying AI systems accumulates epistemic debt.
-
-Epistemic debt is the gap between what an organization claims
-about its AI systems and what it can actually prove. It
-accumulates in the absence of a ledger. It compounds when
-failures go unsealed. It becomes a liability when a regulator,
-client, or court asks for documentation that doesn't exist.
-
-Unlike financial debt, epistemic debt is invisible until it
-isn't. There is no balance sheet line. There is no accrual.
-It exists in the space between the AI system's actual behavior
-and the organization's official record of that behavior.
-
-The Sovereign Trace Protocol is the instrument for measuring,
-recording, and resolving epistemic debt.
+**Dependencies:** FSVE v4.3 · PDE v0.5 · EAE v0.4 · CAL v0.3 · FA v4.0 · ANTI‑FORGE v1.3 · FORGE v2.1 · HDAP v1.2 · Constitution v2.1
 
 ---
 
-## WHAT AN AUDIT MEASURES
+## THE EPISTEMIC DEBT PROBLEM (UPDATED)
 
-An STP audit measures three things:
+Every organization deploying AI systems accumulates epistemic debt – the gap between what it claims about its AI systems and what it can actually prove. With the addition of **FSVE v4.3**, we now also measure **Certainty Grade**: the system's epistemic validity (EV) across 13 axes, its temporal momentum, fragility, and topological isolation.
 
-**1. Ledger completeness**
-Does the organization have a sealed record of AI failures
-commensurate with the scale of their AI deployment? An
-organization running 10,000 AI interactions per day with
-zero failure records does not have a clean record. It has
-no record. These are not the same thing.
-
-**2. Remediation integrity**
-For failures that have been recorded, has remediation been
-completed? Has it been sealed? Is the remediation record
-structurally sound — does it describe what changed, not just
-that something changed?
-
-**3. Outstanding epistemic debt**
-What failures are recorded but unresolved? What is the
-trend direction — is debt accumulating or decreasing?
-Is the organization getting more honest over time or less?
+The Sovereign Trace Protocol is the instrument for measuring, recording, and resolving epistemic debt – and for certifying epistemic certainty.
 
 ---
 
-## THE DEBT LEDGER
+## WHAT AN AUDIT MEASURES (v2.0)
 
-The Debt Ledger is a structured accounting of an organization's
-AI epistemic integrity at a point in time.
+An STP audit measures **four** things:
 
-### Debt Ledger Schema
+1. **Ledger completeness** – Does the sealed failure record reflect the actual deployment scale?
+2. **Remediation integrity** – Are sealed failures followed by verifiable fixes, with proper documentation?
+3. **Outstanding epistemic debt** – What failures are unresolved? What is the trend (accumulating or decreasing)?
+4. **Certainty Grade** – The system's Epistemic Validity (EV) across 13 axes, its fragility (F_x), and its topological health (CAVTE β₀, β₁).
+
+All four are sealed in the final Epistemic Debt Statement.
+
+---
+
+## THE DEBT LEDGER (UPDATED SCHEMA)
 
 ```json
 {
   "organization": "Organization Name",
-  "assessment_date": "2026-03-07",
-  "ledger_period": "2026-01-01 to 2026-03-07",
+  "assessment_date": "2026-06-03",
+  "ledger_period": "2026-01-01 to 2026-06-03",
   "assessor": "STP-AUDITOR-XXXX or Sheldon K. Salmon",
+  "audit_stack": ["PDE v0.5", "EAE v0.4", "CAL v0.3", "FA v4.0", "ANTI-FORGE v1.3", "FORGE v2.1", "FSVE v4.3"],
   "debt_summary": {
     "total_failures_sealed": 0,
     "remediations_completed": 0,
@@ -79,226 +54,139 @@ AI epistemic integrity at a point in time.
     "epistemic_debt_outstanding": 0,
     "trend": "ACCUMULATING | STABLE | RESOLVING"
   },
-  "severity_breakdown": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0,
-    "low": 0
+  "certainty_grade": {
+    "EV": 0.0,
+    "status": "VALID | DEGRADED | SUSPENDED | FRAGILE_VALID | TOPOLOGICALLY_ISOLATED",
+    "F_x": 0.0,
+    "T_m": 0.0,
+    "CAVTE_beta0": 0,
+    "CAVTE_beta1": 0
   },
-  "certification_status": "CERTIFIED_CLEAN | EPISTEMIC_DEBT_OUTSTANDING | UNCERTIFIABLE",
-  "debt_statement": "Plain-language assessment of epistemic integrity"
+  "severity_breakdown": {
+    "CRITICAL": 0,
+    "HIGH": 0,
+    "MEDIUM": 0,
+    "LOW": 0
+  },
+  "certification_status": "CERTIFIED_CLEAN | EPISTEMIC_DEBT_OUTSTANDING | FRAGILE_VALID | UNCERTIFIABLE",
+  "debt_statement": "Plain‑language assessment of epistemic integrity, including fragility notes if applicable.",
+  "trust_registry_id": "CAPC-2026-XXXX or TIER1-2026-XXXX"
 }
-```
+Certification Status Definitions (v2.0)
+Status	Meaning
+CERTIFIED_CLEAN	All sealed failures have verified remediations. No outstanding debt. EV ≥ 0.70, F_x ≤ 0.60.
+EPISTEMIC_DEBT_OUTSTANDING	Failures sealed but remediations incomplete or unverified. Certifiable with debt disclosed.
+FRAGILE_VALID	EV ≥ 0.70 but F_x > 0.60 (single point of failure). Certification includes warning and lineage restriction.
+TOPOLOGICALLY_ISOLATED	CAVTE detects echo chamber (β₁ > 0) – certification blocked until orthogonal verification added.
+UNCERTIFIABLE	Ledger completeness insufficient for assessment.
+THE SIX‑PHASE AUDIT PROCESS (v2.0)
+Phase 1 — Deployment Mapping (unchanged)
+Map the organisation's AI deployment footprint: systems, volumes, customer‑facing vs internal, regulated domains.
 
-### Certification Status Definitions
+Phase 2 — Ledger Completeness Assessment (unchanged)
+Review sealed failure ledger against deployment map. Check proportionality – no requirement for a specific failure rate, only that the ledger reflects operational reality.
 
-| Status | Meaning |
-|--------|---------|
-| `CERTIFIED_CLEAN` | All sealed failures have verified remediations. No outstanding debt at time of assessment. |
-| `EPISTEMIC_DEBT_OUTSTANDING` | Failures are sealed but remediations incomplete or unverified. Certifiable with debt disclosed. |
-| `UNCERTIFIABLE` | Ledger completeness insufficient for assessment. Scale of deployment not reflected in failure record. |
+Phase 3 — Output Review & Adversarial Scoring (UPDATED)
+For a sample of submitted outputs (or for full deployment in Tier 1–5):
 
----
+FSVE v4.3 scores each output across 13 epistemic axes, producing a ScoreTensor with EV, temporal momentum T_m, fragility F_x, and topology metrics.
 
-## THE FIVE-PHASE AUDIT PROCESS
+EAE v0.4 eliminates false claims via systematic negation, producing a survivor silhouette.
 
-### Phase 1 — Deployment Mapping
+PDE v0.5 scans the output set for gaps, vulnerabilities, blind spots, and cross‑domain risks.
 
-Before reviewing any outputs, the auditor maps the organization's
-AI deployment footprint:
+CAL v0.3 checks the underlying code (if provided) for 59 governance checks.
 
-- Which AI systems are in active deployment?
-- What is the approximate volume of AI interactions per period?
-- Which deployments are customer-facing vs. internal?
-- Which deployments operate in regulated domains?
+FA v4.0 audits function design: speech act alignment, binding clarity, FQI.
 
-This mapping establishes the expected scale of the ledger.
-An organization cannot be certified on a ledger that is
-implausibly clean relative to its deployment volume.
+ANTI‑FORGE v1.3 runs a 15‑role rejection council.
 
----
+FORGE v2.1 synthesises all findings into a convergence verdict.
 
-### Phase 2 — Ledger Completeness Assessment
+The auditor does not rewrite the record. They assess what is submitted and deliver a findings register.
 
-The auditor reviews the current ledger against the deployment map:
+Phase 4 — Tamper‑Evidence Benchmarks (UPDATED to FROZEN‑4.0)
+Run the FROZEN‑4.0 stamp verification suite:
 
-- How many failures are sealed?
-- Does the volume of sealed failures reflect realistic failure
-  rates for the deployment scale and domain?
-- Are there systematic gaps — categories of deployment with
-  no failure records?
+Benchmark 1 – Seal Integrity – recompute SHA‑256 from stored fields and compare.
+Benchmark 2 – Triple‑Time Consistency – verify Gregorian, Unix UTC, and Hebrew calendar dates align.
+Benchmark 3 – Sequence Integrity – ensure no gaps in ledger IDs.
+Benchmark 4 – Single‑Bit Tamper Test – alter one character and confirm seal fails.
 
-**The completeness benchmark:**
-No specific failure rate is required. The requirement is
-proportionality — the ledger should reflect the actual
-operational reality of the deployment, not a curated subset.
+All benchmarks must pass before any certification is issued.
 
----
+Phase 5 – Epistemic Debt Statement (UPDATED)
+The auditor produces a written Epistemic Debt Statement that includes:
 
-### Phase 3 — Output Review
+Total failures sealed
 
-The auditor reviews submitted AI outputs against the
-STP submission template. For each output:
+Remediations completed and verified
 
-1. Verify the failure classification matches the evidence
-2. Assess severity — does the classification reflect actual impact?
-3. Check remediation record — is it specific and verifiable?
-4. Flag outstanding epistemic debt — what is unresolved?
+Outstanding epistemic debt
 
-The auditor does not rewrite the record. They assess what is
-submitted and deliver a finding.
+Trend direction
 
----
+Certainty Grade (EV, F_x, T_m)
 
-### Phase 4 — Tamper-Evidence Benchmarks
+Topological health (CAVTE β₀, β₁)
 
-Before certifying any record, the auditor runs the tamper-evidence
-benchmark suite to confirm the ledger's cryptographic integrity.
+Certification status (one of the five)
 
-**Benchmark 1 — Seal Integrity Check**
-For every ledger entry submitted for review, recompute the
-SHA-256 from the stored fields and compare against the stored seal.
+Auditor's signed finding
 
-```python
-import hashlib, json
+The statement is sealed with FROZEN‑4.0 and recorded in the Trust Registry.
 
-def verify_seal(entry):
-    seal_content = (
-        f"STP-{entry['template_type'].upper()} | "
-        f"Issue #{entry['issue_number']} | "
-        f"{entry['submitter']} | "
-        f"{entry['title']}"
-    )
-    recomputed = hashlib.sha256(seal_content.encode('utf-8')).hexdigest()
-    stored = entry['seal']['sha256']
-    return {
-        "match": recomputed == stored,
-        "stored": stored,
-        "recomputed": recomputed,
-        "ledger_id": entry['ledger_id']
-    }
-```
+Phase 6 – Cross‑Domain Synthesis (Optional, Tier 5 only)
+Run PDE §19 cross‑domain synthesis to detect emergent risks that span multiple diagnostic domains. A cluster of three LOW findings that together create a CRITICAL interaction will be surfaced. This is the most advanced adversarial pass.
 
-Expected result: `match: true` for every entry.
-Any `match: false` result is a tamper signal. The entry is
-flagged immediately. The audit stops until the discrepancy
-is investigated.
+MANUAL RECOVERY PROTOCOL (unchanged)
+In the event of GitHub downtime, the full audit can be executed using only Python 3.11+, sovereign_trace_stamp.py (FROZEN‑4.0), and raw ledger JSON files. See DISASTER-RECOVERY.md.
 
-**Benchmark 2 — Timestamp Consistency Check**
-Verify that the Unix UTC timestamp in each entry is consistent
-with the Gregorian date in the same entry.
+WHAT CERTIFICATION MEANS (UPDATED)
+A certified organisation has demonstrated:
 
-```python
-import datetime
+A ledger that reflects its actual AI deployment reality.
 
-def verify_timestamp(entry):
-    unix_utc = entry['seal']['unix_utc']
-    dt = datetime.datetime.utcfromtimestamp(unix_utc)
-    derived_gregorian = dt.strftime('%B %d, %Y')
-    stored_gregorian = entry['seal']['gregorian']
-    return {
-        "consistent": derived_gregorian in stored_gregorian,
-        "derived": derived_gregorian,
-        "stored": stored_gregorian
-    }
-```
+Failures documented and classified with honest reasoning.
 
-**Benchmark 3 — Sequence Integrity Check**
-Verify that ledger IDs are sequential within date ranges —
-no gaps that would indicate deleted entries.
+Remediations completed and verified where applicable.
 
-**Benchmark 4 — Single-Bit Tamper Test**
-For demonstration or high-security audits, alter a single
-character in a ledger entry's title field and re-run
-Benchmark 1. The SHA-256 must fail immediately.
+A Certainty Grade that meets the required threshold (≥0.70 for VALID, plus fragility and topology checks).
 
-```python
-tampered_entry = dict(entry)
-tampered_entry['title'] = entry['title'][:-1] + 'X'
-result = verify_seal(tampered_entry)
-assert result['match'] == False, "TAMPER TEST FAILED — seal did not detect modification"
-print("TAMPER TEST PASSED — single character change detected")
-```
+An ongoing commitment to maintaining an honest epistemic record and publicly listing its certification in the Trust Registry.
 
-This benchmark is not destructive — the original entry is
-unchanged. The test operates on a copy. It exists to prove
-to auditors, clients, and courts that the tamper-evidence
-claim is not theoretical.
+A certified organisation has not demonstrated:
 
----
+That its AI systems are perfect or failure‑free.
 
-### Phase 5 — Epistemic Debt Statement
+Legal compliance unless specifically audited under Tier 4 (Defense & Government).
 
-The auditor produces a written Epistemic Debt Statement:
-a plain-language assessment of the organization's AI epistemic
-integrity at the time of the audit.
+Immunity from fragility – a FRAGILE_VALID certification explicitly warns of single‑point‑of‑failure dependencies.
 
-**Required elements:**
-- Total failures sealed during the assessed period
-- Remediations completed and verified
-- Outstanding epistemic debt (unsealed failures, incomplete remediations)
-- Trend direction: is the organization getting more honest over time?
-- Certification status: CERTIFIED_CLEAN, EPISTEMIC_DEBT_OUTSTANDING,
-  or UNCERTIFIABLE
-- Auditor's signed finding
+The Honest Ledger Principle (unchanged): An organisation with a certified deployment and a high failure rate is more trustworthy than an organisation with no failures on record and no ledger. Certification rewards honesty, not performance.
 
-The Epistemic Debt Statement is sealed with FROZEN-2.0 before delivery.
-The seal is the delivery confirmation.
+REFERENCES
+THE CONSTITUTION v2.1 – Nine Laws, falsification protocols.
 
----
+FSVE v4.3 – Epistemic state machine, 13 axes.
 
-## MANUAL RECOVERY PROTOCOL
+PDE v0.5 – 12‑domain diagnostic with cross‑domain synthesis.
 
-In the event of GitHub downtime, internet unavailability, or
-any infrastructure failure, the full audit methodology can be
-executed using only:
+EAE v0.4 – Elimination mapping by negation.
 
-- Python 3.11+
-- `sovereign_trace_stamp.py`
-- Raw ledger JSON files
+CAL v0.3 – 59‑check code governance.
 
-See `DISASTER-RECOVERY.md` for the complete manual verification
-procedure. The methodology does not depend on any third-party
-service to function. The truth survives infrastructure failure.
+FA v4.0 – Function design with speech acts and FQI.
 
----
+ANTI‑FORGE v1.3 – 15‑role rejection council.
 
-## WHAT CERTIFICATION MEANS
+FORGE v2.1 – Refinement under governed epistemics.
 
-A certified organization has demonstrated:
+HDAP v1.2 – Hyper‑Diamond Audit Protocol (phase details).
 
-1. A ledger that reflects its actual AI deployment reality
-2. Failures documented and classified with honest reasoning
-3. Remediations completed and verified where applicable
-4. An ongoing commitment to maintaining an honest epistemic record
+TRUST REGISTRY – Public, immutable STP‑sealed list of certifications.
 
-A certified organization has not demonstrated:
-
-1. That its AI systems are perfect or failure-free
-2. That all failures have been caught and recorded
-3. Legal compliance with any specific regulatory framework
-   unless assessed under Tier 3 or Tier 4
-
-The certification is a statement about process integrity —
-not a guarantee of AI performance.
-
----
-
-## THE HONEST LEDGER PRINCIPLE
-
-An organization with a certified deployment and a high failure
-rate is more trustworthy than an organization with no failures
-on record and no ledger.
-
-The ledger with failures is honest.
-The ledger with no failures may simply have no ledger.
-
-Certification rewards honesty, not performance.
-That is not a compromise. It is the point.
-
----
-
-*Sheldon K. Salmon · AI Reliability & AGI Architect · March 2026*
-*Sovereign Trace Protocol · FROZEN-2.0*
-*aionsystem2026@gmail.com*
-*github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL*
+Sheldon K. Salmon · AI Reliability & ADI Architect · June 2026
+Sovereign Trace Protocol · FROZEN‑4.0
+aionsystem@outlook.com
+github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL
