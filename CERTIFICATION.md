@@ -3,7 +3,7 @@
 ![Sovereign Certified](assets/badges/sovereign-certified/sovereign-certified-badge-v2.svg)
 
 **Sovereign Trace Protocol · Version 4.0.0**
-**Author: Sheldon K. Salmon — AI Reliability & AGI Architect**
+**Author: Sheldon K. Salmon — AI Reliability & ADI Architect**
 **Effective: June 2026**
 **Governing Law: State of New York, United States · Arbitration: JAMS Commercial Rules**
 
@@ -492,7 +492,7 @@ See `AUDITOR-VETTING-PROCESS.md` for full process and criteria.
 
 **Badge:** `assets/badges/verified-simulator/aion-verified-simulator-badge-v1.svg`
 
-![AION Verified Simulator](assets/badges/verified-simulator/aion-verified-simulator-badge-v1.svg?v=20260512)
+![AION Verified Simulator](assets/badges/verified-simulator/aion-verified-simulator-badge-v2.svg?v=20260512)
 
 This badge certifies a specific simulation tool — not an organization, not an
 individual. Issued under AION methodology by Sheldon K. Salmon, AI Reliability
@@ -861,6 +861,6 @@ Dispute resolution: JAMS Commercial Arbitration Rules.
 
 ---
 
-*Sheldon K. Salmon · AI Reliability & AGI Architect · June 2026*
+*Sheldon K. Salmon · AI Reliability & ADI Architect · June 2026*
 *Certification inquiries: file a `10-audit-request.yml` issue.*
 *No other intake channel exists.*
