@@ -1,0 +1,93 @@
+name: "SNAPSHOT REQUEST: Tier 0 — AI Reliability Snapshot"
+description: "10 outputs, FSVE‑scored, plain‑English report in 5–7 business days. $1,500. Automated intake – file anytime."
+title: "[SNAPSHOT] — [Company Name]"
+labels: ["audit-request", "tier-0-snapshot", "pending-payment-verification"]
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        ## ⚠️ SNAPSHOT VERIFICATION (Tier 0)
+
+        **Intake:** Automated – file any day, 24/7.
+        **Turnaround:** 5–7 business days.
+        **Price:** $1,500 (10 outputs).
+
+        **Payment verification:** Submit your Stripe transaction code below.
+        Send the payment screenshot to the contact email on file.
+        The transaction code must match your email and Stripe record.
+
+        **Delivery:** Snapshot Verification Statement (signed PDF) + Snapshot badge.
+        Not a full certification – a credible first step.
+
+  - type: input
+    id: company_name
+    attributes:
+      label: "Company / Organization Name"
+      placeholder: "Acme AI Corp"
+    validations:
+      required: true
+
+  - type: input
+    id: contact_email
+    attributes:
+      label: "Contact Email"
+      description: "Must match the email the payment screenshot was sent from."
+      placeholder: "contact@yourcompany.com"
+    validations:
+      required: true
+
+  - type: input
+    id: transaction_code
+    attributes:
+      label: "Stripe Transaction Code"
+      description: "Format: ch_xxxxxxxxxxxxxxxxxxxxxxxx"
+      placeholder: "ch_3xxxxxxxxxxxxxxxxxxxxxxxxx"
+    validations:
+      required: true
+
+  - type: textarea
+    id: output_description
+    attributes:
+      label: "AI Outputs to Review"
+      description: "Up to 10 outputs. Briefly describe each. Attach files below."
+      placeholder: "10 GPT-4o outputs from customer support pipeline, March 2026. PDF attached."
+    validations:
+      required: true
+
+  - type: input
+    id: ai_system
+    attributes:
+      label: "AI System(s) Used"
+      placeholder: "GPT-4o, Claude Sonnet, Gemini 1.5 Pro"
+    validations:
+      required: true
+
+  - type: textarea
+    id: file_upload
+    attributes:
+      label: "File Upload"
+      description: "PDF, screenshots, or exported logs. Max 10 files."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: trust_registry
+    attributes:
+      label: "Record in Trust Registry?"
+      description: "The Snapshot can be listed in the public Trust Registry for an additional $50."
+      options:
+        - "No — do not record (default)"
+        - "Yes — add $50, record in Trust Registry"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: legal_declaration
+    attributes:
+      label: "Legal Declaration"
+      options:
+        - label: "I confirm I am authorized to submit these AI outputs for external review. I have read and agree to the Terms of Service."
+          required: true
+        - label: "I understand that the completed Snapshot Verification Statement will be sealed using Sovereign Trace Protocol FROZEN‑4.0 and may be recorded in the Trust Registry if selected."
+          required: true
