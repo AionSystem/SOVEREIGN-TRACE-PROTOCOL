@@ -773,13 +773,20 @@ script at issuance. No static names or dates are hard‑coded into the templates
 
 ### What a Complete Certification Looks Like
 
-Below is the v1 (Certified Audit) sleeve — the default wrapper for a full
-Tier 1–5 engagement.
+Below are two views of the v1 (Certified Audit) sleeve: the blank template on the left, and a fully filled‑out mock certification on the right — exactly what a client receives after a Tier 1 Professional (50‑output) audit.
 
-<a href="assets/sleeve/small-sleeve/aionsystem_certified_audit_sleeve_smv1.svg">
-  <img src="assets/sleeve/small-sleeve/aionsystem_certified_audit_sleeve_smv1.svg" alt="Certified Audit Sleeve (small)" width="320" />
-</a>
+<table>
+  <tr>
+    <td align="center"><strong>Blank Template</strong></td>
+    <td align="center"><strong>Mock Certification (Nexus AI Solutions)</strong></td>
+  </tr>
+  <tr>
+    <td><a href="assets/sleeve/small-sleeve/aionsystem_certified_audit_sleeve_smv1.svg"><img src="assets/sleeve/small-sleeve/aionsystem_certified_audit_sleeve_smv1.svg" alt="Certified Audit Sleeve Template" width="320" /></a></td>
+    <td><a href="assets/sleeve/mock/aionsystem_certified_audit_sleeve_mock_nexus.svg"><img src="assets/sleeve/mock/aionsystem_certified_audit_sleeve_mock_nexus.svg" alt="Mock Certified Audit Sleeve — Nexus AI Solutions" width="320" /></a></td>
+  </tr>
+</table>
 
+The mock sleeve carries the real founder’s auditor badge, the standard tier badge, the verified simulator badge, and all the details — entry ID, SHA‑256, expiry date, triple‑time dates, scope code, and QR verification — that a paying client will see on their own certification.
 ---
 
 ## BADGE REFERENCE
