@@ -1,0 +1,165 @@
+name: "Bias Audit Record — Sovereign Trace Protocol"
+description: "Seal the results of an AI bias or fairness audit before deployment. Prove you measured disparity and acted on it."
+title: "[STP-BIAS] — [SYSTEM NAME] — [DATE]"
+labels: ["bias-audit", "pending-seal"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Bias Audit Record – Sovereign Trace Protocol (FROZEN‑4.0)
+
+        This form seals the results of an AI bias or fairness audit. Use it before deployment to prove you measured disparity and implemented mitigation.
+
+        **⚠️ CRITICAL WARNINGS – READ BEFORE PROCEEDING ⚠️**
+        - The audit results (disparity metrics, protected attributes, outcomes) are **public** and **permanent**.
+        - Your GitHub username is **publicly linked** to this seal.
+        - **Do not include data that could re‑identify individuals** – report only aggregate statistics.
+        - **Provide sample sizes per subgroup** to allow correct interpretation of disparities.
+        - **Do not edit this issue after the workflow seals it** – the hash will change.
+        - **This record is retained permanently** in the STP ledger and GitHub issue history.
+        - A correction creates a new entry; the original remains.
+
+        **Fields marked with `*` are required.**
+
+  - type: input
+    id: submitter_name
+    attributes:
+      label: "Your Name (Optional)"
+      description: "If provided, becomes part of the permanent record. Leave blank for an anonymous seal."
+      placeholder: "First Last or leave blank"
+    validations:
+      required: false
+
+  - type: input
+    id: system_name
+    attributes:
+      label: "AI System Name *"
+      description: "The system that was audited."
+      placeholder: "e.g., Resume Screener v3, Loan Approver API"
+    validations:
+      required: true
+
+  - type: input
+    id: audit_date
+    attributes:
+      label: "Audit Completion Date *"
+      description: "YYYY-MM-DD"
+      placeholder: "2026-06-04"
+    validations:
+      required: true
+
+  - type: input
+    id: protected_attributes
+    attributes:
+      label: "Protected Attributes Examined *"
+      description: "Comma‑separated list (e.g., race, gender, age, disability)."
+      placeholder: "race, gender, age"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: fairness_metric
+    attributes:
+      label: "Primary Fairness Metric *"
+      options:
+        - "Demographic parity ratio"
+        - "Equal opportunity difference"
+        - "Predictive parity"
+        - "Calibration"
+        - "Individual fairness (specify in description)"
+        - "Other – describe in audit summary"
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: disparity_result
+    attributes:
+      label: "Disparity Measurement Results *"
+      description: "State the measured value and whether it passed/failed your threshold. Keep under 5,000 characters."
+      placeholder: "Demographic parity ratio: 0.82 (threshold 0.80) → PASS. Gender subgroup analysis: all above 0.78."
+    validations:
+      required: true
+
+  - type: textarea
+    id: subgroup_sample_sizes
+    attributes:
+      label: "Subgroup Sample Sizes (Optional but strongly recommended)"
+      description: "Provide sample counts per protected attribute category to avoid misleading conclusions from small samples. Format: attribute:category=N"
+      placeholder: "race:white=5000, race:black=500, race:hispanic=300; gender:female=2800, gender:male=3000"
+    validations:
+      required: false
+
+  - type: textarea
+    id: mitigation_plan
+    attributes:
+      label: "Mitigation Plan (if any) *"
+      description: "Describe what actions were taken or will be taken to address disparities. If none, state 'None required'."
+      placeholder: "Reweighting training data for under‑represented groups. Deployment delayed until ratio ≥ 0.80."
+    validations:
+      required: true
+
+  - type: textarea
+    id: audit_summary
+    attributes:
+      label: "Audit Summary (Optional)"
+      description: "Additional context – dataset size, methodology, tools used. Keep under 10,000 characters."
+      placeholder: "Audited 10,000 records from Q1 2026. Used Aequitas toolkit."
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting_urls
+    attributes:
+      label: "Supporting Files URLs (Optional)"
+      description: "One permanent URL per line (IPFS, GitHub gist, etc.). The stamp seals only the URLs, not the content. For cryptographic integrity, also provide SHA‑256 hashes below."
+      placeholder: "https://ipfs.io/ipfs/Qm...\nhttps://gist.github.com/..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting_hashes
+    attributes:
+      label: "Supporting file SHA‑256 hashes (optional, recommended)"
+      description: "One SHA‑256 hash per file, in the same order as the URLs."
+      placeholder: "a3f9c12e7d... (64 hex chars)\nb4c8d3e2f1a..."
+    validations:
+      required: false
+
+  - type: input
+    id: correction_of
+    attributes:
+      label: "Correction / Resubmission of (optional)"
+      description: "If this record corrects a previous bias audit, provide the previous ledger entry ID or SHA‑256 hash."
+      placeholder: "a3f9c12e7d... or #42"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: "Declaration *"
+      options:
+        - label: "I affirm the disparity measurements above are accurate and calculated as described."
+          required: true
+        - label: "I have removed all individual‑identifying information; results are reported in aggregate only."
+          required: true
+        - label: "I understand that small subgroup sizes may produce unreliable disparity estimates; I have either provided sample sizes or accept the risk."
+          required: true
+        - label: "I understand this submission is immutable — a correction creates a new entry but does not delete the original."
+          required: true
+        - label: "I understand that my GitHub username is publicly linked to this seal, and the audit results are public."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Data retention:** This record is retained permanently.
+
+        **After submission**: The STP auto‑seal workflow will generate a triple‑time stamp and SHA‑256 hash. Do not edit the issue after sealing.
+
+        **Contact:** `aionsystem@outlook.com`
+
+        **Verification**: `sovereign-trace verify --entry-id <ID> --hash <SHA-256>`
