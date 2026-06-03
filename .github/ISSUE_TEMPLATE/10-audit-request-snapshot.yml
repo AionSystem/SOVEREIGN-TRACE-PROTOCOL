@@ -2,28 +2,37 @@ name: "SNAPSHOT REQUEST: Tier 0 — AI Reliability Snapshot"
 description: "10 outputs, FSVE‑scored, plain‑English report in 5–7 business days. $1,500. Automated intake – file anytime."
 title: "[SNAPSHOT] — [Company Name]"
 labels: ["audit-request", "tier-0-snapshot", "pending-payment-verification"]
+assignees: []
 body:
-
   - type: markdown
     attributes:
       value: |
-        ## ⚠️ SNAPSHOT VERIFICATION (Tier 0)
+        ## SNAPSHOT VERIFICATION (Tier 0) – Sovereign Trace Protocol (FROZEN‑4.0)
 
         **Intake:** Automated – file any day, 24/7.
         **Turnaround:** 5–7 business days.
         **Price:** $1,500 (10 outputs).
 
         **Payment verification:** Submit your Stripe transaction code below.
-        Send the payment screenshot to the contact email on file.
+        Send the payment screenshot to `aionsystem@outlook.com`.
         The transaction code must match your email and Stripe record.
 
         **Delivery:** Snapshot Verification Statement (signed PDF) + Snapshot badge.
         Not a full certification – a credible first step.
 
+        **⚠️ CRITICAL WARNINGS – READ BEFORE PROCEEDING ⚠️**
+        - The completed Snapshot Verification Statement will be sealed with a **public** SHA‑256 hash.
+        - Your company name and outputs description will be publicly linked to your GitHub username in the issue.
+        - If you request recording in the Trust Registry, the company name and Snapshot result become **public, permanent, immutable**.
+        - Email attachments (payment screenshots) are **not** cryptographically sealed. Only the final report is sealed.
+        - For sensitive outputs, consider redacting before submission or using a separate confidential channel (contact the email above).
+
+        **Fields marked with `*` are required.**
+
   - type: input
     id: company_name
     attributes:
-      label: "Company / Organization Name"
+      label: "Company / Organization Name *"
       placeholder: "Acme AI Corp"
     validations:
       required: true
@@ -31,7 +40,7 @@ body:
   - type: input
     id: contact_email
     attributes:
-      label: "Contact Email"
+      label: "Contact Email *"
       description: "Must match the email the payment screenshot was sent from."
       placeholder: "contact@yourcompany.com"
     validations:
@@ -40,8 +49,8 @@ body:
   - type: input
     id: transaction_code
     attributes:
-      label: "Stripe Transaction Code"
-      description: "Format: ch_xxxxxxxxxxxxxxxxxxxxxxxx"
+      label: "Stripe Transaction Code *"
+      description: "Format: `ch_xxxxxxxxxxxxxxxxxxxxxxxx`"
       placeholder: "ch_3xxxxxxxxxxxxxxxxxxxxxxxxx"
     validations:
       required: true
@@ -49,25 +58,26 @@ body:
   - type: textarea
     id: output_description
     attributes:
-      label: "AI Outputs to Review"
-      description: "Up to 10 outputs. Briefly describe each. Attach files below."
-      placeholder: "10 GPT-4o outputs from customer support pipeline, March 2026. PDF attached."
+      label: "AI Outputs to Review *"
+      description: "Up to 10 outputs. Briefly describe each. Keep under 10,000 characters. For files, upload to a permanent URL (e.g., GitHub gist, IPFS) and provide the links here. Include SHA‑256 hashes if you want cryptographic binding."
+      placeholder: "10 GPT-4o outputs from customer support pipeline, March 2026. Files: https://ipfs.io/ipfs/Qm... (SHA‑256: ...)"
     validations:
       required: true
 
   - type: input
     id: ai_system
     attributes:
-      label: "AI System(s) Used"
+      label: "AI System(s) Used *"
       placeholder: "GPT-4o, Claude Sonnet, Gemini 1.5 Pro"
     validations:
       required: true
 
-  - type: textarea
-    id: file_upload
+  - type: input
+    id: output_urls
     attributes:
-      label: "File Upload"
-      description: "PDF, screenshots, or exported logs. Max 10 files."
+      label: "URLs to output files (optional)"
+      description: "If you have uploaded outputs to a permanent location, provide the URLs here. The seal will cover these URLs (but not the file content). For cryptographic integrity, include SHA‑256 hashes in the `Outputs Description` field."
+      placeholder: "https://ipfs.io/ipfs/Qm..., https://gist.github.com/..."
     validations:
       required: false
 
@@ -75,19 +85,44 @@ body:
     id: trust_registry
     attributes:
       label: "Record in Trust Registry?"
-      description: "The Snapshot can be listed in the public Trust Registry for an additional $50."
+      description: "The Snapshot can be listed in the public Trust Registry for an additional $50. If yes, the company name and Snapshot result become public, permanent, and immutable."
       options:
         - "No — do not record (default)"
         - "Yes — add $50, record in Trust Registry"
+      default: 0
     validations:
       required: true
+
+  - type: input
+    id: correction_of
+    attributes:
+      label: "Correction / Resubmission of (optional)"
+      description: "If this Snapshot request corrects a previous submission, provide the previous issue number or ledger entry ID."
+      placeholder: "#42 or a3f9c12e7d..."
+    validations:
+      required: false
 
   - type: checkboxes
     id: legal_declaration
     attributes:
-      label: "Legal Declaration"
+      label: "Legal Declaration *"
+      description: "You must confirm the following to proceed."
       options:
-        - label: "I confirm I am authorized to submit these AI outputs for external review. I have read and agree to the Terms of Service."
+        - label: "I confirm I am authorised to submit these AI outputs for external review. I have read and agree to the Terms of Service."
           required: true
         - label: "I understand that the completed Snapshot Verification Statement will be sealed using Sovereign Trace Protocol FROZEN‑4.0 and may be recorded in the Trust Registry if selected."
           required: true
+        - label: "I understand that if I select 'Yes' for Trust Registry, the company name and Snapshot result become public, permanent, and cannot be deleted."
+          required: false
+        - label: "I understand that my GitHub username is publicly linked to this request, and the issued Snapshot badge does not reveal my GitHub identity unless I disclose it."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **After submission**: The payment will be verified via Stripe. Upon confirmation, the Snapshot will be processed within 5–7 business days. You will receive a signed Snapshot Verification Statement (PDF) and the Snapshot badge embed code. If Trust Registry selected, the entry will be sealed and published.
+
+        **Contact:** `aionsystem@outlook.com` (for payment issues or questions). All seals are final.
+
+        **Verification**: The Snapshot badge can be verified by checking the STP ledger entry ID printed on the report.
