@@ -3,54 +3,74 @@ description: "Seal a clinical incident report, trial data declaration, or instit
 title: "[STP-CLINICAL] — [INSTITUTION] — [DATE]"
 labels: ["clinical-record", "pending-seal"]
 assignees: []
-
 body:
-
   - type: markdown
     attributes:
       value: |
-        ## Clinical Record Seal
+        ## Clinical Record Seal – Sovereign Trace Protocol (FROZEN‑4.0)
 
-        ⚠ **HIPAA / PRIVACY NOTICE**
-
-        Do not include patient names, dates of birth, Social Security numbers, addresses,
-        or any other protected health information (PHI) in this submission.
-
-        Seal the institutional record — not patient data. Describe events by type, context, and significance only.
+        **⚠️ HIPAA / PRIVACY NOTICE – READ CAREFULLY ⚠️**
+        - Do not include any **Protected Health Information (PHI)** as defined by HIPAA. This includes, but is not limited to:
+          - Names, addresses, dates (other than year), phone/fax numbers, email addresses
+          - Social Security numbers, medical record numbers, health plan numbers
+          - Account numbers, certificate/license numbers, vehicle identifiers, device serial numbers
+          - URLs, IP addresses, biometric identifiers (fingerprints, retina scans)
+          - Full‑face photographs, or any unique identifying characteristic
+        - **Seal the institutional record – not patient data.** Describe events by type, context, and significance only.
+        - **This sealed record may be discoverable in legal proceedings.** Do not seal anything you would not want a court to see. This is not a substitute for legal advice.
+        - **Your GitHub username will be publicly visible.** If you require anonymity, create a separate GitHub account not linked to your professional identity. Consider using a role‑based description (e.g., "Quality Officer") instead of your personal name.
 
         This seal proves the record existed in this exact form before any review, remediation, or external pressure.
+
+        **Fields marked with `*` are required.**
 
   - type: input
     id: submitter-name
     attributes:
-      label: "Submitter Name or Role"
-      description: "Your name or role. Include institution name if submitting on behalf of an organization."
-      placeholder: "Dr. First Last — Institution Name"
+      label: "Submitter Name or Role *"
+      description: "Your name or role. Include institution name if submitting on behalf of an organization. You may use a role (e.g., 'Compliance Officer') to reduce identifiability."
+      placeholder: "Dr. First Last — Institution Name (or role only)"
     validations:
       required: true
 
   - type: input
     id: institution
     attributes:
-      label: "Institution or Organization"
+      label: "Institution or Organization *"
       description: "The institution this record belongs to."
       placeholder: "Full institutional name"
     validations:
       required: true
 
   - type: input
+    id: institution-record-id
+    attributes:
+      label: "Institution's Internal Record ID (Optional)"
+      description: "Your internal incident or case number, for cross‑reference."
+      placeholder: "INC-2026-001"
+    validations:
+      required: false
+
+  - type: dropdown
     id: record-type
     attributes:
-      label: "Record Type"
-      description: "What kind of record is being sealed?"
-      placeholder: "Incident Report / Trial Data / Protocol Version / Adverse Event / Audit Finding"
+      label: "Record Type *"
+      options:
+        - "Incident Report"
+        - "Trial Data Declaration"
+        - "Protocol Version"
+        - "Adverse Event"
+        - "Audit Finding"
+        - "Deviations Log"
+        - "Other"
+      default: 0
     validations:
       required: true
 
   - type: input
     id: record-date
     attributes:
-      label: "Date of Record Creation"
+      label: "Date of Record Creation *"
       description: "YYYY-MM-DD"
       placeholder: "2026-03-07"
     validations:
@@ -59,62 +79,99 @@ body:
   - type: textarea
     id: record-description
     attributes:
-      label: "Record Description"
-      description: "Describe the record — no PHI. Use de-identified descriptions: event type, department, context, significance. **Keep under 10,000 characters.**"
+      label: "Record Description (De‑identified) *"
+      description: "Describe the record — no PHI. Use de-identified descriptions: event type, department, context, significance. Keep under 10,000 characters."
       placeholder: "Describe the record without any protected health information."
     validations:
       required: true
 
-  - type: input
+  - type: dropdown
     id: pre-review-status
     attributes:
-      label: "Status at Time of Sealing"
+      label: "Status at Time of Sealing *"
       description: "What is the status right now? Before review, before remediation, before audit."
-      placeholder: "Pre-review / Pre-remediation / Pre-audit / Pre-submission"
+      options:
+        - "Pre‑review"
+        - "Pre‑remediation"
+        - "Pre‑audit"
+        - "Pre‑submission"
+      default: 0
     validations:
       required: true
 
-  - type: input
+  - type: dropdown
     id: regulatory-context
     attributes:
       label: "Regulatory Framework (Optional)"
-      description: "What regulatory framework applies to this record?"
-      placeholder: "FDA 21 CFR Part 11 / IRB Protocol / CMS / HIPAA / Other"
+      options:
+        - "FDA 21 CFR Part 11"
+        - "HIPAA"
+        - "IRB Protocol"
+        - "CMS"
+        - "GCP"
+        - "Other"
+      default: 0
     validations:
       required: false
 
-  - type: input
+  - type: textarea
     id: supporting-urls
     attributes:
       label: "Supporting File URLs (Optional)"
-      description: "Upload de-identified supporting documents to a service (e.g., Google Drive, GitHub release) and paste the links here. No PHI permitted. Do not upload directly."
-      placeholder: "https://example.com/deidentified-doc.pdf"
+      description: "Permanent URLs to de‑identified supporting documents (IPFS, Zenodo, GitHub release). **No PHI permitted.** One URL per line. If you provide a URL, you must also provide its SHA‑256 hash below."
+      placeholder: "https://ipfs.io/ipfs/Qm...\nhttps://zenodo.org/record/..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: file-hashes
+    attributes:
+      label: "File SHA‑256 Hashes (Required if URLs provided)"
+      description: "One SHA‑256 hash per file, in the same order as the URLs. This cryptographically binds the seal to the exact file content."
+      placeholder: "a3f9c12e7d... (64 hex chars)\nb4c8d3e2f1a..."
     validations:
       required: false
 
   - type: input
-    id: file-hash
+    id: correction_of
     attributes:
-      label: "File SHA-256 Hash (Optional, Recommended)"
-      description: "If you host supporting files externally, provide their SHA‑256 hashes to cryptographically bind the seal to the exact files."
-      placeholder: "64-character hex string"
+      label: "Correction / Retraction of (Optional)"
+      description: "If this record corrects a previous clinical record seal, provide the previous ledger entry ID or SHA‑256 hash."
+      placeholder: "a3f9c12e7d... or STP‑CLINICAL‑xxxx"
     validations:
       required: false
 
   - type: checkboxes
+    id: phi-checklist
+    attributes:
+      label: "PHI Compliance Checklist – Required"
+      description: "Confirm that you have removed all of the following from this submission:"
+      options:
+        - label: "Patient names, initials, or any identifying descriptors"
+        - label: "Dates of birth, admission/discharge dates, death dates (years allowed)"
+        - label: "Addresses, phone numbers, email addresses, SSNs"
+        - label: "Medical record numbers, health plan numbers, device identifiers"
+        - label: "Biometric identifiers (fingerprints, retina scans)"
+        - label: "Full‑face photographs or any unique physical characteristics"
+        - label: "Any other information that could reasonably identify an individual"
+      required: true
+
+  - type: checkboxes
     id: declaration
     attributes:
-      label: "Declaration — Required"
+      label: "Declaration – Required"
       options:
-        - label: "I affirm this submission contains no protected health information (PHI) as defined by HIPAA."
+        - label: "I affirm this submission contains no protected health information (PHI) as defined by HIPAA and the checklist above."
           required: true
         - label: "I affirm this record accurately represents the institutional state at the time of sealing."
           required: true
-        - label: "I am authorized to submit this record on behalf of my institution."
+        - label: "I am authorized to submit this record on behalf of my institution. Knowingly submitting without authorisation may result in legal action."
           required: true
-        - label: "I understand this submission is immutable — it cannot be altered after sealing."
+        - label: "I understand this submission is immutable — it cannot be altered after sealing. A correction creates a new entry but does not delete the original."
           required: true
-        - label: "I understand the protocol provides a tamper-evident timestamp — not legal or regulatory advice."
+        - label: "I understand the protocol provides a tamper-evident timestamp — not legal or regulatory advice. This record may be discoverable in legal proceedings."
+          required: true
+        - label: "I understand that my GitHub username is publicly linked to this seal, and I have taken steps to protect my privacy if needed."
           required: true
 
   - type: markdown
@@ -123,11 +180,13 @@ body:
         ---
         ## What Happens Next
 
-        1. PHI check — Reviewed for any inadvertent PHI before sealing.
+        1. PHI check — Reviewed for any inadvertent PHI before sealing. Submissions with PHI will be rejected.
         2. Completeness check — Reviewed for completeness.
         3. Sealing — Sealed with a **FROZEN-4.0** triple‑time cryptographic stamp. Permanent.
         4. Ledger entry — Enters the Sovereign Trace ledger with institution name, timestamp, and SHA‑256 hash.
         5. Notification — You receive your ledger entry ID and SHA‑256 hash.
+
+        **Data retention:** Sealed records are retained permanently. Under GDPR/CCPA, you may request deletion of personal data (but the sealed record itself may be subject to legal hold). Contact the Architect.
 
         The seal is permanent. The seal is the pre-review record.
 
