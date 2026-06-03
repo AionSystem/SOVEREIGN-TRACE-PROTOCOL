@@ -1,29 +1,35 @@
 name: "⚠️ 14 — AI Near-Miss Report"
-description: >
-  An AI output that almost caused harm but was caught before impact.
-  Near-miss reporting is where you learn before failure becomes permanent.
-  This record is sealed and permanent — the near-miss is documented honestly
-  before any internal review process begins.
+description: "An AI output that almost caused harm but was caught before impact. Near-miss reporting is where you learn before failure becomes permanent. This record is sealed and permanent — the near-miss is documented honestly before any internal review process begins."
 title: "[NEAR-MISS] "
 labels: ["near-miss", "pending-seal"]
+assignees: []
 body:
-
   - type: markdown
     attributes:
       value: |
-        ## ⚠️ AI Near-Miss Report — Sovereign Trace Protocol
+        ## ⚠️ AI Near-Miss Report — Sovereign Trace Protocol (FROZEN‑4.0)
+
         A near-miss is an AI output that could have caused harm but was
         caught before impact. Sealing it now — before internal review,
         before remediation, before any pressure to minimize — is the
         epistemic act. The record is permanent from this moment.
 
+        **⚠️ CRITICAL WARNINGS – READ BEFORE PROCEEDING ⚠️**
+        - This record is **public and permanent**. It cannot be deleted.
+        - **Do not edit this issue after the workflow seals it** – the hash will change.
+        - **This record is retained permanently** in the STP ledger and GitHub issue history.
+        - Supporting evidence (URLs) are **not** cryptographically bound unless you provide SHA‑256 hashes.
+        - A correction creates a new entry; the original remains.
+
         **This template does not require a completed failure.**
         It requires honest documentation of what almost happened.
+
+        **Fields marked with `*` are required.**
 
   - type: input
     id: organization
     attributes:
-      label: "Organization Name"
+      label: "Organization Name *"
       description: "Legal name of the organization filing this report."
       placeholder: "Acme Corp"
     validations:
@@ -32,7 +38,7 @@ body:
   - type: input
     id: contact_name
     attributes:
-      label: "Filing Contact — Full Name"
+      label: "Filing Contact — Full Name *"
       placeholder: "Jane Smith"
     validations:
       required: true
@@ -40,7 +46,7 @@ body:
   - type: input
     id: contact_title
     attributes:
-      label: "Filing Contact — Title"
+      label: "Filing Contact — Title *"
       placeholder: "Chief AI Officer"
     validations:
       required: true
@@ -48,7 +54,7 @@ body:
   - type: input
     id: contact_email
     attributes:
-      label: "Filing Contact — Email"
+      label: "Filing Contact — Email *"
       placeholder: "jane@acmecorp.com"
     validations:
       required: true
@@ -56,7 +62,7 @@ body:
   - type: dropdown
     id: ai_system_type
     attributes:
-      label: "AI System Type"
+      label: "AI System Type *"
       options:
         - "Large Language Model (LLM)"
         - "Computer Vision / Image Recognition"
@@ -67,13 +73,14 @@ body:
         - "Financial / Risk AI"
         - "Safety-Critical System AI"
         - "Other"
+      default: 0
     validations:
       required: true
 
   - type: input
     id: ai_system_name
     attributes:
-      label: "AI System Identifier"
+      label: "AI System Identifier *"
       description: "Model name, version, or internal system identifier."
       placeholder: "GPT-4o / Internal Model v2.3 / etc."
     validations:
@@ -82,7 +89,7 @@ body:
   - type: dropdown
     id: deployment_domain
     attributes:
-      label: "Deployment Domain"
+      label: "Deployment Domain *"
       description: "Where was this AI system operating?"
       options:
         - "Healthcare / Clinical"
@@ -95,17 +102,15 @@ body:
         - "Internal Operations"
         - "Research"
         - "Other"
+      default: 0
     validations:
       required: true
 
   - type: textarea
     id: near_miss_description
     attributes:
-      label: "Near-Miss Description"
-      description: >
-        Describe exactly what the AI system output or action was,
-        and what harm could have resulted if it had not been caught.
-        Be specific. Vague entries do not produce useful sealed records.
+      label: "Near-Miss Description *"
+      description: "Describe exactly what the AI system output or action was, and what harm could have resulted if it had not been caught. Be specific. Vague entries do not produce useful sealed records. Keep under 10,000 characters."
       placeholder: |
         The AI system recommended a medication dosage of 500mg for a
         patient with documented renal impairment. The correct dose is
@@ -118,8 +123,8 @@ body:
   - type: textarea
     id: prompt_or_input
     attributes:
-      label: "Input / Prompt That Produced the Near-Miss"
-      description: "Exact input, query, or trigger. Copy verbatim."
+      label: "Input / Prompt That Produced the Near-Miss (optional)"
+      description: "Exact input, query, or trigger. Copy verbatim. Keep under 10,000 characters."
       placeholder: "Paste the exact input here."
     validations:
       required: false
@@ -127,11 +132,8 @@ body:
   - type: textarea
     id: ai_output
     attributes:
-      label: "Exact AI Output"
-      description: >
-        Copy the exact output verbatim. Do not summarize.
-        The seal is on this exact text. Summarized outputs
-        produce weaker sealed records.
+      label: "Exact AI Output *"
+      description: "Copy the exact output verbatim. Do not summarize. The seal is on this exact text. Summarized outputs produce weaker sealed records. Keep under 10,000 characters."
       placeholder: "Paste the exact AI output here."
     validations:
       required: true
@@ -139,20 +141,21 @@ body:
   - type: dropdown
     id: severity_if_realized
     attributes:
-      label: "Severity If Near-Miss Had Become Actual Harm"
+      label: "Severity If Near-Miss Had Become Actual Harm *"
       description: "Assess the severity of harm that would have resulted."
       options:
         - "Critical — fatality, permanent injury, or catastrophic loss"
         - "High — serious injury, major financial loss, or significant legal exposure"
         - "Medium — significant disruption, reversible harm, or moderate exposure"
         - "Low — minor disruption, no lasting harm"
+      default: 0
     validations:
       required: true
 
   - type: dropdown
     id: detection_method
     attributes:
-      label: "How Was the Near-Miss Caught?"
+      label: "How Was the Near-Miss Caught? *"
       options:
         - "Human reviewer — pre-deployment review"
         - "Human reviewer — post-deployment, pre-impact"
@@ -162,14 +165,15 @@ body:
         - "Regulatory or compliance check"
         - "Incident report from third party"
         - "Other"
+      default: 0
     validations:
       required: true
 
   - type: textarea
     id: catch_description
     attributes:
-      label: "Detection Detail"
-      description: "Describe exactly how and by whom the near-miss was caught."
+      label: "Detection Detail *"
+      description: "Describe exactly how and by whom the near-miss was caught. Keep under 5,000 characters."
       placeholder: "A pharmacist reviewing the AI recommendation against the patient chart identified the dosage discrepancy before dispensing."
     validations:
       required: true
@@ -177,11 +181,8 @@ body:
   - type: textarea
     id: root_cause_hypothesis
     attributes:
-      label: "Root Cause Hypothesis"
-      description: >
-        What do you currently believe caused the AI to produce this output?
-        This is a hypothesis at time of filing — not a final determination.
-        Tag it [?] if uncertain.
+      label: "Root Cause Hypothesis (optional)"
+      description: "What do you currently believe caused the AI to produce this output? This is a hypothesis at time of filing — not a final determination. Tag it [?] if uncertain. Keep under 5,000 characters."
       placeholder: "The AI system was reading the medication field without access to the renal impairment flag stored in a separate data silo. [?]"
     validations:
       required: false
@@ -189,8 +190,8 @@ body:
   - type: textarea
     id: immediate_action
     attributes:
-      label: "Immediate Action Taken"
-      description: "What was done immediately after the near-miss was detected?"
+      label: "Immediate Action Taken *"
+      description: "What was done immediately after the near-miss was detected? Keep under 5,000 characters."
       placeholder: "AI recommendation overridden. Patient received correct dosage. Incident flagged for root cause review."
     validations:
       required: true
@@ -198,20 +199,48 @@ body:
   - type: dropdown
     id: remediation_status
     attributes:
-      label: "Remediation Status at Time of Filing"
+      label: "Remediation Status at Time of Filing *"
       options:
         - "No remediation begun — filing before internal review"
         - "Root cause investigation in progress"
         - "Remediation in progress — not yet complete"
         - "Remediation complete — not yet verified"
         - "Remediation complete and verified"
+      default: 0
     validations:
       required: true
+
+  - type: textarea
+    id: evidence_urls
+    attributes:
+      label: "Supporting Evidence URLs (optional)"
+      description: "One permanent URL per line (IPFS, archive.is, GitHub gist). The stamp seals only the URLs, not the content. For cryptographic integrity, also provide SHA‑256 hashes below."
+      placeholder: "https://ipfs.io/ipfs/Qm...\nhttps://gist.github.com/..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: evidence_hashes
+    attributes:
+      label: "Evidence file SHA‑256 hashes (optional, recommended)"
+      description: "One SHA‑256 hash per file, in the same order as the URLs. This cryptographically binds the seal to the exact file content."
+      placeholder: "a3f9c12e7d... (64 hex chars)\nb4c8d3e2f1a..."
+    validations:
+      required: false
+
+  - type: input
+    id: correction_of
+    attributes:
+      label: "Correction / Resubmission of (optional)"
+      description: "If this near-miss report corrects a previous submission, provide the previous issue number or ledger entry ID."
+      placeholder: "#42 or a3f9c12e7d..."
+    validations:
+      required: false
 
   - type: checkboxes
     id: recurrence_risk
     attributes:
-      label: "Recurrence Risk Assessment"
+      label: "Recurrence Risk Assessment (optional)"
       options:
         - label: "The conditions that produced this near-miss are still present in the deployment"
         - label: "The AI system producing this near-miss is still in active deployment"
@@ -222,9 +251,7 @@ body:
     id: prior_instances
     attributes:
       label: "Prior Instances (if applicable)"
-      description: >
-        If this near-miss pattern has occurred before, describe
-        prior instances. If this is the first known instance, leave blank.
+      description: "If this near-miss pattern has occurred before, describe prior instances. If this is the first known instance, leave blank. Keep under 5,000 characters."
       placeholder: "Leave blank if first known instance."
     validations:
       required: false
@@ -232,24 +259,27 @@ body:
   - type: checkboxes
     id: declaration
     attributes:
-      label: "Declaration"
+      label: "Declaration *"
       options:
-        - label: >
-            I declare that the AI output described above is reproduced
-            verbatim and that the near-miss occurred as described.
-            I understand this record is permanent and immutable from
-            the moment of filing. I am authorized to file this report
-            on behalf of the organization named above.
+        - label: "I declare that the AI output described above is reproduced verbatim and that the near-miss occurred as described. I understand this record is permanent and immutable from the moment of filing. I am authorized to file this report on behalf of the organization named above."
           required: true
-        - label: >
-            I understand that this near-miss record does not constitute
-            an admission of liability, regulatory violation, or legal
-            wrongdoing. It is an honest epistemic record of an AI output
-            that almost caused harm.
+        - label: "I understand that this near-miss record does not constitute an admission of liability, regulatory violation, or legal wrongdoing. It is an honest epistemic record of an AI output that almost caused harm."
           required: true
-        - label: >
-            I understand that the content of this filing is my
-            organization's sole responsibility. The Sovereign Trace
-            Protocol seals the record — it does not verify the accuracy
-            of the content. See NON-RECOURSE-STATEMENT.md.
+        - label: "I understand that the content of this filing is my organization's sole responsibility. The Sovereign Trace Protocol seals the record — it does not verify the accuracy of the content. See NON-RECOURSE-STATEMENT.md."
           required: true
+        - label: "If I provided evidence URLs, I have also provided their SHA‑256 hashes to cryptographically bind the content."
+          required: false
+        - label: "I understand that this submission is immutable – a correction creates a new entry but does not delete the original."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Data retention:** This record is retained permanently. You cannot delete it.
+
+        **After submission**: The STP auto‑seal workflow will generate a triple‑time stamp and SHA‑256 hash. You will receive a comment with the seal and ledger entry ID. Do not edit the issue after sealing.
+
+        **Contact:** `aionsystem@outlook.com` (for technical issues only). All seals are final.
+
+        **Verification**: Every near-miss report can be independently verified using the STP pip package: `sovereign-trace verify --entry-id <ID> --hash <SHA-256>`.
