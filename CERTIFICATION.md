@@ -3,7 +3,7 @@
 ![Sovereign Certified](assets/badges/sovereign-certified/sovereign-certified-badge-v2.svg)
 
 **Sovereign Trace Protocol · Version 4.0.0**
-**Author: Sheldon K. Salmon — AI Reliability & ADI Architect**
+**Author: Sheldon K. Salmon — AI Reliability & AGI Architect**
 **Effective: June 2026**
 **Governing Law: State of New York, United States · Arbitration: JAMS Commercial Rules**
 
@@ -22,14 +22,49 @@ The enterprise certification layer exists because the same mechanism that gives 
 Installation is not certification. Running the ledger is not certification.
 
 Certification is the formal verification that a deployment meets the
-FROZEN‑2.0 standard — a structured technical audit with a defined
+FROZEN‑4.0 standard — a structured technical audit with a defined
 deliverable: a signed assessment that the deployment is operating within
 specification and producing trustworthy immutable records.
 
 Six tiers. No negotiation on scope. No bundling.
 
+Every certification carries an explicit expiry date. Certifications do not
+roll over silently — each expiry is a gate. The client's system is assessed
+at the time of the audit. Changes made after the sealing date are assessed
+in the next cycle.
+
 The full five‑phase audit process, Epistemic Debt framework, and
 tamper‑evidence benchmarks are documented in `AUDIT-METHODOLOGY.md`.
+
+---
+
+## CERTIFICATION VALIDITY WINDOWS
+
+Every certification carries an explicit expiry date printed on the sleeve,
+embedded in the AION‑Registry entry, and sealed in the ledger. The
+validity window is the period within which the certified state applies.
+Changes made by the client after the sealing date are safely deferred to
+the next cycle — the certification governs what was assessed.
+
+| Tier | Validity Window | Notes |
+|------|----------------|-------|
+| **Tier 0 — Snapshot** | 30 days | Point-in-time snapshot. Short window reflects the narrow scope. |
+| **Tier 1 — Full Audit** | 90 days *(approx. 3 calendar months)* | Standard cycle. Re-audit opens a new 90-day window. |
+| **Tier 2 — Enterprise Retainer** | 90 days per audit cycle | Annual retainer. Quarterly audits — each cycle produces a new 90-day certification. Four certifications per retainer year. |
+| **Tier 3 — Strategic Retainer** | 30 days per audit cycle | Monthly retainer cadence. Each monthly audit produces a new 30-day certification. Continuous coverage across the retainer year. |
+| **Tier 4 — Defense & Government** | 90 days per declared period | Scope anchor reviewed at each 90-day interval. Each period produces a full sealed report and certification. |
+| **Tier 5 — Sovereign Audit** | 180-day certification · 12-month badge license | Certification validity: 180 days from sealing date. Badge license: 12 months. These are separate and both apply. A Tier 5 re-audit within the 180-day window is a new engagement. |
+
+**Decay indicator:** The AION‑Registry shows a live decay indicator for
+every active certification — days remaining as a percentage of the
+validity window. At 80% elapsed, the indicator enters
+`RENEWAL_APPROACHING` status. At 100%, the certification is marked
+`EXPIRED`. Expired certifications remain in the registry with their
+full historical record — they are not removed.
+
+**Out-of-cycle re-audit:** Available at any time. A new engagement opens
+and the full audit process runs. The new sealing date starts a new
+validity window.
 
 ---
 
@@ -37,13 +72,13 @@ tamper‑evidence benchmarks are documented in `AUDIT-METHODOLOGY.md`.
 
 Two intake modes. Tier determines which applies.
 
-**Automated Intake — Tier 0 and Tier 2**
+**Automated Intake — Tier 0 and Tier 2**
 24/7. File a `10-audit-request.yml` issue at any time. Payment via
 Stripe is confirmed automatically by the audit‑verify workflow before
 any work begins. Badge delivered digitally upon certification. No call
 required. No scheduling required. The filing and payment are the scope.
 
-**Architect‑Led Intake — Tier 1, Tier 3, Tier 4, and Tier 5**
+**Architect‑Led Intake — Tier 1, Tier 3, Tier 4, and Tier 5**
 Monday and Tuesday only. Submissions filed on any other day are not
 processed that week. Delivery on the following weekend — reports
 delivered Saturday or Sunday via scheduled reply on the issue thread.
@@ -57,9 +92,10 @@ Both must match before work begins. No exceptions.
 
 ---
 
-## TIER 0 — SNAPSHOT VERIFICATION (PRE‑AUDIT)
+## TIER 0 — SNAPSHOT VERIFICATION (PRE‑AUDIT)
 
 **$1,500 · Single engagement · 10 outputs · 5–7 business days**
+**Certification validity: 30 days from sealing date**
 
 **Badge:** Snapshot — `assets/badges/sovereign-certified/sovereign-certified-badge-snapshot-v1.svg`
 
@@ -68,16 +104,16 @@ Both must match before work begins. No exceptions.
 **What it covers:**
 A lightweight pre‑audit for organizations that want to demonstrate a
 commitment to AI reliability without a full deployment assessment.
-Up to 10 real AI outputs are run through the FSVE certainty engine and
-scored across the primary epistemic axes. The deliverable is a signed
+Up to 10 real AI outputs are run through the certainty scoring engine and
+assessed across the primary epistemic axes. The deliverable is a signed
 Snapshot Verification statement — not a full certification, but a
 credible trust signal that says *this organization takes AI outputs seriously*.
 
 **Deliverable:**
 A signed Snapshot Verification Statement from Sheldon K. Salmon specifying:
-- List of audited outputs with FSVE scores
+- List of audited outputs with certainty scores
 - Aggregated epistemic status
-- Whether any output fell into the OVERSIGHT ZONE (EV < 0.40)
+- Whether any output fell into the oversight zone
 - A plain‑English explanation of what the scores mean for non‑technical stakeholders
 
 **What it does not cover:**
@@ -85,8 +121,12 @@ System‑wide deployment review. Ongoing monitoring. Full certification
 badge. Access to the AION‑Registry. This is a snapshot, not a seal of
 infrastructure integrity.
 
+**Certification validity:** 30 days from sealing date. A Snapshot is a
+point-in-time trust signal, not a standing certification. Organizations
+requiring a longer validity window should consider Tier 1.
+
 **How to engage:**
-File a `10-audit-request.yml` issue. Select Tier 0. Include up to 10
+File a `10-audit-request.yml` issue. Select Tier 0. Include up to 10
 outputs, organization name, and Stripe transaction code. The
 audit‑verify workflow confirms payment automatically. Assessment begins
 within one business day of confirmation. No call. No scheduling.
@@ -94,22 +134,22 @@ Automated intake — available 24/7.
 
 ---
 
-## TIER 1 — FULL AUDIT
+## TIER 1 — FULL AUDIT
 
-**Output‑banded pricing · 3‑month certification validity**
+**Output‑banded pricing · Certification validity: 90 days from sealing date**
 
 Every full audit follows the same constitutional certainty methodology
-across 13 FSVE axes, falsification protocols, and adversarial review.
+across 13 epistemic axes, falsification protocols, and adversarial review.
 The price scales with the number of outputs because the surface area
 of the audit scales.
 
-All Tier 1 audits receive the **Standard** certification badge.
+All Tier 1 audits receive the **Standard** certification badge.
 The audit depth is listed on the sleeve and in the AION‑Registry entry.
 
 | Depth | Outputs | Price | Best For |
 |-------|---------|-------|----------|
 | **Starter** | 25 | $3,000 | Solo founders, pre‑seed startups, indie AI diligence |
-| **Professional** | 50 | $6,000 | Seed–Series A startups, single‑product AI, API‑wrapper validation |
+| **Professional** | 50 | $6,000 | Seed–Series A startups, single‑product AI, API‑wrapper validation |
 | **Business** | 100 | $10,000 | Mid‑market companies, multi‑model deployments, internal AI tools |
 | **Enterprise** | 250 | $18,000 | Established companies, customer‑facing AI, regulatory‑adjacent industries |
 | **Platform** | 500 | $30,000 | AI‑first companies, model providers, platforms serving downstream users |
@@ -121,23 +161,30 @@ The audit depth is listed on the sleeve and in the AION‑Registry entry.
 <img src="assets/badges/sovereign-certified/sovereign-certified-badge-v2.svg" alt="Standard Badge" width="320" />
 
 **Deliverable:**
-- Full Certification Report (written, signed, PDF)
+- Full Certification Report (written, signed, sealed PDF)
+- Certainty Grade with component breakdown and audit trail
+- Epistemic Debt Score (EDS) scorecard
 - Sovereign Certified Standard badge license (digital, version‑locked)
 - Listing in the public AION‑Registry at the audited depth tier
-- Epistemic Debt Score and ScoreTensor
 
-**Certification validity:** 3 months from issuance. Re‑audit is required
-to maintain an active certification. This cadence matches the pace of
-AI model updates, data shifts, and prompt changes. A current
-certification is a live signal; a stale one is a historical document.
+**Certification validity:** 90 days *(approximately 3 calendar months)*
+from the sealing date. The 90-day window reflects the pace at which AI
+model updates, data shifts, and prompt changes can alter the system's
+epistemic profile. A current certification is a live signal. A stale one
+is a historical document. Re-audit opens a new 90-day window.
+
+**What this means for fast-moving teams:** Changes made after the
+sealing date are assessed in the next cycle — not retroactively.
+The 90-day window is the organization's protection: anything deployed
+within the certified window is covered by the assessment that preceded
+it. Ship within the window. Re-audit before the next major model change.
 
 **What it does not cover:**
 Ongoing monitoring, quarterly reviews, or the advanced adversarial
-instruments reserved for Tier 5. The audit is a point‑in‑time
-assessment.
+stack available at Tier 5. The audit is a point‑in‑time assessment.
 
 **How to engage:**
-File a `10-audit-request.yml` issue marked Tier 1. Include organization
+File a `10-audit-request.yml` issue marked Tier 1. Include organization
 name, AI deployment scope (one paragraph), output count, and Stripe
 transaction code. Architect‑led intake — Monday and Tuesday only.
 The Architect confirms scope and opens the assessment window within
@@ -145,25 +192,37 @@ two business days.
 
 ---
 
-## TIER 2 — ENTERPRISE RETAINER
+## TIER 2 — ENTERPRISE RETAINER
 
-**$25,000 per year · Annual renewal · 30‑day assessment window**
+**$25,000 per year · Annual retainer · Quarterly certifications**
+**Certification validity: 90 days per audit cycle**
 
 **Badge:** Digital — `assets/badges/sovereign-certified/sovereign-certified-badge-digital-v2.svg`
 
 <img src="assets/badges/sovereign-certified/sovereign-certified-badge-digital-v2.svg" alt="Digital Badge" width="320" />
 
 **What it covers:**
-Standing certification and monitoring posture for organizations that
-need continuous compliance across multiple audit cycles without
-re‑engaging à la carte for each assessment.
+Standing certification posture for organizations that need continuous
+compliance across multiple audit cycles without re-engaging à la carte
+for each assessment.
+
+**Retainer structure vs. certification cycle — stated plainly:**
+The retainer runs for 12 months. Within that year, four full audits fire
+on a quarterly cadence. Each audit produces a new sealed certification
+with a 90-day validity window. At any point in the year, the organization
+holds exactly one active 90-day certification. The four certifications
+together provide continuous coverage across the retainer year, with no
+gap between windows when cycles run on schedule.
+
+This is not a 12-month certification. It is four consecutive 90-day
+certifications, delivered under a single annual retainer agreement.
 
 Components:
-- Quarterly Tier 1 audits at the organization's output band (four per year)
-- Priority Tier 1 verification (48‑hour turnaround)
+- Four quarterly Tier 1 audits at the organization's output band
+- Priority Tier 1 verification (48‑hour turnaround)
 - Private filing window: up to 21 days before mandatory public disclosure
 - Named entry in AION‑Registry at Enterprise tier (public)
-- Annual Enterprise Certification Report — full epistemic debt assessment
+- Annual Enterprise Certification Report — full epistemic debt trend assessment
 - Direct written access to Architect for material findings
   (response within 5 business days, in writing, on record)
 - Foresight Seal access: quarterly sealed foresight briefings on AI risk
@@ -183,42 +242,50 @@ $25,000 base. Final terms depend on deployment footprint, ledger
 volume, and industry classification.
 
 **How to engage:**
-File a `10-audit-request.yml` issue marked Tier 2 with organization
+File a `10-audit-request.yml` issue marked Tier 2 with organization
 name and AI deployment scope (one paragraph). Automated intake —
 available 24/7. The Architect opens the 30‑day assessment window
 within two business days.
 
 ---
 
-## TIER 3 — STRATEGIC RETAINER
+## TIER 3 — STRATEGIC RETAINER
 
 **$100,000+ per year · Terms negotiated in writing · C‑Suite**
+**Certification validity: 30 days per audit cycle**
 
 **Badge:** Elite — `assets/badges/sovereign-certified/sovereign-certified-badge-elite-v2.svg`
 
 <img src="assets/badges/sovereign-certified/sovereign-certified-badge-elite-v2.svg" alt="Elite Badge" width="320" />
 
 **What it covers:**
-Standing certification and monitoring posture for organizations
-deploying AI in regulated industries, critical infrastructure, or
-high‑liability environments.
+Standing certification posture for organizations deploying AI in
+regulated industries, critical infrastructure, or high‑liability
+environments where monthly assessment cadence is required.
+
+**Retainer structure vs. certification cycle — stated plainly:**
+The retainer runs for 12 months. Within that year, twelve full audits
+fire on a monthly cadence. Each audit produces a new sealed certification
+with a 30-day validity window. Continuous coverage — no gap between
+windows when cycles run on schedule.
+
+This is not a 12-month certification. It is twelve consecutive 30-day
+certifications under a single annual retainer agreement. The monthly
+cadence reflects the deployment pace of organizations at this tier.
 
 Components:
-- All Tier 2 components included
+- All Tier 2 components included
+- Monthly audits in place of quarterly (twelve per year)
 - Strategic coverage for output bands up to Platform (500) per audit cycle
 - Annual Strategic Certification Report — full epistemic debt assessment
 - Named entry in AION‑Registry at Strategic tier (public)
 - Direct written access to Architect for material findings
   (response within 3 business days, in writing, on record)
 - Foresight Seal access: quarterly sealed foresight briefings on AI risk
-  vectors and industry developments specific to the organization's deployment
-  footprint — delivered as sealed ledger entries with the organization as
-  named subject
+  vectors and industry developments — delivered as sealed ledger entries
 
 **Epistemic Debt Statement:**
-Organizations at this tier receive an annual Epistemic Debt Statement —
-a plain‑language assessment of accumulated AI audit record: failures
-logged, remediations completed, outstanding debt, and trend direction.
+Organizations at this tier receive an annual Epistemic Debt Statement.
 A summary version is published to the AION‑Registry.
 See `AUDIT-METHODOLOGY.md` for the full Epistemic Debt framework.
 
@@ -227,16 +294,17 @@ $100,000 base. Final terms depend on deployment footprint, ledger
 volume, and industry classification.
 
 **How to engage:**
-File a `10-audit-request.yml` issue marked Tier 3 with organization
+File a `10-audit-request.yml` issue marked Tier 3 with organization
 name and AI deployment scope (one paragraph). Architect‑led intake —
 Monday and Tuesday only. The Architect responds with initial terms
 in writing. That exchange is the negotiation.
 
 ---
 
-## TIER 4 — DEFENSE & GOVERNMENT GRADE
+## TIER 4 — DEFENSE & GOVERNMENT GRADE
 
 **Price: Negotiated · Engagement: Written contract required · Clearance: As applicable**
+**Certification validity: 90 days per declared assessment period**
 
 **Badge:** Defense — `assets/badges/sovereign-certified/sovereign-certified-badge-defense-v2.svg`
 
@@ -244,18 +312,24 @@ in writing. That exchange is the negotiation.
 
 **What it covers:**
 Full standards‑alignment certification for federal agencies, DoD components,
-defense contractors, intelligence community elements, and critical infrastructure
-operators subject to federal AI governance requirements.
+defense contractors, intelligence community elements, and critical
+infrastructure operators subject to federal AI governance requirements.
+
+**Certification cycle:** Scope is reviewed and re-anchored at each
+90-day interval. Each period produces a full sealed report and a new
+90-day certification. Monthly ledger reviews (twelve per year) run
+within each 90-day window — these are monitoring reviews, not
+re-certifications. The certification fires at the 90-day boundary.
 
 Components:
-- All Tier 3 components included
+- All Tier 3 components included
 - Standards Alignment Report — maps deployment against all 18 frameworks in
   `STANDARDS-ALIGNMENT.md`, delivered as a signed, sealed PDF
 - NIST AI RMF function mapping: GOVERN · MAP · MEASURE · MANAGE
 - CMMC 2.0 control alignment report for DoD contractors
 - EU AI Act Article 12 compliance documentation for dual‑jurisdiction deployments
 - FAR/DFARS addendum — federal acquisition regulation compliance layer
-- Monthly ledger reviews (twelve per year) in place of quarterly
+- Monthly ledger reviews (twelve per year) within each 90-day certification window
 - SCIF‑compatible written delivery — all reports delivered in writing,
   no digital transmission required if specified in engagement terms
 - Named entry in AION‑Registry at Defense & Government tier (public)
@@ -263,10 +337,10 @@ Components:
   sensitive information consistent with applicable clearance requirements
 
 **Epistemic Debt Statement — Defense Edition:**
-Quarterly epistemic debt statements in place of annual. Includes
-standards compliance delta: which frameworks were satisfied in the prior
-quarter and which require remediation before the next review cycle.
-See `AUDIT-METHODOLOGY.md` for the full Epistemic Debt framework.
+Quarterly epistemic debt statements in addition to the 90-day
+certification reports. Includes standards compliance delta: which
+frameworks were satisfied in the prior period and which require
+remediation before the next certification cycle.
 
 **Who this is for:**
 - Federal agencies implementing OMB M‑24‑10 AI governance programs
@@ -275,22 +349,20 @@ See `AUDIT-METHODOLOGY.md` for the full Epistemic Debt framework.
 - Intelligence community elements under ICD 503
 - Critical infrastructure operators under CISA AI Cybersecurity guidance
 - Organizations subject to EU AI Act Article 12 (high‑risk AI systems)
-- Any organization where AI failure documentation has national security,
-  regulatory, or treaty‑level implications
 
 **How to engage:**
-File a `10-audit-request.yml` issue marked Tier 4 with organization
+File a `10-audit-request.yml` issue marked Tier 4 with organization
 name, applicable regulatory frameworks, and AI deployment scope
 (one paragraph). Architect‑led intake — Monday and Tuesday only.
-The Architect responds with initial terms in writing. Engagements
-at this tier require a signed written agreement before any work
-commences. No exceptions.
+Engagements at this tier require a signed written agreement before
+any work commences. No exceptions.
 
 ---
 
-## TIER 5 — SOVEREIGN AI AUDIT
+## TIER 5 — SOVEREIGN AI AUDIT
 
 **$15,000 per engagement · Full adversarial stack audit · 14‑day assessment window**
+**Certification validity: 180 days · Badge license: 12 months**
 
 **Badge:** Sovereign — `assets/badges/sovereign-certified/sovereign-certified-badge-sovereign-v1.svg`
 
@@ -305,39 +377,65 @@ Every instrument runs against the system. Every finding is logged, cited, and se
 The client receives a comprehensive Findings Register with severity ratings,
 falsification conditions, and remediation pathways.
 
+**Validity — two separate clocks, both stated explicitly:**
+
+*Certification validity: 180 days from sealing date.*
+The Sovereign Audit assesses the system at the time of engagement.
+The 180-day window reflects the depth of that assessment — a seven-instrument
+adversarial audit reaches further into the system's architecture than a standard
+Tier 1 pass, and its findings remain structurally relevant for longer.
+
+*Badge license: 12 months from issuance.*
+The right to display the Sovereign badge runs for 12 months regardless of
+the certification window. This reflects the market reality: a Tier 5 audit
+is a significant organizational commitment, and the badge should be displayable
+for the full year following that commitment.
+
+These are not the same thing. At day 181, the certification has expired —
+the system should be re-audited. The badge may still be displayed through
+month 12, with the AION-Registry entry updated to reflect
+`CERTIFICATION_EXPIRED / BADGE_LICENSE_ACTIVE`. Any relying party
+reading the registry can see the distinction.
+
+**For fast-moving AI teams:** The 180-day window is designed to give
+organizations time to act on the Sovereign Audit's findings without the
+certification expiring before remediation is complete. Findings from a
+seven-instrument audit are not resolved in 90 days. The window is set
+to match the remediation horizon, not the deployment pace.
+
 **The seven instruments:**
 
 | Order | Instrument | What It Tests |
 |-------|-----------|---------------|
-| 1 | **PDE v0.3** | 12‑domain diagnostic scan — gaps, vulnerabilities, risks, loopholes, weaknesses, oversights, failures, blind spots, shortcomings, breaches, flaws, exposures. 60 pellucid focal variants. |
+| 1 | **PDE v0.5** | 12‑domain diagnostic scan — gaps, vulnerabilities, risks, loopholes, weaknesses, oversights, failures, blind spots, shortcomings, breaches, flaws, exposures. |
 | 2 | **EAE v0.3** | Elimination mapping by systematic negation. Claims the system makes are tested and ruled out with cause. Produces a survivor silhouette. |
-| 3 | **CAL v0.3** | 59 FTT checks across four layers: conceptual design, algorithmic performance, implementation correctness, error‑control integrity. |
-| 4 | **SAR v0.1** | Sovereign Adversarial Reasoning — 12 FTT checks including Disaggregation Diagnosis, Honest‑Error‑Fabrication distinction, Mental Epidemic Screen. |
+| 3 | **CAL v0.3** | 59 checks across four layers: conceptual design, algorithmic performance, implementation correctness, error‑control integrity. |
+| 4 | **SAR v0.1** | Sovereign Adversarial Reasoning — 12 checks including disaggregation diagnosis, honest-error-fabrication distinction, mental epidemic screen. |
 | 5 | **ANTI‑FORGE v1.3** | 15‑role rejection council. Each role carries a pre‑loaded rejection rulebase. Produces a Rejection Map. |
-| 6 | **FORGE v2.1** | Polymath Council review with Extended Panels. FSVE‑aligned, Cq‑adjusted convergence gating. |
-| 7 | **FSVE v4.0** | Certainty scoring across 11 EV axes with GRADE+E_enhance evidence grading. Produces a ScoreTensor. |
+| 6 | **FORGE v2.1** | Polymath Council review with Extended Panels. Convergence-gated synthesis. |
+| 7 | **FSVE v4.3** | Certainty scoring across 13 epistemic axes. Produces a ScoreTensor. |
 
 **Deliverable:**
 - Sovereign Audit Findings Register — a single, sealed, signed PDF containing every
   finding from all seven instruments, organized by severity, with falsification
-  conditions and remediation guidance for each finding
-- Epistemic Debt Score (EDS) — calculated from the aggregate findings, per the public
-  formula in `EPISTEMIC-DEBT-SCORE.md`
-- FSVE ScoreTensor — the system's certainty score across all 11 epistemic axes
-- Sovereign Audit Badge — licensed use of the Sovereign tier badge for 12 months
+  conditions and remediation guidance
+- Certainty Grade with full component breakdown and audit trail
+- Epistemic Debt Score (EDS)
+- FSVE ScoreTensor — the system's certainty score across all 13 epistemic axes
+- Remediation Pathways — framework recommendations matched to every CRITICAL and HIGH finding
+- Sovereign Audit Badge — licensed use for 12 months
 - Listing in AION‑Registry at Sovereign tier (public)
 
 **What it does not cover:**
 Consulting, implementation support, or developer access. The audit assesses what was
 built. Findings are delivered in writing. The client decides how to remediate.
-A re‑audit after remediation is a separate engagement.
+A re‑audit after remediation is a separate engagement at $15,000.
 
 **How to engage:**
-File a `10-audit-request.yml` issue marked Tier 5. Include organization name, AI system
+File a `10-audit-request.yml` issue marked Tier 5. Include organization name, AI system
 deployment scope, and Stripe transaction code. Architect‑led intake — Monday and Tuesday
-only. Submissions filed on other days are not processed that week. The Architect confirms
-scope and opens the assessment window within three business days. Fourteen‑day assessment
-window once confirmed.
+only. The Architect confirms scope and opens the assessment window within three
+business days. Fourteen‑day assessment window once confirmed.
 
 ---
 
@@ -488,7 +586,7 @@ Certification verification page: `https://aiongithubpages/certifications/`
 | Subject | AI deployment infrastructure | Physics / engineering / scientific tools |
 | Audit type | Failure capture + remediation posture | Citation · red team · peer review |
 | Tiers | 6 tiers ($1.5K → DoD → Sovereign) | Single certification |
-| Renewal | 3 months (Tier 1) / Annual (Tier 2+) | None — bound to tool version |
+| Renewal | 90 days (Tier 1) / 30 days (Tier 3) / 180 days (Tier 5) | None — bound to tool version |
 
 ---
 
@@ -504,9 +602,15 @@ View at: `/simulators/roller-coaster/`
 
 ## AI COMPLIANCE BADGES
 
-Compliance badges certify that an organization's AI system operates in conformity with **THE CONSTITUTION v2.1** within a specific high‑stakes domain. They are issued after a domain‑focused audit, separate from the STP tier structure. Each badge is non‑transferable, SHA‑256 sealed, and bound to the organization's name and domain.
+Compliance badges certify that an organization's AI system operates in conformity
+with **THE CONSTITUTION v2.1** within a specific high‑stakes domain. They are issued
+after a domain‑focused audit, separate from the STP tier structure. Each badge is
+non‑transferable, SHA‑256 sealed, and bound to the organization's name and domain.
 
-These badges do **not** replace a full STP certification; they are an additional mark of domain‑specific constitutional compliance that an organization can display alongside its STP tier badge, or independently if the organization's AI usage is limited to that domain.
+These badges do **not** replace a full STP certification; they are an additional mark
+of domain‑specific constitutional compliance that an organization can display
+alongside its STP tier badge, or independently if the organization's AI usage is
+limited to that domain.
 
 ---
 
@@ -517,7 +621,10 @@ These badges do **not** replace a full STP certification; they are an additional
 
 <img src="assets/badges/compliance/compliance-constitutional-badge.svg" alt="Constitutional Compliance Badge" width="320" />
 
-Certifies that the organization's AI deployment meets the baseline requirements of THE CONSTITUTION v2.1 — the Nine Laws, falsification protocols, and governance structure — regardless of industry. This is the foundational compliance badge, applicable to all organizations.
+Certifies that the organization's AI deployment meets the baseline requirements of
+THE CONSTITUTION v2.1 — the Nine Laws, falsification protocols, and governance
+structure — regardless of industry. This is the foundational compliance badge,
+applicable to all organizations.
 
 - Palette: crimson & gold
 - Motif: nonagon (9 sides = 9 laws) with "CONST"
@@ -528,7 +635,9 @@ Certifies that the organization's AI deployment meets the baseline requirements 
 
 <img src="assets/badges/compliance/compliance-legal-badge.svg" alt="Legal & Justice AI Compliance Badge" width="320" />
 
-Certifies that AI systems used in legal, judicial, or regulatory contexts comply with THE CONSTITUTION v2.1 and additional legal‑domain integrity standards. Covers: legal document analysis, case prediction, sentencing support, regulatory compliance tools.
+Certifies that AI systems used in legal, judicial, or regulatory contexts comply
+with THE CONSTITUTION v2.1 and additional legal‑domain integrity standards. Covers:
+legal document analysis, case prediction, sentencing support, regulatory compliance tools.
 
 - Palette: deep navy & silver
 - Motif: scales of justice inside a shield
@@ -539,7 +648,9 @@ Certifies that AI systems used in legal, judicial, or regulatory contexts comply
 
 <img src="assets/badges/compliance/compliance-healthcare-badge.svg" alt="Healthcare AI Compliance Badge" width="320" />
 
-Certifies that AI systems used in clinical, diagnostic, or healthcare‑adjacent settings comply with THE CONSTITUTION v2.1 and additional clinical safety protocols. Covers: medical imaging, diagnostic support, patient triage, drug interaction prediction.
+Certifies that AI systems used in clinical, diagnostic, or healthcare‑adjacent settings
+comply with THE CONSTITUTION v2.1 and additional clinical safety protocols. Covers:
+medical imaging, diagnostic support, patient triage, drug interaction prediction.
 
 - Palette: deep teal & white‑silver
 - Motif: medical cross inside a shield
@@ -550,7 +661,9 @@ Certifies that AI systems used in clinical, diagnostic, or healthcare‑adjacent
 
 <img src="assets/badges/compliance/compliance-finance-badge.svg" alt="Financial AI Compliance Badge" width="320" />
 
-Certifies that AI systems used in financial services, trading, credit assessment, or fraud detection comply with THE CONSTITUTION v2.1 and additional financial‑domain integrity standards.
+Certifies that AI systems used in financial services, trading, credit assessment,
+or fraud detection comply with THE CONSTITUTION v2.1 and additional financial‑domain
+integrity standards.
 
 - Palette: deep green & gold
 - Motif: rising chart line with currency symbol
@@ -560,30 +673,36 @@ Certifies that AI systems used in financial services, trading, credit assessment
 
 ### How Compliance Badges Are Issued
 
-Each domain badge requires a separate audit. The audit is performed by Sheldon K. Salmon or an STP Certified Auditor with demonstrated domain expertise. The process:
+Each domain badge requires a separate audit. The audit is performed by Sheldon K.
+Salmon or an STP Certified Auditor with demonstrated domain expertise. The process:
 
 1. Organization files an audit request specifying the domain.
-2. Auditor reviews the AI system's outputs, training data (if applicable), and constitutional adherence.
+2. Auditor reviews the AI system's outputs, training data (if applicable), and
+   constitutional adherence.
 3. If the system meets the domain‑specific standards, the badge is issued digitally.
-4. Badge is recorded in the STP ledger with a unique entry ID, SHA‑256 hash, and verification URL.
+4. Badge is recorded in the STP ledger with a unique entry ID, SHA‑256 hash, and
+   verification URL.
 
-**Pricing:**  
-- General Constitutional Compliance: $7,500  
-- Domain‑specific (Legal, Healthcare, Finance): $12,000 each  
+**Pricing:**
+- General Constitutional Compliance: $7,500
+- Domain‑specific (Legal, Healthcare, Finance): $12,000 each
 - Combined audits (multiple domains) available at negotiated rates.
 
-**Renewal:** Badges expire after 12 months. Re‑audit required for renewal, to account for system changes and constitutional version updates.
+**Renewal:** Badges expire after 12 months. Re‑audit required for renewal, to account
+for system changes and constitutional version updates.
 
 ---
 
 ### Verification
 
-Every compliance badge embeds a verification bar with the STP ledger entry ID, SHA‑256 hash, and a verification URL. Anyone can verify a badge by:
+Every compliance badge embeds a verification bar with the STP ledger entry ID,
+SHA‑256 hash, and a verification URL. Anyone can verify a badge by:
 1. Scanning the QR code on the badge (if present) or visiting the verification URL.
 2. Checking the STP ledger for the entry.
 3. Confirming the badge is linked to the organization's current certification status.
 
-Badges not found in the ledger are invalid. Display of an expired or unverified badge constitutes misrepresentation.
+Badges not found in the ledger are invalid. Display of an expired or unverified
+badge constitutes misrepresentation.
 
 ---
 
@@ -591,18 +710,21 @@ Badges not found in the ledger are invalid. Display of an expired or unverified 
 
 Every STP certification and compliance credential is delivered inside a
 cryptographic sleeve — a forgery‑resistant, visually graded template that
-carries the audit details, badges, and verification proof. The sleeve
-design matches the certification type.
+carries the audit details, badges, expiry date, and verification proof.
+The sleeve design matches the certification type.
 
-Sleeves are generated from master SVG templates, populated
-with data from the audit report and ledger entry. Each sleeve is
-SHA‑256 sealed, QR‑verifiable, and carries micro‑text anti‑forgery bands.
+Sleeves are generated from master SVG templates, populated with data from
+the audit report and ledger entry. Each sleeve is SHA‑256 sealed,
+QR‑verifiable, and carries micro‑text anti‑forgery bands.
+
+Every sleeve carries the certification expiry date and the badge license
+expiry date as separate fields. At Tier 5, where these dates differ,
+both are printed — the sleeve cannot be misread as a certification when
+the certification has expired and only the badge license remains active.
 
 The templates exist in two sizes:
-- **Deluxe (bgv1)** — 680 × 1000, designed for framing and boardroom
-  display.
-- **Compact (smv1)** — 500 × 680, optimized for digital delivery and
-  embedding.
+- **Deluxe (bgv1)** — 680 × 1000, designed for framing and boardroom display.
+- **Compact (smv1)** — 500 × 680, optimized for digital delivery and embedding.
 
 All sleeves use conditional ribbons (`RIBBON_GOLD`, `RIBBON_SILVER`)
 that are shown or hidden depending on the certification scope.
@@ -613,11 +735,11 @@ that are shown or hidden depending on the certification scope.
 
 | Sleeve | Type | Use Case |
 |--------|------|----------|
-| **v1 — Certified Audit Sleeve** | Full audit + simulator | Standard for Tier 1–5 engagements where both audit and simulator verification are present. Displays both simulator and auditor badges, tier badge, triple‑time dates, and full verification bar. |
+| **v1 — Certified Audit Sleeve** | Full audit + simulator | Standard for Tier 1–5 engagements where both audit and simulator verification are present. Displays both simulator and auditor badges, tier badge, triple‑time dates, expiry date, and full verification bar. |
 | **v2 — Simulation Verified Sleeve** | Simulator only, no audit | For AION Verified Simulators. Dark cyan palette. Shows simulator badge with name, version, SHA‑256, and run URL. Explicitly states the tool is verified but not audited. |
 | **v3 — Audit Only Sleeve** | Audit only, no simulator | For private or Docker‑sealed frameworks. Dark violet palette. Auditor badge and tier classification only. No simulator slot. |
-| **v4 — Founder's Sovereign Seal** | Founder‑exclusive | Black‑and‑gold hyperdiamond sleeve. Issued only under STP‑AUDITOR‑0001. Carries the founder’s auditor badge and the highest trust signal in the AION ecosystem. |
-| **Auditor Credential Sleeve** | STP Auditor Network | Carried by STP Certified Auditors. Displays the auditor’s shield badge, rank, specialization, validity window, and QR code. The badge carries identity; the sleeve adds audit scope and verification. |
+| **v4 — Founder's Sovereign Seal** | Founder‑exclusive | Black‑and‑gold hyperdiamond sleeve. Issued only under STP‑AUDITOR‑0001. Carries the founder's auditor badge and the highest trust signal in the AION ecosystem. |
+| **Auditor Credential Sleeve** | STP Auditor Network | Carried by STP Certified Auditors. Displays the auditor's shield badge, rank, specialization, validity window, and QR code. |
 
 ---
 
@@ -643,17 +765,16 @@ All templates are stored under `assets/sleeve/`.
 | v4 — Founder's Seal | `small-sleeve/aionsystem_founders_sleeve_smv1.svg` |
 | Auditor Credential | `small-sleeve/aionsystem_auditor_sleeve_smv1.svg` |
 
-Placeholder fields in the templates (e.g., `{{ENTRY_ID}}`,
-`{{AUDITOR_NAME}}`) are filled by the certification automation script
-at issuance. No static names or dates are hard‑coded into the
-templates.
+Placeholder fields in the templates (e.g., `{{ENTRY_ID}}`, `{{AUDITOR_NAME}}`,
+`{{CERT_EXPIRY}}`, `{{BADGE_EXPIRY}}`) are filled by the certification automation
+script at issuance. No static names or dates are hard‑coded into the templates.
 
 ---
 
 ### What a Complete Certification Looks Like
 
 Below is the v1 (Certified Audit) sleeve — the default wrapper for a full
-Tier 1–5 engagement. Click the image to view at full resolution.
+Tier 1–5 engagement.
 
 <a href="assets/sleeve/small-sleeve/aionsystem_certified_audit_sleeve_smv1.svg">
   <img src="assets/sleeve/small-sleeve/aionsystem_certified_audit_sleeve_smv1.svg" alt="Certified Audit Sleeve (small)" width="320" />
@@ -663,21 +784,20 @@ Tier 1–5 engagement. Click the image to view at full resolution.
 
 ## BADGE REFERENCE
 
-| Tier / Type | Badge Variant | File |
-|-------------|--------------|------|
-| Tier 0 — Snapshot Verification | Snapshot | `assets/badges/sovereign-certified/sovereign-certified-badge-snapshot-v1.svg` |
-| Tier 1 — Full Audit | Standard | `assets/badges/sovereign-certified/sovereign-certified-badge-v2.svg` |
-| Tier 2 — Enterprise Retainer | Digital | `assets/badges/sovereign-certified/sovereign-certified-badge-digital-v2.svg` |
-| Tier 3 — Strategic Retainer | Elite | `assets/badges/sovereign-certified/sovereign-certified-badge-elite-v2.svg` |
-| Tier 4 — Defense & Government Grade | Defense | `assets/badges/sovereign-certified/sovereign-certified-badge-defense-v2.svg` |
-| Tier 5 — Sovereign AI Audit | Sovereign (cyan/indigo) | `assets/badges/sovereign-certified/sovereign-certified-badge-sovereign-v1.svg` |
-| STP Certified Auditor | Auditor Shield | `assets/badges/stp_auditor/stp_auditor_template_v1.svg` |
-| AION Verified Simulator | Octagonal Precision Seal | `assets/badges/verified-simulator/aion-verified-simulator-badge-v1.svg` |
-| **Compliance Badges** | | |
-| General Constitutional Compliance | Crimson & Gold | `assets/badges/compliance/compliance-constitutional-badge.svg` |
-| Legal & Justice AI Compliance | Navy & Silver | `assets/badges/compliance/compliance-legal-badge.svg` |
-| Healthcare AI Compliance | Teal & White‑Silver | `assets/badges/compliance/compliance-healthcare-badge.svg` |
-| Financial AI Compliance | Green & Gold | `assets/badges/compliance/compliance-finance-badge.svg` |
+| Tier / Type | Badge Variant | File | Validity |
+|-------------|--------------|------|---------|
+| Tier 0 — Snapshot Verification | Snapshot | `assets/badges/sovereign-certified/sovereign-certified-badge-snapshot-v1.svg` | 30 days |
+| Tier 1 — Full Audit | Standard | `assets/badges/sovereign-certified/sovereign-certified-badge-v2.svg` | 90 days |
+| Tier 2 — Enterprise Retainer | Digital | `assets/badges/sovereign-certified/sovereign-certified-badge-digital-v2.svg` | 90 days per cycle |
+| Tier 3 — Strategic Retainer | Elite | `assets/badges/sovereign-certified/sovereign-certified-badge-elite-v2.svg` | 30 days per cycle |
+| Tier 4 — Defense & Government Grade | Defense | `assets/badges/sovereign-certified/sovereign-certified-badge-defense-v2.svg` | 90 days per period |
+| Tier 5 — Sovereign AI Audit | Sovereign (cyan/indigo) | `assets/badges/sovereign-certified/sovereign-certified-badge-sovereign-v1.svg` | 180-day cert · 12-month badge |
+| STP Certified Auditor | Auditor Shield | `assets/badges/stp_auditor/stp_auditor_template_v1.svg` | 1 year |
+| AION Verified Simulator | Octagonal Precision Seal | `assets/badges/verified-simulator/aion-verified-simulator-badge-v1.svg` | Tool version — no renewal |
+| General Constitutional Compliance | Crimson & Gold | `assets/badges/compliance/compliance-constitutional-badge.svg` | 12 months |
+| Legal & Justice AI Compliance | Navy & Silver | `assets/badges/compliance/compliance-legal-badge.svg` | 12 months |
+| Healthcare AI Compliance | Teal & White‑Silver | `assets/badges/compliance/compliance-healthcare-badge.svg` | 12 months |
+| Financial AI Compliance | Green & Gold | `assets/badges/compliance/compliance-finance-badge.svg` | 12 months |
 
 Badge files are hosted in the Sovereign Trace Protocol repository.
 Licensed use only — see `TRADEMARK.md`. Badge license is included in
@@ -685,7 +805,7 @@ the Certification Report delivered at each tier.
 Unlicensed display of any badge constitutes misrepresentation of audit
 status.
 
-All STP badges carry: `NON-TRANSFERABLE` · SHA‑256 · FROZEN‑2.0 ·
+All STP badges carry: `NON-TRANSFERABLE` · SHA‑256 · FROZEN‑4.0 ·
 TRIPLE‑TIME SEALED.
 AION Verified Simulator badge carries: `NON-TRANSFERABLE` · SHA‑256 ·
 STP SEALED · v1.0.
@@ -706,7 +826,7 @@ are permanent. The certification assessment reviews both.
 | `REMEDIATION_FILED` | Remediation record appended, pending | Conditionally certifiable |
 | `REMEDIATION_VERIFIED` | Architect‑verified | Certified clean on this entry |
 
-A Tier 1 Verification moves an entry from `REMEDIATION_FILED` to
+A Tier 1 Verification moves an entry from `REMEDIATION_FILED` to
 `REMEDIATION_VERIFIED`. Self‑certification does not exist in this
 protocol.
 
@@ -741,6 +861,6 @@ Dispute resolution: JAMS Commercial Arbitration Rules.
 
 ---
 
-*Sheldon K. Salmon · AI Reliability & ADI Architect · June 2026*
+*Sheldon K. Salmon · AI Reliability & AGI Architect · June 2026*
 *Certification inquiries: file a `10-audit-request.yml` issue.*
 *No other intake channel exists.*
