@@ -33,7 +33,7 @@
 
 | Field | Value |
 |---|---|
-| **Author** | Sheldon K. Salmon — AI Reliability & ADI Architect |
+| **Author** | Sheldon K. Salmon — AI Reliability & AGI Architect |
 | **Session** | March 2026 — AION-BRAIN |
 | **Stack** | DUAL-HELIX v2.0 · TOPOS v0.3 · VELA-C v0.3 · CPA-001 v2.2 |
 | **Convergence** | M-NASCENT |
@@ -274,24 +274,30 @@ All templates include: native file upload, SHA-256 binding, declaration checkbox
 
 ## Certification
 
-| Tier | Scope | Price | Badge | Deliverables | Intake |
-|---|---|---|---|---|---|
-| **Tier 0 — Snapshot Verification** | 10 outputs, pre-audit trust signal | Free | Snapshot (pearl/earth) | Snapshot report · Ledger entry · Badge embed code | Automated 24/7 |
-| **Tier 1 — Full Audit** | 25–1,000+ outputs, output-banded pricing, 3-month validity | $1,500–$50K | Standard | Sealed audit report (PDF) · EDS scorecard · Ledger entry · Standard badge embed code | Architect-led · Mon–Tue only |
-| **Tier 2 — Enterprise Retainer** | Quarterly audits, continuous compliance | $25K/yr | Digital | Quarterly sealed reports · EDS trend dashboard · Ledger entries · Digital badge embed code | Automated 24/7 |
-| **Tier 3 — Strategic Retainer** | All Tier 2 + priority access + Foresight Seal | $100K+/yr | Elite | All Tier 2 deliverables · Priority SLA · Foresight Seal registration · Elite badge embed code | Architect-led · Mon–Tue only |
-| **Tier 4 — Defense & Government Grade** | Full standards alignment, monthly reviews, SCIF-compatible | On request | Defense | Monthly sealed reports · Standards alignment matrix · Ledger entries · Defense badge embed code | Architect-led · Mon–Tue only |
-| **Tier 5 — Sovereign AI Audit** | 7-instrument adversarial stack, 14-day window | $15K | Sovereign (cyan/indigo) | Full adversarial audit report · 7-instrument findings · EDS scorecard · Sovereign badge embed code | Architect-led · Mon–Tue only |
+| Tier | Scope | Price | Validity | Badge | Deliverables | Intake |
+|---|---|---|---|---|---|---|
+| **Tier 0 — Snapshot Verification** | 10 outputs, pre-audit trust signal | Free | **30 days** | Snapshot (pearl/earth) | Snapshot report · Ledger entry · Badge embed code | Automated 24/7 |
+| **Tier 1 — Full Audit** | 25–1,000+ outputs, output-banded pricing | $1,500–$50K | **90 days** *(~3 months)* | Standard | Sealed audit report (PDF) · Certainty Grade · EDS scorecard · Ledger entry · Standard badge embed code | Architect-led · Mon–Tue only |
+| **Tier 2 — Enterprise Retainer** | Quarterly audits, annual retainer | $25K/yr | **90 days per cycle** · 4 cycles/year | Digital | Quarterly sealed reports · EDS trend dashboard · Ledger entries · Digital badge embed code | Automated 24/7 |
+| **Tier 3 — Strategic Retainer** | Monthly audits, annual retainer | $100K+/yr | **30 days per cycle** · 12 cycles/year | Elite | Monthly sealed reports · EDS trend dashboard · Ledger entries · Elite badge embed code | Architect-led · Mon–Tue only |
+| **Tier 4 — Defense & Government Grade** | Full standards alignment, 90-day periods | On request | **90 days per period** | Defense | Sealed period reports · Standards alignment matrix · Ledger entries · Defense badge embed code | Architect-led · Mon–Tue only |
+| **Tier 5 — Sovereign AI Audit** | 7-instrument adversarial stack, 14-day window | $15K | **180-day cert · 12-month badge** | Sovereign (cyan/indigo) | Full adversarial audit report · 7-instrument findings · Certainty Grade · EDS scorecard · Sovereign badge embed code | Architect-led · Mon–Tue only |
+
+**Validity window — what it means:**
+Every certification expires on a declared date printed on the sleeve and in the AION-Registry. The certified state covers what was assessed up to the sealing date. Changes made after the sealing date are assessed in the next cycle. A live decay indicator in the registry shows days remaining. An expired certification is not removed — it becomes a historical record.
+
+**Tier 2 and Tier 3 — retainer vs. certification:** The retainer contract runs annually. The certifications fire within it on a quarterly (Tier 2) or monthly (Tier 3) cadence. Each cycle produces a new sealed certification with its own validity window. At any point in the retainer year, the organization holds one active certification. The retainer ensures there is never a gap between windows when cycles run on schedule.
+
+**Tier 5 — two separate clocks:** The 180-day certification window and the 12-month badge license are distinct. At day 181, the certification has expired and the system should be re-audited. The badge may still be displayed through month 12. The AION-Registry entry distinguishes `CERTIFICATION_EXPIRED` from `BADGE_LICENSE_ACTIVE` — any relying party can read the difference.
 
 **Intake rules:**
-
 - **Tier 0 and Tier 2** — submit anytime via `10-audit-request.yml`
 - **Tier 1, 3, 4, and 5** — Architect-led. Intake Monday and Tuesday only. Submissions on other days are voided and non-refundable.
 - **Delivery:** Weekends for all tiers.
 
 Every certified organization receives an **Epistemic Debt Score (EDS)** — a 0–100 metric measuring AI epistemic integrity across five components. Formula is public: [EPISTEMIC-DEBT-SCORE.md](./EPISTEMIC-DEBT-SCORE.md). Worked example: [Epistemic Debt Score](#epistemic-debt-score) above.
 
-**Tier 5 (Sovereign AI Audit)** runs the complete AION adversarial stack — seven instruments in sequence — against the client's AI system. It is a full-scale diagnostic, adversarial, and code-level audit, not a management-system paperwork review. See [CERTIFICATION.md](./CERTIFICATION.md) for the complete instrument list and deliverable schedule.
+**Tier 5 (Sovereign AI Audit)** runs a complete seven-instrument adversarial stack against the client's AI system — a full-scale diagnostic, adversarial, and code-level audit, not a management-system paperwork review. See [CERTIFICATION.md](./CERTIFICATION.md) for the complete instrument list and deliverable schedule.
 
 **STP Certified Auditors** — independent professionals authorized to conduct and file audits directly to the ledger under their own badge. Apply via `12-auditor-application.yml`. See [AUDITOR-VETTING-PROCESS.md](./AUDITOR-VETTING-PROCESS.md) for the full vetting process. All auditor badges verified live against `.github/verified-auditors.json` on every submission.
 
@@ -309,7 +315,7 @@ Every certified organization receives an **Epistemic Debt Score (EDS)** — a 0�
 A fully worked, anonymized Tier 1 audit output is available at [SAMPLE-AUDIT-REPORT.md](./SAMPLE-AUDIT-REPORT.md). It shows:
 
 - The EDS scorecard with component-level breakdown
-- Instrument readings across the AION stack
+- Instrument readings across the audit stack
 - A findings table with severity classifications and remediation status
 - The sealed ledger entry format
 - The badge embed code delivered at audit close
@@ -364,7 +370,7 @@ STAGE 1 — COMPLETE (March 9, 2026)
   PyPI: sovereign-trace 2.0.0 live. Founding seal in ledger.
 
 STAGE 1 — RED TEAM + FROZEN-4.0 (June 1, 2026)
-  Full red team scan: FSVE v4.3 × FA v4.0 dual-framework audit.
+  Full red team scan: dual-framework audit.
   1 CRITICAL finding (self-test anchor data), 3 MEDIUM, 4 LOW — all resolved.
   FROZEN-3.0 retired. FROZEN-4.0: 82 self-test checks passing.
   PyPI: sovereign-trace 4.0.0 — pending push.
@@ -575,7 +581,7 @@ sovereign-trace-protocol/
 
 | Field | Value |
 |---|---|
-| **Author** | Sheldon K. Salmon — AI Reliability & ADI Architect |
+| **Author** | Sheldon K. Salmon — AI Reliability & AGI Architect |
 | **Session** | March 2026 — AION-BRAIN |
 | **Stack** | DUAL-HELIX v2.0 · TOPOS v0.3 · VELA-C v0.3 · CPA-001 v2.2 |
 
