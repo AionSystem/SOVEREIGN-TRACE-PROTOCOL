@@ -16,11 +16,11 @@ body:
         Use this when a project scope has been agreed, a negotiation has reached a position you need to anchor,
         or terms have been discussed verbally and you need a written sealed record before a formal contract is signed.
 
-        **This is not a legal contract.** It is a tamper-evident record of your position at a specific moment.
+        **This is not a legal contract.** It is a tamper-evident record of **your** understanding at a specific moment.
         This seal complements legal documentation — it does not replace it.
 
   - type: input
-    id: submitter_name
+    id: submitter-name
     attributes:
       label: "Your Full Name"
       description: "The name attached to this sealed record."
@@ -29,7 +29,7 @@ body:
       required: true
 
   - type: input
-    id: other_party
+    id: other-party
     attributes:
       label: "Other Party or Parties"
       description: "Who is the other party? Company name, individual, or role."
@@ -38,7 +38,7 @@ body:
       required: true
 
   - type: input
-    id: agreement_type
+    id: agreement-type
     attributes:
       label: "Agreement Type"
       description: "What kind of scope or agreement is being sealed?"
@@ -47,28 +47,28 @@ body:
       required: true
 
   - type: input
-    id: agreement_date
+    id: agreement-date
     attributes:
       label: "Date of Agreement or Position"
-      description: "The date this scope was agreed or position was reached. Format: YYYY-MM-DD"
+      description: "YYYY-MM-DD"
       placeholder: "2026-03-07"
     validations:
       required: true
 
   - type: textarea
-    id: scope_or_terms
+    id: scope-or-terms
     attributes:
       label: "Agreed Scope or Position — Exact"
-      description: "State exactly what was agreed. Include deliverables, timelines, compensation, exclusions."
+      description: "State exactly what was agreed. Include deliverables, timelines, compensation, exclusions. **Keep under 10,000 characters.**"
       placeholder: "State the agreed scope, terms, or position precisely. Include all material details."
     validations:
       required: true
 
   - type: textarea
-    id: what_is_excluded
+    id: what-is-excluded
     attributes:
       label: "What Is Explicitly Excluded (Optional but Recommended)"
-      description: "What is NOT included? Explicit exclusions prevent the most common form of scope creep."
+      description: "What is NOT included? Explicit exclusions prevent the most common form of scope creep. **Keep under 5,000 characters.**"
       placeholder: "List what is explicitly outside this scope."
     validations:
       required: false
@@ -77,16 +77,26 @@ body:
     id: context
     attributes:
       label: "Context"
-      description: "How was this agreement reached? Verbal conversation, email exchange, meeting?"
+      description: "How was this agreement reached? Verbal conversation, email exchange, meeting? **Keep under 5,000 characters.**"
       placeholder: "Describe the context in which this agreement was reached."
     validations:
       required: true
 
-  - type: upload
-    id: supporting_files
+  - type: input
+    id: supporting-urls
     attributes:
-      label: "Supporting Files (Optional)"
-      description: "Upload screenshots of email chains, message threads, or documents supporting this agreement."
+      label: "Supporting File URLs (Optional)"
+      description: "Upload screenshots of email chains, message threads, or documents to a service (e.g., Google Drive, GitHub release) and paste the links here. Do not upload directly."
+      placeholder: "https://example.com/email-screenshot.png"
+    validations:
+      required: false
+
+  - type: input
+    id: file-hash
+    attributes:
+      label: "File SHA-256 Hash (Optional, Recommended)"
+      description: "If you host supporting files externally, provide their SHA‑256 hashes to cryptographically bind the seal to the exact files."
+      placeholder: "64-character hex string"
     validations:
       required: false
 
@@ -109,11 +119,11 @@ body:
         ## What Happens Next
 
         1. Completeness check — Reviewed for completeness.
-        2. Sealing — Sealed with a FROZEN-2.0 triple-time cryptographic stamp. Permanent.
-        3. Ledger entry — Enters the Sovereign Trace ledger with your name, timestamp, and SHA-256 hash.
-        4. Notification — You receive your ledger entry ID and SHA-256 hash.
+        2. Sealing — Sealed with a **FROZEN-4.0** triple‑time cryptographic stamp. Permanent.
+        3. Ledger entry — Enters the Sovereign Trace ledger with your name, timestamp, and SHA‑256 hash.
+        4. Notification — You receive your ledger entry ID and SHA‑256 hash.
 
         Share the ledger entry ID with the other party if appropriate.
         The seal is permanent. The seal is the anchor.
 
-        Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
+        *Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem@outlook.com*
