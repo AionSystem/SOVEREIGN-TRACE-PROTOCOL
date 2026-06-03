@@ -23,7 +23,7 @@ body:
         The Sovereign Trace Protocol is the notary. You are the witness.
 
   - type: input
-    id: submitter_legal_name
+    id: submitter-legal-name
     attributes:
       label: "Your Legal Name (as on ID)"
       description: "Must match the name verified via DocuSign. Mismatch will cause rejection."
@@ -32,7 +32,7 @@ body:
       required: true
 
   - type: input
-    id: submitter_email
+    id: submitter-email
     attributes:
       label: "Your Email Address"
       description: "A DocuSign identity verification link will be sent here. Submission incomplete until verified."
@@ -41,7 +41,7 @@ body:
       required: true
 
   - type: input
-    id: company_name
+    id: company-name
     attributes:
       label: "Company / Organization Name"
       description: "The company that produced or deployed the AI system. Misrepresentation may be treated as fraud."
@@ -50,7 +50,7 @@ body:
       required: true
 
   - type: input
-    id: company_duns
+    id: company-duns
     attributes:
       label: "Company DUNS Number (optional, recommended)"
       description: "Helps verify company identity for enterprise submissions."
@@ -59,7 +59,7 @@ body:
       required: false
 
   - type: input
-    id: ai_system
+    id: ai-system
     attributes:
       label: "AI System Name and Version"
       description: "The specific AI system, product, or model that produced the output."
@@ -68,7 +68,7 @@ body:
       required: true
 
   - type: input
-    id: output_date
+    id: output-date
     attributes:
       label: "Date of AI Output"
       description: "YYYY-MM-DD"
@@ -77,37 +77,34 @@ body:
       required: true
 
   - type: textarea
-    id: exact_output
+    id: exact-output
     attributes:
       label: "Exact AI Output"
-      description: "Copy the exact text. Max 10,000 characters."
+      description: "Copy the exact text. **Keep under 10,000 characters.** The workflow may truncate longer submissions."
       placeholder: "Paste the exact output here."
-      maxlength: 10000
     validations:
       required: true
 
   - type: textarea
-    id: decision_context
+    id: decision-context
     attributes:
       label: "Decision Context"
-      description: "What decision was this AI output used to inform? Max 5,000 characters."
+      description: "What decision was this AI output used to inform? **Keep under 5,000 characters.**"
       placeholder: "Describe the decision or action this output was used for."
-      maxlength: 5000
     validations:
       required: true
 
   - type: textarea
-    id: failure_description
+    id: failure-description
     attributes:
       label: "Failure Description"
-      description: "Hallucination, false confidence, harmful output, other. Max 5,000 characters."
+      description: "Hallucination, false confidence, harmful output, other. **Keep under 5,000 characters.**"
       placeholder: "Describe the failure clearly and specifically."
-      maxlength: 5000
     validations:
       required: true
 
   - type: dropdown
-    id: failure_severity
+    id: failure-severity
     attributes:
       label: "Failure Severity"
       description: "Estimate the impact."
@@ -120,17 +117,16 @@ body:
       required: true
 
   - type: textarea
-    id: harm_or_risk
+    id: harm-or-risk
     attributes:
       label: "Harm Occurred or Risk Created"
-      description: "What harm resulted or what risk was created? If no harm yet, describe the exposure. Max 5,000 characters."
+      description: "What harm resulted or what risk was created? If no harm yet, describe the exposure. **Keep under 5,000 characters.**"
       placeholder: "Describe actual or potential harm."
-      maxlength: 5000
     validations:
       required: true
 
   - type: input
-    id: evidence_urls
+    id: evidence-urls
     attributes:
       label: "Evidence URLs (screenshots, logs, etc.)"
       description: "Upload files to a service (e.g., Imgur, GitHub release) and paste the links here. Do not upload directly."
@@ -139,7 +135,7 @@ body:
       required: false
 
   - type: textarea
-    id: additional_links
+    id: additional-links
     attributes:
       label: "Additional Evidence Links (Optional)"
       placeholder: "Links to supporting evidence."
@@ -156,7 +152,7 @@ body:
         - You may request deletion of personal data after 7 years by contacting the Architect.
 
   - type: checkboxes
-    id: legal_declaration
+    id: legal-declaration
     attributes:
       label: "Legal Declaration — Required"
       description: "You must affirm all of the following to submit."
@@ -181,7 +177,7 @@ body:
         ## What Happens Next
 
         1. Identity verification — DocuSign link sent to your email. Submission not accepted until complete.
-        2. Name cross‑check — The legal name from DocuSign must match the `submitter_legal_name` field.
+        2. Name cross‑check — The legal name from DocuSign must match the `submitter-legal-name` field.
         3. Completeness check — Reviewed for completeness. Truth verification is your responsibility.
         4. Sealing — Sealed with a **FROZEN-4.0** triple‑time cryptographic stamp. Permanent.
         5. Ledger entry — Enters the Sovereign Trace public ledger with your name, timestamp, and SHA‑256 hash.
