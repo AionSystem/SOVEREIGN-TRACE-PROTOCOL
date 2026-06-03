@@ -1,7 +1,7 @@
 name: "AI Failure Submission — Sovereign Trace Protocol"
 description: "Submit an AI output failure for permanent ledger entry. Read the legal declaration before proceeding."
 title: "[STP-SUBMISSION] — [COMPANY NAME] — [DATE OF OUTPUT]"
-labels: ["submission", "pending-verification"]
+labels: ["submission", "pending-identity-verification"]
 assignees: []
 
 body:
@@ -13,21 +13,21 @@ body:
 
         By completing and submitting this form you are entering into a legally binding declaration.
 
-        - Your identity will be verified via the digital signature process described below
-        - Your name will be permanently attached to this submission in the Sovereign Trace ledger
+        - Your identity will be verified via **DocuSign** (link sent after submission)
+        - Your **verified legal name** will be permanently attached to this submission
         - This record is immutable — it cannot be altered or deleted after sealing
         - Submitting false, fabricated, or materially misleading information exposes you to civil and criminal liability
-        - Anonymous submissions are not accepted
+        - **Retractions are possible** via a separate `11-retraction-request.yml` template
+        - **Data retention:** Evidence files are kept for 7 years, then deleted unless under legal hold
 
-        This is not a complaint form. This is a permanent epistemic record.
         The Sovereign Trace Protocol is the notary. You are the witness.
 
   - type: input
-    id: submitter_name
+    id: submitter_legal_name
     attributes:
-      label: "Your Full Legal Name"
-      description: "As it appears on government-issued ID. Becomes part of the permanent record."
-      placeholder: "First Last"
+      label: "Your Legal Name (as on ID)"
+      description: "Must match the name verified via DocuSign. Mismatch will cause rejection."
+      placeholder: "First Middle Last"
     validations:
       required: true
 
@@ -44,10 +44,19 @@ body:
     id: company_name
     attributes:
       label: "Company / Organization Name"
-      description: "The company that produced or deployed the AI system in question."
+      description: "The company that produced or deployed the AI system. Misrepresentation may be treated as fraud."
       placeholder: "Full legal company name"
     validations:
       required: true
+
+  - type: input
+    id: company_duns
+    attributes:
+      label: "Company DUNS Number (optional, recommended)"
+      description: "Helps verify company identity for enterprise submissions."
+      placeholder: "00-000-0000"
+    validations:
+      required: false
 
   - type: input
     id: ai_system
@@ -62,7 +71,7 @@ body:
     id: output_date
     attributes:
       label: "Date of AI Output"
-      description: "The date the AI produced the output being submitted. Format: YYYY-MM-DD"
+      description: "YYYY-MM-DD"
       placeholder: "2026-03-05"
     validations:
       required: true
@@ -71,8 +80,9 @@ body:
     id: exact_output
     attributes:
       label: "Exact AI Output"
-      description: "Copy the exact text. Do not paraphrase. If visual, describe precisely."
+      description: "Copy the exact text. Max 10,000 characters."
       placeholder: "Paste the exact output here."
+      maxlength: 10000
     validations:
       required: true
 
@@ -80,8 +90,9 @@ body:
     id: decision_context
     attributes:
       label: "Decision Context"
-      description: "What decision was this AI output used to inform? What was at stake?"
+      description: "What decision was this AI output used to inform? Max 5,000 characters."
       placeholder: "Describe the decision or action this output was used for."
+      maxlength: 5000
     validations:
       required: true
 
@@ -89,8 +100,22 @@ body:
     id: failure_description
     attributes:
       label: "Failure Description"
-      description: "What is the specific failure? Hallucination, false confidence, harmful output, other."
+      description: "Hallucination, false confidence, harmful output, other. Max 5,000 characters."
       placeholder: "Describe the failure clearly and specifically."
+      maxlength: 5000
+    validations:
+      required: true
+
+  - type: dropdown
+    id: failure_severity
+    attributes:
+      label: "Failure Severity"
+      description: "Estimate the impact."
+      options:
+        - "CRITICAL — caused serious harm or major financial loss"
+        - "HIGH — significant risk or moderate harm"
+        - "MEDIUM — notable issue but contained"
+        - "LOW — minor or no material impact"
     validations:
       required: true
 
@@ -98,16 +123,18 @@ body:
     id: harm_or_risk
     attributes:
       label: "Harm Occurred or Risk Created"
-      description: "What harm resulted or what risk was created? If no harm yet, describe the exposure."
+      description: "What harm resulted or what risk was created? If no harm yet, describe the exposure. Max 5,000 characters."
       placeholder: "Describe actual or potential harm."
+      maxlength: 5000
     validations:
       required: true
 
-  - type: upload
-    id: screenshots
+  - type: input
+    id: evidence_urls
     attributes:
-      label: "Screenshots / Evidence Files"
-      description: "Upload screenshots of the AI output, interface, or any supporting evidence."
+      label: "Evidence URLs (screenshots, logs, etc.)"
+      description: "Upload files to a service (e.g., Imgur, GitHub release) and paste the links here. Do not upload directly."
+      placeholder: "https://example.com/evidence.png"
     validations:
       required: false
 
@@ -115,10 +142,18 @@ body:
     id: additional_links
     attributes:
       label: "Additional Evidence Links (Optional)"
-      description: "Any external links supporting this submission."
       placeholder: "Links to supporting evidence."
     validations:
       required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Privacy & Retention
+
+        - Personal data (name, email) processed per the Privacy Policy (see repo).
+        - Evidence URLs are stored permanently with the issue.
+        - You may request deletion of personal data after 7 years by contacting the Architect.
 
   - type: checkboxes
     id: legal_declaration
@@ -128,7 +163,7 @@ body:
       options:
         - label: "I affirm that the information in this submission is true and accurate to the best of my knowledge."
           required: true
-        - label: "I understand that my full legal name will be permanently attached to this submission."
+        - label: "I understand that my verified legal name will be permanently attached to this submission."
           required: true
         - label: "I understand that this submission is immutable — it cannot be altered or deleted after sealing."
           required: true
@@ -136,7 +171,7 @@ body:
           required: true
         - label: "I consent to identity verification via DocuSign before this submission is sealed."
           required: true
-        - label: "I am not submitting anonymously. My identity is attached to this record."
+        - label: "I consent to the processing of my personal data as described in the Privacy Policy."
           required: true
 
   - type: markdown
@@ -146,11 +181,12 @@ body:
         ## What Happens Next
 
         1. Identity verification — DocuSign link sent to your email. Submission not accepted until complete.
-        2. Completeness check — Reviewed for completeness. Truth verification is your responsibility.
-        3. Sealing — Sealed with a FROZEN-2.0 triple-time cryptographic stamp. Permanent.
-        4. Ledger entry — Enters the Sovereign Trace public ledger with your name, timestamp, and SHA-256 hash.
-        5. Notification — You receive your ledger entry ID and SHA-256 hash.
+        2. Name cross‑check — The legal name from DocuSign must match the `submitter_legal_name` field.
+        3. Completeness check — Reviewed for completeness. Truth verification is your responsibility.
+        4. Sealing — Sealed with a **FROZEN-4.0** triple‑time cryptographic stamp. Permanent.
+        5. Ledger entry — Enters the Sovereign Trace public ledger with your name, timestamp, and SHA‑256 hash.
+        6. Retraction — If an error is found, file a separate `retraction-request.yml` to attach a correction note.
 
         The Sovereign Trace Protocol is the notary. You are the witness.
 
-        Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
+        *Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem@outlook.com*
