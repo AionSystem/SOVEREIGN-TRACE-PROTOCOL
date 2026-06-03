@@ -1,98 +1,148 @@
-name: "General Trace — Sovereign Trace Protocol"
-description: "Seal any observation, decision, or record that does not fit another template. The stamp does not care what it seals."
-title: "[STP-TRACE] — [CATEGORY] — [DATE]"
-labels: ["general-trace", "pending-seal"]
+name: General Trace
+description: "Any observation, decision, or record that does not fit another template. Use this to seal a moment of personal or professional significance – a thought, a milestone, a warning, a commitment. The stamp makes it permanent."
+title: "[Brief title of the record]"
+labels: ["trace", "general"]
 assignees: []
-
 body:
-
   - type: markdown
     attributes:
       value: |
-        ## General Trace Seal
+        ## General Trace – Sovereign Trace Protocol (FROZEN‑4.0)
 
-        This form is for anything that needs to be sealed permanently and does not fit a more specific template.
+        Use this form to seal any moment, observation, or decision that deserves a permanent, triple‑time cryptographic stamp.
 
-        The stamp function does not care what it seals. A sealed moment is a sealed moment.
+        The stamp binds your record simultaneously to the Gregorian, Hebrew lunisolar, and 13 Moon Dreamspell calendars. The SHA‑256 seal is immutable. No editing after submission.
 
-        **Write exactly what is true right now.**
-        No narrative arc. No hedging beyond what is genuinely uncertain.
-        Present-moment. Exact. Specific. Make it worth sealing.
+        **⚠️ CRITICAL WARNINGS – READ BEFORE PROCEEDING ⚠️**
+        - The SHA‑256 hash of your record is **public**. If your record contains low‑entropy secrets (e.g., passwords, API keys, predictable text), an attacker could brute‑force the hash and recover the content.
+        - **Do not include personal identifying information (PII), financial account numbers, or any confidential data** unless you fully accept the risk that the hash may be reversed.
+        - Your GitHub username is **publicly linked** to this issue and therefore to the sealed record. If you require anonymity, create a separate GitHub account with no identifying information and submit from that account.
+        - The stamp seals **exactly the text you write** – not the content of any external links. Use permanent URLs (IPFS, archive.is, GitHub gist) if you need to reference external evidence, and consider also providing a SHA‑256 hash of that external file.
 
-  - type: input
-    id: submitter_name
-    attributes:
-      label: "Your Name (Optional)"
-      description: "If provided, becomes part of the permanent record. Leave blank for an anonymous trace."
-      placeholder: "First Last or leave blank"
-    validations:
-      required: false
+        **Fields marked with `*` are required.**
 
   - type: input
-    id: category
+    id: title
     attributes:
-      label: "Category"
-      description: "What kind of trace is this?"
-      placeholder: "Personal observation / Decision record / Government record / Architectural decision / Other"
-    validations:
-      required: true
-
-  - type: input
-    id: trace_date
-    attributes:
-      label: "Date of the Moment Being Sealed"
-      description: "The date this observation, decision, or record was made. Format: YYYY-MM-DD"
-      placeholder: "2026-03-07"
+      label: "Record Title *"
+      description: "A short, descriptive title for this sealed entry (max 200 characters)."
+      placeholder: "e.g., First notebook entry of 2026"
     validations:
       required: true
 
   - type: textarea
-    id: trace_entry
+    id: description
     attributes:
-      label: "Your Trace Entry"
-      description: "Write exactly what is true right now. Present-moment. Exact. This is what the seal binds to."
-      placeholder: "Write your trace entry here. Exact. Specific. Present-moment."
+      label: "Record Content *"
+      description: "The exact text you wish to seal. This will be hashed and stamped. Keep under 10,000 characters for best display in GitHub."
+      placeholder: "Write your observation, decision, or record here. Be precise. The stamp is permanent."
     validations:
       required: true
 
-  - type: textarea
-    id: why_this_matters
+  - type: input
+    id: correction_of
     attributes:
-      label: "Why This Moment Deserves Sealing (Optional)"
-      description: "Optional context. Why does this need to be permanently recorded?"
-      placeholder: "Why does this moment matter enough to seal?"
+      label: "Correction / Retraction of (optional)"
+      description: "If this record corrects or retracts a previous sealed entry, provide the previous entry ID (the SHA‑256 hash or ledger ID)."
+      placeholder: "e.g., a3f9c12e7d..."
     validations:
       required: false
 
-  - type: upload
-    id: supporting_files
+  - type: input
+    id: tags
     attributes:
-      label: "Supporting Files (Optional)"
-      description: "Upload any files relevant to this trace. These become part of the sealed record."
+      label: "Tags (optional)"
+      description: "Comma‑separated keywords to help you organise your sealed records. Example: `insight, decision, milestone`"
+      placeholder: "insight, personal, 2026"
+    validations:
+      required: false
+
+  - type: input
+    id: evidence_urls
+    attributes:
+      label: "Supporting evidence URLs (optional)"
+      description: "Comma‑separated list of permanent URLs (IPFS, archive.is, GitHub gist, or stable cloud links). The stamp seals the URLs themselves, not the content behind them. For extra integrity, provide SHA‑256 hashes of the external files in the `Record Content` field."
+      placeholder: "https://ipfs.io/ipfs/Qm..., https://archive.is/abc123"
+    validations:
+      required: false
+
+  - type: input
+    id: submitter_identity
+    attributes:
+      label: "Submitter identity for ledger (optional)"
+      description: "Your name or pseudonym as you want it to appear in the STP ledger and registry. If omitted, the system may use your GitHub username. The SHA‑256 seal does not store this identity – it is recorded separately."
+      placeholder: "e.g., Anonymous Researcher, Sheldon K. Salmon"
+    validations:
+      required: false
+
+  - type: input
+    id: context_ref
+    attributes:
+      label: "Context / Project reference (optional)"
+      description: "Link this record to a project, organisation, or initiative (e.g., ORCID, GitHub org, or free‑text identifier)."
+      placeholder: "e.g., AionSystem, ORCID:0000-0000-..."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: record_type
+    attributes:
+      label: "Type of record *"
+      description: "What kind of moment are you sealing?"
+      options:
+        - "Observation – something you noticed, measured, or realised"
+        - "Decision – a choice you made, with or without immediate consequence"
+        - "Record – a factual entry, log, or documented event"
+        - "Correction – a retraction or correction of a previous entry"
+      default: 0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: privacy
+    attributes:
+      label: "Privacy preference *"
+      description: "How do you intend to use this sealed record?"
+      options:
+        - "Personal – I will keep the record private; only the SHA‑256 seal is public"
+        - "Shared – I will share the record or its hash with specific parties"
+        - "Public – I intend to publish the record or its verification at a later date"
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: authorised_recipients
+    attributes:
+      label: "Authorised recipients (optional)"
+      description: "If you selected 'Shared', list the parties (by name, email, or handle) who are authorised to view the record. This is a declaration, not an access control."
+      placeholder: "e.g., legal@example.com, john.doe@proton.me"
     validations:
       required: false
 
   - type: checkboxes
     id: declaration
     attributes:
-      label: "Declaration"
+      label: "Declaration *"
+      description: "You must confirm the following to proceed."
       options:
-        - label: "I affirm this entry accurately represents my observation, position, or record at the time of sealing."
+        - label: "I confirm that the information provided is true and accurate to the best of my knowledge."
           required: true
-        - label: "I understand this submission is immutable — it cannot be altered after sealing."
+        - label: "I understand that this sealed record is permanent and cannot be edited or deleted."
+          required: true
+        - label: "I understand that the SHA‑256 hash of my record is public and may be vulnerable to brute‑force if the record contains low‑entropy secrets."
+          required: true
+        - label: "I understand that my GitHub username is publicly linked to this sealed record unless I use a separate anonymous account."
+          required: true
+        - label: "I understand that the stamp uses FROZEN‑4.0 and that the seal is generated by `sovereign_trace_stamp.py`. See STP repository for verification."
           required: true
 
   - type: markdown
     attributes:
       value: |
         ---
-        ## What Happens Next
+        **After submission**: The STP auto‑seal workflow will generate a triple‑time stamp and SHA‑256 hash. You will receive a comment on this issue with the seal and a link to the ledger entry.
 
-        1. Completeness check — Reviewed for completeness.
-        2. Sealing — Sealed with a FROZEN-2.0 triple-time cryptographic stamp. Permanent.
-        3. Ledger entry — Enters the Sovereign Trace ledger with timestamp and SHA-256 hash.
-        4. Notification — You receive your ledger entry ID and SHA-256 hash.
+        Contact: `aionsystem@outlook.com` (for technical issues only). All seals are final.
 
-        The seal is permanent. The seal is the resolution.
-
-        Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
+        **Verification**: Every sealed record can be independently verified using the STP pip package: `sovereign-trace verify --entry-id <ID> --hash <SHA-256>`.
