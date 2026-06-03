@@ -1,0 +1,130 @@
+name: "Human Oversight Log — Sovereign Trace Protocol"
+description: "Seal a record of human review and override of an AI output. Proves human judgment was exercised before action was taken."
+title: "[STP-OVERSIGHT] — [SYSTEM NAME] — [DATE]"
+labels: ["human-oversight", "pending-seal"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Human Oversight Log – Sovereign Trace Protocol (FROZEN‑4.0)
+
+        This form seals a record of human review and override of an AI output. It proves that a human exercised judgment before the AI's recommendation was acted upon.
+
+        **⚠️ CRITICAL WARNINGS – READ BEFORE PROCEEDING ⚠️**
+        - The AI output excerpt and human decision are **public** and **permanent**.
+        - Your GitHub username is **publicly linked** to this seal.
+        - **Do not include PII or sensitive patient/employee data in the AI output excerpt.**
+        - **Do not edit this issue after the workflow seals it** – the hash will change.
+        - **This record is retained permanently** in the STP ledger and GitHub issue history.
+        - A correction creates a new entry; the original remains.
+
+        **Fields marked with `*` are required.**
+
+  - type: input
+    id: submitter_name
+    attributes:
+      label: "Your Name or Role (Optional)"
+      placeholder: "First Last or job role"
+    validations:
+      required: false
+
+  - type: input
+    id: system_name
+    attributes:
+      label: "AI System Name *"
+      placeholder: "e.g., Clinical Decision Support, Loan Underwriter"
+    validations:
+      required: true
+
+  - type: input
+    id: oversight_date
+    attributes:
+      label: "Date of Human Review *"
+      placeholder: "2026-06-04"
+    validations:
+      required: true
+
+  - type: textarea
+    id: ai_output_excerpt
+    attributes:
+      label: "AI Output (Excerpt or Hash) *"
+      description: "Paste the exact AI output or a SHA‑256 hash of it. Keep under 10,000 characters. Redact PII."
+      placeholder: "The AI recommended medication X at dosage Y."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: human_decision
+    attributes:
+      label: "Human Decision *"
+      options:
+        - "Approved – followed AI recommendation"
+        - "Overridden – changed the recommendation"
+        - "Rejected – did not act on AI"
+        - "Escalated – sent for further review"
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: "Reason for Decision *"
+      description: "Explain why the human approved, overrode, or rejected. Keep under 5,000 characters."
+      placeholder: "The AI recommended dose 500mg, but patient chart showed renal impairment. Correct dose is 50mg. Overridden."
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: "Outcome (Optional)"
+      description: "What happened after the human decision? Keep under 5,000 characters."
+      placeholder: "Patient received corrected dose. No adverse event."
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting_urls
+    attributes:
+      label: "Supporting Files URLs (Optional)"
+      placeholder: "https://ipfs.io/ipfs/Qm..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting_hashes
+    attributes:
+      label: "Supporting file SHA‑256 hashes (optional, recommended)"
+      placeholder: "a3f9c12e7d..."
+    validations:
+      required: false
+
+  - type: input
+    id: correction_of
+    attributes:
+      label: "Correction / Resubmission of (optional)"
+      placeholder: "#42 or a3f9c12e7d..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: "Declaration *"
+      options:
+        - label: "I affirm that the AI output excerpt is accurate (redacted of PII) and the human decision occurred as described."
+          required: true
+        - label: "I have removed all personally identifiable information from the AI output excerpt."
+          required: true
+        - label: "I understand this submission is immutable — a correction creates a new entry but does not delete the original."
+          required: true
+        - label: "I understand that my GitHub username is publicly linked to this seal, and the oversight record is public."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Contact:** `aionsystem@outlook.com`
