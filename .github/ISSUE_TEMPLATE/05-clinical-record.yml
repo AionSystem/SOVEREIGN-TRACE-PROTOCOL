@@ -21,7 +21,7 @@ body:
         This seal proves the record existed in this exact form before any review, remediation, or external pressure.
 
   - type: input
-    id: submitter_name
+    id: submitter-name
     attributes:
       label: "Submitter Name or Role"
       description: "Your name or role. Include institution name if submitting on behalf of an organization."
@@ -39,7 +39,7 @@ body:
       required: true
 
   - type: input
-    id: record_type
+    id: record-type
     attributes:
       label: "Record Type"
       description: "What kind of record is being sealed?"
@@ -48,25 +48,25 @@ body:
       required: true
 
   - type: input
-    id: record_date
+    id: record-date
     attributes:
       label: "Date of Record Creation"
-      description: "The date this record was created or the event occurred. Format: YYYY-MM-DD"
+      description: "YYYY-MM-DD"
       placeholder: "2026-03-07"
     validations:
       required: true
 
   - type: textarea
-    id: record_description
+    id: record-description
     attributes:
       label: "Record Description"
-      description: "Describe the record — no PHI. Use de-identified descriptions: event type, department, context, significance."
+      description: "Describe the record — no PHI. Use de-identified descriptions: event type, department, context, significance. **Keep under 10,000 characters.**"
       placeholder: "Describe the record without any protected health information."
     validations:
       required: true
 
   - type: input
-    id: pre_review_status
+    id: pre-review-status
     attributes:
       label: "Status at Time of Sealing"
       description: "What is the status right now? Before review, before remediation, before audit."
@@ -75,7 +75,7 @@ body:
       required: true
 
   - type: input
-    id: regulatory_context
+    id: regulatory-context
     attributes:
       label: "Regulatory Framework (Optional)"
       description: "What regulatory framework applies to this record?"
@@ -83,11 +83,21 @@ body:
     validations:
       required: false
 
-  - type: upload
-    id: supporting_files
+  - type: input
+    id: supporting-urls
     attributes:
-      label: "Supporting Files (Optional)"
-      description: "Upload de-identified supporting documents only. No PHI permitted in uploaded files."
+      label: "Supporting File URLs (Optional)"
+      description: "Upload de-identified supporting documents to a service (e.g., Google Drive, GitHub release) and paste the links here. No PHI permitted. Do not upload directly."
+      placeholder: "https://example.com/deidentified-doc.pdf"
+    validations:
+      required: false
+
+  - type: input
+    id: file-hash
+    attributes:
+      label: "File SHA-256 Hash (Optional, Recommended)"
+      description: "If you host supporting files externally, provide their SHA‑256 hashes to cryptographically bind the seal to the exact files."
+      placeholder: "64-character hex string"
     validations:
       required: false
 
@@ -115,10 +125,10 @@ body:
 
         1. PHI check — Reviewed for any inadvertent PHI before sealing.
         2. Completeness check — Reviewed for completeness.
-        3. Sealing — Sealed with a FROZEN-2.0 triple-time cryptographic stamp. Permanent.
-        4. Ledger entry — Enters the Sovereign Trace ledger with institution name, timestamp, and SHA-256 hash.
-        5. Notification — You receive your ledger entry ID and SHA-256 hash.
+        3. Sealing — Sealed with a **FROZEN-4.0** triple‑time cryptographic stamp. Permanent.
+        4. Ledger entry — Enters the Sovereign Trace ledger with institution name, timestamp, and SHA‑256 hash.
+        5. Notification — You receive your ledger entry ID and SHA‑256 hash.
 
         The seal is permanent. The seal is the pre-review record.
 
-        Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
+        *Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem@outlook.com*
