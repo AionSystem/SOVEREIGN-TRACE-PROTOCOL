@@ -14,8 +14,11 @@ body:
         - The completed audit report will be sealed with a **public** SHA‑256 hash and recorded in the **permanent, immutable Trust Registry**.
         - Your company name, system description, and audit results will be publicly linked to your GitHub username.
         - Email attachments (payment screenshots, sample outputs) are **not** cryptographically sealed. Only the final audit report is sealed.
-        - For sensitive outputs, use permanent URLs (IPFS, GitHub gist) and include SHA‑256 hashes in the output description.
+        - For sensitive outputs, use permanent URLs (IPFS, GitHub gist) and **provide SHA‑256 hashes** to cryptographically bind the file content.
         - **Expedited requests requiring work under 4 hours are not accepted** – if your deadline is immediate, do not submit.
+        - **This description is permanently sealed. Proofread before submitting.**
+        - **Do not edit this issue after the workflow seals it** – the hash will change.
+        - **This record is retained permanently** in the STP ledger and GitHub issue history.
 
         **Payment verification:** Submit your Stripe transaction code below. Send the payment screenshot to `aionsystem@outlook.com`. The transaction code, email, and Stripe record must align before work begins.
 
@@ -119,17 +122,26 @@ body:
     id: output_description
     attributes:
       label: "Outputs to Review (sample or full) *"
-      description: "For Tier 1, list output categories or attach examples. Keep under 10,000 characters. For files, upload to permanent URLs (IPFS, GitHub gist) and provide links here. Include SHA‑256 hashes if you want cryptographic binding."
+      description: "For Tier 1, list output categories or attach examples. Keep under 10,000 characters. For files, upload to permanent URLs (IPFS, GitHub gist) and provide links below. Include SHA‑256 hashes for cryptographic binding."
       placeholder: "We will provide 50 conversation logs from the last 30 days. Files: https://ipfs.io/ipfs/Qm... (SHA‑256: ...)"
     validations:
       required: true
 
-  - type: input
+  - type: textarea
     id: output_urls
     attributes:
       label: "URLs to output files (optional)"
-      description: "If you have uploaded outputs to a permanent location, provide the URLs here. The seal will cover these URLs (but not the file content). For cryptographic integrity, include SHA‑256 hashes in the `Outputs to Review` field."
-      placeholder: "https://ipfs.io/ipfs/Qm..., https://gist.github.com/..."
+      description: "One permanent URL per line (IPFS, GitHub gist, etc.). The seal will cover these URLs (but not the file content). For cryptographic integrity, also provide SHA‑256 hashes below."
+      placeholder: "https://ipfs.io/ipfs/Qm...\nhttps://gist.github.com/..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: output_hashes
+    attributes:
+      label: "Output file SHA‑256 hashes (optional, recommended)"
+      description: "One SHA‑256 hash per file, in the same order as the URLs. This cryptographically binds the seal to the exact file content."
+      placeholder: "a3f9c12e7d... (64 hex chars)\nb4c8d3e2f1a..."
     validations:
       required: false
 
@@ -178,12 +190,16 @@ body:
           required: true
         - label: "I understand that my GitHub username is publicly linked to this audit request, and the final audit report does not reveal my GitHub identity unless I disclose it."
           required: true
+        - label: "I understand that this submission is immutable – a correction creates a new entry but does not delete the original."
+          required: true
 
   - type: markdown
     attributes:
       value: |
         ---
         **After submission**: The Architect will review your request on the next Monday or Tuesday. You will receive confirmation of scope, timeline, and any additional requirements. Payment verification must be completed before work begins.
+
+        **Data retention:** This record is retained permanently. You cannot delete it.
 
         **Contact:** `aionsystem@outlook.com` (for payment issues or questions). All audit reports are final.
 
