@@ -3,19 +3,28 @@ description: "Seal a representative sample of AI outputs for periodic auditing. 
 title: "[STP-OUTPUT] — [SYSTEM NAME] — [DATE]"
 labels: ["ai-output-sample", "pending-seal"]
 assignees: []
-
 body:
-
   - type: markdown
     attributes:
       value: |
-        ## AI Output Sample Seal
+        ## AI Output Sample Seal – Sovereign Trace Protocol (FROZEN‑4.0)
 
         This form is for sealing a representative sample of AI outputs — a periodic snapshot of what your system is producing.
 
         This creates a tamper‑evident longitudinal record. When the system's behavior changes over time, the sealed samples provide the ground truth. It is a lightweight alternative to a full certification audit, suitable for ongoing self‑monitoring.
 
-        **Paste the exact outputs. Do not redact, correct, or paraphrase.**
+        **⚠️ CRITICAL WARNINGS – READ BEFORE PROCEEDING ⚠️**
+        - The AI outputs you paste are **public** and **permanent**.
+        - **Do not include personally identifiable information (PII), trade secrets, or confidential data.** Redact before pasting.
+        - Your GitHub username is **publicly linked** to this seal.
+        - **Do not edit this issue after the workflow seals it** – the hash will change.
+        - **This record is retained permanently** in the STP ledger and GitHub issue history.
+        - Supporting files are **not** cryptographically bound unless you provide their SHA‑256 hashes.
+        - A correction creates a new entry; the original remains.
+
+        **Paste the exact outputs. Do not redact, correct, or paraphrase (except to remove PII).**
+
+        **Fields marked with `*` are required.**
 
   - type: input
     id: submitter_name
@@ -29,7 +38,7 @@ body:
   - type: input
     id: system_name
     attributes:
-      label: "AI System Name"
+      label: "AI System Name *"
       description: "The system that produced these outputs."
       placeholder: "e.g., Customer‑Support‑Bot v2, Internal RAG Pipeline"
     validations:
@@ -38,7 +47,7 @@ body:
   - type: input
     id: sample_date
     attributes:
-      label: "Sample Date"
+      label: "Sample Date *"
       description: "The date this sample was collected. Format: YYYY-MM-DD"
       placeholder: "2026-06-02"
     validations:
@@ -48,7 +57,7 @@ body:
     id: sample_prompts
     attributes:
       label: "Prompts Used (Optional)"
-      description: "If applicable, paste the prompts that generated these outputs."
+      description: "If applicable, paste the prompts that generated these outputs. Keep under 10,000 characters."
       placeholder: "Prompt 1: ...\nPrompt 2: ..."
     validations:
       required: false
@@ -56,8 +65,8 @@ body:
   - type: textarea
     id: sample_outputs
     attributes:
-      label: "AI Outputs (Sample)"
-      description: "Paste the exact AI outputs, one per section. Include the full text. This is what the seal binds to."
+      label: "AI Outputs (Sample) *"
+      description: "Paste the exact AI outputs, one per section. Include the full text. This is what the seal binds to. Keep under 100,000 characters. Remove any PII before pasting."
       placeholder: |
         Output 1:
         [paste exact AI output here]
@@ -73,40 +82,64 @@ body:
     id: sample_context
     attributes:
       label: "Sampling Context (Optional)"
-      description: "Describe how this sample was collected — random, targeted, daily snapshot, etc."
+      description: "Describe how this sample was collected — random, targeted, daily snapshot, etc. Keep under 5,000 characters."
       placeholder: "e.g., Random sample of 20 outputs from production logs on 2026-06-02, filtered for customer-facing responses only."
     validations:
       required: false
 
-  - type: upload
-    id: supporting_files
+  - type: textarea
+    id: supporting_urls
     attributes:
-      label: "Supporting Files (Optional)"
-      description: "Upload any related files — screenshots, full logs, model configuration."
+      label: "Supporting Files URLs (Optional)"
+      description: "One permanent URL per line (IPFS, GitHub gist, etc.). The stamp seals only the URLs, not the content. For cryptographic integrity, also provide SHA‑256 hashes below."
+      placeholder: "https://ipfs.io/ipfs/Qm...\nhttps://gist.github.com/..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting_hashes
+    attributes:
+      label: "Supporting file SHA‑256 hashes (optional, recommended)"
+      description: "One SHA‑256 hash per file, in the same order as the URLs. This cryptographically binds the seal to the exact file content."
+      placeholder: "a3f9c12e7d... (64 hex chars)\nb4c8d3e2f1a..."
+    validations:
+      required: false
+
+  - type: input
+    id: correction_of
+    attributes:
+      label: "Correction / Resubmission of (optional)"
+      description: "If this sample corrects a previous output sample seal, provide the previous ledger entry ID or SHA‑256 hash."
+      placeholder: "a3f9c12e7d... or #42"
     validations:
       required: false
 
   - type: checkboxes
     id: declaration
     attributes:
-      label: "Declaration"
+      label: "Declaration *"
       options:
-        - label: "I affirm these are the exact AI outputs as produced by the named system at the time of sampling."
+        - label: "I affirm these are the exact AI outputs as produced by the named system at the time of sampling (excluding redaction of PII)."
           required: true
-        - label: "I understand this submission is immutable — it cannot be altered after sealing."
+        - label: "I understand this submission is immutable — it cannot be altered after sealing. A correction creates a new entry but does not delete the original."
+          required: true
+        - label: "I understand that my GitHub username is publicly linked to this seal, and the outputs are public."
+          required: true
+        - label: "I have removed all personally identifiable information (PII), trade secrets, and confidential data from the outputs."
+          required: true
+        - label: "If I provided supporting file URLs, I have also provided their SHA‑256 hashes to cryptographically bind the content."
+          required: false
+        - label: "I understand that this submission is permanent – a correction creates a new entry but does not delete the original."
           required: true
 
   - type: markdown
     attributes:
       value: |
         ---
-        ## What Happens Next
+        **Data retention:** This record is retained permanently. You cannot delete it.
 
-        1. Completeness check — Reviewed for completeness.
-        2. Sealing — Sealed with a FROZEN‑4.0 triple‑time cryptographic stamp. Permanent.
-        3. Ledger entry — Enters the Sovereign Trace ledger with timestamp and SHA‑256 hash.
-        4. Notification — You receive your ledger entry ID and SHA‑256 hash.
+        **After submission**: The STP auto‑seal workflow will generate a triple‑time stamp and SHA‑256 hash. You will receive a comment with the seal and ledger entry ID. Do not edit the issue after sealing.
 
-        The seal is permanent. The seal is the resolution.
+        **Contact:** `aionsystem@outlook.com` (for technical issues only). All seals are final.
 
-        Sovereign Trace Protocol | Sheldon K. Salmon | aionsystem2026@gmail.com
+        **Verification**: Every output sample can be independently verified using the STP pip package: `sovereign-trace verify --entry-id <ID> --hash <SHA-256>`.
