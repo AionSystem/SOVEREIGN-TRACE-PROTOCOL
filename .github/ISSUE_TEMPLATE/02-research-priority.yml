@@ -3,20 +3,25 @@ description: "Seal a hypothesis, finding, or framework specification before resu
 title: "[STP-RESEARCH] — [FIELD] — [DATE]"
 labels: ["research-priority", "pending-seal"]
 assignees: []
-
 body:
-
   - type: markdown
     attributes:
       value: |
-        ## Research Priority Seal
+        ## Research Priority Seal – Sovereign Trace Protocol (FROZEN‑4.0)
 
         This form seals your research hypothesis, methodology, or finding at the exact moment of submission.
 
-        The SHA-256 seal proves you held this position before results were known — not after.
-        This is not peer review. This is not publication. This is a tamper-evident timestamp.
+        The SHA‑256 seal proves you held this position before results were known — not after.
+        This is not peer review. This is not publication. This is a tamper‑evident timestamp.
 
-        **Identity is optional.** An anonymous sealed record still proves priority. To later claim ownership, provide a public key fingerprint below.
+        **⚠️ CRITICAL WARNINGS – READ BEFORE PROCEEDING ⚠️**
+        - **Identity is optional.** Anonymous sealed records still prove priority. To later claim ownership, provide a public key fingerprint below.
+        - **Public key fingerprints are not verified at submission.** If you submit a fake fingerprint, anyone could later claim your seal by signing with that fake key. Use a real key from a public keyserver.
+        - **The stamp seals only the text you write and the URLs you provide – not the content of external files.** For content integrity, upload supporting files to a permanent archive (IPFS, Zenodo) and include their SHA‑256 hashes in the hypothesis text.
+        - **Keep your private key secure.** If you lose it, you cannot prove ownership of an anonymous seal. No recovery mechanism exists.
+        - This record is **immutable**. A correction creates a new entry; the original remains.
+
+        **Fields marked with `*` are required.**
 
   - type: input
     id: submitter-name
@@ -31,34 +36,48 @@ body:
     id: public-key-fingerprint
     attributes:
       label: "Public Key Fingerprint (Optional, for anonymous claims)"
-      description: "PGP or SSH fingerprint. Later, sign a message with this key to prove you own the seal."
+      description: "PGP or SSH fingerprint. Later, sign a message with this key to prove you own the seal. **Use a real key – fake fingerprints may be claimed by others.**"
       placeholder: "e.g. 3B89 7E1D 5D5C 8A4D 9E34  2A3F 6C8A 4B1D 9F2E 7C5A"
     validations:
       required: false
 
+  - type: checkboxes
+    id: key-commitment
+    attributes:
+      label: "Public Key Commitment (if fingerprint provided)"
+      options:
+        - label: "I affirm that the fingerprint above corresponds to a real public key I control, and I will be able to sign a message with its private key to prove ownership. I understand that submitting a fake fingerprint may allow others to claim my seal."
+          required: false
+
   - type: input
     id: field
     attributes:
-      label: "Field / Discipline"
+      label: "Field / Discipline *"
       description: "The academic or professional field this work belongs to."
       placeholder: "e.g. Machine Learning, Clinical Medicine, Economics, AI Safety"
     validations:
       required: true
 
-  - type: input
+  - type: dropdown
     id: submission-type
     attributes:
-      label: "Submission Type"
-      description: "What are you sealing?"
-      placeholder: "Hypothesis / Finding / Framework Specification / Methodology / Prediction"
+      label: "Submission Type *"
+      options:
+        - "Hypothesis"
+        - "Finding"
+        - "Framework Specification"
+        - "Methodology"
+        - "Prediction"
+        - "Other (specify in text)"
+      default: 0
     validations:
       required: true
 
   - type: textarea
     id: hypothesis-or-claim
     attributes:
-      label: "Hypothesis, Finding, or Specification"
-      description: "State it exactly. **Keep under 10,000 characters.**"
+      label: "Hypothesis, Finding, or Specification *"
+      description: "State it exactly. Keep under 10,000 characters."
       placeholder: "State your hypothesis, finding, or specification precisely."
     validations:
       required: true
@@ -66,8 +85,8 @@ body:
   - type: textarea
     id: methodology
     attributes:
-      label: "Methodology or Derivation"
-      description: "How did you arrive at this? **Keep under 5,000 characters.**"
+      label: "Methodology or Derivation *"
+      description: "How did you arrive at this? Keep under 5,000 characters."
       placeholder: "Describe your methodology or how this was derived."
     validations:
       required: true
@@ -76,7 +95,7 @@ body:
     id: falsification-condition
     attributes:
       label: "Falsification Condition (Optional but Recommended)"
-      description: "What result would prove this hypothesis wrong? **Keep under 2,000 characters.**"
+      description: "What result would prove this hypothesis wrong? Keep under 2,000 characters."
       placeholder: "Describe what would falsify this hypothesis or specification."
     validations:
       required: false
@@ -84,40 +103,54 @@ body:
   - type: input
     id: current-status
     attributes:
-      label: "Current Status"
+      label: "Current Status *"
       description: "Where is this work right now?"
-      placeholder: "Pre-experiment / Pre-submission / Pre-publication / Draft"
+      placeholder: "Pre‑experiment / Pre‑submission / Pre‑publication / Draft"
     validations:
       required: true
 
-  - type: input
-    id: supporting-urls
+  - type: textarea
+    id: prior-art-urls
     attributes:
-      label: "Supporting File URLs"
-      description: "Upload files to a service (e.g., Zenodo, GitHub release) and paste the links."
-      placeholder: "https://example.com/draft.pdf"
+      label: "Prior Art / Inspiration URLs (Optional)"
+      description: "Links to prior work that informed this submission."
+      placeholder: "https://doi.org/10.xxx/..., https://arxiv.org/..."
     validations:
       required: false
 
   - type: textarea
-    id: supporting-links
+    id: supporting-urls
     attributes:
-      label: "Additional Supporting Links (Optional)"
-      placeholder: "Links to prior work, datasets, or related material."
+      label: "Supporting File URLs (Optional)"
+      description: "Use permanent URLs (IPFS, Zenodo, GitHub release). One per line. The stamp seals only the URL strings, not the file content. Include SHA‑256 hashes of files in the hypothesis text for content binding."
+      placeholder: "https://zenodo.org/record/...\nhttps://ipfs.io/ipfs/Qm..."
+    validations:
+      required: false
+
+  - type: input
+    id: correction_of
+    attributes:
+      label: "Correction / Retraction of (Optional)"
+      description: "If this submission corrects a previous research priority seal, provide the previous ledger entry ID or SHA‑256 hash."
+      placeholder: "a3f9c12e7d... or STP‑RESEARCH‑xxxx"
     validations:
       required: false
 
   - type: checkboxes
     id: declaration
     attributes:
-      label: "Declaration"
+      label: "Declaration *"
       options:
         - label: "I affirm this submission represents my genuine position at the time of sealing — not a result known in advance."
           required: true
-        - label: "I understand this submission is immutable — it cannot be altered after sealing."
+        - label: "I affirm that this submission represents my own original thinking, or if it builds on prior work, I have cited it in the methodology."
+          required: true
+        - label: "I understand this submission is immutable — it cannot be altered after sealing. A correction creates a new entry but does not delete the original."
           required: true
         - label: "I understand the protocol seals existence at this moment — it does not validate scientific merit."
           required: true
+        - label: "I understand that supporting file URLs are not cryptographically bound to the seal; I have included SHA‑256 hashes in the hypothesis text if content integrity is required."
+          required: false
 
   - type: markdown
     attributes:
