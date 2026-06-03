@@ -3,29 +3,29 @@ description: "Submit an AI output failure for permanent ledger entry. Read the l
 title: "[STP-SUBMISSION] — [COMPANY NAME] — [DATE OF OUTPUT]"
 labels: ["submission", "pending-identity-verification"]
 assignees: []
-
 body:
-
   - type: markdown
     attributes:
       value: |
-        ## ⚠ LEGAL NOTICE — READ BEFORE PROCEEDING
+        ## ⚖️ LEGAL NOTICE — READ BEFORE PROCEEDING
 
         By completing and submitting this form you are entering into a legally binding declaration.
 
-        - Your identity will be verified via **DocuSign** (link sent after submission)
-        - Your **verified legal name** will be permanently attached to this submission
-        - This record is immutable — it cannot be altered or deleted after sealing
-        - Submitting false, fabricated, or materially misleading information exposes you to civil and criminal liability
-        - **Retractions are possible** via a separate `11-retraction-request.yml` template
-        - **Data retention:** Evidence files are kept for 7 years, then deleted unless under legal hold
+        - Your identity will be verified via **DocuSign** (link sent after submission). If verification fails within 7 days, this submission is voided.
+        - Your **verified legal name** will be permanently attached to this submission.
+        - This record is immutable — it cannot be altered or deleted after sealing. A retraction adds a linked note but does not remove the original.
+        - Submitting false, fabricated, or materially misleading information exposes you to civil and criminal liability.
+        - **If you cannot safely attach your legal name** (e.g., whistleblower, retaliation risk), file via `13-integrity-violation.yml` or contact `aionsystem@outlook.com` for a confidential channel.
+        - The Sovereign Trace Protocol is the notary. You are the witness.
 
-        The Sovereign Trace Protocol is the notary. You are the witness.
+        **⚠️ DocuSign outage contingency:** If DocuSign is unavailable for >48 hours, the Architect may verify identity via alternative means (video call, notarised affidavit). Contact the emergency email in that case.
+
+        **Fields marked with `*` are required.**
 
   - type: input
     id: submitter-legal-name
     attributes:
-      label: "Your Legal Name (as on ID)"
+      label: "Your Legal Name (as on ID) *"
       description: "Must match the name verified via DocuSign. Mismatch will cause rejection."
       placeholder: "First Middle Last"
     validations:
@@ -34,8 +34,8 @@ body:
   - type: input
     id: submitter-email
     attributes:
-      label: "Your Email Address"
-      description: "A DocuSign identity verification link will be sent here. Submission incomplete until verified."
+      label: "Your Email Address *"
+      description: "A DocuSign identity verification link will be sent here. Submission not accepted until verified."
       placeholder: "you@example.com"
     validations:
       required: true
@@ -43,7 +43,7 @@ body:
   - type: input
     id: company-name
     attributes:
-      label: "Company / Organization Name"
+      label: "Company / Organization Name *"
       description: "The company that produced or deployed the AI system. Misrepresentation may be treated as fraud."
       placeholder: "Full legal company name"
     validations:
@@ -58,10 +58,18 @@ body:
     validations:
       required: false
 
+  - type: checkboxes
+    id: company-authorisation
+    attributes:
+      label: "Company Authorisation Declaration *"
+      options:
+        - label: "I confirm I am authorised to submit this failure on behalf of the named company. Knowingly misrepresenting company affiliation may result in legal action."
+          required: true
+
   - type: input
     id: ai-system
     attributes:
-      label: "AI System Name and Version"
+      label: "AI System Name and Version *"
       description: "The specific AI system, product, or model that produced the output."
       placeholder: "e.g. GPT-4o via CompanyX API v2, March 2026"
     validations:
@@ -70,17 +78,26 @@ body:
   - type: input
     id: output-date
     attributes:
-      label: "Date of AI Output"
+      label: "Date of AI Output *"
       description: "YYYY-MM-DD"
       placeholder: "2026-03-05"
     validations:
       required: true
 
   - type: textarea
+    id: prompt-text
+    attributes:
+      label: "Exact Prompt (if known) *"
+      description: "The exact prompt that generated this output. If the prompt is too long (>10,000 characters), provide a permanent URL in the Evidence field. This is required for reproducibility."
+      placeholder: "Paste the exact prompt here."
+    validations:
+      required: true
+
+  - type: textarea
     id: exact-output
     attributes:
-      label: "Exact AI Output"
-      description: "Copy the exact text. **Keep under 10,000 characters.** The workflow may truncate longer submissions."
+      label: "Exact AI Output *"
+      description: "Copy the exact text. Keep under 10,000 characters. If output exceeds this limit, provide a permanent URL in the Evidence field and note the truncation here."
       placeholder: "Paste the exact output here."
     validations:
       required: true
@@ -88,8 +105,8 @@ body:
   - type: textarea
     id: decision-context
     attributes:
-      label: "Decision Context"
-      description: "What decision was this AI output used to inform? **Keep under 5,000 characters.**"
+      label: "Decision Context *"
+      description: "What decision was this AI output used to inform? Keep under 5,000 characters."
       placeholder: "Describe the decision or action this output was used for."
     validations:
       required: true
@@ -97,8 +114,8 @@ body:
   - type: textarea
     id: failure-description
     attributes:
-      label: "Failure Description"
-      description: "Hallucination, false confidence, harmful output, other. **Keep under 5,000 characters.**"
+      label: "Failure Description *"
+      description: "Hallucination, false confidence, harmful output, other. Keep under 5,000 characters."
       placeholder: "Describe the failure clearly and specifically."
     validations:
       required: true
@@ -106,21 +123,36 @@ body:
   - type: dropdown
     id: failure-severity
     attributes:
-      label: "Failure Severity"
+      label: "Failure Severity *"
       description: "Estimate the impact."
       options:
         - "CRITICAL — caused serious harm or major financial loss"
         - "HIGH — significant risk or moderate harm"
         - "MEDIUM — notable issue but contained"
         - "LOW — minor or no material impact"
+      default: 0
     validations:
       required: true
+
+  - type: dropdown
+    id: remediation-status
+    attributes:
+      label: "Remediation Status (optional)"
+      description: "Has this failure been addressed?"
+      options:
+        - "Not yet remediated"
+        - "Remediation planned (date unknown)"
+        - "Remediation planned (date known — add in evidence)"
+        - "Remediation complete"
+      default: 0
+    validations:
+      required: false
 
   - type: textarea
     id: harm-or-risk
     attributes:
-      label: "Harm Occurred or Risk Created"
-      description: "What harm resulted or what risk was created? If no harm yet, describe the exposure. **Keep under 5,000 characters.**"
+      label: "Harm Occurred or Risk Created *"
+      description: "What harm resulted or what risk was created? If no harm yet, describe the exposure. Keep under 5,000 characters."
       placeholder: "Describe actual or potential harm."
     validations:
       required: true
@@ -128,16 +160,16 @@ body:
   - type: input
     id: evidence-urls
     attributes:
-      label: "Evidence URLs (screenshots, logs, etc.)"
-      description: "Upload files to a service (e.g., Imgur, GitHub release) and paste the links here. Do not upload directly."
-      placeholder: "https://example.com/evidence.png"
+      label: "Evidence URLs (screenshots, logs, full output files) *"
+      description: "**Use permanent URLs** (IPFS, archive.is, GitHub gist, or a stable cloud link). Expiring links may cause the evidence to become unavailable. The stamp seals only the URL, not the content. For cryptographic integrity, include SHA‑256 hashes of files in the `Failure Description` field."
+      placeholder: "https://ipfs.io/ipfs/Qm..., https://gist.github.com/..."
     validations:
       required: false
 
-  - type: textarea
+  - type: input
     id: additional-links
     attributes:
-      label: "Additional Evidence Links (Optional)"
+      label: "Additional Evidence Links (optional)"
       placeholder: "Links to supporting evidence."
     validations:
       required: false
@@ -148,7 +180,7 @@ body:
         ## Privacy & Retention
 
         - Personal data (name, email) processed per the Privacy Policy (see repo).
-        - Evidence URLs are stored permanently with the issue.
+        - Evidence URLs are stored permanently with the issue. The content behind the URLs is **not** stored by STP.
         - You may request deletion of personal data after 7 years by contacting the Architect.
 
   - type: checkboxes
@@ -161,13 +193,15 @@ body:
           required: true
         - label: "I understand that my verified legal name will be permanently attached to this submission."
           required: true
-        - label: "I understand that this submission is immutable — it cannot be altered or deleted after sealing."
+        - label: "I understand that this submission is immutable — it cannot be altered or deleted after sealing. A retraction adds a note but does not remove the original."
           required: true
         - label: "I understand that submitting false or misleading information exposes me to civil and criminal liability."
           required: true
-        - label: "I consent to identity verification via DocuSign before this submission is sealed."
+        - label: "I consent to identity verification via DocuSign before this submission is sealed. I understand that if verification fails within 7 days, this submission is voided."
           required: true
         - label: "I consent to the processing of my personal data as described in the Privacy Policy."
+          required: true
+        - label: "If I am filing as a whistleblower and cannot safely attach my legal name, I will use the alternative channel described above instead of this form."
           required: true
 
   - type: markdown
@@ -181,7 +215,7 @@ body:
         3. Completeness check — Reviewed for completeness. Truth verification is your responsibility.
         4. Sealing — Sealed with a **FROZEN-4.0** triple‑time cryptographic stamp. Permanent.
         5. Ledger entry — Enters the Sovereign Trace public ledger with your name, timestamp, and SHA‑256 hash.
-        6. Retraction — If an error is found, file a separate `retraction-request.yml` to attach a correction note.
+        6. Retraction — If an error is found, file a separate `retraction-request.yml` to attach a correction note (original remains).
 
         The Sovereign Trace Protocol is the notary. You are the witness.
 
