@@ -2,21 +2,30 @@ name: "AUDIT COMPLETION: File a Certified AI Output Review"
 description: "Submit a completed audit to the Sovereign Trace permanent ledger. Badge number required for verified status."
 title: "[AUDIT-COMPLETE] — [Company Name] — [Auditor Badge or UNVERIFIED]"
 labels: ["audit-completion", "pending-verification"]
+assignees: []
 body:
-
   - type: markdown
     attributes:
       value: |
-        ## Sovereign Trace Protocol — Audit Completion Filing
+        ## AUDIT COMPLETION – Sovereign Trace Protocol (FROZEN‑4.0)
 
         This form permanently seals a completed AI output audit to the ledger.
         All fields are public. The record is immutable after submission.
+
+        **⚠️ CRITICAL WARNINGS – READ BEFORE PROCEEDING ⚠️**
+        - The SHA‑256 hash of this filing (including findings summary) is **public**.
+        - Your LinkedIn profile and client company name will be **publicly linked** to your GitHub username.
+        - The client company name and findings summary become **permanent, immutable public record**.
+        - If you provide a URL to the full audit report, **only the URL is sealed** – not the file content. For cryptographic integrity, include the SHA‑256 hash of the report file in the `Findings Summary` field.
+        - Filing under a badge number you do not hold is **fraud** and will be permanently recorded as such in the ledger.
 
         **Verified auditors:** Enter your STP Auditor badge number below.
         Your LinkedIn and name will be matched against the verified registry.
 
         **Unverified submissions** are sealed with status `AUDITOR_UNVERIFIED`.
         The record is permanent. The warning is permanent.
+
+        **Fields marked with `*` are required.**
 
   - type: input
     id: auditor_badge
@@ -30,8 +39,8 @@ body:
   - type: input
     id: auditor_linkedin
     attributes:
-      label: "Auditor LinkedIn Profile URL"
-      description: "Must match the LinkedIn on file for your badge number."
+      label: "Auditor LinkedIn Profile URL *"
+      description: "Must match the LinkedIn on file for your badge number (if provided)."
       placeholder: "https://linkedin.com/in/yourprofile"
     validations:
       required: true
@@ -39,7 +48,7 @@ body:
   - type: input
     id: client_name
     attributes:
-      label: "Client Company / Organization"
+      label: "Client Company / Organization *"
       placeholder: "Acme AI Corp"
     validations:
       required: true
@@ -47,20 +56,28 @@ body:
   - type: dropdown
     id: tier
     attributes:
-      label: "Audit Tier Completed"
+      label: "Audit Tier Completed *"
+      description: "Select the tier that matches the certification issued."
       options:
-        - "Snapshot — 10 outputs"
-        - "Standard — 20 outputs"
-        - "Extended — 30 outputs"
-        - "Full — 50 outputs"
-        - "Enterprise — 100 outputs"
+        - "Tier 0 — Snapshot Verification (10 outputs)"
+        - "Tier 1 Starter — 25 outputs"
+        - "Tier 1 Professional — 50 outputs"
+        - "Tier 1 Business — 100 outputs"
+        - "Tier 1 Enterprise — 250 outputs"
+        - "Tier 1 Platform — 500 outputs"
+        - "Tier 1 Constitutional — 1,000 outputs"
+        - "Tier 2 — Enterprise Retainer (quarterly)"
+        - "Tier 3 — Strategic Retainer (monthly)"
+        - "Tier 4 — Defense & Government Grade"
+        - "Tier 5 — Sovereign AI Audit"
+      default: 0
     validations:
       required: true
 
   - type: input
     id: ai_systems
     attributes:
-      label: "AI System(s) Reviewed"
+      label: "AI System(s) Reviewed *"
       placeholder: "GPT-4o, Claude Sonnet 4.6, Gemini 1.5 Pro"
     validations:
       required: true
@@ -73,54 +90,80 @@ body:
       options:
         - "No — Standard STP Certified Badge"
         - "Yes — Sheldon K. Salmon Personally Certified"
+      default: 0
     validations:
       required: true
 
   - type: textarea
     id: findings_summary
     attributes:
-      label: "Findings Summary"
-      description: "High-level summary of audit findings. This is the permanent public record."
+      label: "Findings Summary *"
+      description: "High-level summary of audit findings. This is the permanent public record. Keep under 10,000 characters. If you have a full audit report, provide its URL below and include its SHA‑256 hash here."
       placeholder: |
         10 outputs reviewed. 3 hallucination events identified.
         2 confidence miscalibrations. 1 scope violation.
         Remediation plan attached. Organization cleared for Tier 1 certification.
+        Full report SHA‑256: a3f9c12e7d...
     validations:
       required: true
 
   - type: textarea
     id: remediation
     attributes:
-      label: "Remediation Status"
-      description: "What was recommended. What was implemented. What remains open."
+      label: "Remediation Status *"
+      description: "What was recommended. What was implemented. What remains open. Keep under 10,000 characters."
       placeholder: "Hallucination events: prompt engineering fix deployed. Confidence miscalibrations: model swap recommended, pending."
     validations:
       required: true
 
-  - type: textarea
-    id: file_upload
+  - type: input
+    id: report_url
     attributes:
-      label: "Audit Report Upload"
-      description: "Upload the full audit report as PDF or ZIP. This is sealed to the ledger."
+      label: "Audit Report URL (optional)"
+      description: "Permanent URL to the full audit report (PDF, IPFS, GitHub release). The stamp seals this URL. To cryptographically bind the report content, include its SHA‑256 hash in the `Findings Summary` field."
+      placeholder: "https://ipfs.io/ipfs/Qm... or https://github.com/.../report.pdf"
+    validations:
+      required: false
+
+  - type: input
+    id: correction_of
+    attributes:
+      label: "Correction / Resubmission of (optional)"
+      description: "If this filing corrects a previous audit completion entry, provide the previous ledger entry ID or SHA‑256 hash."
+      placeholder: "a3f9c12e7d... or #42"
     validations:
       required: false
 
   - type: input
     id: audit_date
     attributes:
-      label: "Audit Completion Date"
-      placeholder: "March 7, 2026"
+      label: "Audit Completion Date *"
+      placeholder: "2026-03-07"
     validations:
       required: true
 
   - type: checkboxes
     id: declaration
     attributes:
-      label: "Auditor Declaration"
+      label: "Auditor Declaration *"
       options:
-        - label: "I certify that this audit was conducted by me personally and the findings reported here are accurate and complete."
+        - label: "I certify that this audit was conducted by me personally (or under my direct supervision for Tier 4/5) and the findings reported here are accurate and complete."
           required: true
         - label: "I understand this record is permanent, immutable, and publicly visible in the Sovereign Trace ledger."
           required: true
         - label: "I understand that filing under a badge number I do not hold is fraud and will be permanently recorded as such."
           required: true
+        - label: "I understand that my GitHub username is publicly linked to this filing, and the client company name and findings summary are permanent public record."
+          required: true
+        - label: "I understand that the stamp uses FROZEN‑4.0 and that the seal is generated by `sovereign_trace_stamp.py`."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **After submission**: The STP audit‑verify workflow will check the badge number against the verified auditors registry. Upon successful verification, a triple‑time stamp will be generated and the entry sealed to the ledger. You and the client will receive the ledger entry ID and SHA‑256 hash.
+
+        **Contact:** `aionsystem@outlook.com` (for technical issues only). All seals are final.
+
+        **Verification**: Every audit completion can be independently verified using the STP pip package: `sovereign-trace verify --entry-id <ID> --hash <SHA-256>`.
