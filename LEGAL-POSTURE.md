@@ -1,7 +1,7 @@
 # LEGAL POSTURE
 
 **Sovereign Trace Protocol**
-**Author:** Sheldon K. Salmon — AI Reliability & AGI Architect
+**Author:** Sheldon K. Salmon — AI Reliability & ADI/AGI Architect
 **Status:** LIVING DOCUMENT — updated as coverage expands
 **Last updated:** March 2026
 **Repository:** AionSystem/SOVEREIGN-TRACE-PROTOCOL
