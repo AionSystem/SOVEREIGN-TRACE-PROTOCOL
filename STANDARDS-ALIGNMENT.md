@@ -2,10 +2,21 @@
 ## Sovereign Trace Protocol — Regulatory & Defense Standards Alignment
 
 **Document Classification:** PUBLIC RELEASE
-**Author:** Sheldon K. Salmon — AI Reliability & AGI Architect
-**Version:** 1.0 | March 7, 2026
+**Author:** Sheldon K. Salmon — AI Reliability & ADI/AGI Architect
+**Version:** 1.1 | June 2026
+**Supersedes:** Version 1.0 (March 2026)
 **Jurisdiction:** United States Federal · International
-**Governing Instrument:** FROZEN-2.0 · SHA-256 Sealed Architecture
+**Governing Instrument:** FROZEN-4.0 · SHA-256 Sealed Architecture
+
+---
+
+> **IMPORTANT DISCLAIMER**
+>
+> This document is for informational purposes only. It does **not** constitute legal, regulatory, or compliance advice. The architectural alignment described herein is a technical assessment of STP’s capabilities in the domains of audit logging, incident documentation, and tamper‑evident records.
+>
+> Regulatory determinations (e.g., FDA 21 CFR Part 11 compliance, SEC Rule 17a‑4 equivalency, CMMC certification) require review by qualified legal counsel and, where applicable, certification by accredited bodies. STP is a tool; compliance is a process. Organizations must obtain their own compliance determinations.
+>
+> This document does not guarantee that any regulatory authority will accept STP as satisfying its requirements. Frameworks are subject to change; this assessment is based on the versions cited. Users should verify current requirements.
 
 ---
 
@@ -14,7 +25,7 @@
 > *The Sovereign Trace Protocol is that infrastructure.*
 > *The ledger does not lie. The timestamp does not negotiate."*
 >
-> — Sheldon K. Salmon, March 2026
+> — Sheldon K. Salmon, June 2026
 
 ---
 
@@ -32,11 +43,11 @@ This document maps STP's architecture against:
 - Defense contractor compliance requirements (CMMC, DFARS)
 - Intelligence community audit standards
 
-**Assessment:** STP's FROZEN-2.0 architecture satisfies the technical
-requirements of every framework documented in this report.
-Deployment of STP constitutes a material step toward compliance
-with the federal, defense, and international AI accountability
-standards identified herein.
+**Assessment:** STP's FROZEN-4.0 architecture satisfies the **technical audit logging,
+incident documentation, and tamper‑evident record requirements** of every framework
+documented in this report. Deployment of STP constitutes a material step toward
+compliance with the federal, defense, and international AI accountability standards
+identified herein, but does not alone constitute full compliance.
 
 ---
 
@@ -61,7 +72,7 @@ standards identified herein.
 | MANAGE 4.1 | Organizational AI risk transparency | Public AION-Registry + Epistemic Debt Statement |
 
 **Alignment Status:** ✅ ARCHITECTURALLY COMPLIANT — STP satisfies the technical
-requirements of GOVERN, MEASURE, and MANAGE functions.
+requirements of GOVERN, MEASURE, and MANAGE functions for audit logging and incident documentation.
 
 ---
 
@@ -76,8 +87,8 @@ requirements of GOVERN, MEASURE, and MANAGE functions.
 |----------------------|--------------------------|
 | Log integrity protection — logs must be protected from modification | SHA-256 seal on every entry. Mathematical impossibility of alteration without detection. |
 | Append-only log architecture | No-Deletion Policy. Immutable by design. Overrides are additions, never replacements. |
-| Timestamp authority — logs must carry trusted timestamps | FROZEN-2.0 triple-time stamp: Gregorian + Hebrew lunisolar + 13 Moon Dreamspell. |
-| Log retention — logs must be retained for defined periods | GitHub-hosted ledger with blockchain anchoring in Stage 3. Permanent. |
+| Timestamp authority — logs must carry trusted timestamps | FROZEN-4.0 triple-time stamp: Gregorian + Hebrew lunisolar + 13 Moon Dreamspell. |
+| Log retention — logs must be retained for defined periods | GitHub-hosted ledger with blockchain anchoring. Permanent. |
 | Log review capability — logs must be reviewable by authorized parties | Public ledger. Cryptographically verifiable by any party with Python stdlib. |
 
 **Alignment Status:** ✅ ARCHITECTURALLY COMPLIANT — STP satisfies SP 800-92
@@ -95,7 +106,7 @@ log integrity, append-only, and timestamp authority requirements.
 | EO 14110 Section | Requirement | STP Response |
 |-----------------|-------------|--------------|
 | Section 4.1 | AI developers must share safety test results and critical incident data | STP ledger is the infrastructure for mandatory incident data sharing |
-| Section 4.3 | Establish standards for AI safety and security | FROZEN-2.0 standard is the safety documentation layer |
+| Section 4.3 | Establish standards for AI safety and security | FROZEN-4.0 standard is the safety documentation layer |
 | Section 7.1 | Federal agencies must develop AI governance programs | Tier 3 / Tier 4 retainers provide the audit infrastructure for agency governance programs |
 | Section 10.1 | International engagement on AI safety standards | STP's triple-time civilizational framing and international scope are designed for this |
 
@@ -150,6 +161,10 @@ DoD AI Ethical Principles at the infrastructure layer.
 **Current Version:** 2.0
 **Applicability:** DoD contractors and subcontractors
 
+**Important note:** STP provides the **technical audit log infrastructure** for CMMC.
+Full CMMC compliance requires an accredited CMMC Third‑Party Assessment Organization (C3PAO) assessment.
+STP is a tool that supports compliance; it is not itself a certification.
+
 **Relevant CMMC Controls:**
 
 | CMMC Domain | Control | STP Alignment |
@@ -157,7 +172,7 @@ DoD AI Ethical Principles at the infrastructure layer.
 | Audit and Accountability (AU) | AU.2.041 — Create and retain system audit logs | STP ledger is the audit log. Append-only. SHA-256 sealed. |
 | AU.2.042 — Ensure actions of individual users can be traced | Every ledger entry carries submitter identity. Immutable attribution. |
 | AU.3.045 — Review and update logged events | STP remediation architecture: logged events updated by appending, never overwriting |
-| AU.3.046 — Alert on audit logging failures | FROZEN-2.0 self-test (35 checks) is the audit logging integrity verification |
+| AU.3.046 — Alert on audit logging failures | FROZEN-4.0 self-test (40+ checks) is the audit logging integrity verification |
 | Incident Response (IR) | IR.2.092 — Track, document, and report incidents | `01-ai-failure.yml` + ledger entry = incident documentation and tracking |
 | IR.2.093 — Test incident response capability | Certification audit is the incident response capability test |
 
@@ -326,10 +341,15 @@ longitudinal accountability record the UN resolution calls for.
 ### 5.1 Healthcare — FDA 21 CFR Part 11
 **Applicability:** AI systems used in clinical contexts · Software as a Medical Device (SaMD)
 
+> **Regulatory note:** The following is an architectural assessment of STP's technical
+> capabilities. FDA 21 CFR Part 11 compliance requires a holistic determination by
+> the regulated entity and may require additional procedures (validation, access controls,
+> audit trail review). STP does not constitute FDA clearance or approval.
+
 | 21 CFR Part 11 Requirement | STP Alignment |
 |---------------------------|---------------|
 | Electronic records must be trustworthy and reliable | SHA-256 sealed. Mathematically tamper-evident. |
-| Audit trails must be computer-generated | FROZEN-2.0 generates the audit trail |
+| Audit trails must be computer-generated | FROZEN-4.0 generates the audit trail |
 | Audit trails must be protected against modification | Immutable by architecture. No-deletion policy. |
 | Records must be available for FDA inspection | Public ledger. Verifiable by any party. |
 
@@ -342,6 +362,12 @@ before the FDA 21 CFR Part 11 audit trail is created.
 
 ### 5.2 Financial Services — SEC Rule 17a-4
 **Applicability:** Broker-dealers · Financial institutions using AI
+
+> **Regulatory note:** SEC Rule 17a-4 requires that records be preserved in a
+> non‑rewriteable, non‑erasable format. STP’s append‑only ledger and SHA‑256
+> sealing provide cryptographic equivalency to write‑once media. However,
+> SEC acceptance depends on the complete record‑keeping system, not just the
+> hashing mechanism. Organizations must obtain their own legal determination.
 
 | SEC 17a-4 Requirement | STP Alignment |
 |----------------------|---------------|
@@ -375,7 +401,7 @@ integrity guarantees that standard log management cannot provide.
 | Executive Order 14110 | Federal AI Safety | ✅ ARCHITECTURALLY RESPONSIVE |
 | OMB M-24-10 | Federal AI Governance | ✅ OPERATIONALLY ALIGNED |
 | DoD AI Ethical Principles | Defense AI | ✅ PRINCIPLE-LEVEL COMPLIANT |
-| CMMC 2.0 | Defense Contractor | ✅ CONTROL-LEVEL ALIGNED |
+| CMMC 2.0 | Defense Contractor | ✅ CONTROL-LEVEL ALIGNED (audit logs) |
 | DFARS 252.204-7012 | Defense Acquisition | ⚡ OPERATIONALLY SUPPORTIVE |
 | DARPA XAI / GARD | Defense Research | ⚡ ARCHITECTURALLY SUPPORTIVE |
 | ICD 503 | Intelligence Community | ✅ ARCHITECTURALLY COMPLIANT |
@@ -385,13 +411,13 @@ integrity guarantees that standard log management cannot provide.
 | OECD AI Principles | International | ✅ PRINCIPLE-LEVEL COMPLIANT |
 | UN A/RES/78/311 | International | ⚡ PHILOSOPHICALLY ALIGNED |
 | IEEE 7000-2021 | Engineering Standards | ✅ PROCESS-LEVEL ALIGNED |
-| FDA 21 CFR Part 11 | Healthcare | ✅ TECHNICALLY COMPLIANT |
+| FDA 21 CFR Part 11 | Healthcare | ✅ TECHNICALLY COMPLIANT (audit trails) |
 | SEC Rule 17a-4 | Financial Services | ✅ ARCHITECTURALLY EQUIVALENT |
 | CISA AI Cybersecurity | Critical Infrastructure | ✅ OPERATIONALLY ALIGNED |
 
 **Legend:**
-✅ COMPLIANT — STP's architecture directly satisfies the technical requirement
-⚡ SUPPORTIVE — STP provides the documentation layer the standard requires but does not technically specify
+✅ COMPLIANT — STP's architecture directly satisfies the **technical audit logging, incident documentation, or tamper‑evident record** requirement.
+⚡ SUPPORTIVE — STP provides the documentation layer the standard requires but does not technically specify.
 
 ---
 
@@ -407,11 +433,14 @@ STP provides all three. In one mechanism. Zero dependencies.
 Cryptographically verifiable by anyone. Permanently.
 
 **An organization with a certified STP deployment has satisfied
-the documentation infrastructure requirements of 18 major regulatory
-and standards frameworks simultaneously.**
+the documentation infrastructure requirements for audit logging,
+incident tracking, and tamper‑evident records of the 18 major regulatory
+and standards frameworks mapped in Part VI.** (Note: This does not constitute
+full compliance with all clauses of those frameworks; see disclaimers above.)
 
-No other single protocol achieves this. The mechanism is unique.
-The prior art does not exist. See `concept/PRIOR-ART.md`.
+No other single protocol is known to provide this combination of features
+across so many frameworks. STP is uniquely positioned as infrastructure
+for the AI accountability era.
 
 ---
 
@@ -434,24 +463,40 @@ Arbitration: JAMS Commercial Rules.
 
 ---
 
-## DDL FIELD
+## PART IX — GOVERNING LAW AND PERIODIC REVIEW
 
-```
-Document: STANDARDS-ALIGNMENT v1.0
-Architect: Sheldon K. Salmon
-AI Co-Architect: ALBEDO
-Date: March 7, 2026
-Classification: PUBLIC RELEASE
-Purpose: Regulatory and defense standards alignment documentation.
-         18 frameworks mapped. Architecture validated against federal,
-         defense, international, and sector-specific requirements.
-Status: Sealed at time of repository publication.
-```
+**Governing Law:** This document is governed by the laws of the State of New York, USA,
+without regard to its conflict of laws principles. Any disputes arising from its
+interpretation shall be resolved exclusively in the state or federal courts located
+in Jefferson County, New York.
+
+**Periodic Review:** This document shall be reviewed and, if necessary, updated
+within 30 days of any FROZEN version change in the core STP stamp, or within 30 days
+of a major update to any framework cited herein. Version history is preserved in git.
+
+**Export Control:** SHA-256 hashing is classified EAR99. See `EXPORT-CONTROL.md` for
+full details.
 
 ---
 
-*STANDARDS-ALIGNMENT v1.0 — Sovereign Trace Protocol*
-*Sheldon K. Salmon & ALBEDO — March 7, 2026*
+## DDL FIELD
+Document: STANDARDS-ALIGNMENT v1.1
+Architect: Sheldon K. Salmon — AI Reliability & ADI/AGI Architect
+AI Co-Architect: ALBEDO
+Date: June 4, 2026
+Classification: PUBLIC RELEASE
+Purpose: Regulatory and defense standards alignment documentation.
+18 frameworks mapped. Architecture validated against federal,
+defense, international, and sector-specific requirements.
+Updated from v1.0 to reflect FROZEN-4.0 and added legal disclaimers.
+Status: Sealed at time of repository publication.
+
+text
+
+---
+
+*STANDARDS-ALIGNMENT v1.1 — Sovereign Trace Protocol*
+*Sheldon K. Salmon & ALBEDO — June 2026*
 *The standard is the ledger. The ledger is the proof.*
 *This document does not constitute legal or regulatory advice.*
 *Consult qualified counsel before making compliance determinations.*
