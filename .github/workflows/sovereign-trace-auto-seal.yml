@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Extract issue data
+      - name: Extract issue data and determine template
         id: issue
         env:
           ISSUE_TITLE: ${{ github.event.issue.title }}
@@ -38,28 +38,44 @@ jobs:
           echo "issue_user=$ISSUE_USER" >> $GITHUB_OUTPUT
           echo "issue_created=$ISSUE_CREATED" >> $GITHUB_OUTPUT
 
-          if echo "$ISSUE_TITLE" | grep -q "\[STP-SUBMISSION\]"; then
-            echo "template_type=ai-failure" >> $GITHUB_OUTPUT
-          elif echo "$ISSUE_TITLE" | grep -q "\[STP-RESEARCH\]"; then
-            echo "template_type=research-priority" >> $GITHUB_OUTPUT
-          elif echo "$ISSUE_TITLE" | grep -q "\[STP-EVIDENCE\]"; then
-            echo "template_type=evidence-chain" >> $GITHUB_OUTPUT
-          elif echo "$ISSUE_TITLE" | grep -q "\[STP-CREATIVE\]"; then
-            echo "template_type=creative-priority" >> $GITHUB_OUTPUT
-          elif echo "$ISSUE_TITLE" | grep -q "\[STP-CLINICAL\]"; then
-            echo "template_type=clinical-record" >> $GITHUB_OUTPUT
-          elif echo "$ISSUE_TITLE" | grep -q "\[STP-SCOPE\]"; then
-            echo "template_type=scope-anchor" >> $GITHUB_OUTPUT
-          elif echo "$ISSUE_TITLE" | grep -q "\[STP-FORESIGHT\]"; then
-            echo "template_type=foresight-seal" >> $GITHUB_OUTPUT
-          elif echo "$ISSUE_TITLE" | grep -q "\[WEBEATER\]"; then
-            echo "template_type=webeater-link" >> $GITHUB_OUTPUT
-          else
-            echo "template_type=general-trace" >> $GITHUB_OUTPUT
-          fi
+          # Mapping from first word of title (inside brackets) to template_type folder name
+          # Complete list for all 31 templates (00 excluded)
+          case "$ISSUE_TITLE" in
+            "[STP-SUBMISSION]"*)      echo "template_type=ai-failure" ;;
+            "[STP-RESEARCH]"*)        echo "template_type=research-priority" ;;
+            "[STP-EVIDENCE]"*)        echo "template_type=evidence-chain" ;;
+            "[STP-CREATIVE]"*)        echo "template_type=creative-priority" ;;
+            "[STP-CLINICAL]"*)        echo "template_type=clinical-record" ;;
+            "[STP-SCOPE]"*)           echo "template_type=scope-anchor" ;;
+            "[STP-FORESIGHT]"*)       echo "template_type=foresight-seal" ;;
+            "[WEBEATER]"*)            echo "template_type=webeater-link" ;;
+            "[STP-PROMPT]"*)          echo "template_type=prompt-seal" ;;
+            "[STP-MODEL]"*)           echo "template_type=model-weights-seal" ;;
+            "[STP-DATASET]"*)         echo "template_type=dataset-declaration" ;;
+            "[STP-AGREEMENT]"*)       echo "template_type=agreement-seal" ;;
+            "[STP-RELEASE]"*)         echo "template_type=release-seal" ;;
+            "[STP-DECISION]"*)        echo "template_type=decision-record" ;;
+            "[STP-VULN]"*)            echo "template_type=vulnerability-timeline" ;;
+            "[STP-OUTPUT]"*)          echo "template_type=ai-output-sample" ;;
+            "[STP-BIAS]"*)            echo "template_type=bias-audit-record" ;;
+            "[STP-REDTEAM]"*)         echo "template_type=red-team-engagement" ;;
+            "[STP-MODELCARD]"*)       echo "template_type=model-card-seal" ;;
+            "[STP-OVERSIGHT]"*)       echo "template_type=human-oversight-log" ;;
+            "[STP-CODE]"*)            echo "template_type=code-snippet-seal" ;;
+            "[STP-LOGBOOK]"*)         echo "template_type=research-logbook" ;;
+            "[STP-IDENTITY]"*)        echo "template_type=identity-anchor" ;;
+            "[STP-COMMIT]"*)          echo "template_type=temporal-commitment" ;;
+            "[AUDIT-COMPLETE]"*)      echo "template_type=audit-completion" ;;
+            "[AUDIT-REQUEST]"*)       echo "template_type=audit-request-tier1-5" ;;
+            "[SNAPSHOT]"*)            echo "template_type=audit-request-snapshot" ;;
+            "[AUDITOR-APPLICATION]"*) echo "template_type=auditor-application" ;;
+            "[INTEGRITY-VIOLATION]"*) echo "template_type=integrity-violation" ;;
+            "[NEAR-MISS]"*)           echo "template_type=near-miss" ;;
+            * )                       echo "template_type=general-trace" ;;
+          esac >> $GITHUB_OUTPUT
 
           # REF_SEAL validation — WEBEATER only
-          if echo "$ISSUE_TITLE" | grep -q "\[WEBEATER\]"; then
+          if [[ "$ISSUE_TITLE" == "[WEBEATER]"* ]]; then
             REF_SEAL=$(echo "$ISSUE_BODY" | grep -oE '[a-f0-9]{64}' | head -1)
             if [ -z "$REF_SEAL" ]; then
               echo "ref_seal_valid=false" >> $GITHUB_OUTPUT
@@ -95,11 +111,9 @@ jobs:
 
       - name: Halt on invalid REF_SEAL
         if: steps.issue.outputs.ref_seal_valid == 'false'
-        run: |
-          echo "REF_SEAL validation failed. Halting pipeline."
-          exit 1
+        run: exit 1
 
-      - name: Run FROZEN-4.0 stamp
+      - name: Run FROZEN-4.0 stamp and write hierarchical ledger
         id: stamp
         env:
           ISSUE_TITLE: ${{ github.event.issue.title }}
