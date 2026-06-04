@@ -1,7 +1,7 @@
 # SECURITY POLICY
 
 **Sovereign Trace Protocol**
-**Author:** Sheldon K. Salmon — AI Reliability & AGI Architect
+**Author:** Sheldon K. Salmon — AI Reliability & ADI & AGI Architect
 
 ---
 
