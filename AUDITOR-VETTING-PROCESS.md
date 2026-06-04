@@ -1,10 +1,10 @@
 # AUDITOR VETTING PROCESS
 ## Sovereign Trace Protocol — Certified Auditor Program
 
-**Document Version:** AVP-v1.1
+**Document Version:** AVP-v1.2
 **Governing Standard:** FROZEN-4.0
 **Effective:** June 2026
-**Supersedes:** AVP-v1.0 (March 2026)
+**Supersedes:** AVP-v1.1 (June 2026)
 
 ---
 
@@ -129,19 +129,14 @@ respond within 14 days. The decision on appeal is final.
 
 ### Stage 4 — Badge Issuance
 
-Upon certification:
-
-1. Badge number assigned: `STP-AUDITOR-XXXX` (sequential)
-2. Badge SVG generated with auditor name and badge number
-3. Entry added to `.github/verified-auditors.json`
-4. Badge SHA-256 sealed at issuance — the seal is the issuance record
-5. Auditor agreement issued — terms and platform percentage confirmed
+Upon certification, the auditor is assigned the **Beginner** rank.
+The badge is issued with a silver outline on dark background.
 
 **Badge properties at issuance:**
 - Non-transferable — bound to legal name and LinkedIn permanently
 - SHA-256 sealed — cryptographically anchored to issuance moment
 - Term: 1 year from issuance date
-- Annual cap: 50 sealed audits per calendar year per badge
+- Annual seal cap: **50** for Beginner rank
 - Renewal: reapplication only — prior certification does not
   guarantee renewal
 
@@ -154,11 +149,33 @@ to provide an alternative identity within 90 days of LinkedIn
 becoming unavailable, the badge shall be automatically revoked
 and recorded as such in the revocation registry.
 
-**Audit cap quality control:** The Architect may, at their
-discretion, reject an audit completion that appears to be
-submitted solely to meet the cap without substantive assessment.
-Such rejection will be noted in the auditor's record but does
-not count toward the cap.
+---
+
+## AUDITOR RANKS AND ANNUAL CAPS
+
+The program has three ranks, each with its own badge variant and annual seal cap.
+Advancement is based on demonstrated competence, tenure, and quality metrics.
+
+| Rank | Badge Variant | Annual Seal Cap | Advancement Criteria |
+|------|---------------|----------------|----------------------|
+| **Beginner (Probationary)** | Silver outline on dark background | 50 | First certification. Must complete first 10 audits under the supervision of a Senior Auditor (co‑signed). |
+| **Standard** | Silver fill with blue marker | 100 | 6 months in good standing as Beginner, ≥20 audits completed without a revocation or sustained integrity complaint, and passing a one‑day skills refresher assessment. |
+| **Senior** | Gold fill with black diamond | 200 | 12 months as Standard, ≥50 audits completed, demonstrated ability to mentor Beginner auditors, and approval by the Architect or 2/3 majority of existing Senior auditors. |
+
+**Rank badge files:**
+- `assets/badges/stp_auditor/stp_auditor_badge_beginner.svg`
+- `assets/badges/stp_auditor/stp_auditor_badge_standard.svg`
+- `assets/badges/stp_auditor/stp_auditor_badge_senior.svg`
+
+**Cap rollover:** Unused seals do not roll over to the next year. The cap resets on the badge anniversary date.
+
+**Audit count verification:** The STP ledger tracks every audit completion submitted under a badge number. The ledger is the authoritative source for counting toward the cap. If a cap is exceeded, the audit completion is still sealed but marked `CAP_EXCEEDED` and the auditor's record is flagged for review.
+
+**Audit cap quality control:** The Architect may, at their discretion, reject an audit completion that appears to be submitted solely to meet the cap without substantive assessment. Such rejection will be noted in the auditor's record but does not count toward the cap.
+
+**Advancement request:** An auditor may request a rank review by filing a `auditor-advancement.yml` issue (new template to be created). The request must include evidence of meeting the advancement criteria. The Architect (or, for Senior, the Senior auditor council) responds within 14 days.
+
+**Downward adjustment:** The Architect may downgrade a rank for cause (e.g., sustained quality complaints, violation of obligations) after a review process. Downgrade is recorded in the revocation registry and the auditor's badge is updated accordingly.
 
 ---
 
@@ -250,14 +267,15 @@ New York.
 
 ## BADGE REFERENCE
 
-| Field | Value |
-|-------|-------|
-| Format | `STP-AUDITOR-XXXX` |
-| Badge file | `badges/stp-auditor-badge-v2.svg` |
-| Registry | `.github/verified-auditors.json` |
-| Revocation registry | `.github/revoked-auditors.json` |
-| Term | 1 year from issuance |
-| Annual audit cap | 50 sealed audits |
+| Rank | Badge Format | Annual Cap | Badge File |
+|------|-------------|-----------|-------------|
+| Beginner | STP-AUDITOR-XXXX | 50 | `stp_auditor_badge_beginner.svg` |
+| Standard | STP-AUDITOR-XXXX | 100 | `stp_auditor_badge_standard.svg` |
+| Senior | STP-AUDITOR-XXXX | 200 | `stp_auditor_badge_senior.svg` |
+
+All badges are stored in `assets/badges/stp_auditor/`. Registry:
+`.github/verified-auditors.json`. Revocation registry:
+`.github/revoked-auditors.json`. Term: 1 year from issuance.
 
 ---
 
