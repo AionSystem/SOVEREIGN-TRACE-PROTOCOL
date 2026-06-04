@@ -9,11 +9,14 @@
 
 | Version | Status | Security Support |
 |---------|--------|-----------------|
-| 2.0.0 (FROZEN-2.0) | Current | Active |
+| 4.0.0 (FROZEN-4.0) | Current | Active |
+| 3.0.0 (FROZEN-3.0) | Retired | None — see FROZEN declaration |
+| 2.0.0 (FROZEN-2.0) | Retired | None — see FROZEN declaration |
 | 1.x (FROZEN-1.0) | Retired | None — see FROZEN declaration |
 
-FROZEN-1.0 is retired and receives no security support. Do not use it
-for new stamp production. See `stamp/FROZEN-1.0-RETIRED/ARCHIVE-EMPTY.md`.
+FROZEN-2.0 and FROZEN-3.0 are retired and receive no security support.
+Do not use them for new stamp production. See `stamp/FROZEN-2.0-RETIRED/`
+and `stamp/FROZEN-3.0-RETIRED/`.
 
 ---
 
@@ -78,17 +81,17 @@ Security vulnerabilities must be reported privately.
 
 ## FROZEN CODE AND SECURITY FIXES
 
-`stamp/sovereign_trace_stamp.py` (FROZEN-2.0) is permanently immutable
+`stamp/sovereign_trace_stamp.py` (FROZEN-4.0) is permanently immutable
 by architectural declaration. If a security vulnerability is confirmed
-in FROZEN-2.0:
+in FROZEN-4.0:
 
-1. FROZEN-2.0 will be **retired** — moved to `FROZEN-2.0-RETIRED/`
+1. FROZEN-4.0 will be **retired** — moved to `FROZEN-4.0-RETIRED/`
 2. A **DEFECT-RECORD.md** will document the vulnerability publicly
-3. **FROZEN-3.0** will be built from first principles incorporating
+3. **FROZEN-5.0** will be built from first principles incorporating
    the fix, verified against all anchor cases, and deployed
-4. Users of FROZEN-2.0 will be notified via a GitHub security advisory
-5. All stamps produced by FROZEN-2.0 prior to retirement remain
-   valid under FROZEN-2.0 semantics but carry the defect notation
+4. Users of FROZEN-4.0 will be notified via a GitHub security advisory
+5. All stamps produced by FROZEN-4.0 prior to retirement remain
+   valid under FROZEN-4.0 semantics but carry the defect notation
 
 This process cannot be shortened. The FROZEN declaration is
 architectural. It is also what makes the stamp trustworthy.
@@ -130,4 +133,4 @@ legal action against researchers who:
 ---
 
 *Sovereign Trace Protocol — SECURITY.md*
-*Author: Sheldon K. Salmon | March 2026*
+*Author: Sheldon K. Salmon | June 2026*
