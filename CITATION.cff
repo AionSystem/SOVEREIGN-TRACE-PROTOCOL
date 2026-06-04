@@ -10,7 +10,7 @@ abstract: >
   cryptographic stamp binding textual entries simultaneously to
   Gregorian, Hebrew lunisolar (full four dehiyot, civil-day convention),
   and 13 Moon Dreamspell calendar representations via SHA-256 hash.
-  FROZEN-2.0 — written once, verified once, deployed permanently.
+  FROZEN-4.0 — written once, verified once, deployed permanently.
   Zero external dependencies. Stdlib only.
 authors:
   - family-names: Salmon
@@ -18,10 +18,10 @@ authors:
     alias: "Sheldon K. Salmon"
     affiliation: "AionSystem — AION Constitutional Stack"
     orcid: ""
-    email: ""
+    email: "aionsystem@outlook.com"
     website: "https://github.com/AionSystem"
-version: "2.0.0"
-date-released: "2026-03-03"
+version: "4.0.0"
+date-released: "2026-06-04"
 license: Apache-2.0
 repository-code: "https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL"
 url: "https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL"
@@ -62,8 +62,8 @@ preferred-citation:
   authors:
     - family-names: Salmon
       given-names: Sheldon K.
-  version: "2.0.0"
-  date-released: "2026-03-03"
+  version: "4.0.0"
+  date-released: "2026-06-04"
   license: Apache-2.0
   repository-code: "https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL"
   notes: >
