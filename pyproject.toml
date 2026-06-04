@@ -85,3 +85,53 @@ include = [
   "ACCEPTABLE-USE-POLICY.md",
   "CITATION.cff",
 ]
+
+# ========== TESTING & HARDENING TOOL CONFIGURATIONS ==========
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+asyncio_mode = "auto"
+markers = [
+    "anchor: verified calendar anchor — do not modify without re-verifying against Hebcal/Chabad/pyluach",
+    "regression: guard against named defect from a retired frozen version",
+    "slow: many calendar calls or large date ranges — excluded from fast CI",
+    "cli: requires subprocess or stdin/stdout capture",
+    "hypothesis: property-based test (auto-applied by hypothesis plugin)",
+    "asyncio: async test function",
+    "concurrency: multi-thread or concurrent access test",
+    "benchmark: timing test — requires baseline",
+    "fuzzing: Atheris‑based fuzz tests (run separately)",
+]
+filterwarnings = [
+    "error",
+    "ignore::DeprecationWarning:hypothesis",
+    "ignore::PendingDeprecationWarning:sovereign_trace_stamp",
+]
+
+[tool.bandit]
+exclude_dirs = ["tests", ".venv", ".git", "ledger", "badges", "concept"]
+skips = ["B101", "B102"]  # assert and exec warnings – acceptable for test code
+severity = "MEDIUM"
+confidence = "MEDIUM"
+
+[tool.mutmut]
+paths_to_mutate = ["stamp/"]
+runner = "pytest"
+tests_dir = "tests/"
+backup = false
+mutation_whitelist = []
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false  # gradual typing
+
+[tool.safety]
+policy_file = ".safety-policy.yml"  # optional – create if needed
+ignore_cvss_severity_below = "medium"
