@@ -1,9 +1,9 @@
 header:
   schema-version: 1.0.0
-  last-updated: '2026-03-06'
-  last-reviewed: '2026-03-06'
+  last-updated: '2026-06-04'
+  last-reviewed: '2026-06-04'
   project-url: https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL
-  project-release: '2.0.0'
+  project-release: '4.0.0'
   changelog: https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/releases
 
 project:
@@ -12,8 +12,9 @@ project:
     Permanent personal and organizational significance infrastructure.
     Triple-time cryptographic stamp binding entries simultaneously to
     Gregorian, Hebrew lunisolar, and 13 Moon Dreamspell calendar
-    representations via SHA-256 hash. FROZEN-2.0 — written once,
-    verified once, deployed permanently. Zero external dependencies.
+    representations via SHA-256 hash. FROZEN-4.0 — written once,
+    verified once, deployed permanently. Zero external dependencies
+    for the core stamp function (see note below).
   license: Apache-2.0 OR GPL-3.0-or-later
   homepage: https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL
   security-contact: https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/security/advisories/new
@@ -21,6 +22,10 @@ project:
 contribution-policy:
   accepts-pull-requests: true
   accepts-automated-pull-requests: false
+  comment: >
+    Automated PRs are rejected for security reasons. All PRs must be manually
+    reviewed by the maintainer. The repository settings require manual approval
+    for all PRs from first‑time contributors, consistent with this policy.
   contributing-policy: https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/blob/main/CONTRIBUTOR-TERMS.md
   code-of-conduct: https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/blob/main/AI-ETHICS-STATEMENT.md
 
@@ -28,6 +33,8 @@ documentation:
   - https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/blob/main/README.md
   - https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/blob/main/concept/GLOSSARY.md
   - https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/blob/main/LICENSE-EXPLANATION.md
+  - https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/blob/main/SECURITY.md
+  - https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/blob/main/EXPORT-CONTROL.md
 
 distribution-points:
   - https://pypi.org/project/sovereign-trace/
@@ -37,19 +44,23 @@ security-artifacts:
   - artifact-created-by-project: true
     artifact-signing-mechanism: none
     comment: >
-      The FROZEN-2.0 stamp function is verified via self-test (35 checks)
+      The FROZEN-4.0 stamp function is verified via self-test (40+ checks)
       against known anchor values before deployment. The anchor seal
-      (documented in stamp/FROZEN-2.0-MANIFEST.md) is reproducible and
+      (documented in stamp/FROZEN-4.0-MANIFEST.md) is reproducible and
       serves as the integrity verification artifact. No binary signing
       infrastructure is currently deployed.
+    integrity-verification: >
+      The SHA-256 hash of `sovereign_trace_stamp.py` is published in the
+      release notes and in `FROZEN-4.0-MANIFEST.md`. Users should verify
+      the downloaded file against this hash.
 
 security-testing:
   - tool-type: manual-review
     tool-rulesets:
       - name: self-test
-        version: FROZEN-2.0
+        version: FROZEN-4.0
     comment: >
-      sovereign_trace_stamp.py includes 35 built-in verification checks
+      sovereign_trace_stamp.py includes 40+ built-in verification checks
       run via `python sovereign_trace_stamp.py --test`. All checks must
       pass before any deployment is considered valid. This constitutes
       the primary security gate.
@@ -58,12 +69,17 @@ security-testing:
     tool-rulesets:
       - name: stdlib-only verification
     comment: >
-      The module imports only hashlib, json, and datetime from the Python
-      standard library. No third-party dependencies. Dependency audit
-      is trivially verifiable by inspection.
+      The core stamp module imports only hashlib, json, and datetime from
+      the Python standard library. No third-party dependencies. Dependency
+      audit is trivially verifiable by inspection.
 
 dependencies:
   third-party-packages: false
+  comment: >
+    The core stamp function has zero third-party dependencies. Optional
+    GitHub Actions workflows (auto-seal, abuse detector, blockchain anchor)
+    may use third-party actions (pinned by SHA). See `.github/workflows/`
+    for details.
   dependencies-lists:
     - https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/blob/main/pyproject.toml
   env-dependencies-policy:
@@ -78,9 +94,25 @@ vulnerability-reporting:
 private-vulnerability-reporting:
   accepts-private-reports: true
   private-contact: https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/security/advisories/new
+  comment: >
+    Reports are transmitted via GitHub's encrypted security advisory system.
+    No separate PGP key is required. For reporters without a GitHub account,
+    please email aionsystem@outlook.com with the subject "SECURITY: [component]".
+
+security-related-components:
+  - name: Abuse Detector
+    path: scripts/stp_abuse_detector.py
+    description: Tiered abuse detection (green/yellow/red) with GitHub Action integration.
+  - name: Blockchain Anchor
+    path: scripts/stp_blockchain_anchor.py
+    description: Multi‑chain anchoring (Bitcoin, Hedera, Ethereum, Stellar) of Merkle roots.
+
+export-control:
+  classification: EAR99
+  notice: See EXPORT-CONTROL.md for full details. SHA-256 hashing only; no encryption.
 
 # FROZEN CODE NOTICE
-# stamp/sovereign_trace_stamp.py is FROZEN-2.0 — permanently immutable.
-# If a security vulnerability is confirmed in FROZEN-2.0, the file will
-# be retired (not patched) and FROZEN-3.0 will be built from first principles.
+# stamp/sovereign_trace_stamp.py is FROZEN-4.0 — permanently immutable.
+# If a security vulnerability is confirmed in FROZEN-4.0, the file will
+# be retired (not patched) and FROZEN-5.0 will be built from first principles.
 # See SECURITY.md for the full frozen code security protocol.
