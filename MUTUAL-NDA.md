@@ -1,15 +1,16 @@
 # MUTUAL NON-DISCLOSURE AGREEMENT
 
 **Sovereign Trace Protocol**
-**Author:** Sheldon K. Salmon — AI Reliability & AGI Architect
-**Version:** 1.0 | Effective: March 2026
+**Author:** Sheldon K. Salmon — AI Reliability & ADI/AGI Architect
+**Version:** 1.2 | Effective: June 2026
+**Supersedes:** Version 1.0 (March 2026), Version 1.1 (June 2026)
 
 ---
 
 ## AGREEMENT
 
 This Mutual Non-Disclosure Agreement ("Agreement") is entered into between
-**Sheldon K. Salmon, AI Reliability & AGI Architect** ("Party A") and
+**Sheldon K. Salmon, AI Reliability & ADI/AGI Architect** ("Party A") and
 the organization or individual identified in the signature block below
 ("Party B"), collectively the "Parties."
 
@@ -87,7 +88,10 @@ Each Party agrees to:
     use or disclosure of Confidential Information
 
 (e) Return or destroy the other Party's Confidential Information upon
-    written request or termination of this Agreement
+    written request or termination of this Agreement. The receiving Party
+    may retain one archival copy of Confidential Information for legal
+    compliance and dispute resolution purposes, provided such copy remains
+    subject to confidentiality obligations indefinitely.
 
 ---
 
@@ -120,23 +124,41 @@ an architectural and legal commitment, not a modifiable preference.
 Confidential Information subject to this Agreement is distinct from
 public registry entries and is governed by this Agreement's terms.
 
+**Party A acknowledges that any Confidential Information it voluntarily
+submits as part of a certification engagement or public ledger entry
+will become subject to the No‑Deletion Policy and may not be retracted.**
+
 ---
 
 ## 8. REMEDIES
 
 Each Party acknowledges that breach of this Agreement may cause
 irreparable harm for which monetary damages would be inadequate.
-Each Party therefore agrees that the non-breaching Party is entitled
-to seek injunctive or other equitable relief without posting bond
-or other security, in addition to all other available remedies.
+Before seeking injunctive or other equitable relief, the non‑breaching
+Party shall provide written notice of the breach and give the breaching
+Party five (5) business days to cure the breach, unless the breach is
+likely to cause immediate and irreparable harm (e.g., public disclosure
+of trade secrets). Thereafter, the non‑breaching Party is entitled to
+seek injunctive or equitable relief without posting bond or other
+security, in addition to all other available remedies.
 
 ---
 
 ## 9. GOVERNING LAW AND DISPUTE RESOLUTION
 
-This Agreement is governed by applicable law. Disputes shall be
-resolved by binding arbitration consistent with `TERMS-OF-SERVICE.md`
-before either Party may seek injunctive relief in court.
+This Agreement shall be governed by the laws of the State of New York,
+USA, without regard to its conflict of laws principles.
+
+Any dispute arising from this Agreement shall first be subject to
+good‑faith negotiation for fifteen (15) days. If unresolved, the dispute
+shall be resolved by binding arbitration administered by JAMS under its
+Commercial Arbitration Rules then in effect. The arbitration shall be
+conducted in English in New York County, New York. The arbitrator's award
+may be entered as a judgment in any court of competent jurisdiction.
+
+Either Party may seek injunctive relief from a court of competent
+jurisdiction to prevent immediate and irreparable harm without first
+engaging in arbitration.
 
 ---
 
@@ -149,29 +171,62 @@ agreement signed by both Parties.
 
 ---
 
-## SIGNATURES
+## 11. SEVERABILITY
 
-```
+If any provision of this Agreement is held to be invalid or unenforceable,
+the remaining provisions shall continue in full force and effect.
+
+---
+
+## 12. ELECTRONIC SIGNATURES
+
+Electronic signatures (including typed names in an email or document)
+shall be deemed original signatures for the purpose of this Agreement.
+
+---
+
+## 13. NOTICES AND DELIVERY
+
+Signed copies of this Agreement may be delivered by email to
+**aionsystem@outlook.com** or via a GitHub issue with label
+`mutual-nda-submission`. Notices to Party B shall be sent to the
+email address provided in the signature block.
+
+---
+
+## 14. GOVERNMENT ENTITIES
+
+If Party B is a government or public entity, certain provisions
+(e.g., arbitration, indemnification) may be subject to local law.
+Party B shall notify Party A of its government status before signing,
+and the Parties shall negotiate an addendum if required to comply
+with applicable law.
+
+---
+
+## SIGNATURES
 PARTY A:
 
-Name:      Sheldon K. Salmon
-Title:     AI Reliability & AGI Architect
-Date:      ___________________________
+Name: Sheldon K. Salmon
+Title: AI Reliability & ADI/AGI Architect
+Email: aionsystem@outlook.com
+Date: ___________________________
 Signature: ___________________________
-
 
 PARTY B:
 
 Organization: _________________________
 
-Name:      ___________________________
-Title:     ___________________________
-Date:      ___________________________
+Name: ___________________________
+Title: ___________________________
+Email: ___________________________
+Date: ___________________________
 Signature: ___________________________
-```
+
+text
 
 ---
 
-*MUTUAL-NDA.md*
-*Sovereign Trace Protocol | Sheldon K. Salmon | March 2026*
-*This document does not constitute legal advice.*
+*MUTUAL-NDA.md — v1.2 (June 2026)*
+*Sovereign Trace Protocol | Sheldon K. Salmon — AI Reliability & ADI/AGI Architect*
+*This document does not constitute legal advice. Consult qualified counsel.*
