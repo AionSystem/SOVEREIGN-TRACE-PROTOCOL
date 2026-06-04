@@ -1,0 +1,96 @@
+name: "Code Snippet Seal — Sovereign Trace Protocol"
+description: "Seal a small code snippet, function, or algorithm before sharing publicly. Proves you wrote it first."
+title: "[STP-CODE] — [LANGUAGE/PROJECT] — [DATE]"
+labels: ["code-snippet", "pending-seal"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Code Snippet Seal – Sovereign Trace Protocol (FROZEN‑4.0)
+
+        This form seals a small code snippet, function, or algorithm. Use it to prove prior art before sharing on forums, chat, or social media.
+
+        **⚠️ CRITICAL WARNINGS – READ BEFORE PROCEEDING ⚠️**
+        - The snippet becomes **public** and **permanent**.
+        - Your GitHub username is **publicly linked** to this seal.
+        - **Do not include API keys, passwords, or secrets.**
+        - **Do not edit this issue after sealing** – the hash will change.
+        - A correction creates a new entry; the original remains.
+
+        **Fields marked with `*` are required.**
+
+  - type: input
+    id: submitter_name
+    attributes:
+      label: "Your Name (Optional)"
+      placeholder: "First Last or leave blank"
+    validations:
+      required: false
+
+  - type: input
+    id: language
+    attributes:
+      label: "Programming Language *"
+      placeholder: "Python, JavaScript, Rust, etc."
+    validations:
+      required: true
+
+  - type: textarea
+    id: code
+    attributes:
+      label: "Code Snippet *"
+      description: "Paste the exact code. Keep under 50,000 characters."
+      placeholder: "def fib(n): return n if n < 2 else fib(n-1) + fib(n-2)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "Context (Optional)"
+      description: "Where did you write this? What problem does it solve? Keep under 5,000 characters."
+      placeholder: "Written during discussion on Discord about dynamic programming."
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting_urls
+    attributes:
+      label: "Supporting Files URLs (Optional)"
+      placeholder: "https://gist.github.com/..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting_hashes
+    attributes:
+      label: "SHA‑256 hashes (optional, recommended)"
+      placeholder: "a3f9c12e7d..."
+    validations:
+      required: false
+
+  - type: input
+    id: correction_of
+    attributes:
+      label: "Correction of (optional)"
+      placeholder: "#42"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: "Declaration *"
+      options:
+        - label: "I affirm this is the exact code snippet I wrote, and I am its author or have permission to seal it."
+          required: true
+        - label: "I have removed all secrets and API keys."
+          required: true
+        - label: "I understand this submission is immutable and public."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        **Contact:** `aionsystem@outlook.com`
