@@ -9,10 +9,10 @@
 [![Dependencies](https://img.shields.io/badge/DEPS-stdlib%20only-616161?style=flat-square)](https://docs.python.org/3/library/index.html)
 [![Tests](https://img.shields.io/badge/TESTS-30%20suites-1565C0?style=flat-square&logo=pytest&logoColor=white)](./tests/)
 [![Ledger](https://img.shields.io/badge/LEDGER-66%20entries-4527A0?style=flat-square&logo=hashnode&logoColor=white)](./ledger/)
-[![Templates](https://img.shields.io/badge/TEMPLATES-22%20issue%20types-0288D1?style=flat-square)](./ISSUE_TEMPLATE/)
+[![Templates](https://img.shields.io/badge/TEMPLATES-31%20issue%20types-0288D1?style=flat-square)](./ISSUE_TEMPLATE/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-darkgreen.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![License: Commercial](https://img.shields.io/badge/License-Commercial-orange.svg)](./LICENSE-COMMERICAL.md)
+[![License: Commercial](https://img.shields.io/badge/License-Commercial-orange.svg)](./LICENSE-COMMERCIAL.md)
 [![Legal Posture](https://img.shields.io/badge/LEGAL-Posture%20Active-8B0000?style=flat-square)](./LEGAL-POSTURE.md)
 
 </div>
