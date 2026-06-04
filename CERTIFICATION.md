@@ -498,16 +498,27 @@ ledger under their own badge number. Their status is also recorded in the
 Full vetting process, skills assessment criteria, badge obligations, and
 revocation procedure: `AUDITOR-VETTING-PROCESS.md`.
 
-**The auditor badge:**
+### Auditor Ranks and Annual Seal Caps
 
-![STP Certified Auditor](assets/badges/stp_auditor/stp_auditor_template_v1.svg)
+| Rank | Badge | Annual Cap |
+|------|-------|------------|
+| **Beginner (Probationary)** | Silver outline | 50 |
+| **Standard** | Silver fill with blue marker | 100 |
+| **Senior** | Gold fill with black diamond | 200 |
 
-**Badge properties:**
+Cap rollover: Unused seals do not roll over. The cap resets on the badge anniversary date.
+Advancement criteria and the full rank policy are defined in `AUDITOR-VETTING-PROCESS.md`.
+
+**The auditor badge (Senior example):**
+
+![STP Certified Auditor (Senior)](assets/badges/stp_auditor/stp_auditor_badge_senior.svg)
+
+**Badge properties (all ranks):**
 - Non‑transferable — bound to the auditor's name and LinkedIn permanently
 - SHA‑256 sealed at issuance — badge number is cryptographically anchored
 - Term: 1 year from issuance — renewable by reapplication only
-- Annual cap: 50 sealed audits per calendar year per badge
-- Badge number format: `STP-AUDITOR-XXXX`
+- Badge number format: `STP-AUDITOR-XXXX` (the rank is encoded in the badge image, not the number)
+- Annual seal cap as above
 
 **Verification:**
 Every audit completion is verified live against `.github/verified-auditors.json`
@@ -533,7 +544,7 @@ File a `12-auditor-application.yml` issue. Skills‑based review only —
 no credentials required. Demonstrated ability to assess AI outputs honestly
 is the criterion. Applications reviewed Monday and Tuesday.
 Not every application is accepted. There is no appeal process.
-See `AUDITOR-VETTING-PROCESS.md` for full process and criteria.
+See `AUDITOR-VETTING-PROCESS.md` for full process, criteria, and advancement.
 
 ---
 
