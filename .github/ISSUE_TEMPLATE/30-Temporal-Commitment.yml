@@ -1,0 +1,94 @@
+name: "Temporal Commitment — Sovereign Trace Protocol"
+description: "Seal a personal or professional commitment with a deadline. Proves what you pledged and when."
+title: "[STP-COMMIT] — [COMMITMENT TOPIC] — [DATE]"
+labels: ["commitment", "pending-seal"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Temporal Commitment – Sovereign Trace Protocol (FROZEN‑4.0)
+
+        This form seals a commitment – a promise to yourself or others – with a deadline. Use it for accountability: fitness goals, project milestones, personal pledges.
+
+        **⚠️ CRITICAL WARNINGS – READ BEFORE PROCEEDING ⚠️**
+        - The commitment text is **public** and **permanent**.
+        - Your GitHub username is **publicly linked**.
+        - **Do not include sensitive personal information.**
+        - **Do not edit after sealing.** A correction creates a new entry.
+
+        **Fields marked with `*` are required.**
+
+  - type: input
+    id: submitter_name
+    attributes:
+      label: "Your Name (Optional)"
+      placeholder: "First Last or leave blank"
+    validations:
+      required: false
+
+  - type: input
+    id: commitment_title
+    attributes:
+      label: "Commitment Title *"
+      placeholder: "e.g., Release open‑source library, Run marathon"
+    validations:
+      required: true
+
+  - type: textarea
+    id: commitment_text
+    attributes:
+      label: "Commitment Text *"
+      description: "Write exactly what you promise to do. Keep under 10,000 characters."
+      placeholder: "I commit to releasing my‑library v1.0 by June 30, 2026."
+    validations:
+      required: true
+
+  - type: input
+    id: deadline
+    attributes:
+      label: "Deadline *"
+      description: "YYYY-MM-DD"
+      placeholder: "2026-12-31"
+    validations:
+      required: true
+
+  - type: textarea
+    id: condition
+    attributes:
+      label: "Condition (Optional)"
+      description: "If applicable, what would nullify this commitment? Keep under 2,000 characters."
+      placeholder: "This commitment is void if I lose access to the required hardware."
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting_urls
+    attributes:
+      label: "Supporting URLs (Optional)"
+      placeholder: "https://github.com/..."
+    validations:
+      required: false
+
+  - type: input
+    id: correction_of
+    attributes:
+      label: "Correction of (optional)"
+      placeholder: "#42"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: "Declaration *"
+      options:
+        - label: "I affirm this is my genuine commitment, made freely and without coercion."
+          required: true
+        - label: "I understand this submission is immutable and public."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        **Contact:** `aionsystem@outlook.com`
