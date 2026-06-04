@@ -1,0 +1,146 @@
+name: "📬 General Feedback & Template Ideas — Sovereign Trace Protocol"
+description: "Suggestions, bug reports, questions, or propose a new template. Help shape the future of STP."
+title: "[FEEDBACK/TEMPLATE] — [SHORT TITLE]"
+labels: ["feedback", "triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## General Feedback & Template Ideas – Sovereign Trace Protocol (FROZEN‑4.0)
+
+        Use this form to:
+        - Suggest improvements to existing templates
+        - Report bugs or ask questions
+        - **Propose a brand new template** (describe purpose, fields, and use case)
+
+        **⚠️ NOTICE ⚠️**
+        - This form does **not** create a sealed cryptographic record. Use other templates for sealing.
+        - Your GitHub username will be public. This is a public issue.
+        - Do not include sensitive information (passwords, API keys, personal data).
+
+        **Fields marked with `*` are required.**
+
+  - type: dropdown
+    id: feedback_type
+    attributes:
+      label: "What type of submission is this? *"
+      options:
+        - "Suggestion – improve an existing template"
+        - "Bug report – something is broken"
+        - "Question – need clarification"
+        - "Template idea – propose a completely new template (see fields below)"
+        - "Other – describe"
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: title_short
+    attributes:
+      label: "Short Title *"
+      description: "Brief summary (e.g., 'Typo in template 05', 'Idea: Seal for code snippets')"
+      placeholder: "Idea: Add template for X"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Detailed Feedback *"
+      description: "Describe your feedback clearly. For bugs: include steps. For suggestions: explain why it helps. Keep under 10,000 characters."
+      placeholder: "I noticed that template 07... It would be better if..."
+    validations:
+      required: true
+
+  - type: input
+    id: affected_template
+    attributes:
+      label: "Affected Template (if applicable)"
+      description: "e.g., 07-general-trace.yml, or 'all'"
+      placeholder: "07-general-trace.yml"
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## For Template Ideas Only (fill if you selected "Template idea" above)
+
+  - type: input
+    id: proposed_name
+    attributes:
+      label: "Proposed Template Name (for new template ideas)"
+      description: "e.g., 'Code Snippet Seal', 'Meeting Minutes'"
+      placeholder: "My New Template"
+    validations:
+      required: false
+
+  - type: textarea
+    id: purpose_description
+    attributes:
+      label: "Purpose and Use Case (for new template ideas)"
+      description: "What problem does this template solve? Who will use it? Keep under 5,000 characters."
+      placeholder: "This template would allow users to seal ..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: proposed_fields
+    attributes:
+      label: "Proposed Fields (for new template ideas)"
+      description: "List the fields you imagine (e.g., submitter name, date, description, file URL). One per line."
+      placeholder: "submitter name (optional)\ndate (required)\nshort description (required)\nevidence URL (optional)"
+    validations:
+      required: false
+
+  - type: textarea
+    id: example_use
+    attributes:
+      label: "Example Use (for new template ideas)"
+      description: "Give a concrete example of someone using this template. Keep under 5,000 characters."
+      placeholder: "A researcher wants to seal... They would fill in..."
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+  - type: textarea
+    id: screenshots_urls
+    attributes:
+      label: "Screenshots or Supporting URLs (Optional)"
+      description: "Paste URLs to images or files. The protocol does not accept file uploads directly."
+      placeholder: "https://imgur.com/abc123 or https://gist.github.com/..."
+    validations:
+      required: false
+
+  - type: input
+    id: contact_ok
+    attributes:
+      label: "May we contact you for clarification? (Optional)"
+      description: "If you're open to follow-up, leave your email or handle. Not required."
+      placeholder: "email@example.com or @username"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: "Declaration *"
+      options:
+        - label: "I understand this is a public issue and I have not included any sensitive information."
+          required: true
+        - label: "I have checked existing issues and templates to avoid duplicates (to the best of my knowledge)."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **After submission**: A maintainer will review your feedback. Template ideas will be considered for future STP versions.
+
+        **Contact:** `aionsystem@outlook.com`
