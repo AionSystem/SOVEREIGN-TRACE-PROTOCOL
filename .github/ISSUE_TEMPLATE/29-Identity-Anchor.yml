@@ -1,0 +1,92 @@
+name: "Identity Anchor — Sovereign Trace Protocol"
+description: "Seal a public key fingerprint, email, or social media handle to your GitHub identity. Proves you control both."
+title: "[STP-IDENTITY] — [ALIAS] — [DATE]"
+labels: ["identity-anchor", "pending-seal"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Identity Anchor – Sovereign Trace Protocol (FROZEN‑4.0)
+
+        This form seals a link between your GitHub identity and another identifier (email, PGP key, SSH key, X handle, etc.). Use it to later prove you are the same person.
+
+        **⚠️ CRITICAL WARNINGS – READ BEFORE PROCEEDING ⚠️**
+        - The identifier is **public** and **permanent**.
+        - Your GitHub username is **publicly linked**.
+        - **Do not anchor private email addresses you want to keep secret.**
+        - **Do not edit after sealing.**
+
+        **Fields marked with `*` are required.**
+
+  - type: input
+    id: submitter_name
+    attributes:
+      label: "Your Name (Optional)"
+      placeholder: "First Last or leave blank"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: id_type
+    attributes:
+      label: "Identifier Type *"
+      options:
+        - "Email address"
+        - "PGP fingerprint"
+        - "SSH public key fingerprint"
+        - "X (Twitter) handle"
+        - "Mastodon handle"
+        - "Other (specify in value)"
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: identifier_value
+    attributes:
+      label: "Identifier Value *"
+      description: "The exact value of the identifier (email, fingerprint, handle)."
+      placeholder: "alice@example.com or 3B89 7E1D 5D5C ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: signature
+    attributes:
+      label: "Signature (Optional but recommended)"
+      description: "A signed message with the identifier's private key linking to your GitHub username. Format: message + base64 signature."
+      placeholder: "-----BEGIN PGP SIGNATURE----- ..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting_urls
+    attributes:
+      label: "Proof URLs (Optional)"
+      placeholder: "https://twitter.com/username/status/..."
+    validations:
+      required: false
+
+  - type: input
+    id: correction_of
+    attributes:
+      label: "Correction of (optional)"
+      placeholder: "#42"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: "Declaration *"
+      options:
+        - label: "I affirm that I control the above identifier and am linking it to my GitHub account."
+          required: true
+        - label: "I understand this submission is immutable and public."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        **Contact:** `aionsystem@outlook.com`
