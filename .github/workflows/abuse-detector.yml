@@ -1,0 +1,27 @@
+name: Abuse Detector
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install requests pyyaml
+      - name: Run abuse detection
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          ENABLE_PERSPECTIVE: ${{ secrets.ENABLE_PERSPECTIVE }}
+          PERSPECTIVE_API_KEY: ${{ secrets.PERSPECTIVE_API_KEY }}
+          PERSPECTIVE_THRESHOLD: ${{ secrets.PERSPECTIVE_THRESHOLD }}
+        run: python scripts/stp_abuse_detector.py
