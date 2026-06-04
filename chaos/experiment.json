@@ -1,0 +1,79 @@
+{
+  "version": "1.0.0",
+  "title": "Sovereign Trace – Asyncio Core Survivability",
+  "description": "Inject process failures and network interruptions during stamp generation to ensure the function either completes or fails cleanly without data corruption.",
+  "tags": ["stp", "survivability", "chaos-engineering"],
+  "steady-state-hypothesis": {
+    "title": "Stamp function completes without corruption",
+    "probes": [
+      {
+        "name": "stamp-verification",
+        "type": "probe",
+        "tolerance": true,
+        "provider": {
+          "type": "python",
+          "module": "sovereign_trace_stamp",
+          "func": "verify_stamp_integrity",
+          "arguments": {
+            "sample_entry": "test_stamp.json"
+          }
+        }
+      }
+    ]
+  },
+  "method": [
+    {
+      "type": "action",
+      "name": "kill-stamp-process",
+      "provider": {
+        "type": "process",
+        "module": "chaostoolkit.process",
+        "func": "terminate_process",
+        "arguments": {
+          "process_name": "sovereign_trace_stamp.py",
+          "signal": "SIGTERM"
+        }
+      },
+      "pauses": {
+        "after": 2
+      }
+    },
+    {
+      "type": "action",
+      "name": "corrupt-memory",
+      "provider": {
+        "type": "python",
+        "module": "chaostoolkit.memory",
+        "func": "random_bit_flip",
+        "arguments": {
+          "target": "sovereign_trace_stamp.InternalState",
+          "probability": 0.01
+        }
+      }
+    },
+    {
+      "type": "action",
+      "name": "network-partition",
+      "provider": {
+        "type": "network",
+        "module": "chaostoolkit.network",
+        "func": "drop_traffic",
+        "arguments": {
+          "host": "github.com",
+          "port": 443,
+          "duration": 5
+        }
+      }
+    }
+  ],
+  "rollbacks": [
+    {
+      "type": "action",
+      "name": "restore-network",
+      "provider": {
+        "type": "network",
+        "func": "restore_traffic"
+      }
+    }
+  ]
+}
