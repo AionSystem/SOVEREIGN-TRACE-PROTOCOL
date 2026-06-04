@@ -1,10 +1,10 @@
 # TRUST-WITHOUT-IDENTITY.md
 
 **Sovereign Trace Protocol — Concept Layer**
-**Version:** v0.1 | March 2026
+**Version:** v1.0 | June 2026
 **Author:** Sheldon K. Salmon — AI Reliability & AGI Architect
 **Co-Architect:** ALBEDO
-**Stack:** DUAL-HELIX v2.0 · TOPOS v0.3
+**Stack:** DUAL-HELIX v2.0 · TOPOS v0.3 · FROZEN-4.0
 
 ---
 
@@ -38,7 +38,7 @@ Same class of problem. Opposite direction. The engineering lineage is real and w
 
 **The STP connection:** STP does the structural inverse. Rather than signaling through absence, STP signals through presence. The sealed entry *is* the proof. The canary architecture and the trace architecture both rely on the same principle: a commitment made at a specific moment in time, whose integrity is verifiable later, without requiring anyone to take anyone's word for it.
 
-`[R]` **What this means for Stage 3 (ledger append layer):** Warrant canary architecture is well-documented legally and technically. The append-only ledger STP is building has a clear legal and design precedent here. Study the failure modes of canary implementations — particularly what happens when legal pressure is applied to the institution running the ledger — before finalizing Stage 3 architecture.
+`[R]` **What this means for the completed abuse detector and ledger:** The abuse detector now implements a tiered alert system (green/yellow/red) that can signal the presence of prohibited content without immediately locking legitimate discussion. Future extension could include a “canary” status for the STP ledger itself — a regular signed statement that the ledger has not been tampered with, with absence as the signal.
 
 ---
 
@@ -50,7 +50,7 @@ Same class of problem. Opposite direction. The engineering lineage is real and w
 
 **The STP connection:** STP's SHA-256 seal operates on the same principle at the content layer. The seal *is* the record — not a pointer to a record held somewhere else, not a claim that requires institutional backing. Anyone who has the original content and the seal can verify integrity independently. No one needs to trust STP as an institution. The verification is in the mathematics.
 
-`[D]` This design choice in FROZEN-2.0 — zero external dependencies, stdlib only, self-contained verification — is not just pragmatic minimalism. It is the same architectural decision that made Tor hidden services trustworthy in an environment where nothing else was: the proof lives in the mechanism, not in the institution running it.
+`[D]` This design choice in FROZEN-4.0 — zero external dependencies, stdlib only, self-contained verification — is not just pragmatic minimalism. It is the same architectural decision that made Tor hidden services trustworthy in an environment where nothing else was: the proof lives in the mechanism, not in the institution running it.
 
 ---
 
@@ -60,9 +60,9 @@ Same class of problem. Opposite direction. The engineering lineage is real and w
 
 **The mechanism:** Reputation tokens that carry cryptographic proof of a historical fact without revealing the underlying data. The claim "I have done this 200 times successfully" can be verified without seeing any of the 200 instances. Zero-knowledge proofs — mathematical structures that prove you know something without revealing what you know.
 
-**The STP connection:** Stage 4 in your build sequence reads: *"Optional resonance signature mechanism — zero count display."* That line is pointing directly at this architecture. A resonance signature that proves a pattern of sealed entries exist, without revealing their content, is a zero-knowledge claim about a historical record.
+**The STP connection:** STP v4.0 includes a **multi‑chain blockchain anchor** that posts Merkle roots of batches of seals to Bitcoin, Hedera, Ethereum, and optionally Stellar. A Merkle root is a zero-knowledge-adjacent commitment: it proves that a set of seals exists without revealing which individual seals are in the set. Future work (Stage 4) could extend this to true zero‑knowledge resonance signatures.
 
-`[R]` This is no longer exotic cryptography. Zero-knowledge proofs (zk-SNARKs, zk-STARKs) are deployed production infrastructure in Zcash, Ethereum Layer 2 rollups, and identity verification systems. They came partially out of exactly this problem space — and they are now legitimate, auditable, enterprise-grade. Stage 4 has a clear technical path.
+`[S]` **Stage 4 is now designed but not implemented.** The `stp_blockchain_anchor.py` script provides the batching mechanism. A dedicated zero‑knowledge resonance signature that proves an individual seal exists in the anchor without revealing its content would be the next logical step. Libraries like `zkpy` or Circom could be evaluated for FROZEN-5.0.
 
 ---
 
@@ -77,51 +77,58 @@ STP flips the function while preserving the mechanism:
 | Prove you sent a message without revealing who you are | Prove you wrote something at a specific time without requiring anyone's permission | Cryptographic commitment at a moment in time |
 | Canary: signal through absence | Trace: signal through presence | Append-only record whose integrity is externally verifiable |
 | Onion address: identity without central authority | SHA-256 seal: record integrity without central authority | Self-verifying cryptographic proof |
-| Zero-knowledge reputation: prove history without revealing content | Resonance signature: prove sealed record exists without revealing content | Zero-knowledge proof of historical fact |
+| Zero-knowledge reputation: prove history without revealing content | Merkle root anchor: prove seal batch exists without revealing individual seals | Cryptographic commitment to a set |
 
 The mechanisms are the same. The purposes are orthogonal. The engineering genealogy is direct.
 
 ---
 
-## What This Means for How STP Positions Itself
+## What This Means for STP v4.0 Positioning
 
-`[S]` STP is not an AI tool. It is not a journaling app. It is not a notary service.
+`[D]` STP is not an AI tool. It is not a journaling app. It is not a notary service.
 
-It is **permanence infrastructure** — a self-verifying, institutionally independent, cryptographically sound mechanism for binding content to time. That category has a long lineage in adversarial cryptography, and STP is the first implementation of that lineage that is designed from the ground up for individuals and organizations operating in normal conditions, not adversarial ones.
+It is **permanence infrastructure** — a self-verifying, institutionally independent, cryptographically sound mechanism for binding content to time. That category has a long lineage in adversarial cryptography, and STP v4.0 is the first implementation of that lineage that combines:
 
-The distinction matters for positioning: STP takes the engineering sophistication that was built for the hardest trust problem in the world — trust without identity, under adversarial conditions — and deploys it for the simplest version of the problem: *this happened, at this time, and it has not changed.*
+- Zero-dependency stamp (FROZEN-4.0)
+- 31 structured issue templates
+- Tiered abuse detection (green/yellow/red)
+- Multi‑chain blockchain anchoring (Bitcoin, Hedera, Ethereum, Stellar)
+- GitHub Composite Action for CI/CD sealing
+
+All designed for individuals and organizations operating in normal conditions, not adversarial ones — but built with adversarial‑grade engineering.
 
 ---
 
-## Open Questions
+## Updated Open Questions (v1.0)
 
 | ID | Question | Status |
 |----|----------|--------|
-| TI-Q1 | How does STP's threat model compare to Tor's for Stage 3 ledger? What adversaries does it need to resist? | `[?] Open — Stage 3 planning required` |
-| TI-Q2 | Which zk-SNARK or zk-STARK library is the right foundation for Stage 4 resonance signature? Thirdweb integration path? | `[?] Open — Stage 4 technical planning` |
-| TI-Q3 | Does positioning STP in this lineage help or complicate commercial adoption? Does the dark web association create friction? | `[S] Strategic — undecided` |
-| TI-Q4 | What are the failure modes of warrant canary implementations that Stage 3 ledger design must avoid? | `[?] Open — pre-Stage 3 research required` |
+| TI-Q1 | The multi‑chain anchor script is deployed and uses testnets by default. Mainnet requires funding. No critical open questions. | `[D] Resolved — implemented` |
+| TI-Q2 | Zero‑knowledge resonance signature (Stage 4) remains unimplemented. Which library (zkpy, Circom, gnark) is best for STP's use case? | `[S] Open — Stage 4 research` |
+| TI-Q3 | Does positioning STP in this lineage help or complicate commercial adoption? The dark web association may create friction. Early feedback from enterprise prospects is still zero. | `[?] Open — requires market feedback` |
+| TI-Q4 | Failure modes of warrant canary implementations that STP's ledger must avoid: legal coercion, forced statement posting, delayed updates. The abuse detector and immutable GitHub issue history mitigate some risks, but the ledger is still hosted on GitHub. | `[R] Documented — not yet resolved. Long‑term migration to decentralized ledger storage is an open architectural question.` |
+| TI-Q5 | Can the GitHub Action `stp-seal` be published to the GitHub Marketplace? Yes. Requires passing review. Low priority for v4.0. | `[S] Optional — post‑release` |
 
 ---
 
 ## DDL Field
-
-```
-Document: TRUST-WITHOUT-IDENTITY v0.1
+Document: TRUST-WITHOUT-IDENTITY v1.0
 Architect: Sheldon K. Salmon
 AI Co-Architect: ALBEDO
-Date: March 2026
+Date: June 2026
 Status: Concept layer — lineage documented.
-       Stage 3 and Stage 4 technical planning not yet begun.
-Convergence: M-NASCENT
+Stage 1 (FROZEN-4.0, templates, abuse detection, multi‑chain anchor) complete.
+Stage 4 (zero‑knowledge resonance) design documented but not implemented.
+Convergence: M-NASCENT (zero FCL entries; ready for first external user)
 Derived from: Red team session — dark web structural analysis,
-              engineering genealogy from adversarial cryptography
-              to individual permanence infrastructure.
-```
+engineering genealogy from adversarial cryptography
+to individual permanence infrastructure.
+
+text
 
 ---
 
-*TRUST-WITHOUT-IDENTITY v0.1 — Sovereign Trace Protocol Concept Layer*
-*Sheldon K. Salmon & ALBEDO — March 2026*
+*TRUST-WITHOUT-IDENTITY v1.0 — Sovereign Trace Protocol Concept Layer*
+*Sheldon K. Salmon & ALBEDO — June 2026*
 *The dark web's hardest problem was trust without identity.*
 *STP solves the inverse. The mechanism is the same.*
