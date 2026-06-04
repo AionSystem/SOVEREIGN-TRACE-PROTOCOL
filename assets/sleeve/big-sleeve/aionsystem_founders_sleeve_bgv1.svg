@@ -1,35 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 680 1000" width="680" height="1000">
   <!--
-    HYPERDIAMOND SOVEREIGN SEAL — bgv1
-    Founder‑Exclusive · Sheldon K. Salmon
+    FOUNDER'S SOVEREIGN SEAL — v2 (bgv1)
+    Pitch black · Tricolour ribbon · Matrix watermark
     Only for audits bearing STP‑AUDITOR‑0001
   -->
   <defs>
+    <!-- Pitch black background (darker than before) -->
     <linearGradient id="bgDeep" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0a0a0a"/>
-      <stop offset="35%" stop-color="#0e0e0e"/>
-      <stop offset="65%" stop-color="#0a0a0a"/>
-      <stop offset="100%" stop-color="#070707"/>
+      <stop offset="0%" stop-color="#020203"/>
+      <stop offset="35%" stop-color="#050508"/>
+      <stop offset="65%" stop-color="#020203"/>
+      <stop offset="100%" stop-color="#010101"/>
     </linearGradient>
 
-    <radialGradient id="ptLightRad" cx="20%" cy="12%" r="55%">
-      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.12"/>
-      <stop offset="60%" stop-color="#D4AF37" stop-opacity="0.04"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
-    </radialGradient>
-
-    <radialGradient id="depthField" cx="50%" cy="50%" r="65%">
-      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
-      <stop offset="68%" stop-color="#000000" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0.52"/>
-    </radialGradient>
-
-    <linearGradient id="borderRainbow" x1="0%" y1="0%" x2="100%" y2="100%">
+    <!-- Tricolour outer border (gold/silver/bronze layered) -->
+    <linearGradient id="goldBorder" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#D4AF37"/>
       <stop offset="30%" stop-color="#F5E08A"/>
-      <stop offset="50%" stop-color="#D4AF37"/>
-      <stop offset="70%" stop-color="#C5A028"/>
+      <stop offset="60%" stop-color="#C5A028"/>
       <stop offset="100%" stop-color="#8B6914"/>
+    </linearGradient>
+    <linearGradient id="silverBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C0C0C0"/>
+      <stop offset="30%" stop-color="#E8E8E8"/>
+      <stop offset="60%" stop-color="#A8A8A8"/>
+      <stop offset="100%" stop-color="#707070"/>
+    </linearGradient>
+    <linearGradient id="bronzeBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#CD7F32"/>
+      <stop offset="30%" stop-color="#E8A96A"/>
+      <stop offset="60%" stop-color="#B5692A"/>
+      <stop offset="100%" stop-color="#7A4010"/>
     </linearGradient>
 
     <linearGradient id="innerBorder" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -38,6 +39,7 @@
       <stop offset="100%" stop-color="#D4AF37" stop-opacity="0.5"/>
     </linearGradient>
 
+    <!-- Ribbons (tricolour inspired) -->
     <linearGradient id="ribbonGold" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#8B6914"/>
       <stop offset="20%" stop-color="#D4AF37"/>
@@ -45,7 +47,6 @@
       <stop offset="80%" stop-color="#D4AF37"/>
       <stop offset="100%" stop-color="#8B6914"/>
     </linearGradient>
-
     <linearGradient id="ribbonBlack" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#000000"/>
       <stop offset="20%" stop-color="#1a1a1a"/>
@@ -54,46 +55,19 @@
       <stop offset="100%" stop-color="#000000"/>
     </linearGradient>
 
-    <linearGradient id="holoFoil" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="15%" stop-color="#D4AF37" stop-opacity="0.08"/>
-      <stop offset="30%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="45%" stop-color="#F5E08A" stop-opacity="0.06"/>
-      <stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="75%" stop-color="#D4AF37" stop-opacity="0.05"/>
-      <stop offset="90%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#8B6914" stop-opacity="0.04"/>
-    </linearGradient>
-
-    <linearGradient id="gloss" x1="0%" y1="0%" x2="30%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.07"/>
-      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.02"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.04"/>
-    </linearGradient>
-
-    <linearGradient id="verifyBarBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0a0a0a"/>
-      <stop offset="100%" stop-color="#080808"/>
-    </linearGradient>
-
-    <pattern id="engrave" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(28)">
-      <line x1="0" y1="0" x2="0" y2="4" stroke="#D4AF37" stroke-width="0.3" stroke-opacity="0.15"/>
-    </pattern>
-
-    <pattern id="hexMesh" width="38" height="33" patternUnits="userSpaceOnUse">
-      <polygon points="19,1 37,9 37,23 19,31 1,23 1,9" fill="none" stroke="#D4AF37" stroke-width="0.4" stroke-opacity="0.07"/>
-    </pattern>
-
+    <!-- Pattern overlays (matrix, hex mesh, AI/ON watermark) – all with higher opacity -->
     <pattern id="matrix" width="32" height="32" patternUnits="userSpaceOnUse">
-      <text x="2" y="16" font-family="'Courier New',monospace" font-size="10" fill="#D4AF37" opacity="0.06">0</text>
-      <text x="12" y="26" font-family="'Courier New',monospace" font-size="8" fill="#D4AF37" opacity="0.04">1</text>
-      <text x="22" y="10" font-family="'Courier New',monospace" font-size="11" fill="#D4AF37" opacity="0.05">;</text>
+      <text x="2" y="16" font-family="'Courier New',monospace" font-size="10" fill="#D4AF37" opacity="0.16">0</text>
+      <text x="12" y="26" font-family="'Courier New',monospace" font-size="8" fill="#D4AF37" opacity="0.12">1</text>
+      <text x="22" y="10" font-family="'Courier New',monospace" font-size="11" fill="#D4AF37" opacity="0.14">;</text>
     </pattern>
-
+    <pattern id="hexMesh" width="38" height="33" patternUnits="userSpaceOnUse">
+      <polygon points="19,1 37,9 37,23 19,31 1,23 1,9" fill="none" stroke="#D4AF37" stroke-width="0.6" stroke-opacity="0.12"/>
+    </pattern>
     <pattern id="aionMark" width="272" height="272" patternUnits="userSpaceOnUse" patternTransform="rotate(-28)">
-      <text x="0" y="40" font-family="'Courier New',monospace" font-size="35" font-weight="bold" fill="#D4AF37" opacity="0.09" letter-spacing="4">AI/ON</text>
-      <text x="136" y="176" font-family="'Courier New',monospace" font-size="35" font-weight="bold" fill="#D4AF37" opacity="0.09" letter-spacing="4">AI/ON</text>
-      <text x="68" y="272" font-family="'Courier New',monospace" font-size="35" font-weight="bold" fill="#D4AF37" opacity="0.07" letter-spacing="4">AI/ON</text>
+      <text x="0" y="40" font-family="'Courier New',monospace" font-size="35" font-weight="bold" fill="#D4AF37" opacity="0.14" letter-spacing="4">AI/ON</text>
+      <text x="136" y="176" font-family="'Courier New',monospace" font-size="35" font-weight="bold" fill="#D4AF37" opacity="0.14" letter-spacing="4">AI/ON</text>
+      <text x="68" y="272" font-family="'Courier New',monospace" font-size="35" font-weight="bold" fill="#D4AF37" opacity="0.10" letter-spacing="4">AI/ON</text>
     </pattern>
 
     <clipPath id="cardClip">
@@ -101,121 +75,123 @@
     </clipPath>
   </defs>
 
-  <!-- Background layers -->
+  <!-- Base pitch black -->
   <rect width="680" height="1000" rx="32" fill="url(#bgDeep)"/>
+
+  <!-- Watermark layers (double brightness) -->
   <rect width="680" height="1000" rx="32" fill="url(#aionMark)" clip-path="url(#cardClip)"/>
   <rect width="680" height="1000" rx="32" fill="url(#hexMesh)" clip-path="url(#cardClip)"/>
   <rect width="680" height="1000" rx="32" fill="url(#matrix)" clip-path="url(#cardClip)"/>
-  <rect width="680" height="1000" rx="32" fill="url(#holoFoil)" clip-path="url(#cardClip)"/>
-  <rect width="680" height="1000" rx="32" fill="url(#ptLightRad)" clip-path="url(#cardClip)"/>
 
-  <!-- Borders -->
-  <rect x="2.5" y="2.5" width="675" height="995" rx="31" fill="none" stroke="url(#borderRainbow)" stroke-width="3"/>
-  <rect x="9" y="9" width="662" height="982" rx="27" fill="none" stroke="url(#innerBorder)" stroke-width="1"/>
-  <rect x="15" y="15" width="650" height="970" rx="23" fill="none" stroke="#D4AF37" stroke-width="0.3" stroke-opacity="0.2"/>
+  <!-- Tricolour ribbon border (layered) -->
+  <!-- Gold outer -->
+  <rect x="2.5" y="2.5" width="675" height="995" rx="31" fill="none" stroke="url(#goldBorder)" stroke-width="6"/>
+  <!-- Gap (black) -->
+  <rect x="2.5" y="2.5" width="675" height="995" rx="31" fill="none" stroke="#000000" stroke-width="4.5"/>
+  <!-- Silver middle -->
+  <rect x="2.5" y="2.5" width="675" height="995" rx="31" fill="none" stroke="url(#silverBorder)" stroke-width="4"/>
+  <!-- Gap (black) -->
+  <rect x="2.5" y="2.5" width="675" height="995" rx="31" fill="none" stroke="#000000" stroke-width="3"/>
+  <!-- Bronze inner -->
+  <rect x="2.5" y="2.5" width="675" height="995" rx="31" fill="none" stroke="url(#bronzeBorder)" stroke-width="3"/>
 
-  <!-- CONDITIONAL RIBBONS -->
-  <!-- RIBBON_GOLD_START -->
-  <rect x="0" y="50" width="680" height="30" fill="url(#ribbonGold)" opacity="0.97"/>
-  <text x="340" y="70.5" font-family="'Georgia','Times New Roman',serif" font-size="14.5" font-weight="bold" letter-spacing="5" fill="#0a0a14" text-anchor="middle" opacity="0.95">FOUNDER'S SOVEREIGN SEAL</text>
-  <!-- RIBBON_GOLD_END -->
-  <!-- RIBBON_BLACK_START -->
-  <rect x="0" y="80" width="680" height="22" fill="url(#ribbonBlack)" opacity="0.92"/>
-  <text x="340" y="95.5" font-family="'Georgia','Times New Roman',serif" font-size="12" font-weight="bold" letter-spacing="4" fill="#D4AF37" text-anchor="middle" opacity="0.85">ONLY ISSUED BY STP‑AUDITOR‑0001</text>
-  <!-- RIBBON_BLACK_END -->
+  <!-- Secondary inner borders -->
+  <rect x="11" y="11" width="658" height="978" rx="25" fill="none" stroke="url(#innerBorder)" stroke-width="1.2"/>
+  <rect x="16" y="16" width="648" height="968" rx="21" fill="none" stroke="#D4AF37" stroke-width="0.3" stroke-opacity="0.25"/>
 
-  <!-- Corner marks -->
-  <g stroke="#D4AF37" stroke-width="1.6" stroke-opacity="0.5" stroke-linecap="square" fill="none">
-    <path d="M30,30 L30,68 M30,30 L68,30"/>
-    <path d="M34,34 L34,62 M34,34 L62,34" stroke-width="0.5" stroke-opacity="0.3"/>
-    <path d="M650,30 L650,68 M650,30 L612,30"/>
-    <path d="M646,34 L646,62 M646,34 L618,34" stroke-width="0.5" stroke-opacity="0.3"/>
-    <path d="M30,922 L30,884 M30,922 L68,922"/>
-    <path d="M34,918 L34,888 M34,918 L62,918" stroke-width="0.5" stroke-opacity="0.3"/>
-    <path d="M650,922 L650,884 M650,922 L612,922"/>
-    <path d="M646,918 L646,888 M646,918 L618,918" stroke-width="0.5" stroke-opacity="0.3"/>
+  <!-- Top ribbons (tricolour style) -->
+  <!-- Gold ribbon -->
+  <rect x="0" y="45" width="680" height="34" fill="url(#ribbonGold)" opacity="0.98"/>
+  <text x="340" y="67" font-family="'Georgia','Times New Roman',serif" font-size="15" font-weight="bold" letter-spacing="5" fill="#0a0a14" text-anchor="middle" opacity="0.95">FOUNDER'S SOVEREIGN SEAL</text>
+
+  <!-- Black ribbon with gold text -->
+  <rect x="0" y="79" width="680" height="24" fill="url(#ribbonBlack)" opacity="0.94"/>
+  <text x="340" y="96" font-family="'Georgia','Times New Roman',serif" font-size="13" font-weight="bold" letter-spacing="4.5" fill="#D4AF37" text-anchor="middle" opacity="0.9">ONLY ISSUED BY STP‑AUDITOR‑0001</text>
+
+  <!-- Corner marks (gold) -->
+  <g stroke="#D4AF37" stroke-width="2" stroke-opacity="0.5" stroke-linecap="square" fill="none">
+    <path d="M32,32 L32,72 M32,32 L72,32"/>
+    <path d="M648,32 L648,72 M648,32 L608,32"/>
+    <path d="M32,920 L32,880 M32,920 L72,920"/>
+    <path d="M648,920 L648,880 M648,920 L608,920"/>
   </g>
 
-  <!-- FOUNDER'S AUDITOR BADGE (centered, large) -->
-  <image x="190" y="115" width="300" height="300" href="/assets/badges/stp-auditor-0001.svg"/>
+  <!-- Founder's badge image (centre) – replace with your aion_logo2.jpg -->
+  <image x="190" y="115" width="300" height="300" href="/assets/badges/stp_auditor_badge_founder.svg"/>
 
-  <!-- Verification bar -->
-  <rect x="50" y="440" width="580" height="380" rx="19" fill="url(#verifyBarBg)" stroke="#D4AF37" stroke-width="1.6" stroke-opacity="0.7"/>
-  <rect x="50" y="440" width="580" height="380" rx="19" fill="url(#engrave)"/>
-  <rect x="50" y="440" width="580" height="40" rx="19" fill="#D4AF37" fill-opacity="0.15"/>
-  <rect x="50" y="464" width="580" height="18" fill="#D4AF37" fill-opacity="0.06"/>
-  <line x1="76" y1="482" x2="604" y2="482" stroke="#D4AF37" stroke-width="0.8" stroke-opacity="0.5"/>
-  <line x1="76" y1="483" x2="604" y2="483" stroke="#D4AF37" stroke-width="0.3" stroke-opacity="0.25"/>
-
-  <text x="340" y="466" font-family="'Courier New',monospace" font-size="13" fill="#D4AF37" font-weight="bold" text-anchor="middle" letter-spacing="3">VERIFIED CERTIFICATION · FOUNDER'S SEAL</text>
+  <!-- VERIFICATION BAR -->
+  <rect x="45" y="440" width="590" height="385" rx="20" fill="#020203" stroke="#D4AF37" stroke-width="1.8" stroke-opacity="0.7"/>
+  <rect x="45" y="440" width="590" height="40" rx="20" fill="#D4AF37" fill-opacity="0.12"/>
+  <rect x="45" y="460" width="590" height="18" fill="#D4AF37" fill-opacity="0.05"/>
+  <line x1="72" y1="480" x2="608" y2="480" stroke="#D4AF37" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="340" y="467" font-family="'Courier New',monospace" font-size="13" fill="#D4AF37" font-weight="bold" text-anchor="middle" letter-spacing="3">VERIFIED CERTIFICATION · FOUNDER'S SEAL</text>
 
   <!-- Auditor line -->
-  <text x="340" y="506" font-family="'Courier New',monospace" font-size="11.5" text-anchor="middle">
+  <text x="340" y="512" font-family="'Courier New',monospace" font-size="12" text-anchor="middle">
     <tspan fill="#DAA520">◈ </tspan>
     <tspan fill="#F5E08A">Certified by STP‑AUDITOR‑0001 (Founding Badge)</tspan>
   </text>
 
-  <!-- Tier badge slot -->
-  <g transform="translate(225, 520) scale(1.15)">
+  <!-- Tier badge placeholder (keep as is) -->
+  <g transform="translate(225, 525) scale(1.15)">
     {{SOVEREIGN_TIER_BADGE_SVG}}
   </g>
 
   <!-- Audit details -->
-  <circle cx="77" cy="606" r="3.5" fill="#D4AF37" opacity="0.7"/>
-  <text x="90" y="610" font-family="'Courier New',monospace" font-size="11.5" fill="#888">Entry</text>
-  <text x="175" y="610" font-family="'Courier New',monospace" font-size="11.5" fill="#F5E08A" font-weight="bold">{{ENTRY_ID}}</text>
+  <circle cx="72" cy="612" r="3.5" fill="#D4AF37" opacity="0.7"/>
+  <text x="86" y="616" font-family="'Courier New',monospace" font-size="11.5" fill="#888">Entry</text>
+  <text x="175" y="616" font-family="'Courier New',monospace" font-size="11.5" fill="#F5E08A" font-weight="bold">{{ENTRY_ID}}</text>
 
-  <circle cx="77" cy="632" r="3.5" fill="#D4AF37" opacity="0.7"/>
-  <text x="90" y="636" font-family="'Courier New',monospace" font-size="11.5" fill="#888">SHA‑256</text>
-  <text x="175" y="636" font-family="'Courier New',monospace" font-size="11" fill="#48CAE4">{{SHA256_HASH}}</text>
+  <circle cx="72" cy="638" r="3.5" fill="#D4AF37" opacity="0.7"/>
+  <text x="86" y="642" font-family="'Courier New',monospace" font-size="11.5" fill="#888">SHA‑256</text>
+  <text x="175" y="642" font-family="'Courier New',monospace" font-size="11" fill="#48CAE4">{{SHA256_HASH}}</text>
 
-  <circle cx="77" cy="658" r="3.5" fill="#D4AF37" opacity="0.7"/>
-  <text x="90" y="662" font-family="'Courier New',monospace" font-size="11.5" fill="#888">Verify at</text>
-  <text x="175" y="662" font-family="'Courier New',monospace" font-size="11.5" fill="#48CAE4">{{VERIFY_URL}}</text>
+  <circle cx="72" cy="664" r="3.5" fill="#D4AF37" opacity="0.7"/>
+  <text x="86" y="668" font-family="'Courier New',monospace" font-size="11.5" fill="#888">Verify at</text>
+  <text x="175" y="668" font-family="'Courier New',monospace" font-size="11.5" fill="#48CAE4">{{VERIFY_URL}}</text>
 
-  <line x1="76" y1="676" x2="604" y2="676" stroke="#D4AF37" stroke-width="0.5" stroke-opacity="0.3"/>
+  <line x1="72" y1="685" x2="608" y2="685" stroke="#D4AF37" stroke-width="0.5" stroke-opacity="0.3"/>
 
   <!-- Signature block -->
-  <line x1="160" y1="688" x2="340" y2="688" stroke="#D4AF37" stroke-width="0.4" stroke-opacity="0.35"/>
-  <line x1="340" y1="688" x2="520" y2="688" stroke="#D4AF37" stroke-width="0.4" stroke-opacity="0.35"/>
-  <text x="340" y="685" font-family="'Courier New',monospace" font-size="7.5" fill="#D4AF37" fill-opacity="0.45" text-anchor="middle" letter-spacing="2.5">CERTIFIED BY</text>
-  <text x="340" y="712" font-family="'Georgia','Times New Roman',serif" font-size="20" font-weight="bold" font-style="italic" fill="#F5E08A" text-anchor="middle" letter-spacing="1.2" opacity="0.93">SHELDON K. SALMON</text>
-  <text x="340" y="727" font-family="'Courier New',monospace" font-size="8.5" fill="#D4AF37" fill-opacity="0.5" text-anchor="middle" letter-spacing="3">AI RELIABILITY ARCHITECT · AIONSYSTEM</text>
+  <line x1="160" y1="698" x2="340" y2="698" stroke="#D4AF37" stroke-width="0.4" stroke-opacity="0.35"/>
+  <line x1="340" y1="698" x2="520" y2="698" stroke="#D4AF37" stroke-width="0.4" stroke-opacity="0.35"/>
+  <text x="340" y="695" font-family="'Courier New',monospace" font-size="7.5" fill="#D4AF37" fill-opacity="0.45" text-anchor="middle" letter-spacing="2.5">CERTIFIED BY</text>
+  <text x="340" y="722" font-family="'Georgia','Times New Roman',serif" font-size="20" font-weight="bold" font-style="italic" fill="#F5E08A" text-anchor="middle" letter-spacing="1.2" opacity="0.93">SHELDON K. SALMON</text>
+  <text x="340" y="737" font-family="'Courier New',monospace" font-size="8.5" fill="#D4AF37" fill-opacity="0.5" text-anchor="middle" letter-spacing="3">AI RELIABILITY ARCHITECT · AIONSYSTEM</text>
 
   <!-- Triple-time dates -->
-  <line x1="76" y1="739" x2="604" y2="739" stroke="#D4AF37" stroke-width="0.4" stroke-opacity="0.22"/>
-  <text x="340" y="753" font-family="'Courier New',monospace" font-size="9" fill="#888" text-anchor="middle" letter-spacing="1.5">ISSUED</text>
-  <text x="340" y="767" font-family="'Courier New',monospace" font-size="10" fill="#DAA520" text-anchor="middle" letter-spacing="1">{{ISSUE_DATE_GREGORIAN}}</text>
-  <text x="340" y="779" font-family="'Courier New',monospace" font-size="9" fill="#888" text-anchor="middle">{{ISSUE_DATE_HEBREW}} · {{ISSUE_DATE_DREAMSPELL}}</text>
+  <line x1="72" y1="749" x2="608" y2="749" stroke="#D4AF37" stroke-width="0.4" stroke-opacity="0.22"/>
+  <text x="340" y="763" font-family="'Courier New',monospace" font-size="9" fill="#888" text-anchor="middle" letter-spacing="1.5">ISSUED</text>
+  <text x="340" y="777" font-family="'Courier New',monospace" font-size="10" fill="#DAA520" text-anchor="middle" letter-spacing="1">{{ISSUE_DATE_GREGORIAN}}</text>
+  <text x="340" y="789" font-family="'Courier New',monospace" font-size="9" fill="#888" text-anchor="middle">{{ISSUE_DATE_HEBREW}} · {{ISSUE_DATE_DREAMSPELL}}</text>
 
-  <text x="164" y="794" font-family="'Courier New',monospace" font-size="9.5" fill="#D4AF37" opacity="0.5">◆──────────────────</text>
-  <text x="516" y="794" font-family="'Courier New',monospace" font-size="9.5" fill="#D4AF37" opacity="0.5" text-anchor="end">──────────────────◆</text>
-  <text x="340" y="809" font-family="'Courier New',monospace" font-size="8.5" fill="#444" text-anchor="middle">Digital signature appended to STP ledger entry</text>
+  <text x="164" y="804" font-family="'Courier New',monospace" font-size="9.5" fill="#D4AF37" opacity="0.5">◆──────────────────</text>
+  <text x="516" y="804" font-family="'Courier New',monospace" font-size="9.5" fill="#D4AF37" opacity="0.5" text-anchor="end">──────────────────◆</text>
+  <text x="340" y="819" font-family="'Courier New',monospace" font-size="8.5" fill="#444" text-anchor="middle">Digital signature appended to STP ledger entry</text>
 
   <!-- Validity + scope bar -->
-  <rect x="50" y="818" width="580" height="72" rx="10" fill="#060610" fill-opacity="0.7" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.4"/>
-  <rect x="54" y="822" width="572" height="64" rx="7" fill="none" stroke="#D4AF37" stroke-width="0.3" stroke-opacity="0.15"/>
+  <rect x="45" y="828" width="590" height="72" rx="10" fill="#010102" fill-opacity="0.8" stroke="#D4AF37" stroke-width="1.2" stroke-opacity="0.5"/>
+  <rect x="49" y="832" width="582" height="64" rx="7" fill="none" stroke="#D4AF37" stroke-width="0.3" stroke-opacity="0.15"/>
 
-  <text x="76" y="842" font-family="'Courier New',monospace" font-size="7.5" fill="#D4AF37" fill-opacity="0.5" letter-spacing="2">VALID THROUGH</text>
-  <text x="76" y="859" font-family="'Courier New',monospace" font-size="11" fill="#F5E08A" font-weight="bold" letter-spacing="1">{{VALID_THROUGH}}</text>
-  <text x="76" y="872" font-family="'Courier New',monospace" font-size="7.5" fill="#555" letter-spacing="1">90-DAY CERTIFICATION CYCLE</text>
+  <text x="72" y="852" font-family="'Courier New',monospace" font-size="7.5" fill="#D4AF37" fill-opacity="0.5" letter-spacing="2">VALID THROUGH</text>
+  <text x="72" y="869" font-family="'Courier New',monospace" font-size="11" fill="#F5E08A" font-weight="bold" letter-spacing="1">{{VALID_THROUGH}}</text>
+  <text x="72" y="882" font-family="'Courier New',monospace" font-size="7.5" fill="#555" letter-spacing="1">90-DAY CERTIFICATION CYCLE</text>
 
-  <line x1="340" y1="826" x2="340" y2="882" stroke="#D4AF37" stroke-width="0.5" stroke-opacity="0.3"/>
+  <line x1="340" y1="836" x2="340" y2="892" stroke="#D4AF37" stroke-width="0.5" stroke-opacity="0.3"/>
 
-  <text x="356" y="842" font-family="'Courier New',monospace" font-size="7.5" fill="#D4AF37" fill-opacity="0.5" letter-spacing="2">AUDIT SCOPE</text>
-  <text x="356" y="859" font-family="'Courier New',monospace" font-size="11" fill="#F5E08A" font-weight="bold" letter-spacing="1">{{AUDIT_SCOPE_CODE}}</text>
-  <text x="356" y="872" font-family="'Courier New',monospace" font-size="7.5" fill="#555" letter-spacing="1">{{AUDIT_SCOPE_LABEL}}</text>
+  <text x="356" y="852" font-family="'Courier New',monospace" font-size="7.5" fill="#D4AF37" fill-opacity="0.5" letter-spacing="2">AUDIT SCOPE</text>
+  <text x="356" y="869" font-family="'Courier New',monospace" font-size="11" fill="#F5E08A" font-weight="bold" letter-spacing="1">{{AUDIT_SCOPE_CODE}}</text>
+  <text x="356" y="882" font-family="'Courier New',monospace" font-size="7.5" fill="#555" letter-spacing="1">{{AUDIT_SCOPE_LABEL}}</text>
 
   <!-- QR code -->
-  <rect x="556" y="900" width="74" height="74" rx="9" fill="#0a0a0a" stroke="#D4AF37" stroke-width="1.8"/>
+  <rect x="556" y="900" width="74" height="74" rx="9" fill="#020203" stroke="#D4AF37" stroke-width="2"/>
   <image x="562" y="906" width="62" height="62" href="{{QR_CODE_URL}}"/>
   <text x="593" y="986" font-family="'Courier New',monospace" font-size="7.5" fill="#D4AF37" opacity="0.7" text-anchor="middle" letter-spacing="1.5">SCAN</text>
 
-  <!-- Micro‑text -->
-  <text x="-120.8" y="998" font-family="'Courier New',monospace" font-size="5.5" fill="#D4AF37" opacity="0.18" letter-spacing="1.8">AIONSYSTEM · SOVEREIGN TRACE PROTOCOL · FOUNDING AUDITOR · AIONSYSTEM · SOVEREIGN TRACE PROTOCOL · FOUNDING AUDITOR</text>
-  <text x="-120.8" y="1008" font-family="'Courier New',monospace" font-size="5.5" fill="#D4AF37" opacity="0.11" letter-spacing="1.8">AIONSYSTEM · SOVEREIGN TRACE PROTOCOL · FOUNDING AUDITOR · AIONSYSTEM · SOVEREIGN TRACE PROTOCOL · FOUNDING AUDITOR</text>
+  <!-- Micro‑text (identical to original but with gold) -->
+  <text x="-120.8" y="998" font-family="'Courier New',monospace" font-size="5.5" fill="#D4AF37" opacity="0.2" letter-spacing="1.8">AIONSYSTEM · SOVEREIGN TRACE PROTOCOL · FOUNDING AUDITOR · AIONSYSTEM · SOVEREIGN TRACE PROTOCOL · FOUNDING AUDITOR</text>
+  <text x="-120.8" y="1008" font-family="'Courier New',monospace" font-size="5.5" fill="#D4AF37" opacity="0.12" letter-spacing="1.8">AIONSYSTEM · SOVEREIGN TRACE PROTOCOL · FOUNDING AUDITOR · AIONSYSTEM · SOVEREIGN TRACE PROTOCOL · FOUNDING AUDITOR</text>
 
-  <!-- Overlays -->
+  <!-- Final gloss overlay -->
   <rect width="680" height="1000" rx="32" fill="url(#depthField)" clip-path="url(#cardClip)" pointer-events="none"/>
-  <rect width="680" height="1000" rx="32" fill="url(#gloss)" clip-path="url(#cardClip)" pointer-events="none"/>
 </svg>
