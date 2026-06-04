@@ -1,0 +1,22 @@
+name: Blockchain Anchor
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # weekly on Sunday (or daily)
+  workflow_dispatch:
+
+jobs:
+  anchor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - name: Anchor to Bitcoin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BTC_RPC_URL: ${{ secrets.BTC_RPC_URL }}
+          BTC_RPC_USER: ${{ secrets.BTC_RPC_USER }}
+          BTC_RPC_PASS: ${{ secrets.BTC_RPC_PASS }}
+        run: python scripts/stp_blockchain_anchor.py
