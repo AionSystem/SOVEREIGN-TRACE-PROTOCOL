@@ -1,7 +1,7 @@
 # USE CASES — Sovereign Trace Protocol
 
-**Author:** Sheldon K. Salmon — AI Reliability & ADI Architect
-**Date:** March 2026
+**Author:** Sheldon K. Salmon — AI Reliability & AGI Architect
+**Date:** June 2026
 **Repository:** AionSystem/SOVEREIGN-TRACE-PROTOCOL
 
 The Sovereign Trace Protocol operates at two scales simultaneously.
@@ -58,11 +58,11 @@ The moment it is sealed — it is permanent. That is enough.
   that something happened exactly as it happened
 
 ### Example Entry
-
-```
 "Completed the stamp function. It passed all tests on first run.
-March 3, 2026. Working alone. No external review. It is done."
-```
+June 4, 2026. FROZEN-4.0 deployed. All 31 templates hardened.
+The system is ready for public release."
+
+text
 
 Sealed. Permanent. Dated across three calendars.
 No audience required. No platform required.
@@ -94,15 +94,22 @@ You need a permanent, tamper-evident, independently verifiable record.
 The same mechanism that seals an individual's trace entry seals
 an organization's AI failure record.
 
-Every AI failure event gets logged as an immutable entry —
-the exact failure, the exact moment, sealed with a SHA-256
-triple-time stamp. Remediation is appended, not edited.
-The original failure record stays. The record shows what happened
-and what was done. It cannot be revised retroactively.
+Every AI failure event gets logged as an immutable entry using one of the
+**31 structured issue templates** (01-ai-failure, 14-near-miss, 15-prompt-seal,
+17-dataset-declaration, 22-ai-output-sample, etc.). The exact failure,
+the exact moment, sealed with a SHA-256 triple-time stamp. Remediation is
+appended via `correction_of`, not edited. The original failure record stays.
+The record shows what happened and what was done. It cannot be revised retroactively.
 
-The AION-Registry holds public summaries of certification outcomes.
-The Sovereign Certified badge, issued after formal audit, proves
-the organization has infrastructure that captures failures honestly.
+The Trust Registry (public, immutable, STP‑sealed) holds public summaries of
+certification outcomes. The Sovereign Certified badge, issued after formal audit,
+proves the organization has infrastructure that captures failures honestly.
+
+All submissions are screened by a **tiered abuse detector** (green/yellow/red)
+to prevent prohibited content from ever entering the immutable ledger.
+For organizations with high volume, the **multi‑chain blockchain anchor**
+optionally posts Merkle roots of all new seals to Bitcoin, Hedera, Ethereum,
+and Stellar — adding decentralized, permanent proof of the entire batch.
 
 **An organization with certified infrastructure and a high failure rate
 is more trustworthy than one with a clean record and no ledger.**
@@ -120,13 +127,20 @@ may simply have no ledger.
 - Any organization that needs to answer the question:
   "When did you know, and what did you do about it?"
 
-### Certification Tiers
+### Certification Tiers (v4.0)
 
-| Tier | Scope | Price |
-|------|-------|-------|
-| **Basic Verification** | Single remediated failure stamp check | $2,500 |
-| **Enterprise Certification** | Full deployment audit + Sovereign Certified badge | $25,000/yr |
-| **Strategic Retainer** | Quarterly reviews + priority access + epistemic debt statement | $100,000+ |
+| Tier | Scope | Price | Validity |
+|------|-------|-------|----------|
+| **Tier 0 — Snapshot Verification** | 10 outputs, pre‑audit trust signal | $1,500 | 30 days |
+| **Tier 1 — Full Audit** | 25–1,000+ outputs (output‑banded) | $3,000–$50,000 | 90 days |
+| **Tier 2 — Enterprise Retainer** | Quarterly audits, annual retainer | $25,000/yr | 90 days per cycle |
+| **Tier 3 — Strategic Retainer** | Monthly audits | $100,000+/yr | 30 days per cycle |
+| **Tier 4 — Defense & Government** | Full standards alignment | Negotiated | 90 days per period |
+| **Tier 5 — Sovereign AI Audit** | 7‑instrument adversarial stack | $15,000 | 180‑day cert / 12‑month badge |
+
+**Personal certification tracks (for individuals, not organizations):**
+- **SACS (Sovereign AI Constitution Seal)** — $49 one‑time or $12/year
+- **CAPC (Constitutional AI Practitioner Credential)** — $199/year
 
 See `CERTIFICATION.md` for full process and terms.
 
@@ -134,12 +148,16 @@ See `CERTIFICATION.md` for full process and terms.
 
 ## THE SHARED MECHANISM
 
-Both use cases run through the same function:
+Both use cases run through the same infrastructure:
+
+- **Stamp function:** `sovereign_trace_stamp.py` (FROZEN-4.0, zero dependencies, stdlib only)
+- **Submission interface:** 31 GitHub issue templates (00‑30)
+- **Abuse prevention:** Tiered automated screening with manual review for borderline cases
+- **Permanent anchor:** Optional multi‑chain blockchain anchoring (Bitcoin, Hedera, Ethereum, Stellar)
+- **CI/CD integration:** GitHub Composite Action `stp-seal`
 
 ```python
 ts = stamp("Your entry here.")
-```
-
 The individual seals a personal trace.
 The organization seals an AI failure record.
 
@@ -148,10 +166,7 @@ Same tamper-evidence guarantee. Same FROZEN-4.0 integrity.
 
 The stakes differ. The mechanism does not.
 
----
-
-## THE ORIGIN OF THE ENTERPRISE FROM THE PERSONAL
-
+THE ORIGIN OF THE ENTERPRISE FROM THE PERSONAL
 The enterprise use case was not designed first and the personal use case
 added later. It happened the other way.
 
@@ -172,8 +187,6 @@ to validate its existence.
 
 The stamp is the proof. For the individual and the organization alike.
 
----
-
-*USE-CASES.md — Sovereign Trace Protocol*
-*Author: Sheldon K. Salmon | March 2026*
-*Both scales. Same mechanism. Same integrity guarantee.*
+USE-CASES.md — Sovereign Trace Protocol
+Author: Sheldon K. Salmon | June 2026
+Both scales. Same mechanism. Same integrity guarantee.
