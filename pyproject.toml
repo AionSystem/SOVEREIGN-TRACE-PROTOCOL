@@ -54,7 +54,7 @@ only-include = ["stamp/sovereign_trace_stamp.py"]
 
 [tool.hatch.build.targets.sdist]
 include = [
-  "stamp/sovereign_trace_stamp.py",
+  "sovereign_trace/sovereign_trace_stamp.py",
   "README.md",
   "QUICKSTART.md",
   "concept/",
