@@ -1,14 +1,27 @@
 # AI ETHICS STATEMENT
 
 **Sovereign Trace Protocol**
-**Author:** Sheldon K. Salmon — AI Reliability & AGI Architect
-**Version:** 1.0 | Effective: March 2026
+**Author:** Sheldon K. Salmon — AI Reliability & ADI/AGI Architect
+**Version:** 1.1 | Effective: June 2026
+**Supersedes:** Version 1.0 (March 2026)
+
+**Change log for v1.1:**
+- Added expanded prohibited uses (fraud, forgery, intentional deception)
+- Clarified network call claim: offline stamp vs. optional GitHub Actions
+- Added future‑law caveat for AI authorship
+- Added explanation of certification rewards (badge, registry)
+- Added mention of FRAGILE_VALID / TOPOLOGICALLY_ISOLATED certification warnings
+- Added third‑party reporting mechanism
+- Added annual review commitment
+- Added note about GitHub data retention for optional workflow
+- Added jurisdiction conflict clause
+- Corrected author title
 
 ---
 
 ## STATEMENT OF POSITION
 
-The Sovereign Trace Protocol is built by an AI Reliability & AGI Architect
+The Sovereign Trace Protocol is built by an AI Reliability & ADI/AGI Architect
 who works at the intersection of AI systems and human epistemic sovereignty.
 This statement declares the ethical principles that govern the design,
 deployment, and certification activities of this protocol.
@@ -32,7 +45,12 @@ that conceals them. The certification framework rewards organizations
 that build infrastructure to capture failures honestly — not those
 that minimize the appearance of failure.
 
-**Architectural expression:** The AION-Registry is a public record.
+**Rewards for honest organisations include:**
+- Listing in the public **Trust Registry** (`AionSystem/TRUST-REGISTRY`)
+- Issuance of a **Sovereign Certified badge** (displayable publicly)
+- The ability to reference the certification in procurement and compliance contexts
+
+**Architectural expression:** The Trust Registry is a public record.
 Remediated failures are permanent entries. There is no mechanism
 to delete a failure from the record. A remediation does not erase
 what was remediated.
@@ -58,6 +76,12 @@ contribution and authorship are different things, and that
 honest disclosure of AI assistance is the minimum standard
 for any work that will be used in commercial, legal,
 or high-stakes contexts.
+
+**Forward‑looking caveat:** This statement reflects current law
+(United States, European Union, United Kingdom) as of June 2026.
+If future legal changes grant AI authorship, the author will update
+this statement accordingly. The underlying principle — that the
+human architect takes full responsibility — remains unchanged.
 
 **Architectural expression:** `NOTICE` discloses AI tool use
 explicitly. `PRINCIPLES.md` analyzes AI authorship under
@@ -100,6 +124,14 @@ retains full control over their trace records at all times.
 - The JSON record is yours: store it wherever you choose
 - No vendor can delete, modify, or access your records
 
+**Important clarification:** The stamp function `sovereign_trace_stamp.py`
+makes **no network calls** and runs entirely offline. The optional
+GitHub Actions workflows (auto‑seal, abuse detector, blockchain anchor)
+**do** make network calls to GitHub’s infrastructure and are opt‑in.
+If you use the GitHub Issues workflow, your trace entries are stored
+on GitHub’s servers and subject to GitHub’s privacy policy and terms
+of service. The offline stamp function avoids this entirely.
+
 This is not a privacy policy. It is a design commitment:
 sovereignty is not a feature. It is the architecture.
 
@@ -109,11 +141,22 @@ No network call is made during stamp generation. Ever.
 
 ---
 
-## 5. ANTI-WEAPONIZATION
+## 5. PROHIBITED USES (Expanded from Anti‑Weaponization)
 
-The Sovereign Trace Protocol may not be used to create
-surveillance infrastructure, stalking tools, evidence fabrication
-systems, or any mechanism designed to harm individuals.
+The Sovereign Trace Protocol may not be used for any of the following:
+
+- Creating surveillance infrastructure, stalking tools, or any mechanism
+  designed to harm individuals
+- **Timestamping false or misleading information with the intent to deceive**
+  (using the seal to lend credibility to a lie)
+- Fraud, forgery, or fabrication of evidence
+- Money laundering, sanctions evasion, or any other financial crime
+- Human rights abuses, including but not limited to:
+  - Arbitrary detention
+  - Denial of due process
+  - Surveillance of journalists, activists, or human rights defenders
+  - Enforced disappearance
+- Any use that violates the laws of the user’s jurisdiction
 
 The triple-time stamp is designed to register what is true.
 It is not designed to manufacture the appearance of what is true.
@@ -139,6 +182,11 @@ failure history is not a bad organization. It is an honest one.
 The certification framework rewards honesty. It does not reward
 the concealment of failures.
 
+**Certification warnings:** Some certifications (e.g., `FRAGILE_VALID`
+or `TOPOLOGICALLY_ISOLATED`) explicitly warn of structural weaknesses;
+they do not imply system safety or reliability. These statuses are
+disclosed in the certification statement and the Trust Registry.
+
 **Architectural expression:** Tier 1 Basic Verification is
 deliberately designed around the premise that an organization
 already has a failure to report. The entry point to certification
@@ -154,6 +202,9 @@ certify specific AI models, vendors, or platforms as safe or reliable.
 Certification through this protocol verifies that an organization
 has honest audit infrastructure. It does not verify that their
 AI system is free of harmful outputs, biases, or failure modes.
+Some certifications (e.g., `FRAGILE_VALID` or `TOPOLOGICALLY_ISOLATED`)
+explicitly warn of structural weaknesses; they do not imply
+system safety or reliability.
 
 Any representation that Sovereign Certification implies AI system
 safety — beyond the specific infrastructure assessed — is
@@ -183,15 +234,41 @@ with the principles those instruments establish.
 
 ---
 
-## CONTACT
+## 9. JURISDICTION AND CONFLICTING LAWS
 
-Ethics concerns or violations of this statement may be reported
-via a GitHub issue with label `ethics-concern`.
-
-All reports are reviewed by Sheldon K. Salmon personally.
+This ethics statement applies to the author and to the use of the
+Sovereign Trace Protocol in jurisdictions where it is consistent
+with local law. Users in jurisdictions with laws that conflict
+with any provision of this statement should consult legal counsel
+before using the protocol. The author does not require users to
+violate the laws of their country.
 
 ---
 
-*AI-ETHICS-STATEMENT.md*
-*Sovereign Trace Protocol | Sheldon K. Salmon | March 2026*
+## 10. REPORTING VIOLATIONS
+
+Ethics concerns or violations of this statement may be reported
+by **any party** (users, third parties, whistleblowers) via a
+GitHub issue with label `ethics-concern` in this repository.
+The reporter should provide evidence. The author will review
+and, if confirmed, take appropriate action (e.g., public notice,
+license termination, Trust Registry annotation).
+
+All reports are reviewed by Sheldon K. Salmon personally.
+Reports will be acknowledged within 14 days.
+
+---
+
+## 11. COMMITMENT TO PERIODIC REVIEW
+
+This ethics statement shall be reviewed **annually** (or upon
+any major change in AI law, ethics norms, or significant
+updates to the protocol) and updated as necessary.
+Version history will be preserved in git. Changes will be
+documented in the changelog.
+
+---
+
+*AI-ETHICS-STATEMENT.md — v1.1 (June 2026)*  
+*Sovereign Trace Protocol | Sheldon K. Salmon — AI Reliability & ADI/AGI Architect*  
 *This statement is part of the immutable epistemic record.*
