@@ -1,7 +1,7 @@
-name: Blockchain Anchor
+name: Multi‑Chain Blockchain Anchor
 on:
   schedule:
-    - cron: '0 0 * * 0'  # weekly on Sunday (or daily)
+    - cron: '0 0 * * 0'   # weekly on Sunday at 00:00 UTC
   workflow_dispatch:
 
 jobs:
@@ -12,11 +12,29 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install requests
-      - name: Anchor to Bitcoin
+      - name: Install dependencies
+        run: |
+          pip install requests web3 hedera-sdk-py stellar-sdk
+      - name: Run multi‑chain anchor
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Bitcoin
+          ENABLE_BITCOIN: ${{ secrets.ENABLE_BITCOIN }}
           BTC_RPC_URL: ${{ secrets.BTC_RPC_URL }}
           BTC_RPC_USER: ${{ secrets.BTC_RPC_USER }}
           BTC_RPC_PASS: ${{ secrets.BTC_RPC_PASS }}
+          # Hedera
+          ENABLE_HEDERA: ${{ secrets.ENABLE_HEDERA }}
+          HEDERA_ACCOUNT_ID: ${{ secrets.HEDERA_ACCOUNT_ID }}
+          HEDERA_PRIVATE_KEY: ${{ secrets.HEDERA_PRIVATE_KEY }}
+          HEDERA_TOPIC_ID: ${{ secrets.HEDERA_TOPIC_ID }}
+          # Ethereum
+          ENABLE_ETHEREUM: ${{ secrets.ENABLE_ETHEREUM }}
+          ETH_RPC_URL: ${{ secrets.ETH_RPC_URL }}
+          ETH_PRIVATE_KEY: ${{ secrets.ETH_PRIVATE_KEY }}
+          ETH_CONTRACT_ADDRESS: ${{ secrets.ETH_CONTRACT_ADDRESS }}
+          # Stellar (optional)
+          ENABLE_STELLAR: ${{ secrets.ENABLE_STELLAR }}
+          STELLAR_SECRET_KEY: ${{ secrets.STELLAR_SECRET_KEY }}
+          STELLAR_DISTRIBUTION_ACCOUNT: ${{ secrets.STELLAR_DISTRIBUTION_ACCOUNT }}
         run: python scripts/stp_blockchain_anchor.py
