@@ -1,15 +1,16 @@
 # UNILATERAL NON-DISCLOSURE AGREEMENT
 
 **Sovereign Trace Protocol**
-**Author:** Sheldon K. Salmon — AI Reliability & AGI Architect
-**Version:** 1.0 | Effective: March 2026
+**Author:** Sheldon K. Salmon — AI Reliability & ADI/AGI Architect
+**Version:** 1.1 | June 2026
+**Supersedes:** Version 1.0 (March 2026)
 
 ---
 
 ## AGREEMENT
 
 This Unilateral Non-Disclosure Agreement ("Agreement") is entered into
-between **Sheldon K. Salmon, AI Reliability & AGI Architect**
+between **Sheldon K. Salmon, AI Reliability & ADI/AGI Architect**
 ("Disclosing Party") and the organization or individual identified in
 the signature block below ("Receiving Party").
 
@@ -40,8 +41,7 @@ by the Disclosing Party, including:
   not publicly available in AionSystem/SOVEREIGN-TRACE-PROTOCOL
 - Unpublished certification findings, draft assessment reports,
   and internal scoring records
-- Business strategy, pricing models, and client information
-- Technical implementations, roadmaps, and unreleased features
+- Business strategy and unreleased technical features
 - Any information marked "CONFIDENTIAL" or disclosed in circumstances
   indicating confidentiality
 
@@ -64,7 +64,10 @@ can demonstrate:
 (b) Was independently developed by the Receiving Party without reference
     to the Confidential Information
 
-(c) Was lawfully received from a third party without restriction
+(c) Was lawfully received from a third party without restriction.
+    *If the Receiving Party receives similar information from a third party,
+    it shall notify the Disclosing Party within 10 days of such receipt,
+    unless prohibited by law.*
 
 (d) Is required to be disclosed by law or court order — with prompt
     prior notice to the Disclosing Party where permitted
@@ -91,25 +94,36 @@ The Receiving Party agrees to:
 (e) Promptly notify the Disclosing Party of any unauthorized disclosure
     or suspected breach
 
-(f) Return or destroy all Confidential Information upon written request
-    or conclusion of the evaluation period
+(f) Return or destroy all Confidential Information upon written request,
+    or upon the conclusion of the **evaluation period** as defined below.
+    The Receiving Party may retain one archival copy of Confidential
+    Information for legal compliance and dispute resolution purposes,
+    provided such copy remains subject to confidentiality obligations
+    indefinitely.
 
 ---
 
 ## 5. NO REVERSE ENGINEERING
 
-The Receiving Party agrees not to reverse engineer, decompile, or
-disassemble any technical Confidential Information, and not to use
-it as the basis for developing competing products or services.
+The Receiving Party agrees **not to reverse engineer, decompile, or
+disassemble any software provided as Confidential Information** for the
+purpose of extracting source code or algorithms, unless permitted by
+applicable law. Mere observation of software behavior is not prohibited.
 
 ---
 
-## 6. TERM
+## 6. EVALUATION PERIOD AND TERM
 
-This Agreement is effective from the date of signature and continues
-for **two (2) years**. Confidentiality obligations survive termination
-for an additional **two (2) years** with respect to information
-disclosed during the term.
+**Evaluation Period** begins on the effective date and ends upon the
+earliest of:
+(a) the Receiving Party’s written notice of non‑interest;
+(b) 90 days after the last disclosure; or
+(c) termination of this Agreement.
+
+**Term of Agreement:** This Agreement is effective from the date of
+signature and continues for **two (2) years**. Confidentiality
+obligations survive termination for an additional **two (2) years**
+with respect to information disclosed during the term.
 
 ---
 
@@ -128,7 +142,7 @@ The Receiving Party acknowledges that:
 (a) All Confidential Information remains the exclusive property of
     Sheldon K. Salmon
 
-(b) The AION Constitutional Stack, Sovereign Trace Protocol, FROZEN-2.0
+(b) The AION Constitutional Stack, Sovereign Trace Protocol, FROZEN-4.0
     designation, and associated frameworks are proprietary to
     Sheldon K. Salmon
 
@@ -146,32 +160,56 @@ without bond or security, in addition to all other legal remedies.
 
 ---
 
-## 10. GOVERNING LAW
+## 10. GOVERNING LAW AND DISPUTE RESOLUTION
 
-This Agreement is governed by applicable law. Disputes shall be
-resolved pursuant to `TERMS-OF-SERVICE.md`.
+This Agreement shall be governed by the laws of the State of New York,
+USA, without regard to its conflict of laws principles.
+
+Any dispute arising from this Agreement shall be resolved exclusively
+in the state or federal courts located in New York County, New York.
+The parties irrevocably submit to the personal jurisdiction of such courts.
+
+---
+
+## 11. GENERAL PROVISIONS
+
+**Severability:** If any provision of this Agreement is held to be
+invalid or unenforceable, the remaining provisions shall continue in
+full force and effect.
+
+**Entire Agreement:** This Agreement constitutes the entire understanding
+between the parties with respect to its subject matter and supersedes
+all prior negotiations, representations, and agreements.
+
+**Electronic Signatures:** Electronic signatures (including typed names
+in an email or GitHub comment) shall be deemed original signatures for
+the purpose of this Agreement.
+
+**Notices and Delivery:** The signed NDA may be delivered by email to
+aionsystem@outlook.com or via a GitHub issue with label `nda-submission`.
+Notices to the Receiving Party shall be sent to the email address
+provided in the signature block.
 
 ---
 
 ## SIGNATURE
-
-```
 RECEIVING PARTY:
 
 Organization (if applicable): ________________________________
 
-Name:      ___________________________________________________
-Title:     ___________________________________________________
-Date:      ___________________________________________________
+Name: ___________________________________________________
+Title: ___________________________________________________
+Email: ___________________________________________________
+Date: ___________________________________________________
 Signature: ___________________________________________________
-
 
 DISCLOSING PARTY: Sheldon K. Salmon
 [Countersignature provided upon execution]
-```
+
+text
 
 ---
 
-*UNILATERAL-NDA.md*
-*Sovereign Trace Protocol | Sheldon K. Salmon | March 2026*
-*This document does not constitute legal advice.*
+*UNILATERAL-NDA.md — v1.1 (June 2026)*
+*Sovereign Trace Protocol | Sheldon K. Salmon — AI Reliability & ADI/AGI Architect*
+*This document does not constitute legal advice. Consult qualified counsel.*
