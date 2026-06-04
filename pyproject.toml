@@ -4,12 +4,12 @@ build-backend = "hatchling.build"
 
 [project]
 name = "sovereign-trace"
-version = "2.0.0"
-description = "Permanent personal and organizational significance infrastructure. Triple-time cryptographic stamp — Gregorian, Hebrew lunisolar, 13 Moon Dreamspell. FROZEN-2.0."
+version = "4.0.0"
+description = "Permanent personal and organizational significance infrastructure. Triple-time cryptographic stamp — Gregorian, Hebrew lunisolar, 13 Moon Dreamspell. FROZEN-4.0."
 readme = "README.md"
 license = { text = "Apache-2.0 OR GPL-3.0-or-later" }
 authors = [
-  { name = "Sheldon K. Salmon", email = "aionsystem2026@gmail.com" }
+  { name = "Sheldon K. Salmon", email = "aionsystem@outlook.com" }
 ]
 keywords = [
   "sovereign trace",
@@ -26,7 +26,7 @@ keywords = [
   "AI reliability",
 ]
 classifiers = [
-  "Development Status :: 4 - Beta",
+  "Development Status :: 5 - Production/Stable",
   "Intended Audience :: End Users/Desktop",
   "Intended Audience :: Developers",
   "Topic :: Utilities",
