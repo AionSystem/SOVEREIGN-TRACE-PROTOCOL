@@ -1,6 +1,9 @@
 ```yaml
 blank_issues_enabled: false
 contact_links:
+  - name: ⚠️ Abuse Prevention & Appeal
+    url: mailto:aionsystem@outlook.com?subject=Abuse%20Appeal%20-%20STP
+    about: All submissions are automatically screened for prohibited content. If you believe your issue was incorrectly rejected, contact the Architect to appeal. Include the issue number.
   - name: Sovereign Trace Protocol — Documentation
     url: https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL
     about: Read the full protocol documentation before submitting.
