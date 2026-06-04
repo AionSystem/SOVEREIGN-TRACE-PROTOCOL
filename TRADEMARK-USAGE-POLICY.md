@@ -1,16 +1,18 @@
 # TRADEMARK USAGE POLICY
 
 **Sovereign Trace Protocol**
-**Author:** Sheldon K. Salmon — AI Reliability & AGI Architect
-**Version:** 1.0 | Effective: March 2026
+**Author:** Sheldon K. Salmon — AI Reliability & ADI/AGI Architect
+**Version:** 1.1 | June 2026
+**Supersedes:** Version 1.0 (March 2026)
 
 ---
 
 ## PURPOSE
 
 This policy governs how the marks associated with the Sovereign Trace
-Protocol may be used by third parties. It supplements `TRADEMARK.md`,
-which establishes the prior use record and legal basis for these marks.
+Protocol may be used by third parties. It supplements `TRADEMARK.md`
+(located in the repository root), which establishes the prior use record
+and legal basis for these marks.
 
 Clear trademark usage rules protect users and the community from confusion,
 protect the integrity of the certification program, and put third parties
@@ -20,17 +22,19 @@ on notice of the boundaries before they act.
 
 ## THE MARKS
 
-The following marks are claimed under common law trademark and subject
-to pending USPTO registration:
+The following marks are claimed under common law trademark. USPTO
+registration is pending (serial number to be added once assigned).
 
 | Mark | Category | First Use |
 |------|----------|-----------|
 | SOVEREIGN TRACE PROTOCOL | Software / Protocol name | March 3, 2026 |
 | SOVEREIGN TRACE | Short-form name | March 3, 2026 |
 | SOVEREIGN CERTIFIED | Certification service mark | March 2026 |
-| FROZEN-2.0 | Software designation | March 3, 2026 |
+| **FROZEN-4.0** | Software designation (series) | June 4, 2026 |
 | AION | Framework / Software | 2025 |
 | AION Constitutional Stack | Framework / Publication | 2025 |
+
+*Note: The FROZEN-2.0 mark is retired but remains part of the family. Current frozen version is FROZEN-4.0.*
 
 ---
 
@@ -43,8 +47,8 @@ You may refer to this software by its name in factual, descriptive
 context. Examples:
 
 - "This project uses the Sovereign Trace Protocol for audit logging."
-- "Built on FROZEN-2.0 — the triple-time stamp function."
-- "Compatible with the Sovereign Trace Protocol v2.0.0."
+- "Built on FROZEN-4.0 — the triple-time stamp function."
+- "Compatible with the Sovereign Trace Protocol v4.0.0."
 
 **Academic and journalistic use:**
 You may use the marks in academic papers, research publications,
@@ -58,6 +62,11 @@ per the `NOTICE` file may use the marks to identify the origin.
 **Community discussion:**
 You may use the marks in technical discussions, forums, and community
 spaces to refer to this software accurately.
+
+**Important:** If your open source project is maintained by a commercial
+entity that offers paid services or products based on the Protocol,
+a commercial license may still be required. Contact the Architect for
+clarification before assuming your use is permitted.
 
 ---
 
@@ -108,11 +117,15 @@ Protocol without authorization.
 Filing trademark applications for these marks or confusingly
 similar marks in any jurisdiction. Such filings are made with
 constructive notice of this prior use record and will be opposed.
+The Architect reserves the right to seek damages for bad‑faith
+registration.
 
 **Disparaging use:**
 Using these marks in a manner that is defamatory, obscene,
 or designed to harm the reputation of the Sovereign Trace
-Protocol or its author.
+Protocol or its author. *Disparaging use includes false statements
+of fact about the Protocol’s security, integrity, or authorship,
+but does not include good‑faith technical critique or bug reports.*
 
 ---
 
@@ -137,7 +150,7 @@ use the ™ symbol: Sovereign Trace Protocol™.
 
 ---
 
-## ENFORCEMENT
+## ENFORCEMENT AND REMEDIES
 
 Sheldon K. Salmon monitors use of these marks and will enforce
 trademark rights against unauthorized use through:
@@ -147,8 +160,22 @@ trademark rights against unauthorized use through:
 - Opposition proceedings at the USPTO upon registration
 - Legal action for infringement under 15 U.S.C. § 1125(a)
 
+**Remedies:** In the event of infringement, the Architect may seek
+injunctive relief, actual damages, statutory damages (if the mark is
+registered), and attorneys’ fees under 15 U.S.C. § 1117.
+
 Enforcement does not require registration. Common law rights are
 actionable immediately upon evidence of confusing use in commerce.
+
+---
+
+## INTERNATIONAL PROTECTION
+
+This policy applies globally, but enforcement outside the United States
+depends on local trademark laws. The Architect has not registered the
+marks in all jurisdictions. Users outside the US are advised that these
+marks may not be protected in their country. The Architect will rely on
+prior use and international treaties where applicable.
 
 ---
 
@@ -157,10 +184,27 @@ actionable immediately upon evidence of confusing use in commerce.
 To request approval for a use not covered above, file an issue
 in AionSystem/SOVEREIGN-TRACE-PROTOCOL with label `trademark-approval`.
 Include a description of the proposed use, the context, and the audience.
+**Include your full name, organization (if any), contact email, and
+GitHub username. The Architect may request additional verification
+(e.g., a signed statement) before granting approval.**
 
 Approval is issued in writing. No verbal or implied approvals are valid.
+**Nothing in this policy shall create an implied license or estoppel.
+The Architect’s failure to enforce any provision does not waive the right
+to enforce it later.**
 
 ---
 
-*TRADEMARK-USAGE-POLICY.md*
-*Sovereign Trace Protocol | Sheldon K. Salmon | March 2026*
+## DISPUTE RESOLUTION
+
+If a third party believes their use is permitted and the Architect has
+objected, the parties shall attempt good‑faith negotiation. If unresolved,
+the matter may be submitted to binding arbitration under JAMS Commercial
+Rules in New York County, New York. This policy and any disputes arising
+from trademark use shall be governed by the laws of the United States and
+the State of New York, without regard to conflict of laws.
+
+---
+
+*TRADEMARK-USAGE-POLICY.md — v1.1 (June 2026)*
+*Sovereign Trace Protocol | Sheldon K. Salmon — AI Reliability & ADI/AGI Architect*
