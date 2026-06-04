@@ -1,9 +1,17 @@
 # PRINCIPLES.md — Foundational Principles & Multi-Jurisdictional Declaration
 
 **Sovereign Trace Protocol**
-**Author:** Sheldon K. Salmon — AI Reliability & AGI Architect
-**Date:** March 2026
+**Author:** Sheldon K. Salmon — AI Reliability & ADI/AGI Architect
+**Version:** 1.1 | June 2026
 **Repository:** AionSystem/SOVEREIGN-TRACE-PROTOCOL
+
+---
+
+> **IMPORTANT DISCLAIMER:** This document does not constitute legal advice.
+> The author is not an attorney. Jurisdictional determinations should be made
+> with qualified legal counsel. International human rights instruments cited
+> herein are not self‑executing in all countries; they are provided as
+> aspirational and philosophical grounding.
 
 ---
 
@@ -53,6 +61,17 @@ productions of Sheldon K. Salmon. This article establishes
 the international human rights basis for the authorship and
 attribution protections claimed in this repository's legal files.
 
+**Article 29 — Limitations**
+> "In the exercise of his rights and freedoms, everyone shall be
+> subject only to such limitations as are determined by law solely
+> for the purpose of securing due recognition and respect for the
+> rights and freedoms of others."
+
+This project’s exercise of Article 19 rights is subject to lawful
+limitations, including defamation, trade secret, and national
+security laws. The author does not claim immunity from such
+limitations.
+
 **ICCPR Article 19 — International Covenant on Civil and Political Rights**
 Ratified by 173 states. Protects the right to impart information
 including through the internet. Publication of AI performance data
@@ -71,8 +90,14 @@ global public good.
 
 Copyright in the Sovereign Trace Protocol and all works contained
 in this repository vests exclusively in Sheldon K. Salmon as the
-human author. This copyright is established and protected under
-the following frameworks simultaneously:
+human author. AI‑generated code (e.g., from Claude) was reviewed,
+selected, and integrated by the human author, who made the creative
+decisions necessary for copyright protection under the US Copyright
+Office’s 2023 guidance (Copyrightability of Works Created Using
+Artificial Intelligence).
+
+This copyright is established and protected under the following
+frameworks simultaneously:
 
 **International**
 - Berne Convention for the Protection of Literary and Artistic Works
@@ -136,6 +161,11 @@ Protocol serves a documented public interest:
    own existence and actions without dependence on any platform
    or institution.
 
+**Legal basis:** Under GDPR Recital 49, processing for accountability
+purposes may be a legitimate interest. Under EU AI Act Article 62,
+providers of high‑risk AI systems shall have a post‑market monitoring
+system – public registries serve this purpose.
+
 The public interest basis is relevant to: (a) any GDPR legitimate
 interest assessment; (b) any First Amendment / Article 19 analysis;
 (c) any fair dealing / fair use analysis of third-party references
@@ -159,9 +189,9 @@ recorded here upon pinning.
 
 `[S]` IPFS CID: [TO BE RECORDED AT FIRST PINNING]
 
-The IPFS record supplements — and is independent of — the git
-commit history, archive.org Wayback Machine record, and PyPI
-publication timestamp.
+**Resilience note:** IPFS resilience depends on having multiple
+independent pinning services. The author will pin to at least two
+providers. Users are encouraged to pin the CIDs themselves.
 
 ---
 
@@ -171,16 +201,17 @@ publication timestamp.
 |----------|-------------|--------------|
 | GitHub (AionSystem) | Primary repository | Author-controlled |
 | PyPI (sovereign-trace) | Package registry | PyPI Foundation |
-| IPFS | Content-addressed immutable | Distributed — no controller |
+| IPFS | Content-addressed immutable | Distributed — no controller (if widely pinned) |
 | archive.org | Wayback Machine snapshot | Internet Archive (501c3) |
 | Academic preprint | Timestamped publication | Third-party institution |
 
 Five independent records. No single jurisdiction, corporate
-decision, or legal order can erase all five simultaneously.
+decision, or legal order can erase all five simultaneously,
+provided IPFS is pinned by multiple independent parties.
 
 ---
 
-## VII. COMMITMENT
+## VII. FROZEN CODE COMMITMENT
 
 This project is built on one commitment: what was said, when it
 was said, and by whom — cannot be changed after the fact.
@@ -188,7 +219,17 @@ was said, and by whom — cannot be changed after the fact.
 That commitment applies to AI systems audited by this protocol.
 It applies equally to this project itself.
 
-The code does not change after it is frozen.
+**The code does not change after it is frozen.**
+The FROZEN designation applies to `sovereign_trace_stamp.py`.
+Supporting documentation (including this file) may be updated to
+reflect new legal or ethical standards, but all changes are versioned
+and preserved in git.
+
+If a critical flaw is found in a frozen version, that version will
+be retired (not patched) and a new frozen version (e.g., FROZEN‑5.0)
+will be built from first principles. Prior frozen versions remain
+archived.
+
 The record does not change after it is sealed.
 The authorship does not change after it is declared.
 
@@ -196,6 +237,14 @@ The authorship does not change after it is declared.
 
 ---
 
-*PRINCIPLES.md — Sovereign Trace Protocol*
-*Author: Sheldon K. Salmon | March 2026*
+## VIII. PERIODIC REVIEW
+
+This document shall be reviewed annually and updated as necessary.
+Version history is preserved in git.
+
+---
+
+*PRINCIPLES.md — v1.1 (June 2026)*
+*Sovereign Trace Protocol | Sheldon K. Salmon — AI Reliability & ADI/AGI Architect*
+*© 2026 Sheldon K. Salmon. All rights reserved.*
 *This document is part of the immutable epistemic record.*
