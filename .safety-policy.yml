@@ -1,7 +1,23 @@
 # .safety-policy.yml
-continue: true
+# Version: 1.1 | Last reviewed: 2026-06-04 | STP v4.0 (FROZEN-4.0)
+# Purpose: Safety policy for the Sovereign Trace Protocol core stamp.
+# Note: The core stamp has zero third-party dependencies.
+#       Test dependencies (pytest, hypothesis, etc.) are not covered by this policy.
+#       If a test dependency introduces a vulnerability, it must be reviewed manually.
+
+# Continue after ignoring vulnerabilities? (false = fail build if any ignored vulnerability exists)
+continue: false
+
+# Ignore CVEs with CVSS base score below 4.0 (Low severity)
+# Medium severity corresponds to CVSS 4.0–6.9.
 ignore-cvss-severity-below: "medium"
-ignore-vulnerabilities:
-  # None – no dependencies
-  - vulnerability-id: "*"
-    reason: "No third-party dependencies used in core stamp"
+
+# Do NOT ignore any specific vulnerability IDs.
+# The wildcard "*" was removed. Any vulnerability will be reported.
+# If a false positive occurs, add an explicit ignore with a reason.
+ignore-vulnerabilities: []
+  # Example:
+  # - vulnerability-id: "CVE-202X-XXXXX"
+  #   reason: "False positive - dependency not actually used at runtime"
+
+# Review this policy whenever adding a new dependency to pyproject.toml.
