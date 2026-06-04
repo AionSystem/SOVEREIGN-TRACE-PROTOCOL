@@ -1,7 +1,6 @@
-# Full Repository Structure
 <div align="center">
 
-# SOVEREIGN TRACE PROTOCOL — REPOSITORY STRUCTURE
+# SOVEREIGN TRACE PROTOCOL — FULL REPOSITORY STRUCTURE
 
 **Complete file manifest · FROZEN-4.0 · June 2026**
 
