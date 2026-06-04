@@ -14,10 +14,14 @@ body:
         - Report bugs or ask questions
         - **Propose a brand new template** (describe purpose, fields, and use case)
 
-        **⚠️ NOTICE ⚠️**
-        - This form does **not** create a sealed cryptographic record. Use other templates for sealing.
+        **⚠️ ABUSE PREVENTION NOTICE ⚠️**
+        All submissions are automatically screened for prohibited content (threats, CSAM, doxing, credential leaks, etc.).  
+        Violations will result in **immediate closure and locking** of the issue. Repeat offenders will be permanently blocked.  
+        This form does **not** create a sealed cryptographic record. Use other templates for sealing.
+
+        **⚠️ PRIVACY NOTICE ⚠️**
         - Your GitHub username will be public. This is a public issue.
-        - Do not include sensitive information (passwords, API keys, personal data).
+        - Do not include passwords, API keys, personal data, or trade secrets.
 
         **Fields marked with `*` are required.**
 
@@ -135,6 +139,8 @@ body:
         - label: "I understand this is a public issue and I have not included any sensitive information."
           required: true
         - label: "I have checked existing issues and templates to avoid duplicates (to the best of my knowledge)."
+          required: true
+        - label: "I understand that submissions containing threats, CSAM, doxing, or credential leaks will be rejected and locked without sealing."
           required: true
 
   - type: markdown
