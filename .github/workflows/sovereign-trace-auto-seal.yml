@@ -110,7 +110,7 @@ jobs:
           TEMPLATE_TYPE: ${{ steps.issue.outputs.template_type }}
         run: |
           python3 - <<'PYEOF'
-          import os, json, datetime, sys
+          import os, json, datetime, sys, re
 
           sys.path.insert(0, 'stamp')
 
@@ -132,8 +132,18 @@ jobs:
           ts = stamp(seal_content)
           ts_dict = to_dict(ts)
 
+          # Parse Gregorian date for hierarchical folder structure
+          greg_str = ts_dict["gregorian"]   # e.g., "June 4, 2026"
+          date_obj = datetime.datetime.strptime(greg_str, "%B %d, %Y")
+          year = date_obj.strftime("%Y")
+          month = date_obj.strftime("%m")
+
+          # Build ledger ID and hierarchical path
           date_str = datetime.datetime.utcnow().strftime('%Y-%m-%d')
           ledger_id = f"STP-{ttype.upper()}-{date_str}-{number.zfill(6)}"
+          target_dir = os.path.join("ledger", ttype, year, month)
+          os.makedirs(target_dir, exist_ok=True)
+          ledger_path = os.path.join(target_dir, f"{ledger_id}.json")
 
           entry = {
               "ledger_id":      ledger_id,
@@ -153,8 +163,6 @@ jobs:
               "status": "SEALED"
           }
 
-          os.makedirs('ledger', exist_ok=True)
-          ledger_path = f"ledger/{ledger_id}.json"
           with open(ledger_path, 'w') as f:
               json.dump(entry, f, indent=2)
 
