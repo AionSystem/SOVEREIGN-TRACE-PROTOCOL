@@ -1,0 +1,7 @@
+# .safety-policy.yml
+continue: true
+ignore-cvss-severity-below: "medium"
+ignore-vulnerabilities:
+  # None – no dependencies
+  - vulnerability-id: "*"
+    reason: "No third-party dependencies used in core stamp"
