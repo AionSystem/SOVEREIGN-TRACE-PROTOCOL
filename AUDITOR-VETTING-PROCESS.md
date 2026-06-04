@@ -1,17 +1,10 @@
 # AUDITOR VETTING PROCESS
 ## Sovereign Trace Protocol — Certified Auditor Program
 
-```
-╔══════════════════════════════════════════════════════════════════╗
-║   ⬡  SOVEREIGN TRACE PROTOCOL  ⬡                                ║
-║   Auditor Vetting Process · Certification Standards · FROZEN-2.0 ║
-║   Architect: Sheldon K. Salmon · AI Reliability & AGI Architect  ║
-╚══════════════════════════════════════════════════════════════════╝
-```
-
-**Document Version:** AVP-v1.0
-**Governing Standard:** FROZEN-2.0
-**Effective:** March 2026
+**Document Version:** AVP-v1.1
+**Governing Standard:** FROZEN-4.0
+**Effective:** June 2026
+**Supersedes:** AVP-v1.0 (March 2026)
 
 ---
 
@@ -64,6 +57,11 @@ The application must include:
 Applications are reviewed Monday and Tuesday only.
 Not every application proceeds to Stage 2.
 
+**If the Architect is unavailable** due to illness, travel, or other
+circumstances, applications will be reviewed on the next available
+Monday or Tuesday following the Architect's return. Applicants will
+be notified of any extended delay.
+
 ---
 
 ### Stage 2 — Skills Assessment
@@ -79,8 +77,12 @@ Applicants must:
    classify the failure type using the STP schema.
 2. Assess the severity of each failure (Low / Medium / High / Critical).
 3. Explain their reasoning for each assessment in plain language.
-4. Identify any epistemic debt outstanding — gaps in the record
+4. Identify any **epistemic debt** outstanding — gaps in the record
    that would prevent a clean certification finding.
+
+**Definition:** *Epistemic debt* means gaps in the audit record—
+missing evidence, unsubstantiated claims, or unresolved contradictions—
+that would prevent a clean certification finding.
 
 **What the assessment measures:**
 - Accuracy of failure detection (can you find what's wrong?)
@@ -118,6 +120,11 @@ There is no score. Either the capability is present or it is not.
 - Confident assessment on outputs with insufficient evidence
 - Plagiarized or AI-generated assessment submitted as own work
 
+**Appeals process:** Rejected applicants may request a one‑time
+review by submitting a written appeal via GitHub issue with label
+`auditor-appeal` within 30 days of rejection. The Architect will
+respond within 14 days. The decision on appeal is final.
+
 ---
 
 ### Stage 4 — Badge Issuance
@@ -137,6 +144,21 @@ Upon certification:
 - Annual cap: 50 sealed audits per calendar year per badge
 - Renewal: reapplication only — prior certification does not
   guarantee renewal
+
+**LinkedIn fallback:** If an auditor's LinkedIn profile becomes
+permanently unavailable, the auditor must notify the Architect
+within 30 days and provide an alternative professional identity
+(e.g., ORCID, GitHub, or verified email) to rebind the badge.
+Failure to do so may result in revocation. If an auditor fails
+to provide an alternative identity within 90 days of LinkedIn
+becoming unavailable, the badge shall be automatically revoked
+and recorded as such in the revocation registry.
+
+**Audit cap quality control:** The Architect may, at their
+discretion, reject an audit completion that appears to be
+submitted solely to meet the cap without substantive assessment.
+Such rejection will be noted in the auditor's record but does
+not count toward the cap.
 
 ---
 
@@ -168,9 +190,18 @@ A badge may be revoked for:
 - Any conduct that materially undermines the integrity of the
   STP ledger
 
-**Revocation procedure:**
+**Revocation procedure (initial phase, first 10 auditors):**
+During the initial phase (first 10 certified auditors), the Architect
+holds unilateral revocation authority.
+
+**Revocation procedure (production phase, 10+ auditors):**
+After the network reaches 10 active auditors, revocation shall require
+a 2/3 majority vote of active auditors, with the Architect having a
+tie‑breaking vote only.
+
+**Revocation record:**
 1. Integrity violation reported via `13-integrity-violation.yml`
-   or identified by the Architect directly
+   or identified by the Architect
 2. Architect reviews within 5 business days
 3. If revocation is warranted: badge removed from
    `.github/verified-auditors.json` and added to
@@ -179,8 +210,6 @@ A badge may be revoked for:
    will be automatically flagged `AUDITOR_REVOKED` — permanently
    and immutably
 
-No single party holds unilateral revocation authority in
-production. Structural limits are intentional.
 The revocation record itself is sealed and permanent.
 
 ---
@@ -200,6 +229,25 @@ application the same way it governs the fiftieth.
 
 ---
 
+## DATA PROTECTION AND RETENTION
+
+All applicant personal data (name, LinkedIn URL, email) will be
+used solely for vetting and badge administration. It will not be
+shared with third parties except as required by law. Data will be
+retained for 7 years after badge expiration or revocation.
+
+---
+
+## GOVERNING LAW AND DISPUTES
+
+This vetting process and any disputes arising from it shall be
+governed by the laws of the State of New York, USA, without regard
+to its conflict of laws principles. Any legal action shall be brought
+exclusively in the state or federal courts located in New York County,
+New York.
+
+---
+
 ## BADGE REFERENCE
 
 | Field | Value |
@@ -213,7 +261,7 @@ application the same way it governs the fiftieth.
 
 ---
 
-*Sheldon K. Salmon · AI Reliability & AGI Architect · March 2026*
-*Sovereign Trace Protocol · FROZEN-2.0*
-*aionsystem2026@gmail.com*
+*Sheldon K. Salmon · AI Reliability & ADI/AGI Architect · June 2026*
+*Sovereign Trace Protocol · FROZEN-4.0*
+*aionsystem@outlook.com*
 *github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL*
