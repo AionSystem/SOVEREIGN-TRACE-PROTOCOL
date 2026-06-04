@@ -1,8 +1,8 @@
 # CONTRIBUTOR LICENSE AGREEMENT
 
-**Sovereign Trace Protocol**
-**Author:** Sheldon K. Salmon — AI Reliability & AGI Architect
-**Version:** 1.0 | Effective: March 2026
+**Sovereign Trace Protocol**  
+**Author:** Sheldon K. Salmon — AI Reliability & AGI Architect  
+**Version:** 1.1 | Effective: June 2026  
 
 ---
 
@@ -21,8 +21,9 @@ you have authority to bind that entity to these terms.
 ## 1. DEFINITIONS
 
 **"Contribution"** means any original work of authorship, including
-modifications, additions, bug fixes, documentation, test cases, or any
-other material intentionally submitted by you for inclusion in this project.
+modifications, additions, bug fixes, documentation, test cases, issue
+templates, workflow definitions, scripts, or any other material
+intentionally submitted by you for inclusion in this project.
 
 **"Licensor"** means Sheldon K. Salmon, sole copyright owner and architect
 of the Sovereign Trace Protocol.
@@ -92,12 +93,27 @@ You represent and warrant that:
 
 ---
 
-## 6. FROZEN CODE
+## 6. FROZEN AND STABLE COMPONENTS
 
-You understand and agree that `stamp/sovereign_trace_stamp.py`
-carries the FROZEN-2.0 designation — it is permanently immutable
-and no pull requests modifying it will be accepted. This is an
-architectural constraint, not a modifiable policy.
+**FROZEN (permanently immutable):**  
+`sovereign_trace/sovereign_trace_stamp.py` carries the **FROZEN-4.0**
+designation — it is permanently immutable. No pull requests modifying this
+file will be accepted under any circumstances. The FROZEN designation is
+an architectural commitment, not a modifiable policy.
+
+**Stable (changes require review and version bump):**
+
+| Component | Acceptable Contributions |
+|-----------|--------------------------|
+| Issue templates (`.github/ISSUE_TEMPLATE/*.yml`) | Clarifications, new templates, field improvements |
+| `scripts/stp_blockchain_anchor.py` | Bug fixes, new chain support |
+| `scripts/stp_abuse_detector.py` | Pattern updates, threshold tuning |
+| GitHub Composite Action (`.github/actions/stp-seal/`) | Enhancements, security hardening |
+| Multi‑chain anchoring schemas | New chain adapters, verification improvements |
+| `CONTRIBUTOR-TERMS.md`, `CONTRIBUTOR-LICENSE-AGREEMENT.md` | Minor clarifications (major changes require architect approval) |
+
+Contributions to stable components are welcome and will be reviewed.
+Modifications to the FROZEN stamp function are **never accepted**.
 
 ---
 
@@ -110,17 +126,15 @@ You are not required to provide support for your Contribution.
 
 ## 8. GOVERNING LAW
 
-This Agreement is governed by applicable law without regard to conflict
-of law provisions. Any dispute shall be resolved by binding arbitration
-consistent with the terms in `TERMS-OF-SERVICE.md`.
+This Agreement is governed by the laws of the State of New York, United States,
+without regard to conflict of law provisions. Any dispute shall be resolved by
+binding arbitration consistent with the terms in `TERMS-OF-SERVICE.md`.
 
 ---
 
 ## SIGNATURE
 
 By signing below, you agree to the terms of this Contributor License Agreement.
-
-```
 Full Name: ________________________________________________
 
 GitHub Username: __________________________________________
@@ -129,21 +143,23 @@ Email Address: ____________________________________________
 
 Organization (if applicable): _____________________________
 
-Signing on behalf of Legal Entity: ☐ Yes  ☐ No
+Signing on behalf of Legal Entity: ☐ Yes ☐ No
 
 Signature: ________________________________________________
 
 Date: ____________________________________________________
-```
+
+text
 
 ---
 
-**Electronic signature method:**
+**Electronic signature method:**  
 If signing electronically via a CLA bot or GitHub comment, your
-GitHub username and the comment text "I have read the CLA Document
-and I hereby sign the CLA" constitute your electronic signature.
+GitHub username and the comment text  
+*"I have read the CLA Document and I hereby sign the CLA"*  
+constitute your electronic signature.
 
 ---
 
-*CONTRIBUTOR-LICENSE-AGREEMENT.md*
-*Sovereign Trace Protocol | Sheldon K. Salmon | March 2026*
+*CONTRIBUTOR-LICENSE-AGREEMENT.md*  
+*Sovereign Trace Protocol | Sheldon K. Salmon | June 2026*
