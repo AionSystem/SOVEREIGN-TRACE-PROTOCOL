@@ -1,10 +1,14 @@
 # PRIVACY POLICY
 
 **Sovereign Trace Protocol**
-**Author:** Sheldon K. Salmon — AI Reliability & AGI Architect
-**Version:** 1.0 | Effective: March 2026
+**Author:** Sheldon K. Salmon — AI Reliability & ADI/AGI Architect
+**Version:** 1.1 | Effective: June 2026
+**Supersedes:** Version 1.0 (March 2026)
 **Applies to:** sovereign-trace PyPI package, certification services,
 and AionSystem/SOVEREIGN-TRACE-PROTOCOL repository interactions
+
+**Data Controller:** Sheldon K. Salmon, acting as a sole proprietor.
+Contact: aionsystem@outlook.com
 
 ---
 
@@ -33,7 +37,7 @@ This policy applies to:
 
 ## 2. THE STAMP FUNCTION — ZERO DATA COLLECTION
 
-`sovereign_trace_stamp.py` (FROZEN-2.0) collects no personal data.
+`sovereign_trace_stamp.py` (FROZEN-4.0) collects no personal data.
 
 When you run `stamp()`, the function:
 - Takes your entry text as input
@@ -49,6 +53,13 @@ This is verifiable: read `stamp/sovereign_trace_stamp.py`. It imports
 only `hashlib`, `json`, and `datetime` from the Python standard library.
 There is no `requests`, `urllib`, `http`, or any network import.
 
+**Important:** The core stamp function makes no network calls. However,
+optional GitHub Actions workflows (auto‑seal, blockchain anchor, abuse
+detector) **do** make network calls. If you enable those workflows,
+your data will be transmitted to GitHub and possibly to third‑party
+blockchain services. Review those services’ privacy policies before
+enabling automation.
+
 ---
 
 ## 3. CERTIFICATION SERVICES — DATA COLLECTED
@@ -63,7 +74,9 @@ may be collected and processed:
 | Organization name | Public registry listing | Permanent (AION-Registry — No-Deletion Policy) |
 | AI system descriptions | Assessment scope | Duration of engagement + 7 years |
 | Incident and failure records | Audit assessment | Permanent for public entries; assessment period for confidential records |
-| Payment information | Processing fees | Per payment processor terms — not retained by author |
+| Payment information | Processing fees | Not retained by author. Processed by third‑party payment processor (e.g., Stripe, PayPal). See their privacy policy. |
+
+**Payment processors:** The author uses [Stripe / PayPal / other] (to be specified at engagement). Their privacy policies apply separately. Contact the author for details.
 
 **Public registry entries are permanent.** Organization name, certification
 tier, and outcome are listed in the public AION-Registry. This is a
@@ -82,6 +95,13 @@ When you interact with AionSystem/SOVEREIGN-TRACE-PROTOCOL on GitHub:
   and become part of the repository record.
 - Contributor information submitted via the CLA process is retained
   as part of the contribution record.
+
+**⚠️ Important warning:** Do not include sensitive personal data
+(health information, financial data, passwords, private keys, or any
+information you would not want public) in GitHub issues. If you need
+to submit a trace containing such data, use the offline stamp function
+and do not upload the sealed entry to GitHub. The author cannot delete
+public GitHub comments.
 
 ---
 
@@ -123,6 +143,9 @@ regarding your personal data:
 - Right to opt out of sale — note: no personal data is sold
 - Right to non-discrimination for exercising CCPA rights
 
+*California residents may exercise their rights by emailing
+aionsystem@outlook.com with the subject “CCPA Request”.*
+
 **Canada (PIPEDA):**
 - Right of access and correction per PIPEDA Schedule 1, Principles 4.9 and 4.10
 
@@ -151,6 +174,10 @@ Such transfers are conducted under appropriate safeguards consistent
 with GDPR Chapter V and the UK GDPR. See `DATA-PROCESSING-AGREEMENT.md`
 for DPA terms applicable to certification clients.
 
+**Data localisation advisory:** Users in jurisdictions with data
+localisation requirements (e.g., Russia, China) should consult local
+counsel before submitting personal data to certification services.
+
 ---
 
 ## 9. SECURITY
@@ -159,9 +186,21 @@ Reasonable technical and organizational measures are implemented to
 protect personal data against unauthorized access, disclosure,
 alteration, and destruction. For security concerns, see `SECURITY.md`.
 
+**Data breach notification:** In the event of a personal data breach,
+the author will notify affected individuals and relevant authorities
+within 72 hours of discovery, as required by GDPR and other applicable laws.
+
 ---
 
-## 10. CHILDREN
+## 10. DATA RETENTION FOR BACKUPS
+
+Backup copies of certification records may be retained for up to
+7 years for disaster recovery and legal compliance, in addition to
+the retention periods listed in Section 3.
+
+---
+
+## 11. CHILDREN
 
 The Sovereign Trace Protocol is not directed at individuals under
 the age of 13. Personal data from children under 13 is not
@@ -170,15 +209,16 @@ contact via a GitHub issue with label `privacy-concern`.
 
 ---
 
-## 11. CHANGES TO THIS POLICY
+## 12. CHANGES TO THIS POLICY
 
 This policy may be updated. Material changes will be announced
-via a GitHub release note. The version history is preserved in
-git — prior versions are not deleted.
+via a GitHub release note. Active certification clients will be
+notified by email of material changes within 30 days of the change.
+The version history is preserved in git — prior versions are not deleted.
 
 ---
 
-## 12. CONTACT
+## 13. CONTACT
 
 Privacy inquiries: file a GitHub issue with label `privacy-concern`.
 For EU/EEA data subject rights requests under GDPR, use the same channel.
@@ -186,7 +226,7 @@ Response within 30 days.
 
 ---
 
-*PRIVACY-POLICY.md*
-*Sovereign Trace Protocol | Sheldon K. Salmon | March 2026*
+*PRIVACY-POLICY.md — v1.1 (June 2026)*
+*Sovereign Trace Protocol | Sheldon K. Salmon — AI Reliability & ADI/AGI Architect*
 *This document does not constitute legal advice.*
 *Consult qualified data protection counsel for your jurisdiction.*
