@@ -1,0 +1,92 @@
+name: "Research Logbook — Sovereign Trace Protocol"
+description: "Seal your daily research notes, experiment results, or lab logbook. Proves what you observed and when."
+title: "[STP-LOGBOOK] — [PROJECT NAME] — [DATE]"
+labels: ["logbook", "pending-seal"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Research Logbook – Sovereign Trace Protocol (FROZEN‑4.0)
+
+        This form seals daily research notes, experiment results, or lab observations. Use it as a digital witness for your scientific process.
+
+        **⚠️ CRITICAL WARNINGS – READ BEFORE PROCEEDING ⚠️**
+        - The log entry is **public** and **permanent**.
+        - Your GitHub username is **publicly linked**.
+        - **Do not include PII, unpublished patient data, or trade secrets.**
+        - **Do not edit after sealing.**
+
+        **Fields marked with `*` are required.**
+
+  - type: input
+    id: submitter_name
+    attributes:
+      label: "Your Name (Optional)"
+      placeholder: "First Last or leave blank"
+    validations:
+      required: false
+
+  - type: input
+    id: project_name
+    attributes:
+      label: "Project Name *"
+      placeholder: "e.g., Fusion Reactor Temperature Study"
+    validations:
+      required: true
+
+  - type: input
+    id: log_date
+    attributes:
+      label: "Date of Log Entry *"
+      placeholder: "YYYY-MM-DD"
+    validations:
+      required: true
+
+  - type: textarea
+    id: log_entry
+    attributes:
+      label: "Log Entry Text *"
+      description: "Write your daily observations, measurements, or conclusions. Keep under 50,000 characters."
+      placeholder: "Experiment 3: Temperature rose 0.5K faster than predicted. Possible heat leak from valve X."
+    validations:
+      required: true
+
+  - type: textarea
+    id: supporting_urls
+    attributes:
+      label: "Attachments (URLs) Optional"
+      placeholder: "https://ipfs.io/ipfs/Qm... (images, data files)"
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting_hashes
+    attributes:
+      label: "File SHA‑256 hashes (recommended)"
+      placeholder: "a3f9c12e7d..."
+    validations:
+      required: false
+
+  - type: input
+    id: correction_of
+    attributes:
+      label: "Correction of (optional)"
+      placeholder: "#42"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: "Declaration *"
+      options:
+        - label: "I affirm this log entry is an accurate record of my observations on the stated date."
+          required: true
+        - label: "I understand this submission is immutable and public."
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        **Contact:** `aionsystem@outlook.com`
