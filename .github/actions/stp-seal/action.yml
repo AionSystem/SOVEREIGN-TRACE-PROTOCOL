@@ -1,0 +1,195 @@
+name: 'STP Seal'
+description: 'Seal a string or file with the Sovereign Trace Protocol. Outputs SHA‑256 hash and triple‑time stamp.'
+author: 'Sheldon K. Salmon'
+branding:
+  icon: 'lock'
+  color: 'blue'
+
+inputs:
+  message:
+    description: 'Text to seal (use either message or file, not both)'
+    required: false
+    default: ''
+  file:
+    description: 'Path to file to seal (relative to workspace, reads content)'
+    required: false
+    default: ''
+  create_ledger_issue:
+    description: 'Create a GitHub issue as a ledger entry (requires issues: write permission)'
+    required: false
+    default: 'false'
+  timeout_seconds:
+    description: 'Maximum time in seconds for seal generation'
+    required: false
+    default: '60'
+
+outputs:
+  seal_hash:
+    description: 'SHA‑256 hash of the sealed content'
+    value: ${{ steps.stamp.outputs.seal_hash }}
+  timestamp:
+    description: 'ISO 8601 timestamp of the seal'
+    value: ${{ steps.stamp.outputs.timestamp }}
+  triple_time_display:
+    description: 'Human‑readable triple‑time stamp (Gregorian, Hebrew, Dreamspell)'
+    value: ${{ steps.stamp.outputs.triple_time }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Validate inputs
+      id: validate
+      shell: bash
+      run: |
+        # Check mutually exclusive
+        if [ -n "${{ inputs.message }}" ] && [ -n "${{ inputs.file }}" ]; then
+          echo "::error::Cannot provide both message and file"
+          exit 1
+        fi
+        if [ -z "${{ inputs.message }}" ] && [ -z "${{ inputs.file }}" ]; then
+          echo "::error::Must provide either message or file"
+          exit 1
+        fi
+        # Validate file path (if provided)
+        if [ -n "${{ inputs.file }}" ]; then
+          FILE_PATH="${{ inputs.file }}"
+          # Prevent directory traversal and symlink escape
+          REAL_PATH=$(realpath "$FILE_PATH" 2>/dev/null || echo "")
+          if [ -z "$REAL_PATH" ]; then
+            echo "::error::File path invalid: $FILE_PATH"
+            exit 1
+          fi
+          if [[ "$REAL_PATH" != "$GITHUB_WORKSPACE"* ]]; then
+            echo "::error::File path resolves outside workspace: $REAL_PATH"
+            exit 1
+          fi
+          if [ ! -f "$REAL_PATH" ]; then
+            echo "::error::File not found: $FILE_PATH"
+            exit 1
+          fi
+        fi
+        # Message length limit (approx 10k chars)
+        if [ -n "${{ inputs.message }}" ]; then
+          MSG_LEN=$(echo -n "${{ inputs.message }}" | wc -c)
+          if [ "$MSG_LEN" -gt 10000 ]; then
+            echo "::error::Message exceeds 10,000 characters"
+            exit 1
+          fi
+          # Reject control characters (non‑printable) except newline/tab
+          if echo -n "${{ inputs.message }}" | grep -P '[^\x20-\x7E\n\t]' > /dev/null; then
+            echo "::warning::Message contains non‑printable characters; they will be preserved in seal"
+          fi
+        fi
+        # Validate create_ledger_issue (must be true/false)
+        case "${{ inputs.create_ledger_issue }}" in
+          true|false) ;;
+          *) echo "::error::create_ledger_issue must be true or false" && exit 1 ;;
+        esac
+        echo "validated=true" >> $GITHUB_OUTPUT
+
+    - name: Install STP
+      id: install
+      shell: bash
+      run: |
+        pip install sovereign-trace --quiet
+        if [ $? -ne 0 ]; then
+          echo "::error::Failed to install sovereign-trace"
+          exit 1
+        fi
+        # Verify stamp function API
+        python -c "from sovereign_trace_stamp import stamp; d=stamp('test'); assert 'seal' in d and 'gregorian' in d"
+        if [ $? -ne 0 ]; then
+          echo "::error::Installed sovereign-trace version missing expected API"
+          exit 1
+        fi
+        echo "installed=true" >> $GITHUB_OUTPUT
+
+    - name: Generate seal
+      id: stamp
+      shell: bash
+      env:
+        STP_MESSAGE: ${{ inputs.message }}
+        STP_FILE: ${{ inputs.file }}
+        STP_TIMEOUT: ${{ inputs.timeout_seconds }}
+      run: |
+        python3 -c '
+        import os, sys, signal
+        from sovereign_trace_stamp import stamp
+
+        def timeout_handler(signum, frame):
+            print("::error::Seal generation timed out", file=sys.stderr)
+            sys.exit(1)
+
+        timeout = int(os.environ.get("STP_TIMEOUT", "60"))
+        content = None
+        source = os.environ.get("STP_MESSAGE")
+        if source:
+            content = source
+        else:
+            file_path = os.environ.get("STP_FILE")
+            if not file_path:
+                print("::error::No source provided", file=sys.stderr)
+                sys.exit(1)
+            # Read file as binary and compute hash? For seal we need the content as string.
+            # But to preserve binary data, we could compute hash directly. However stamp expects string.
+            # So read as UTF‑8 with BOM handling.
+            try:
+                with open(file_path, "r", encoding="utf-8-sig") as f:
+                    content = f.read()
+            except UnicodeDecodeError:
+                # Fallback: compute SHA‑256 of binary file and seal that hash as a string.
+                import hashlib
+                with open(file_path, "rb") as f:
+                    file_hash = hashlib.sha256(f.read()).hexdigest()
+                content = f"Binary file SHA‑256: {file_hash}"
+                print("::warning::File contained binary data; sealed hash of file content instead of raw text", file=sys.stderr)
+
+        # Timeout
+        signal.signal(signal.SIGALRM, timeout_handler)
+        signal.alarm(timeout)
+        try:
+            ts = stamp(content)
+        except Exception as e:
+            print(f"::error::Stamp failed: {e}", file=sys.stderr)
+            sys.exit(1)
+        finally:
+            signal.alarm(0)
+
+        seal_hash = ts["seal"]
+        greg = ts["gregorian"]
+        heb = ts["hebrew"]
+        dream = ts["dreamspell"]
+        triple_time = f"{greg} | {heb} | {dream}"
+
+        print(f"seal_hash={seal_hash}")
+        print(f"triple_time={triple_time}")
+
+        with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+            f.write(f"seal_hash={seal_hash}\n")
+            f.write(f"timestamp={greg}\n")
+            f.write(f"triple_time={triple_time}\n")
+        '
+
+    - name: Create ledger issue (optional)
+      if: inputs.create_ledger_issue == 'true'
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      run: |
+        # Check if token has issues write permission (best effort)
+        if ! gh auth status 2>/dev/null | grep -q '✓ Logged in to github.com'; then
+          echo "::warning::GitHub token may not have sufficient permissions to create issues"
+        fi
+        gh issue create \
+          --title "STP Seal: ${{ github.run_id }} - ${{ github.sha }}" \
+          --body "**Hash:** \`${{ steps.stamp.outputs.seal_hash }}\`
+
+**Triple‑time stamp:** ${{ steps.stamp.outputs.triple_time }}
+
+**Repository:** ${{ github.repository }}
+**Run:** ${{ github.run_id }}
+**Workflow:** ${{ github.workflow }}
+**Actor:** ${{ github.actor }}
+
+> This issue was automatically created by the STP Seal GitHub Action. The seal is permanent." || \
+          echo "::warning::Failed to create ledger issue. Ensure the token has 'issues: write' permission."
