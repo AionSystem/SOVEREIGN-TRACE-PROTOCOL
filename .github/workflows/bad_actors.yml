@@ -1,0 +1,6 @@
+malicious-user-123:
+  violation_count: 3
+  issues: [42, 67, 89]
+another-bad-actor:
+  violation_count: 1
+  issues: [101]
