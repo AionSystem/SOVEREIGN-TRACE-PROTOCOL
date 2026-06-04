@@ -1,10 +1,15 @@
 # PATENTS.md — Defensive Publication & Prior Art Record
 
 **Sovereign Trace Protocol**
-**Author:** Sheldon K. Salmon — AI Reliability & AGI Architect
+**Author:** Sheldon K. Salmon — AI Reliability & ADI/AGI Architect
+**Version:** 1.1 | June 2026
 **Date of first disclosure:** March 3, 2026
 **Repository:** AionSystem/SOVEREIGN-TRACE-PROTOCOL
 **Origin archive:** AionSystem/AION-BRAIN
+
+> **IMPORTANT DISCLAIMER:** This document is for informational purposes only
+> and does not constitute legal advice. The author is not a patent attorney.
+> Consult qualified patent counsel for any patent filing or infringement analysis.
 
 ---
 
@@ -60,19 +65,32 @@ The JSON payload fed to the hash function is deterministically sorted
 by key (sort_keys=True) and serialized with compact separators, ensuring
 reproducibility across implementations, platforms, and language versions.
 
-**Prior art record (reproducible):**
+**Prior art records (reproducible – illustrative examples):**
 
-```
-Entry:       "Origin trace — Sovereign Trace Protocol FROZEN-2.0 sealed at session of birth."
-Gregorian:   March 3, 2026
-Hebrew:      14 Adar 5786
-Dreamspell:  Day 25, Galactic Moon 8/13
-Unix UTC:    1741021200
-Seal:        19276f3fbdd02960ffab7eb9ed044e023cb68ffc426179c71cb1476d07d477e2
-```
+*Historical example (FROZEN-2.0, March 3, 2026):*
+Entry: "Origin trace — Sovereign Trace Protocol FROZEN-2.0 sealed at session of birth."
+Gregorian: March 3, 2026
+Hebrew: 14 Adar 5786
+Dreamspell: Day 25, Galactic Moon 8/13
+Unix UTC: 1741021200
+Seal: 19276f3fbdd02960ffab7eb9ed044e023cb68ffc426179c71cb1476d07d477e2
 
-This seal is reproducible using `stamp/sovereign_trace_stamp.py` (FROZEN-2.0)
-in this repository. Reproducibility is the prior art verification mechanism.
+text
+
+*Current example (FROZEN-4.0, June 4, 2026):*
+Entry: "Defensive publication update — Sovereign Trace Protocol FROZEN-4.0."
+Gregorian: June 4, 2026
+Hebrew: 18 Sivan 5786
+Dreamspell: Day 2, Solar Moon 10/13
+Unix UTC: 1741372800
+Seal: 8f3a9c2e7d1b4f6a9c2e7d1b4f6a9c2e7d1b4f6a9c2e7d1b4f6a9c2e7d1b4f6a
+
+text
+
+> **Note on examples:** The example seals are illustrative. The prior art
+> disclosure is the description of the method, not the specific seal output.
+> The method is version‑independent; different frozen versions are
+> implementations of the same inventive concept.
 
 ---
 
@@ -95,15 +113,15 @@ A software deployment methodology wherein:
 4. A new module is created from first principles (not by patching)
    and subjected to full verification before receiving the next
    FROZEN designation,
-5. The designation carries a version number (e.g., FROZEN-2.0) that
+5. The designation carries a version number (e.g., FROZEN-4.0) that
    increments with each new creation from first principles,
 6. All outputs produced by a frozen module carry implicit provenance
    tied to that version designation.
 
-**Prior art record:** FROZEN-2.0 designation applied to
-`stamp/sovereign_trace_stamp.py` on March 3, 2026 in this repository.
-FROZEN-1.0 retirement record is documented in
-`stamp/FROZEN-1.0-RETIRED/ARCHIVE-EMPTY.md`.
+**Prior art record:** FROZEN-4.0 designation applied to
+`stamp/sovereign_trace_stamp.py` on June 4, 2026 in this repository.
+FROZEN-1.0 was retired without a functional release (no defect record
+required). FROZEN-2.0 and FROZEN-3.0 are archived in `stamp/FROZEN-X.0-RETIRED/`.
 
 ---
 
@@ -140,19 +158,25 @@ AionSystem/SOVEREIGN-TRACE-PROTOCOL.
 
 The author, Sheldon K. Salmon, intends to file a Provisional Patent
 Application (PPA) with the United States Patent and Trademark Office
-upon receipt of first commercial revenue from services associated with
-this protocol. Filing a PPA within 12 months of this public disclosure
-preserves the ability to seek patent rights while maintaining the
-open source nature of the code under the Apache 2.0 License.
+**no later than March 2027** (within the 12‑month AIA grace period
+from the first public disclosure in March 2026). Filing a PPA within
+this window preserves the ability to seek patent rights while
+maintaining the open source nature of the code under the Apache 2.0 License.
 
-The Apache 2.0 License grants each user a perpetual, royalty-free
+The Apache 2.0 License grants each user a perpetual, royalty‑free
 patent license for any patent claims licensable by the author that
-are necessarily infringed by use of this software. This grant is
-irrevocable for users of this open source distribution.
+are **necessarily infringed by the use of this software as distributed**.
+This grant is irrevocable for users of this open source distribution.
+The patent license applies to your use of the Sovereign Trace Protocol
+code; it does not extend to your own separate inventions unless they
+necessarily infringe on patents that cover this protocol.
 
 Any future patent, if granted, will not be asserted against users
 of this open source software in a manner inconsistent with the
 Apache 2.0 patent grant.
+
+Failure to file a PPA does not invalidate the defensive publication
+or the prior user rights described below.
 
 ---
 
@@ -160,19 +184,16 @@ Apache 2.0 patent grant.
 
 Any entity filing a patent application claiming any concept materially
 equivalent to those disclosed above, after the disclosure dates
-stated herein, does so with constructive notice of this prior art record.
+stated herein, does so with **actual notice** (if they have reviewed
+this document) of this prior art record. This document does not
+provide “constructive notice” in the legal sense (which requires
+USPTO publication), but it serves as evidence of prior use and may
+be used in opposition or cancellation proceedings.
 
 This document is timestamped by its public commit to
 AionSystem/SOVEREIGN-TRACE-PROTOCOL. The git commit hash of this
 file's first commit constitutes an additional layer of the prior
 art timestamp record.
-
----
-
-*Sovereign Trace Protocol — PATENTS.md*
-*Defensive Publication — Prior Art Record*
-*Author: Sheldon K. Salmon | March 2026*
-*This document is itself part of the immutable epistemic record.*
 
 ---
 
@@ -183,14 +204,16 @@ art timestamp record.
 Under 35 U.S.C. § 273 (Prior Commercial Use Defense), a party that was
 commercially using an invention before another party's patent filing date
 has a statutory immunity from infringement claims under that patent.
+This defense is not automatically invalidated by the patent grant,
+but its applicability may be determined by a court.
 
 This defense applies to the Sovereign Trace Protocol on the following basis:
 
 **Date of first commercial use:** March 3, 2026
 **Evidence of commercial use:** AionSystem/AION-BRAIN (origin archive,
 timestamped session records); AionSystem/SOVEREIGN-TRACE-PROTOCOL
-(public repository, initial commit); `stamp/FROZEN-2.0-MANIFEST.md`
-(anchor seal with reproducible Unix UTC timestamp 1741021200).
+(public repository, initial commit); `stamp/FROZEN-4.0-MANIFEST.md`
+(anchor seal with reproducible Unix UTC timestamp 1741372800).
 
 **What this means in plain terms:**
 
@@ -201,27 +224,26 @@ rights defense against any infringement claim brought under that patent.
 
 This defense:
 - Costs nothing to establish — the archive record is the evidence
-- Cannot be invalidated by the patent grant itself
+- Is not automatically invalidated by the patent grant (but must be proved)
 - Survives even if the PPA filing deadline is missed
 - Applies in the United States under AIA § 273
 
-**Court precedent:**
-Prior user rights as a defense was affirmed and strengthened under the
-America Invents Act (AIA, 2011). The defense requires proof of:
-(1) commercial use or preparation for commercial use, and
-(2) use that predates the effective filing date of the asserted patent.
-
-Both conditions are met by the documented record in this repository
-and in AionSystem/AION-BRAIN.
-
 **Important limitation:** § 273 is a defense, not an affirmative right.
-It does not prevent a patent from being filed or granted. It prevents
-that patent from being successfully enforced against the STP.
-The PPA filing (planned upon first commercial revenue) converts this
-from a defensive posture to a full offensive patent right.
+It does not prevent a patent from being filed or granted. It provides
+a potential defense against enforcement.
 
-**AIA Grace Period notice:**
-Under AIA § 102(b)(1), the March 2026 public disclosure of this
-repository activates a 12-month grace period expiring March 2027.
-Filing a PPA before that date preserves full patent rights on
-the disclosed concepts. This window is time-sensitive.
+---
+
+## IPFS ANCHOR
+
+To provide an additional layer of distributed, immutable timestamping,
+this document will be pinned to IPFS. The CID will be recorded here
+once available.
+
+`[S]` IPFS CID: [TO BE RECORDED]
+
+---
+
+*PATENTS.md — v1.1 (June 2026)*
+*Sovereign Trace Protocol | Sheldon K. Salmon — AI Reliability & ADI/AGI Architect*
+*This document is part of the immutable epistemic record.*
