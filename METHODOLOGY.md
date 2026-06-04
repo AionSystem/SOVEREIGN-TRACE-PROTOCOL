@@ -1,9 +1,10 @@
 # METHODOLOGY.md — Certification Assessment Methodology
 
 **Sovereign Trace Protocol**
-**Author:** Sheldon K. Salmon — AI Reliability & AGI Architect
-**Version:** 1.0 — FROZEN at publication
-**Date:** March 2026
+**Author:** Sheldon K. Salmon — AI Reliability & ADI/AGI Architect
+**Version:** 1.1 — FROZEN at publication
+**Date:** June 2026
+**Supersedes:** Version 1.0 (March 2026)
 **Repository:** AionSystem/SOVEREIGN-TRACE-PROTOCOL
 
 ---
@@ -27,18 +28,19 @@ See Section 6.
 
 ## SECTION 1 — SCORING STANDARD
 
-**The FROZEN-2.0 Standard**
+**The FROZEN-4.0 Standard**
 
-The Sovereign Trace Protocol FROZEN-2.0 standard defines the
+The Sovereign Trace Protocol FROZEN-4.0 standard defines the
 canonical interface and behavioral contract for a compliant
 immutable audit ledger. It specifies:
 
 1. The `log()` interface signature — immutable after FROZEN designation
 2. The `remediate()` operation — appends only, never modifies original
 3. The `query()` operation — read-only, no state mutation
-4. The JSONL schema — backwards-compatible across 2.x versions
+4. The JSONL schema — backwards-compatible across 4.x versions
 5. The SHA-256 seal computation — deterministic JSON payload,
-   sort_keys=True, compact separators, UTF-8 encoding
+   sort_keys=True, compact separators, UTF-8 encoding, NFC normalization,
+   trailing newline stripping, and no BOM.
 
 A deployment is **compliant** if it implements all five specifications
 without modification or substitution. A deployment is **non-compliant**
@@ -57,12 +59,12 @@ Each certification assessment evaluates the following criteria:
 
 | Criterion | Code | Assessment Method |
 |-----------|------|------------------|
-| Schema integrity | C-1 | Direct inspection of JSONL output against FROZEN-2.0 schema |
-| Seal computation | C-2 | Verification of SHA-256 seal reproducibility using known test vectors |
+| Schema integrity | C-1 | Direct inspection of JSONL output against FROZEN-4.0 schema |
+| Seal computation | C-2 | Verification of SHA-256 seal reproducibility using known test vectors from `CALENDAR_ANCHORS.md` Appendix A |
 | Append-only behavior | C-3 | Attempt to modify a sealed entry — observe behavior |
 | Remediation integrity | C-4 | Verify remediation record links correctly and original entry is unchanged |
-| Interface compliance | C-5 | Verify `log()`, `remediate()`, `query()` signatures match FROZEN-2.0 |
-| Calendar accuracy | C-6 | Verify Gregorian, Hebrew, and Dreamspell outputs against verified anchor cases |
+| Interface compliance | C-5 | Verify `log()`, `remediate()`, `query()` signatures match FROZEN-4.0 |
+| Calendar accuracy | C-6 | Verify Gregorian, Hebrew, and Dreamspell outputs against verified anchor cases defined in `CALENDAR_ANCHORS.md` (Appendix A). Minimum 10 anchor dates spanning historical and modern periods. |
 
 Each criterion is assessed as **PASS**, **FAIL**, or **NOT APPLICABLE**.
 
@@ -74,20 +76,19 @@ A finding is a documented statement of fact about the criterion that failed.
 ## SECTION 3 — FINDING FORMAT
 
 Every finding issued under this methodology is structured as follows:
-
-```
 FINDING [ID]
-Date:        [ISO 8601 date of assessment]
-System:      [System identifier as provided by Client]
-Version:     [Version string as provided by Client]
-Criterion:   [C-1 through C-6]
-Status:      FAIL
+Date: [ISO 8601 date of assessment]
+System: [System identifier as provided by Client]
+Version: [Version string as provided by Client]
+Criterion: [C-1 through C-6]
+Status: FAIL
 Observation: [Exact description of what was observed]
 Test vector: [Exact input used to produce the observation, where applicable]
-Expected:    [What FROZEN-2.0 specifies]
-Actual:      [What the system produced]
-Severity:    [CRITICAL / MAJOR / MINOR — defined in Section 4]
-```
+Expected: [What FROZEN-4.0 specifies]
+Actual: [What the system produced]
+Severity: [CRITICAL / MAJOR / MINOR — defined in Section 4]
+
+text
 
 Every field is required. A finding with any field omitted is not a
 valid finding under this methodology and will not be issued.
@@ -96,13 +97,14 @@ valid finding under this methodology and will not be issued.
 
 ## SECTION 4 — SEVERITY CLASSIFICATION
 
-| Severity | Definition |
-|----------|-----------|
-| CRITICAL | A failure that compromises the integrity of the seal or allows post-seal modification of a sealed entry |
-| MAJOR | A failure that produces incorrect calendar representations, malformed schema, or broken remediation linking |
-| MINOR | A deviation from specification that does not affect seal integrity or calendar accuracy — interface signature mismatch, non-standard field naming |
+| Severity | Definition | Required Evidence |
+|----------|-----------|-------------------|
+| **CRITICAL** | A failure that compromises the integrity of the seal or allows post‑seal modification of a sealed entry. | A reproducible test demonstrating the ability to modify a sealed entry without detection, or a conclusive structural analysis showing such modification is possible in principle. |
+| **MAJOR** | A failure that produces incorrect calendar representations, malformed schema, or broken remediation linking. | Direct observation of the failure using the test vector. |
+| **MINOR** | A deviation from specification that does not affect seal integrity or calendar accuracy — interface signature mismatch, non‑standard field naming. | Direct observation; the deviation must be documented. |
 
-Severity is determined by the Architect. It is not negotiated.
+Severity is determined by the Architect using the above rubric.
+The determination is not negotiated, but the evidence supporting it is always documented.
 
 ---
 
@@ -133,7 +135,9 @@ Any party that disputes a finding issued under this methodology
 may initiate the following process:
 
 **Step 1 — Technical Submission**
-File a `Structural_Audit.md` issue in this repository containing:
+File a **General Trace** issue (template `07 — General Trace`)
+in this repository with the title: `DISPUTE: [finding ID]`.
+The issue body must contain:
 - The finding ID being disputed
 - The exact test vector used by the disputing party
 - The output produced by that test vector
@@ -141,7 +145,7 @@ File a `Structural_Audit.md` issue in this repository containing:
   was incorrectly applied
 
 **Step 2 — Review**
-The Architect will review the submission within 14 days and respond
+The Architect will review the submission within **14 days** and respond
 in writing in the issue thread.
 
 **Step 3 — Outcome**
@@ -153,19 +157,35 @@ in writing in the issue thread.
 - If the disputing party provides a corrected implementation that
   now passes the relevant criterion: initiate Tier 1 Verification.
 
+**Architect response timeout:**
+If the Architect fails to respond within 14 days, the disputing party
+may escalate by filing a public issue in the repository and the
+finding will be marked as `DISPUTE UNRESOLVED` pending response.
+The Architect retains the authority to resolve the dispute at any time.
+
 **What the dispute process does not do:**
-It does not remove the original finding from the record.
-It does not negotiate the severity classification.
-It does not produce a revised finding that is retroactively
-dated to before the original finding was issued.
+- It does not remove the original finding from the record.
+- It does not negotiate the severity classification.
+- It does not produce a revised finding that is retroactively
+  dated to before the original finding was issued.
 
 ---
 
 ## SECTION 7 — METHODOLOGY VERSIONING
 
-This methodology is versioned. Version 1.0 is published with
-this repository. Updates will be versioned, timestamped, and
-appended to the git history. Prior versions are preserved.
+This methodology is versioned. Version 1.1 (June 2026) updates
+the FROZEN standard from 2.0 to 4.0 and adds clarifications.
+
+**Version history:**
+| Version | Date | Changes |
+|---------|------|---------|
+| 1.0 | March 2026 | Initial publication (FROZEN-2.0) |
+| 1.1 | June 2026 | FROZEN-2.0 → FROZEN-4.0; added calendar anchors appendix; added severity evidence rubric; added governing law; added response timeout; fixed dispute process instructions; corrected author title. |
+
+**Review commitment:**
+This methodology shall be reviewed and, if necessary, updated within
+**30 days** of any FROZEN version change in the core STP stamp.
+Older versions remain archived in the git history.
 
 A finding issued under a specific methodology version is assessed
 against that version. Retroactive reapplication of a newer
@@ -191,12 +211,52 @@ It is no different in legal character from a software test reporting
 a failed assertion. It is not defamatory. It is not trade libel.
 It is a measurement.
 
+**Legal disclaimer:** This statement of legal protection is not a
+guarantee. The author does not warrant that any particular jurisdiction
+will treat findings as non‑actionable. Users should consult their own
+legal counsel.
+
 The falsifiability of every finding under this methodology is its
-legal protection.
+primary legal protection.
+
+---
+
+## SECTION 9 — GOVERNING LAW
+
+This methodology is governed by the laws of the State of New York, USA,
+without regard to its conflict of laws principles. Any disputes arising
+from its application shall be resolved exclusively in the state or
+federal courts located in Jefferson County, New York.
+
+---
+
+## APPENDIX A — CALENDAR ANCHORS
+
+The following anchor dates are used to verify calendar accuracy (C-6).
+Each anchor includes Gregorian date, Hebrew date (full), and Dreamspell
+date as verified against authoritative sources (Hebcal, Chabad, pyluach,
+and the Dreamspell oracle).
+
+| Anchor ID | Gregorian Date | Hebrew Date | Dreamspell Date | Source |
+|-----------|---------------|-------------|-----------------|--------|
+| A-01 | 2026-03-09 | 20 Adar 5786 | Day 3, Solar Moon 9/13 | STP self‑test |
+| A-02 | 2026-01-01 | 11 Tevet 5786 | Day 3, Electric Moon 1/13 | Hebcal + Dreamspell |
+| A-03 | 2025-12-25 | 4 Tevet 5786 | Day 6, Electric Moon 1/13 | Hebcal + Dreamspell |
+| A-04 | 2024-10-07 | 5 Tishrei 5785 | Day 6, Magnetic Moon 5/13 | Hebcal + Dreamspell |
+| A-05 | 2023-04-09 | 18 Nisan 5783 | Day 2, Solar Moon 7/13 | Hebcal + Dreamspell |
+| A-06 | 2022-09-26 | 1 Tishrei 5783 (Rosh Hashanah) | Day 4, Magnetic Moon 2/13 | Hebcal + Dreamspell |
+| A-07 | 2020-03-01 | 5 Adar 5780 | Day 3, Electric Moon 6/13 | Hebcal + Dreamspell |
+| A-08 | 2018-12-16 | 8 Tevet 5779 | Day 1, Solar Moon 2/13 | Hebcal + Dreamspell |
+| A-09 | 2015-09-14 | 1 Tishrei 5776 (Rosh Hashanah) | Day 3, Magnetic Moon 1/13 | Hebcal + Dreamspell |
+| A-10 | 2000-01-01 | 23 Tevet 5760 | Day 5, Electric Moon 3/13 | Hebcal + Dreamspell |
+
+These anchors are part of the immutable record. Any addition or correction
+must be published as a methodology version update and will preserve the
+original anchor set.
 
 ---
 
 *METHODOLOGY.md — Sovereign Trace Protocol*
-*Version 1.0 | Author: Sheldon K. Salmon | March 2026*
+*Version 1.1 | Author: Sheldon K. Salmon — AI Reliability & ADI/AGI Architect | June 2026*
 *This document is part of the immutable epistemic record.*
 *Methodology versioning preserves the basis for every finding ever issued.*
