@@ -14,7 +14,7 @@
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0005--8057--5115-a6ce39?style=flat&logo=orcid&logoColor=white)](https://orcid.org/0009-0005-8057-5115)
 [![DOI](https://zenodo.org/badge/1174130098.svg)](https://doi.org/10.5281/zenodo.18941392)
 [![Frozen](https://img.shields.io/badge/PERMANENT-FROZEN--4.0-2E7D32?style=flat-square&logo=git&logoColor=white)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL)
-[![CI](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/actions/workflows/python-publish.yml/badge.svg)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/actions)
+[![Dependencies](https://img.shields.io/badge/DEPS-stdlib%20only-616161?style=flat-square)](https://docs.python.org/3/library/index.html)
 [![Tests](https://img.shields.io/badge/tests-82%20passing-2E7D32?style=flat-square&logo=pytest&logoColor=white)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/actions)
 [![PyPI](https://img.shields.io/pypi/v/sovereign-trace?style=flat-square&color=2E7D32&label=PyPI)](https://pypi.org/project/sovereign-trace/)
 [![Status](https://img.shields.io/badge/STATUS-M--NASCENT-1976D2?style=flat-square&logo=shield&logoColor=white)](https://github.com/AionSystem/AION-BRAIN)
@@ -34,7 +34,7 @@
 [![Sovereign Trace Auto-Seal](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/actions/workflows/sovereign-trace-auto-seal.yml/badge.svg)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/actions/workflows/sovereign-trace-auto-seal.yml)
 [![Test Suite](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/actions/workflows/test.yml/badge.svg)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/actions/workflows/test.yml)
 [![Tiered Abuse Detector](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/actions/workflows/abuse-detector.yml/badge.svg)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/actions/workflows/abuse-detector.yml)
-[![Dependencies](https://img.shields.io/badge/DEPS-stdlib%20only-616161?style=flat-square)](https://docs.python.org/3/library/index.html)
+[![CI](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/actions/workflows/python-publish.yml/badge.svg)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/actions)
 
 ---
 
