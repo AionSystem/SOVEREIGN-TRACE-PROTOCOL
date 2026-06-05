@@ -1,0 +1,64 @@
+name: Test Suite
+
+on:
+  push:
+    branches: [ "MASTER", "main" ]
+  pull_request:
+    branches: [ "MASTER", "main" ]
+  schedule:
+    # Run nightly at 02:00 UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  test:
+    name: Python ${{ matrix.python-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest pytest-cov pytest-asyncio hypothesis
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          # Install the package in editable mode (so tests can import it)
+          pip install -e .
+
+      - name: Run tests with coverage
+        run: |
+          pytest tests/ --cov=sovereign_trace --cov-report=term --cov-report=xml
+
+      - name: Upload coverage to Codecov (optional)
+        uses: codecov/codecov-action@v4
+        with:
+          file: ./coverage.xml
+          fail_ci_if_error: false
+        continue-on-error: true
+
+      - name: Run stamp self-test (quick check)
+        run: |
+          sovereign-trace --version
+          sovereign-trace self-test || echo "Self-test not implemented yet"
+        continue-on-error: true
+
+      - name: Verify no orphaned test placeholders
+        run: |
+          # Fail if any test file still contains "placeholder.md"
+          if grep -r "placeholder.md" tests/ --include="*.py"; then
+            echo "❌ Found placeholder.md references – remove them before merging"
+            exit 1
+          fi
