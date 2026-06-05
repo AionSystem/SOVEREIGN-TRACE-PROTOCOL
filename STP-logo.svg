@@ -64,38 +64,45 @@
   <path d="M200,38 L338,78 L338,246 Q338,350 200,378 Q62,350 62,246 L62,78 Z"
         fill="url(#innerGlow)"/>
 
-  <!-- ═══ SHIELD — inner gold border ═══ -->
-  <path d="M200,46 L330,82 L330,244 Q330,342 200,368 Q70,342 70,244 L70,82 Z"
-        fill="none" stroke="url(#goldOuter)" stroke-width="1" opacity="0.5"/>
+  <!-- ═══ GEAR / HASH MARK — subtle engineering motif ═══ -->
+  <g opacity="0.12" stroke="#D4AF37" stroke-width="1.5" fill="none">
+    <circle cx="200" cy="185" r="28"/>
+    <circle cx="200" cy="185" r="22"/>
+    <circle cx="200" cy="185" r="16"/>
+    <line x1="175" y1="185" x2="225" y2="185"/>
+    <line x1="200" y1="160" x2="200" y2="210"/>
+    <line x1="182" y1="167" x2="218" y2="203"/>
+    <line x1="182" y1="203" x2="218" y2="167"/>
+  </g>
 
   <!-- ═══ STP — main lettering ═══ -->
-  <text x="200" y="228"
+  <text x="200" y="240"
         font-family="'Georgia', 'Times New Roman', serif"
-        font-size="118" font-weight="bold"
+        font-size="120" font-weight="bold"
         fill="url(#goldOuter)"
         text-anchor="middle"
         letter-spacing="-4"
         filter="url(#goldGlow)">STP</text>
 
   <!-- ═══ CYAN LINE — under STP ═══ -->
-  <rect x="88" y="248" width="224" height="3"
+  <rect x="88" y="260" width="224" height="3"
         fill="url(#aiCyan)"
         filter="url(#cyanGlow)"
         opacity="0.9"/>
 
   <!-- ═══ SOVEREIGN TRACE PROTOCOL — under cyan line ═══ -->
-  <text x="200" y="278"
+  <text x="200" y="290"
         font-family="'Georgia', 'Times New Roman', serif"
-        font-size="11.5" font-weight="bold" letter-spacing="3"
+        font-size="12" font-weight="bold" letter-spacing="3"
         fill="#D4AF37" text-anchor="middle" opacity="0.85">SOVEREIGN TRACE PROTOCOL</text>
 
-  <!-- ═══ FROZEN-2.0 — bottom label ═══ -->
-  <text x="200" y="308"
+  <!-- ═══ FROZEN-4.0 — bottom label ═══ -->
+  <text x="200" y="322"
         font-family="'Courier New', monospace"
-        font-size="9" letter-spacing="2"
+        font-size="10" letter-spacing="2"
         fill="#48CAE4" text-anchor="middle"
         filter="url(#cyanGlow)"
-        opacity="0.75">SHA-256 · FROZEN-2.0</text>
+        opacity="0.75">SHA-256 · FROZEN-4.0</text>
 
   <!-- ═══ CORNER MARKS ═══ -->
   <text x="78"  y="100" font-family="serif" font-size="8" fill="#D4AF37" opacity="0.45">✦</text>
