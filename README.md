@@ -120,7 +120,20 @@ Full install guide, usage examples, and what not to do: [QUICKSTART.md](./QUICKS
 
 ---
 
-## Protocol Flow
+## User Sealing Workflow
+
+```mermaid
+flowchart TD
+    U["User wants to seal a record"] --> A["Choose an issue template\n(e.g., AI failure, research priority, general trace)"]
+    A --> B["Fill the form:\n- Describe the content\n- Upload file or enter text\n- Confirm declaration"]
+    B --> C["Submit the GitHub issue"]
+    C --> D["Automated workflow triggers"]
+    D --> E["STP computes cryptographic seal\n(no user action needed)"]
+    E --> F["Seal JSON is posted to the issue thread\nand saved to the ledger"]
+    F --> G["User receives:\n- Permanent SHA-256 hash\n- Triple timestamp\n- Ledger entry URL"]
+```
+
+## Cryptographic Protocol
 
 ```mermaid
 flowchart TD
