@@ -133,6 +133,8 @@ flowchart TD
     F --> G["User receives:\n- Permanent SHA-256 hash\n- Triple timestamp\n- Ledger entry URL"]
 ```
 
+---
+
 ## Cryptographic Protocol
 
 ```mermaid
