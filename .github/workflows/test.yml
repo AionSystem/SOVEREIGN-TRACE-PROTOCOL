@@ -6,9 +6,8 @@ on:
   pull_request:
     branches: [ "MASTER", "main" ]
   schedule:
-    # Run nightly at 02:00 UTC
     - cron: '0 2 * * *'
-  workflow_dispatch:  # Allow manual trigger
+  workflow_dispatch:
 
 jobs:
   test:
@@ -30,35 +29,89 @@ jobs:
           python-version: ${{ matrix.python-version }}
           cache: 'pip'
 
-      - name: Install dependencies
+      # ============================================================
+      # Precondition (CAL FTT-1): declare what must be known
+      # ============================================================
+      - name: Verify Python version and packaging tools
         run: |
-          python -m pip install --upgrade pip
+          python --version
+          pip --version
+          # Ensure build dependencies are available
+          pip install --upgrade pip setuptools wheel
+
+      # ============================================================
+      # Install from pyproject.toml (no requirements.txt fallback)
+      # ============================================================
+      - name: Install package and test dependencies
+        run: |
+          pip install --upgrade pip
           pip install pytest pytest-cov pytest-asyncio hypothesis
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          # Install the package in editable mode (so tests can import it)
           pip install -e .
 
-      - name: Run tests with coverage
+      # ============================================================
+      # Verify CLI version matches expected (PDE vulnerability fix)
+      # ============================================================
+      - name: Verify STP CLI version
         run: |
-          pytest tests/ --cov=sovereign_trace --cov-report=term --cov-report=xml
+          EXPECTED_VERSION=$(python -c "from sovereign_trace import __version__; print(__version__)")
+          ACTUAL_VERSION=$(sovereign-trace --version)
+          if [ "$EXPECTED_VERSION" != "$ACTUAL_VERSION" ]; then
+            echo "❌ Version mismatch: expected $EXPECTED_VERSION, got $ACTUAL_VERSION"
+            exit 1
+          fi
+          echo "✅ Version check passed: $ACTUAL_VERSION"
 
-      - name: Upload coverage to Codecov (optional)
+      # ============================================================
+      # Run tests with coverage threshold (EAE ruled-out fix)
+      # ============================================================
+      - name: Run tests with coverage (minimum 80%)
+        run: |
+          pytest tests/ \
+            --cov=sovereign_trace \
+            --cov-report=term \
+            --cov-report=xml \
+            --cov-fail-under=80
+
+      # ============================================================
+      # Upload coverage (optional, does not block CI)
+      # ============================================================
+      - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
         with:
           file: ./coverage.xml
           fail_ci_if_error: false
         continue-on-error: true
 
-      - name: Run stamp self-test (quick check)
+      # ============================================================
+      # Self-test must pass (CAL FTT-2 – no silent failure)
+      # ============================================================
+      - name: Run STP self-test
         run: |
-          sovereign-trace --version
-          sovereign-trace self-test || echo "Self-test not implemented yet"
-        continue-on-error: true
+          sovereign-trace self-test
+        # no continue-on-error – failure will break the build
 
-      - name: Verify no orphaned test placeholders
+      # ============================================================
+      # Ledger verification (PDE Gaps fix)
+      # ============================================================
+      - name: Verify entire ledger
         run: |
-          # Fail if any test file still contains "placeholder.md"
-          if grep -r "placeholder.md" tests/ --include="*.py"; then
-            echo "❌ Found placeholder.md references – remove them before merging"
+          sovereign-trace verify --all
+        continue-on-error: false
+
+      # ============================================================
+      # Additional check: no maxlength in issue templates (PDE Vuln)
+      # ============================================================
+      - name: Validate issue templates
+        run: |
+          if grep -r "maxlength" .github/ISSUE_TEMPLATE/; then
+            echo "❌ maxlength attribute found – not allowed in GitHub issue forms"
             exit 1
           fi
+          echo "✅ No maxlength violations"
+
+      # ============================================================
+      # Postcondition (CAL FTT-6): summary of what was achieved
+      # ============================================================
+      - name: Summary
+        run: |
+          echo "✅ Tests passed, coverage ≥80%, ledger verified, templates valid"
