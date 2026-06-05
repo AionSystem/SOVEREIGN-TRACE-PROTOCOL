@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/badges/STP-logo.svg" alt="Sovereign Trace Protocol" width="200"/>
+  <img src="assets/img/STP-logo.svg" alt="Sovereign Trace Protocol" width="200"/>
 
   <br/><br/>
 
