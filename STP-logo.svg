@@ -1,10 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" width="360" height="360">
   <defs>
-
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%"   stop-color="#12141F"/>
-      <stop offset="100%" stop-color="#080A12"/>
-    </linearGradient>
 
     <linearGradient id="goldOuter" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%"   stop-color="#D4AF37"/>
@@ -26,8 +21,8 @@
       <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
     </radialGradient>
 
-    <filter id="shadowDeep" x="-15%" y="-10%" width="130%" height="130%">
-      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000000" flood-opacity="0.85"/>
+    <filter id="shadowDeep" x="-20%" y="-15%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.8"/>
     </filter>
 
     <filter id="cyanGlow">
@@ -48,64 +43,65 @@
 
   </defs>
 
-  <!-- ═══ BACKGROUND ═══ -->
-  <rect width="400" height="400" fill="url(#bgGrad)"/>
-
-  <!-- ═══ SHIELD — gold bevel ═══ -->
-  <path d="M200,28 L348,72 L348,248 Q348,360 200,390 Q52,360 52,248 L52,72 Z"
+  <!-- ═══ SHIELD — gold bevel (outer) ═══ -->
+  <path d="M180,10 L340,58 L340,244 Q340,364 180,396 Q20,364 20,244 L20,58 Z"
         fill="url(#goldOuter)"
         filter="url(#shadowDeep)"/>
 
-  <!-- ═══ SHIELD — main body ═══ -->
-  <path d="M200,38 L338,78 L338,246 Q338,350 200,378 Q62,350 62,246 L62,78 Z"
-        fill="url(#bgGrad)"/>
+  <!-- ═══ SHIELD — main body (dark) ═══ -->
+  <path d="M180,22 L326,64 L326,240 Q326,350 180,380 Q34,350 34,240 L34,64 Z"
+        fill="#0A0C16"/>
 
   <!-- ═══ SHIELD — inner glow ═══ -->
-  <path d="M200,38 L338,78 L338,246 Q338,350 200,378 Q62,350 62,246 L62,78 Z"
+  <path d="M180,22 L326,64 L326,240 Q326,350 180,380 Q34,350 34,240 L34,64 Z"
         fill="url(#innerGlow)"/>
 
-  <!-- ═══ GEAR / HASH MARK — subtle engineering motif ═══ -->
+  <!-- ═══ SHIELD — inner gold border ═══ -->
+  <path d="M180,30 L314,68 L314,236 Q314,338 180,366 Q46,338 46,236 L46,68 Z"
+        fill="none" stroke="url(#goldOuter)" stroke-width="1.2" opacity="0.5"/>
+
+  <!-- ═══ GEAR / HASH — subtle engineering motif ═══ -->
   <g opacity="0.12" stroke="#D4AF37" stroke-width="1.5" fill="none">
-    <circle cx="200" cy="185" r="28"/>
-    <circle cx="200" cy="185" r="22"/>
-    <circle cx="200" cy="185" r="16"/>
-    <line x1="175" y1="185" x2="225" y2="185"/>
-    <line x1="200" y1="160" x2="200" y2="210"/>
-    <line x1="182" y1="167" x2="218" y2="203"/>
-    <line x1="182" y1="203" x2="218" y2="167"/>
+    <circle cx="180" cy="185" r="28"/>
+    <circle cx="180" cy="185" r="22"/>
+    <circle cx="180" cy="185" r="16"/>
+    <line x1="155" y1="185" x2="205" y2="185"/>
+    <line x1="180" y1="160" x2="180" y2="210"/>
+    <line x1="162" y1="167" x2="198" y2="203"/>
+    <line x1="162" y1="203" x2="198" y2="167"/>
   </g>
 
   <!-- ═══ STP — main lettering ═══ -->
-  <text x="200" y="240"
+  <text x="180" y="240"
         font-family="'Georgia', 'Times New Roman', serif"
-        font-size="120" font-weight="bold"
+        font-size="128" font-weight="bold"
         fill="url(#goldOuter)"
         text-anchor="middle"
-        letter-spacing="-4"
+        letter-spacing="-5"
         filter="url(#goldGlow)">STP</text>
 
   <!-- ═══ CYAN LINE — under STP ═══ -->
-  <rect x="88" y="260" width="224" height="3"
+  <rect x="68" y="258" width="224" height="3"
         fill="url(#aiCyan)"
         filter="url(#cyanGlow)"
         opacity="0.9"/>
 
   <!-- ═══ SOVEREIGN TRACE PROTOCOL — under cyan line ═══ -->
-  <text x="200" y="290"
+  <text x="180" y="285"
         font-family="'Georgia', 'Times New Roman', serif"
-        font-size="12" font-weight="bold" letter-spacing="3"
+        font-size="12" font-weight="bold" letter-spacing="3.5"
         fill="#D4AF37" text-anchor="middle" opacity="0.85">SOVEREIGN TRACE PROTOCOL</text>
 
   <!-- ═══ FROZEN-4.0 — bottom label ═══ -->
-  <text x="200" y="322"
+  <text x="180" y="315"
         font-family="'Courier New', monospace"
-        font-size="10" letter-spacing="2"
+        font-size="10" letter-spacing="2.5"
         fill="#48CAE4" text-anchor="middle"
         filter="url(#cyanGlow)"
         opacity="0.75">SHA-256 · FROZEN-4.0</text>
 
   <!-- ═══ CORNER MARKS ═══ -->
-  <text x="78"  y="100" font-family="serif" font-size="8" fill="#D4AF37" opacity="0.45">✦</text>
-  <text x="322" y="100" font-family="serif" font-size="8" fill="#D4AF37" opacity="0.45" text-anchor="end">✦</text>
+  <text x="52"  y="80" font-family="serif" font-size="8" fill="#D4AF37" opacity="0.45">✦</text>
+  <text x="308" y="80" font-family="serif" font-size="8" fill="#D4AF37" opacity="0.45" text-anchor="end">✦</text>
 
 </svg>
