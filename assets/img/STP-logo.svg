@@ -1,107 +1,97 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" width="360" height="360">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
   <defs>
-
-    <linearGradient id="goldOuter" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%"   stop-color="#D4AF37"/>
-      <stop offset="30%"  stop-color="#F5E08A"/>
-      <stop offset="60%"  stop-color="#C5A028"/>
-      <stop offset="100%" stop-color="#8B6914"/>
+    <!-- Premium Platinum Metallic Gradient -->
+    <linearGradient id="platinum" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="20%" stop-color="#E2E8F0"/>
+      <stop offset="50%" stop-color="#94A3B8"/>
+      <stop offset="80%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#64748B"/>
     </linearGradient>
 
-    <linearGradient id="aiCyan" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%"   stop-color="#001F2E"/>
-      <stop offset="30%"  stop-color="#00B4D8"/>
-      <stop offset="50%"  stop-color="#48CAE4"/>
-      <stop offset="70%"  stop-color="#00B4D8"/>
-      <stop offset="100%" stop-color="#001F2E"/>
-    </linearGradient>
-
-    <radialGradient id="innerGlow" cx="50%" cy="35%" r="60%">
-      <stop offset="0%"   stop-color="#D4AF37" stop-opacity="0.08"/>
-      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+    <!-- Deep Slate Core Background -->
+    <radialGradient id="darkCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#020617"/>
     </radialGradient>
 
-    <filter id="shadowDeep" x="-20%" y="-15%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.8"/>
-    </filter>
+    <!-- Subtle Tech Cyan Accent -->
+    <linearGradient id="techCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
 
-    <filter id="cyanGlow">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <!-- Drop Shadow for Premium Depth -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.6"/>
     </filter>
-
-    <filter id="goldGlow">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
   </defs>
 
-  <!-- ═══ SHIELD — gold bevel (outer) ═══ -->
-  <path d="M180,10 L340,58 L340,244 Q340,364 180,396 Q20,364 20,244 L20,58 Z"
-        fill="url(#goldOuter)"
-        filter="url(#shadowDeep)"/>
+  <!-- ================= OUTER BEZEL & RINGS ================= -->
+  <!-- Main Thick Platinum Border -->
+  <circle cx="250" cy="250" r="240" fill="none" stroke="url(#platinum)" stroke-width="12" filter="url(#shadow)"/>
+  
+  <!-- Inner Thin Accent Ring -->
+  <circle cx="250" cy="250" r="228" fill="none" stroke="url(#platinum)" stroke-width="1.5" opacity="0.6"/>
+  
+  <!-- Precision Tick Marks (Watch Bezel Style) -->
+  <circle cx="250" cy="250" r="215" fill="none" stroke="url(#platinum)" stroke-width="6" stroke-dasharray="2 11.56" opacity="0.8"/>
+  
+  <!-- Inner Boundary for Text Track -->
+  <circle cx="250" cy="250" r="208" fill="none" stroke="url(#platinum)" stroke-width="1" opacity="0.3"/>
 
-  <!-- ═══ SHIELD — main body (dark) ═══ -->
-  <path d="M180,22 L326,64 L326,240 Q326,350 180,380 Q34,350 34,240 L34,64 Z"
-        fill="#0A0C16"/>
+  <!-- ================= TYPOGRAPHY ================= -->
+  <!-- Top Text Path -->
+  <path id="topArc" d="M 50,250 A 200,200 0 0,1 450,250" fill="none"/>
+  <!-- Bottom Text Path -->
+  <path id="bottomArc" d="M 450,250 A 200,200 0 0,1 50,250" fill="none"/>
 
-  <!-- ═══ SHIELD — inner glow ═══ -->
-  <path d="M180,22 L326,64 L326,240 Q326,350 180,380 Q34,350 34,240 L34,64 Z"
-        fill="url(#innerGlow)"/>
+  <!-- Top Text: SOVEREIGN TRACE PROTOCOL -->
+  <text font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="url(#platinum)" letter-spacing="5">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">SOVEREIGN TRACE PROTOCOL</textPath>
+  </text>
 
-  <!-- ═══ SHIELD — inner gold border ═══ -->
-  <path d="M180,30 L314,68 L314,236 Q314,338 180,366 Q46,338 46,236 L46,68 Z"
-        fill="none" stroke="url(#goldOuter)" stroke-width="1.2" opacity="0.5"/>
+  <!-- Bottom Text: FROZEN-4.0 • SHA-256 -->
+  <text font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="600" fill="url(#techCyan)" letter-spacing="4">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">FROZEN-4.0 • SHA-256</textPath>
+  </text>
 
-  <!-- ═══ GEAR / HASH — subtle engineering motif ═══ -->
-  <g opacity="0.12" stroke="#D4AF37" stroke-width="1.5" fill="none">
-    <circle cx="180" cy="185" r="28"/>
-    <circle cx="180" cy="185" r="22"/>
-    <circle cx="180" cy="185" r="16"/>
-    <line x1="155" y1="185" x2="205" y2="185"/>
-    <line x1="180" y1="160" x2="180" y2="210"/>
-    <line x1="162" y1="167" x2="198" y2="203"/>
-    <line x1="162" y1="203" x2="198" y2="167"/>
+  <!-- Separator Dots (3 & 9 o'clock) -->
+  <circle cx="50" cy="250" r="4" fill="url(#platinum)"/>
+  <circle cx="450" cy="250" r="4" fill="url(#platinum)"/>
+
+  <!-- ================= INNER CORE ================= -->
+  <!-- Dark Premium Background -->
+  <circle cx="250" cy="250" r="160" fill="url(#darkCore)" stroke="url(#platinum)" stroke-width="3"/>
+  
+  <!-- Subtle Cyan Inner Ring -->
+  <circle cx="250" cy="250" r="150" fill="none" stroke="url(#techCyan)" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- ================= CENTER EMBLEM ================= -->
+  <g transform="translate(250, 250)">
+    
+    <!-- Modern Geometric Shield Outline -->
+    <path d="M 0,-110 L 85,-75 L 85,25 C 85,80 0,130 0,130 C 0,130 -85,80 -85,25 L -85,-75 Z" 
+          fill="none" stroke="url(#platinum)" stroke-width="4" stroke-linejoin="round"/>
+    
+    <!-- Inner Shield Accent Line -->
+    <path d="M 0,-95 L 72,-65 L 72,20 C 72,65 0,110 0,110 C 0,110 -72,65 -72,20 L -72,-65 Z" 
+          fill="none" stroke="url(#techCyan)" stroke-width="1.5" opacity="0.5"/>
+
+    <!-- Minimalist Global Wireframe (Trace/Network Motif) -->
+    <g opacity="0.35" stroke="url(#techCyan)" stroke-width="1.5" fill="none">
+      <ellipse cx="0" cy="-15" rx="45" ry="15"/>
+      <ellipse cx="0" cy="-15" rx="15" ry="45"/>
+      <circle cx="0" cy="-15" r="45"/>
+    </g>
+
+    <!-- Bold STP Monogram -->
+    <text x="0" y="15" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="56" font-weight="800" fill="url(#platinum)" text-anchor="middle" letter-spacing="2">STP</text>
+    
+    <!-- Triple-Time Seal Indicator (3 Subtle Nodes) -->
+    <circle cx="-20" cy="45" r="3.5" fill="url(#techCyan)"/>
+    <circle cx="0" cy="55" r="3.5" fill="url(#techCyan)"/>
+    <circle cx="20" cy="45" r="3.5" fill="url(#techCyan)"/>
+    
   </g>
-
-  <!-- ═══ STP — main lettering ═══ -->
-  <text x="180" y="240"
-        font-family="'Georgia', 'Times New Roman', serif"
-        font-size="128" font-weight="bold"
-        fill="url(#goldOuter)"
-        text-anchor="middle"
-        letter-spacing="-5"
-        filter="url(#goldGlow)">STP</text>
-
-  <!-- ═══ CYAN LINE — under STP ═══ -->
-  <rect x="68" y="258" width="224" height="3"
-        fill="url(#aiCyan)"
-        filter="url(#cyanGlow)"
-        opacity="0.9"/>
-
-  <!-- ═══ SOVEREIGN TRACE PROTOCOL — under cyan line ═══ -->
-  <text x="180" y="285"
-        font-family="'Georgia', 'Times New Roman', serif"
-        font-size="12" font-weight="bold" letter-spacing="3.5"
-        fill="#D4AF37" text-anchor="middle" opacity="0.85">SOVEREIGN TRACE PROTOCOL</text>
-
-  <!-- ═══ FROZEN-4.0 — bottom label ═══ -->
-  <text x="180" y="315"
-        font-family="'Courier New', monospace"
-        font-size="10" letter-spacing="2.5"
-        fill="#48CAE4" text-anchor="middle"
-        filter="url(#cyanGlow)"
-        opacity="0.75">SHA-256 · FROZEN-4.0</text>
-
-  <!-- ═══ CORNER MARKS ═══ -->
-  <text x="52"  y="80" font-family="serif" font-size="8" fill="#D4AF37" opacity="0.45">✦</text>
-  <text x="308" y="80" font-family="serif" font-size="8" fill="#D4AF37" opacity="0.45" text-anchor="end">✦</text>
-
 </svg>
