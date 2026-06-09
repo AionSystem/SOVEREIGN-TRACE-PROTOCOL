@@ -1,7 +1,7 @@
 # GNU AFFERO GENERAL PUBLIC LICENSE
 Version 3, 19 November 2007
 
-**SCOPE OF APPLICATION:** This license applies exclusively to all `.py` source code files in this repository (e.g., `constitutional_engine_v2.2.py`). If you use this engine to provide a service over a network, you must open-source your entire application stack under the same license. For commercial, closed-source licensing, contact the Architect (Sheldon K. Salmon).
+**SCOPE OF APPLICATION:** This license applies exclusively to all `.py` source code files in this repository (e.g., `sovereign_trace_stamp.py`). If you use this engine to provide a service over a network, you must open-source your entire application stack under the same license. For commercial, closed-source licensing, contact the Architect (Sheldon K. Salmon).
 
 ---
 
