@@ -395,13 +395,20 @@ The sample report is not a brochure. It is a redacted real output — the exact 
 
 ---
 
-## Triple License
+## ⚖️ Licensing & Commercial Use
 
-| License | Applies To |
-|---|---|
-| **Apache 2.0** | Individual, academic, non-commercial use. Patent retaliation clause active. |
-| **GPL v3** | Modified distributions. Copyleft — corporate forks must open-source modifications. |
-| **Commercial** | White-label, certification services, SaaS. See [LICENSE-COMMERCIAL.md](./LICENSE-COMMERCIAL.md). |
+This repository contains two distinct components with separate licensing to protect both the open dissemination of the specification and the commercial viability of the runtime engine.
+
+1. **The Specification** (`.md` files): Licensed under [CC BY-ND 4.0](LICENSE_SPEC.md). 
+   You may read, cite, timestamp, and share this document, but you may not create derivative works (forked constitutions) or use it for commercial purposes without explicit written permission from the Architect.
+
+2. **The Constitutional Engine** (`.py` files): Licensed under the [GNU AGPL v3.0](LICENSE_ENGINE.md). 
+   If you use this engine to provide a service over a network, you are legally required to open-source your entire application stack under the same license. 
+
+### 🏢 Enterprise / Commercial Licensing
+If you are a platform, enterprise, or organization that wishes to integrate the SOVEREIGN-TRACE-PROTOCOL into a proprietary, closed-source, or commercial product without triggering AGPL copyleft obligations, a commercial dual-license is available. 
+
+For commercial licensing inquiries, audit integration, or steward certification, contact: **aionsystem@outlook.com**
 
 Plain-language guide: [LICENSE-EXPLANATION.md](./LICENSE-EXPLANATION.md)
 
