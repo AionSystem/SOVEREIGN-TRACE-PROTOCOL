@@ -37,6 +37,9 @@
 
 ---
 
+Frozen 4.0 pip install update coming soon
+---
+
 <br/>
 
 > **→ [QUICKSTART.md](./QUICKSTART.md) — `pip install sovereign-trace` · First seal in under 5 minutes · Zero dependencies**
