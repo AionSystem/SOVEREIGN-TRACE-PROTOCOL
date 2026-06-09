@@ -1,0 +1,1 @@
+**SCOPE OF APPLICATION:** This license applies exclusively to all `.md` documentation files in this repository, including the Sovereign Trace Protocol specification. You may read, cite, and share this document, but you may not create derivative works or use it for commercial purposes without explicit written permission from the Architect (Sheldon K. Salmon).
