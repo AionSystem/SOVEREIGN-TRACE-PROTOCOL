@@ -23,7 +23,7 @@
 [![License: CC BY-ND 4.0](https://img.shields.io/badge/License-CC%20BY--ND%204.0-blue.svg)](https://creativecommons.org/licenses/by-nd/4.0/)
 [![License: AGPL v3.0](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Legal Posture](https://img.shields.io/badge/LEGAL-Posture%20Active-8B0000?style=flat-square)](./LEGAL-POSTURE.md)
-[![PyPI](https://img.shields.io/pypi/v/stp-protocol)](https://pypi.org/project/stp-protocol/)
+
 ---
 ## WORKFLOW STATUS
 
