@@ -39,7 +39,7 @@
 
 <br/>
 
-> **→ [QUICKSTART.md](./QUICKSTART.md) — `pip install sovereign-trace` · First seal in under 5 minutes · Zero dependencies**
+> **→ [QUICKSTART.md](./QUICKSTART.md) — `pip install stp-protocol` · First seal in under 5 minutes · Zero dependencies**
 
 </div>
 
