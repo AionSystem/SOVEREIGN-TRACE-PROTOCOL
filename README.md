@@ -65,7 +65,7 @@
 - [Sample Audit Report](#sample-audit-report)
 - [Frozen Declaration](#frozen-declaration)
   - [Frozen Lineage](#frozen-lineage)
-- [Triple License](#triple-license)
+- [Licensing & Commercial Use](#licensing--commercial-use)
 - [Build Sequence](#build-sequence)
 - [Repository Structure](#repository-structure)
 - [Provenance](#provenance)
@@ -99,14 +99,14 @@
 | **External Dependencies** | Zero — stdlib only |
 | **Stamp File Status** | FROZEN-4.0 — write-once, verify-once, deploy permanently |
 | **Test Coverage** | 82 checks passing across 28 test suites |
-| **License Model** | Apache 2.0 · GPL v3 · Commercial (triple-license) |
+| **License Model** | CC BY-ND 4.0 · AGPL v3.0 · Commercial (dual-license + commercial) |
 
 ---
 
 ## Quick Start
 
 ```bash
-pip install sovereign-trace
+pip install stp-protocol
 python
 ```
 
@@ -420,13 +420,13 @@ Full legal coverage: [LEGAL-POSTURE.md](./LEGAL-POSTURE.md)
 ```
 STAGE 1 — COMPLETE (March 9, 2026)
   FROZEN-2.0: Triple-time stamp. Full dehiyot. Zero deps. 35 checks passed.
-  PyPI: sovereign-trace 2.0.0 live. Founding seal in ledger.
+  PyPI: stp-protocol 2.0.0 live. Founding seal in ledger.
 
 STAGE 1 — RED TEAM + FROZEN-4.0 (June 1, 2026)
   Full red team scan: FSVE v4.3 × FA v4.0 dual-framework audit.
   1 CRITICAL finding (self-test anchor data), 3 MEDIUM, 4 LOW — all resolved.
   FROZEN-3.0 retired. FROZEN-4.0: 82 self-test checks passing.
-  PyPI: sovereign-trace 4.0.0 — pending push.
+  PyPI: stp-protocol 4.0.0 — pending push.
 
 STAGE 2 — PLANNED
   Local encrypted vault integration (Obsidian / Notion)
