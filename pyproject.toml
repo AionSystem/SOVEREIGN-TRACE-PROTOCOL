@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "sovereign-trace"
+name = "stp-protocol"
 version = "4.0.0"
 description = "Permanent personal and organizational significance infrastructure. Triple-time cryptographic stamp — Gregorian, Hebrew lunisolar, 13 Moon Dreamspell. FROZEN-4.0."
 readme = "README.md"
@@ -41,6 +41,7 @@ requires-python = ">=3.11"
 dependencies = []
 
 [project.scripts]
+stp = "sovereign_trace_stamp:_cli"   # optional: add short alias
 sovereign-trace = "sovereign_trace_stamp:_cli"
 
 [project.urls]
@@ -49,8 +50,7 @@ Repository = "https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL"
 Issues     = "https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/issues"
 
 [tool.hatch.build.targets.wheel]
-sources = ["stamp"]
-only-include = ["stamp/sovereign_trace_stamp.py"]
+packages = ["sovereign_trace"]
 
 [tool.hatch.build.targets.sdist]
 include = [
@@ -114,12 +114,12 @@ filterwarnings = [
 
 [tool.bandit]
 exclude_dirs = ["tests", ".venv", ".git", "ledger", "badges", "concept"]
-skips = ["B101", "B102"]  # assert and exec warnings – acceptable for test code
+skips = ["B101", "B102"]
 severity = "MEDIUM"
 confidence = "MEDIUM"
 
 [tool.mutmut]
-paths_to_mutate = ["stamp/"]
+paths_to_mutate = ["sovereign_trace/"]
 runner = "pytest"
 tests_dir = "tests/"
 backup = false
@@ -130,8 +130,8 @@ python_version = "3.11"
 ignore_missing_imports = true
 warn_return_any = true
 warn_unused_configs = true
-disallow_untyped_defs = false  # gradual typing
+disallow_untyped_defs = false
 
 [tool.safety]
-policy_file = ".safety-policy.yml"  # optional – create if needed
+policy_file = ".safety-policy.yml"
 ignore_cvss_severity_below = "medium"
