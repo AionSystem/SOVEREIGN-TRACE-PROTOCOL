@@ -16,14 +16,14 @@
 [![Frozen](https://img.shields.io/badge/PERMANENT-FROZEN--4.0-2E7D32?style=flat-square&logo=git&logoColor=white)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL)
 [![Dependencies](https://img.shields.io/badge/DEPS-stdlib%20only-616161?style=flat-square)](https://docs.python.org/3/library/index.html)
 [![Tests](https://img.shields.io/badge/tests-82%20passing-2E7D32?style=flat-square&logo=pytest&logoColor=white)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/actions)
-[![PyPI](https://img.shields.io/pypi/v/sovereign-trace?style=flat-square&color=2E7D32&label=PyPI)](https://pypi.org/project/sovereign-trace/)
+[![PyPI](https://img.shields.io/pypi/v/stp-protocol)](https://pypi.org/project/stp-protocol/)
 [![Status](https://img.shields.io/badge/STATUS-M--NASCENT-1976D2?style=flat-square&logo=shield&logoColor=white)](https://github.com/AionSystem/AION-BRAIN)
 [![Hebrew](https://img.shields.io/badge/HEBREW-Full%20Dehiyot%20%2B%20Civil--Day-0288D1?style=flat-square)](https://www.hebcal.com)
 [![Seal](https://img.shields.io/badge/SEAL-SHA--256%20Binding-4527A0?style=flat-square&logo=hashnode&logoColor=white)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL)
 [![License: CC BY-ND 4.0](https://img.shields.io/badge/License-CC%20BY--ND%204.0-blue.svg)](https://creativecommons.org/licenses/by-nd/4.0/)
 [![License: AGPL v3.0](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Legal Posture](https://img.shields.io/badge/LEGAL-Posture%20Active-8B0000?style=flat-square)](./LEGAL-POSTURE.md)
-
+[![PyPI](https://img.shields.io/pypi/v/stp-protocol)](https://pypi.org/project/stp-protocol/)
 ---
 ## WORKFLOW STATUS
 
@@ -35,9 +35,6 @@
 [![Tiered Abuse Detector](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/actions/workflows/abuse-detector.yml/badge.svg)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/actions/workflows/abuse-detector.yml)
 [![CI](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/actions/workflows/python-publish.yml/badge.svg)](https://github.com/AionSystem/SOVEREIGN-TRACE-PROTOCOL/actions)
 
----
-
-Frozen 4.0 pip install update coming soon
 ---
 
 <br/>
