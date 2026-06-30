@@ -19,6 +19,7 @@ Section 43(a)) and equivalent provisions in other jurisdictions:
 |------|-----------|----------|
 | **SOVEREIGN TRACE PROTOCOL** | March 3, 2026 | Software / Protocol |
 | **SOVEREIGN TRACE** | March 3, 2026 | Software / Protocol |
+| **STP-PROTOCOL** | March 3, 2026 | Software / Protocol |
 | **FROZEN** (word mark; version numbers are designations) | March 3, 2026 (series) | Software Designation |
 | **FROZEN-4.0** | June 4, 2026 | Software Designation |
 | **SOVEREIGN CERTIFIED** | March 7, 2026 | Certification Service |
