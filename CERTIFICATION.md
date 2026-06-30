@@ -63,7 +63,7 @@ These certifications are for **individuals** — hobbyists, builders, researcher
 
 1. The individual downloads a constitutional‑bootstrap script or Docker container that wraps their AI runtime with the Constitutional Engine v2.1.
 2. The system runs a self‑test, logging 20+ constitutional checks (pre‑defined test suite covering all Nine Laws).
-3. The log is hashed and sealed via STP (using the free `sovereign‑trace` pip package).
+3. The log is hashed and sealed via STP (using the free `stp-protocol` pip package).
 4. The individual submits the sealed log to the automated verification pipeline (GitHub issue or web form).
 5. Upon successful verification, the badge and a digital sleeve (PDF) are issued. The individual's name (or pseudonym) and the seal entry are recorded in the **Trust Registry** (see below).
 6. The individual displays the badge on their personal AI interface, website, or robot.
