@@ -617,7 +617,7 @@ Yalom, I. D. (1980). *Existential Psychotherapy*. Basic Books.
 ## Appendix A: Quick Start
 
 ```bash
-pip install sovereign-trace
+pip install stp-protocol
 python
 ```
 
