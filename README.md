@@ -24,6 +24,7 @@ https://doi.org/10.5281/zenodo.21073607
 [![License: CC BY-ND 4.0](https://img.shields.io/badge/License-CC%20BY--ND%204.0-blue.svg)](https://creativecommons.org/licenses/by-nd/4.0/)
 [![License: AGPL v3.0](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Legal Posture](https://img.shields.io/badge/LEGAL-Posture%20Active-8B0000?style=flat-square)](./LEGAL-POSTURE.md)
+SSRN Abstract ID: 7035218
 
 ---
 ## WORKFLOW STATUS
