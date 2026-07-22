@@ -7,7 +7,7 @@
 # SOVEREIGN TRACE PROTOCOL
 
 ### Permanence infrastructure for individuals and organizations.
-### Seal what is true. Permanently. Across three civilizational time systems.
+### Seal what you said, when you said it. Permanently. Across three civilizational time systems.
 
 <br/>
 
@@ -50,6 +50,7 @@ SSRN Abstract ID: 7035218
 ## Table of Contents
 
 - [Overview](#overview)
+- [What the Seal Proves — and What It Does Not](#what-the-seal-proves--and-what-it-does-not)
 - [Architecture at a Glance](#architecture-at-a-glance)
 - [Quick Start](#quick-start)
 - [Protocol Flow](#protocol-flow)
@@ -58,6 +59,7 @@ SSRN Abstract ID: 7035218
 - [The Triple-Time Seal](#the-triple-time-seal)
 - [Epistemic Debt Score](#epistemic-debt-score)
   - [EDS Components](#eds-components)
+  - [What the EDS Measures — and What It Does Not](#what-the-eds-measures--and-what-it-does-not)
   - [Worked Example — EDS: 67/100](#worked-example--eds-67100)
   - [Status Labels](#status-labels)
 - [Submission Layer](#submission-layer)
@@ -67,6 +69,7 @@ SSRN Abstract ID: 7035218
 - [Sample Audit Report](#sample-audit-report)
 - [Frozen Declaration](#frozen-declaration)
   - [Frozen Lineage](#frozen-lineage)
+- [Verification Status](#verification-status)
 - [Licensing & Commercial Use](#licensing--commercial-use)
 - [Build Sequence](#build-sequence)
 - [Repository Structure](#repository-structure)
@@ -76,7 +79,7 @@ SSRN Abstract ID: 7035218
 
 ## Overview
 
-**STP is dual-use permanence infrastructure.** The same cryptographic mechanism that gives an individual sovereignty over their own historical record gives an organization tamper-evident proof of its AI epistemic integrity.
+**STP is dual-use permanence infrastructure.** The same cryptographic mechanism that gives an individual sovereignty over their own historical record gives an organization tamper-evident proof of its documentation discipline.
 
 **For individuals** — Write one entry capturing exact present-moment observations. Seal it with a triple-time cryptographic stamp that binds the moment simultaneously to Gregorian, Hebrew lunisolar, and 13 Moon Dreamspell calendars. The SHA-256 seal is permanent, tamper-evident, and requires no audience.
 
@@ -85,6 +88,34 @@ SSRN Abstract ID: 7035218
 **For organizations** — Every AI failure deserves a permanent, immutable record. Log it. Seal it. Append the remediation. The record cannot be edited after the fact. The AION-Registry holds public certification outcomes. An organization with a documented failure history and certified infrastructure is more trustworthy than one with a clean record and no ledger.
 
 > See [`concept/USE-CASES.md`](./concept/USE-CASES.md) for the full dual-use architecture.
+
+---
+
+## What the Seal Proves — and What It Does Not
+
+STP is honest infrastructure, and honest infrastructure states its own boundary. The seal is a proof-of-occurrence instrument. Its claims are narrow, and inside that narrow scope they are very strong. Outside it, they are zero — and pretending otherwise would be the exact epistemic failure this protocol exists to prevent.
+
+### The seal proves
+
+| Claim | Basis |
+|---|---|
+| **This exact content existed at this moment.** | SHA-256 binding computed at seal time; any later alteration of the content breaks the hash. |
+| **This content has not been altered since sealing.** | Recomputing the hash against the original data either matches (intact) or does not (tampered). |
+| **The sealing moment is bound to three independent calendar systems.** | Gregorian, Hebrew lunisolar (full dehiyot), and 13 Moon Dreamspell computed and embedded in the seal. |
+| **This seal was produced by the holder of this key.** | Ed25519 signature verifiable against the public key. |
+| **This record precedes any record sealed after it.** | Temporal ordering of ledger entries; optional external anchoring strengthens this against clock disputes. |
+
+### The seal does not prove
+
+| Non-claim | Why |
+|---|---|
+| **That the sealed content is true.** | The seal binds *what was asserted at a moment*, not the accuracy of the assertion. A false statement sealed at 9:00 AM is a permanently provable false statement made at 9:00 AM — nothing more. |
+| **That unsealed events did not happen.** | The ledger records what was submitted to it. It cannot detect what was never logged. An organization can seal a genuine, valid, curated subset of its failures while omitting its worst incidents — every individual seal remains valid, and the cryptography cannot see the omission. |
+| **That anything was prevented.** | A seal is proof of occurrence, not proof of refusal. STP can prove a failure was *documented before remediation*; it cannot prove an invalid action was *stopped before it happened*. Pre-effect prevention is a different capability belonging to a different class of system, and STP does not claim it. |
+| **That a sealed remediation actually worked.** | A REMEDIATION VERIFIED entry proves the remediation record was sealed and reviewed under the audit methodology — not that the underlying system can no longer fail the same way. |
+| **Legal validity of the sealed content.** | A sealed contract, will, or intention is a tamper-evident record of what was stated, not a legally executed instrument. See individual template notes and [LEGAL-POSTURE.md](./LEGAL-POSTURE.md). |
+
+**The design consequence:** a sealed record's value depends on the discipline of the sealing party. The EDS (below) exists precisely because the seal alone cannot score that discipline — completeness relative to reality must be assessed, not assumed. Read the seal for what it is: an unforgeable record of *what was said and when* — the strongest possible foundation for accountability, and never a substitute for it.
 
 ---
 
@@ -179,6 +210,8 @@ flowchart TD
 
 The stamp function does not care what it seals. A sealed moment is a sealed moment. The SHA-256 proof is the same whether the content is an AI failure report, a research hypothesis, a hospital incident record, a contractor's agreed scope, or a professional foresight declaration.
 
+In every row below, what the seal establishes is the same narrow, strong claim: *this content, at this moment, unaltered since.* The stake determines how you use that record afterward.
+
 | Who | What They Seal | Why It Matters |
 |---|---|---|
 | **AI auditor** | AI system output failure — exact text + screenshots | Public permanent record. Organizational accountability. Tamper-evident before remediation. |
@@ -212,7 +245,7 @@ The enterprise use case was not designed first.
 
 The protocol was built to solve a personal problem: how does one individual permanently register their own significant moments without requiring an audience, a platform, or institutional permission?
 
-The answer — a frozen, tamper-evident, triple-time cryptographic seal — turned out to be exactly what organizations need for their AI audit trail. The mechanism that gives an individual temporal sovereignty over their own record also gives an organization cryptographic proof of their epistemic integrity.
+The answer — a frozen, tamper-evident, triple-time cryptographic seal — turned out to be exactly what organizations need for their AI audit trail. The mechanism that gives an individual temporal sovereignty over their own record also gives an organization cryptographic proof of their documentation discipline.
 
 ---
 
@@ -230,7 +263,7 @@ The triple stamp is not redundancy. It is a claim: this moment of human signific
 
 ## Epistemic Debt Score
 
-Every certified organization receives an **Epistemic Debt Score (EDS)** — a 0–100 metric measuring AI epistemic integrity across five independently scored components. The full formula is public: [EPISTEMIC-DEBT-SCORE.md](./EPISTEMIC-DEBT-SCORE.md).
+Every certified organization receives an **Epistemic Debt Score (EDS)** — a 0–100 metric measuring documentation discipline across five independently scored components. The full formula is public: [EPISTEMIC-DEBT-SCORE.md](./EPISTEMIC-DEBT-SCORE.md).
 
 The EDS does not measure whether AI systems fail. It measures whether an organization has built the infrastructure to document failures honestly, resolve them completely, and improve over time.
 
@@ -247,6 +280,14 @@ The EDS does not measure whether AI systems fail. It measures whether an organiz
 | **C5 — Proactive Reporting** | 20 pts | Near-misses filed before mandatory reporting triggers? |
 
 Three of the five components (C2, C3, C5 base) are computed directly from the public ledger JSON and are **independently verifiable** by any party with Python 3.11+. The formula is public. The tool is proprietary.
+
+### What the EDS Measures — and What It Does Not
+
+The EDS is a **ledger-discipline score**, and its labels are bounded to exactly that. Stated plainly, so no reader — client, regulator, or reviewer — takes the score for more than it carries:
+
+- **The EDS measures:** whether failures that enter the ledger are documented, triaged by severity, resolved within windows, and trending better — and whether ledger volume is proportionate to deployment scale (C1, estimated against declared deployment data).
+- **The EDS does not measure:** whether the organization's AI systems are safe; whether the ledger is complete relative to *reality* (C1 estimates proportionality from declared scale — it cannot detect systematically unlogged failures); or whether sealed remediations eliminated the underlying failure mode (C2 verifies the remediation record, not the system's future behavior).
+- **Therefore:** a high EDS is strong evidence of *documentation discipline* and honest process. It is not, and is never presented as, a safety certification of the underlying AI systems. An organization presenting its EDS to a regulator or client should present it as exactly this — and the audit report language does.
 
 ### Worked Example — EDS: 67/100
 
@@ -277,20 +318,22 @@ C5  Proactive Reporting      5 / 20   1 near-miss filed (score: 4). 1 pre-deadli
     ─────────────────────────────────
     TOTAL                   67 / 100
 
-Status:  EPISTEMIC DEBT OUTSTANDING
+Status:  LEDGER DISCIPLINE: DEVELOPING
 Seal:    SHA-256 · [sealed at certification close]
 ```
 
-**What 67 means in plain language:** The organization documents. It resolves most of what it documents. It is improving. It is not yet disciplined about severity triage — two high-severity items sat unresolved past the 60-day window, which in a regulated environment would be a breach of internal SLA. The ledger is thin relative to deployment scale, which is the single largest drag on the score. The path to EPISTEMIC DEBT MANAGEABLE (75+) runs through two actions: expand monitoring coverage so the ledger reflects actual failure volume, and close the two overdue HIGH items.
+**What 67 means in plain language:** The organization documents. It resolves most of what it documents. It is improving. It is not yet disciplined about severity triage — two high-severity items sat unresolved past the 60-day window, which in a regulated environment would be a breach of internal SLA. The ledger is thin relative to deployment scale, which is the single largest drag on the score. The path to LEDGER DISCIPLINE: ESTABLISHED (75+) runs through two actions: expand monitoring coverage so the ledger reflects actual failure volume, and close the two overdue HIGH items.
 
 ### Status Labels
 
+Labels are bounded to what the EDS actually measures — ledger discipline — and deliberately do not use language ("clean," "safe," "certified system") that a reader could mistake for a safety claim about the underlying AI:
+
 | Score | Label | What It Signals |
 |---|---|---|
-| 90–100 | **CERTIFIED CLEAN** | Exemplary epistemic discipline |
-| 75–89 | **EPISTEMIC DEBT MANAGEABLE** | Documented, resolving, improving |
-| 50–74 | **EPISTEMIC DEBT OUTSTANDING** | Documenting but gaps remain |
-| < 50 | **UNCERTIFIABLE** | Insufficient discipline for certification |
+| 90–100 | **LEDGER DISCIPLINE: EXEMPLARY** | Documentation infrastructure and resolution discipline at the highest measured standard |
+| 75–89 | **LEDGER DISCIPLINE: ESTABLISHED** | Documented, resolving, improving — mature process with minor gaps |
+| 50–74 | **LEDGER DISCIPLINE: DEVELOPING** | Documenting, but coverage or resolution gaps remain |
+| < 50 | **LEDGER DISCIPLINE: INSUFFICIENT** | Documentation infrastructure below certifiable threshold |
 | — | **UNSCORED** | No ledger data — cannot evaluate |
 
 ---
@@ -334,6 +377,8 @@ See [concept/USE-CASES.md](./concept/USE-CASES.md) for guidance on which templat
 
 ## Certification Tiers
 
+Every tier's deliverable states what was examined, under which instruments, with which findings — and carries the scope boundary of this README's "What the Seal Proves" and "What the EDS Measures" sections. No tier deliverable asserts that a client's AI system is safe; each asserts what was inspected and what was found.
+
 | Tier | Scope | Price | Badge | Deliverables | Intake |
 |---|---|---|---|---|---|
 | **Tier 0 — Snapshot Verification** | 10 outputs, pre-audit trust signal | Free | Snapshot (pearl/earth) | Snapshot report · Ledger entry · Badge embed code | Automated 24/7 |
@@ -349,7 +394,7 @@ See [concept/USE-CASES.md](./concept/USE-CASES.md) for guidance on which templat
 - **Tier 1, 3, 4, and 5** — Architect-led. Intake **Monday and Tuesday only.** Submissions on other days are voided and non-refundable.
 - **Delivery:** Weekends for all tiers.
 
-Tier 5 (Sovereign AI Audit) runs the complete AION adversarial stack — seven instruments in sequence — against the client's AI system. It is a full-scale diagnostic, adversarial, and code-level audit, not a management-system paperwork review. See [CERTIFICATION.md](./CERTIFICATION.md) for the complete instrument list and deliverable schedule.
+Tier 5 (Sovereign AI Audit) runs the complete AION adversarial stack — seven instruments in sequence — against the client's AI system. It is a full-scale diagnostic, adversarial, and code-level audit, not a management-system paperwork review. Its report states findings at the strength the instruments can carry, and no stronger. See [CERTIFICATION.md](./CERTIFICATION.md) for the complete instrument list and deliverable schedule.
 
 ### STP Certified Auditors
 
@@ -396,6 +441,20 @@ The sample report is not a brochure. It is a redacted real output — the exact 
 
 ---
 
+## Verification Status
+
+Stated in the same discipline this protocol asks of its clients — the verification record, at the strength it actually carries:
+
+| Verification layer | Status | What it establishes — and does not |
+|---|---|---|
+| **Self-test suite** | 82 checks passing across 28 suites | The frozen stamp code behaves as specified on the covered cases. Does not establish behavior outside covered cases. |
+| **Author-led red team** | FSVE v4.3 × FA v4.0 dual-framework audit (June 2026); 1 CRITICAL, 3 MEDIUM, 4 LOW — all resolved | A structured adversarial pass by the author's own instrument stack. Build-adjacent by definition: rigorous, but not independent of the protocol's construction lineage. |
+| **Independent cold review** | Not yet performed | No fresh-context reviewer, independent of the build lineage, has yet examined the protocol. Until one has, the protocol's own verification claims remain author-attested. Planned before FROZEN-5.0 / next major PyPI release. |
+
+This table exists because a permanence protocol that overstates its own verification would be defeating its own purpose. The seals are cryptographically sound regardless; this table concerns the *protocol's* review history, disclosed at its true strength.
+
+---
+
 ## ⚖️ Licensing & Commercial Use
 
 This repository contains two distinct components with separate licensing to protect both the open dissemination of the specification and the commercial viability of the runtime engine.
@@ -425,10 +484,14 @@ STAGE 1 — COMPLETE (March 9, 2026)
   PyPI: stp-protocol 2.0.0 live. Founding seal in ledger.
 
 STAGE 1 — RED TEAM + FROZEN-4.0 (June 1, 2026)
-  Full red team scan: FSVE v4.3 × FA v4.0 dual-framework audit.
+  Full red team scan: FSVE v4.3 × FA v4.0 dual-framework audit (author-led, build-adjacent).
   1 CRITICAL finding (self-test anchor data), 3 MEDIUM, 4 LOW — all resolved.
   FROZEN-3.0 retired. FROZEN-4.0: 82 self-test checks passing.
   PyPI: stp-protocol 4.0.0 — pending push.
+
+STAGE 1.5 — PLANNED (before next major release)
+  Independent cold review: fresh-context verifier, no build lineage.
+  Closes the final row of the Verification Status table.
 
 STAGE 2 — PLANNED
   Local encrypted vault integration (Obsidian / Notion)
